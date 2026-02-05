@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 1 - HTML Essentials</title>
+    <!-- Internal CSS: Styles defined here apply to this page only -->
+    <style>
+      /* Styles for the body of the page */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+        margin-top: 30px;
+      }
+      .code-block {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: monospace;
+        overflow-x: auto;
+      }
+      .example-output {
+        border: 1px dashed #aaa;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      hr {
+        margin: 40px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 1 - HTML Essentials</h1>
+    <p>
+      This guide demonstrates common HTML elements with their code and actual
+      output.
+    </p>
+
+    <hr />
+
+    <!-- 
+      SECTION 1: HEADINGS
+      Headings are used to define the structure and hierarchy of your content.
+      <h1> is the most important, and <h6> is the least important.
+    -->
+    <!-- Headings -->
+    <h2 class="section-title">1. Headings</h2>
+    <p>
+      Headings are defined with the <code>&lt;h1&gt;</code> to
+      <code>&lt;h6&gt;</code> tags.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;h1&gt;This is heading 1&lt;/h1&gt; &lt;h2&gt;This is heading
+      2&lt;/h2&gt; &lt;h3&gt;This is heading 3&lt;/h3&gt; &lt;h4&gt;This is
+      heading 4&lt;/h4&gt; &lt;h5&gt;This is heading 5&lt;/h5&gt; &lt;h6&gt;This
+      is heading 6&lt;/h6&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h1>This is heading 1</h1>
+      <h2>This is heading 2</h2>
+      <h3>This is heading 3</h3>
+      <h4>This is heading 4</h4>
+      <h5>This is heading 5</h5>
+      <h6>This is heading 6</h6>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 2: PARAGRAPHS
+      <p> tags are used for blocks of text. Browsers automatically add 
+      some white space (a margin) before and after a paragraph.
+    -->
+    <!-- Paragraphs -->
+    <h2 class="section-title">2. Paragraphs</h2>
+    <p>Paragraphs are defined with the <code>&lt;p&gt;</code> tag.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Distinctio, ratione.&lt;/p&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,
+        ratione.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 3: PREFORMATTED TEXT
+      The <pre> tag displays text exactly as it is written in the HTML file,
+      preserving all spaces and line breaks.
+    -->
+    <!-- Preformatted Text -->
+    <h2 class="section-title">3. Preformatted Text</h2>
+    <p>
+      The <code>&lt;pre&gt;</code> tag preserves both spaces and line breaks.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;pre&gt; Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Dolore, itaque! &lt;/pre&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <pre>
+Lorem            ipsum dolor sit amet consectetur, 
+adipisicing elit. Dolore, itaque!
+        </pre
+      >
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 4: ORDERED LISTS
+      <ol> creates a numbered list. You can change the numbering style
+      using the 'type' attribute (1, A, a, I, i).
+    -->
+    <!-- Ordered Lists -->
+    <h2 class="section-title">4. Ordered Lists</h2>
+    <p>Ordered lists usage with different <code>type</code> attributes.</p>
+
+    <h3>Code (Default - Numbers):</h3>
+    <div class="code-block">
+      &lt;h3&gt;Milktea Menu&lt;/h3&gt; &lt;ol type="1"&gt;
+      &lt;li&gt;Macha&lt;/li&gt; &lt;li&gt;Taro&lt;/li&gt;
+      &lt;li&gt;Chocolate&lt;/li&gt; &lt;/ol&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h3>Milktea Menu</h3>
+      <ol type="1">
+        <li>Macha</li>
+        <li>Taro</li>
+        <li>Chocolate</li>
+      </ol>
+    </div>
+
+    <br />
+
+    <h3>Code (Uppercase Letters):</h3>
+    <div class="code-block">&lt;ol type="A"&gt; ... &lt;/ol&gt;</div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <ol type="A">
+        <li>Macha</li>
+        <li>Taro</li>
+        <li>Chocolate</li>
+      </ol>
+    </div>
+
+    <br />
+
+    <h3>Code (Lowercase Roman Numerals):</h3>
+    <div class="code-block">&lt;ol type="i"&gt; ... &lt;/ol&gt;</div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <ol type="i">
+        <li>Macha</li>
+        <li>Taro</li>
+        <li>Chocolate</li>
+      </ol>
+    </div>
+
+    <br />
+
+    <h3>Code (Uppercase Roman Numerals):</h3>
+    <div class="code-block">&lt;ol type="I"&gt; ... &lt;/ol&gt;</div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <ol type="I">
+        <li>Macha</li>
+        <li>Taro</li>
+        <li>Chocolate</li>
+      </ol>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 5: UNORDERED LISTS
+      <ul> creates a bulleted list. You can change the bullet style
+      using the 'type' attribute (circle, square, none).
+    -->
+    <!-- Unordered Lists -->
+    <h2 class="section-title">5. Unordered Lists</h2>
+    <p>Unordered lists usage with different <code>type</code> attributes.</p>
+
+    <h3>Code (Circle):</h3>
+    <div class="code-block">
+      &lt;h3&gt;Soda's&lt;/h3&gt; &lt;ul type="circle"&gt;
+      &lt;li&gt;Coke&lt;/li&gt; &lt;li&gt;Pepsi&lt;/li&gt;
+      &lt;li&gt;Sarsi&lt;/li&gt; &lt;/ul&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h3>Soda's</h3>
+      <ul type="circle">
+        <li>Coke</li>
+        <li>Pepsi</li>
+        <li>Sarsi</li>
+      </ul>
+    </div>
+
+    <br />
+
+    <h3>Code (Square):</h3>
+    <div class="code-block">&lt;ul type="square"&gt; ... &lt;/ul&gt;</div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <ul type="square">
+        <li>Coke</li>
+        <li>Pepsi</li>
+        <li>Sarsi</li>
+      </ul>
+    </div>
+
+    <br />
+
+    <h3>Code (None):</h3>
+    <div class="code-block">&lt;ul type="none"&gt; ... &lt;/ul&gt;</div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <ul type="none">
+        <li>Coke</li>
+        <li>Pepsi</li>
+        <li>Sarsi</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 6: DESCRIPTION LISTS
+      <dl> defines the list.
+      <dt> defines the term (name).
+      <dd> describes each term.
+    -->
+    <!-- Description Lists -->
+    <h2 class="section-title">6. Description Lists</h2>
+    <p>
+      A description list is a list of terms, with a description of each term.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;dl&gt; &lt;dt&gt;HTML&lt;/dt&gt; &lt;dd&gt;This is the backbone of the
+      website&lt;/dd&gt; &lt;dt&gt;CSS&lt;/dt&gt; &lt;dd&gt;This is the
+      appearance of the website&lt;/dd&gt; &lt;dt&gt;Javascript&lt;/dt&gt;
+      &lt;dd&gt;This is the behavior of the website&lt;/dd&gt; &lt;/dl&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <dl>
+        <dt>HTML</dt>
+        <dd>This is the backbone of the website</dd>
+        <dt>CSS</dt>
+        <dd>This is the appearance of the website</dd>
+        <dt>Javascript</dt>
+        <dd>This is the behavior of the website</dd>
+      </dl>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 7: SPECIAL CHARACTERS
+      Some characters are reserved in HTML (like < and >).
+      To display them, we use character entities (e.g., &lt; for <).
+    -->
+    <!-- Special Characters -->
+    <h2 class="section-title">7. Special Characters</h2>
+    <p>Using entities to display reserved characters.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;h2&gt;Is 71 &amp;gt; 13 &amp;amp; 22 &amp;lt; 5?&lt;/h2&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h2>Is 71 &gt; 13 &amp; 22 &lt; 5?</h2>
+    </div>
+
+    <hr />
+
+    <!-- 
+        SECTION 8: DIV TAGS
+        <div> is a container unit used to group other HTML elements.
+        It has no special meaning but is very common for layout/styling.
+    -->
+    <!-- Div Styles -->
+    <h2 class="section-title">8. Div Blocks with Inline Styles</h2>
+    <p>
+      Using <code>&lt;div&gt;</code> to create block elements with specific
+      dimensions and colors.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;div style="height: 50px; width: 50px; background-color:
+      red;"&gt;Box1&lt;/div&gt; &lt;div style="height: 100px; width: 100px;
+      background-color: blueviolet;"&gt;Box2&lt;/div&gt; &lt;div style="height:
+      200px; width: 200px; background-color: green;"&gt;Box3&lt;/div&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div style="height: 50px; width: 50px; background-color: red">Box1</div>
+      <div style="height: 100px; width: 100px; background-color: blueviolet">
+        Box2
+      </div>
+      <div style="height: 200px; width: 200px; background-color: green">
+        Box3
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 9: LINKS
+      The <a> tag defines a hyperlink. The 'href' attribute specifies
+      the URL of the page the link goes to.
+    -->
+    <!-- Links -->
+    <h2 class="section-title">9. Links</h2>
+    <p>
+      Using <code>&lt;a&gt;</code> tags for navigation (Links may not work in
+      this demo context).
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;a href="/"&gt;Block elements page&lt;/a&gt; | &lt;a
+      href="./inline_elements.html"&gt;Inline elements page&lt;/a&gt; | &lt;a
+      href="./form_elements.html"&gt;Form elements page&lt;/a&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <a href="/">Block elements page</a> |
+      <a href="./inline_elements.html">Inline elements page</a> |
+      <a href="./form_elements.html">Form elements page</a>
+    </div>
+
+    <hr />
+  </body>
+</html>
