@@ -1,0 +1,66 @@
+/* Fixes Box-sizing */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+  =============================================
+  Color Variables (Using CSS Custom Properties)
+  =============================================
+ */
+
+:root {
+  /* Color set */
+  --color-primary: #c536ad;
+  --color-secondary: #585858;
+  --footerBg: #292929;
+
+  /* Named colors */
+  --cBlack: #000;
+  --cWhite: #fff;
+  --cBlue: #267ae1;
+  --cGreen: #1edfaf;
+  --cYellow: #ffe51e;
+}
+
+/* 
+  ===============================
+  Global Reset & Base Typography
+  ================================= 
+*/
+
+html {
+  font-size: 16px; /* Base font size for rem units */
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* 
+  =============================================
+  =============== Page title ==================
+  =============================================
+*/
+
+h1 {
+  padding: 50px 0;
+  text-align: center;
+  background: #1edfaf;
+}
+
+
+/* 
+  =============================================
+  ==============  start here  =================
+  =============================================
+*/

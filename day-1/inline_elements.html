@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 1 - HTML Essentials</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page-title {
+      font-size: 50px;
+      font-weight: bold;
+      color: rgb(255, 172, 39);
+      margin: 0;
+    }
+
+    table, thead, th, td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Horizontal rule -->
+  <hr>
+  <p class="page-title">Inline Elements</p>
+  <hr>
+
+  <!-- Bold tag -->
+  <p>Hello I am <b>superman!</b></p>
+  
+  <!-- strong tag -->
+  <p>I am very <strong>strong</strong></p>
+
+  <!-- italic tag -->
+  <p>I have <i>lasser eyes</i></p>
+
+  <!-- emphasis tag -->
+  <p>I can <em>fly</em> in the sky</p>
+
+  <!-- marked tag -->
+  <p>I have a dog named <mark>Krypto</mark></p>
+
+  <!-- small tag -->
+  <p>He's a <small>strong</small> dog too</p>
+
+  <!-- deleted tag -->
+  <p>Lorem ipsum dolor <del>sit</del> amet.</p>
+
+  <!-- inserted tag -->
+  <p><ins>Lorem</ins> ipsum dolor sit amet.</p>
+
+  <!-- subscript tag -->
+  <h3>H<sub>2</sub>O</h3>
+
+  <!-- superscript tag -->
+  <h3>13<sup>th</sup> floor</h3>
+
+  <!-- Special characters -->
+  <p>Copyright &copy;</p>
+  <p>Registered<sub>&reg;</sub></p> 
+  
+  <!-- abreviation -->
+  <abbr title="Inventive Media">IM</abbr>
+
+  <!-- Line break -->
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>Possimus cupiditate eligendi totam expedita, nam hic earum eos officia ipsam quos sunt error, temporibus cum ipsa consequatur laudantium laboriosam enim ullam.</p>
+
+  <hr>
+  <hr>
+
+  <!-- Address tag -->
+  <h3>Address</h3>
+  <address> Inventive Media Philippines<br> 
+    Karmela Building 2590<br>
+    Makati City, Metro Manila<br>
+    Philippines<br>
+    <a href="mailto:inventivemedia.ph@gmail.com">inventivemedia.ph@gmail.com</a><br>
+    <a href="tel:+63288242145">+63 2 88242145</a>
+  </address>
+
+  <hr>
+  <hr>
+
+  <!-- block quote -->
+  <h3>Block quote</h3>
+  <blockquote cite="https://www.inventivemedia.com.ph/faculty/">
+    It is a fact that people need to study and have the right to quality education. Education is perhaps the best solution to end illiteracy, injustice and poverty.
+  </blockquote>
+
+  <hr>
+  <hr>
+
+  <!-- Cite tag -->
+  <h3>Citation</h3>
+  <p>One of the best novels I've read is <cite>To Kill a Mockingbird</cite> by Harper Lee.</p>
+
+  <hr>
+  <hr>
+
+  <!-- inline quote -->
+  <h3>Quote</h3>
+  <p>Steve Jobs once said, <q>Innovation distinguishes between a leader and a follower.</q></p>
+
+  <hr>
+  <hr>
+  
+  <h3>Media - Audio, Video, Image, Iframe, Embed</h3>
+  <!-- audio tag -->
+  <p>Click the play button for music</p>
+  <audio controls>
+    <source src="./audio/music.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- video tag -->
+  <p>Click the play button for video</p>
+  <video height="220" width="340" controls >
+    <source src="./video/videoplayback.mp4" type="video/mp4">
+    test
+  </video>
+
+  <!-- image tag -->
+  <p>This is image</p>
+  <img src="./img/image.jpg" alt="programming is fun" width="500">
+
+  <!-- iframe tag -->
+  <p>This is soundcloud</p>
+  <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1997260627&color=%23ca4b85&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/josh-mcloughlin-237415092" title="JMAK (IRL)" target="_blank" style="color: #cccccc; text-decoration: none;">JMAK (IRL)</a> · <a href="https://soundcloud.com/josh-mcloughlin-237415092/jmak-feel-it-ft-poppy-wright" title="Feel It (ft. Poppy Wright)" target="_blank" style="color: #cccccc; text-decoration: none;">Feel It (ft. Poppy Wright)</a></div>
+
+  <!-- Embed a youtube video -->
+  <p>This is a youtube video</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <!-- pdf viewer -->
+  <p>Other embeds</p>
+  <iframe width="250" height="250" src="./misc/html-slides.pdf" frameborder="0"></iframe>
+
+  <!-- Google Maps -->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3861.665797248736!2d121.01478521442917!3d14.561094311994104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDMzJzQxLjciTiAxMjHCsDAwJzU0LjUiRQ!5e0!3m2!1sen!2sph!4v1741332964480!5m2!1sen!2sph" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <hr>
+  <hr>
+
+  <!-- HTML TABLE -->
+  <table>
+    <thead>
+      <tr style="background: cadetblue;">
+        <th colspan="4">Marvel Movie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="3">Avengers Cast</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>ID</th>
+      </tr>
+      <tr>
+        <td>Robert</td>
+        <td>Downey</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Chris</td>
+        <td>Evans</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Batch 2012</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <hr>
+  <hr>
+
+
+  <!-- Navigate to block Elements Page -->
+  <a href="/">Block elements page</a>
+  |
+  <!-- Navigate to Inline Elements Page -->
+  <a href="./inline_elements.html">Inline elements page</a>
+  |
+  <!-- Navigate to Form Elements Page -->
+  <a href="./form_elements.html">Form elements page</a>
+
+  <hr>
+  <hr>
+</body>
+</html>

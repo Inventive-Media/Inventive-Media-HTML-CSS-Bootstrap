@@ -1,0 +1,94 @@
+/* element selector */
+body {
+  font-family: sans-serif;
+}
+
+/* p {
+  color: red;
+}
+
+h3 {
+  color: blue;
+}
+
+strong {
+  color: cadetblue;
+} */
+
+/* class selector */
+/* .class-selector {
+  color: blueviolet;
+  font-weight: bold;
+} */
+
+/* id selector */
+/* #id-selector {
+  color: brown;
+} */
+
+/* group selector */
+/* .text, #greet, p {
+  color: cadetblue;
+  font-weight: bold;
+  font-style: italic;
+} */
+
+/* descendant selector */
+/* .box-greet p {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+} */
+
+/* direct child selector */
+/* ul > li {
+  color: red;
+} */
+
+/* attribute selector */
+/* input[required] {
+  border: 2px solid red;
+  height: 35px;
+} */
+
+/* pseudo selector */
+/* a:link {
+  color: red;
+}
+
+a:hover {
+  color: green;
+} */
+
+/* a:active {
+  background: yellow;
+} */
+
+/* condition pseudo selector */
+ul li:first-child {
+  color: red;
+}
+
+ul li:last-child {
+  color: orange;
+}
+
+ul li:nth-child(2) {
+  color: yellow;
+}
+
+/* pseudo element */
+#pseudo-text::before {
+  content: "";
+  height: 10px;
+  width: 10px;
+  background: red;
+  display: block;
+}
+#pseudo-text::after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  background: blue;
+  display: block;
+}

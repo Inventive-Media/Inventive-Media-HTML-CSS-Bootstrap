@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 1 - HTML Essentials</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page-title {
+      font-size: 50px;
+      font-weight: bold;
+      color: rgb(255, 172, 39);
+      margin: 0;
+    }
+
+    /* form {
+      border: 1px solid red;
+    } */
+  </style>
+</head>
+<body>
+  <!-- Horizontal rule -->
+  <hr>
+  <p class="page-title">Form Elements</p>
+  <hr>
+
+  <form>
+    <p>Personal Information</p>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="email">Email:</label>
+    <input type="email" placeholder="juandelacruz@gmail.com"><br>
+    <label for="password">Password:</label>
+    <input type="password" placeholder="password">
+    
+    <hr>
+    <!-- <hr> -->
+
+    <!-- dropdown -->
+    <label for="careers">Where did you find us:</label>
+    <select name="careers" id="careers">
+      <option value="indeed">Indeed</option>
+      <option value="jobstreet">Jobstreet</option>
+      <option value="facebook">Facebook</option>
+      <option value="youtube">Youtube</option>
+    </select>
+
+    <hr>
+
+    <!-- radio button -->
+    <p>Select your skills</p>
+    <input type="radio" id="html" name="fav_language" value="HTML">
+    <label for="html">HTML</label><br>
+    <input type="radio" id="css" name="fav_language" value="CSS">
+    <label for="css">CSS</label><br>
+    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+    <label for="javascript">JavaScript</label> <br>
+
+    <hr>
+
+    <!-- textarea -->
+    <label for="review">Please write your review here:</label><br>
+    <textarea name="review" id="review" rows="5" cols="50"></textarea>
+
+    <!-- checkboxes -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Ullam, nesciunt.</p>
+    <input type="checkbox" id="permission" name="permission" value="agree">
+    <label for="permission">I agree</label>
+    <input type="checkbox" id="permission" name="permission" value="disagree">
+    <label for="permission">I disagree</label><br>
+
+    <!-- Submit button -->
+    <br><input type="submit" value="Submit">
+  </form>
+
+  <hr>
+  <hr>
+
+  <!-- Navigate to block Elements Page -->
+  <a href="/">Block elements page</a>
+  |
+  <!-- Navigate to Inline Elements Page -->
+  <a href="./inline_elements.html">Inline elements page</a>
+  |
+  <!-- Navigate to Form Elements Page -->
+  <a href="./form_elements.html">Form elements page</a>
+
+  <hr>
+  <hr>
+</body>
+</html>

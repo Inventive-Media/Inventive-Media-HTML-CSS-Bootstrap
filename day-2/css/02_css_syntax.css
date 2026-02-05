@@ -1,0 +1,8 @@
+/* single line style */
+p { color: blue ;}
+
+/* block level style */
+div {
+  color: blue;
+  font-size: 20px;
+}
