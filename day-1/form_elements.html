@@ -52,15 +52,16 @@
 
     <hr />
 
-    <form>
-      <!-- 
-        SECTION 1: TEXT INPUTS
-        <input type="text"> is used for single-line text fields.
-        <label> defines a label for the input element.
-        The 'for' attribute of the label should match the 'id' of the input.
-      -->
-      <!-- Personal Information -->
-      <h2 class="section-title">1. Personal Information (Text Inputs)</h2>
+    <!-- 
+      SECTION 1: TEXT INPUT
+      <label> defines a label for <input> elements.
+      <input type="text"> defines a one-line text input field.
+      <input type="password"> defines a password field (characters are masked).
+      <input type="email"> defines a field for an e-mail address.
+    -->
+    <!-- Text Input -->
+    <h2 class="section-title">1. Text Input</h2>
+    <form action="/action_page.php">
       <p>Standard text inputs for names, emails, and passwords.</p>
 
       <h3>Code:</h3>
@@ -90,12 +91,12 @@
       <hr />
 
       <!-- 
-        SECTION 2: DROPDOWN (SELECT)
-        <select> creates a drop-down list.
-        <option> tags define the available options in the list.
+        SECTION 2: SELECT DROPDOWN
+        <select> defines a drop-down list.
+        <option> defines an option that can be selected.
       -->
-      <!-- Dropdown -->
-      <h2 class="section-title">2. Dropdown (Select)</h2>
+      <!-- Radio Button -->
+      <h2 class="section-title">2. Select Dropdown</h2>
       <p>Allows users to select one option from a list.</p>
 
       <h3>Code:</h3>
@@ -123,13 +124,15 @@
 
       <!-- 
         SECTION 3: RADIO BUTTONS
-        <input type="radio"> allows users to select ONLY ONE option from a set.
-        Radio buttons sharing the same 'name' attribute belong to the same group.
+        <input type="radio"> defines a radio button.
+        Radio buttons let a user select ONLY ONE of a limited number of choices.
+        Group them by using the same 'name'.
       -->
-      <!-- Radio Buttons -->
+      <!-- Checkbox -->
       <h2 class="section-title">3. Radio Buttons</h2>
       <p>
-        Radio buttons let a user select only one of a limited number of choices.
+        Select only one option from a group (sharing the same
+        <code>name</code>).
       </p>
 
       <h3>Code:</h3>
@@ -164,9 +167,9 @@
       <!-- 
         SECTION 4: TEXTAREA
         <textarea> defines a multi-line text input control.
-        'rows' and 'cols' attributes specify the visible size.
+        The 'rows' and 'cols' attributes specify the visible size.
       -->
-      <!-- Textarea -->
+      <!-- Text Area -->
       <h2 class="section-title">4. Textarea</h2>
       <p>For multi-line text input, like reviews or comments.</p>
 
@@ -187,19 +190,20 @@
 
       <!-- 
         SECTION 5: CHECKBOXES
-        <input type="checkbox"> allows users to select ZERO or MORE options.
+        <input type="checkbox"> defines a checkbox.
+        Checkboxes let a user select ZERO or MORE options of a limited number of choices.
       -->
-      <!-- Checkboxes -->
+      <!-- Checkbox -->
       <h2 class="section-title">5. Checkboxes</h2>
       <p>
-        Checkboxes let a user select one or more options of a limited number of
-        choices.
+        Select multiple options (sharing the same <code>name</code> is optional
+        but good practice).
       </p>
 
       <h3>Code:</h3>
       <div class="code-block">
-        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing
-        elit.&lt;br&gt; Ullam, nesciunt.&lt;/p&gt; &lt;input type="checkbox"
+        &lt;p&gt; Lorem ipsum dolor sit amet consectetur adipisicing
+        elit.&lt;br&gt; Ullam, nesciunt. &lt;/p&gt; &lt;input type="checkbox"
         id="agree" name="permission" value="agree"&gt; &lt;label
         for="agree"&gt;I agree&lt;/label&gt; &lt;input type="checkbox"
         id="disagree" name="permission" value="disagree"&gt; &lt;label
@@ -209,7 +213,7 @@
       <h3>Output:</h3>
       <div class="example-output">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
           Ullam, nesciunt.
         </p>
         <input type="checkbox" id="agree" name="permission" value="agree" />
@@ -227,7 +231,7 @@
 
       <!-- 
         SECTION 6: SUBMIT BUTTON
-        <input type="submit"> defines a button for submitting the form data.
+        <input type="submit"> defines a button for submitting the form data to a form-handler.
       -->
       <!-- Submit Button -->
       <h2 class="section-title">6. Submit Button</h2>
