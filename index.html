@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventive Media - HTML & CSS Training</title>
+    <style>
+      :root {
+        --primary-bg: #1a1a2e;
+        --card-bg: #16213e;
+        --text-main: #ffffff;
+        --text-muted: #a0a0a0;
+        --day1-color: #e44d26; /* HTML Orange */
+        --day2-color: #264de4; /* CSS Blue */
+        --day3-color: #7952b3; /* Bootstrap Purple */
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--primary-bg);
+        color: var(--text-main);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: fadeInDown 0.8s ease-out;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+      }
+
+      p.subtitle {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border-radius: 16px;
+        padding: 2rem;
+        text-decoration: none;
+        color: var(--text-main);
+        transition:
+          transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .card-day1::before {
+        background-color: var(--day1-color);
+      }
+      .card-day2::before {
+        background-color: var(--day2-color);
+      }
+      .card-day3::before {
+        background-color: var(--day3-color);
+      }
+
+      .card-day1:hover {
+        border-top-color: var(--day1-color);
+        box-shadow: 0 15px 30px rgba(228, 77, 38, 0.15);
+      }
+      .card-day2:hover {
+        border-top-color: var(--day2-color);
+        box-shadow: 0 15px 30px rgba(38, 77, 228, 0.15);
+      }
+      .card-day3:hover {
+        border-top-color: var(--day3-color);
+        box-shadow: 0 15px 30px rgba(121, 82, 179, 0.15);
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+      }
+
+      .tag.day1 {
+        background-color: rgba(228, 77, 38, 0.2);
+        color: var(--day1-color);
+      }
+      .tag.day2 {
+        background-color: rgba(38, 77, 228, 0.2);
+        color: var(--day2-color);
+      }
+      .tag.day3 {
+        background-color: rgba(121, 82, 179, 0.2);
+        color: var(--day3-color);
+      }
+
+      .card h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        line-height: 1.5;
+        font-size: 0.95rem;
+        flex-grow: 1;
+      }
+
+      .arrow {
+        margin-top: 1.5rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+      }
+
+      .card:hover .arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Inventive Media</h1>
+      <p class="subtitle">HTML, CSS & Bootstrap 5 Training Materials</p>
+    </header>
+
+    <div class="container">
+      <!-- Day 1 Card -->
+      <a href="./day-1/index.html" class="card card-day1">
+        <span class="tag day1">Day 1</span>
+        <h2>HTML Essentials</h2>
+        <p>
+          Master the building blocks of the web. Learn text, lists, and forms to
+          create structured content.
+        </p>
+        <div class="arrow" style="color: var(--day1-color)">
+          Start Learning &rarr;
+        </div>
+      </a>
+
+      <!-- Day 2 Card -->
+      <a href="./day-2/index.html" class="card card-day2">
+        <span class="tag day2">Day 2</span>
+        <h2>CSS Styling</h2>
+        <p>
+          Bring your pages to life. Explore colors, layouts, flexbox, and grid
+          systems for modern web design.
+        </p>
+        <div class="arrow" style="color: var(--day2-color)">
+          Start Learning &rarr;
+        </div>
+      </a>
+
+      <!-- Day 3 Card -->
+      <a href="./day-3/index.html" class="card card-day3">
+        <span class="tag day3">Day 3</span>
+        <h2>Bootstrap 5</h2>
+        <p>
+          Rapid development with the world's most popular front-end toolkit.
+          Build responsive sites quickly.
+        </p>
+        <div class="arrow" style="color: var(--day3-color)">
+          Start Learning &rarr;
+        </div>
+      </a>
+    </div>
+  </body>
+</html>
