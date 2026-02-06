@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 1 - Semantic Elements</title>
+    <!-- Internal CSS: Styles defined here apply to this page only -->
+    <style>
+      /* Styles for the body of the page */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+        margin-top: 30px;
+      }
+      .code-block {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+      }
+      .example-output {
+        border: 1px dashed #aaa;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      hr {
+        margin: 40px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+      }
+      /* Styles for the semantic layout example */
+      .layout-container {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "nav nav"
+          "aside main"
+          "footer footer";
+        grid-template-columns: 1fr 3fr;
+        gap: 10px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+      }
+      .layout-header {
+        grid-area: header;
+        background-color: #ff6b6b;
+        padding: 20px;
+      }
+      .layout-nav {
+        grid-area: nav;
+        background-color: #4ecdc4;
+        padding: 10px;
+      }
+      .layout-aside {
+        grid-area: aside;
+        background-color: #ffe66d;
+        color: #333;
+        padding: 20px;
+      }
+      .layout-main {
+        grid-area: main;
+        background-color: #c7f464;
+        color: #333;
+        padding: 20px;
+      }
+      .layout-footer {
+        grid-area: footer;
+        background-color: #9b59b6;
+        padding: 20px;
+      }
+
+      .layout-article {
+        background-color: #45b7d1;
+        padding: 15px;
+        margin: 10px 0;
+        color: white;
+      }
+      .layout-section {
+        background-color: #556270;
+        padding: 10px;
+        margin-top: 10px;
+        color: white;
+      }
+      .layout-figure {
+        background-color: #f7f9fb;
+        color: #333;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+      }
+
+      /* Styles for the non-semantic layout (dull colors) */
+      .non-semantic .layout-header {
+        background-color: #999;
+      }
+      .non-semantic .layout-nav {
+        background-color: #bbb;
+      }
+      .non-semantic .layout-aside {
+        background-color: #ddd;
+      }
+      .non-semantic .layout-main {
+        background-color: #eee;
+      }
+      .non-semantic .layout-article {
+        background-color: #888;
+      }
+      .non-semantic .layout-section {
+        background-color: #666;
+      }
+      .non-semantic .layout-figure {
+        background-color: #ccc;
+      }
+      .non-semantic .layout-footer {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 1 - Semantic Elements</h1>
+    <p>
+      Semantic elements clearly describe their meaning to both the browser and
+      the developer.
+    </p>
+
+    <hr />
+
+    <!-- 
+      SECTION 1: NON-SEMANTIC VS SEMANTIC
+      Non-semantic elements (like <div> and <span>) tell nothing about their content.
+      Semantic elements (like <header>, <article>, <footer>) clearly define their content.
+    -->
+    <h2 class="section-title">1. Non-Semantic vs. Semantic</h2>
+    <p>
+      Before HTML5, developers used <code>&lt;div&gt;</code> tags even for
+      structural elements. Now, we use specific tags that describe the
+      functionality.
+    </p>
+
+    <h3>Code (Non-Semantic - The Old Way):</h3>
+    <!-- 
+      NOTE: We use HTML entities &lt; and &gt; here to display the tags as text.
+      If we used real < and > signs, the browser would try to render them as elements!
+    -->
+    <div class="code-block">
+      &lt;div id="header"&gt;Header&lt;/div&gt; &lt;div
+      id="nav"&gt;Navigation&lt;/div&gt; &lt;div id="main"&gt; &lt;div
+      class="article"&gt;Article Content&lt;/div&gt; &lt;/div&gt; &lt;div
+      id="footer"&gt;Footer&lt;/div&gt;
+    </div>
+
+    <br />
+
+    <h3>Code (Semantic - The New Way):</h3>
+    <div class="code-block">
+      &lt;header&gt;Header&lt;/header&gt; &lt;nav&gt;Navigation&lt;/nav&gt;
+      &lt;main&gt; &lt;article&gt;Article Content&lt;/article&gt; &lt;/main&gt;
+      &lt;footer&gt;Footer&lt;/footer&gt;
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 2: SEMANTIC LAYOUT EXAMPLE
+      Combining all major semantic elements into a typical website layout.
+      
+      <header> - Introduction/Logo
+      <nav> - Links
+      <main> - Dominant content
+      <aside> - Sidebar/related content
+      <article> - Independent, self-contained content
+      <section> - Thematic grouping of content
+      <figure> - Self-contained content like illustrations/diagrams
+      <footer> - Copyright/Credit
+    -->
+    <h2 class="section-title">2. Full Semantic Layout</h2>
+    <p>A visual representation of how these elements structure a page.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;header&gt; &lt;h1&gt;Header&lt;/h1&gt; &lt;/header&gt; &lt;nav&gt;
+      Navigation Links &lt;/nav&gt; &lt;div class="container"&gt; &lt;aside&gt;
+      &lt;h3&gt;Aside&lt;/h3&gt; &lt;p&gt;Sidebar content, ads, etc.&lt;/p&gt;
+      &lt;/aside&gt; &lt;main&gt; &lt;h2&gt;Main Content&lt;/h2&gt;
+      &lt;article&gt; &lt;h3&gt;Article&lt;/h3&gt; &lt;p&gt;Blog post or news
+      story.&lt;/p&gt; &lt;figure&gt; &lt;p&gt;[Image/Diagram]&lt;/p&gt;
+      &lt;figcaption&gt;Figure Caption&lt;/figcaption&gt; &lt;/figure&gt;
+      &lt;section&gt; &lt;h4&gt;Section&lt;/h4&gt; &lt;p&gt;Related group of
+      content.&lt;/p&gt; &lt;/section&gt; &lt;/article&gt; &lt;/main&gt;
+      &lt;/div&gt; &lt;footer&gt;Footer Content&lt;/footer&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="layout-container">
+        <header class="layout-header">&lt;header&gt;</header>
+
+        <nav class="layout-nav">&lt;nav&gt;</nav>
+
+        <aside class="layout-aside">&lt;aside&gt;</aside>
+
+        <main class="layout-main">
+          &lt;main&gt;
+
+          <article class="layout-article">
+            &lt;article&gt;
+
+            <figure class="layout-figure">&lt;figure&gt;</figure>
+
+            <section class="layout-section">&lt;section&gt;</section>
+          </article>
+        </main>
+
+        <footer class="layout-footer">&lt;footer&gt;</footer>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 3: NON-SEMANTIC LAYOUT (VISUAL EQUIVALENT)
+      Achieving the exact same visual result using only <div> tags.
+      This visualizes that while the output looks identical, the code loses meaning.
+    -->
+    <h2 class="section-title">3. Non-Semantic Layout (Visual Equivalent)</h2>
+    <p>
+      The exact same layout built using only <code>&lt;div&gt;</code> tags.
+      Notice the output is identical, but the code lacks meaning.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;div class="header"&gt; &lt;h1&gt;Header&lt;/h1&gt; &lt;/div&gt;
+      &lt;div class="nav"&gt; Navigation Links &lt;/div&gt; &lt;div
+      class="container"&gt; &lt;div class="aside"&gt; &lt;h3&gt;Aside&lt;/h3&gt;
+      &lt;p&gt;Sidebar content, ads, etc.&lt;/p&gt; &lt;/div&gt; &lt;div
+      class="main"&gt; &lt;h2&gt;Main Content&lt;/h2&gt; &lt;div
+      class="article"&gt; &lt;h3&gt;Article&lt;/h3&gt; &lt;p&gt;Blog post or
+      news story.&lt;/p&gt; &lt;div class="figure"&gt;
+      &lt;p&gt;[Image/Diagram]&lt;/p&gt; &lt;div class="figcaption"&gt;Figure
+      Caption&lt;/div&gt; &lt;/div&gt; &lt;div class="section"&gt;
+      &lt;h4&gt;Section&lt;/h4&gt; &lt;p&gt;Related group of content.&lt;/p&gt;
+      &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div
+      class="footer"&gt;Footer Content&lt;/div&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="layout-container non-semantic">
+        <div class="layout-header">&lt;div class="header"&gt;</div>
+
+        <div class="layout-nav">&lt;div class="nav"&gt;</div>
+
+        <div class="layout-aside">&lt;div class="aside"&gt;</div>
+
+        <div class="layout-main">
+          &lt;div class="main"&gt;
+
+          <div class="layout-article">
+            &lt;div class="article"&gt;
+
+            <div class="layout-figure">&lt;div class="figure"&gt;</div>
+
+            <div class="layout-section">&lt;div class="section"&gt;</div>
+          </div>
+        </div>
+
+        <div class="layout-footer">&lt;div class="footer"&gt;</div>
+      </div>
+    </div>
+
+    <hr />
+
+    <h2 class="section-title">See more</h2>
+    <ul>
+      <li><a href="./block_elements.html">Block Elements</a></li>
+      <li><a href="./inline_elements.html">Inline Elements</a></li>
+      <li><a href="./form_elements.html">Form Elements</a></li>
+    </ul>
+  </body>
+</html>
