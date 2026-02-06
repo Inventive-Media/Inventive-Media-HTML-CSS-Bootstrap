@@ -1,193 +1,501 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 1 - HTML Essentials</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 1 - Inline Elements</title>
+    <!-- Internal CSS: Styles defined here apply to this page only -->
+    <style>
+      /* Styles for the body of the page */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+        margin-top: 30px;
+      }
+      .code-block {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: monospace;
+        overflow-x: auto;
+      }
+      .example-output {
+        border: 1px dashed #aaa;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      hr {
+        margin: 40px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+      }
+      /* Specific styles for the table example */
+      table,
+      thead,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 1 - Inline Elements</h1>
+    <p>
+      This guide demonstrates common Inline elements, Media, and Tables with
+      their code and actual output.
+    </p>
 
-    .page-title {
-      font-size: 50px;
-      font-weight: bold;
-      color: rgb(255, 172, 39);
-      margin: 0;
-    }
+    <hr />
 
-    table, thead, th, td {
-      border: 1px solid black;
-    }
-  </style>
-</head>
-<body>
-  <!-- Horizontal rule -->
-  <hr>
-  <p class="page-title">Inline Elements</p>
-  <hr>
+    <!-- 
+      SECTION 1: TEXT FORMATTING
+      These tags change the appearance or meaning of text inline.
+      <b> and <strong> make text bold.
+      <i> and <em> make text italic.
+      <mark> highlights text.
+      <small> makes text smaller.
+      <del> shows deleted text (strikethrough).
+      <ins> shows inserted text (underline).
+    -->
+    <!-- Text Formatting -->
+    <h2 class="section-title">1. Text Formatting</h2>
+    <p>Various tags for formatting text within a paragraph.</p>
 
-  <!-- Bold tag -->
-  <p>Hello I am <b>superman!</b></p>
-  
-  <!-- strong tag -->
-  <p>I am very <strong>strong</strong></p>
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;p&gt;Hello I am &lt;b&gt;superman!&lt;/b&gt;&lt;/p&gt; &lt;p&gt;I am
+      very &lt;strong&gt;strong&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;I have
+      &lt;i&gt;lasser eyes&lt;/i&gt;&lt;/p&gt; &lt;p&gt;I can
+      &lt;em&gt;fly&lt;/em&gt; in the sky&lt;/p&gt; &lt;p&gt;I have a dog named
+      &lt;mark&gt;Krypto&lt;/mark&gt;&lt;/p&gt; &lt;p&gt;He's a
+      &lt;small&gt;strong&lt;/small&gt; dog too&lt;/p&gt; &lt;p&gt;Lorem ipsum
+      dolor &lt;del&gt;sit&lt;/del&gt; amet.&lt;/p&gt;
+      &lt;p&gt;&lt;ins&gt;Lorem&lt;/ins&gt; ipsum dolor sit amet.&lt;/p&gt;
+    </div>
 
-  <!-- italic tag -->
-  <p>I have <i>lasser eyes</i></p>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p>Hello I am <b>superman!</b></p>
+      <p>I am very <strong>strong</strong></p>
+      <p>I have <i>lasser eyes</i></p>
+      <p>I can <em>fly</em> in the sky</p>
+      <p>I have a dog named <mark>Krypto</mark></p>
+      <p>He's a <small>strong</small> dog too</p>
+      <p>Lorem ipsum dolor <del>sit</del> amet.</p>
+      <p><ins>Lorem</ins> ipsum dolor sit amet.</p>
+    </div>
 
-  <!-- emphasis tag -->
-  <p>I can <em>fly</em> in the sky</p>
+    <hr />
 
-  <!-- marked tag -->
-  <p>I have a dog named <mark>Krypto</mark></p>
+    <!-- 
+      SECTION 2: SUBSCRIPT AND SUPERSCRIPT
+      <sub> displays text as subscript (lower).
+      <sup> displays text as superscript (higher).
+    -->
+    <!-- Subscript & Superscript -->
+    <h2 class="section-title">2. Subscript & Superscript</h2>
+    <p>Useful for chemical formulas or ordinal numbers.</p>
 
-  <!-- small tag -->
-  <p>He's a <small>strong</small> dog too</p>
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;h3&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/h3&gt;
+      &lt;h3&gt;13&lt;sup&gt;th&lt;/sup&gt; floor&lt;/h3&gt;
+    </div>
 
-  <!-- deleted tag -->
-  <p>Lorem ipsum dolor <del>sit</del> amet.</p>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h3>H<sub>2</sub>O</h3>
+      <h3>13<sup>th</sup> floor</h3>
+    </div>
 
-  <!-- inserted tag -->
-  <p><ins>Lorem</ins> ipsum dolor sit amet.</p>
+    <hr />
 
-  <!-- subscript tag -->
-  <h3>H<sub>2</sub>O</h3>
+    <!-- 
+      SECTION 3: SPECIAL CHARACTERS
+      Entities for symbols like copyright (©) and registered (®).
+    -->
+    <!-- Special Characters -->
+    <h2 class="section-title">3. Special Characters</h2>
+    <p>Using HTML entities for symbols.</p>
 
-  <!-- superscript tag -->
-  <h3>13<sup>th</sup> floor</h3>
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;p&gt;Copyright &amp;copy;&lt;/p&gt;
+      &lt;p&gt;Registered&lt;sub&gt;&amp;reg;&lt;/sub&gt;&lt;/p&gt;
+    </div>
 
-  <!-- Special characters -->
-  <p>Copyright &copy;</p>
-  <p>Registered<sub>&reg;</sub></p> 
-  
-  <!-- abreviation -->
-  <abbr title="Inventive Media">IM</abbr>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p>Copyright &copy;</p>
+      <p>Registered<sub>&reg;</sub></p>
+    </div>
 
-  <!-- Line break -->
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>Possimus cupiditate eligendi totam expedita, nam hic earum eos officia ipsam quos sunt error, temporibus cum ipsa consequatur laudantium laboriosam enim ullam.</p>
+    <hr />
 
-  <hr>
-  <hr>
+    <!-- 
+      SECTION 4: ABBREVIATIONS
+      <abbr> marks an abbreviation or acronym.
+      The 'title' attribute provides the full description (shown on hover).
+    -->
+    <!-- Abbreviation -->
+    <h2 class="section-title">4. Abbreviation</h2>
+    <p>Hover over the text to see the full meaning.</p>
 
-  <!-- Address tag -->
-  <h3>Address</h3>
-  <address> Inventive Media Philippines<br> 
-    Karmela Building 2590<br>
-    Makati City, Metro Manila<br>
-    Philippines<br>
-    <a href="mailto:inventivemedia.ph@gmail.com">inventivemedia.ph@gmail.com</a><br>
-    <a href="tel:+63288242145">+63 2 88242145</a>
-  </address>
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;abbr title="Inventive Media"&gt;IM&lt;/abbr&gt;
+    </div>
 
-  <hr>
-  <hr>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <abbr title="Inventive Media">IM</abbr>
+    </div>
 
-  <!-- block quote -->
-  <h3>Block quote</h3>
-  <blockquote cite="https://www.inventivemedia.com.ph/faculty/">
-    It is a fact that people need to study and have the right to quality education. Education is perhaps the best solution to end illiteracy, injustice and poverty.
-  </blockquote>
+    <hr />
 
-  <hr>
-  <hr>
+    <!-- 
+      SECTION 5: LINE BREAK
+      <br> inserts a single line break. It is an empty tag (no closing tag).
+    -->
+    <!-- Line Break -->
+    <h2 class="section-title">5. Line Break</h2>
+    <p>Using &lt;br&gt; to force a new line.</p>
 
-  <!-- Cite tag -->
-  <h3>Citation</h3>
-  <p>One of the best novels I've read is <cite>To Kill a Mockingbird</cite> by Harper Lee.</p>
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;p&gt;Lorem, ipsum dolor sit amet... &lt;br&gt;Possimus
+      cupiditate...&lt;/p&gt;
+    </div>
 
-  <hr>
-  <hr>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br />Possimus
+        cupiditate eligendi totam expedita, nam hic earum eos officia ipsam quos
+        sunt error, temporibus cum ipsa consequatur laudantium laboriosam enim
+        ullam.
+      </p>
+    </div>
 
-  <!-- inline quote -->
-  <h3>Quote</h3>
-  <p>Steve Jobs once said, <q>Innovation distinguishes between a leader and a follower.</q></p>
+    <hr />
 
-  <hr>
-  <hr>
-  
-  <h3>Media - Audio, Video, Image, Iframe, Embed</h3>
-  <!-- audio tag -->
-  <p>Click the play button for music</p>
-  <audio controls>
-    <source src="./audio/music.mp3" type="audio/mp3">
-  </audio>
+    <!-- 
+      SECTION 6: ADDRESS
+      <address> defines contact information for the author/owner.
+      The text is usually rendered in italic.
+    -->
+    <!-- Address -->
+    <h2 class="section-title">6. Address</h2>
+    <p>Defining contact information.</p>
 
-  <!-- video tag -->
-  <p>Click the play button for video</p>
-  <video height="220" width="340" controls >
-    <source src="./video/videoplayback.mp4" type="video/mp4">
-    test
-  </video>
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;address&gt; Inventive Media Philippines&lt;br&gt; Karmela Building
+      2590&lt;br&gt; Makati City, Metro Manila&lt;br&gt; Philippines&lt;br&gt;
+      &lt;a
+      href="mailto:inventivemedia.ph@gmail.com"&gt;inventivemedia.ph@gmail.com&lt;/a&gt;&lt;br&gt;
+      &lt;a href="tel:+63288242145"&gt;+63 2 88242145&lt;/a&gt; &lt;/address&gt;
+    </div>
 
-  <!-- image tag -->
-  <p>This is image</p>
-  <img src="./img/image.jpg" alt="programming is fun" width="500">
+    <h3>Output:</h3>
+    <div class="example-output">
+      <address>
+        Inventive Media Philippines<br />
+        Karmela Building 2590<br />
+        Makati City, Metro Manila<br />
+        Philippines<br />
+        <a href="mailto:inventivemedia.ph@gmail.com"
+          >inventivemedia.ph@gmail.com</a
+        ><br />
+        <a href="tel:+63288242145">+63 2 88242145</a>
+      </address>
+    </div>
 
-  <!-- iframe tag -->
-  <p>This is soundcloud</p>
-  <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1997260627&color=%23ca4b85&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/josh-mcloughlin-237415092" title="JMAK (IRL)" target="_blank" style="color: #cccccc; text-decoration: none;">JMAK (IRL)</a> · <a href="https://soundcloud.com/josh-mcloughlin-237415092/jmak-feel-it-ft-poppy-wright" title="Feel It (ft. Poppy Wright)" target="_blank" style="color: #cccccc; text-decoration: none;">Feel It (ft. Poppy Wright)</a></div>
+    <hr />
 
-  <!-- Embed a youtube video -->
-  <p>This is a youtube video</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- 
+      SECTION 7: QUOTATIONS
+      <blockquote> defines a section that is quoted from another source.
+      <cite> defines the title of a creative work.
+      <q> defines a short inline quotation.
+    -->
+    <!-- Quotations -->
+    <h2 class="section-title">7. Quotations</h2>
+    <p>Blockquotes, citations, and inline quotes.</p>
 
-  <!-- pdf viewer -->
-  <p>Other embeds</p>
-  <iframe width="250" height="250" src="./misc/html-slides.pdf" frameborder="0"></iframe>
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;h3&gt;Block quote&lt;/h3&gt; &lt;blockquote
+      cite="https://www.inventivemedia.com.ph/faculty/"&gt; It is a fact that
+      people... &lt;/blockquote&gt; &lt;h3&gt;Citation&lt;/h3&gt; &lt;p&gt;One
+      of the best novels I've read is &lt;cite&gt;To Kill a
+      Mockingbird&lt;/cite&gt; by Harper Lee.&lt;/p&gt;
+      &lt;h3&gt;Quote&lt;/h3&gt; &lt;p&gt;Steve Jobs once said,
+      &lt;q&gt;Innovation distinguishes between a leader and a
+      follower.&lt;/q&gt;&lt;/p&gt;
+    </div>
 
-  <!-- Google Maps -->
-  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3861.665797248736!2d121.01478521442917!3d14.561094311994104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDMzJzQxLjciTiAxMjHCsDAwJzU0LjUiRQ!5e0!3m2!1sen!2sph!4v1741332964480!5m2!1sen!2sph" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h3>Block quote</h3>
+      <blockquote cite="https://www.inventivemedia.com.ph/faculty/">
+        It is a fact that people need to study and have the right to quality
+        education. Education is perhaps the best solution to end illiteracy,
+        injustice and poverty.
+      </blockquote>
 
-  <hr>
-  <hr>
+      <h3>Citation</h3>
+      <p>
+        One of the best novels I've read is
+        <cite>To Kill a Mockingbird</cite> by Harper Lee.
+      </p>
 
-  <!-- HTML TABLE -->
-  <table>
-    <thead>
-      <tr style="background: cadetblue;">
-        <th colspan="4">Marvel Movie</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th rowspan="3">Avengers Cast</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>ID</th>
-      </tr>
-      <tr>
-        <td>Robert</td>
-        <td>Downey</td>
-        <td>1</td>
-      </tr>
-      <tr>
-        <td>Chris</td>
-        <td>Evans</td>
-        <td>2</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="4">Batch 2012</td>
-      </tr>
-    </tfoot>
-  </table>
+      <h3>Quote</h3>
+      <p>
+        Steve Jobs once said,
+        <q>Innovation distinguishes between a leader and a follower.</q>
+      </p>
+    </div>
 
-  <hr>
-  <hr>
+    <hr />
 
+    <!-- 
+      SECTION 8: MEDIA ELEMENTS
+      <audio> is used to embed sound content.
+      <video> is used to embed video content.
+      <img> embeds an image.
+      <iframe> embeds another document within the current HTML document (maps, videos, etc).
+    -->
+    <!-- Media -->
+    <h2 class="section-title">8. Media - Audio, Video, Image, Iframe</h2>
+    <p>Embedding multimedia content.</p>
 
-  <!-- Navigate to block Elements Page -->
-  <a href="/">Block elements page</a>
-  |
-  <!-- Navigate to Inline Elements Page -->
-  <a href="./inline_elements.html">Inline elements page</a>
-  |
-  <!-- Navigate to Form Elements Page -->
-  <a href="./form_elements.html">Form elements page</a>
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;!-- Audio --&gt; &lt;audio controls&gt; &lt;source
+      src="./audio/music.mp3" type="audio/mp3"&gt; &lt;/audio&gt; &lt;!-- Video
+      --&gt; &lt;video height="220" width="340" controls &gt; &lt;source
+      src="./video/videoplayback.mp4" type="video/mp4"&gt; test &lt;/video&gt;
+      &lt;!-- Image --&gt; &lt;img src="./img/image.jpg" alt="programming is
+      fun" width="500"&gt;
+    </div>
 
-  <hr>
-  <hr>
-</body>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p>Click the play button for music</p>
+      <audio controls>
+        <source src="./audio/music.mp3" type="audio/mp3" />
+      </audio>
+
+      <p>Click the play button for video</p>
+      <video height="220" width="340" controls>
+        <source src="./video/videoplayback.mp4" type="video/mp4" />
+        test
+      </video>
+
+      <p>This is image</p>
+      <img src="./img/image.jpg" alt="programming is fun" width="500" />
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 9: EMBEDS & IFRAMES
+      Iframes allow you to embed external content like SoundCloud players, YouTube videos, PDFs, and Google Maps.
+    -->
+    <!-- Embeds -->
+    <h2 class="section-title">9. Embeds & Iframes</h2>
+    <p>Embedding external resources.</p>
+
+    <h3>Code (SoundCloud):</h3>
+    <div class="code-block">
+      &lt;iframe width="100%" height="166" scrolling="no" frameborder="no"
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=..."&gt;&lt;/iframe&gt;
+    </div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <iframe
+        width="100%"
+        height="166"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1997260627&color=%23ca4b85&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+      ></iframe>
+    </div>
+
+    <br />
+
+    <h3>Code (YouTube):</h3>
+    <div class="code-block">
+      &lt;iframe width="560" height="315"
+      src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl" ...
+      &gt;&lt;/iframe&gt;
+    </div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <br />
+
+    <h3>Code (PDF):</h3>
+    <div class="code-block">
+      &lt;iframe width="250" height="250" src="./misc/html-slides.pdf"
+      frameborder="0"&gt;&lt;/iframe&gt;
+    </div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <iframe
+        width="250"
+        height="250"
+        src="./misc/html-slides.pdf"
+        frameborder="0"
+      ></iframe>
+    </div>
+
+    <br />
+
+    <h3>Code (Google Maps):</h3>
+    <div class="code-block">
+      &lt;iframe src="https://www.google.com/maps/embed?..." width="250"
+      height="250" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;
+    </div>
+    <h3>Output:</h3>
+    <div class="example-output">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3861.665797248736!2d121.01478521442917!3d14.561094311994104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDMzJzQxLjciTiAxMjHCsDAwJzU0LjUiRQ!5e0!3m2!1sen!2sph!4v1741332964480!5m2!1sen!2sph"
+        width="250"
+        height="250"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 10: TABLES
+      <table> defines the table.
+      <thead> groups the header content.
+      <tbody> groups the body content.
+      <tfoot> groups the footer content.
+      <tr> defines a table row.
+      <th> defines a table header (bold and centered).
+      <td> defines a table data cell.
+      'rowspan' and 'colspan' allow cells to span multiple rows or columns.
+    -->
+    <!-- Tables -->
+    <h2 class="section-title">10. Tables</h2>
+    <p>Creating tables with rows, columns, and headers.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;table&gt; &lt;thead&gt; &lt;tr style="background: cadetblue;"&gt;
+      &lt;th colspan="4"&gt;Marvel Movie&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt;
+      &lt;tbody&gt; &lt;tr&gt; &lt;th rowspan="3"&gt;Avengers Cast&lt;/th&gt;
+      &lt;th&gt;First name&lt;/th&gt; &lt;th&gt;Last name&lt;/th&gt;
+      &lt;th&gt;ID&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Robert&lt;/td&gt;
+      &lt;td&gt;Downey&lt;/td&gt; &lt;td&gt;1&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+      &lt;td&gt;Chris&lt;/td&gt; &lt;td&gt;Evans&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt;
+      &lt;td colspan="4"&gt;Batch 2012&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt;
+      &lt;/table&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <table>
+        <thead>
+          <tr style="background: cadetblue">
+            <th colspan="4">Marvel Movie</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="3">Avengers Cast</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>ID</th>
+          </tr>
+          <tr>
+            <td>Robert</td>
+            <td>Downey</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Chris</td>
+            <td>Evans</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">Batch 2012</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 11: LINKS
+      Navigation buttons to other pages.
+    -->
+    <!-- Links -->
+    <h2 class="section-title">11. Navigation</h2>
+    <p>Links to other pages in the course.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      &lt;a href="/"&gt;Block elements page&lt;/a&gt; | &lt;a
+      href="./inline_elements.html"&gt;Inline elements page&lt;/a&gt; | &lt;a
+      href="./form_elements.html"&gt;Form elements page&lt;/a&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <a href="/">Block elements page</a> |
+      <a href="./inline_elements.html">Inline elements page</a> |
+      <a href="./form_elements.html">Form elements page</a>
+    </div>
+
+    <hr />
+  </body>
 </html>
