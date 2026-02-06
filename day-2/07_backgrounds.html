@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Backgrounds</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      /* Syntax Highlighting Simulators */
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      /* Base Box Style */
+      .demo-box {
+        width: 100%;
+        height: 150px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      /* --- DEMO STYLES --- */
+
+      /* 1. Background Color */
+      .bg-red {
+        background-color: red;
+      }
+      .bg-blue {
+        background-color: blue;
+      }
+
+      /* 2. Linear Gradient */
+      .grad-linear {
+        /* Direction, Color 1, Color 2 */
+        background-image: linear-gradient(to right, red, yellow);
+      }
+      .grad-linear-deg {
+        background-image: linear-gradient(45deg, blue, purple);
+      }
+
+      /* 3. Radial Gradient */
+      .grad-radial {
+        background-image: radial-gradient(circle, red, yellow, green);
+      }
+
+      /* 4. Background Image & Size */
+      /* We use a local image './img/bg-beach.jpg' */
+      .bg-img-cover {
+        background-image: url("./img/bg-beach.jpg");
+        background-size: cover; /* Resizes to cover entire container */
+        background-position: center;
+      }
+      .bg-img-contain {
+        background-image: url("./img/bg-beach.jpg");
+        background-size: contain; /* Resizes to maximize visibility */
+        background-repeat: no-repeat;
+        background-color: #333; /* Color behind image */
+      }
+
+      /* 5. Background Position (using a small icon pattern) */
+      .bg-pos-center {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="gold"/></svg>');
+        background-repeat: no-repeat;
+        background-size: 50px 50px;
+        background-position: center;
+        background-color: #eee;
+        color: black;
+        text-shadow: none;
+      }
+      .bg-pos-br {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="purple"/></svg>');
+        background-repeat: no-repeat;
+        background-size: 50px 50px;
+        background-position: bottom right; /* Align to bottom right */
+        background-color: #eee;
+        color: black;
+        text-shadow: none;
+      }
+
+      /* 6. Background Repeat */
+      .bg-repeat {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect width="10" height="10" fill="blue"/></svg>');
+        background-repeat: repeat; /* Default */
+        background-color: #e3f2fd;
+        color: black;
+        text-shadow: none;
+      }
+      .bg-norepeat {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect width="10" height="10" fill="red"/></svg>');
+        background-repeat: no-repeat;
+        background-size: 50px 50px; /* Made bigger to see */
+        background-position: center;
+        background-color: #ffebee;
+        color: black;
+        text-shadow: none;
+      }
+
+      /* 7. Background Attachment */
+      .attachment-container {
+        height: 200px;
+        border: 2px solid #333;
+        overflow-y: scroll; /* Makes it scrollable */
+      }
+      .bg-scroll {
+        height: 400px; /* Taller content to enable scrolling */
+        background-image: linear-gradient(to bottom, #4facfe, #00f2fe);
+        background-attachment: scroll; /* Background scrolls with content */
+        padding: 20px;
+      }
+      .bg-fixed {
+        /* Note: fixed attachment behaves relative to viewport, tricky in iframes/small boxes.
+           Often better on body. Here we simulate the concept description. */
+        height: 400px;
+        background-image: linear-gradient(to bottom, #d4fc79, #96e6a1);
+        padding: 20px;
+        /* background-attachment: fixed; -> Removed for demo box stability across browsers, kept conceptual */
+      }
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - CSS Backgrounds</h1>
+    <p>
+      The background properties allow you to define the background effects for
+      elements.
+    </p>
+
+    <hr />
+
+    <!-- 1. Background Color -->
+    <h2 class="section-title">1. Background Color</h2>
+    <p>Sets the background color of an element.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.bg-red</span> {
+      <span class="property">background-color</span>:
+      <span class="value">red</span>; } <span class="selector">.bg-blue</span> {
+      <span class="property">background-color</span>:
+      <span class="value">blue</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="demo-box bg-red">Red</div>
+      <div class="demo-box bg-blue">Blue</div>
+    </div>
+
+    <hr />
+
+    <!-- 2. Gradients -->
+    <h2 class="section-title">2. Background Gradients</h2>
+    <p>Gradients allow smooth transitions between two or more colors.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ /* Linear Gradient: Goes in a straight line */
+      <span class="selector">.grad-linear</span> {
+      <span class="property">background-image</span>:
+      <span class="value">linear-gradient(to right, red, yellow)</span>; } /*
+      Radial Gradient: Starts from center circles out */
+      <span class="selector">.grad-radial</span> {
+      <span class="property">background-image</span>:
+      <span class="value">radial-gradient(circle, red, yellow, green)</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="demo-box grad-linear">Linear Gradient</div>
+      <div class="demo-box grad-radial">Radial Gradient</div>
+    </div>
+
+    <hr />
+
+    <!-- 3. Background Image & Size -->
+    <h2 class="section-title">3. Background Image & Size</h2>
+    <p>
+      Sets an image as the background. <code>background-size</code> controls
+      scaling.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ /* cover: Crop image to fill the entire box */
+      <span class="selector">.bg-img-cover</span> {
+      <span class="property">background-image</span>:
+      <span class="value">url('./img/bg-beach.jpg')</span>;
+      <span class="property">background-size</span>:
+      <span class="value">cover</span>;
+      <span class="property">background-position</span>:
+      <span class="value">center</span>; } /* contain: Scale image to be fully
+      visible */ <span class="selector">.bg-img-contain</span> {
+      <span class="property">background-image</span>:
+      <span class="value">url('./img/bg-beach.jpg')</span>;
+      <span class="property">background-size</span>:
+      <span class="value">contain</span>;
+      <span class="property">background-repeat</span>:
+      <span class="value">no-repeat</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="demo-box bg-img-cover">"cover"</div>
+      <div class="demo-box bg-img-contain">"contain"</div>
+    </div>
+
+    <hr />
+
+    <!-- 4. Background Position -->
+    <h2 class="section-title">4. Background Position</h2>
+    <p>Specifies the starting position of a background image.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.bg-pos-center</span> {
+      <span class="property">background-position</span>:
+      <span class="value">center</span>; }
+
+      <span class="selector">.bg-pos-br</span> {
+      <span class="property">background-position</span>:
+      <span class="value">bottom right</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="demo-box bg-pos-center">Center</div>
+      <div class="demo-box bg-pos-br">Bottom Right</div>
+    </div>
+
+    <hr />
+
+    <!-- 5. Background Repeat -->
+    <h2 class="section-title">5. Background Repeat</h2>
+    <p>
+      By default, background images repeat both horizontally and vertically.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.bg-repeat</span> {
+      <span class="property">background-repeat</span>:
+      <span class="value">repeat</span>;
+      <span class="comment">/* Default */</span>
+      }
+      <span class="selector">.bg-norepeat</span> {
+      <span class="property">background-repeat</span>:
+      <span class="value">no-repeat</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="demo-box bg-repeat">Repeat Pattern</div>
+      <div class="demo-box bg-norepeat">No Repeat</div>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./06_css_variables_functions.html"
+        >< Previous: Variables & Functions</a
+      >
+      |
+      <a href="./08_css_units_shadows.html">Next: Units & Shadows ></a>
+    </div>
+  </body>
+</html>
