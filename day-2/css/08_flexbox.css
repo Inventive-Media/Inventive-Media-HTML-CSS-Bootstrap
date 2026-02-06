@@ -16,7 +16,7 @@ body {
 h1 {
   text-align: center;
   color: white;
-  background-color: #673AB7;
+  background-color: #673ab7;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 8px;
@@ -28,30 +28,30 @@ section {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  color: #673AB7;
+  color: #673ab7;
   margin-bottom: 15px;
-  border-bottom: 2px solid #673AB7;
+  border-bottom: 2px solid #673ab7;
   padding-bottom: 5px;
 }
 
 /* Flex Container Base */
 .flex-container {
   display: flex;
-  border: 2px dashed #673AB7;
+  border: 2px dashed #673ab7;
   padding: 20px;
   margin: 15px 0;
   border-radius: 8px;
-  background-color: #F3E5F5;
+  background-color: #f3e5f5;
   min-height: 150px;
 }
 
 /* Flex Item Base */
 .flex-item {
-  background-color: #9C27B0;
+  background-color: #9c27b0;
   color: white;
   padding: 20px;
   margin: 5px;
@@ -108,12 +108,12 @@ h2 {
 /* 9. Flex Grow */
 .grow-1 {
   flex-grow: 1;
-  background-color: #7B1FA2;
+  background-color: #7b1fa2;
 }
 
 .grow-2 {
   flex-grow: 2;
-  background-color: #4A148C;
+  background-color: #4a148c;
 }
 
 /* 10. Practical Layout - Navigation Bar */
@@ -121,7 +121,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #512DA8;
+  background-color: #512da8;
   padding: 15px 30px;
   border-radius: 8px;
   color: white;
@@ -146,7 +146,7 @@ h2 {
 }
 
 .nav-links li:hover {
-  background-color: #673AB7;
+  background-color: #673ab7;
 }
 
 /* 11. Practical Layout - Card Grid */
@@ -163,13 +163,15 @@ h2 {
   color: white;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card h3 {

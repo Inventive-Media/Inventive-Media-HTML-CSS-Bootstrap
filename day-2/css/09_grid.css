@@ -16,7 +16,7 @@ body {
 h1 {
   text-align: center;
   color: white;
-  background-color: #E91E63;
+  background-color: #e91e63;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 8px;
@@ -28,29 +28,29 @@ section {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  color: #E91E63;
+  color: #e91e63;
   margin-bottom: 15px;
-  border-bottom: 2px solid #E91E63;
+  border-bottom: 2px solid #e91e63;
   padding-bottom: 5px;
 }
 
 /* Grid Container Base */
 .grid-container {
   display: grid;
-  border: 2px dashed #E91E63;
+  border: 2px dashed #e91e63;
   padding: 20px;
   margin: 15px 0;
   border-radius: 8px;
-  background-color: #FCE4EC;
+  background-color: #fce4ec;
 }
 
 /* Grid Item Base */
 .grid-item {
-  background-color: #E91E63;
+  background-color: #e91e63;
   color: white;
   padding: 20px;
   border-radius: 5px;
@@ -87,22 +87,22 @@ h2 {
 
 .header {
   grid-area: header;
-  background-color: #C2185B;
+  background-color: #c2185b;
 }
 
 .sidebar {
   grid-area: sidebar;
-  background-color: #F06292;
+  background-color: #f06292;
 }
 
 .main {
   grid-area: main;
-  background-color: #EC407A;
+  background-color: #ec407a;
 }
 
 .footer {
   grid-area: footer;
-  background-color: #AD1457;
+  background-color: #ad1457;
 }
 
 /* 4. Grid Column Span */
@@ -113,12 +113,12 @@ h2 {
 
 .span-2 {
   grid-column: span 2;
-  background-color: #880E4F;
+  background-color: #880e4f;
 }
 
 .span-3 {
   grid-column: span 3;
-  background-color: #C2185B;
+  background-color: #c2185b;
 }
 
 /* 5. Grid Row Span */
@@ -129,7 +129,7 @@ h2 {
 
 .row-span-2 {
   grid-row: span 2;
-  background-color: #AD1457;
+  background-color: #ad1457;
 }
 
 /* 6. Auto-fit Columns */
@@ -145,7 +145,7 @@ h2 {
 }
 
 .grid-fr .grid-item:nth-child(2) {
-  background-color: #AD1457;
+  background-color: #ad1457;
 }
 
 /* 8. Align Items */
@@ -188,25 +188,25 @@ h2 {
 
 .dash-sidebar {
   grid-area: dash-sidebar;
-  background-color: #512DA8;
+  background-color: #512da8;
 }
 
 .dash-main {
   grid-area: dash-main;
-  background-color: #673AB7;
+  background-color: #673ab7;
 }
 
 .dash-widget1 {
   grid-area: dash-widget1;
-  background-color: #7E57C2;
+  background-color: #7e57c2;
 }
 
 .dash-widget2 {
   grid-area: dash-widget2;
-  background-color: #9575CD;
+  background-color: #9575cd;
 }
 
 .dash-footer {
   grid-area: dash-footer;
-  background-color: #4527A0;
+  background-color: #4527a0;
 }

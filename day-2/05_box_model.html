@@ -1,85 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Box Model - Day 2</title>
-  <link rel="stylesheet" href="./css/05_box_model.css">
-</head>
-<body>
-  <h1>CSS Box Model</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Box Model - Day 2</title>
+    <link rel="stylesheet" href="./css/05_box_model.css" />
+  </head>
+  <body>
+    <h1>CSS Box Model</h1>
 
-  <section>
-    <h2>What is the Box Model?</h2>
-    <p class="description">Every HTML element is a box with: Content, Padding, Border, and Margin</p>
-  </section>
+    <section>
+      <h2>What is the Box Model?</h2>
+      <p class="description">
+        Every HTML element is a box with: Content, Padding, Border, and Margin
+      </p>
+    </section>
 
-  <section>
-    <h2>1. Padding (Space Inside)</h2>
-    <div class="demo-container">
-      <div class="box no-padding">No Padding</div>
-      <div class="box with-padding">With Padding (20px)</div>
-      <div class="box with-padding-different">Different Padding (10px 30px)</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>2. Margin (Space Outside)</h2>
-    <div class="demo-container">
-      <div class="box margin-demo1">Box 1 - No Margin</div>
-      <div class="box margin-demo2">Box 2 - Margin 20px</div>
-      <div class="box margin-demo3">Box 3 - Margin 40px</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>3. Border</h2>
-    <div class="demo-container">
-      <div class="box border-solid">Solid Border (4px)</div>
-      <div class="box border-dashed">Dashed Border (4px)</div>
-      <div class="box border-dotted">Dotted Border (4px)</div>
-      <div class="box border-double">Double Border (8px)</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>4. Border Radius</h2>
-    <div class="demo-container">
-      <div class="box radius-small">Radius 5px</div>
-      <div class="box radius-medium">Radius 15px</div>
-      <div class="box radius-large">Radius 30px</div>
-      <div class="box radius-circle">Radius 50%</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>5. Box Sizing</h2>
-    <div class="sizing-demo">
-      <div class="box content-box-demo">
-        <strong>content-box (default)</strong><br>
-        Width: 200px<br>
-        Padding: 20px<br>
-        Border: 5px<br>
-        Total width = 200 + 40 + 10 = 250px
+    <section>
+      <h2>1. Padding (Space Inside)</h2>
+      <div class="demo-container">
+        <div class="box no-padding">No Padding</div>
+        <div class="box with-padding">With Padding (20px)</div>
+        <div class="box with-padding-different">
+          Different Padding (10px 30px)
+        </div>
       </div>
-      <div class="box border-box-demo">
-        <strong>border-box</strong><br>
-        Width: 200px<br>
-        Padding: 20px<br>
-        Border: 5px<br>
-        Total width = 200px (includes padding & border)
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>6. Combined Example</h2>
-    <div class="combined-example">
-      <div class="complete-box">
-        This box demonstrates all box model properties together:
-        margin, border, padding, and content
+    <section>
+      <h2>2. Margin (Space Outside)</h2>
+      <div class="demo-container">
+        <div class="box margin-demo1">Box 1 - No Margin</div>
+        <div class="box margin-demo2">Box 2 - Margin 20px</div>
+        <div class="box margin-demo3">Box 3 - Margin 40px</div>
       </div>
-    </div>
-  </section>
-</body>
+    </section>
+
+    <section>
+      <h2>3. Border</h2>
+      <div class="demo-container">
+        <div class="box border-solid">Solid Border (4px)</div>
+        <div class="box border-dashed">Dashed Border (4px)</div>
+        <div class="box border-dotted">Dotted Border (4px)</div>
+        <div class="box border-double">Double Border (8px)</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Border Radius</h2>
+      <div class="demo-container">
+        <div class="box radius-small">Radius 5px</div>
+        <div class="box radius-medium">Radius 15px</div>
+        <div class="box radius-large">Radius 30px</div>
+        <div class="box radius-circle">Radius 50%</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Box Sizing</h2>
+      <div class="sizing-demo">
+        <div class="box content-box-demo">
+          <strong>content-box (default)</strong><br />
+          Width: 200px<br />
+          Padding: 20px<br />
+          Border: 5px<br />
+          Total width = 200 + 40 + 10 = 250px
+        </div>
+        <div class="box border-box-demo">
+          <strong>border-box</strong><br />
+          Width: 200px<br />
+          Padding: 20px<br />
+          Border: 5px<br />
+          Total width = 200px (includes padding & border)
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Combined Example</h2>
+      <div class="combined-example">
+        <div class="complete-box">
+          This box demonstrates all box model properties together: margin,
+          border, padding, and content
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

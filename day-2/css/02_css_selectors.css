@@ -16,7 +16,7 @@ body {
 h1 {
   text-align: center;
   color: white;
-  background-color: #9C27B0;
+  background-color: #9c27b0;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 8px;
@@ -28,13 +28,13 @@ section {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  color: #9C27B0;
+  color: #9c27b0;
   margin-bottom: 15px;
-  border-bottom: 2px solid #9C27B0;
+  border-bottom: 2px solid #9c27b0;
   padding-bottom: 5px;
 }
 
@@ -47,25 +47,26 @@ p {
 
 /* 2. Class Selector - Targets elements with class="highlight" */
 .highlight {
-  background-color: #FFEB3B;
+  background-color: #ffeb3b;
   font-weight: bold;
   padding: 12px;
-  border-left: 4px solid #FBC02D;
+  border-left: 4px solid #fbc02d;
 }
 
 /* 3. ID Selector - Targets element with id="unique" */
 #unique {
-  background-color: #E1F5FE;
-  color: #0277BD;
+  background-color: #e1f5fe;
+  color: #0277bd;
   font-style: italic;
-  border: 2px solid #0277BD;
+  border: 2px solid #0277bd;
   padding: 12px;
 }
 
 /* 4. Group Selector - Targets multiple elements */
-h3, h4 {
-  color: #FF5722;
-  background-color: #FFCCBC;
+h3,
+h4 {
+  color: #ff5722;
+  background-color: #ffccbc;
   padding: 10px;
   margin: 10px 0;
   border-radius: 4px;
@@ -73,16 +74,16 @@ h3, h4 {
 
 /* 5. Descendant Selector - Targets <p> inside .container */
 .container p {
-  background-color: #C8E6C9;
-  border-left: 4px solid #4CAF50;
+  background-color: #c8e6c9;
+  border-left: 4px solid #4caf50;
   padding: 10px;
   margin: 5px 0;
 }
 
 /* 6. Child Selector - Targets only direct children */
 .parent > p {
-  background-color: #B3E5FC;
-  border: 2px solid #03A9F4;
+  background-color: #b3e5fc;
+  border: 2px solid #03a9f4;
   padding: 10px;
   margin: 10px 0;
   font-weight: bold;
@@ -99,8 +100,8 @@ input[type="email"] {
 }
 
 input[type="email"] {
-  border-color: #9C27B0;
-  background-color: #F3E5F5;
+  border-color: #9c27b0;
+  background-color: #f3e5f5;
 }
 
 /* 8. Pseudo-class Selector */
@@ -108,7 +109,7 @@ input[type="email"] {
 .demo-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -117,12 +118,12 @@ input[type="email"] {
 }
 
 .demo-link:hover {
-  background-color: #1976D2;
+  background-color: #1976d2;
   transform: scale(1.05);
 }
 
 .demo-link:active {
-  background-color: #0D47A1;
+  background-color: #0d47a1;
 }
 
 /* List pseudo-classes */
@@ -134,31 +135,31 @@ input[type="email"] {
 .demo-list li {
   padding: 10px;
   margin: 5px 0;
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
 }
 
 .demo-list li:first-child {
-  background-color: #81C784;
+  background-color: #81c784;
   color: white;
   font-weight: bold;
 }
 
 .demo-list li:last-child {
-  background-color: #E57373;
+  background-color: #e57373;
   color: white;
   font-weight: bold;
 }
 
 .demo-list li:nth-child(2) {
-  background-color: #64B5F6;
+  background-color: #64b5f6;
   color: white;
 }
 
 /* 9. Pseudo-element Selector */
 .special {
-  background-color: #FFF9C4;
+  background-color: #fff9c4;
   padding: 15px;
-  border: 2px solid #F57F17;
+  border: 2px solid #f57f17;
   position: relative;
 }
 

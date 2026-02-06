@@ -16,7 +16,7 @@ body {
 h1 {
   text-align: center;
   color: white;
-  background-color: #FF9800;
+  background-color: #ff9800;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 8px;
@@ -28,22 +28,22 @@ section {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  color: #FF9800;
+  color: #ff9800;
   margin-bottom: 15px;
-  border-bottom: 2px solid #FF9800;
+  border-bottom: 2px solid #ff9800;
   padding-bottom: 5px;
 }
 
 .description {
-  background-color: #FFF3E0;
+  background-color: #fff3e0;
   padding: 15px;
-  border-left: 4px solid #FF9800;
+  border-left: 4px solid #ff9800;
   border-radius: 4px;
-  color: #E65100;
+  color: #e65100;
   font-weight: bold;
 }
 
@@ -57,7 +57,7 @@ h2 {
 
 /* Base Box Styling */
 .box {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   font-weight: bold;
   text-align: center;
@@ -67,90 +67,90 @@ h2 {
 /* 1. Padding Examples */
 .no-padding {
   padding: 0;
-  background-color: #E57373;
+  background-color: #e57373;
 }
 
 .with-padding {
   padding: 20px;
-  background-color: #64B5F6;
+  background-color: #64b5f6;
 }
 
 .with-padding-different {
   padding: 10px 30px; /* top/bottom left/right */
-  background-color: #81C784;
+  background-color: #81c784;
 }
 
 /* 2. Margin Examples */
 .margin-demo1 {
   margin: 0;
   padding: 15px;
-  background-color: #BA68C8;
+  background-color: #ba68c8;
 }
 
 .margin-demo2 {
   margin: 20px;
   padding: 15px;
-  background-color: #4DB6AC;
+  background-color: #4db6ac;
 }
 
 .margin-demo3 {
   margin: 40px;
   padding: 15px;
-  background-color: #FFB74D;
+  background-color: #ffb74d;
 }
 
 /* 3. Border Styles */
 .border-solid {
   padding: 20px;
-  border: 4px solid #2196F3;
-  background-color: #E3F2FD;
-  color: #1565C0;
+  border: 4px solid #2196f3;
+  background-color: #e3f2fd;
+  color: #1565c0;
 }
 
 .border-dashed {
   padding: 20px;
-  border: 4px dashed #E91E63;
-  background-color: #FCE4EC;
-  color: #880E4F;
+  border: 4px dashed #e91e63;
+  background-color: #fce4ec;
+  color: #880e4f;
 }
 
 .border-dotted {
   padding: 20px;
-  border: 4px dotted #4CAF50;
-  background-color: #E8F5E9;
-  color: #1B5E20;
+  border: 4px dotted #4caf50;
+  background-color: #e8f5e9;
+  color: #1b5e20;
 }
 
 .border-double {
   padding: 20px;
-  border: 8px double #9C27B0;
-  background-color: #F3E5F5;
-  color: #4A148C;
+  border: 8px double #9c27b0;
+  background-color: #f3e5f5;
+  color: #4a148c;
 }
 
 /* 4. Border Radius */
 .radius-small {
   padding: 20px;
   border-radius: 5px;
-  background-color: #FF5722;
+  background-color: #ff5722;
 }
 
 .radius-medium {
   padding: 20px;
   border-radius: 15px;
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 
 .radius-large {
   padding: 20px;
   border-radius: 30px;
-  background-color: #8BC34A;
+  background-color: #8bc34a;
 }
 
 .radius-circle {
   padding: 30px;
   border-radius: 50%;
-  background-color: #FFC107;
+  background-color: #ffc107;
   width: 150px;
   height: 150px;
   display: flex;
@@ -170,18 +170,18 @@ h2 {
   box-sizing: content-box;
   width: 200px;
   padding: 20px;
-  border: 5px solid #F44336;
-  background-color: #FFCDD2;
-  color: #B71C1C;
+  border: 5px solid #f44336;
+  background-color: #ffcdd2;
+  color: #b71c1c;
 }
 
 .border-box-demo {
   box-sizing: border-box;
   width: 200px;
   padding: 20px;
-  border: 5px solid #2196F3;
-  background-color: #BBDEFB;
-  color: #0D47A1;
+  border: 5px solid #2196f3;
+  background-color: #bbdefb;
+  color: #0d47a1;
 }
 
 /* 6. Combined Example */
@@ -193,14 +193,14 @@ h2 {
 
 .complete-box {
   /* Content */
-  background-color: #FFF9C4;
-  color: #F57F17;
+  background-color: #fff9c4;
+  color: #f57f17;
 
   /* Padding - space inside the border */
   padding: 25px;
 
   /* Border */
-  border: 5px solid #FBC02D;
+  border: 5px solid #fbc02d;
   border-radius: 10px;
 
   /* Margin - space outside the border */
@@ -208,5 +208,5 @@ h2 {
 
   /* Additional styling */
   font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

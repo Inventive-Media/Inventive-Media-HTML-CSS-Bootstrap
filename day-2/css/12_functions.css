@@ -12,7 +12,7 @@
   --accent-color: #2ecc71;
   --spacing: 20px;
   --border-radius: 10px;
-  --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -38,7 +38,7 @@ section {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -49,13 +49,13 @@ h2 {
 }
 
 .info {
-  background-color: #E8EAF6;
+  background-color: #e8eaf6;
   padding: 10px;
   margin-top: 15px;
   border-left: 4px solid #667eea;
   border-radius: 4px;
   font-style: italic;
-  color: #5E35B1;
+  color: #5e35b1;
 }
 
 /* Base Box Styling */
@@ -78,17 +78,17 @@ h2 {
 
 .calc-box1 {
   width: calc(100% - 40px);
-  background-color: #FF6B6B;
+  background-color: #ff6b6b;
 }
 
 .calc-box2 {
   width: calc(50% - 20px);
-  background-color: #4ECDC4;
+  background-color: #4ecdc4;
 }
 
 .calc-box3 {
   width: calc(100% / 3 - 20px);
-  background-color: #FFE66D;
+  background-color: #ffe66d;
   color: #333;
 }
 
@@ -138,7 +138,7 @@ h2 {
 
 .min-box {
   width: min(500px, 100%);
-  background-color: #9C27B0;
+  background-color: #9c27b0;
 }
 
 /* 4. max() Function */
@@ -150,7 +150,7 @@ h2 {
 
 .max-box {
   width: max(300px, 50%);
-  background-color: #FF5722;
+  background-color: #ff5722;
 }
 
 /* 5. clamp() Function */
@@ -162,7 +162,7 @@ h2 {
 
 .clamp-box {
   width: clamp(200px, 50%, 600px);
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 
 .clamp-text {
@@ -170,7 +170,7 @@ h2 {
   font-weight: bold;
   color: #009688;
   padding: 20px;
-  background-color: #E0F2F1;
+  background-color: #e0f2f1;
   border-radius: 8px;
   text-align: center;
   margin-top: 15px;
@@ -231,7 +231,7 @@ h2 {
 
 /* 9. radial-gradient() Function */
 .radial-gradient-box {
-  background: radial-gradient(circle, #FFE66D, #FF6B6B, #4ECDC4);
+  background: radial-gradient(circle, #ffe66d, #ff6b6b, #4ecdc4);
   height: 150px;
   display: flex;
   align-items: center;
@@ -247,9 +247,12 @@ h2 {
 }
 
 .url-box {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23667eea" opacity="0.3"/></svg>'),
-              linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-  background-size: 50px 50px, cover;
+  background:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23667eea" opacity="0.3"/></svg>'),
+    linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background-size:
+    50px 50px,
+    cover;
   height: 150px;
   display: flex;
   align-items: center;
@@ -265,7 +268,7 @@ h2 {
 }
 
 .attr-box {
-  background-color: #FF9800;
+  background-color: #ff9800;
   position: relative;
   cursor: help;
 }
@@ -302,7 +305,11 @@ h2 {
   width: min(calc(100% - var(--spacing) * 2), 800px);
   margin: 0 auto;
   padding: var(--spacing);
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   font-size: clamp(14px, 2vw, 18px);
@@ -346,16 +353,16 @@ h2 {
 }
 
 .rotate-func {
-  background-color: #E91E63;
+  background-color: #e91e63;
   transform: rotate(15deg);
 }
 
 .scale-func {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
   transform: scale(1.2);
 }
 
 .translate-func {
-  background-color: #8BC34A;
+  background-color: #8bc34a;
   transform: translate(20px, -10px);
 }

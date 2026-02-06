@@ -16,7 +16,7 @@ body {
 h1 {
   text-align: center;
   color: white;
-  background-color: #FF6B6B;
+  background-color: #ff6b6b;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 8px;
@@ -28,13 +28,13 @@ section {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  color: #FF6B6B;
+  color: #ff6b6b;
   margin-bottom: 15px;
-  border-bottom: 2px solid #FF6B6B;
+  border-bottom: 2px solid #ff6b6b;
   padding-bottom: 5px;
 }
 
@@ -64,15 +64,15 @@ h2 {
 
 /* 2. Hexadecimal Colors */
 .hex-color1 {
-  background-color: #FF5733;
+  background-color: #ff5733;
 }
 
 .hex-color2 {
-  background-color: #33FF57;
+  background-color: #33ff57;
 }
 
 .hex-color3 {
-  background-color: #3357FF;
+  background-color: #3357ff;
 }
 
 /* 3. RGB Colors */
@@ -96,7 +96,7 @@ h2 {
 }
 
 .rgba-color1 {
-  background-color: rgba(255, 0, 0, 1.0);
+  background-color: rgba(255, 0, 0, 1);
 }
 
 .rgba-color2 {
@@ -109,15 +109,15 @@ h2 {
 
 /* 5. HSL Colors */
 .hsl-color1 {
-  background-color: hsl(0, 100%, 50%);    /* Red */
+  background-color: hsl(0, 100%, 50%); /* Red */
 }
 
 .hsl-color2 {
-  background-color: hsl(120, 100%, 50%);  /* Green */
+  background-color: hsl(120, 100%, 50%); /* Green */
 }
 
 .hsl-color3 {
-  background-color: hsl(240, 100%, 50%);  /* Blue */
+  background-color: hsl(240, 100%, 50%); /* Blue */
 }
 
 /* 6. Color Usage Examples */
@@ -128,14 +128,14 @@ h2 {
 }
 
 .text-color {
-  color: #E91E63;
+  color: #e91e63;
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
 }
 
 .bg-color {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 15px;
   margin: 10px 0;
@@ -143,9 +143,9 @@ h2 {
 }
 
 .border-color {
-  border: 4px solid #2196F3;
+  border: 4px solid #2196f3;
   padding: 15px;
-  color: #2196F3;
+  color: #2196f3;
   font-weight: bold;
   border-radius: 4px;
 }
@@ -155,7 +155,7 @@ p {
   color: #555;
   padding: 10px;
   background-color: #f0f0f0;
-  border-left: 4px solid #FF6B6B;
+  border-left: 4px solid #ff6b6b;
   margin-top: 15px;
   border-radius: 4px;
 }

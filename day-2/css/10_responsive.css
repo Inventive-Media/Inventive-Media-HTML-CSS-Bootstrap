@@ -28,7 +28,7 @@ section {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -39,19 +39,19 @@ h2 {
 }
 
 .description {
-  background-color: #E0F2F1;
+  background-color: #e0f2f1;
   padding: 15px;
   border-left: 4px solid #009688;
   border-radius: 4px;
-  color: #00695C;
+  color: #00695c;
   font-weight: bold;
 }
 
 .info {
-  background-color: #FFF9C4;
+  background-color: #fff9c4;
   padding: 10px;
   margin-top: 15px;
-  border-left: 4px solid #FBC02D;
+  border-left: 4px solid #fbc02d;
   border-radius: 4px;
   font-style: italic;
 }
@@ -64,7 +64,7 @@ h2 {
 .vw-box {
   width: 50vw;
   padding: 20px;
-  background-color: #4DB6AC;
+  background-color: #4db6ac;
   color: white;
   font-weight: bold;
   text-align: center;
@@ -75,7 +75,7 @@ h2 {
 .vh-box {
   height: 50vh;
   padding: 20px;
-  background-color: #00897B;
+  background-color: #00897b;
   color: white;
   font-weight: bold;
   text-align: center;
@@ -94,20 +94,20 @@ h2 {
   border-radius: 5px;
   margin: 15px 0;
   /* Mobile First - Red */
-  background-color: #F44336;
+  background-color: #f44336;
 }
 
 /* Tablet */
 @media (min-width: 600px) {
   .responsive-box {
-    background-color: #2196F3;
+    background-color: #2196f3;
   }
 }
 
 /* Desktop */
 @media (min-width: 900px) {
   .responsive-box {
-    background-color: #4CAF50;
+    background-color: #4caf50;
   }
 }
 
@@ -134,7 +134,7 @@ h2 {
 }
 
 .grid-card {
-  background-color: #00ACC1;
+  background-color: #00acc1;
   color: white;
   padding: 30px;
   text-align: center;
@@ -144,7 +144,7 @@ h2 {
 
 /* 4. Responsive Navigation */
 .responsive-nav {
-  background-color: #00796B;
+  background-color: #00796b;
   padding: 15px;
   border-radius: 5px;
   margin: 15px 0;
@@ -226,7 +226,7 @@ h2 {
 /* 6. Hide/Show Elements */
 .mobile-only {
   display: block;
-  background-color: #FF9800;
+  background-color: #ff9800;
   color: white;
   padding: 20px;
   text-align: center;
@@ -237,7 +237,7 @@ h2 {
 
 .desktop-only {
   display: none;
-  background-color: #3F51B5;
+  background-color: #3f51b5;
   color: white;
   padding: 20px;
   text-align: center;
@@ -277,7 +277,7 @@ h2 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #E0F7FA;
+  background-color: #e0f7fa;
   border-radius: 5px;
 }
 
@@ -297,7 +297,7 @@ h2 {
 
 .flex-card {
   flex: 1 1 100%; /* Mobile: full width */
-  background-color: #7B1FA2;
+  background-color: #7b1fa2;
   color: white;
   padding: 30px;
   text-align: center;
@@ -348,12 +348,14 @@ h2 {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .hero-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 768px) {

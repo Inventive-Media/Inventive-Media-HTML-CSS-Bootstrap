@@ -28,7 +28,7 @@ section {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -39,10 +39,10 @@ h2 {
 }
 
 .info {
-  background-color: #FFF3E0;
+  background-color: #fff3e0;
   padding: 10px;
   margin-bottom: 15px;
-  border-left: 4px solid #FF9800;
+  border-left: 4px solid #ff9800;
   border-radius: 4px;
   font-style: italic;
 }
@@ -75,16 +75,16 @@ h2 {
 
 /* 1. CSS Transitions */
 .transition-color {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   transition: background-color 0.5s;
 }
 
 .transition-color:hover {
-  background-color: #FF5722;
+  background-color: #ff5722;
 }
 
 .transition-size {
-  background-color: #2196F3;
+  background-color: #2196f3;
   transition: padding 0.5s;
 }
 
@@ -93,19 +93,19 @@ h2 {
 }
 
 .transition-all {
-  background-color: #9C27B0;
+  background-color: #9c27b0;
   transition: all 0.5s;
 }
 
 .transition-all:hover {
-  background-color: #FFC107;
+  background-color: #ffc107;
   transform: scale(1.1);
   border-radius: 50%;
 }
 
 /* 2. Transform - Translate */
 .transform-translate {
-  background-color: #FF6B6B;
+  background-color: #ff6b6b;
   transition: transform 0.5s;
 }
 
@@ -115,7 +115,7 @@ h2 {
 
 /* 3. Transform - Scale */
 .transform-scale {
-  background-color: #4ECDC4;
+  background-color: #4ecdc4;
   transition: transform 0.5s;
 }
 
@@ -125,7 +125,7 @@ h2 {
 
 /* 4. Transform - Rotate */
 .transform-rotate {
-  background-color: #FFE66D;
+  background-color: #ffe66d;
   color: #333;
   transition: transform 0.5s;
 }
@@ -136,7 +136,7 @@ h2 {
 
 /* 5. Transform - Skew */
 .transform-skew {
-  background-color: #95E1D3;
+  background-color: #95e1d3;
   color: #333;
   transition: transform 0.5s;
 }
@@ -147,7 +147,8 @@ h2 {
 
 /* 6. Keyframe Animation - Bounce */
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -156,7 +157,7 @@ h2 {
 }
 
 .animation-bounce {
-  background-color: #FF6B6B;
+  background-color: #ff6b6b;
   animation: bounce 1s infinite;
 }
 
@@ -174,7 +175,7 @@ h2 {
 }
 
 .animation-slide {
-  background-color: #4ECDC4;
+  background-color: #4ecdc4;
   animation: slide 3s infinite;
 }
 
@@ -189,14 +190,15 @@ h2 {
 }
 
 .animation-rotate {
-  background-color: #FFE66D;
+  background-color: #ffe66d;
   color: #333;
   animation: rotate 2s linear infinite;
 }
 
 /* 9. Keyframe Animation - Pulse */
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -205,7 +207,7 @@ h2 {
 }
 
 .animation-pulse {
-  background-color: #95E1D3;
+  background-color: #95e1d3;
   color: #333;
   animation: pulse 1.5s infinite;
 }
@@ -221,19 +223,33 @@ h2 {
 }
 
 .animation-fade {
-  background-color: #9C27B0;
+  background-color: #9c27b0;
   animation: fadeIn 2s infinite;
 }
 
 /* 11. Complex Animation - Rainbow */
 @keyframes rainbow {
-  0% { background-color: #FF6B6B; }
-  16% { background-color: #FFA726; }
-  33% { background-color: #FFE66D; }
-  50% { background-color: #4ECDC4; }
-  66% { background-color: #4FC3F7; }
-  83% { background-color: #BA68C8; }
-  100% { background-color: #FF6B6B; }
+  0% {
+    background-color: #ff6b6b;
+  }
+  16% {
+    background-color: #ffa726;
+  }
+  33% {
+    background-color: #ffe66d;
+  }
+  50% {
+    background-color: #4ecdc4;
+  }
+  66% {
+    background-color: #4fc3f7;
+  }
+  83% {
+    background-color: #ba68c8;
+  }
+  100% {
+    background-color: #ff6b6b;
+  }
 }
 
 .animation-rainbow {
@@ -261,27 +277,27 @@ h2 {
 
 .timing-linear {
   transition-timing-function: linear;
-  background-color: #F44336;
+  background-color: #f44336;
 }
 
 .timing-ease {
   transition-timing-function: ease;
-  background-color: #E91E63;
+  background-color: #e91e63;
 }
 
 .timing-ease-in {
   transition-timing-function: ease-in;
-  background-color: #9C27B0;
+  background-color: #9c27b0;
 }
 
 .timing-ease-out {
   transition-timing-function: ease-out;
-  background-color: #673AB7;
+  background-color: #673ab7;
 }
 
 .timing-ease-in-out {
   transition-timing-function: ease-in-out;
-  background-color: #3F51B5;
+  background-color: #3f51b5;
 }
 
 /* 13. Animated Button */
@@ -300,12 +316,12 @@ h2 {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .animated-button:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .animated-button:active {
@@ -330,8 +346,12 @@ h2 {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* 15. Card Flip Animation */
