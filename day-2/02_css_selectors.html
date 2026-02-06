@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Selectors</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      /* Syntax Highlighting Simulators */
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      /* --- DEMO STYLES (Specific to this lesson) --- */
+
+      /* 1. Element Selector */
+      /* Note: We use a specific class in the example to correspond to the code shown, 
+         but technically 'p' would select all paragraphs. 
+         For clarity in this multi-example page, we simulate specific selections. */
+      p.element-selector-demo {
+        color: green;
+        font-weight: bold;
+      }
+
+      /* 2. Class Selector */
+      .highlight {
+        background-color: yellow;
+        color: red;
+        font-weight: bold;
+        padding: 5px;
+      }
+
+      /* 3. ID Selector */
+      #unique-element {
+        border: 2px solid orange;
+        padding: 10px;
+        background-color: #fff3e0;
+        color: #d84315;
+      }
+
+      /* 4. Group Selector */
+      .group-demo-h3,
+      .group-demo-h4 {
+        color: purple;
+        text-decoration: underline;
+      }
+
+      /* 5. Descendant Selector */
+      .descendant-container p {
+        color: teal;
+        font-style: italic;
+      }
+
+      /* 6. Child Selector */
+      .child-parent > p {
+        border-left: 5px solid blue;
+        padding-left: 10px;
+        background-color: #e3f2fd;
+      }
+
+      /* 7. Attribute Selector */
+      input[type="text"] {
+        border: 2px solid red;
+        padding: 5px;
+      }
+      input[type="email"] {
+        border: 2px solid green;
+        padding: 5px;
+      }
+
+      /* 8. Pseudo-class Selector */
+      .hover-link {
+        color: blue;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+      /* :hover applies when mouse moves over the element */
+      .hover-link:hover {
+        color: red;
+        text-decoration: underline;
+      }
+
+      .list-demo li:first-child {
+        color: red;
+        font-weight: bold;
+      }
+      .list-demo li:last-child {
+        color: blue;
+        font-weight: bold;
+      }
+
+      /* 9. Pseudo-element Selector */
+      .pseudo-demo::before {
+        content: "👉 ";
+      }
+      .pseudo-demo::after {
+        content: " 👈";
+      }
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - CSS Selectors</h1>
+    <p>
+      Selectors are patterns used to select the element(s) you want to style.
+    </p>
+
+    <hr />
+
+    <!-- 1. Element Selector -->
+    <h2 class="section-title">1. Element Selector</h2>
+    <p>
+      Selects elements based on the tag name (e.g., <code>p</code>,
+      <code>h1</code>, <code>div</code>).
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">p</span> { <span class="property">color</span>:
+      <span class="value">green</span>; } /* HTML */ &lt;p&gt;This paragraph is
+      selected by its tag name.&lt;/p&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="element-selector-demo">
+        This paragraph is selected by its tag name.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- 2. Class Selector -->
+    <h2 class="section-title">2. Class Selector</h2>
+    <p>
+      Selects elements with a specific class attribute. Starts with a dot
+      (<code>.</code>).
+    </p>
+    <p><strong>Tip:</strong> You can reuse classes on many elements.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.highlight</span> {
+      <span class="property">background-color</span>:
+      <span class="value">yellow</span>; <span class="property">color</span>:
+      <span class="value">red</span>; } /* HTML */ &lt;p
+      class="highlight"&gt;This paragraph uses a class.&lt;/p&gt; &lt;span
+      class="highlight"&gt;So does this span!&lt;/span&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="highlight">This paragraph uses a class.</p>
+      <span class="highlight">So does this span!</span>
+    </div>
+
+    <hr />
+
+    <!-- 3. ID Selector -->
+    <h2 class="section-title">3. ID Selector</h2>
+    <p>
+      Selects a unique element with a specific id attribute. Starts with a hash
+      (<code>#</code>).
+    </p>
+    <p><strong>Important:</strong> IDs must be unique on a page.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">#unique-element</span> {
+      <span class="property">border</span>:
+      <span class="value">2px solid orange</span>;
+      <span class="property">background-color</span>:
+      <span class="value">#fff3e0</span>; } /* HTML */ &lt;div
+      id="unique-element"&gt;I am unique!&lt;/div&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div id="unique-element">I am unique!</div>
+    </div>
+
+    <hr />
+
+    <!-- 4. Group Selector -->
+    <h2 class="section-title">4. Group Selector</h2>
+    <p>
+      Selects multiple elements and applies the same style. Separated by commas.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">h3, h4</span> {
+      <span class="property">color</span>: <span class="value">purple</span>;
+      <span class="property">text-decoration</span>:
+      <span class="value">underline</span>; } /* HTML */ &lt;h3&gt;Heading
+      3&lt;/h3&gt; &lt;h4&gt;Heading 4&lt;/h4&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h3 class="group-demo-h3">Heading 3</h3>
+      <h4 class="group-demo-h4">Heading 4</h4>
+    </div>
+
+    <hr />
+
+    <!-- 5. Descendant Selector -->
+    <h2 class="section-title">5. Descendant Selector (Space)</h2>
+    <p>
+      Selects elements that are descendants (inside) of a specified element.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ /* Selects all &lt;p&gt; inside .container */
+      <span class="selector">.container p</span> {
+      <span class="property">color</span>: <span class="value">teal</span>;
+      <span class="property">font-style</span>:
+      <span class="value">italic</span>; } /* HTML */ &lt;div
+      class="container"&gt; &lt;p&gt;I am inside the container.&lt;/p&gt;
+      &lt;div&gt; &lt;p&gt;I am nested deeper, but still inside, so I get
+      styled!&lt;/p&gt; &lt;/div&gt; &lt;/div&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="descendant-container">
+        <p>I am inside the container.</p>
+        <div>
+          <p>I am nested deeper, but still inside, so I get styled!</p>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 6. Child Selector -->
+    <h2 class="section-title">6. Child Selector (>)</h2>
+    <p>
+      Selects all elements that are the <strong>direct</strong> children of a
+      specified element.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ /* Selects only direct &lt;p&gt; children of .parent */
+      <span class="selector">.parent > p</span> {
+      <span class="property">border-left</span>:
+      <span class="value">5px solid blue</span>; } /* HTML */ &lt;div
+      class="parent"&gt; &lt;p&gt;I am a direct child (Styled)&lt;/p&gt;
+      &lt;div&gt; &lt;p&gt;I am a grandchild (Not styled)&lt;/p&gt; &lt;/div&gt;
+      &lt;/div&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="child-parent">
+        <p>I am a direct child (Styled)</p>
+        <div>
+          <p>I am a grandchild (Not styled)</p>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 7. Attribute Selector -->
+    <h2 class="section-title">7. Attribute Selector</h2>
+    <p>Selects elements based on an attribute or attribute value.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">input[type="text"]</span> {
+      <span class="property">border</span>:
+      <span class="value">2px solid red</span>; }
+
+      <span class="selector">input[type="email"]</span> {
+      <span class="property">border</span>:
+      <span class="value">2px solid green</span>; } /* HTML */ &lt;input
+      type="text" placeholder="Text Input"&gt; &lt;input type="email"
+      placeholder="Email Input"&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <input type="text" placeholder="Text Input" />
+      <br /><br />
+      <input type="email" placeholder="Email Input" />
+    </div>
+
+    <hr />
+
+    <!-- 8. Pseudo-class Selector -->
+    <h2 class="section-title">8. Pseudo-class Selector</h2>
+    <p>Used to define a special state of an element.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ /* Changes color when mouse hovers over the link */
+      <span class="selector">a:hover</span> {
+      <span class="property">color</span>: <span class="value">red</span>; } /*
+      Selects the first item in a list */
+      <span class="selector">li:first-child</span> {
+      <span class="property">color</span>: <span class="value">red</span>; } /*
+      HTML */ &lt;a href="#"&gt;Hover me!&lt;/a&gt; &lt;ul&gt; &lt;li&gt;First
+      item&lt;/li&gt; &lt;li&gt;Second item&lt;/li&gt; &lt;/ul&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <a href="#" class="hover-link">Hover me!</a>
+      <ul class="list-demo">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Last item</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- 9. Pseudo-element Selector -->
+    <h2 class="section-title">9. Pseudo-element Selector</h2>
+    <p>
+      Used to style specified parts of an element, or insert content
+      before/after.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ /* Inserts content before the element */
+      <span class="selector">.pseudo-demo::before</span> {
+      <span class="property">content</span>: <span class="value">"👉 "</span>; }
+      /* HTML */ &lt;p class="pseudo-demo"&gt;Look at my pointers!&lt;/p&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="pseudo-demo">Look at my pointers!</p>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./01_css_syntax.html">< Previous: CSS Syntax</a> |
+      <a href="./03_box_model.html">Next: Box Model ></a>
+    </div>
+  </body>
+</html>

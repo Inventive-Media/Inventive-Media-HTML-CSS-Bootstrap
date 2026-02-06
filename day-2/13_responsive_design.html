@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - Responsive Design</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      /* Syntax Highlighting Simulators */
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+      .media {
+        color: #c678dd;
+        font-weight: bold;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      /* Viewport Demo */
+      .vw-box {
+        background-color: #00acc1;
+        width: 50vw; /* 50% of viewport width */
+        color: white;
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+      .pct-box {
+        background-color: #00838f;
+        width: 50%; /* 50% of parent width */
+        color: white;
+        padding: 10px;
+      }
+
+      /* Media Query Demo */
+      .responsive-box {
+        background-color: #ff5722; /* Default (Mobile) */
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      /* Breakpoint: Tablet (600px and up) */
+      @media (min-width: 600px) {
+        .responsive-box {
+          background-color: #2196f3; /* Blue */
+        }
+        .responsive-box::after {
+          content: " (Tablet View >= 600px)";
+        }
+      }
+
+      /* Breakpoint: Desktop (900px and up) */
+      @media (min-width: 900px) {
+        .responsive-box {
+          background-color: #4caf50; /* Green */
+        }
+        .responsive-box::after {
+          content: " (Desktop View >= 900px)";
+        }
+      }
+
+      /* Responsive Grid Layout */
+      .responsive-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* 1 col default */
+        gap: 10px;
+      }
+      .grid-card {
+        background-color: #673ab7;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      @media (min-width: 600px) {
+        .responsive-grid {
+          grid-template-columns: 1fr 1fr; /* 2 cols */
+        }
+      }
+      @media (min-width: 900px) {
+        .responsive-grid {
+          grid-template-columns: 1fr 1fr 1fr; /* 3 cols */
+        }
+      }
+
+      /* Hide/Show Demo */
+      .mobile-only {
+        display: block;
+        background-color: #e91e63;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      .desktop-only {
+        display: none; /* Hidden by default */
+        background-color: #3f51b5;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .mobile-only {
+          display: none;
+        }
+        .desktop-only {
+          display: block;
+        }
+      }
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+
+      .resize-hint {
+        background-color: #fff3e0;
+        border-left: 5px solid #ff9800;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: #e65100;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - Responsive Design</h1>
+    <div class="resize-hint">
+      <strong>Try This:</strong> Resize your browser window width to see how the
+      examples below adapt!
+    </div>
+
+    <hr />
+
+    <!-- 1. Viewport Units vs Percentages -->
+    <h2 class="section-title">1. Viewport Units (vw, vh)</h2>
+    <p>
+      <code>vw</code> (viewport width) is relative to the browser window
+      size.<br />
+      <code>%</code> (percentage) is relative to the parent element size.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.vw-box</span> {
+      <span class="property">width</span>: <span class="value">50vw</span>;
+      <span class="comment">/* 50% of screen width */</span>
+      }
+      <span class="selector">.pct-box</span> {
+      <span class="property">width</span>: <span class="value">50%</span>;
+      <span class="comment">/* 50% of parent width */</span>
+      }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="vw-box">50vw (Half Screen Width)</div>
+      <div class="pct-box">50% (Half Parent Width)</div>
+    </div>
+
+    <hr />
+
+    <!-- 2. Media Queries -->
+    <h2 class="section-title">2. Media Queries (@media)</h2>
+    <p>
+      Style changes based on conditions like screen width. This is the core of
+      responsive design.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.responsive-box</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#ff5722</span>;
+      <span class="comment">/* Red (Mobile) */</span>
+      }
+
+      <span class="media">@media</span> (min-width: 600px) {
+      <span class="selector">.responsive-box</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#2196f3</span>;
+      <span class="comment">/* Blue (Tablet) */</span>
+      } }
+
+      <span class="media">@media</span> (min-width: 900px) {
+      <span class="selector">.responsive-box</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#4caf50</span>;
+      <span class="comment">/* Green (Desktop) */</span>
+      } }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="responsive-box">Resize me! (Red -> Blue -> Green)</div>
+    </div>
+
+    <hr />
+
+    <!-- 3. Responsive Grid -->
+    <h2 class="section-title">3. Responsive Layouts</h2>
+    <p>Using Grid or Flexbox with media queries to change column counts.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.responsive-grid</span> {
+      <span class="property">grid-template-columns</span>:
+      <span class="value">1fr</span>;
+      <span class="comment">/* 1 Col (Mobile) */</span>
+      <span class="property">gap</span>: <span class="value">10px</span>; }
+
+      <span class="media">@media</span> (min-width: 600px) {
+      <span class="selector">.responsive-grid</span> {
+      <span class="property">grid-template-columns</span>:
+      <span class="value">1fr 1fr</span>;
+      <span class="comment">/* 2 Cols */</span>
+      } }
+
+      <span class="media">@media</span> (min-width: 900px) {
+      <span class="selector">.responsive-grid</span> {
+      <span class="property">grid-template-columns</span>:
+      <span class="value">1fr 1fr 1fr</span>;
+      <span class="comment">/* 3 Cols */</span>
+      } }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="responsive-grid">
+        <div class="grid-card">Card 1</div>
+        <div class="grid-card">Card 2</div>
+        <div class="grid-card">Card 3</div>
+        <div class="grid-card">Card 4</div>
+        <div class="grid-card">Card 5</div>
+        <div class="grid-card">Card 6</div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 4. Hide/Show Content -->
+    <h2 class="section-title">4. Showing/Hiding Content</h2>
+    <p>Sometimes you want to show different content on mobile vs desktop.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.desktop-only</span> {
+      <span class="property">display</span>: <span class="value">none</span>; }
+
+      <span class="media">@media</span> (min-width: 768px) {
+      <span class="selector">.mobile-only</span> {
+      <span class="property">display</span>: <span class="value">none</span>; }
+      <span class="selector">.desktop-only</span> {
+      <span class="property">display</span>: <span class="value">block</span>; }
+      }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="mobile-only">📱 You are on a smaller screen.</div>
+      <div class="desktop-only">💻 You are on a larger screen.</div>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./12_grid.html">< Previous: Grid</a> |
+      <a href="../index.html">Back to Home (Day 1)</a>
+    </div>
+  </body>
+</html>
