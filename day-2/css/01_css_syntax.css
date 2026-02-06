@@ -1,0 +1,93 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Main Heading */
+h1 {
+  text-align: center;
+  color: #333;
+  background-color: #4CAF50;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  color: white;
+}
+
+/* Section Styling */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 5px;
+}
+
+/* Example 1: Basic CSS Rule */
+.styled-text {
+  color: blue;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.code-display {
+  display: block;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #c7254e;
+}
+
+/* Example 2: Multiple Properties */
+.multi-property {
+  color: white;                    /* Text color */
+  background-color: #2196F3;       /* Background color */
+  padding: 20px;                   /* Internal spacing */
+  border-radius: 10px;             /* Rounded corners */
+  font-size: 16px;                 /* Font size */
+  text-align: center;              /* Center text */
+  font-weight: bold;               /* Bold text */
+}
+
+/* Example 3: Comments */
+.comment-example {
+  /* This is a CSS comment - it won't be displayed */
+  color: #FF5722;
+  font-style: italic;
+  padding: 10px;
+  background-color: #FFE0B2;
+  border-left: 4px solid #FF5722;
+}
+
+/* Additional styling */
+.description {
+  background-color: #E3F2FD;
+  padding: 15px;
+  border-left: 4px solid #2196F3;
+  font-size: 16px;
+}
+
+.example-box {
+  padding: 15px;
+  background-color: #fafafa;
+  border-radius: 5px;
+}

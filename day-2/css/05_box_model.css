@@ -1,0 +1,212 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Main Heading */
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #FF9800;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+/* Section Styling */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #FF9800;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #FF9800;
+  padding-bottom: 5px;
+}
+
+.description {
+  background-color: #FFF3E0;
+  padding: 15px;
+  border-left: 4px solid #FF9800;
+  border-radius: 4px;
+  color: #E65100;
+  font-weight: bold;
+}
+
+/* Demo Container */
+.demo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+/* Base Box Styling */
+.box {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #333;
+}
+
+/* 1. Padding Examples */
+.no-padding {
+  padding: 0;
+  background-color: #E57373;
+}
+
+.with-padding {
+  padding: 20px;
+  background-color: #64B5F6;
+}
+
+.with-padding-different {
+  padding: 10px 30px; /* top/bottom left/right */
+  background-color: #81C784;
+}
+
+/* 2. Margin Examples */
+.margin-demo1 {
+  margin: 0;
+  padding: 15px;
+  background-color: #BA68C8;
+}
+
+.margin-demo2 {
+  margin: 20px;
+  padding: 15px;
+  background-color: #4DB6AC;
+}
+
+.margin-demo3 {
+  margin: 40px;
+  padding: 15px;
+  background-color: #FFB74D;
+}
+
+/* 3. Border Styles */
+.border-solid {
+  padding: 20px;
+  border: 4px solid #2196F3;
+  background-color: #E3F2FD;
+  color: #1565C0;
+}
+
+.border-dashed {
+  padding: 20px;
+  border: 4px dashed #E91E63;
+  background-color: #FCE4EC;
+  color: #880E4F;
+}
+
+.border-dotted {
+  padding: 20px;
+  border: 4px dotted #4CAF50;
+  background-color: #E8F5E9;
+  color: #1B5E20;
+}
+
+.border-double {
+  padding: 20px;
+  border: 8px double #9C27B0;
+  background-color: #F3E5F5;
+  color: #4A148C;
+}
+
+/* 4. Border Radius */
+.radius-small {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #FF5722;
+}
+
+.radius-medium {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #00BCD4;
+}
+
+.radius-large {
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #8BC34A;
+}
+
+.radius-circle {
+  padding: 30px;
+  border-radius: 50%;
+  background-color: #FFC107;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 5. Box Sizing Demonstration */
+.sizing-demo {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.content-box-demo {
+  box-sizing: content-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid #F44336;
+  background-color: #FFCDD2;
+  color: #B71C1C;
+}
+
+.border-box-demo {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid #2196F3;
+  background-color: #BBDEFB;
+  color: #0D47A1;
+}
+
+/* 6. Combined Example */
+.combined-example {
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.complete-box {
+  /* Content */
+  background-color: #FFF9C4;
+  color: #F57F17;
+
+  /* Padding - space inside the border */
+  padding: 25px;
+
+  /* Border */
+  border: 5px solid #FBC02D;
+  border-radius: 10px;
+
+  /* Margin - space outside the border */
+  margin: 20px;
+
+  /* Additional styling */
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

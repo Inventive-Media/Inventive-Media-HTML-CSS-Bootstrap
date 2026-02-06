@@ -1,0 +1,185 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Main Heading */
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #673AB7;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+/* Section Styling */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #673AB7;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #673AB7;
+  padding-bottom: 5px;
+}
+
+/* Flex Container Base */
+.flex-container {
+  display: flex;
+  border: 2px dashed #673AB7;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  background-color: #F3E5F5;
+  min-height: 150px;
+}
+
+/* Flex Item Base */
+.flex-item {
+  background-color: #9C27B0;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 100px;
+}
+
+/* 1. Flex Direction - Row */
+.flex-row {
+  flex-direction: row;
+}
+
+/* 2. Flex Direction - Column */
+.flex-column {
+  flex-direction: column;
+}
+
+/* 3. Justify Content - Space Between */
+.justify-space-between {
+  justify-content: space-between;
+}
+
+/* 4. Justify Content - Space Around */
+.justify-space-around {
+  justify-content: space-around;
+}
+
+/* 5. Justify Content - Center */
+.justify-center {
+  justify-content: center;
+}
+
+/* 6. Align Items - Center */
+.align-center {
+  align-items: center;
+}
+
+/* 7. Align Items - Stretch */
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-stretch .flex-item {
+  min-height: 100px;
+}
+
+/* 8. Flex Wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* 9. Flex Grow */
+.grow-1 {
+  flex-grow: 1;
+  background-color: #7B1FA2;
+}
+
+.grow-2 {
+  flex-grow: 2;
+  background-color: #4A148C;
+}
+
+/* 10. Practical Layout - Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #512DA8;
+  padding: 15px 30px;
+  border-radius: 8px;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-links li:hover {
+  background-color: #673AB7;
+}
+
+/* 11. Practical Layout - Card Grid */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1 1 250px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  color: white;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  line-height: 1.6;
+  opacity: 0.9;
+}

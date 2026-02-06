@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid - Day 2</title>
+  <link rel="stylesheet" href="./css/09_grid.css">
+</head>
+<body>
+  <h1>CSS Grid</h1>
+
+  <section>
+    <h2>1. Basic Grid - 3 Columns</h2>
+    <div class="grid-container grid-3-col">
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+      <div class="grid-item">Item 5</div>
+      <div class="grid-item">Item 6</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Grid with Gap</h2>
+    <div class="grid-container grid-with-gap">
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Grid Template Areas</h2>
+    <div class="grid-container grid-template-areas">
+      <div class="grid-item header">Header</div>
+      <div class="grid-item sidebar">Sidebar</div>
+      <div class="grid-item main">Main Content</div>
+      <div class="grid-item footer">Footer</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Grid Column Span</h2>
+    <div class="grid-container grid-span">
+      <div class="grid-item span-2">Spans 2 columns</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item span-3">Spans 3 columns</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Grid Row Span</h2>
+    <div class="grid-container grid-row-span">
+      <div class="grid-item row-span-2">Spans 2 rows</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+      <div class="grid-item">Item 5</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Auto-fit Columns</h2>
+    <div class="grid-container grid-auto-fit">
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+      <div class="grid-item">Item 5</div>
+      <div class="grid-item">Item 6</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. Fractional Units (fr)</h2>
+    <div class="grid-container grid-fr">
+      <div class="grid-item">1fr</div>
+      <div class="grid-item">2fr</div>
+      <div class="grid-item">1fr</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>8. Align Items</h2>
+    <div class="grid-container grid-align">
+      <div class="grid-item" style="height: 60px;">Item 1</div>
+      <div class="grid-item" style="height: 80px;">Item 2</div>
+      <div class="grid-item" style="height: 100px;">Item 3</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>9. Justify Items</h2>
+    <div class="grid-container grid-justify">
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>10. Practical Layout - Dashboard</h2>
+    <div class="dashboard">
+      <div class="grid-item dash-header">Dashboard Header</div>
+      <div class="grid-item dash-sidebar">Navigation</div>
+      <div class="grid-item dash-main">Main Content Area</div>
+      <div class="grid-item dash-widget1">Widget 1</div>
+      <div class="grid-item dash-widget2">Widget 2</div>
+      <div class="grid-item dash-footer">Footer</div>
+    </div>
+  </section>
+</body>
+</html>

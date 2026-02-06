@@ -3,30 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 2 - CSS Essentials</title>
+  <title>CSS Functions - Day 2</title>
   <link rel="stylesheet" href="./css/12_functions.css">
 </head>
 <body>
-  <hr>
-  <h1>Functions in CSS</h1>
-  <hr>
+  <h1>CSS Functions</h1>
 
-  <!-- start here -->
-  <!-- Variables -->
-  <h2>CSS Variables</h2>
-  <div class="card">
-    <img src="./img/bg-beach.jpg" alt="beach">
-    <h4 class="card-title">Villa Prima Century</h4>
-    <p class="card-label">Boracay, Philippines</p>
-    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut a magni officia quod fuga nulla?</p>
-    <button class="button">Learn more</button>
-  </div>
+  <section>
+    <h2>1. calc() - Mathematical Calculations</h2>
+    <div class="calc-demo">
+      <div class="box calc-box1">Width: calc(100% - 40px)</div>
+      <div class="box calc-box2">Width: calc(50% - 20px)</div>
+      <div class="box calc-box3">Width: calc(100% / 3 - 20px)</div>
+    </div>
+    <p class="info">calc() allows you to perform calculations for CSS values</p>
+  </section>
 
-  <hr>
-  <hr>
-  <!-- calc -->
-  <h2>Calc function</h2>
-  <div class="box1"></div>
-  <div class="box2"></div>
+  <section>
+    <h2>2. var() - CSS Custom Properties (Variables)</h2>
+    <div class="var-demo">
+      <div class="box var-box1">Uses --primary-color</div>
+      <div class="box var-box2">Uses --secondary-color</div>
+      <div class="box var-box3">Uses --accent-color</div>
+    </div>
+    <p class="info">var() uses CSS custom properties defined with --property-name</p>
+  </section>
+
+  <section>
+    <h2>3. min() - Minimum Value</h2>
+    <div class="min-demo">
+      <div class="box min-box">Width: min(500px, 100%)</div>
+    </div>
+    <p class="info">min() returns the smallest value from a list (resize window to see effect)</p>
+  </section>
+
+  <section>
+    <h2>4. max() - Maximum Value</h2>
+    <div class="max-demo">
+      <div class="box max-box">Width: max(300px, 50%)</div>
+    </div>
+    <p class="info">max() returns the largest value from a list</p>
+  </section>
+
+  <section>
+    <h2>5. clamp() - Responsive Values</h2>
+    <div class="clamp-demo">
+      <div class="box clamp-box">Width: clamp(200px, 50%, 600px)</div>
+      <p class="clamp-text">Font Size: clamp(16px, 3vw, 32px)</p>
+    </div>
+    <p class="info">clamp(min, preferred, max) - keeps value between min and max</p>
+  </section>
+
+  <section>
+    <h2>6. rgb() / rgba() - Colors</h2>
+    <div class="color-demo">
+      <div class="box rgb-box">rgb(255, 99, 71)</div>
+      <div class="box rgba-box">rgba(52, 152, 219, 0.7)</div>
+    </div>
+    <p class="info">rgb() and rgba() define colors using red, green, blue values</p>
+  </section>
+
+  <section>
+    <h2>7. hsl() / hsla() - Colors</h2>
+    <div class="color-demo">
+      <div class="box hsl-box">hsl(120, 100%, 50%)</div>
+      <div class="box hsla-box">hsla(280, 100%, 50%, 0.7)</div>
+    </div>
+    <p class="info">hsl() uses hue, saturation, lightness for colors</p>
+  </section>
+
+  <section>
+    <h2>8. linear-gradient() - Color Gradients</h2>
+    <div class="gradient-demo">
+      <div class="box linear-gradient-box">Linear Gradient</div>
+    </div>
+    <p class="info">linear-gradient() creates smooth color transitions</p>
+  </section>
+
+  <section>
+    <h2>9. radial-gradient() - Radial Gradients</h2>
+    <div class="gradient-demo">
+      <div class="box radial-gradient-box">Radial Gradient</div>
+    </div>
+    <p class="info">radial-gradient() creates circular color transitions</p>
+  </section>
+
+  <section>
+    <h2>10. url() - External Resources</h2>
+    <div class="url-demo">
+      <div class="box url-box">Background with url()</div>
+    </div>
+    <p class="info">url() loads external resources like images</p>
+  </section>
+
+  <section>
+    <h2>11. attr() - HTML Attributes</h2>
+    <div class="attr-demo">
+      <div class="box attr-box" data-label="Custom Label">Hover over me</div>
+    </div>
+    <p class="info">attr() gets HTML attribute values (shown in tooltip)</p>
+  </section>
+
+  <section>
+    <h2>12. Combining Functions</h2>
+    <div class="combined-demo">
+      <div class="box combined-box">
+        Multiple Functions Combined:<br>
+        calc() + var() + min()
+      </div>
+    </div>
+    <p class="info">You can combine multiple CSS functions for powerful layouts</p>
+  </section>
+
+  <section>
+    <h2>13. Practical Example - Responsive Card</h2>
+    <div class="practical-demo">
+      <div class="responsive-card">
+        <h3>Responsive Card</h3>
+        <p>This card uses calc(), clamp(), and var() for fluid responsive design</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>14. transform Functions</h2>
+    <div class="transform-functions-demo">
+      <div class="box rotate-func">rotate(45deg)</div>
+      <div class="box scale-func">scale(1.2)</div>
+      <div class="box translate-func">translate(20px, 20px)</div>
+    </div>
+    <p class="info">Transform functions: rotate(), scale(), translate(), skew()</p>
+  </section>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors - Day 2</title>
+  <link rel="stylesheet" href="./css/02_css_selectors.css">
+</head>
+<body>
+  <h1>CSS Selectors</h1>
+
+  <section>
+    <h2>1. Element Selector</h2>
+    <p>This paragraph is styled using the element selector (p)</p>
+  </section>
+
+  <section>
+    <h2>2. Class Selector</h2>
+    <p class="highlight">This paragraph uses a class selector (.highlight)</p>
+    <p class="highlight">Multiple elements can share the same class</p>
+  </section>
+
+  <section>
+    <h2>3. ID Selector</h2>
+    <p id="unique">This paragraph uses an ID selector (#unique)</p>
+  </section>
+
+  <section>
+    <h2>4. Group Selector</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <p>Both headings above are styled together using group selector (h3, h4)</p>
+  </section>
+
+  <section>
+    <h2>5. Descendant Selector</h2>
+    <div class="container">
+      <p>This paragraph is inside the container div</p>
+      <p>So is this one - both are styled with descendant selector</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Child Selector</h2>
+    <div class="parent">
+      <p>I am a direct child of .parent</p>
+      <div>
+        <p>I am NOT a direct child of .parent (I'm a grandchild)</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. Attribute Selector</h2>
+    <input type="text" placeholder="Text input">
+    <input type="email" placeholder="Email input">
+    <p>The email input is styled using attribute selector [type="email"]</p>
+  </section>
+
+  <section>
+    <h2>8. Pseudo-class Selector</h2>
+    <a href="#" class="demo-link">Hover over this link</a>
+    <ul class="demo-list">
+      <li>First item (styled differently)</li>
+      <li>Second item</li>
+      <li>Last item (styled differently)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Pseudo-element Selector</h2>
+    <p class="special">This paragraph has content added before and after using ::before and ::after</p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,376 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Main Heading */
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #009688;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+/* Section Styling */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #009688;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #009688;
+  padding-bottom: 5px;
+}
+
+.description {
+  background-color: #E0F2F1;
+  padding: 15px;
+  border-left: 4px solid #009688;
+  border-radius: 4px;
+  color: #00695C;
+  font-weight: bold;
+}
+
+.info {
+  background-color: #FFF9C4;
+  padding: 10px;
+  margin-top: 15px;
+  border-left: 4px solid #FBC02D;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+/* 1. Viewport Units */
+.viewport-demo {
+  margin: 15px 0;
+}
+
+.vw-box {
+  width: 50vw;
+  padding: 20px;
+  background-color: #4DB6AC;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.vh-box {
+  height: 50vh;
+  padding: 20px;
+  background-color: #00897B;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2. Media Queries - Breakpoints */
+.responsive-box {
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  margin: 15px 0;
+  /* Mobile First - Red */
+  background-color: #F44336;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .responsive-box {
+    background-color: #2196F3;
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .responsive-box {
+    background-color: #4CAF50;
+  }
+}
+
+/* 3. Responsive Grid Layout */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 column */
+  gap: 15px;
+  margin: 15px 0;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 600px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 900px) {
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-card {
+  background-color: #00ACC1;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* 4. Responsive Navigation */
+.responsive-nav {
+  background-color: #00796B;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.nav-brand {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Desktop Navigation */
+@media (min-width: 768px) {
+  .responsive-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    margin-bottom: 0;
+  }
+
+  .nav-menu {
+    flex-direction: row;
+  }
+}
+
+/* 5. Responsive Typography */
+.responsive-heading {
+  font-size: 24px;
+  color: #009688;
+  margin-bottom: 10px;
+}
+
+.responsive-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (min-width: 600px) {
+  .responsive-heading {
+    font-size: 32px;
+  }
+
+  .responsive-text {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 900px) {
+  .responsive-heading {
+    font-size: 40px;
+  }
+
+  .responsive-text {
+    font-size: 18px;
+  }
+}
+
+/* 6. Hide/Show Elements */
+.mobile-only {
+  display: block;
+  background-color: #FF9800;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.desktop-only {
+  display: none;
+  background-color: #3F51B5;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* 7. Flexible Images */
+.responsive-image {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+/* 8. Responsive Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #E0F7FA;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+/* 9. Flexbox Responsive Layout */
+.flex-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.flex-card {
+  flex: 1 1 100%; /* Mobile: full width */
+  background-color: #7B1FA2;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+@media (min-width: 600px) {
+  .flex-card {
+    flex: 1 1 calc(50% - 15px); /* Tablet: 2 columns */
+  }
+}
+
+@media (min-width: 900px) {
+  .flex-card {
+    flex: 1 1 calc(33.333% - 15px); /* Desktop: 3 columns */
+  }
+}
+
+/* 10. Complete Responsive Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hero-content h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 15px;
+  border: none;
+}
+
+.hero-content p {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.hero-button {
+  background-color: white;
+  color: #667eea;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 80px 40px;
+  }
+
+  .hero-content h2 {
+    font-size: 48px;
+  }
+
+  .hero-content p {
+    font-size: 20px;
+  }
+
+  .hero-button {
+    padding: 15px 40px;
+    font-size: 18px;
+  }
+}

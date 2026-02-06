@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Responsive Design - Day 2</title>
+  <link rel="stylesheet" href="./css/10_responsive.css">
+</head>
+<body>
+  <h1>CSS Responsive Design</h1>
+
+  <section>
+    <h2>What is Responsive Design?</h2>
+    <p class="description">
+      Responsive design makes web pages look good on all devices (desktop, tablet, mobile).
+      Resize your browser window to see the effects!
+    </p>
+  </section>
+
+  <section>
+    <h2>1. Viewport Units</h2>
+    <div class="viewport-demo">
+      <div class="vw-box">50vw wide (50% of viewport width)</div>
+      <div class="vh-box">50vh tall (50% of viewport height)</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Media Queries - Breakpoints</h2>
+    <div class="breakpoint-demo">
+      <div class="responsive-box">
+        I change color based on screen size:<br>
+        Red = Mobile (&lt;600px)<br>
+        Blue = Tablet (600px-900px)<br>
+        Green = Desktop (&gt;900px)
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Responsive Grid Layout</h2>
+    <div class="responsive-grid">
+      <div class="grid-card">Card 1</div>
+      <div class="grid-card">Card 2</div>
+      <div class="grid-card">Card 3</div>
+      <div class="grid-card">Card 4</div>
+      <div class="grid-card">Card 5</div>
+      <div class="grid-card">Card 6</div>
+    </div>
+    <p class="info">This grid adapts: 1 column on mobile, 2 on tablet, 3 on desktop</p>
+  </section>
+
+  <section>
+    <h2>4. Responsive Navigation</h2>
+    <nav class="responsive-nav">
+      <div class="nav-brand">MyWebsite</div>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="info">Navigation stacks vertically on mobile, horizontal on larger screens</p>
+  </section>
+
+  <section>
+    <h2>5. Responsive Typography</h2>
+    <div class="typography-demo">
+      <h3 class="responsive-heading">Responsive Heading</h3>
+      <p class="responsive-text">
+        This text size changes based on screen width. On mobile it's smaller,
+        on desktop it's larger for better readability.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Hide/Show Elements</h2>
+    <div class="hide-show-demo">
+      <div class="mobile-only">📱 Visible only on mobile</div>
+      <div class="desktop-only">💻 Visible only on desktop</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. Flexible Images</h2>
+    <div class="image-demo">
+      <div class="responsive-image">
+        Responsive Image Placeholder
+      </div>
+    </div>
+    <p class="info">Images scale proportionally to fit their container</p>
+  </section>
+
+  <section>
+    <h2>8. Responsive Container</h2>
+    <div class="container">
+      <p>
+        This container has a max-width and centers itself on larger screens,
+        but takes full width on mobile devices with padding.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>9. Flexbox Responsive Layout</h2>
+    <div class="flex-responsive">
+      <div class="flex-card">Feature 1</div>
+      <div class="flex-card">Feature 2</div>
+      <div class="flex-card">Feature 3</div>
+    </div>
+    <p class="info">Flexbox automatically wraps items on smaller screens</p>
+  </section>
+
+  <section>
+    <h2>10. Complete Responsive Page Section</h2>
+    <div class="hero-section">
+      <div class="hero-content">
+        <h2>Welcome to Responsive Design</h2>
+        <p>Creating beautiful, adaptive layouts for all devices</p>
+        <button class="hero-button">Get Started</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

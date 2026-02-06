@@ -1,102 +1,361 @@
-:root {
-  /* Color set */
-  --color-primary: #c536ad;
-  --color-secondary: #585858;
-  --footerBg: #292929;
-
-  /* Named colors */
-  --cBlack: #000;
-  --cWhite: #fff;
-  --cBlue: #267ae1;
-  --cGreen: #1edfaf;
-  --cYellow: #ffe51e;
-
-  /* SPACING SET */
-  --cardSpace: 10px;
-  --cardRadius: 10px;
-
-  /* BORDER SET */
-  --cardBorder: 1px solid #00000020;
-}
-
-*, html {
+/* Basic Reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* CSS Custom Properties (Variables) */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #e74c3c;
+  --accent-color: #2ecc71;
+  --spacing: 20px;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
 body {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
 
+/* Main Heading */
 h1 {
-  padding: 50px 0;
   text-align: center;
-  background: #1edfaf;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
 }
 
-/* --- start here --- */
-.card {
-  width: 300px;
-  height: auto;
-  /* padding: 10px; */
-  padding: var(--cardSpace);
-  margin: 0 auto 20px;
-  /* border: 1px solid #00000020; */
-  border: var(--cardBorder);
-  /* border-radius: 10px; */
-  border-radius: var(--cardRadius);
+/* Section Styling */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.card img {
-  width: 100%;
+h2 {
+  color: #667eea;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 5px;
+}
+
+.info {
+  background-color: #E8EAF6;
+  padding: 10px;
+  margin-top: 15px;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+  font-style: italic;
+  color: #5E35B1;
+}
+
+/* Base Box Styling */
+.box {
+  background-color: #667eea;
+  color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 1. calc() Function */
+.calc-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.calc-box1 {
+  width: calc(100% - 40px);
+  background-color: #FF6B6B;
+}
+
+.calc-box2 {
+  width: calc(50% - 20px);
+  background-color: #4ECDC4;
+}
+
+.calc-box3 {
+  width: calc(100% / 3 - 20px);
+  background-color: #FFE66D;
+  color: #333;
+}
+
+/* 2. var() Function */
+.var-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.var-box1 {
+  background-color: var(--primary-color);
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  flex: 1;
+  min-width: 150px;
+}
+
+.var-box2 {
+  background-color: var(--secondary-color);
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  flex: 1;
+  min-width: 150px;
+}
+
+.var-box3 {
+  background-color: var(--accent-color);
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  flex: 1;
+  min-width: 150px;
+}
+
+/* 3. min() Function */
+.min-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.min-box {
+  width: min(500px, 100%);
+  background-color: #9C27B0;
+}
+
+/* 4. max() Function */
+.max-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.max-box {
+  width: max(300px, 50%);
+  background-color: #FF5722;
+}
+
+/* 5. clamp() Function */
+.clamp-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.clamp-box {
+  width: clamp(200px, 50%, 600px);
+  background-color: #00BCD4;
+}
+
+.clamp-text {
+  font-size: clamp(16px, 3vw, 32px);
+  font-weight: bold;
+  color: #009688;
+  padding: 20px;
+  background-color: #E0F2F1;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* 6. rgb() / rgba() Functions */
+.color-demo {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.rgb-box {
+  background-color: rgb(255, 99, 71);
+  flex: 1;
+  min-width: 200px;
+}
+
+.rgba-box {
+  background-color: rgba(52, 152, 219, 0.7);
+  flex: 1;
+  min-width: 200px;
+  border: 2px solid rgb(52, 152, 219);
+}
+
+/* 7. hsl() / hsla() Functions */
+.hsl-box {
+  background-color: hsl(120, 100%, 50%);
+  flex: 1;
+  min-width: 200px;
+}
+
+.hsla-box {
+  background-color: hsla(280, 100%, 50%, 0.7);
+  flex: 1;
+  min-width: 200px;
+  border: 2px solid hsl(280, 100%, 50%);
+}
+
+/* 8. linear-gradient() Function */
+.gradient-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.linear-gradient-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   height: 150px;
-  object-fit: cover;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* 9. radial-gradient() Function */
+.radial-gradient-box {
+  background: radial-gradient(circle, #FFE66D, #FF6B6B, #4ECDC4);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* 10. url() Function */
+.url-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.url-box {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23667eea" opacity="0.3"/></svg>'),
+              linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background-size: 50px 50px, cover;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* 11. attr() Function */
+.attr-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.attr-box {
+  background-color: #FF9800;
+  position: relative;
+  cursor: help;
+}
+
+.attr-box::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  margin-bottom: 5px;
+}
+
+.attr-box:hover::after {
+  opacity: 1;
+}
+
+/* 12. Combining Functions */
+.combined-demo {
+  border: 2px dashed #667eea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.combined-box {
+  width: min(calc(100% - var(--spacing) * 2), 800px);
+  margin: 0 auto;
+  padding: var(--spacing);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+/* 13. Practical Example */
+.practical-demo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.responsive-card {
+  width: clamp(280px, 80%, 500px);
+  padding: calc(var(--spacing) * 1.5);
+  background: linear-gradient(135deg, var(--accent-color), #27ae60);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  color: white;
+}
+
+.responsive-card h3 {
+  font-size: clamp(18px, 3vw, 24px);
   margin-bottom: 10px;
 }
 
-.card-title {
-  margin-bottom: 3px;
-  font-size: 18px;
-  font-weight: bold;
+.responsive-card p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.6;
 }
 
-.card-label {
-  font-size: 12px;
-  color: var(--color-primary);
-  margin-bottom: 15px;
+/* 14. Transform Functions */
+.transform-functions-demo {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px dashed #667eea;
+  padding: 30px;
+  border-radius: 8px;
 }
 
-.card-text {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--color-secondary);
-  margin-bottom: 20px;
+.rotate-func {
+  background-color: #E91E63;
+  transform: rotate(15deg);
 }
 
-.card button {
-  width: 100%;
-  height: 35px;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  background: var(--color-primary);
-  font-weight: bold;
-  color: var(--cWhite);
+.scale-func {
+  background-color: #00BCD4;
+  transform: scale(1.2);
 }
 
-/* calc function */
-.box1 {
-  height: calc(200px - 50px);
-  width: calc(100vw - 100px);
-  background: var(--color-primary);
-  margin: 0 auto 20px;
-}
-
-.box2 {
-  height: calc(100px - 1rem);
-  width: calc(100% - 20px);
-  margin: 0 auto;
-  background: var(--color-secondary);
+.translate-func {
+  background-color: #8BC34A;
+  transform: translate(20px, -10px);
 }

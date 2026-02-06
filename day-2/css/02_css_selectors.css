@@ -1,0 +1,173 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Main Heading */
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #9C27B0;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+/* Section Styling */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #9C27B0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #9C27B0;
+  padding-bottom: 5px;
+}
+
+/* 1. Element Selector - Targets all <p> elements */
+p {
+  color: #333;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+/* 2. Class Selector - Targets elements with class="highlight" */
+.highlight {
+  background-color: #FFEB3B;
+  font-weight: bold;
+  padding: 12px;
+  border-left: 4px solid #FBC02D;
+}
+
+/* 3. ID Selector - Targets element with id="unique" */
+#unique {
+  background-color: #E1F5FE;
+  color: #0277BD;
+  font-style: italic;
+  border: 2px solid #0277BD;
+  padding: 12px;
+}
+
+/* 4. Group Selector - Targets multiple elements */
+h3, h4 {
+  color: #FF5722;
+  background-color: #FFCCBC;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+/* 5. Descendant Selector - Targets <p> inside .container */
+.container p {
+  background-color: #C8E6C9;
+  border-left: 4px solid #4CAF50;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+/* 6. Child Selector - Targets only direct children */
+.parent > p {
+  background-color: #B3E5FC;
+  border: 2px solid #03A9F4;
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* 7. Attribute Selector - Targets elements by attribute */
+input[type="text"],
+input[type="email"] {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input[type="email"] {
+  border-color: #9C27B0;
+  background-color: #F3E5F5;
+}
+
+/* 8. Pseudo-class Selector */
+/* Link states */
+.demo-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+}
+
+.demo-link:hover {
+  background-color: #1976D2;
+  transform: scale(1.05);
+}
+
+.demo-link:active {
+  background-color: #0D47A1;
+}
+
+/* List pseudo-classes */
+.demo-list {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.demo-list li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #E0E0E0;
+}
+
+.demo-list li:first-child {
+  background-color: #81C784;
+  color: white;
+  font-weight: bold;
+}
+
+.demo-list li:last-child {
+  background-color: #E57373;
+  color: white;
+  font-weight: bold;
+}
+
+.demo-list li:nth-child(2) {
+  background-color: #64B5F6;
+  color: white;
+}
+
+/* 9. Pseudo-element Selector */
+.special {
+  background-color: #FFF9C4;
+  padding: 15px;
+  border: 2px solid #F57F17;
+  position: relative;
+}
+
+.special::before {
+  content: "🎯 ";
+  font-size: 20px;
+}
+
+.special::after {
+  content: " ✨";
+  font-size: 20px;
+}
