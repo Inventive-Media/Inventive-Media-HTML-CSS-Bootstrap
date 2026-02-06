@@ -118,7 +118,7 @@
       /* 3. Keyframe Animations */
       .anim-spin {
         background-color: #ff9800;
-        animation: spin 2s linear infinite;
+        animation: spin 2s linear 0s infinite normal none;
       }
       @keyframes spin {
         0% {
@@ -131,7 +131,7 @@
 
       .anim-bounce {
         background-color: #9c27b0;
-        animation: bounce 1s infinite;
+        animation: bounce 1s ease 0s infinite normal none;
       }
       @keyframes bounce {
         0%,
@@ -150,7 +150,7 @@
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        animation: spin 1s linear infinite;
+        animation: spin 1s linear 0s infinite normal none;
       }
 
       /* 5. Flip Card */
@@ -230,8 +230,7 @@
 
     <h3>Code:</h3>
     <div class="code-block">
-      /* CSS */
-      <span class="selector">.trans-box</span> {
+      /* CSS */ <span class="selector">.trans-box</span> {
       <span class="property">background-color</span>:
       <span class="value">green</span>;
       <span class="property">transition</span>:
@@ -259,8 +258,7 @@
 
     <h3>Code:</h3>
     <div class="code-block">
-      /* CSS */
-      <span class="selector">.rotate-box:hover</span> {
+      /* CSS */ <span class="selector">.rotate-box:hover</span> {
       <span class="property">transform</span>:
       <span class="value">rotate(180deg)</span>; }
       <span class="selector">.scale-box:hover</span> {
@@ -279,23 +277,41 @@
 
     <!-- 3. Keyframe Animations -->
     <h2 class="section-title">3. Keyframe Animations</h2>
+    <p>Create complex animations by defining steps (keyframes).</p>
     <p>
-      Create complex animations by defining steps (keyframes) for the element to
-      change through.
+      <strong>Shorthand Syntax Order:</strong><br />
+      <code
+        >animation: name duration timing-function delay iteration-count
+        direction fill-mode;</code
+      >
     </p>
 
     <h3>Code:</h3>
     <div class="code-block">
-      /* CSS */
-      <span class="keyframes">@keyframes</span> spin {
+      /* CSS */ <span class="keyframes">@keyframes</span> spin {
       <span class="value">0%</span> { <span class="property">transform</span>:
       <span class="value">rotate(0deg)</span>; }
       <span class="value">100%</span> { <span class="property">transform</span>:
       <span class="value">rotate(360deg)</span>; } }
 
       <span class="selector">.anim-spin</span> {
+      <span class="comment"
+        >/* name | duration | timing-function | delay | iteration-count |
+        direction | fill-mode */</span
+      >
       <span class="property">animation</span>:
-      <span class="value">spin 2s linear infinite</span>; }
+      <span class="value">spin 2s linear 0s infinite normal none</span>; }
+
+      <span class="keyframes">@keyframes</span> bounce {
+      <span class="value">0%</span>, <span class="value">100%</span> {
+      <span class="property">transform</span>:
+      <span class="value">translateY(0)</span>; }
+      <span class="value">50%</span> { <span class="property">transform</span>:
+      <span class="value">translateY(-30px)</span>; } }
+
+      <span class="selector">.anim-bounce</span> {
+      <span class="property">animation</span>:
+      <span class="value">bounce 1s ease 0s infinite normal none</span>; }
     </div>
 
     <h3>Output:</h3>
