@@ -203,17 +203,15 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="selector">.vw-box</span> {
-      <span class="property">width</span>: <span class="value">50vw</span>;
-      <span class="comment">/* 50% of screen width */</span>
-      }
-      <span class="selector">.pct-box</span> {
-      <span class="property">width</span>: <span class="value">50%</span>;
-      <span class="comment">/* 50% of parent width */</span>
-      }
-    </div>
+    <div class="code-block">/* CSS */
+<span class="selector">.vw-box</span> {
+<span class="property">width</span>: <span class="value">50vw</span>;
+<span class="comment">/* 50% of screen width */</span>
+}
+<span class="selector">.pct-box</span> {
+<span class="property">width</span>: <span class="value">50%</span>;
+<span class="comment">/* 50% of parent width */</span>
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -231,28 +229,26 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="selector">.responsive-box</span> {
-      <span class="property">background-color</span>:
-      <span class="value">#ff5722</span>;
-      <span class="comment">/* Red (Mobile) */</span>
-      }
+    <div class="code-block">/* CSS */
+<span class="selector">.responsive-box</span> {
+<span class="property">background-color</span>:
+<span class="value">#ff5722</span>;
+<span class="comment">/* Red (Mobile) */</span>
+}
 
-      <span class="media">@media</span> (min-width: 600px) {
-      <span class="selector">.responsive-box</span> {
-      <span class="property">background-color</span>:
-      <span class="value">#2196f3</span>;
-      <span class="comment">/* Blue (Tablet) */</span>
-      } }
+<span class="media">@media</span> (min-width: 600px) {
+<span class="selector">.responsive-box</span> {
+<span class="property">background-color</span>:
+<span class="value">#2196f3</span>;
+<span class="comment">/* Blue (Tablet) */</span>
+} }
 
-      <span class="media">@media</span> (min-width: 900px) {
-      <span class="selector">.responsive-box</span> {
-      <span class="property">background-color</span>:
-      <span class="value">#4caf50</span>;
-      <span class="comment">/* Green (Desktop) */</span>
-      } }
-    </div>
+<span class="media">@media</span> (min-width: 900px) {
+<span class="selector">.responsive-box</span> {
+<span class="property">background-color</span>:
+<span class="value">#4caf50</span>;
+<span class="comment">/* Green (Desktop) */</span>
+} }</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -266,28 +262,26 @@
     <p>Using Grid or Flexbox with media queries to change column counts.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="selector">.responsive-grid</span> {
-      <span class="property">grid-template-columns</span>:
-      <span class="value">1fr</span>;
-      <span class="comment">/* 1 Col (Mobile) */</span>
-      <span class="property">gap</span>: <span class="value">10px</span>; }
+    <div class="code-block">/* CSS */
+<span class="selector">.responsive-grid</span> {
+<span class="property">grid-template-columns</span>:
+<span class="value">1fr</span>;
+<span class="comment">/* 1 Col (Mobile) */</span>
+<span class="property">gap</span>: <span class="value">10px</span>; }
 
-      <span class="media">@media</span> (min-width: 600px) {
-      <span class="selector">.responsive-grid</span> {
-      <span class="property">grid-template-columns</span>:
-      <span class="value">1fr 1fr</span>;
-      <span class="comment">/* 2 Cols */</span>
-      } }
+<span class="media">@media</span> (min-width: 600px) {
+<span class="selector">.responsive-grid</span> {
+<span class="property">grid-template-columns</span>:
+<span class="value">1fr 1fr</span>;
+<span class="comment">/* 2 Cols */</span>
+} }
 
-      <span class="media">@media</span> (min-width: 900px) {
-      <span class="selector">.responsive-grid</span> {
-      <span class="property">grid-template-columns</span>:
-      <span class="value">1fr 1fr 1fr</span>;
-      <span class="comment">/* 3 Cols */</span>
-      } }
-    </div>
+<span class="media">@media</span> (min-width: 900px) {
+<span class="selector">.responsive-grid</span> {
+<span class="property">grid-template-columns</span>:
+<span class="value">1fr 1fr 1fr</span>;
+<span class="comment">/* 3 Cols */</span>
+} }</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -308,18 +302,16 @@
     <p>Sometimes you want to show different content on mobile vs desktop.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="selector">.desktop-only</span> {
-      <span class="property">display</span>: <span class="value">none</span>; }
+    <div class="code-block">/* CSS */
+<span class="selector">.desktop-only</span> {
+<span class="property">display</span>: <span class="value">none</span>; }
 
-      <span class="media">@media</span> (min-width: 768px) {
-      <span class="selector">.mobile-only</span> {
-      <span class="property">display</span>: <span class="value">none</span>; }
-      <span class="selector">.desktop-only</span> {
-      <span class="property">display</span>: <span class="value">block</span>; }
-      }
-    </div>
+<span class="media">@media</span> (min-width: 768px) {
+<span class="selector">.mobile-only</span> {
+<span class="property">display</span>: <span class="value">none</span>; }
+<span class="selector">.desktop-only</span> {
+<span class="property">display</span>: <span class="value">block</span>; }
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">

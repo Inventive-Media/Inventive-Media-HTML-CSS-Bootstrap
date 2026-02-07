@@ -236,24 +236,22 @@
     <p>Controls the direction in which items are laid out.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="comment"
-        >/* Default: Lays out items in a row (Left to Right) */</span
-      >
-      <span class="selector">.row</span> {
-      <span class="property">display</span>: <span class="value">flex</span>;
-      <span class="property">flex-direction</span>:
-      <span class="value">row</span>; }
+    <div class="code-block">/* CSS */
+<span class="comment"
+  >/* Default: Lays out items in a row (Left to Right) */</span
+>
+<span class="selector">.row</span> {
+  <span class="property">display</span>: <span class="value">flex</span>;
+  <span class="property">flex-direction</span>: <span class="value">row</span>;
+}
 
-      <span class="comment"
-        >/* Lays out items in a column (Top to Bottom) */</span
-      >
-      <span class="selector">.column</span> {
-      <span class="property">display</span>: <span class="value">flex</span>;
-      <span class="property">flex-direction</span>:
-      <span class="value">column</span>; }
-    </div>
+<span class="comment"
+  >/* Lays out items in a column (Top to Bottom) */</span
+>
+<span class="selector">.column</span> {
+  <span class="property">display</span>: <span class="value">flex</span>;
+  <span class="property">flex-direction</span>: <span class="value">column</span>;
+}</div>
 
     <h3>Output (Row):</h3>
     <div class="example-output">
@@ -280,25 +278,18 @@
     <p>Aligns items horizontally (if direction is row). Useful for spacing.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="selector">.j-start</span> {
-      <span class="property">justify-content</span>:
-      <span class="value">flex-start</span>; }
-      <span class="comment">/* Default */</span>
-      <span class="selector">.j-center</span> {
-      <span class="property">justify-content</span>:
-      <span class="value">center</span>; }
-      <span class="selector">.j-end</span> {
-      <span class="property">justify-content</span>:
-      <span class="value">flex-end</span>; }
-      <span class="selector">.j-between</span> {
-      <span class="property">justify-content</span>:
-      <span class="value">space-between</span>; }
-      <span class="selector">.j-around</span> {
-      <span class="property">justify-content</span>:
-      <span class="value">space-around</span>; }
-    </div>
+    <div class="code-block">/* CSS */
+<span class="selector">.j-start</span> {
+  <span class="property">justify-content</span>: <span class="value">flex-start</span>; }
+<span class="comment">/* Default */</span>
+<span class="selector">.j-center</span> {
+  <span class="property">justify-content</span>: <span class="value">center</span>; }
+<span class="selector">.j-end</span> {
+  <span class="property">justify-content</span>: <span class="value">flex-end</span>; }
+<span class="selector">.j-between</span> {
+  <span class="property">justify-content</span>: <span class="value">space-between</span>; }
+<span class="selector">.j-around</span> {
+  <span class="property">justify-content</span>: <span class="value">space-around</span>; }</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -324,16 +315,12 @@
     <p>Aligns items vertically (if direction is row).</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="selector">.a-center</span> {
-      <span class="property">align-items</span>:
-      <span class="value">center</span>; }
-      <span class="selector">.a-stretch</span> {
-      <span class="property">align-items</span>:
-      <span class="value">stretch</span>; }
-      <span class="comment">/* Default: Stretch to fill height */</span>
-    </div>
+    <div class="code-block">/* CSS */
+<span class="selector">.a-center</span> {
+  <span class="property">align-items</span>: <span class="value">center</span>; }
+<span class="selector">.a-stretch</span> {
+  <span class="property">align-items</span>: <span class="value">stretch</span>; }
+<span class="comment">/* Default: Stretch to fill height */</span></div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -359,13 +346,12 @@
     <p>Allows items to wrap onto multiple lines if there isn't enough space.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="selector">.wrap-container</span> {
-      <span class="property">display</span>: <span class="value">flex</span>;
-      <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
-      <span class="property">width</span>: <span class="value">300px</span>; }
-    </div>
+    <div class="code-block">/* CSS */
+<span class="selector">.wrap-container</span> {
+  <span class="property">display</span>: <span class="value">flex</span>;
+  <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
+  <span class="property">width</span>: <span class="value">300px</span>;
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -385,16 +371,13 @@
     <p>Common pattern: Logo on the left, Links on the right.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */
-      <span class="selector">.navbar</span> {
-      <span class="property">display</span>: <span class="value">flex</span>;
-      <span class="property">justify-content</span>:
-      <span class="value">space-between</span>;
-      <span class="comment">/* Push apart */</span>
-      <span class="property">align-items</span>:
-      <span class="value">center</span>; }
-    </div>
+    <div class="code-block">/* CSS */
+<span class="selector">.navbar</span> {
+  <span class="property">display</span>: <span class="value">flex</span>;
+  <span class="property">justify-content</span>: <span class="value">space-between</span>;
+  <span class="comment">/* Push apart */</span>
+  <span class="property">align-items</span>: <span class="value">center</span>;
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">
