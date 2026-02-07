@@ -224,7 +224,12 @@
 
     <hr />
 
-    <!-- 1. Static -->
+    <!-- 
+      SECTION 1: STATIC POSITION (DEFAULT)
+      Every element is static by default — it follows the normal document flow.
+      Elements appear one after another in the order they're written in HTML.
+      The top/left/right/bottom properties have NO effect on static elements.
+    -->
     <h2 class="section-title">1. Static Position (Default)</h2>
     <p>
       Elements display in order, as they appear in the document flow.
@@ -232,10 +237,11 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.static-box</span> {
-  <span class="property">position</span>: <span class="value">static</span>;
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.static-box</span> {
+      <span class="property">position</span>: <span class="value">static</span>;
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -245,7 +251,12 @@
 
     <hr />
 
-    <!-- 2. Relative -->
+    <!-- 
+      SECTION 2: RELATIVE POSITION
+      The element stays in its normal position but can be nudged
+      using top/left/right/bottom. The original space it occupied
+      is preserved (other elements don't move to fill the gap).
+    -->
     <h2 class="section-title">2. Relative Position</h2>
     <p>
       Positioned relative to its <strong>normal position</strong>. Moving it
@@ -253,14 +264,16 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.relative-box</span> {
-  <span class="property">position</span>: <span class="value">relative</span>;
-  <span class="property">top</span>: <span class="value">20px</span>;
-  <span class="comment">/* Move down 20px */</span>
-  <span class="property">left</span>: <span class="value">20px</span>;
-  <span class="comment">/* Move right 20px */</span>
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.relative-box</span> {
+      <span class="property">position</span>:
+      <span class="value">relative</span>; <span class="property">top</span>:
+      <span class="value">20px</span>;
+      <span class="comment">/* Move down 20px */</span>
+      <span class="property">left</span>: <span class="value">20px</span>;
+      <span class="comment">/* Move right 20px */</span>
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -271,7 +284,13 @@
 
     <hr />
 
-    <!-- 3. Absolute -->
+    <!-- 
+      SECTION 3: ABSOLUTE POSITION
+      The element is removed from the normal flow and positioned relative
+      to its nearest ancestor that has position: relative (or the page itself).
+      Other elements act as if the absolute element doesn't exist.
+      Common trick: top: 50%; left: 50%; transform: translate(-50%, -50%) centers it.
+    -->
     <h2 class="section-title">3. Absolute Position</h2>
     <p>
       Positioned relative to the nearest
@@ -281,25 +300,28 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.relative-container</span> {
-  <span class="property">position</span>: <span class="value">relative</span>;
-  <span class="comment">/* The Anchor */</span>
-  <span class="property">height</span>: <span class="value">250px</span>; }
+    <div class="code-block">
+      /* CSS */ <span class="selector">.relative-container</span> {
+      <span class="property">position</span>:
+      <span class="value">relative</span>;
+      <span class="comment">/* The Anchor */</span>
+      <span class="property">height</span>: <span class="value">250px</span>; }
 
-<span class="selector">.absolute-tl</span> {
-  <span class="property">position</span>: <span class="value">absolute</span>;
-  <span class="property">top</span>: <span class="value">0</span>;
-  <span class="property">left</span>: <span class="value">0</span>;
-}
+      <span class="selector">.absolute-tl</span> {
+      <span class="property">position</span>:
+      <span class="value">absolute</span>; <span class="property">top</span>:
+      <span class="value">0</span>; <span class="property">left</span>:
+      <span class="value">0</span>; }
 
-<span class="selector">.absolute-center</span> {
-  <span class="property">position</span>: <span class="value">absolute</span>;
-  <span class="property">top</span>: <span class="value">50%</span>;
-  <span class="property">left</span>: <span class="value">50%</span>;
-  <span class="property">transform</span>: <span class="value">translate(-50%, -50%)</span>;
-  <span class="comment">/* Centers it */</span>
-}</div>
+      <span class="selector">.absolute-center</span> {
+      <span class="property">position</span>:
+      <span class="value">absolute</span>; <span class="property">top</span>:
+      <span class="value">50%</span>; <span class="property">left</span>:
+      <span class="value">50%</span>; <span class="property">transform</span>:
+      <span class="value">translate(-50%, -50%)</span>;
+      <span class="comment">/* Centers it */</span>
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output relative-container">
@@ -310,7 +332,12 @@
 
     <hr />
 
-    <!-- 4. Fixed -->
+    <!-- 
+      SECTION 4: FIXED POSITION
+      The element is positioned relative to the browser window (viewport).
+      It stays in the exact same spot even when you scroll the page.
+      Common uses: sticky headers, floating action buttons, chat widgets.
+    -->
     <h2 class="section-title">4. Fixed Position</h2>
     <p>
       Positioned relative to the <strong>viewport</strong> (browser window). It
@@ -320,16 +347,21 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.fixed-box</span> {
-  <span class="property">position</span>: <span class="value">fixed</span>;
-  <span class="property">bottom</span>: <span class="value">20px</span>;
-  <span class="property">right</span>: <span class="value">20px</span>;
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.fixed-box</span> {
+      <span class="property">position</span>: <span class="value">fixed</span>;
+      <span class="property">bottom</span>: <span class="value">20px</span>;
+      <span class="property">right</span>: <span class="value">20px</span>; }
+    </div>
 
     <hr />
 
-    <!-- 5. Sticky -->
+    <!-- 
+      SECTION 5: STICKY POSITION
+      A hybrid of relative and fixed. The element scrolls normally until it
+      reaches a specified offset (e.g., top: 0), then it "sticks" in place.
+      Common use: headers that stick to the top when you scroll past them.
+    -->
     <h2 class="section-title">5. Sticky Position</h2>
     <p>
       Toggles between <code>relative</code> and <code>fixed</code> based on
@@ -337,12 +369,13 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.sticky-element</span> {
-  <span class="property">position</span>: <span class="value">sticky</span>;
-  <span class="property">top</span>: <span class="value">0</span>;
-  <span class="comment">/* Sticks to top */</span>
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.sticky-element</span> {
+      <span class="property">position</span>: <span class="value">sticky</span>;
+      <span class="property">top</span>: <span class="value">0</span>;
+      <span class="comment">/* Sticks to top */</span>
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output sticky-container">
@@ -356,22 +389,28 @@
 
     <hr />
 
-    <!-- 6. Z-Index -->
+    <!-- 
+      SECTION 6: Z-INDEX (STACKING ORDER)
+      When elements overlap (due to positioning), z-index controls which one
+      appears on top. Higher z-index = closer to the viewer.
+      Only works on positioned elements (relative, absolute, fixed, sticky).
+    -->
     <h2 class="section-title">6. Z-Index (Stacking Order)</h2>
     <p>
       Controls which element sits on top of another. Higher number = on top.
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.z-1</span> {
-  <span class="property">z-index</span>: <span class="value">1</span>; }
-<span class="comment">/* Bottom */</span>
-<span class="selector">.z-2</span> {
-  <span class="property">z-index</span>: <span class="value">2</span>; }
-<span class="selector">.z-3</span> {
-  <span class="property">z-index</span>: <span class="value">3</span>; }
-<span class="comment">/* Top */</span></div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.z-1</span> {
+      <span class="property">z-index</span>: <span class="value">1</span>; }
+      <span class="comment">/* Bottom */</span>
+      <span class="selector">.z-2</span> {
+      <span class="property">z-index</span>: <span class="value">2</span>; }
+      <span class="selector">.z-3</span> {
+      <span class="property">z-index</span>: <span class="value">3</span>; }
+      <span class="comment">/* Top */</span>
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output z-container">

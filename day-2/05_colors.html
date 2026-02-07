@@ -162,7 +162,11 @@
 
     <hr />
 
-    <!-- 1. Named Colors -->
+    <!-- 
+      SECTION 1: NAMED COLORS
+      CSS supports 140+ predefined color names like 'red', 'blue', 'coral', etc.
+      These are the simplest way to use colors but offer limited choices.
+    -->
     <h2 class="section-title">1. Named Colors</h2>
     <p>
       CSS supports 140+ standard color names (e.g., <code>red</code>,
@@ -170,18 +174,18 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.named-red</span> {
-  <span class="property">background-color</span>: <span class="value">red</span>; 
-}
-<span class="selector">.named-blue</span> {
-  <span class="property">background-color</span>: <span class="value">blue</span>; 
-}
-<span class="selector">.named-green</span> {
-  <span class="property">background-color</span>: <span class="value">green</span>; 
-}
-/* HTML */ 
-&lt;div class="named-red"&gt;Red&lt;/div&gt;</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.named-red</span> {
+      <span class="property">background-color</span>:
+      <span class="value">red</span>; }
+      <span class="selector">.named-blue</span> {
+      <span class="property">background-color</span>:
+      <span class="value">blue</span>; }
+      <span class="selector">.named-green</span> {
+      <span class="property">background-color</span>:
+      <span class="value">green</span>; } /* HTML */ &lt;div
+      class="named-red"&gt;Red&lt;/div&gt;
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -192,7 +196,12 @@
 
     <hr />
 
-    <!-- 2. Hexadecimal Colors -->
+    <!-- 
+      SECTION 2: HEXADECIMAL COLORS (#RRGGBB)
+      Hex codes use a # followed by 6 characters (0-9, A-F).
+      The first two characters represent Red, next two Green, last two Blue.
+      #000000 = black, #ffffff = white. This is the most common format used by designers.
+    -->
     <h2 class="section-title">2. Hexadecimal Colors (#RRGGBB)</h2>
     <p>
       A hex code starts with a hash (<code>#</code>) followed by 6 characters
@@ -204,16 +213,17 @@
     </ul>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.hex-tomato</span> {
-  <span class="property">background-color</span>: <span class="value">#ff5733</span>; 
-}
-<span class="selector">.hex-green</span> {
-  <span class="property">background-color</span>: <span class="value">#33ff57</span>; 
-}
-<span class="selector">.hex-blue</span> {
-  <span class="property">background-color</span>: <span class="value">#3357ff</span>; 
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.hex-tomato</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#ff5733</span>; }
+      <span class="selector">.hex-green</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#33ff57</span>; }
+      <span class="selector">.hex-blue</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#3357ff</span>; }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -224,7 +234,12 @@
 
     <hr />
 
-    <!-- 3. RGB Colors -->
+    <!-- 
+      SECTION 3: RGB COLORS
+      Uses the rgb(red, green, blue) function where each value is 0-255.
+      rgb(0, 0, 0) = black, rgb(255, 255, 255) = white.
+      This format is intuitive if you think in terms of mixing light.
+    -->
     <h2 class="section-title">3. RGB Colors (Red, Green, Blue)</h2>
     <p>
       Uses the <code>rgb(red, green, blue)</code> function. Each parameter uses
@@ -232,13 +247,14 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.rgb-coral</span> {
-  <span class="property">background-color</span>: <span class="value">rgb(255, 99, 71)</span>; 
-}
-<span class="selector">.rgb-sea</span> {
-  <span class="property">background-color</span>: <span class="value">rgb(60, 179, 113)</span>; 
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.rgb-coral</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgb(255, 99, 71)</span>; }
+      <span class="selector">.rgb-sea</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgb(60, 179, 113)</span>; }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -249,7 +265,12 @@
 
     <hr />
 
-    <!-- 4. RGBA (Transparency) -->
+    <!-- 
+      SECTION 4: RGBA COLORS (ALPHA / TRANSPARENCY)
+      Same as RGB but with an extra Alpha channel (0.0 to 1.0).
+      The alpha controls transparency: 0 = invisible, 1 = fully solid.
+      This is essential for overlays, faded backgrounds, and glass effects.
+    -->
     <h2 class="section-title">4. RGBA Colors (Alpha Channel)</h2>
     <p>
       Same as RGB, but with an <strong>Alpha</strong> channel (0.0 to 1.0) for
@@ -261,20 +282,21 @@
     </ul>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="comment">/* Solid */</span>
-<span class="selector">.rgba-100</span> {
-  <span class="property">background-color</span>: <span class="value">rgba(255, 0, 0, 1.0)</span>; 
-}
-<span class="comment">/* Semi-transparent */</span>
-<span class="selector">.rgba-60</span> {
-  <span class="property">background-color</span>: <span class="value">rgba(255, 0, 0, 0.6)</span>; 
-}
-<span class="comment">/* Very transparent */</span>
-<span class="selector">.rgba-30</span> {
-  <span class="property">background-color</span>: <span class="value">rgba(255, 0, 0, 0.3)</span>; 
-}
-</div>
+    <div class="code-block">
+      /* CSS */
+      <span class="comment">/* Solid */</span>
+      <span class="selector">.rgba-100</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgba(255, 0, 0, 1.0)</span>; }
+      <span class="comment">/* Semi-transparent */</span>
+      <span class="selector">.rgba-60</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgba(255, 0, 0, 0.6)</span>; }
+      <span class="comment">/* Very transparent */</span>
+      <span class="selector">.rgba-30</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgba(255, 0, 0, 0.3)</span>; }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -287,7 +309,13 @@
 
     <hr />
 
-    <!-- 5. HSL Colors -->
+    <!-- 
+      SECTION 5: HSL COLORS (HUE, SATURATION, LIGHTNESS)
+      An alternative color model that's often more intuitive.
+      Hue: position on the color wheel (0-360 degrees).
+      Saturation: intensity of the color (0% = gray, 100% = full color).
+      Lightness: brightness (0% = black, 50% = normal, 100% = white).
+    -->
     <h2 class="section-title">5. HSL (Hue, Saturation, Lightness)</h2>
     <p>Uses the <code>hsl(hue, saturation%, lightness%)</code> function.</p>
     <ul>
@@ -300,16 +328,17 @@
     </ul>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.hsl-red</span> {
-  <span class="property">background-color</span>: <span class="value">hsl(0, 100%, 50%)</span>; 
-}
-<span class="selector">.hsl-green</span> {
-  <span class="property">background-color</span>: <span class="value">hsl(120, 100%, 50%)</span>; 
-}
-<span class="selector">.hsl-blue</span> {
-  <span class="property">background-color</span>: <span class="value">hsl(240, 100%, 50%)</span>; 
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.hsl-red</span> {
+      <span class="property">background-color</span>:
+      <span class="value">hsl(0, 100%, 50%)</span>; }
+      <span class="selector">.hsl-green</span> {
+      <span class="property">background-color</span>:
+      <span class="value">hsl(120, 100%, 50%)</span>; }
+      <span class="selector">.hsl-blue</span> {
+      <span class="property">background-color</span>:
+      <span class="value">hsl(240, 100%, 50%)</span>; }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
