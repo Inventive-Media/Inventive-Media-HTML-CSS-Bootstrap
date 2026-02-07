@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Typography</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .section-title {
+        color: #7952b3;
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .demo-box {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #dee2e6;
+      }
+      .code-label {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-bottom: 5px;
+      }
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #7952b3;
+        font-weight: bold;
+        margin: 0 15px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1 class="text-center mb-4" style="color: #7952b3">
+        Day 3 - Typography
+      </h1>
+      <p class="lead text-center text-muted">
+        Master Bootstrap's typography classes for beautiful text styling.
+      </p>
+
+      <hr />
+
+      <!-- Section 1: Heading Styles -->
+      <h2 class="section-title">1. Heading Styles</h2>
+      <p>
+        Apply heading styles to any element using <code>.h1</code> to
+        <code>.h6</code> classes.
+      </p>
+
+      <div class="demo-box">
+        <p class="code-label"><code>.h1</code> through <code>.h6</code></p>
+        <p class="h1">Heading 1</p>
+        <p class="h2">Heading 2</p>
+        <p class="h3">Heading 3</p>
+        <p class="h4">Heading 4</p>
+        <p class="h5">Heading 5</p>
+        <p class="h6">Heading 6</p>
+      </div>
+
+      <h5 class="mt-4">Display Headings</h5>
+      <p>
+        Use <code>.display-1</code> to <code>.display-6</code> for larger, bolder headings:
+      </p>
+
+      <div class="demo-box">
+        <p class="code-label"><code>.display-1</code> through <code>.display-6</code></p>
+        <p class="display-1">Display 1</p>
+        <p class="display-2">Display 2</p>
+        <p class="display-3">Display 3</p>
+        <p class="display-4">Display 4</p>
+        <p class="display-5">Display 5</p>
+        <p class="display-6">Display 6</p>
+      </div>
+
+      <hr />
+
+      <!-- Section 2: Text Styles -->
+      <h2 class="section-title">2. Text Styles</h2>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="demo-box h-100">
+            <p class="code-label"><code>.lead</code></p>
+            <p class="lead">
+              This is a lead paragraph. It stands out with larger font and
+              lighter weight.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="demo-box h-100">
+            <p class="code-label"><code>.small</code></p>
+            <p>Normal text and <span class="small">small text</span></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="demo-box h-100">
+            <p class="code-label"><code>.mark</code></p>
+            <p>Normal text with <mark class="mark">highlighted text</mark></p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Section 3: Font Weights -->
+      <h2 class="section-title">3. Font Weights & Styles</h2>
+
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="demo-box text-center h-100">
+            <p class="code-label"><code>.fw-bold</code></p>
+            <p class="fw-bold">Bold text</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="demo-box text-center h-100">
+            <p class="code-label"><code>.fw-normal</code></p>
+            <p class="fw-normal">Normal text</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="demo-box text-center h-100">
+            <p class="code-label"><code>.fw-light</code></p>
+            <p class="fw-light">Light text</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="demo-box text-center h-100">
+            <p class="code-label"><code>.fst-italic</code></p>
+            <p class="fst-italic">Italic text</p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Section 4: Text Decoration -->
+      <h2 class="section-title">4. Text Decoration</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="demo-box text-center">
+            <p class="code-label"><code>.text-decoration-underline</code></p>
+            <p class="text-decoration-underline">Underlined text</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="demo-box text-center">
+            <p class="code-label"><code>.text-decoration-line-through</code></p>
+            <p class="text-decoration-line-through">Strikethrough text</p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Section 5: Text Alignment -->
+      <h2 class="section-title">5. Text Alignment</h2>
+
+      <div class="demo-box">
+        <p class="code-label"><code>.text-start</code></p>
+        <p class="text-start border p-2">Left aligned text</p>
+      </div>
+      <div class="demo-box">
+        <p class="code-label"><code>.text-center</code></p>
+        <p class="text-center border p-2">Center aligned text</p>
+      </div>
+      <div class="demo-box">
+        <p class="code-label"><code>.text-end</code></p>
+        <p class="text-end border p-2">Right aligned text</p>
+      </div>
+
+      <hr />
+
+      <!-- Section 6: Line Heights -->
+      <h2 class="section-title">6. Line Heights</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="demo-box">
+            <p class="code-label"><code>.lh-1</code> (Tight)</p>
+            <p class="lh-1">
+              This is a paragraph with tight line height. The lines are very
+              close together.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="demo-box">
+            <p class="code-label"><code>.lh-sm</code> (Small)</p>
+            <p class="lh-sm">
+              This is a paragraph with small line height. Slightly more space
+              than tight.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="demo-box">
+            <p class="code-label"><code>.lh-base</code> (Normal)</p>
+            <p class="lh-base">
+              This is a paragraph with normal line height. The default spacing
+              for readability.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="demo-box">
+            <p class="code-label"><code>.lh-lg</code> (Large)</p>
+            <p class="lh-lg">
+              This is a paragraph with large line height. More space between
+              lines.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Quick Reference Table -->
+      <h2 class="section-title">Quick Reference</h2>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Category</th>
+              <th>Classes</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Headings</td>
+              <td><code>.h1</code> - <code>.h6</code></td>
+              <td>Apply heading styles to any element</td>
+            </tr>
+            <tr>
+              <td>Display</td>
+              <td><code>.display-1</code> - <code>.display-6</code></td>
+              <td>Larger, bolder headings</td>
+            </tr>
+            <tr>
+              <td>Text Styles</td>
+              <td><code>.lead</code>, <code>.small</code>, <code>.mark</code></td>
+              <td>Lead paragraph, small text, highlight</td>
+            </tr>
+            <tr>
+              <td>Font Weight</td>
+              <td><code>.fw-bold</code>, <code>.fw-normal</code>, <code>.fw-light</code></td>
+              <td>Text weight control</td>
+            </tr>
+            <tr>
+              <td>Font Style</td>
+              <td><code>.fst-italic</code></td>
+              <td>Italic text</td>
+            </tr>
+            <tr>
+              <td>Decoration</td>
+              <td><code>.text-decoration-underline</code>, <code>.text-decoration-line-through</code></td>
+              <td>Underline and strikethrough</td>
+            </tr>
+            <tr>
+              <td>Alignment</td>
+              <td><code>.text-start</code>, <code>.text-center</code>, <code>.text-end</code></td>
+              <td>Text alignment</td>
+            </tr>
+            <tr>
+              <td>Line Height</td>
+              <td><code>.lh-1</code>, <code>.lh-sm</code>, <code>.lh-base</code>, <code>.lh-lg</code></td>
+              <td>Line height control</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-links">
+        <a href="./01_setup.html">&lt; Previous: Setup</a> |
+        <a href="./03_utilities.html">Next: Utilities &gt;</a>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

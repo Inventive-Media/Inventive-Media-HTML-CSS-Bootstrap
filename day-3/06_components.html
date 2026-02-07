@@ -1,22 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Components</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .section-title {
+        color: #7952b3;
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .demo-box {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #dee2e6;
+      }
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #7952b3;
+        font-weight: bold;
+        margin: 0 15px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1 class="text-center mb-4" style="color: #7952b3">
+        Day 3 - Components
+      </h1>
+      <p class="lead text-center text-muted">
+        Pre-styled, reusable UI elements for rapid web development.
+      </p>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <title>Bootstrap 5 - Essentials</title>
-</head>
+      <div class="alert alert-info" role="alert">
+        <strong>💡 What are Components?</strong> Bootstrap components are
+        pre-styled, reusable UI elements built with HTML, CSS, and JavaScript
+        for consistent and responsive design.
+      </div>
 
-<body>
-  <div class="container">
-    <h1>Components</h1>
-    <hr>
-    <hr>
+      <hr />
 
-    <!-- start here -->
-  </div>
-  <script src="./js/bootstrap.bundle.min.js"></script>
-</body>
+      <!-- Section 1: Navbar -->
+      <h2 class="section-title">1. Navbar</h2>
+      <p>A responsive navigation header with links, branding, and togglers.</p>
 
+      <div class="demo-box p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">MyBrand</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarDemo"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarDemo">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <p class="small text-muted mt-2">
+        <strong>Key classes:</strong> <code>.navbar</code>, <code>.navbar-expand-lg</code>, 
+        <code>.navbar-dark</code>, <code>.bg-dark</code>
+      </p>
+
+      <hr />
+
+      <!-- Section 2: Alerts -->
+      <h2 class="section-title">2. Alerts</h2>
+      <p>Contextual feedback messages for user actions.</p>
+
+      <div class="demo-box">
+        <div class="alert alert-primary" role="alert">
+          <strong>Primary!</strong> This is a primary alert.
+        </div>
+        <div class="alert alert-success" role="alert">
+          <strong>Success!</strong> Your action was completed successfully.
+        </div>
+        <div class="alert alert-warning" role="alert">
+          <strong>Warning!</strong> Please review before proceeding.
+        </div>
+        <div class="alert alert-danger" role="alert">
+          <strong>Danger!</strong> Something went wrong.
+        </div>
+      </div>
+
+      <p class="small text-muted">
+        <strong>Key classes:</strong> <code>.alert</code>,
+        <code>.alert-{color}</code> (primary, success, warning, danger, info)
+      </p>
+
+      <hr />
+
+      <!-- Section 3: Buttons -->
+      <h2 class="section-title">3. Buttons</h2>
+      <p>Standard clickable buttons with customizable sizes and styles.</p>
+
+      <div class="demo-box">
+        <h6>Button Colors</h6>
+        <button class="btn btn-primary me-1 mb-2">Primary</button>
+        <button class="btn btn-secondary me-1 mb-2">Secondary</button>
+        <button class="btn btn-success me-1 mb-2">Success</button>
+        <button class="btn btn-danger me-1 mb-2">Danger</button>
+        <button class="btn btn-warning me-1 mb-2">Warning</button>
+        <button class="btn btn-info me-1 mb-2">Info</button>
+
+        <h6 class="mt-3">Outlined Buttons</h6>
+        <button class="btn btn-outline-primary me-1 mb-2">Primary</button>
+        <button class="btn btn-outline-success me-1 mb-2">Success</button>
+        <button class="btn btn-outline-danger me-1 mb-2">Danger</button>
+
+        <h6 class="mt-3">Button Sizes</h6>
+        <button class="btn btn-primary btn-sm me-1">Small</button>
+        <button class="btn btn-primary me-1">Normal</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+
+      <p class="small text-muted">
+        <strong>Key classes:</strong> <code>.btn</code>,
+        <code>.btn-{color}</code>, <code>.btn-outline-{color}</code>,
+        <code>.btn-sm</code>, <code>.btn-lg</code>
+      </p>
+
+      <hr />
+
+      <!-- Section 4: Badges -->
+      <h2 class="section-title">4. Badges</h2>
+      <p>Small count or labeling elements for notifications.</p>
+
+      <div class="demo-box">
+        <span class="badge bg-primary me-1">Primary</span>
+        <span class="badge bg-secondary me-1">Secondary</span>
+        <span class="badge bg-success me-1">Success</span>
+        <span class="badge bg-danger me-1">Danger</span>
+        <span class="badge bg-warning text-dark me-1">Warning</span>
+        <span class="badge bg-info text-dark me-1">Info</span>
+
+        <h6 class="mt-3">Pill Badges</h6>
+        <span class="badge rounded-pill bg-primary me-1">Pill</span>
+        <span class="badge rounded-pill bg-success me-1">99+</span>
+        <span class="badge rounded-pill bg-danger me-1">New</span>
+
+        <h6 class="mt-3">Badges in Buttons</h6>
+        <button class="btn btn-primary">
+          Notifications <span class="badge bg-light text-dark">4</span>
+        </button>
+      </div>
+
+      <p class="small text-muted">
+        <strong>Key classes:</strong> <code>.badge</code>,
+        <code>.bg-{color}</code>, <code>.rounded-pill</code>
+      </p>
+
+      <hr />
+
+      <!-- Section 5: Cards -->
+      <h2 class="section-title">5. Cards</h2>
+      <p>Flexible content containers with headers, footers, and images.</p>
+
+      <div class="row g-4 mb-3">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">Featured</div>
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card.
+              </p>
+              <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white bg-primary">
+            <div class="card-body">
+              <h5 class="card-title">Primary Card</h5>
+              <p class="card-text">A card with primary background color.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-success">
+            <div class="card-body text-success">
+              <h5 class="card-title">Success Border</h5>
+              <p class="card-text">A card with a success border.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="small text-muted">
+        <strong>Key classes:</strong> <code>.card</code>,
+        <code>.card-header</code>, <code>.card-body</code>,
+        <code>.card-title</code>, <code>.card-text</code>
+      </p>
+
+      <hr />
+
+      <!-- Section 6: Accordion -->
+      <h2 class="section-title">6. Accordion</h2>
+      <p>Collapsible content sections for organizing information.</p>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+            >
+              Accordion Item #1
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              This is the first item's accordion body. It is shown by default.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+            >
+              Accordion Item #2
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              This is the second item's accordion body. Click to expand.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+            >
+              Accordion Item #3
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              This is the third item's accordion body.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="small text-muted mt-2">
+        <strong>Key classes:</strong> <code>.accordion</code>,
+        <code>.accordion-item</code>, <code>.accordion-button</code>,
+        <code>.accordion-collapse</code>
+      </p>
+
+      <hr />
+
+      <!-- Section 7: Modal -->
+      <h2 class="section-title">7. Modal</h2>
+      <p>A popup dialog box that overlays the current page.</p>
+
+      <div class="demo-box">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Launch Demo Modal
+        </button>
+
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal Title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>This is a modal body with some content.</p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="small text-muted">
+        <strong>Key classes:</strong> <code>.modal</code>,
+        <code>.modal-dialog</code>, <code>.modal-content</code>,
+        <code>.modal-header</code>, <code>.modal-body</code>,
+        <code>.modal-footer</code>
+      </p>
+
+      <hr />
+
+      <!-- Section 8: Forms -->
+      <h2 class="section-title">8. Forms</h2>
+      <p>Custom form controls with inputs, checkboxes, and selects.</p>
+
+      <div class="demo-box">
+        <form>
+          <div class="mb-3">
+            <label for="exampleEmail" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleEmail"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="examplePassword" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="examplePassword"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleSelect" class="form-label">Select option</label>
+            <select class="form-select" id="exampleSelect">
+              <option selected>Choose...</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck" />
+            <label class="form-check-label" for="exampleCheck">Remember me</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <p class="small text-muted">
+        <strong>Key classes:</strong> <code>.form-control</code>,
+        <code>.form-select</code>, <code>.form-check</code>,
+        <code>.form-label</code>
+      </p>
+
+      <hr />
+
+      <!-- Quick Reference -->
+      <h2 class="section-title">Quick Reference: All Components</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Component</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Navbar</td><td>Responsive navigation header</td></tr>
+            <tr><td>Alerts</td><td>Contextual feedback messages</td></tr>
+            <tr><td>Buttons</td><td>Clickable buttons with styles</td></tr>
+            <tr><td>Badges</td><td>Small count/label elements</td></tr>
+            <tr><td>Cards</td><td>Flexible content containers</td></tr>
+            <tr><td>Accordion</td><td>Collapsible content sections</td></tr>
+            <tr><td>Modal</td><td>Popup dialog boxes</td></tr>
+            <tr><td>Forms</td><td>Custom form controls</td></tr>
+            <tr><td>Carousel</td><td>Slideshow for images/text</td></tr>
+            <tr><td>Dropdowns</td><td>Toggleable action menus</td></tr>
+            <tr><td>Progress</td><td>Progress bars with labels</td></tr>
+            <tr><td>Spinners</td><td>Loading indicators</td></tr>
+            <tr><td>Toasts</td><td>Lightweight notifications</td></tr>
+            <tr><td>Tooltips</td><td>Hover text boxes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>🎉 Great Progress!</strong> You've learned the most commonly
+        used Bootstrap components. Explore the official
+        <a href="https://getbootstrap.com/docs/" target="_blank" class="alert-link"
+          >Bootstrap Documentation</a
+        >
+        for more!
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-links">
+        <a href="./05_grid_layout.html">&lt; Previous: Grid Layout</a> |
+        <a href="./index.html">Back to Day 3 Index</a>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

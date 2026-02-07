@@ -1,35 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 3 - Bootstrap5 Essentials</title>
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Bootstrap Sandbox</h1>
-    <hr>
-    <hr>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Containers</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .section-title {
+        color: #7952b3;
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .demo-container {
+        background-color: #e8f4f8;
+        border: 2px dashed #17a2b8;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #7952b3;
+        font-weight: bold;
+        margin: 0 15px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1 class="text-center mb-4" style="color: #7952b3">
+        Day 3 - Containers
+      </h1>
+      <p class="lead text-center text-muted">
+        Containers are the fundamental building blocks in Bootstrap for
+        organizing layout.
+      </p>
 
-    <!-- start here -->
-    <p class="fw-bold">Container</p>
-  </div>
-  <div class="container mb-4">
-    <h3>Normal Container</h3>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, saepe consequuntur. Nisi quibusdam provident unde perspiciatis, consequuntur pariatur mollitia maxime cum harum dignissimos quo illo omnis commodi magnam ipsa quis minima. Mollitia, libero placeat nesciunt sequi facere, quibusdam asperiores deserunt ipsum fugit, veritatis vitae corporis obcaecati enim voluptas error. Voluptatum!</p>
-  </div>
-  <div class="container-fluid mb-4">
-    <h3>Fluid container (100% width) </h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam illum, obcaecati vitae dolor tempora ea quas deserunt, vel, sapiente debitis accusamus quae eius numquam necessitatibus autem animi aliquam dolores? Dolorem.</p>
-  </div>
-  <div class="container-lg mb-4">
-    <h3>Container large</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius totam voluptatem excepturi eum voluptatibus sed fuga, molestiae reiciendis inventore, nostrum nobis adipisci alias tempore quo! Deleniti, doloribus? Consequuntur, eligendi atque.</p>
-  </div>
-  <div class="container-xl mb-4">
-    <h3>Container Extra large</h3>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus deleniti eius atque, harum dolorem molestiae eum nesciunt autem aliquam et architecto dicta tenetur repellendus vel a natus quibusdam neque! Modi.</p>
-  </div>
-</body>
+      <hr />
+
+      <!-- Section 1: What are Containers? -->
+      <h2 class="section-title">1. What are Containers?</h2>
+      <p>
+        Containers are used to <strong>contain</strong>, <strong>pad</strong>,
+        and <strong>align</strong> content within a given device or viewport.
+        They are essential for creating responsive layouts.
+      </p>
+
+      <div class="alert alert-info" role="alert">
+        <strong>💡 Key Concept:</strong> Containers set the maximum width of
+        your content and center it on the page.
+      </div>
+
+      <hr />
+
+      <!-- Section 2: Container Types -->
+      <h2 class="section-title">2. Container Types</h2>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+              <code class="text-white">.container</code>
+            </div>
+            <div class="card-body">
+              <p>
+                Centers content and sets a <strong>fixed width</strong> at each
+                responsive breakpoint.
+              </p>
+              <p class="small text-muted mb-0">
+                Full width on extra-small screens, fixed widths on larger
+                screens.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white">
+              <code class="text-white">.container-fluid</code>
+            </div>
+            <div class="card-body">
+              <p>
+                Creates a <strong>full-width container</strong> that spans 100%
+                of the viewport on all device sizes.
+              </p>
+              <p class="small text-muted mb-0">Always 100% wide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Section 3: Breakpoints Table -->
+      <h2 class="section-title">3. Container Breakpoints</h2>
+      <p>
+        This table shows the max-width of each container at different screen
+        sizes:
+      </p>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Class</th>
+              <th>XS<br /><small>&lt;576px</small></th>
+              <th>SM<br /><small>≥576px</small></th>
+              <th>MD<br /><small>≥768px</small></th>
+              <th>LG<br /><small>≥992px</small></th>
+              <th>XL<br /><small>≥1200px</small></th>
+              <th>XXL<br /><small>≥1400px</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.container</code></td>
+              <td>100%</td>
+              <td>540px</td>
+              <td>720px</td>
+              <td>960px</td>
+              <td>1140px</td>
+              <td>1320px</td>
+            </tr>
+            <tr>
+              <td><code>.container-sm</code></td>
+              <td>100%</td>
+              <td>540px</td>
+              <td>720px</td>
+              <td>960px</td>
+              <td>1140px</td>
+              <td>1320px</td>
+            </tr>
+            <tr>
+              <td><code>.container-md</code></td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>720px</td>
+              <td>960px</td>
+              <td>1140px</td>
+              <td>1320px</td>
+            </tr>
+            <tr>
+              <td><code>.container-lg</code></td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>960px</td>
+              <td>1140px</td>
+              <td>1320px</td>
+            </tr>
+            <tr>
+              <td><code>.container-xl</code></td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>1140px</td>
+              <td>1320px</td>
+            </tr>
+            <tr>
+              <td><code>.container-xxl</code></td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>1320px</td>
+            </tr>
+            <tr class="table-info">
+              <td><code>.container-fluid</code></td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr />
+
+      <!-- Section 4: Live Demos -->
+      <h2 class="section-title">4. Live Demos</h2>
+      <p>Resize your browser to see how each container behaves:</p>
+    </div>
+
+    <!-- Demo containers (outside main container to show full effect) -->
+    <div class="container demo-container">
+      <strong>.container</strong>
+      <br />
+      <small class="text-muted">Fixed width, centered</small>
+    </div>
+
+    <div class="container-fluid demo-container" style="background-color: #d4edda; border-color: #28a745">
+      <strong>.container-fluid</strong>
+      <br />
+      <small class="text-muted">Always 100% width</small>
+    </div>
+
+    <div class="container-lg demo-container" style="background-color: #fff3cd; border-color: #ffc107">
+      <strong>.container-lg</strong>
+      <br />
+      <small class="text-muted">100% until LG (992px), then fixed</small>
+    </div>
+
+    <div class="container-xl demo-container" style="background-color: #f8d7da; border-color: #dc3545">
+      <strong>.container-xl</strong>
+      <br />
+      <small class="text-muted">100% until XL (1200px), then fixed</small>
+    </div>
+
+    <div class="container">
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>✓ Best Practice:</strong> Use <code>.container</code> for most
+        pages. Use <code>.container-fluid</code> for full-width layouts like
+        dashboards or hero sections.
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-links">
+        <a href="./03_utilities.html">&lt; Previous: Utilities</a> |
+        <a href="./05_grid_layout.html">Next: Grid Layout &gt;</a>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
