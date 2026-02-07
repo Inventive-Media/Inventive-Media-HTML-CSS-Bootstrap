@@ -231,27 +231,35 @@
 
     <hr />
 
-    <!-- 1. Flex Direction -->
+    <!-- 
+      SECTION 1: FLEX DIRECTION
+      Flexbox arranges items along a main axis. flex-direction controls that axis.
+      row (default): items flow left-to-right in a horizontal line.
+      column: items stack top-to-bottom in a vertical line.
+      row-reverse and column-reverse flip the direction.
+    -->
     <h2 class="section-title">1. Flex Direction</h2>
     <p>Controls the direction in which items are laid out.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="comment"
-  >/* Default: Lays out items in a row (Left to Right) */</span
->
-<span class="selector">.row</span> {
-  <span class="property">display</span>: <span class="value">flex</span>;
-  <span class="property">flex-direction</span>: <span class="value">row</span>;
-}
+    <div class="code-block">
+      /* CSS */
+      <span class="comment"
+        >/* Default: Lays out items in a row (Left to Right) */</span
+      >
+      <span class="selector">.row</span> {
+      <span class="property">display</span>: <span class="value">flex</span>;
+      <span class="property">flex-direction</span>:
+      <span class="value">row</span>; }
 
-<span class="comment"
-  >/* Lays out items in a column (Top to Bottom) */</span
->
-<span class="selector">.column</span> {
-  <span class="property">display</span>: <span class="value">flex</span>;
-  <span class="property">flex-direction</span>: <span class="value">column</span>;
-}</div>
+      <span class="comment"
+        >/* Lays out items in a column (Top to Bottom) */</span
+      >
+      <span class="selector">.column</span> {
+      <span class="property">display</span>: <span class="value">flex</span>;
+      <span class="property">flex-direction</span>:
+      <span class="value">column</span>; }
+    </div>
 
     <h3>Output (Row):</h3>
     <div class="example-output">
@@ -273,23 +281,35 @@
 
     <hr />
 
-    <!-- 2. Justify Content -->
+    <!-- 
+      SECTION 2: JUSTIFY CONTENT (MAIN AXIS)
+      Controls how items are distributed along the main axis (horizontal by default).
+      flex-start: packed to the start, center: centered, flex-end: packed to the end.
+      space-between: first/last item touch edges, equal space in between.
+      space-around: equal space around each item.
+    -->
     <h2 class="section-title">2. Justify Content (Main Axis)</h2>
     <p>Aligns items horizontally (if direction is row). Useful for spacing.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.j-start</span> {
-  <span class="property">justify-content</span>: <span class="value">flex-start</span>; }
-<span class="comment">/* Default */</span>
-<span class="selector">.j-center</span> {
-  <span class="property">justify-content</span>: <span class="value">center</span>; }
-<span class="selector">.j-end</span> {
-  <span class="property">justify-content</span>: <span class="value">flex-end</span>; }
-<span class="selector">.j-between</span> {
-  <span class="property">justify-content</span>: <span class="value">space-between</span>; }
-<span class="selector">.j-around</span> {
-  <span class="property">justify-content</span>: <span class="value">space-around</span>; }</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.j-start</span> {
+      <span class="property">justify-content</span>:
+      <span class="value">flex-start</span>; }
+      <span class="comment">/* Default */</span>
+      <span class="selector">.j-center</span> {
+      <span class="property">justify-content</span>:
+      <span class="value">center</span>; }
+      <span class="selector">.j-end</span> {
+      <span class="property">justify-content</span>:
+      <span class="value">flex-end</span>; }
+      <span class="selector">.j-between</span> {
+      <span class="property">justify-content</span>:
+      <span class="value">space-between</span>; }
+      <span class="selector">.j-around</span> {
+      <span class="property">justify-content</span>:
+      <span class="value">space-around</span>; }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -310,17 +330,25 @@
 
     <hr />
 
-    <!-- 3. Align Items -->
+    <!-- 
+      SECTION 3: ALIGN ITEMS (CROSS AXIS)
+      Controls how items are aligned on the cross axis (vertical by default).
+      flex-start: top, center: middle, flex-end: bottom.
+      stretch (default): items stretch to fill the container's height.
+    -->
     <h2 class="section-title">3. Align Items (Cross Axis)</h2>
     <p>Aligns items vertically (if direction is row).</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.a-center</span> {
-  <span class="property">align-items</span>: <span class="value">center</span>; }
-<span class="selector">.a-stretch</span> {
-  <span class="property">align-items</span>: <span class="value">stretch</span>; }
-<span class="comment">/* Default: Stretch to fill height */</span></div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.a-center</span> {
+      <span class="property">align-items</span>:
+      <span class="value">center</span>; }
+      <span class="selector">.a-stretch</span> {
+      <span class="property">align-items</span>:
+      <span class="value">stretch</span>; }
+      <span class="comment">/* Default: Stretch to fill height */</span>
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -341,17 +369,22 @@
 
     <hr />
 
-    <!-- 4. Flex Wrap -->
+    <!-- 
+      SECTION 4: FLEX WRAP
+      By default, flex items try to fit on one line (they shrink if needed).
+      flex-wrap: wrap allows items to move to a new line when there isn't enough space.
+      This is essential for responsive designs with many items.
+    -->
     <h2 class="section-title">4. Flex Wrap</h2>
     <p>Allows items to wrap onto multiple lines if there isn't enough space.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.wrap-container</span> {
-  <span class="property">display</span>: <span class="value">flex</span>;
-  <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
-  <span class="property">width</span>: <span class="value">300px</span>;
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.wrap-container</span> {
+      <span class="property">display</span>: <span class="value">flex</span>;
+      <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
+      <span class="property">width</span>: <span class="value">300px</span>; }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -366,18 +399,25 @@
 
     <hr />
 
-    <!-- 5. Practical Example: Navbar -->
+    <!-- 
+      SECTION 5: PRACTICAL EXAMPLE — NAVIGATION BAR
+      A common real-world use of Flexbox: creating a navigation bar.
+      space-between pushes the logo to the left and links to the right.
+      align-items: center vertically centers everything.
+    -->
     <h2 class="section-title">5. Practical Example: Navigation Bar</h2>
     <p>Common pattern: Logo on the left, Links on the right.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.navbar</span> {
-  <span class="property">display</span>: <span class="value">flex</span>;
-  <span class="property">justify-content</span>: <span class="value">space-between</span>;
-  <span class="comment">/* Push apart */</span>
-  <span class="property">align-items</span>: <span class="value">center</span>;
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.navbar</span> {
+      <span class="property">display</span>: <span class="value">flex</span>;
+      <span class="property">justify-content</span>:
+      <span class="value">space-between</span>;
+      <span class="comment">/* Push apart */</span>
+      <span class="property">align-items</span>:
+      <span class="value">center</span>; }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">

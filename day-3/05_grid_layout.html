@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -70,11 +70,18 @@
 
       <hr />
 
-      <!-- Section 1: Understanding the Grid -->
+      <!-- 
+        SECTION 1: THE 12-COLUMN GRID
+        Bootstrap divides every row into 12 equal columns.
+        You build layouts by choosing how many columns each element takes.
+        For example, col-6 takes half the row (6 out of 12).
+        The 12 boxes below visualize each individual column.
+      -->
       <h2 class="section-title">1. The 12-Column Grid</h2>
       <p>
-        Bootstrap's grid system divides the page into <strong>12 equal columns</strong>. 
-        You can combine these columns to create any layout.
+        Bootstrap's grid system divides the page into
+        <strong>12 equal columns</strong>. You can combine these columns to
+        create any layout.
       </p>
 
       <div class="demo-row">
@@ -96,7 +103,13 @@
 
       <hr />
 
-      <!-- Section 2: Rows and Columns -->
+      <!-- 
+        SECTION 2: ROWS AND COLUMNS
+        .row creates a horizontal group that holds columns.
+        .col gives each child an equal share of the available space.
+        .col-{number} sets a specific width (e.g., col-6 = 50%, col-4 = 33%).
+        Column numbers in a row should add up to 12 for a full-width layout.
+      -->
       <h2 class="section-title">2. Rows and Columns</h2>
 
       <div class="row g-4 mb-4">
@@ -107,7 +120,8 @@
             </div>
             <div class="card-body">
               <p>
-                Defines a horizontal group of columns. Ensures columns line up correctly.
+                Defines a horizontal group of columns. Ensures columns line up
+                correctly.
               </p>
             </div>
           </div>
@@ -148,7 +162,9 @@
       </div>
 
       <div class="demo-row">
-        <p class="small text-muted mb-2"><code>.col-4 + .col-4 + .col-4</code> = 12</p>
+        <p class="small text-muted mb-2">
+          <code>.col-4 + .col-4 + .col-4</code> = 12
+        </p>
         <div class="row">
           <div class="col-4"><div class="demo-col">col-4</div></div>
           <div class="col-4"><div class="demo-col-alt">col-4</div></div>
@@ -157,7 +173,9 @@
       </div>
 
       <div class="demo-row">
-        <p class="small text-muted mb-2"><code>.col-3 + .col-6 + .col-3</code> = 12</p>
+        <p class="small text-muted mb-2">
+          <code>.col-3 + .col-6 + .col-3</code> = 12
+        </p>
         <div class="row">
           <div class="col-3"><div class="demo-col">col-3</div></div>
           <div class="col-6"><div class="demo-col-alt">col-6</div></div>
@@ -167,7 +185,14 @@
 
       <hr />
 
-      <!-- Section 3: Responsive Columns -->
+      <!-- 
+        SECTION 3: RESPONSIVE COLUMNS
+        Add breakpoint prefixes to make columns adapt to screen size.
+        .col-12 = full width on mobile, .col-md-6 = half on tablets (≥768px),
+        .col-lg-3 = quarter on desktops (≥992px).
+        This "mobile-first" approach means smaller breakpoints apply first,
+        then larger ones override them as the screen grows.
+      -->
       <h2 class="section-title">3. Responsive Columns</h2>
       <p>
         Add breakpoint prefixes to make columns respond to screen size:
@@ -203,7 +228,14 @@
 
       <hr />
 
-      <!-- Section 4: Gutters -->
+      <!-- 
+        SECTION 4: GUTTERS (SPACING BETWEEN COLUMNS)
+        Gutters are the gaps between columns in a row.
+        .g-{0-5} controls both horizontal and vertical gutters.
+        .gx-{0-5} controls horizontal (left/right) gutters only.
+        .gy-{0-5} controls vertical (top/bottom) gutters only.
+        .g-0 removes all spacing between columns.
+      -->
       <h2 class="section-title">4. Gutters (Spacing)</h2>
       <p>
         Gutters control the spacing between columns. Use
@@ -259,7 +291,13 @@
 
       <hr />
 
-      <!-- Section 5: Alignment -->
+      <!-- 
+        SECTION 5: ALIGNMENT
+        Control how columns are positioned within a row.
+        Vertical: .align-items-start (top), .align-items-center (middle), .align-items-end (bottom).
+        Horizontal: .justify-content-start, -center, -end, -between, -around, -evenly.
+        These work just like CSS Flexbox — Bootstrap's grid is built on Flexbox!
+      -->
       <h2 class="section-title">5. Alignment</h2>
 
       <h5>Vertical Alignment</h5>
@@ -304,7 +342,9 @@
       </div>
 
       <div class="demo-row">
-        <p class="small text-muted mb-2"><code>.justify-content-center</code></p>
+        <p class="small text-muted mb-2">
+          <code>.justify-content-center</code>
+        </p>
         <div class="row justify-content-center">
           <div class="col-3"><div class="demo-col">Center</div></div>
           <div class="col-3"><div class="demo-col">Center</div></div>
@@ -320,7 +360,9 @@
       </div>
 
       <div class="demo-row">
-        <p class="small text-muted mb-2"><code>.justify-content-between</code></p>
+        <p class="small text-muted mb-2">
+          <code>.justify-content-between</code>
+        </p>
         <div class="row justify-content-between">
           <div class="col-3"><div class="demo-col">Between</div></div>
           <div class="col-3"><div class="demo-col">Between</div></div>
@@ -328,7 +370,9 @@
       </div>
 
       <div class="demo-row">
-        <p class="small text-muted mb-2"><code>.justify-content-around</code></p>
+        <p class="small text-muted mb-2">
+          <code>.justify-content-around</code>
+        </p>
         <div class="row justify-content-around">
           <div class="col-3"><div class="demo-col">Around</div></div>
           <div class="col-3"><div class="demo-col">Around</div></div>
@@ -336,7 +380,9 @@
       </div>
 
       <div class="demo-row">
-        <p class="small text-muted mb-2"><code>.justify-content-evenly</code></p>
+        <p class="small text-muted mb-2">
+          <code>.justify-content-evenly</code>
+        </p>
         <div class="row justify-content-evenly">
           <div class="col-3"><div class="demo-col">Evenly</div></div>
           <div class="col-3"><div class="demo-col">Evenly</div></div>

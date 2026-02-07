@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -54,7 +54,13 @@
 
       <hr />
 
-      <!-- Section 1: Navbar -->
+      <!-- 
+        SECTION 1: NAVBAR
+        A responsive navigation bar that collapses into a hamburger menu on small screens.
+        .navbar-expand-lg means it stays expanded on large screens (≥992px)
+        and collapses below that. .navbar-dark .bg-dark gives it a dark theme.
+        The toggler button and collapse div handle the mobile menu behavior.
+      -->
       <h2 class="section-title">1. Navbar</h2>
       <p>A responsive navigation header with links, branding, and togglers.</p>
 
@@ -88,13 +94,19 @@
       </div>
 
       <p class="small text-muted mt-2">
-        <strong>Key classes:</strong> <code>.navbar</code>, <code>.navbar-expand-lg</code>, 
-        <code>.navbar-dark</code>, <code>.bg-dark</code>
+        <strong>Key classes:</strong> <code>.navbar</code>,
+        <code>.navbar-expand-lg</code>, <code>.navbar-dark</code>,
+        <code>.bg-dark</code>
       </p>
 
       <hr />
 
-      <!-- Section 2: Alerts -->
+      <!-- 
+        SECTION 2: ALERTS
+        Alerts display contextual feedback messages to users.
+        Use .alert with a color variant like .alert-success or .alert-danger.
+        The role="alert" attribute helps screen readers announce the message.
+      -->
       <h2 class="section-title">2. Alerts</h2>
       <p>Contextual feedback messages for user actions.</p>
 
@@ -120,7 +132,12 @@
 
       <hr />
 
-      <!-- Section 3: Buttons -->
+      <!-- 
+        SECTION 3: BUTTONS
+        Buttons use the .btn base class plus a color variant (.btn-primary, .btn-danger, etc.).
+        .btn-outline-{color} creates bordered buttons with transparent backgrounds.
+        Size variants: .btn-sm (small), default (medium), .btn-lg (large).
+      -->
       <h2 class="section-title">3. Buttons</h2>
       <p>Standard clickable buttons with customizable sizes and styles.</p>
 
@@ -152,7 +169,13 @@
 
       <hr />
 
-      <!-- Section 4: Badges -->
+      <!-- 
+        SECTION 4: BADGES
+        Badges are small labels for counts or status indicators.
+        Use .badge with .bg-{color} for the background.
+        .rounded-pill makes them pill-shaped (fully rounded ends).
+        Badges can be placed inside buttons to show notification counts.
+      -->
       <h2 class="section-title">4. Badges</h2>
       <p>Small count or labeling elements for notifications.</p>
 
@@ -182,7 +205,13 @@
 
       <hr />
 
-      <!-- Section 5: Cards -->
+      <!-- 
+        SECTION 5: CARDS
+        Cards are flexible content containers with optional header, body, and footer.
+        .card is the wrapper, .card-body holds the main content.
+        You can color cards with .bg-{color} or add colored borders with .border-{color}.
+        Cards are great for product listings, profiles, or any boxed content.
+      -->
       <h2 class="section-title">5. Cards</h2>
       <p>Flexible content containers with headers, footers, and images.</p>
 
@@ -225,7 +254,13 @@
 
       <hr />
 
-      <!-- Section 6: Accordion -->
+      <!-- 
+        SECTION 6: ACCORDION
+        Accordions show/hide content in collapsible sections — only one open at a time.
+        Each item has a button that toggles a collapse panel.
+        data-bs-toggle="collapse" and data-bs-target link the button to its panel.
+        data-bs-parent ensures only one panel is open at a time.
+      -->
       <h2 class="section-title">6. Accordion</h2>
       <p>Collapsible content sections for organizing information.</p>
 
@@ -303,7 +338,13 @@
 
       <hr />
 
-      <!-- Section 7: Modal -->
+      <!-- 
+        SECTION 7: MODAL
+        A modal is a popup dialog that overlays the page. Users must interact
+        with it before returning to the main content.
+        data-bs-toggle="modal" and data-bs-target="#id" on the trigger button
+        link it to the modal element. The modal has header, body, and footer sections.
+      -->
       <h2 class="section-title">7. Modal</h2>
       <p>A popup dialog box that overlays the current page.</p>
 
@@ -363,7 +404,13 @@
 
       <hr />
 
-      <!-- Section 8: Forms -->
+      <!-- 
+        SECTION 8: FORMS
+        Bootstrap styles form elements with classes like .form-control (inputs),
+        .form-select (dropdowns), .form-check (checkboxes/radios), and .form-label.
+        .mb-3 adds spacing between form groups. These classes replace the need
+        for custom CSS to style form elements consistently.
+      -->
       <h2 class="section-title">8. Forms</h2>
       <p>Custom form controls with inputs, checkboxes, and selects.</p>
 
@@ -380,11 +427,7 @@
           </div>
           <div class="mb-3">
             <label for="examplePassword" class="form-label">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="examplePassword"
-            />
+            <input type="password" class="form-control" id="examplePassword" />
           </div>
           <div class="mb-3">
             <label for="exampleSelect" class="form-label">Select option</label>
@@ -397,7 +440,9 @@
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck" />
-            <label class="form-check-label" for="exampleCheck">Remember me</label>
+            <label class="form-check-label" for="exampleCheck"
+              >Remember me</label
+            >
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -422,20 +467,62 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Navbar</td><td>Responsive navigation header</td></tr>
-            <tr><td>Alerts</td><td>Contextual feedback messages</td></tr>
-            <tr><td>Buttons</td><td>Clickable buttons with styles</td></tr>
-            <tr><td>Badges</td><td>Small count/label elements</td></tr>
-            <tr><td>Cards</td><td>Flexible content containers</td></tr>
-            <tr><td>Accordion</td><td>Collapsible content sections</td></tr>
-            <tr><td>Modal</td><td>Popup dialog boxes</td></tr>
-            <tr><td>Forms</td><td>Custom form controls</td></tr>
-            <tr><td>Carousel</td><td>Slideshow for images/text</td></tr>
-            <tr><td>Dropdowns</td><td>Toggleable action menus</td></tr>
-            <tr><td>Progress</td><td>Progress bars with labels</td></tr>
-            <tr><td>Spinners</td><td>Loading indicators</td></tr>
-            <tr><td>Toasts</td><td>Lightweight notifications</td></tr>
-            <tr><td>Tooltips</td><td>Hover text boxes</td></tr>
+            <tr>
+              <td>Navbar</td>
+              <td>Responsive navigation header</td>
+            </tr>
+            <tr>
+              <td>Alerts</td>
+              <td>Contextual feedback messages</td>
+            </tr>
+            <tr>
+              <td>Buttons</td>
+              <td>Clickable buttons with styles</td>
+            </tr>
+            <tr>
+              <td>Badges</td>
+              <td>Small count/label elements</td>
+            </tr>
+            <tr>
+              <td>Cards</td>
+              <td>Flexible content containers</td>
+            </tr>
+            <tr>
+              <td>Accordion</td>
+              <td>Collapsible content sections</td>
+            </tr>
+            <tr>
+              <td>Modal</td>
+              <td>Popup dialog boxes</td>
+            </tr>
+            <tr>
+              <td>Forms</td>
+              <td>Custom form controls</td>
+            </tr>
+            <tr>
+              <td>Carousel</td>
+              <td>Slideshow for images/text</td>
+            </tr>
+            <tr>
+              <td>Dropdowns</td>
+              <td>Toggleable action menus</td>
+            </tr>
+            <tr>
+              <td>Progress</td>
+              <td>Progress bars with labels</td>
+            </tr>
+            <tr>
+              <td>Spinners</td>
+              <td>Loading indicators</td>
+            </tr>
+            <tr>
+              <td>Toasts</td>
+              <td>Lightweight notifications</td>
+            </tr>
+            <tr>
+              <td>Tooltips</td>
+              <td>Hover text boxes</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -443,7 +530,10 @@
       <div class="alert alert-success mt-4" role="alert">
         <strong>🎉 Great Progress!</strong> You've learned the most commonly
         used Bootstrap components. Explore the official
-        <a href="https://getbootstrap.com/docs/" target="_blank" class="alert-link"
+        <a
+          href="https://getbootstrap.com/docs/"
+          target="_blank"
+          class="alert-link"
           >Bootstrap Documentation</a
         >
         for more!

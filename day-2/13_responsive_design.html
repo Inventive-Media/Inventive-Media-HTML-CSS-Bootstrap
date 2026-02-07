@@ -194,7 +194,13 @@
 
     <hr />
 
-    <!-- 1. Viewport Units vs Percentages -->
+    <!-- 
+      SECTION 1: VIEWPORT UNITS (vw, vh)
+      vw and vh are relative to the browser window (viewport), not the parent.
+      1vw = 1% of the viewport width, 1vh = 1% of the viewport height.
+      Unlike %, viewport units stay the same regardless of parent size.
+      Try resizing your browser to see the difference between vw and %.
+    -->
     <h2 class="section-title">1. Viewport Units (vw, vh)</h2>
     <p>
       <code>vw</code> (viewport width) is relative to the browser window
@@ -203,15 +209,16 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.vw-box</span> {
-<span class="property">width</span>: <span class="value">50vw</span>;
-<span class="comment">/* 50% of screen width */</span>
-}
-<span class="selector">.pct-box</span> {
-<span class="property">width</span>: <span class="value">50%</span>;
-<span class="comment">/* 50% of parent width */</span>
-}</div>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.vw-box</span> {
+      <span class="property">width</span>: <span class="value">50vw</span>;
+      <span class="comment">/* 50% of screen width */</span>
+      }
+      <span class="selector">.pct-box</span> {
+      <span class="property">width</span>: <span class="value">50%</span>;
+      <span class="comment">/* 50% of parent width */</span>
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -221,7 +228,13 @@
 
     <hr />
 
-    <!-- 2. Media Queries -->
+    <!-- 
+      SECTION 2: MEDIA QUERIES (@media)
+      Media queries let you apply CSS only when certain conditions are met,
+      like screen width. This is the foundation of responsive design.
+      min-width: 600px means "apply these styles when the screen is 600px or wider".
+      You typically define breakpoints for mobile, tablet, and desktop.
+    -->
     <h2 class="section-title">2. Media Queries (@media)</h2>
     <p>
       Style changes based on conditions like screen width. This is the core of
@@ -229,26 +242,27 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.responsive-box</span> {
-<span class="property">background-color</span>:
-<span class="value">#ff5722</span>;
-<span class="comment">/* Red (Mobile) */</span>
-}
+    <div class="code-block">
+      /* CSS */ <span class="selector">.responsive-box</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#ff5722</span>;
+      <span class="comment">/* Red (Mobile) */</span>
+      }
 
-<span class="media">@media</span> (min-width: 600px) {
-<span class="selector">.responsive-box</span> {
-<span class="property">background-color</span>:
-<span class="value">#2196f3</span>;
-<span class="comment">/* Blue (Tablet) */</span>
-} }
+      <span class="media">@media</span> (min-width: 600px) {
+      <span class="selector">.responsive-box</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#2196f3</span>;
+      <span class="comment">/* Blue (Tablet) */</span>
+      } }
 
-<span class="media">@media</span> (min-width: 900px) {
-<span class="selector">.responsive-box</span> {
-<span class="property">background-color</span>:
-<span class="value">#4caf50</span>;
-<span class="comment">/* Green (Desktop) */</span>
-} }</div>
+      <span class="media">@media</span> (min-width: 900px) {
+      <span class="selector">.responsive-box</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#4caf50</span>;
+      <span class="comment">/* Green (Desktop) */</span>
+      } }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -257,31 +271,38 @@
 
     <hr />
 
-    <!-- 3. Responsive Grid -->
+    <!-- 
+      SECTION 3: RESPONSIVE LAYOUTS
+      Combine CSS Grid (or Flexbox) with media queries to create layouts
+      that adapt to screen size. Common pattern: 1 column on mobile,
+      2 columns on tablet, 3 columns on desktop.
+      This is the "mobile-first" approach — start small, then expand.
+    -->
     <h2 class="section-title">3. Responsive Layouts</h2>
     <p>Using Grid or Flexbox with media queries to change column counts.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.responsive-grid</span> {
-<span class="property">grid-template-columns</span>:
-<span class="value">1fr</span>;
-<span class="comment">/* 1 Col (Mobile) */</span>
-<span class="property">gap</span>: <span class="value">10px</span>; }
+    <div class="code-block">
+      /* CSS */ <span class="selector">.responsive-grid</span> {
+      <span class="property">grid-template-columns</span>:
+      <span class="value">1fr</span>;
+      <span class="comment">/* 1 Col (Mobile) */</span>
+      <span class="property">gap</span>: <span class="value">10px</span>; }
 
-<span class="media">@media</span> (min-width: 600px) {
-<span class="selector">.responsive-grid</span> {
-<span class="property">grid-template-columns</span>:
-<span class="value">1fr 1fr</span>;
-<span class="comment">/* 2 Cols */</span>
-} }
+      <span class="media">@media</span> (min-width: 600px) {
+      <span class="selector">.responsive-grid</span> {
+      <span class="property">grid-template-columns</span>:
+      <span class="value">1fr 1fr</span>;
+      <span class="comment">/* 2 Cols */</span>
+      } }
 
-<span class="media">@media</span> (min-width: 900px) {
-<span class="selector">.responsive-grid</span> {
-<span class="property">grid-template-columns</span>:
-<span class="value">1fr 1fr 1fr</span>;
-<span class="comment">/* 3 Cols */</span>
-} }</div>
+      <span class="media">@media</span> (min-width: 900px) {
+      <span class="selector">.responsive-grid</span> {
+      <span class="property">grid-template-columns</span>:
+      <span class="value">1fr 1fr 1fr</span>;
+      <span class="comment">/* 3 Cols */</span>
+      } }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -297,21 +318,27 @@
 
     <hr />
 
-    <!-- 4. Hide/Show Content -->
+    <!-- 
+      SECTION 4: SHOWING/HIDING CONTENT
+      You can show or hide elements based on screen size using display: none.
+      Useful for things like hamburger menus on mobile or extra details on desktop.
+      "mobile-only" elements are hidden on large screens, and vice versa.
+    -->
     <h2 class="section-title">4. Showing/Hiding Content</h2>
     <p>Sometimes you want to show different content on mobile vs desktop.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */
-<span class="selector">.desktop-only</span> {
-<span class="property">display</span>: <span class="value">none</span>; }
+    <div class="code-block">
+      /* CSS */ <span class="selector">.desktop-only</span> {
+      <span class="property">display</span>: <span class="value">none</span>; }
 
-<span class="media">@media</span> (min-width: 768px) {
-<span class="selector">.mobile-only</span> {
-<span class="property">display</span>: <span class="value">none</span>; }
-<span class="selector">.desktop-only</span> {
-<span class="property">display</span>: <span class="value">block</span>; }
-}</div>
+      <span class="media">@media</span> (min-width: 768px) {
+      <span class="selector">.mobile-only</span> {
+      <span class="property">display</span>: <span class="value">none</span>; }
+      <span class="selector">.desktop-only</span> {
+      <span class="property">display</span>: <span class="value">block</span>; }
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
