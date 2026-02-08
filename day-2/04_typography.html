@@ -9,15 +9,108 @@
       body {
         font-family: Arial, sans-serif;
         padding: 20px;
+        padding-top: 80px; /* Space for fixed header */
         line-height: 1.6;
         background-color: #f9f9f9;
         color: #333;
       }
+      /* Sticky Header Styles */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        color: #032340;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .home-link {
+        color: #34495e;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .home-link:hover {
+        color: hsl(210, 27%, 50%);
+      }
+      .page-title {
+        font-size: 1rem;
+        color: #34495e;
+        opacity: 0.8;
+        display: none; /* Hidden on small screens */
+      }
+      @media (min-width: 600px) {
+        .page-title {
+          display: block;
+        }
+      }
+
+      /* Dropdown Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        background-color: #34495e;
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: hsl(210, 27%, 50%);
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
       h1.main-title {
-        color: rgb(255, 172, 39);
+        color: hsl(210, 27%, 50%);
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 10px;
+        border-bottom: 2px solid hsl(210, 27%, 50%);
+        padding-bottom: 0.5rem;
       }
       .section-title {
         color: #333;
@@ -32,7 +125,6 @@
         border-radius: 5px;
         font-family: "Courier New", monospace;
         overflow-x: auto;
-        white-space: pre-wrap;
         margin-bottom: 15px;
         border: 1px solid #444;
       }
@@ -187,6 +279,45 @@
     </style>
   </head>
   <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_css_intro.html">00. CSS Intro</a>
+          <a href="01_css_syntax.html">01. CSS Syntax</a>
+          <a href="02_css_selectors.html">02. CSS Selectors</a>
+          <a href="03_box_model.html">03. Box Model</a>
+          <a href="04_typography.html">04. Typography</a>
+          <a href="05_colors.html">05. Colors</a>
+          <a href="06_css_variables_functions.html"
+            >06. CSS Variables & Functions</a
+          >
+          <a href="07_backgrounds.html">07. Backgrounds</a>
+          <a href="08_css_units_shadows.html">08. Units & Shadows</a>
+          <a href="09_animations.html">09. Animations</a>
+          <a href="10_positioning.html">10. Positioning</a>
+          <a href="11_flexbox.html">11. Flexbox</a>
+          <a href="12_grid.html">12. Grid</a>
+          <a href="13_responsive_design.html">13. Responsive Design</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
     <h1 class="main-title">Day 2 - CSS Typography</h1>
     <p>
       Typography properties allow you to control the look and feel of text
@@ -219,18 +350,6 @@
     </ul>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.font-serif</span> {
-  <span class="property">font-family</span>: <span class="value">Georgia, serif</span>; 
-}
-<span class="selector">.font-sans</span> {
-  <span class="property">font-family</span>: <span class="value">Arial, sans-serif</span>; 
-}
-<span class="selector">.font-mono</span> {
-  <span class="property">font-family</span>: <span class="value">"Courier New", monospace</span>; 
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.font-serif</span> {
       <span class="property">font-family</span>:
@@ -242,7 +361,6 @@
       <span class="property">font-family</span>:
       <span class="value">"Courier New", monospace</span>; }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -266,31 +384,16 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.size-small</span> {
-  <span class="property">font-size</span>: <span class="value">12px</span>;
-} 
-<span class="selector">.size-medium</span> {
-  <span class="property">font-size</span>: <span class="value">16px</span>;
-} 
-<span class="comment">/* Default browser size */</span>
-<span class="selector">.size-xlarge</span> {
-  <span class="property">font-size</span>: <span class="value">32px</span>;
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.size-small</span> {
       <span class="property">font-size</span>: <span class="value">12px</span>;
       } <span class="selector">.size-medium</span> {
       <span class="property">font-size</span>: <span class="value">16px</span>;
-      }
-      <span class="comment">/* Default browser size */</span>
+      } <span class="comment">/* Default browser size */</span>
       <span class="selector">.size-xlarge</span> {
       <span class="property">font-size</span>: <span class="value">32px</span>;
       }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -311,29 +414,12 @@
     <p>Controls the boldness of the text.</p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.weight-light</span> {
-  <span class="property">font-weight</span>: <span class="value">300</span>;
-} 
-<span class="selector">.weight-normal</span> {
-  <span class="property">font-weight</span>: <span class="value">400</span>;
-} 
-<span class="comment">/* Standard */</span>
-<span class="selector">.weight-bold</span> {
-  <span class="property">font-weight</span>: <span class="value">700</span>;
-} <span class="comment">/* Bold */</span>
-<span class="selector">.weight-bolder</span> {
-  <span class="property">font-weight</span>: <span class="value">900</span>;
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.weight-light</span> {
       <span class="property">font-weight</span>: <span class="value">300</span>;
       } <span class="selector">.weight-normal</span> {
       <span class="property">font-weight</span>: <span class="value">400</span>;
-      }
-      <span class="comment">/* Standard */</span>
+      } <span class="comment">/* Standard */</span>
       <span class="selector">.weight-bold</span> {
       <span class="property">font-weight</span>: <span class="value">700</span>;
       } <span class="comment">/* Bold */</span>
@@ -341,7 +427,6 @@
       <span class="property">font-weight</span>: <span class="value">900</span>;
       }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -365,18 +450,6 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.dec-underline</span> {
-  <span class="property">text-decoration</span>: <span class="value">underline</span>; 
-}
-<span class="selector">.dec-line-through</span> {
-  <span class="property">text-decoration</span>: <span class="value">line-through</span>; 
-}
-<span class="selector">a.dec-none</span> {
-  <span class="property">text-decoration</span>: <span class="value">none</span>; 
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.dec-underline</span> {
       <span class="property">text-decoration</span>:
@@ -388,7 +461,6 @@
       <span class="property">text-decoration</span>:
       <span class="value">none</span>; }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -410,18 +482,6 @@
     <p>Controls capitalization.</p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.trans-upper</span> {
-  <span class="property">text-transform</span>: <span class="value">uppercase</span>; 
-}
-<span class="selector">.trans-lower</span> {
-  <span class="property">text-transform</span>: <span class="value">lowercase</span>; 
-}
-<span class="selector">.trans-cap</span> {
-  <span class="property">text-transform</span>: <span class="value">capitalize</span>; 
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.trans-upper</span> {
       <span class="property">text-transform</span>:
@@ -433,7 +493,6 @@
       <span class="property">text-transform</span>:
       <span class="value">capitalize</span>; }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -453,15 +512,6 @@
     <p>Controls the horizontal alignment of text.</p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.align-center</span> {
-  <span class="property">text-align</span>: <span class="value">center</span>; 
-}
-<span class="selector">.align-right</span> {
-  <span class="property">text-align</span>: <span class="value">right</span>; 
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.align-center</span> {
       <span class="property">text-align</span>:
@@ -470,7 +520,6 @@
       <span class="property">text-align</span>:
       <span class="value">right</span>; }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -490,15 +539,6 @@
     <p>Controls the space between lines of text.</p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.lh-small</span> {
-  <span class="property">line-height</span>: <span class="value">1.0</span>;
-} 
-<span class="selector">.lh-large</span> {
-  <span class="property">line-height</span>: <span class="value">2.0</span>;
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.lh-small</span> {
       <span class="property">line-height</span>: <span class="value">1.0</span>;
@@ -506,7 +546,6 @@
       <span class="property">line-height</span>: <span class="value">2.0</span>;
       }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -533,15 +572,6 @@
     <p>Controls the space between characters.</p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.spacing-wide</span> {
-  <span class="property">letter-spacing</span>: <span class="value">5px</span>; 
-}
-<span class="selector">.spacing-neg</span> {
-  <span class="property">letter-spacing</span>: <span class="value">-1px</span>; 
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.spacing-wide</span> {
       <span class="property">letter-spacing</span>:
@@ -550,7 +580,6 @@
       <span class="property">letter-spacing</span>:
       <span class="value">-1px</span>; }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
