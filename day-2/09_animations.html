@@ -221,7 +221,13 @@
 
     <hr />
 
-    <!-- 1. Transitions -->
+    <!-- 
+      SECTION 1: TRANSITIONS
+      Transitions smoothly animate property changes over a duration.
+      They only activate on state changes (like :hover).
+      Syntax: transition: property duration timing-function;
+      Example: when you hover, the color smoothly fades instead of snapping.
+    -->
     <h2 class="section-title">1. Transitions</h2>
     <p>
       Smoothly change property values (like color or size) over a given duration
@@ -249,7 +255,12 @@
 
     <hr />
 
-    <!-- 2. Transforms -->
+    <!-- 
+      SECTION 2: TRANSFORMS
+      Transform changes an element's shape, size, or position visually.
+      Common functions: rotate(deg), scale(factor), translate(x, y), skew(deg).
+      The element's original space in the layout is preserved.
+    -->
     <h2 class="section-title">2. Transforms</h2>
     <p>
       Modify the shape and position of elements: <code>rotate</code>,
@@ -276,7 +287,13 @@
 
     <hr />
 
-    <!-- 3. Keyframe Animations -->
+    <!-- 
+      SECTION 3: KEYFRAME ANIMATIONS
+      @keyframes lets you define animation steps (from 0% to 100%).
+      Unlike transitions, keyframe animations can run automatically, loop infinitely,
+      and have multiple intermediate steps.
+      Shorthand: animation: name duration timing delay iterations direction fill;
+    -->
     <h2 class="section-title">3. Keyframe Animations</h2>
     <p>Create complex animations by defining steps (keyframes).</p>
     <p>
@@ -295,6 +312,7 @@
   <span class="value">100%</span> { <span class="property">transform</span>: <span class="value">rotate(360deg)</span>; }
 }
 
+<<<<<<< HEAD
 <span class="selector">.anim-spin</span> {
 <span class="comment">/* name | duration | timing-function | delay | iteration-count | direction | fill-mode */</span>
 <span class="property">animation</span>: <span class="value">spin 2s linear 0s infinite normal none</span>; }
@@ -306,6 +324,26 @@
 
 <span class="selector">.anim-bounce</span> {
   <span class="property">animation</span>: <span class="value">bounce 1s ease 0s infinite normal none</span>; }
+=======
+      <span class="selector">.anim-spin</span> {
+      <span class="comment"
+        >/* name | duration | timing-function | delay | iteration-count |
+        direction | fill-mode */</span
+      >
+      <span class="property">animation</span>:
+      <span class="value">spin 2s linear 0s infinite normal none</span>; }
+
+      <span class="keyframes">@keyframes</span> bounce {
+      <span class="value">0%</span>, <span class="value">100%</span> {
+      <span class="property">transform</span>:
+      <span class="value">translateY(0)</span>; }
+      <span class="value">50%</span> { <span class="property">transform</span>:
+      <span class="value">translateY(-30px)</span>; } }
+
+      <span class="selector">.anim-bounce</span> {
+      <span class="property">animation</span>:
+      <span class="value">bounce 1s ease 0s infinite normal none</span>; }
+>>>>>>> dev
     </div>
 
     <h3>Output:</h3>
@@ -316,7 +354,11 @@
 
     <hr />
 
-    <!-- 4. Practical: Loader -->
+    <!-- 
+      SECTION 4: PRACTICAL EXAMPLE — LOADING SPINNER
+      A common real-world use of infinite rotation animation.
+      The spinner is a circle with one colored border-top that rotates endlessly.
+    -->
     <h2 class="section-title">4. Practical: Loading Spinner</h2>
     <p>A classic use case for infinite rotation animations.</p>
 
@@ -327,7 +369,12 @@
 
     <hr />
 
-    <!-- 5. Practical: 3D Card Flip -->
+    <!-- 
+      SECTION 5: PRACTICAL EXAMPLE — 3D CARD FLIP
+      Combines transforms with perspective for a 3D flip effect on hover.
+      Key concepts: perspective (creates 3D depth), backface-visibility (hides
+      the back side), and rotateY (flips around the vertical axis).
+    -->
     <h2 class="section-title">5. Practical: 3D Card Flip</h2>
     <p>
       Using <code>perspective</code>, <code>backface-visibility</code>, and

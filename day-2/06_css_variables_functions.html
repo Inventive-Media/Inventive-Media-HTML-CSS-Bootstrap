@@ -163,7 +163,13 @@
 
     <hr />
 
-    <!-- 1. CSS Variables -->
+    <!-- 
+      SECTION 1: CSS VARIABLES (CUSTOM PROPERTIES)
+      Variables let you define a value once and reuse it throughout your CSS.
+      They are declared with -- prefix (e.g., --primary-color) inside a selector.
+      :root means they're available globally. Access them with var().
+      Great for themes — change one variable and the whole site updates!
+    -->
     <h2 class="section-title">1. CSS Variables (Custom Properties)</h2>
     <p>
       Defining a value once and reusing it everywhere makes updating themes
@@ -172,11 +178,20 @@
     </p>
 
     <h3>Code:</h3>
+<<<<<<< HEAD
     <div class="code-block">/* CSS */
 <span class="selector">:root</span> {
   <span class="variable">--primary-color</span>: <span class="value">#e91e63</span>;
   <span class="variable">--box-padding</span>: <span class="value">20px</span>; 
 }
+=======
+    <div class="code-block">
+      /* CSS */ <span class="selector">:root</span> {
+      <span class="variable">--primary-color</span>:
+      <span class="value">#e91e63</span>;
+      <span class="variable">--box-padding</span>:
+      <span class="value">20px</span>; }
+>>>>>>> dev
 
 <span class="selector">.box</span> {
   <span class="property">background-color</span>: <span class="function">var</span>(<span class="variable">--primary-color</span>); 
@@ -197,7 +212,12 @@
 
     <hr />
 
-    <!-- 2. CSS Functions: calc() -->
+    <!-- 
+      SECTION 2: CSS FUNCTIONS — calc()
+      calc() lets you perform math in CSS, and even mix different units.
+      For example: width: calc(100% - 40px) subtracts 40 pixels from full width.
+      This is powerful for responsive layouts where you need flexible sizing.
+    -->
     <h2 class="section-title">2. Functions: calc()</h2>
     <p>
       Use <code>calc()</code> to perform math on CSS values. You can mix units
@@ -205,11 +225,20 @@
     </p>
 
     <h3>Code:</h3>
+<<<<<<< HEAD
     <div class="code-block">/* CSS */
 <span class="selector">.calc-box</span> {
   <span class="comment">/* 100% width minus 40px constant space */</span>
   <span class="property">width</span>: <span class="function">calc</span>(<span class="value">100% - 40px</span>); 
 }
+=======
+    <div class="code-block">
+      /* CSS */ <span class="selector">.calc-box</span> {
+      <span class="comment">/* 100% width minus 40px constant space */</span>
+      <span class="property">width</span>:
+      <span class="function">calc</span>(<span class="value">100% - 40px</span
+      >); }
+>>>>>>> dev
 
 <span class="selector">.calc-fluid</span> {
   <span class="property">width</span>: <span class="function">calc</span>(<span class="value">100% / 3</span>);

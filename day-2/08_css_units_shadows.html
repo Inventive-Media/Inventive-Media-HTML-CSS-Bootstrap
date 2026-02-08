@@ -153,7 +153,13 @@
 
     <hr />
 
-    <!-- 1. CSS Units -->
+    <!-- 
+      SECTION 1: ABSOLUTE VS RELATIVE UNITS
+      px (pixels): A fixed unit — always the same size regardless of context.
+      em: Relative to the parent element's font size. Can compound when nested!
+      rem: Relative to the root (html) element's font size. More predictable than em.
+      Using rem is generally recommended for consistent, scalable designs.
+    -->
     <h2 class="section-title">1. Absolute vs Relative Units</h2>
     <p>
       <strong>Absolute (px):</strong> Fixed size. <br />
@@ -162,6 +168,7 @@
     </p>
 
     <h3>Code:</h3>
+<<<<<<< HEAD
     <div class="code-block">/* CSS */
 <span class="selector">.px-text</span> {
   <span class="property">font-size</span>: <span class="value">20px</span>;
@@ -172,6 +179,20 @@
 <span class="selector">.rem-text</span> {
   <span class="property">font-size</span>: <span class="value">1.5rem</span>; 
 } <span class="comment">/* 1.5 x Root Size */</span></div>
+=======
+    <div class="code-block">
+      /* CSS */ <span class="selector">.px-text</span> {
+      <span class="property">font-size</span>: <span class="value">20px</span>;
+      } <span class="comment">/* Always 20px */</span>
+      <span class="selector">.em-text</span> {
+      <span class="property">font-size</span>: <span class="value">1.5em</span>;
+      } <span class="comment">/* 1.5 x Parent Size */</span>
+      <span class="selector">.rem-text</span> {
+      <span class="property">font-size</span>:
+      <span class="value">1.5rem</span>; }
+      <span class="comment">/* 1.5 x Root Size */</span>
+    </div>
+>>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -188,16 +209,33 @@
 
     <hr />
 
-    <!-- 2. Shadows -->
+    <!-- 
+      SECTION 2: BOX SHADOW & TEXT SHADOW
+      Shadows add depth and dimension to elements.
+      box-shadow: adds shadow around the element's box.
+        Syntax: x-offset y-offset blur-radius spread-radius color
+      text-shadow: adds shadow behind text characters.
+        Syntax: x-offset y-offset blur-radius color
+    -->
     <h2 class="section-title">2. Box Shadow & Text Shadow</h2>
     <p>Adding depth with shadows.</p>
 
     <h3>Code:</h3>
+<<<<<<< HEAD
     <div class="code-block">/* CSS */
 <span class="selector">.simple-shadow</span> {
   <span class="comment">/* x-offset | y-offset | blur-radius | color */</span>
   <span class="property">box-shadow</span>: <span class="value">5px 5px 10px rgba(0,0,0,0.3)</span>; 
 }
+=======
+    <div class="code-block">
+      /* CSS */ <span class="selector">.simple-shadow</span> {
+      <span class="comment"
+        >/* x-offset | y-offset | blur-radius | color */</span
+      >
+      <span class="property">box-shadow</span>:
+      <span class="value">5px 5px 10px rgba(0,0,0,0.3)</span>; }
+>>>>>>> dev
 
 <span class="selector">.text-effect</span> {
   <span class="property">text-shadow</span>: <span class="value">2px 2px 4px #000</span>; 

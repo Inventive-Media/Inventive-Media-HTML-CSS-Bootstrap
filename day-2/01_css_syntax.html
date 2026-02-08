@@ -125,8 +125,11 @@
     <hr />
 
     <!-- 
-      SECTION 1: THE SYNTAX
-      Explaining the anatomy of a CSS rule: Selector, Property, and Value.
+      SECTION 1: THE CSS SYNTAX
+      Every CSS rule has two parts:
+      1. Selector — which HTML element(s) to style
+      2. Declaration Block — curly braces {} containing property: value pairs
+      Each declaration ends with a semicolon (;).
     -->
     <h2 class="section-title">1. The CSS Syntax</h2>
     <p>
@@ -162,7 +165,8 @@
 
     <!-- 
       SECTION 2: BASIC EXAMPLE
-      Applying a simple color and font style.
+      A simple example showing how a class selector styles a paragraph.
+      The class .styled-text is defined in CSS and applied in HTML with class="styled-text".
     -->
     <h2 class="section-title">2. Basic Example</h2>
     <p>
@@ -171,6 +175,7 @@
     </p>
 
     <h3>Code:</h3>
+<<<<<<< HEAD
     <div class="code-block">/* CSS */
 <span class="selector">.styled-text</span> {
 <span class="property">color</span>: <span class="value">blue</span>;
@@ -179,6 +184,16 @@
 } 
 /* HTML */ 
 &lt;p class="styled-text"&gt;This text is styled with CSS!&lt;/p&gt;</div>
+=======
+    <div class="code-block">
+      /* CSS */ <span class="selector">.styled-text</span> {
+      <span class="property">color</span>: <span class="value">blue</span>;
+      <span class="property">font-size</span>: <span class="value">20px</span>;
+      <span class="property">font-weight</span>:
+      <span class="value">bold</span>; } /* HTML */ &lt;p
+      class="styled-text"&gt;This text is styled with CSS!&lt;/p&gt;
+    </div>
+>>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -189,12 +204,14 @@
 
     <!-- 
       SECTION 3: MULTIPLE PROPERTIES
-      Showing how to combine multiple properties (width, height, background, color).
+      You can add as many property: value pairs as you want inside one rule.
+      Each property controls a different aspect of the element's appearance.
     -->
     <h2 class="section-title">3. Multiple Properties</h2>
     <p>You can apply as many properties as you need to a single element.</p>
 
     <h3>Code:</h3>
+<<<<<<< HEAD
     <div class="code-block">/* CSS */
 <span class="selector">.multi-property-box</span> {
 <span class="property">width</span>: <span class="value">200px</span>;
@@ -206,6 +223,21 @@
 
 /* HTML */ 
 &lt;div class="multi-property-box"&gt;I am a Box!&lt;/div&gt;</div>
+=======
+    <div class="code-block">
+      /* CSS */ <span class="selector">.multi-property-box</span> {
+      <span class="property">width</span>: <span class="value">200px</span>;
+      <span class="property">height</span>: <span class="value">100px</span>;
+      <span class="property">background-color</span>:
+      <span class="value">purple</span>; <span class="property">color</span>:
+      <span class="value">white</span>;
+      <span class="property">text-align</span>:
+      <span class="value">center</span>;
+      <span class="property">border-radius</span>:
+      <span class="value">10px</span>; } /* HTML */ &lt;div
+      class="multi-property-box"&gt;I am a Box!&lt;/div&gt;
+    </div>
+>>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -216,7 +248,9 @@
 
     <!-- 
       SECTION 4: CSS COMMENTS
-      Explaining how to write comments that the browser ignores.
+      Comments are notes in your code that the browser ignores.
+      Use /* ... */ to write comments. They help explain your code
+      to others (or your future self!).
     -->
     <h2 class="section-title">4. CSS Comments</h2>
     <p>
