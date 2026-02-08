@@ -211,26 +211,15 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
+    <div class="code-block">/* CSS */ 
 <span class="selector">.cols-3</span> {
   <span class="property">display</span>: <span class="value">grid</span>;
-  <span class="property">grid-template-columns</span>:
-  <span class="value">100px 100px 100px</span>;
+  <span class="property">grid-template-columns</span>: <span class="value">100px 100px 100px</span>;
 }
-=======
-    <div class="code-block">
-      /* CSS */ <span class="selector">.cols-3</span> {
-      <span class="property">display</span>: <span class="value">grid</span>;
-      <span class="property">grid-template-columns</span>:
-      <span class="value">100px 100px 100px</span>; }
->>>>>>> dev
 
 <span class="selector">.cols-fr</span> {
   <span class="property">display</span>: <span class="value">grid</span>;
-  <span class="property">grid-template-columns</span>:
-  <span class="value">1fr 2fr 1fr</span>;
-  <span class="comment">/* Middle col is 2x wider */</span>
+  <span class="property">grid-template-columns</span>: <span class="value">1fr 2fr 1fr</span>; <span class="comment">/* Middle col is 2x wider */</span>
 }</div>
 
     <h3>Output (Fixed 100px):</h3>
@@ -265,22 +254,11 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
+    <div class="code-block">/* CSS */ 
 <span class="selector">.gap-demo</span> {
   <span class="property">display</span>: <span class="value">grid</span>;
-  <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr</span>;
-  <span class="property">gap</span>: <span class="value">20px</span>;
+  <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr</span>; <span class="property">gap</span>: <span class="value">20px</span>;
 }</div>
-=======
-    <div class="code-block">
-      /* CSS */ <span class="selector">.gap-demo</span> {
-      <span class="property">display</span>: <span class="value">grid</span>;
-      <span class="property">grid-template-columns</span>:
-      <span class="value">1fr 1fr</span>; <span class="property">gap</span>:
-      <span class="value">20px</span>; }
-    </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -307,17 +285,10 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
+    <div class="code-block">/* CSS */ 
 <span class="selector">.span-grid</span> {
   <span class="property">grid-template-columns</span>: <span class="value">repeat(3, 1fr)</span>;
 }
-=======
-    <div class="code-block">
-      /* CSS */ <span class="selector">.span-grid</span> {
-      <span class="property">grid-template-columns</span>:
-      <span class="value">repeat(3, 1fr)</span>; }
->>>>>>> dev
 
 <span class="selector">.span-col-2</span> {
   <span class="property">grid-column</span>: <span class="value">span 2</span>;
@@ -358,21 +329,17 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
+    <div class="code-block">/* CSS */ 
 <span class="selector">.dashboard</span> {
-  <span class="property">display</span>: <span class="value">grid</span>;
-  <span class="comment">/* Define Columns: Sidebar | Main | Main */</span>
-  <span class="property">grid-template-columns</span>: <span class="value">200px 1fr 1fr</span>;
-  <span class="comment">/* Define Rows: Header | Content | Widgets | Footer */</span>
-  <span class="property">grid-template-rows</span>: <span class="value">60px 1fr 100px 60px</span>;
-  <span class="comment">/* Map the Areas - looks like the layout! */</span>
+  <span class="property">display</span>: <span class="value">grid</span>; <span class="comment">/* Define Columns: Sidebar | Main | Main */</span>
+  <span class="property">grid-template-columns</span>: <span class="value">200px 1fr 1fr</span>; <span class="comment">/* Define Rows: Header | Content | Widgets | Footer */</span>
+  <span class="property">grid-template-rows</span>: <span class="value">60px 1fr 100px 60px</span>; <span class="comment">/* Map the Areas - looks like the layout! */</span>
   <span class="property">grid-template-areas</span>:
   <span class="string">"header header header"</span>
   <span class="string">"nav main main"</span>
   <span class="string">"nav widget1 widget2"</span>
   <span class="string">"footer footer footer"</span>;
-}
+}</span>
 
 <span class="comment">/* Assign items to areas */</span>
 <span class="selector">.area-header</span> {
@@ -382,34 +349,6 @@
   <span class="property">grid-area</span>: <span class="value">nav</span>;
 }
 <span class="comment">/* ... etc ... */</span></div>
-=======
-    <div class="code-block">
-      /* CSS */ <span class="selector">.dashboard</span> {
-      <span class="property">display</span>: <span class="value">grid</span>;
-      <span class="comment">/* Define Columns: Sidebar | Main | Main */</span>
-      <span class="property">grid-template-columns</span>:
-      <span class="value">200px 1fr 1fr</span>;
-      <span class="comment"
-        >/* Define Rows: Header | Content | Widgets | Footer */</span
-      >
-      <span class="property">grid-template-rows</span>:
-      <span class="value">60px 1fr 100px 60px</span>;
-      <span class="comment">/* Map the Areas - looks like the layout! */</span>
-      <span class="property">grid-template-areas</span>:
-      <span class="string">"header header header"</span>
-      <span class="string">"nav main main"</span>
-      <span class="string">"nav widget1 widget2"</span>
-      <span class="string">"footer footer footer"</span>; }
-
-      <span class="comment">/* Assign items to areas */</span>
-      <span class="selector">.area-header</span> {
-      <span class="property">grid-area</span>:
-      <span class="value">header</span>; }
-      <span class="selector">.area-nav</span> {
-      <span class="property">grid-area</span>: <span class="value">nav</span>; }
-      <span class="comment">/* ... etc ... */</span>
-    </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
