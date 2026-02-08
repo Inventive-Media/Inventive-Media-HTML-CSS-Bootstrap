@@ -178,22 +178,25 @@
     </p>
 
     <h3>Code:</h3>
+<<<<<<< HEAD
+    <div class="code-block">/* CSS */
+<span class="selector">:root</span> {
+  <span class="variable">--primary-color</span>: <span class="value">#e91e63</span>;
+  <span class="variable">--box-padding</span>: <span class="value">20px</span>; 
+}
+=======
     <div class="code-block">
       /* CSS */ <span class="selector">:root</span> {
       <span class="variable">--primary-color</span>:
       <span class="value">#e91e63</span>;
       <span class="variable">--box-padding</span>:
       <span class="value">20px</span>; }
+>>>>>>> dev
 
-      <span class="selector">.box</span> {
-      <span class="property">background-color</span>:
-      <span class="function">var</span>(<span class="variable"
-        >--primary-color</span
-      >); <span class="property">padding</span>:
-      <span class="function">var</span>(<span class="variable"
-        >--box-padding</span
-      >); }
-    </div>
+<span class="selector">.box</span> {
+  <span class="property">background-color</span>: <span class="function">var</span>(<span class="variable">--primary-color</span>); 
+  <span class="property">padding</span>: <span class="function">var</span>(<span class="variable">--box-padding</span>);
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -222,19 +225,25 @@
     </p>
 
     <h3>Code:</h3>
+<<<<<<< HEAD
+    <div class="code-block">/* CSS */
+<span class="selector">.calc-box</span> {
+  <span class="comment">/* 100% width minus 40px constant space */</span>
+  <span class="property">width</span>: <span class="function">calc</span>(<span class="value">100% - 40px</span>); 
+}
+=======
     <div class="code-block">
       /* CSS */ <span class="selector">.calc-box</span> {
       <span class="comment">/* 100% width minus 40px constant space */</span>
       <span class="property">width</span>:
       <span class="function">calc</span>(<span class="value">100% - 40px</span
       >); }
+>>>>>>> dev
 
-      <span class="selector">.calc-fluid</span> {
-      <span class="property">width</span>:
-      <span class="function">calc</span>(<span class="value">100% / 3</span>);
-      <span class="comment">/* One third width */</span>
-      }
-    </div>
+<span class="selector">.calc-fluid</span> {
+  <span class="property">width</span>: <span class="function">calc</span>(<span class="value">100% / 3</span>);
+  <span class="comment">/* One third width */</span>
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">
