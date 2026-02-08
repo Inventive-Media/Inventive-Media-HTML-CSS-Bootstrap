@@ -137,5 +137,3 @@ Each lesson builds on what you learned before.
 - All files work offline (no internet needed)
 
 ---
-
-**Happy Learning! 🚀**
