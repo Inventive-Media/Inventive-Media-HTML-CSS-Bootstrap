@@ -209,16 +209,15 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ <span class="selector">.vw-box</span> {
-      <span class="property">width</span>: <span class="value">50vw</span>;
-      <span class="comment">/* 50% of screen width */</span>
-      }
-      <span class="selector">.pct-box</span> {
-      <span class="property">width</span>: <span class="value">50%</span>;
-      <span class="comment">/* 50% of parent width */</span>
-      }
-    </div>
+    <div class="code-block">/* CSS */ 
+<span class="selector">.vw-box</span> {
+  <span class="property">width</span>: <span class="value">50vw</span>;
+  <span class="comment">/* 50% of screen width */</span>
+}
+<span class="selector">.pct-box</span> {
+  <span class="property">width</span>: <span class="value">50%</span>;
+  <span class="comment">/* 50% of parent width */</span>
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -242,27 +241,22 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ <span class="selector">.responsive-box</span> {
-      <span class="property">background-color</span>:
-      <span class="value">#ff5722</span>;
-      <span class="comment">/* Red (Mobile) */</span>
-      }
+    <div class="code-block">/* CSS */ 
+<span class="selector">.responsive-box</span> {
+  <span class="property">background-color</span>: <span class="value">#ff5722</span>; /* Red (Mobile) */
+}
 
-      <span class="media">@media</span> (min-width: 600px) {
-      <span class="selector">.responsive-box</span> {
-      <span class="property">background-color</span>:
-      <span class="value">#2196f3</span>;
-      <span class="comment">/* Blue (Tablet) */</span>
-      } }
+<span class="media">@media</span> (min-width: 600px) {
+  <span class="selector">.responsive-box</span> {
+    <span class="property">background-color</span>: <span class="value">#2196f3</span>; /* Blue (Tablet) */
+  }
+}
 
-      <span class="media">@media</span> (min-width: 900px) {
-      <span class="selector">.responsive-box</span> {
-      <span class="property">background-color</span>:
-      <span class="value">#4caf50</span>;
-      <span class="comment">/* Green (Desktop) */</span>
-      } }
-    </div>
+<span class="media">@media</span> (min-width: 900px) {
+  <span class="selector">.responsive-box</span> {
+    <span class="property">background-color</span>: <span class="value">#4caf50</span>; /* Green (Desktop) */
+  }
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -282,27 +276,23 @@
     <p>Using Grid or Flexbox with media queries to change column counts.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ <span class="selector">.responsive-grid</span> {
-      <span class="property">grid-template-columns</span>:
-      <span class="value">1fr</span>;
-      <span class="comment">/* 1 Col (Mobile) */</span>
-      <span class="property">gap</span>: <span class="value">10px</span>; }
+    <div class="code-block">/* CSS */ 
+<span class="selector">.responsive-grid</span> {
+  <span class="property">grid-template-columns</span>: <span class="value">1fr</span>; <span class="comment">/* 1 Col (Mobile) */</span>
+  <span class="property">gap</span>: <span class="value">10px</span>;
+}
 
-      <span class="media">@media</span> (min-width: 600px) {
-      <span class="selector">.responsive-grid</span> {
-      <span class="property">grid-template-columns</span>:
-      <span class="value">1fr 1fr</span>;
-      <span class="comment">/* 2 Cols */</span>
-      } }
+<span class="media">@media</span> (min-width: 600px) {
+  <span class="selector">.responsive-grid</span> {
+    <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr</span>; <span class="comment">/* 2 Cols */</span>
+  } 
+}
 
-      <span class="media">@media</span> (min-width: 900px) {
-      <span class="selector">.responsive-grid</span> {
-      <span class="property">grid-template-columns</span>:
-      <span class="value">1fr 1fr 1fr</span>;
-      <span class="comment">/* 3 Cols */</span>
-      } }
-    </div>
+<span class="media">@media</span> (min-width: 900px) {
+  <span class="selector">.responsive-grid</span> {
+    <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr 1fr</span>; <span class="comment">/* 3 Cols */</span>
+  }
+}</div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -322,28 +312,86 @@
       SECTION 4: SHOWING/HIDING CONTENT
       You can show or hide elements based on screen size using display: none.
       Useful for things like hamburger menus on mobile or extra details on desktop.
-      "mobile-only" elements are hidden on large screens, and vice versa.
+      "mobile-only" elements are hidden on large screens, and vice versaa.
     -->
     <h2 class="section-title">4. Showing/Hiding Content</h2>
     <p>Sometimes you want to show different content on mobile vs desktop.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ <span class="selector">.desktop-only</span> {
-      <span class="property">display</span>: <span class="value">none</span>; }
+    <div class="code-block">/* CSS */ 
+<span class="selector">.desktop-only</span> {
+  <span class="property">display</span>: <span class="value">none</span>; 
+}
 
-      <span class="media">@media</span> (min-width: 768px) {
-      <span class="selector">.mobile-only</span> {
-      <span class="property">display</span>: <span class="value">none</span>; }
-      <span class="selector">.desktop-only</span> {
-      <span class="property">display</span>: <span class="value">block</span>; }
-      }
-    </div>
-
+<span class="media">@media</span> (min-width: 768px) {
+  <span class="selector">.mobile-only</span> {
+    <span class="property">display</span>: <span class="value">none</span>; 
+  }
+  <span class="selector">.desktop-only</span> {
+    <span class="property">display</span>: <span class="value">block</span>; 
+  }
+}</div>
     <h3>Output:</h3>
     <div class="example-output">
       <div class="mobile-only">📱 You are on a smaller screen.</div>
       <div class="desktop-only">💻 You are on a larger screen.</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 5: FONT CLAMPING
+      clamp() offers a smart way to make typography responsive without media queries.
+      Syntax: clamp(minimum, preferred, maximum)
+    -->
+    <h2 class="section-title">5. Font Clamping (clamp())</h2>
+    <p>
+      <b>Essence:</b> <code>clamp()</code> is a CSS function that constrains a
+      value between an upper and lower bound. For typography, it allows text to
+      scale fluidly with the viewport while ensuring it never gets too small or
+      too big.<br /><br />
+      <b>Usage:</b> <code>font-size: clamp(min, preferred, max);</code><br />
+      The browser will use the <b>preferred</b> value as long as it is between
+      the <b>min</b> and <b>max</b>.
+    </p>
+
+    <h3>Calculations:</h3>
+    <p>
+      Example: <code>font-size: clamp(16px, 5vw, 48px);</code><br />
+      - <b>Minimum:</b> 16px. The font will never be smaller than this.<br />
+      - <b>Preferred:</b> 5vw (5% of viewport width). This allows the font to
+      grow/shrink.<br />
+      - <b>Maximum:</b> 48px. The font will never be larger than this.<br />
+      You don't need complex math; let the browser calculate based on the
+      viewport width!
+    </p>
+
+    <h3>Tools:</h3>
+    <p>
+      There are many online <b>"Clamp Calculators"</b> that can help you
+      generate the perfect clamp() formula based on your desired minimum and
+      maximum pixel sizes and viewport widths.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">/* CSS */ 
+<span class="selector">.clamp-text</span> {
+  <span class="property">font-size</span>:
+  <span class="value">clamp(1rem, 2.5vw, 2rem)</span>;
+  <span class="comment">/* Fluid size between 16px and 32px */</span>
+}</div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h3
+        style="
+          font-size: clamp(1rem, 5vw, 3rem);
+          text-align: center;
+          transition: font-size 0.2s;
+        "
+      >
+        Resize the browser to see me scale fluidly!
+      </h3>
     </div>
 
     <!-- Navigation Section -->
