@@ -149,12 +149,16 @@
 
     <hr />
 
+<<<<<<< HEAD
+    <!-- SECTION 1: WHAT IS CSS? -->
+=======
     <!-- 
       SECTION 1: WHAT IS CSS?
       CSS (Cascading Style Sheets) is the language used to style HTML elements.
       While HTML provides the structure, CSS controls how everything looks:
       colors, fonts, spacing, layout, and more.
     -->
+>>>>>>> dev
     <h2 class="section-title">1. What is CSS?</h2>
     <p>
       <strong>CSS</strong> stands for <strong>Cascading Style Sheets</strong>.
@@ -170,17 +174,26 @@
     </div>
 
     <p>
+<<<<<<< HEAD
+      The standard file extension for a CSS file is <code>.css</code>
+      (e.g., <code>styles.css</code>).
+=======
       The standard file extension for a CSS file is <code>.css</code> (e.g.,
       <code>styles.css</code>).
+>>>>>>> dev
     </p>
 
     <hr />
 
+<<<<<<< HEAD
+    <!-- SECTION 2: WHY USE CSS? -->
+=======
     <!-- 
       SECTION 2: WHY USE CSS?
       Understanding the benefits of CSS helps you appreciate why it's
       a core technology of the web alongside HTML and JavaScript.
     -->
+>>>>>>> dev
     <h2 class="section-title">2. Why Use CSS?</h2>
     <p>Using CSS offers several key benefits for web development:</p>
 
@@ -205,12 +218,16 @@
 
     <hr />
 
+<<<<<<< HEAD
+    <!-- SECTION 3: TYPES OF CSS STYLING -->
+=======
     <!-- 
       SECTION 3: TYPES OF CSS STYLING
       There are three ways to add CSS to HTML: Inline, Internal, and External.
       Each has its own pros and cons. External is the recommended approach
       for real-world projects.
     -->
+>>>>>>> dev
     <h2 class="section-title">3. Types of CSS Styling</h2>
     <p>
       There are three primary ways to apply CSS styles to a webpage:
@@ -218,11 +235,15 @@
       <strong>External</strong>.
     </p>
 
+<<<<<<< HEAD
+    <!-- 3.1 INLINE STYLE -->
+=======
     <!-- 
       3.1 INLINE STYLE
       Inline styles are written directly on the HTML element using the style="" attribute.
       This is the simplest but least maintainable way to add CSS.
     -->
+>>>>>>> dev
     <h3>3.1 Inline Style</h3>
     <p>
       Write styles directly inside HTML elements using the
@@ -230,6 +251,10 @@
     </p>
 
     <h4>Code:</h4>
+<<<<<<< HEAD
+    <div class="code-block"><span class="comment">&lt;!-- HTML --&gt;</span>
+<span class="tag">&lt;p</span> <span class="attribute">style</span>=<span class="string">"color: red;"</span><span class="tag">&gt;</span>Hello<span class="tag">&lt;/p&gt;</span></div>
+=======
     <div class="code-block">
       <span class="comment">&lt;!-- HTML --&gt;</span>
       <span class="tag">&lt;p</span> <span class="attribute">style</span>=<span
@@ -237,6 +262,7 @@
         >"color: red;"</span
       ><span class="tag">&gt;</span>Hello<span class="tag">&lt;/p&gt;</span>
     </div>
+>>>>>>> dev
 
     <h4>Output:</h4>
     <div class="example-output">
@@ -265,12 +291,16 @@
 
     <hr />
 
+<<<<<<< HEAD
+    <!-- 3.2 INTERNAL STYLE -->
+=======
     <!-- 
       3.2 INTERNAL STYLE (EMBEDDED CSS)
       Internal styles are placed inside a <style> tag in the <head> section.
       Better than inline because styles are separated from the HTML content,
       but still limited to a single page.
     -->
+>>>>>>> dev
     <h3>3.2 Internal Style (Embedded CSS)</h3>
     <p>
       Place styles inside a <code>&lt;style&gt;</code> tag within the
@@ -278,6 +308,19 @@
     </p>
 
     <h4>Code:</h4>
+<<<<<<< HEAD
+    <div class="code-block"><span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Document<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;style&gt;</span>
+    <span class="selector">p</span> {
+      <span class="property">color</span>: <span class="value">red</span>;
+    }
+  <span class="tag">&lt;/style&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Hello<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span></div>
+=======
     <div class="code-block">
       <span class="tag">&lt;head&gt;</span>
       <span class="tag">&lt;title&gt;</span>Document<span class="tag"
@@ -292,6 +335,7 @@
       <span class="tag">&lt;p&gt;</span>Hello<span class="tag">&lt;/p&gt;</span>
       <span class="tag">&lt;/body&gt;</span>
     </div>
+>>>>>>> dev
 
     <h4>Characteristics:</h4>
     <table class="comparison-table">
@@ -311,12 +355,16 @@
 
     <hr />
 
+<<<<<<< HEAD
+    <!-- 3.3 EXTERNAL STYLE -->
+=======
     <!-- 
       3.3 EXTERNAL STYLE (RECOMMENDED)
       External CSS is written in a separate .css file and linked to the HTML.
       This is the best practice because one file can style multiple pages,
       making updates easy and keeping your HTML clean.
     -->
+>>>>>>> dev
     <h3>3.3 External Style (Recommended ✓)</h3>
     <p>
       Store all styles in a separate <code>.css</code> file and link it to your
@@ -326,6 +374,20 @@
 
     <h4>Code:</h4>
     <p><strong>HTML File:</strong></p>
+<<<<<<< HEAD
+    <div class="code-block"><span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Document<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">href</span>=<span class="string">"./styles.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Hello<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span></div>
+
+    <p><strong>CSS File (styles.css):</strong></p>
+    <div class="code-block"><span class="selector">p</span> {
+  <span class="property">color</span>: <span class="value">red</span>;
+}</div>
+=======
     <div class="code-block">
       <span class="tag">&lt;head&gt;</span>
       <span class="tag">&lt;title&gt;</span>Document<span class="tag"
@@ -349,6 +411,7 @@
       <span class="selector">p</span> { <span class="property">color</span>:
       <span class="value">red</span>; }
     </div>
+>>>>>>> dev
 
     <h4>Characteristics:</h4>
     <table class="comparison-table">
@@ -358,9 +421,13 @@
       </tr>
       <tr>
         <td class="pros">✓ Highly reusable</td>
+<<<<<<< HEAD
+        <td>The same stylesheet can be linked to multiple pages and projects.</td>
+=======
         <td>
           The same stylesheet can be linked to multiple pages and projects.
         </td>
+>>>>>>> dev
       </tr>
       <tr>
         <td class="pros">✓ Best practice</td>
@@ -374,11 +441,15 @@
 
     <hr />
 
+<<<<<<< HEAD
+    <!-- COMPARISON TABLE -->
+=======
     <!-- 
       SECTION 4: QUICK COMPARISON TABLE
       A side-by-side comparison of all three CSS methods to help you
       decide which one to use in different situations.
     -->
+>>>>>>> dev
     <h2 class="section-title">4. Quick Comparison</h2>
     <table class="comparison-table">
       <tr>
