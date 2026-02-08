@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Typography</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      /* Syntax Highlighting Simulators */
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      p.demo {
+        margin: 5px 0;
+        padding: 5px;
+        background-color: #f0f0f0;
+        border-left: 3px solid #ccc;
+      }
+
+      /* --- DEMO STYLES --- */
+
+      /* 1. Font Family */
+      .font-serif {
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      .font-sans {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .font-mono {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      /* 2. Font Size */
+      .size-small {
+        font-size: 12px;
+      }
+      .size-medium {
+        font-size: 16px;
+      }
+      .size-large {
+        font-size: 24px;
+      }
+      .size-xlarge {
+        font-size: 32px;
+      }
+
+      /* 3. Font Weight */
+      .weight-light {
+        font-weight: 300;
+      }
+      .weight-normal {
+        font-weight: 400;
+      }
+      .weight-bold {
+        font-weight: 700;
+      }
+      .weight-bolder {
+        font-weight: 900;
+      }
+
+      /* 4. Font Style */
+      .style-italic {
+        font-style: italic;
+      }
+      .style-oblique {
+        font-style: oblique;
+      }
+
+      /* 5. Text Decoration */
+      .dec-underline {
+        text-decoration: underline;
+      }
+      .dec-line-through {
+        text-decoration: line-through;
+      }
+      .dec-none {
+        text-decoration: none;
+        border-bottom: none;
+      }
+
+      /* 6. Text Transform */
+      .trans-upper {
+        text-transform: uppercase;
+      }
+      .trans-lower {
+        text-transform: lowercase;
+      }
+      .trans-cap {
+        text-transform: capitalize;
+      }
+
+      /* 7. Text Align */
+      .align-center {
+        text-align: center;
+      }
+      .align-right {
+        text-align: right;
+      }
+      .align-justify {
+        text-align: justify;
+      }
+
+      /* 8. Line Height */
+      .lh-small {
+        line-height: 1;
+        background-color: #ffebee;
+      }
+      .lh-large {
+        line-height: 2;
+        background-color: #e8f5e9;
+      }
+
+      /* 9. Letter Spacing */
+      .spacing-wide {
+        letter-spacing: 5px;
+      }
+      .spacing-neg {
+        letter-spacing: -1px;
+      }
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - CSS Typography</h1>
+    <p>
+      Typography properties allow you to control the look and feel of text
+      explicitly.
+    </p>
+
+    <hr />
+
+    <!-- 
+      SECTION 1: FONT FAMILY
+      Sets which font the text uses. Always provide fallback fonts in case
+      the preferred font isn't available on the user's device.
+      The three main font categories: serif, sans-serif, and monospace.
+    -->
+    <h2 class="section-title">1. Font Family</h2>
+    <p>Specifies the font for an element. Always provide fallback fonts.</p>
+    <ul>
+      <li>
+        <strong>Serif:</strong> Fonts with small lines at the ends (e.g., Times
+        New Roman).
+      </li>
+      <li>
+        <strong>Sans-serif:</strong> Fonts without lines (e.g., Arial). Clean
+        and modern.
+      </li>
+      <li>
+        <strong>Monospace:</strong> All characters have the same width (e.g.,
+        Courier). Used for code.
+      </li>
+    </ul>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.font-serif</span> {
+      <span class="property">font-family</span>:
+      <span class="value">Georgia, serif</span>; }
+      <span class="selector">.font-sans</span> {
+      <span class="property">font-family</span>:
+      <span class="value">Arial, sans-serif</span>; }
+      <span class="selector">.font-mono</span> {
+      <span class="property">font-family</span>:
+      <span class="value">"Courier New", monospace</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="demo font-serif">This is a Serif font.</p>
+      <p class="demo font-sans">This is a Sans-serif font.</p>
+      <p class="demo font-mono">This is a Monospace font.</p>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 2: FONT SIZE
+      Controls how large or small the text appears.
+      Common units: px (fixed pixel size) and rem (relative to root element).
+      The default browser font size is usually 16px.
+    -->
+    <h2 class="section-title">2. Font Size</h2>
+    <p>
+      Sets the size of the text. Common units are <code>px</code> (pixels) and
+      <code>rem</code> (relative to root).
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.size-small</span> {
+      <span class="property">font-size</span>: <span class="value">12px</span>;
+      } <span class="selector">.size-medium</span> {
+      <span class="property">font-size</span>: <span class="value">16px</span>;
+      }
+      <span class="comment">/* Default browser size */</span>
+      <span class="selector">.size-xlarge</span> {
+      <span class="property">font-size</span>: <span class="value">32px</span>;
+      }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="demo size-small">Small Text (12px)</p>
+      <p class="demo size-medium">Medium Text (16px)</p>
+      <p class="demo size-xlarge">Extra Large Text (32px)</p>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 3: FONT WEIGHT
+      Controls how thick or thin the text characters appear.
+      Values range from 100 (thinnest) to 900 (boldest).
+      400 is normal weight, 700 is bold.
+    -->
+    <h2 class="section-title">3. Font Weight</h2>
+    <p>Controls the boldness of the text.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.weight-light</span> {
+      <span class="property">font-weight</span>: <span class="value">300</span>;
+      } <span class="selector">.weight-normal</span> {
+      <span class="property">font-weight</span>: <span class="value">400</span>;
+      }
+      <span class="comment">/* Standard */</span>
+      <span class="selector">.weight-bold</span> {
+      <span class="property">font-weight</span>: <span class="value">700</span>;
+      } <span class="comment">/* Bold */</span>
+      <span class="selector">.weight-bolder</span> {
+      <span class="property">font-weight</span>: <span class="value">900</span>;
+      }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="demo weight-light">Light Weight (300)</p>
+      <p class="demo weight-normal">Normal Weight (400)</p>
+      <p class="demo weight-bold">Bold Weight (700)</p>
+      <p class="demo weight-bolder">Bolder Weight (900)</p>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 4: TEXT DECORATION
+      Adds or removes lines on text: underline, line-through (strikethrough), or none.
+      Commonly used to remove the default underline from links.
+    -->
+    <h2 class="section-title">4. Text Decoration</h2>
+    <p>
+      Used to add or remove decorations like underlines. Often used to remove
+      underlines from links.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.dec-underline</span> {
+      <span class="property">text-decoration</span>:
+      <span class="value">underline</span>; }
+      <span class="selector">.dec-line-through</span> {
+      <span class="property">text-decoration</span>:
+      <span class="value">line-through</span>; }
+      <span class="selector">a.dec-none</span> {
+      <span class="property">text-decoration</span>:
+      <span class="value">none</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="demo dec-underline">Underlined Text</p>
+      <p class="demo dec-line-through">Strikethrough Text</p>
+      <p class="demo">
+        <a href="#" class="dec-none">Link without underline</a>
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 5: TEXT TRANSFORM
+      Changes the capitalization of text without changing the actual HTML content.
+      uppercase: ALL CAPS, lowercase: all lowercase, capitalize: First Letter Of Each Word.
+    -->
+    <h2 class="section-title">5. Text Transform</h2>
+    <p>Controls capitalization.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.trans-upper</span> {
+      <span class="property">text-transform</span>:
+      <span class="value">uppercase</span>; }
+      <span class="selector">.trans-lower</span> {
+      <span class="property">text-transform</span>:
+      <span class="value">lowercase</span>; }
+      <span class="selector">.trans-cap</span> {
+      <span class="property">text-transform</span>:
+      <span class="value">capitalize</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="demo trans-upper">uppercase text</p>
+      <p class="demo trans-lower">LOWERCASE TEXT</p>
+      <p class="demo trans-cap">capitalize this text</p>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 6: TEXT ALIGNMENT
+      Controls horizontal positioning of text within its container.
+      Values: left (default), center, right, justify (stretches lines to fill width).
+    -->
+    <h2 class="section-title">6. Text Alignment</h2>
+    <p>Controls the horizontal alignment of text.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.align-center</span> {
+      <span class="property">text-align</span>:
+      <span class="value">center</span>; }
+      <span class="selector">.align-right</span> {
+      <span class="property">text-align</span>:
+      <span class="value">right</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="demo align-center">Centered Text</p>
+      <p class="demo align-right">Right Aligned Text</p>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 7: LINE HEIGHT
+      Controls the vertical space between lines of text.
+      A value of 1.0 means lines are tight; 2.0 means double-spaced.
+      A value of 1.5-1.6 is generally considered most readable.
+    -->
+    <h2 class="section-title">7. Line Height</h2>
+    <p>Controls the space between lines of text.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.lh-small</span> {
+      <span class="property">line-height</span>: <span class="value">1.0</span>;
+      } <span class="selector">.lh-large</span> {
+      <span class="property">line-height</span>: <span class="value">2.0</span>;
+      }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="demo lh-small">
+        <strong>Small Line Height (1.0):</strong><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore.
+      </div>
+      <div class="demo lh-large">
+        <strong>Large Line Height (2.0):</strong><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore.
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 8: LETTER SPACING
+      Controls the horizontal space between individual characters.
+      Positive values spread letters apart; negative values squeeze them together.
+    -->
+    <h2 class="section-title">8. Letter Spacing</h2>
+    <p>Controls the space between characters.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.spacing-wide</span> {
+      <span class="property">letter-spacing</span>:
+      <span class="value">5px</span>; }
+      <span class="selector">.spacing-neg</span> {
+      <span class="property">letter-spacing</span>:
+      <span class="value">-1px</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="demo spacing-wide">WIDE SPACING</p>
+      <p class="demo spacing-neg">COMPRESSED SPACING</p>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./03_box_model.html">< Previous: Box Model</a> |
+      <a href="./05_colors.html">Next: Colors ></a>
+    </div>
+  </body>
+</html>

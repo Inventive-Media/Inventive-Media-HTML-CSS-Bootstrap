@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Introduction to Bootstrap</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .section-title {
+        color: #7952b3;
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .intro-box {
+        background: linear-gradient(135deg, #7952b3 0%, #563d7c 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+      }
+      .competitor-card {
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .competitor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #7952b3;
+        font-weight: bold;
+        margin: 0 15px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1 class="text-center mb-4" style="color: #7952b3">
+        Day 3 - Introduction to Bootstrap
+      </h1>
+
+      <div class="intro-box text-center">
+        <h2>🚀 Welcome to Bootstrap!</h2>
+        <p class="lead mb-0">
+          The most popular CSS framework for building responsive, mobile-first
+          websites.
+        </p>
+      </div>
+
+      <hr />
+
+      <!-- 
+        SECTION 1: WHAT IS BOOTSTRAP?
+        Bootstrap is a CSS framework — a library of pre-written CSS (and some JS)
+        that you can use by adding class names to your HTML elements.
+        Instead of writing CSS from scratch, you use Bootstrap's classes like
+        "btn btn-primary" to instantly style your elements.
+      -->
+      <h2 class="section-title">1. What is Bootstrap?</h2>
+
+      <p>
+        <strong>Bootstrap</strong> is a <strong>free and open-source</strong>
+        CSS framework specifically designed for developing
+        <strong>responsive, mobile-first</strong> websites and web applications.
+      </p>
+
+      <p>It provides developers with a comprehensive collection of:</p>
+      <ul>
+        <li>Pre-designed <strong>HTML</strong> templates</li>
+        <li>Ready-to-use <strong>CSS</strong> styles and utilities</li>
+        <li>Interactive <strong>JavaScript</strong> components</li>
+      </ul>
+
+      <div class="alert alert-info" role="alert">
+        <strong>💡 Key Benefit:</strong> Bootstrap makes it significantly easier
+        and faster to build consistent and visually appealing interfaces
+        <em>without starting from scratch</em>.
+      </div>
+
+      <hr />
+
+      <!-- 
+        SECTION 2: WHY USE BOOTSTRAP?
+        Bootstrap saves time by providing ready-made, responsive components.
+        Each card below highlights a key benefit. The Bootstrap grid classes
+        (row, col-md-6) are used here to arrange cards in a 2-column layout.
+      -->
+      <h2 class="section-title">2. Why Use Bootstrap?</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 border-primary">
+            <div class="card-body">
+              <h5 class="card-title text-primary">⚡ Faster Development</h5>
+              <p class="card-text">
+                Use pre-built components instead of writing CSS from scratch.
+                Build websites in hours, not days.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 border-success">
+            <div class="card-body">
+              <h5 class="card-title text-success">📱 Responsive by Default</h5>
+              <p class="card-text">
+                Every component is mobile-first. Your websites automatically
+                adapt to phones, tablets, and desktops.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 border-warning">
+            <div class="card-body">
+              <h5 class="card-title text-warning">🎨 Consistent Design</h5>
+              <p class="card-text">
+                Maintain a professional, uniform look across your entire website
+                without being a design expert.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 border-info">
+            <div class="card-body">
+              <h5 class="card-title text-info">🌍 Huge Community</h5>
+              <p class="card-text">
+                Massive documentation, tutorials, and community support. Easy to
+                find solutions to any problem.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- 
+        SECTION 3: BOOTSTRAP VS. COMPETITORS
+        Bootstrap isn't the only CSS framework. Tailwind CSS uses utility classes,
+        SASS is a CSS preprocessor (not a framework), Bulma uses flexbox,
+        and Materialize follows Google's Material Design.
+        Bootstrap is recommended for beginners due to its gentle learning curve.
+      -->
+      <h2 class="section-title">3. Bootstrap vs. Competitors</h2>
+
+      <p>
+        While Bootstrap is the most popular, there are other CSS frameworks you
+        might encounter:
+      </p>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center competitor-card">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #38bdf8">Tailwind CSS</h5>
+              <span class="badge bg-secondary mb-2">Utility-First</span>
+              <p class="card-text small">
+                Uses utility classes for styling. More flexible but requires
+                more code.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center competitor-card">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #cf649a">SASS</h5>
+              <span class="badge bg-secondary mb-2">CSS Preprocessor</span>
+              <p class="card-text small">
+                Extends CSS with variables, nesting, and mixins. "Super CSS".
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center competitor-card">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #00d1b2">Bulma</h5>
+              <span class="badge bg-secondary mb-2">CSS Framework</span>
+              <p class="card-text small">
+                Modern CSS framework with flexbox. No JavaScript required.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center competitor-card">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #ee6e73">Materialize</h5>
+              <span class="badge bg-secondary mb-2">Material Design</span>
+              <p class="card-text small">
+                Based on Google's Material Design principles. Modern look.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>✓ Why start with Bootstrap?</strong> It has the gentlest
+        learning curve, best documentation, and is still the most widely used
+        framework in the industry.
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-links">
+        <a href="./index.html">&lt; Back to Day 3 Index</a> |
+        <a href="./01_setup.html">Next: Bootstrap Setup &gt;</a>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

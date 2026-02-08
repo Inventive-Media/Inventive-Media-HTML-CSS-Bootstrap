@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Variables & Functions</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+      .function {
+        color: #61afef;
+      }
+      .variable {
+        color: #c678dd;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      /* --- DEMO STYLES --- */
+
+      /* 1. CSS Variables Setup */
+      :root {
+        /* Declaring Global Variables */
+        --primary-color: #e91e63; /* Pink */
+        --secondary-color: #3f51b5; /* Blue */
+        --box-padding: 20px;
+        --border-radius: 8px;
+      }
+
+      /* Using Variables */
+      .var-box {
+        background-color: var(--primary-color); /* Uses Pink */
+        color: white;
+        padding: var(--box-padding);
+        border-radius: var(--border-radius);
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .var-box-2 {
+        background-color: var(--secondary-color); /* Uses Blue */
+        color: white;
+        padding: var(--box-padding);
+        border-radius: var(--border-radius);
+        text-align: center;
+        font-weight: bold;
+      }
+
+      /* Overriding Variables Locally */
+      .local-scope {
+        --primary-color: #4caf50; /* Green overrides Pink here */
+        background-color: var(--primary-color);
+        padding: var(--box-padding);
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        border-radius: var(--border-radius);
+      }
+
+      /* 2. CSS Functions - calc() */
+      .calc-container {
+        border: 2px solid #333;
+        width: 100%; /* Full width of parent */
+        padding: 10px;
+        background-color: #ddd;
+      }
+
+      .calc-box {
+        background-color: #ff9800;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        /* width = 100% minus 40px margin/padding space */
+        width: calc(100% - 40px);
+        margin: 0 auto; /* Center it */
+      }
+
+      .calc-fluid {
+        margin-top: 10px;
+        background-color: #9c27b0;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        /* width = 1/3 defined by calculation */
+        width: calc(100% / 3);
+      }
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - CSS Variables & Functions</h1>
+    <p>
+      Modern CSS allows you to use <strong>Variables</strong> to store values
+      and <strong>Functions</strong> to perform calculations.
+    </p>
+
+    <hr />
+
+    <!-- 
+      SECTION 1: CSS VARIABLES (CUSTOM PROPERTIES)
+      Variables let you define a value once and reuse it throughout your CSS.
+      They are declared with -- prefix (e.g., --primary-color) inside a selector.
+      :root means they're available globally. Access them with var().
+      Great for themes — change one variable and the whole site updates!
+    -->
+    <h2 class="section-title">1. CSS Variables (Custom Properties)</h2>
+    <p>
+      Defining a value once and reusing it everywhere makes updating themes
+      easy. Variables usually start with <code>--</code> and are accessed using
+      <code>var()</code>.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">:root</span> {
+      <span class="variable">--primary-color</span>:
+      <span class="value">#e91e63</span>;
+      <span class="variable">--box-padding</span>:
+      <span class="value">20px</span>; }
+
+      <span class="selector">.box</span> {
+      <span class="property">background-color</span>:
+      <span class="function">var</span>(<span class="variable"
+        >--primary-color</span
+      >); <span class="property">padding</span>:
+      <span class="function">var</span>(<span class="variable"
+        >--box-padding</span
+      >); }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="var-box">I use --primary-color (Pink)</div>
+      <div class="var-box-2">I use --secondary-color (Blue)</div>
+    </div>
+
+    <h3>Local Scope (Overriding):</h3>
+    <p>You can redefine variables inside specific selectors.</p>
+    <div class="example-output">
+      <div class="local-scope">I redefined --primary-color to Green!</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 2: CSS FUNCTIONS — calc()
+      calc() lets you perform math in CSS, and even mix different units.
+      For example: width: calc(100% - 40px) subtracts 40 pixels from full width.
+      This is powerful for responsive layouts where you need flexible sizing.
+    -->
+    <h2 class="section-title">2. Functions: calc()</h2>
+    <p>
+      Use <code>calc()</code> to perform math on CSS values. You can mix units
+      like <code>%</code> and <code>px</code>.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.calc-box</span> {
+      <span class="comment">/* 100% width minus 40px constant space */</span>
+      <span class="property">width</span>:
+      <span class="function">calc</span>(<span class="value">100% - 40px</span
+      >); }
+
+      <span class="selector">.calc-fluid</span> {
+      <span class="property">width</span>:
+      <span class="function">calc</span>(<span class="value">100% / 3</span>);
+      <span class="comment">/* One third width */</span>
+      }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="calc-container">
+        <div class="calc-box">Width: 100% - 40px</div>
+        <div class="calc-fluid">Width: 100% / 3</div>
+      </div>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./05_colors.html">< Previous: Colors</a> |
+      <a href="./07_backgrounds.html">Next: Backgrounds ></a>
+    </div>
+  </body>
+</html>

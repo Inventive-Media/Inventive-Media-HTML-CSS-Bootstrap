@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Units & Effects</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      /* --- DEMO STYLES --- */
+
+      /* 1. CSS Units */
+      .unit-container {
+        font-size: 16px; /* Base for em/rem */
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      .px-box {
+        font-size: 20px; /* Absolute */
+        background-color: #e0e0e0;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      .em-box {
+        font-size: 1.5em; /* 1.5 * Parent(16px) = 24px */
+        background-color: #d1c4e9;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      .em-child {
+        font-size: 1.5em; /* 1.5 * Parent(24px) = 36px */
+        background-color: #b39ddb;
+      }
+
+      .rem-box {
+        font-size: 1.5rem; /* 1.5 * Root(16px typically) = 24px */
+        background-color: #c8e6c9;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      /* 2. Shadows */
+      .shadow-demo {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+
+      .box-shadow {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        /* x-offset y-offset blur spread color */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+      }
+
+      .soft-shadow {
+        background-color: #fff;
+        padding: 20px;
+        /* larger blur, lower opacity */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .text-shadow-demo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff5722;
+        /* x-offset y-offset blur color */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - Units & Shadows</h1>
+    <p>Understanding methods for sizing elements and adding depth effects.</p>
+
+    <hr />
+
+    <!-- 
+      SECTION 1: ABSOLUTE VS RELATIVE UNITS
+      px (pixels): A fixed unit — always the same size regardless of context.
+      em: Relative to the parent element's font size. Can compound when nested!
+      rem: Relative to the root (html) element's font size. More predictable than em.
+      Using rem is generally recommended for consistent, scalable designs.
+    -->
+    <h2 class="section-title">1. Absolute vs Relative Units</h2>
+    <p>
+      <strong>Absolute (px):</strong> Fixed size. <br />
+      <strong>Relative (em):</strong> Relative to parent font size. <br />
+      <strong>Relative (rem):</strong> Relative to root (html) font size.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.px-text</span> {
+      <span class="property">font-size</span>: <span class="value">20px</span>;
+      } <span class="comment">/* Always 20px */</span>
+      <span class="selector">.em-text</span> {
+      <span class="property">font-size</span>: <span class="value">1.5em</span>;
+      } <span class="comment">/* 1.5 x Parent Size */</span>
+      <span class="selector">.rem-text</span> {
+      <span class="property">font-size</span>:
+      <span class="value">1.5rem</span>; }
+      <span class="comment">/* 1.5 x Root Size */</span>
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="unit-container">
+        Parent Container (16px default)
+        <div class="px-box">20px: I am fixed size.</div>
+        <div class="em-box">
+          1.5em: I am 24px (1.5 * 16).
+          <div class="em-child">I am nested 1.5em! (1.5 * 24 = 36px)</div>
+        </div>
+        <div class="rem-box">1.5rem: I am 24px (based on HTML root).</div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 2: BOX SHADOW & TEXT SHADOW
+      Shadows add depth and dimension to elements.
+      box-shadow: adds shadow around the element's box.
+        Syntax: x-offset y-offset blur-radius spread-radius color
+      text-shadow: adds shadow behind text characters.
+        Syntax: x-offset y-offset blur-radius color
+    -->
+    <h2 class="section-title">2. Box Shadow & Text Shadow</h2>
+    <p>Adding depth with shadows.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.simple-shadow</span> {
+      <span class="comment"
+        >/* x-offset | y-offset | blur-radius | color */</span
+      >
+      <span class="property">box-shadow</span>:
+      <span class="value">5px 5px 10px rgba(0,0,0,0.3)</span>; }
+
+      <span class="selector">.text-effect</span> {
+      <span class="property">text-shadow</span>:
+      <span class="value">2px 2px 4px #000</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="shadow-demo">
+        <div class="box-shadow">Box Shadow</div>
+        <div class="soft-shadow">Soft Shadow</div>
+      </div>
+      <br />
+      <div class="text-shadow-demo">Text Shadow Effect</div>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./07_backgrounds.html">< Previous: Backgrounds</a> |
+      <a href="./09_animations.html">Next: Animations ></a>
+    </div>
+  </body>
+</html>

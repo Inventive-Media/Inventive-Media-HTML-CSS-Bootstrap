@@ -1,34 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 2 - CSS Essentials</title>
-  <link rel="stylesheet" href="./css/01_styles.css">
-  <style>
-    .internal {
-      color: blue;
-    }
-  </style>
-</head>
-<body>
-  <hr>
-  <h1>Introduction to CSS</h1>
-  <hr>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Styling</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.6;
+      }
+      h1 {
+        color: #2980b9; /* CSS Blue-ish */
+        border-bottom: 2px solid #2980b9;
+        padding-bottom: 0.5rem;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: white;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        display: flex;
+        align-items: center;
+      }
+      li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      a {
+        text-decoration: none;
+        color: #34495e;
+        font-weight: 500;
+        flex-grow: 1;
+      }
+      .file-name {
+        font-size: 0.85rem;
+        color: #7f8c8d;
+        margin-left: 1rem;
+        font-family: monospace;
+      }
+      .back-link {
+        display: inline-block;
+        margin-top: 2rem;
+        color: #666;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Day 2: CSS Styling</h1>
+    <p>Dive into styling with Cascading Style Sheets.</p>
 
-  <!-- Inline CSS -->
-  <p style="color: red;">Hello I'm inline style</p>
+    <ul>
+      <li>
+        <a href="00_css_intro.html"
+          >Introduction to CSS
+          <span class="file-name">(00_css_intro.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="01_css_syntax.html"
+          >CSS Syntax <span class="file-name">(01_css_syntax.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="02_css_selectors.html"
+          >CSS Selectors
+          <span class="file-name">(02_css_selectors.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="03_box_model.html"
+          >Box Model <span class="file-name">(03_box_model.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="04_typography.html"
+          >Typography <span class="file-name">(04_typography.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="05_colors.html"
+          >Colors <span class="file-name">(05_colors.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="06_css_variables_functions.html"
+          >CSS Variables & Functions
+          <span class="file-name">(06_css_variables_functions.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="07_backgrounds.html"
+          >Backgrounds <span class="file-name">(07_backgrounds.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="08_css_units_shadows.html"
+          >Units & Shadows
+          <span class="file-name">(08_css_units_shadows.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="09_animations.html"
+          >Animations <span class="file-name">(09_animations.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="10_positioning.html"
+          >Positioning <span class="file-name">(10_positioning.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="11_flexbox.html"
+          >Flexbox <span class="file-name">(11_flexbox.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="12_grid.html"
+          >CSS Grid <span class="file-name">(12_grid.html)</span></a
+        >
+      </li>
+      <li>
+        <a href="13_responsive_design.html"
+          >Responsive Design
+          <span class="file-name">(13_responsive_design.html)</span></a
+        >
+      </li>
+    </ul>
 
-  <!-- Internal CSS -->
-  <p class="internal">Hello I'm internal style</p>
-  <!-- show scenario of multi css change in inline -->
-  <!-- <p style="color: red;">Hello</p>
-  <p style="color: red;">Hello</p>
-  <p style="color: red;">Hello</p>
-  <p style="color: red;">Hello</p> -->
-
-  <!-- External CSS -->
-  <p class="external">Hello I'm external style</p>
-
-</body>
+    <a href="../index.html" class="back-link">&larr; Back to Main Home</a>
+  </body>
 </html>

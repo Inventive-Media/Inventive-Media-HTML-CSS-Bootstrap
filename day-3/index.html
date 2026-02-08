@@ -1,122 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Bootstrap Fundamentals</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .hero-section {
+        background: linear-gradient(135deg, #7952b3 0%, #563d7c 100%);
+        color: white;
+        padding: 60px 20px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .lesson-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .lesson-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+      .lesson-number {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        background-color: #7952b3;
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .lesson-link {
+        text-decoration: none;
+        color: inherit;
+      }
+      .lesson-link:hover {
+        color: inherit;
+      }
+      .footer-section {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <h1 class="display-4 fw-bold">Day 3: Bootstrap Fundamentals</h1>
+        <p class="lead mb-0">
+          Learn the most popular CSS framework for building responsive,
+          mobile-first websites.
+        </p>
+      </div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 3 - Bootstrap5 Essentials</title>
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-</head>
+      <!-- Lessons Grid -->
+      <h2 class="mb-4 text-center" style="color: #7952b3">
+        📚 Today's Lessons
+      </h2>
 
-<body>
-  <div class="container">
-    <h1>Bootstrap Sandbox</h1>
-    <hr>
-    <hr>
+      <div class="row g-4">
+        <!-- Lesson 1: Introduction -->
+        <div class="col-md-6 col-lg-4">
+          <a href="./00_intro.html" class="lesson-link">
+            <div class="card lesson-card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span class="lesson-number">1</span>
+                  Introduction
+                </h5>
+                <p class="card-text text-muted">
+                  What is Bootstrap? Why use it? How does it compare to other
+                  frameworks?
+                </p>
+              </div>
+              <div class="card-footer bg-light border-0">
+                <small class="text-primary">Start here →</small>
+              </div>
+            </div>
+          </a>
+        </div>
 
-    <!-- Typography -->
-    <p class="fw-bold">Typography</p>
+        <!-- Lesson 2: Setup -->
+        <div class="col-md-6 col-lg-4">
+          <a href="./01_setup.html" class="lesson-link">
+            <div class="card lesson-card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span class="lesson-number">2</span>
+                  Setup
+                </h5>
+                <p class="card-text text-muted">
+                  How to add Bootstrap to your project via CDN, download, or
+                  npm.
+                </p>
+              </div>
+              <div class="card-footer bg-light border-0">
+                <small class="text-primary">CDN, Download, NPM →</small>
+              </div>
+            </div>
+          </a>
+        </div>
 
-    <h1>Bootstrap heading</h1>
-    <h2>Bootstrap heading</h2>
-    <h3>Bootstrap heading</h3>
-    <h4>Bootstrap heading</h4>
-    <h5>Bootstrap heading</h5>
-    <h6>Bootstrap heading</h6>
+        <!-- Lesson 3: Typography -->
+        <div class="col-md-6 col-lg-4">
+          <a href="./02_typography.html" class="lesson-link">
+            <div class="card lesson-card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span class="lesson-number">3</span>
+                  Typography
+                </h5>
+                <p class="card-text text-muted">
+                  Headings, display text, font weights, alignment, and line
+                  heights.
+                </p>
+              </div>
+              <div class="card-footer bg-light border-0">
+                <small class="text-primary">Text styling →</small>
+              </div>
+            </div>
+          </a>
+        </div>
 
-    <!-- heading classes -->
-    <p class="h1">Heading class</p>
-    <p class="h2">Heading class</p>
-    <p class="h3">Heading class</p>
-    <p class="h4">Heading class</p>
-    <p class="h5">Heading class</p>
-    <p class="h6">Heading class</p>
+        <!-- Lesson 4: Utilities -->
+        <div class="col-md-6 col-lg-4">
+          <a href="./03_utilities.html" class="lesson-link">
+            <div class="card lesson-card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span class="lesson-number">4</span>
+                  Utility Classes
+                </h5>
+                <p class="card-text text-muted">
+                  Colors, spacing (padding/margin), borders, and box shadows.
+                </p>
+              </div>
+              <div class="card-footer bg-light border-0">
+                <small class="text-primary">Quick styling →</small>
+              </div>
+            </div>
+          </a>
+        </div>
 
-    <!-- display classes -->
-    <h1 class="display-1">Display 1</h1>
-    <h1 class="display-2">Display 2</h2>
-    <h1 class="display-3">Display 3</h3>
-    <h1 class="display-4">Display 4</h4>
-    <h1 class="display-5">Display 5</h5>
-    <h1 class="display-6">Display 6</h6>
+        <!-- Lesson 5: Containers -->
+        <div class="col-md-6 col-lg-4">
+          <a href="./04_containers.html" class="lesson-link">
+            <div class="card lesson-card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span class="lesson-number">5</span>
+                  Containers
+                </h5>
+                <p class="card-text text-muted">
+                  Fixed vs fluid containers and responsive breakpoints.
+                </p>
+              </div>
+              <div class="card-footer bg-light border-0">
+                <small class="text-primary">Layout basics →</small>
+              </div>
+            </div>
+          </a>
+        </div>
 
-    <!-- text sizes -->
-    <p class="fs-1">Text size 1</p>
-    <p class="fs-2">Text size 2</p>
-    <p class="fs-3">Text size 3</p>
-    <p class="fs-4">Text size 4</p>
-    <p class="fs-5">Text size 5</p>
-    <p class="fs-6">Text size 6</p>
+        <!-- Lesson 6: Grid Layout -->
+        <div class="col-md-6 col-lg-4">
+          <a href="./05_grid_layout.html" class="lesson-link">
+            <div class="card lesson-card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span class="lesson-number">6</span>
+                  Grid Layout
+                </h5>
+                <p class="card-text text-muted">
+                  12-column system, rows, columns, gutters, and alignment.
+                </p>
+              </div>
+              <div class="card-footer bg-light border-0">
+                <small class="text-primary">Responsive layouts →</small>
+              </div>
+            </div>
+          </a>
+        </div>
 
-    <!-- lead text -->
-    <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, dolorum.</p>
-    <!-- mark text -->
-    <p>This is <span class="mark">Mark text</span></p>
-    <!-- small text -->
-    <p>This is <span class="small">small text</span></p>
-    <!-- Bold = Strong -->
-    <p class="fw-bold">This is a Bold text</p>
-    <!-- Normal text -->
-    <p class="fw-normal">This is normal text</p>
-    <!-- Text light -->
-    <p class="fw-light">This is light weight text</p>
-    <!-- Text italic -->
-    <p class="fst-italic">This is italic text</p>
-    <!-- Text underline -->
-    <p class="text-decoration-underline">This is text underline text</p>
-    <!-- Text line through -->
-    <p class="text-decoration-line-through">This is line through text</p>    
-    <!-- text alignment -->
-    <p class="text-center">Text center align</p>
-    <p class="text-start">Text left align</p>
-    <p class="text-end">Text right align</p>
-    <!-- line height sizes -->
-    <p class="lh-1">Line height text 1</p>
-    <p class="lh-sm">Line height text sm</p>
-    <p class="lh-base">Line height text base</p>
-    <p class="lh-lg">Line height large</p>
+        <!-- Lesson 7: Components -->
+        <div class="col-md-6 col-lg-4">
+          <a href="./06_components.html" class="lesson-link">
+            <div class="card lesson-card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span class="lesson-number">7</span>
+                  Components
+                </h5>
+                <p class="card-text text-muted">
+                  Navbar, Buttons, Cards, Modals, Forms, Alerts, and more!
+                </p>
+              </div>
+              <div class="card-footer bg-light border-0">
+                <small class="text-primary">UI building blocks →</small>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
 
-    <!-- Abbreviations -->
-    <p><abbr title="attribute">attr</abbr></p>
-    <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
-
-    <!-- Block Quote -->
-    <div>
-      <blockquote class="blockquote">
-        <p>No matter how big or small your progress, Progress is Still a Progress</p>
-      </blockquote>
-      <figcaption class="blockquote-footer">John Doe <cite title="Source Title">The Big Future</cite>
-      </figcaption>
+      <!-- Footer Section -->
+      <div class="footer-section">
+        <h4>🎯 Learning Objectives</h4>
+        <p class="mb-3">By the end of Day 3, you will be able to:</p>
+        <div class="row text-start">
+          <div class="col-md-6">
+            <ul>
+              <li>Set up Bootstrap in any project</li>
+              <li>Use typography and utility classes</li>
+              <li>Build responsive layouts with the grid system</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>Use containers for proper content alignment</li>
+              <li>Add interactive components like modals and navbars</li>
+              <li>Style forms, buttons, and cards</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="mb-3">
+          <a href="../index.html" class="btn btn-outline-secondary me-2"
+            >&larr; Back to Main Home</a
+          >
+          <a href="./00_intro.html" class="btn btn-primary">Start Learning &rarr;</a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <hr>
-    <hr>
-    <!-- Colors -->
-    <p class="fw-bold">Colors</p>
-    <hr>
-    <hr>
 
-    <!-- Solid colors -->
-    <p class="text-primary">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-    <p class="text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-    <p class="text-danger">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-    <p class="text-success">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-    <p class="text-warning">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-
-    <!-- with background -->
-    <p class="text-white bg-primary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, officiis!</p>
-    <p class="text-white bg-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, officiis!</p>
-    <p class="text-white bg-danger">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, officiis!</p>
-    <p class="text-white bg-success">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, officiis!</p>
-    <p class="text-white bg-warning">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, officiis!</p>
-
-    <!-- with opacity -->
-    <p class="text-primary text-opacity-75">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, aperiam.</p>
-    <p class="text-primary text-opacity-50">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, aperiam.</p>
-    <p class="text-primary text-opacity-25">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, aperiam.</p>
-  </div>
-  <script src="./js/bootstrap.bundle.min.js"></script>
-</body>
-
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

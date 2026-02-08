@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Colors</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center; /* Center the title */
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      /* Syntax Highlighting Simulators */
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      /* Base Style for Color Boxes */
+      .color-box {
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        font-size: 1.1rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      /* --- DEMO STYLES --- */
+
+      /* 1. Named Colors */
+      .named-red {
+        background-color: red;
+      }
+      .named-blue {
+        background-color: blue;
+      }
+      .named-green {
+        background-color: green;
+      }
+
+      /* 2. Hexadecimal Colors */
+      .hex-tomato {
+        background-color: #ff5733;
+      }
+      .hex-green {
+        background-color: #33ff57;
+      }
+      .hex-blue {
+        background-color: #3357ff;
+      }
+
+      /* 3. RGB Colors */
+      .rgb-coral {
+        background-color: rgb(255, 99, 71);
+      }
+      .rgb-sea {
+        background-color: rgb(60, 179, 113);
+      }
+      .rgb-corn {
+        background-color: rgb(100, 149, 237);
+      }
+
+      /* 4. RGBA Colors (Transparency) */
+      .rgba-container {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYlWNgYGBg+M9AxYBRB4w6YNSBqBwMABm4AwnWgl1WAAAAAElFTkSuQmCC"); /* Checkerboard pattern to show transparency */
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .rgba-100 {
+        background-color: rgba(255, 0, 0, 1);
+      } /* 100% Opaque */
+      .rgba-60 {
+        background-color: rgba(255, 0, 0, 0.6);
+      } /* 60% Opaque */
+      .rgba-30 {
+        background-color: rgba(255, 0, 0, 0.3);
+      } /* 30% Opaque */
+
+      /* 5. HSL Colors */
+      .hsl-red {
+        background-color: hsl(0, 100%, 50%);
+      }
+      .hsl-green {
+        background-color: hsl(120, 100%, 50%);
+      }
+      .hsl-blue {
+        background-color: hsl(240, 100%, 50%);
+      }
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - CSS Colors</h1>
+    <p>
+      Colors can be specified in CSS using different formats: Names, HEX codes,
+      RGB, RGBA, and HSL.
+    </p>
+
+    <hr />
+
+    <!-- 
+      SECTION 1: NAMED COLORS
+      CSS supports 140+ predefined color names like 'red', 'blue', 'coral', etc.
+      These are the simplest way to use colors but offer limited choices.
+    -->
+    <h2 class="section-title">1. Named Colors</h2>
+    <p>
+      CSS supports 140+ standard color names (e.g., <code>red</code>,
+      <code>blue</code>, <code>coral</code>).
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.named-red</span> {
+      <span class="property">background-color</span>:
+      <span class="value">red</span>; }
+      <span class="selector">.named-blue</span> {
+      <span class="property">background-color</span>:
+      <span class="value">blue</span>; }
+      <span class="selector">.named-green</span> {
+      <span class="property">background-color</span>:
+      <span class="value">green</span>; } /* HTML */ &lt;div
+      class="named-red"&gt;Red&lt;/div&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="color-box named-red">Red</div>
+      <div class="color-box named-blue">Blue</div>
+      <div class="color-box named-green">Green</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 2: HEXADECIMAL COLORS (#RRGGBB)
+      Hex codes use a # followed by 6 characters (0-9, A-F).
+      The first two characters represent Red, next two Green, last two Blue.
+      #000000 = black, #ffffff = white. This is the most common format used by designers.
+    -->
+    <h2 class="section-title">2. Hexadecimal Colors (#RRGGBB)</h2>
+    <p>
+      A hex code starts with a hash (<code>#</code>) followed by 6 characters
+      (0-9, A-F).
+    </p>
+    <ul>
+      <li>RR (Red), GG (Green), BB (Blue)</li>
+      <li>00 is the darkest (0), FF is the brightest (255)</li>
+    </ul>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.hex-tomato</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#ff5733</span>; }
+      <span class="selector">.hex-green</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#33ff57</span>; }
+      <span class="selector">.hex-blue</span> {
+      <span class="property">background-color</span>:
+      <span class="value">#3357ff</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="color-box hex-tomato">#ff5733</div>
+      <div class="color-box hex-green">#33ff57</div>
+      <div class="color-box hex-blue">#3357ff</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 3: RGB COLORS
+      Uses the rgb(red, green, blue) function where each value is 0-255.
+      rgb(0, 0, 0) = black, rgb(255, 255, 255) = white.
+      This format is intuitive if you think in terms of mixing light.
+    -->
+    <h2 class="section-title">3. RGB Colors (Red, Green, Blue)</h2>
+    <p>
+      Uses the <code>rgb(red, green, blue)</code> function. Each parameter uses
+      a number between 0-255.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.rgb-coral</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgb(255, 99, 71)</span>; }
+      <span class="selector">.rgb-sea</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgb(60, 179, 113)</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="color-box rgb-coral">rgb(255, 99, 71)</div>
+      <div class="color-box rgb-sea">rgb(60, 179, 113)</div>
+      <div class="color-box rgb-corn">rgb(100, 149, 237)</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 4: RGBA COLORS (ALPHA / TRANSPARENCY)
+      Same as RGB but with an extra Alpha channel (0.0 to 1.0).
+      The alpha controls transparency: 0 = invisible, 1 = fully solid.
+      This is essential for overlays, faded backgrounds, and glass effects.
+    -->
+    <h2 class="section-title">4. RGBA Colors (Alpha Channel)</h2>
+    <p>
+      Same as RGB, but with an <strong>Alpha</strong> channel (0.0 to 1.0) for
+      transparency.
+    </p>
+    <ul>
+      <li>0.0 = Fully Transparent (Invisible)</li>
+      <li>1.0 = Fully Opaque (Solid)</li>
+    </ul>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="comment">/* Solid */</span>
+      <span class="selector">.rgba-100</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgba(255, 0, 0, 1.0)</span>; }
+      <span class="comment">/* Semi-transparent */</span>
+      <span class="selector">.rgba-60</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgba(255, 0, 0, 0.6)</span>; }
+      <span class="comment">/* Very transparent */</span>
+      <span class="selector">.rgba-30</span> {
+      <span class="property">background-color</span>:
+      <span class="value">rgba(255, 0, 0, 0.3)</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="rgba-container">
+        <div class="color-box rgba-100">rgba(255, 0, 0, 1.0)</div>
+        <div class="color-box rgba-60">rgba(255, 0, 0, 0.6)</div>
+        <div class="color-box rgba-30">rgba(255, 0, 0, 0.3)</div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 5: HSL COLORS (HUE, SATURATION, LIGHTNESS)
+      An alternative color model that's often more intuitive.
+      Hue: position on the color wheel (0-360 degrees).
+      Saturation: intensity of the color (0% = gray, 100% = full color).
+      Lightness: brightness (0% = black, 50% = normal, 100% = white).
+    -->
+    <h2 class="section-title">5. HSL (Hue, Saturation, Lightness)</h2>
+    <p>Uses the <code>hsl(hue, saturation%, lightness%)</code> function.</p>
+    <ul>
+      <li>
+        <strong>Hue:</strong> Degree on the color wheel (0=Red, 120=Green,
+        240=Blue).
+      </li>
+      <li><strong>Saturation:</strong> 0% (Gray) to 100% (Full Color).</li>
+      <li><strong>Lightness:</strong> 0% (Black) to 100% (White).</li>
+    </ul>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.hsl-red</span> {
+      <span class="property">background-color</span>:
+      <span class="value">hsl(0, 100%, 50%)</span>; }
+      <span class="selector">.hsl-green</span> {
+      <span class="property">background-color</span>:
+      <span class="value">hsl(120, 100%, 50%)</span>; }
+      <span class="selector">.hsl-blue</span> {
+      <span class="property">background-color</span>:
+      <span class="value">hsl(240, 100%, 50%)</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="color-box hsl-red">hsl(0, 100%, 50%)</div>
+      <div class="color-box hsl-green">hsl(120, 100%, 50%)</div>
+      <div class="color-box hsl-blue">hsl(240, 100%, 50%)</div>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./04_typography.html">< Previous: Typography</a> |
+      <a href="./06_css_variables_functions.html"
+        >Next: Variables & Functions ></a
+      >
+    </div>
+  </body>
+</html>

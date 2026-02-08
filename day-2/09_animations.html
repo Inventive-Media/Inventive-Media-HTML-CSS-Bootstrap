@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Animations</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      /* Syntax Highlighting Simulators */
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+      .keyframes {
+        color: #c678dd;
+        font-weight: bold;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        min-height: 150px;
+        align-items: center;
+      }
+
+      /* Base Box Style */
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #f093fb;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* --- DEMO STYLES --- */
+
+      /* 1. Transitions */
+      .trans-color {
+        background-color: #4caf50;
+        transition: background-color 0.5s ease;
+      }
+      .trans-color:hover {
+        background-color: #ff5722;
+      }
+
+      .trans-transform {
+        background-color: #2196f3;
+        transition: transform 0.3s ease;
+      }
+      .trans-transform:hover {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      /* 2. Transforms (Scale, Rotate) */
+      .rotate-box:hover {
+        transform: rotate(180deg);
+        transition: transform 0.5s;
+      }
+      .scale-box:hover {
+        transform: scale(0.5);
+        transition: transform 0.5s;
+      }
+
+      /* 3. Keyframe Animations */
+      .anim-spin {
+        background-color: #ff9800;
+        animation: spin 2s linear 0s infinite normal none;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .anim-bounce {
+        background-color: #9c27b0;
+        animation: bounce 1s ease 0s infinite normal none;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+      }
+
+      /* 4. Loader Example */
+      .loader {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear 0s infinite normal none;
+      }
+
+      /* 5. Flip Card */
+      .flip-card {
+        background-color: transparent;
+        width: 150px;
+        height: 150px;
+        perspective: 1000px; /* Essential for 3D effect */
+      }
+      .flip-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-front,
+      .flip-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Hides back when facing away */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-weight: bold;
+        color: white;
+      }
+      .flip-front {
+        background-color: #bbb;
+        color: black;
+      }
+      .flip-back {
+        background-color: #2980b9;
+        transform: rotateY(180deg);
+      }
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - Animations & Transforms</h1>
+    <p>
+      Bring your web pages to life with smooth transitions and complex keyframe
+      animations.
+    </p>
+
+    <hr />
+
+    <!-- 
+      SECTION 1: TRANSITIONS
+      Transitions smoothly animate property changes over a duration.
+      They only activate on state changes (like :hover).
+      Syntax: transition: property duration timing-function;
+      Example: when you hover, the color smoothly fades instead of snapping.
+    -->
+    <h2 class="section-title">1. Transitions</h2>
+    <p>
+      Smoothly change property values (like color or size) over a given duration
+      when an event occurs (like hover).
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.trans-box</span> {
+      <span class="property">background-color</span>:
+      <span class="value">green</span>;
+      <span class="property">transition</span>:
+      <span class="value">background-color 0.5s ease</span>; }
+
+      <span class="selector">.trans-box:hover</span> {
+      <span class="property">background-color</span>:
+      <span class="value">orange</span>; }
+    </div>
+
+    <h3>Output (Hover over them):</h3>
+    <div class="example-output">
+      <div class="box trans-color">Color Change</div>
+      <div class="box trans-transform">Transform</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 2: TRANSFORMS
+      Transform changes an element's shape, size, or position visually.
+      Common functions: rotate(deg), scale(factor), translate(x, y), skew(deg).
+      The element's original space in the layout is preserved.
+    -->
+    <h2 class="section-title">2. Transforms</h2>
+    <p>
+      Modify the shape and position of elements: <code>rotate</code>,
+      <code>scale</code>, <code>translate</code>, <code>skew</code>.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="selector">.rotate-box:hover</span> {
+      <span class="property">transform</span>:
+      <span class="value">rotate(180deg)</span>; }
+      <span class="selector">.scale-box:hover</span> {
+      <span class="property">transform</span>:
+      <span class="value">scale(0.5)</span>; }
+      <span class="comment">/* Shrink to 50% */</span>
+    </div>
+
+    <h3>Output (Hover over them):</h3>
+    <div class="example-output">
+      <div class="box rotate-box">Rotate 180&deg;</div>
+      <div class="box scale-box">Scale 0.5</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 3: KEYFRAME ANIMATIONS
+      @keyframes lets you define animation steps (from 0% to 100%).
+      Unlike transitions, keyframe animations can run automatically, loop infinitely,
+      and have multiple intermediate steps.
+      Shorthand: animation: name duration timing delay iterations direction fill;
+    -->
+    <h2 class="section-title">3. Keyframe Animations</h2>
+    <p>Create complex animations by defining steps (keyframes).</p>
+    <p>
+      <strong>Shorthand Syntax Order:</strong><br />
+      <code
+        >animation: name duration timing-function delay iteration-count
+        direction fill-mode;</code
+      >
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */
+      <span class="keyframes">@keyframes</span> spin {
+      <span class="value">0%</span> { <span class="property">transform</span>:
+      <span class="value">rotate(0deg)</span>; }
+      <span class="value">100%</span> { <span class="property">transform</span>:
+      <span class="value">rotate(360deg)</span>; } }
+
+      <span class="selector">.anim-spin</span> {
+      <span class="comment"
+        >/* name | duration | timing-function | delay | iteration-count |
+        direction | fill-mode */</span
+      >
+      <span class="property">animation</span>:
+      <span class="value">spin 2s linear 0s infinite normal none</span>; }
+
+      <span class="keyframes">@keyframes</span> bounce {
+      <span class="value">0%</span>, <span class="value">100%</span> {
+      <span class="property">transform</span>:
+      <span class="value">translateY(0)</span>; }
+      <span class="value">50%</span> { <span class="property">transform</span>:
+      <span class="value">translateY(-30px)</span>; } }
+
+      <span class="selector">.anim-bounce</span> {
+      <span class="property">animation</span>:
+      <span class="value">bounce 1s ease 0s infinite normal none</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="box anim-spin">Spin</div>
+      <div class="box anim-bounce">Bounce</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 4: PRACTICAL EXAMPLE — LOADING SPINNER
+      A common real-world use of infinite rotation animation.
+      The spinner is a circle with one colored border-top that rotates endlessly.
+    -->
+    <h2 class="section-title">4. Practical: Loading Spinner</h2>
+    <p>A classic use case for infinite rotation animations.</p>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="loader"></div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 5: PRACTICAL EXAMPLE — 3D CARD FLIP
+      Combines transforms with perspective for a 3D flip effect on hover.
+      Key concepts: perspective (creates 3D depth), backface-visibility (hides
+      the back side), and rotateY (flips around the vertical axis).
+    -->
+    <h2 class="section-title">5. Practical: 3D Card Flip</h2>
+    <p>
+      Using <code>perspective</code>, <code>backface-visibility</code>, and
+      <code>transform: rotateY</code>.
+    </p>
+
+    <h3>Output (Hover to flip):</h3>
+    <div class="example-output">
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">Front</div>
+          <div class="flip-back">Back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./08_css_units_shadows.html">< Previous: Units & Shadows</a> |
+      <a href="./10_positioning.html">Next: Positioning ></a>
+    </div>
+  </body>
+</html>

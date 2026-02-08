@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - CSS Box Model</title>
+    <style>
+      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1.main-title {
+        color: rgb(255, 172, 39);
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .code-block {
+        background-color: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+      }
+      /* Syntax Highlighting Simulators */
+      .selector {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .property {
+        color: #98c379;
+      }
+      .value {
+        color: #d19a66;
+      }
+      .comment {
+        color: #5c6370;
+        font-style: italic;
+      }
+
+      .example-output {
+        background-color: white;
+        border: 2px dashed #aaa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      /* --- DEMO STYLES --- */
+
+      .box {
+        background-color: #e0e0e0;
+        border: 1px solid #999;
+        display: inline-block; /* Allows width/height to work but sits inline */
+        margin-bottom: 10px;
+      }
+
+      /* 1. Padding */
+      .pad-none {
+        padding: 0;
+      }
+      .pad-20 {
+        padding: 20px;
+        background-color: #c8e6c9;
+      }
+      .pad-mixed {
+        padding: 10px 40px;
+        background-color: #b9f6ca;
+      }
+
+      /* 2. Margin */
+      .marg-none {
+        margin: 0;
+      }
+      .marg-20 {
+        margin: 20px;
+        background-color: #ffccbc;
+      }
+      .marg-auto {
+        margin: 0 auto;
+        display: block;
+        width: 50%;
+        background-color: #ffe0b2;
+      }
+
+      /* 3. Border */
+      .bord-solid {
+        border: 5px solid red;
+      }
+      .bord-dotted {
+        border: 5px dotted blue;
+      }
+      .bord-mixed {
+        border-top: 5px solid red;
+        border-bottom: 5px dashed green;
+      }
+
+      /* 4. Border Radius */
+      .rad-small {
+        border-radius: 5px;
+        padding: 10px;
+        border: 2px solid #333;
+      }
+      .rad-large {
+        border-radius: 20px;
+        padding: 10px;
+        border: 2px solid #333;
+      }
+      .rad-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center text */
+      }
+
+      /* 5. Box Sizing */
+      .sizing-demo {
+        width: 200px;
+        height: 100px;
+        padding: 20px;
+        border: 10px solid blue;
+        background-color: #b3e5fc;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .content-box {
+        box-sizing: content-box;
+      } /* Default */
+      .border-box {
+        box-sizing: border-box;
+      } /* Recommended */
+
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Day 2 - CSS Box Model</h1>
+    <p>
+      The term "Box Model" is used when talking about design and layout. The CSS
+      Box Model is essentially a box that wraps around every HTML element. It
+      consists of: margins, borders, padding, and the actual content.
+    </p>
+
+    <hr />
+
+    <!-- 
+      SECTION 1: PADDING (SPACE INSIDE)
+      Padding is the space between the content and the border.
+      It pushes the content inward. The background color fills the padding area.
+      You can set padding for all sides, or individually (top, right, bottom, left).
+    -->
+    <h2 class="section-title">1. Padding (Space Inside)</h2>
+    <p>
+      Padding clears an area around the content (inside the border). It is
+      affected by the background color of the element.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.pad-none</span> {
+      <span class="property">padding</span>: <span class="value">0</span>; }
+      <span class="selector">.pad-20</span> {
+      <span class="property">padding</span>: <span class="value">20px</span>; }
+      <span class="selector">.pad-mixed</span> {
+      <span class="property">padding</span>:
+      <span class="value">10px 40px</span>; }
+      <span class="comment">/* 10px top/bottom, 40px left/right */</span>
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <span class="box pad-none">No Padding</span>
+      <span class="box pad-20">20px Padding</span>
+      <span class="box pad-mixed">Mixed Padding</span>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 2: MARGIN (SPACE OUTSIDE)
+      Margin is the space outside the border, between the element and its neighbors.
+      Margins are transparent (they don't have a background color).
+      Use 'margin: 0 auto' to center a block element horizontally.
+    -->
+    <h2 class="section-title">2. Margin (Space Outside)</h2>
+    <p>Margin clears an area outside the border. The margin is transparent.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.marg-20</span> {
+      <span class="property">margin</span>: <span class="value">20px</span>; }
+      <span class="selector">.marg-auto</span> {
+      <span class="property">margin</span>: <span class="value">0 auto</span>;
+      <span class="comment">/* Centers block elements horizontally */</span>
+      <span class="property">width</span>: <span class="value">50%</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="box marg-none">No Margin</div>
+      <div class="box marg-20">I have 20px Margin</div>
+      <div class="box marg-none">No Margin</div>
+      <div class="box marg-auto">I am centered with margin: auto</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 3: BORDER
+      The border sits between the padding and the margin.
+      You can control its width, style (solid, dotted, dashed), and color.
+      Each side (top, right, bottom, left) can be styled independently.
+    -->
+    <h2 class="section-title">3. Border</h2>
+    <p>A border goes around the padding and content.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.bord-solid</span> {
+      <span class="property">border</span>:
+      <span class="value">5px solid red</span>; }
+      <span class="selector">.bord-dotted</span> {
+      <span class="property">border</span>:
+      <span class="value">5px dotted blue</span>; }
+      <span class="selector">.bord-mixed</span> {
+      <span class="property">border-top</span>:
+      <span class="value">5px solid red</span>;
+      <span class="property">border-bottom</span>:
+      <span class="value">5px dashed green</span>; }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="box bord-solid">Solid Border</div>
+      <div class="box bord-dotted">Dotted Border</div>
+      <div class="box bord-mixed">Mixed Borders</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 4: BORDER RADIUS
+      Rounds the corners of an element's border.
+      A value of 50% on a square element makes it a perfect circle.
+    -->
+    <h2 class="section-title">4. Border Radius</h2>
+    <p>Used to round the corners of an element.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.rad-small</span> {
+      <span class="property">border-radius</span>:
+      <span class="value">5px</span>; }
+      <span class="selector">.rad-large</span> {
+      <span class="property">border-radius</span>:
+      <span class="value">20px</span>; }
+      <span class="selector">.rad-circle</span> {
+      <span class="property">border-radius</span>:
+      <span class="value">50%</span>; }
+      <span class="comment">/* Makes a square a circle */</span>
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="box rad-small">Small Radius</div>
+      <div class="box rad-large">Large Radius</div>
+      <div class="box rad-circle">Circle</div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 5: BOX SIZING
+      By default (content-box), width/height only apply to the content area.
+      Padding and border are added ON TOP of that, making the total size bigger.
+      With border-box, width/height include padding and border, so the total
+      size stays exactly what you set. border-box is recommended for easier layout.
+    -->
+    <h2 class="section-title">5. Box Sizing (Important!)</h2>
+    <p>
+      The <code>box-sizing</code> property allows you to include the padding and
+      border in an element's total width and height.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */ <span class="selector">.content-box</span> {
+      <span class="property">box-sizing</span>:
+      <span class="value">content-box</span>;
+      <span class="comment">/* Default */</span>
+      <span class="property">width</span>: <span class="value">200px</span>;
+      <span class="property">padding</span>: <span class="value">20px</span>;
+      <span class="property">border</span>:
+      <span class="value">10px solid blue</span>; }
+      <span class="comment"
+        >/* Total Width = 200 + 40 (padding) + 20 (border) = 260px */</span
+      >
+
+      <span class="selector">.border-box</span> {
+      <span class="property">box-sizing</span>:
+      <span class="value">border-box</span>;
+      <span class="comment">/* Recommended */</span>
+      <span class="property">width</span>: <span class="value">200px</span>;
+      <span class="property">padding</span>: <span class="value">20px</span>;
+      <span class="property">border</span>:
+      <span class="value">10px solid blue</span>; }
+      <span class="comment"
+        >/* Total Width = 200px (Content shrinks to fit) */</span
+      >
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="sizing-demo content-box">
+        <strong>content-box</strong><br />
+        Width is 260px total.
+      </div>
+
+      <div class="sizing-demo border-box">
+        <strong>border-box</strong><br />
+        Width is 200px total.
+      </div>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="nav-links">
+      <a href="./02_css_selectors.html">< Previous: Selectors</a> |
+      <a href="./04_typography.html">Next: Typography ></a>
+    </div>
+  </body>
+</html>
