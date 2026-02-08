@@ -11,6 +11,116 @@
         font-family: Arial, sans-serif;
         padding: 20px;
         line-height: 1.6;
+        padding-top: 80px; /* Space for fixed header */
+      }
+      /* Sticky Header Styles */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        color: #032340;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .home-link {
+        color: #d35400; /* Orange */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .home-link:hover {
+        color: #e67e22;
+      }
+
+      .page-title {
+        font-size: 1rem;
+        color: #34495e;
+        opacity: 0.8;
+        display: none; /* Hidden on small screens */
+      }
+      @media (min-width: 600px) {
+        .page-title {
+          display: block;
+        }
+      }
+      /* Dropdown Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        background-color: #d35400; /* Orange */
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #e67e22;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #d35400; /* Orange to match theme */
+        font-weight: bold;
+        margin: 0 10px;
+        font-size: 1.1rem;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+        color: #e67e22;
       }
       h1.main-title {
         color: rgb(255, 172, 39);
@@ -132,6 +242,35 @@
     </style>
   </head>
   <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="block_elements.html">01. Block Elements</a>
+          <a href="inline_elements.html">02. Inline Elements</a>
+          <a href="semantic_elements.html">03. Semantic Elements</a>
+          <a href="form_elements.html">04. Form Elements</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 =
+          document.querySelector("h1.main-title") ||
+          document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
     <h1 class="main-title">Day 1 - Semantic Elements</h1>
     <p>
       Semantic elements clearly describe their meaning to both the browser and
@@ -333,13 +472,9 @@
       </div>
     </div>
 
-    <hr />
-
-    <h2 class="section-title">See more</h2>
-    <ul>
-      <li><a href="./block_elements.html">Block Elements</a></li>
-      <li><a href="./inline_elements.html">Inline Elements</a></li>
-      <li><a href="./form_elements.html">Form Elements</a></li>
-    </ul>
+    <div class="nav-links">
+      <a href="inline_elements.html">&lt; Previous: Inline Elements</a> |
+      <a href="form_elements.html">Next: Form Elements &gt;</a>
+    </div>
   </body>
 </html>
