@@ -15,17 +15,110 @@
       body {
         font-family: Arial, sans-serif; /* Sets the font for the page */
         padding: 20px; /* Adds space around the page content */
+        padding-top: 80px; /* Space for fixed header */
         line-height: 1.6; /* Improves text readability */
         background-color: #f9f9f9; /* Light background for the whole page */
         color: #333; /* Dark gray text color */
       }
+      /* Sticky Header Styles */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        color: #032340;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .home-link {
+        color: #34495e;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .home-link:hover {
+        color: hsl(210, 27%, 50%);
+      }
+      .page-title {
+        font-size: 1rem;
+        color: #34495e;
+        opacity: 0.8;
+        display: none; /* Hidden on small screens */
+      }
+      @media (min-width: 600px) {
+        .page-title {
+          display: block;
+        }
+      }
+
+      /* Dropdown Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        background-color: #34495e;
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: hsl(210, 27%, 50%);
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
 
       /* 2. Main Title Styling */
       h1.main-title {
-        color: rgb(255, 172, 39); /* Orange color */
-        text-align: center; /* Centers the text */
+        color: hsl(210, 27%, 50%);
+        text-align: center;
         font-size: 2.5rem;
         margin-bottom: 10px;
+        border-bottom: 2px solid hsl(210, 27%, 50%);
+        padding-bottom: 0.5rem;
       }
 
       /* 3. Section Titles */
@@ -44,7 +137,6 @@
         border-radius: 5px; /* Rounded corners */
         font-family: "Courier New", monospace; /* Monospace font for code */
         overflow-x: auto; /* Adds scrollbar if code is too long */
-        white-space: pre-wrap; /* Preserves spaces and line breaks */
         margin-bottom: 15px;
         border: 1px solid #444;
       }
@@ -116,6 +208,45 @@
     </style>
   </head>
   <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_css_intro.html">00. CSS Intro</a>
+          <a href="01_css_syntax.html">01. CSS Syntax</a>
+          <a href="02_css_selectors.html">02. CSS Selectors</a>
+          <a href="03_box_model.html">03. Box Model</a>
+          <a href="04_typography.html">04. Typography</a>
+          <a href="05_colors.html">05. Colors</a>
+          <a href="06_css_variables_functions.html"
+            >06. CSS Variables & Functions</a
+          >
+          <a href="07_backgrounds.html">07. Backgrounds</a>
+          <a href="08_css_units_shadows.html">08. Units & Shadows</a>
+          <a href="09_animations.html">09. Animations</a>
+          <a href="10_positioning.html">10. Positioning</a>
+          <a href="11_flexbox.html">11. Flexbox</a>
+          <a href="12_grid.html">12. Grid</a>
+          <a href="13_responsive_design.html">13. Responsive Design</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
     <h1 class="main-title">Day 2 - CSS Syntax</h1>
     <p>
       CSS (Cascading Style Sheets) is used to style and layout web pages. It
@@ -151,17 +282,14 @@
       </li>
     </ul>
 
-    <h3>Code:</h3>
-    <!-- 
-      Using spans with classes to simulate syntax highlighting explains the parts clearly 
-      while keeping it raw HTML text.
-    -->
-    <div class="code-block"><span class="selector">selector</span> {
-<span class="property">property</span>: <span class="value">value</span>;
-<span class="property">another-property</span>: <span class="value">value</span>; 
-}</div>
-
-    <hr />
+    <div class="code-block">
+      <span class="selector">selector</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">property</span>:
+      <span class="value">value</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">another-property</span>:
+      <span class="value">value</span>;<br />
+      }
+    </div>
 
     <!-- 
       SECTION 2: BASIC EXAMPLE
@@ -175,25 +303,19 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.styled-text</span> {
-<span class="property">color</span>: <span class="value">blue</span>;
-<span class="property">font-size</span>: <span class="value">20px</span>;
-<span class="property">font-weight</span>: <span class="value">bold</span>; 
-} 
-/* HTML */ 
-&lt;p class="styled-text"&gt;This text is styled with CSS!&lt;/p&gt;</div>
-=======
     <div class="code-block">
-      /* CSS */ <span class="selector">.styled-text</span> {
-      <span class="property">color</span>: <span class="value">blue</span>;
-      <span class="property">font-size</span>: <span class="value">20px</span>;
-      <span class="property">font-weight</span>:
-      <span class="value">bold</span>; } /* HTML */ &lt;p
-      class="styled-text"&gt;This text is styled with CSS!&lt;/p&gt;
+      /* CSS */<br />
+      <span class="selector">.styled-text</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+      <span class="value">blue</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
+      <span class="value">20px</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-weight</span>:
+      <span class="value">bold</span>;<br />
+      }<br /><br />
+      /* HTML */<br />
+      &lt;p class="styled-text"&gt;This text is styled with CSS!&lt;/p&gt;
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -211,33 +333,25 @@
     <p>You can apply as many properties as you need to a single element.</p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.multi-property-box</span> {
-<span class="property">width</span>: <span class="value">200px</span>;
-<span class="property">height</span>: <span class="value">100px</span>;
-<span class="property">background-color</span>: <span class="value">purple</span>; 
-<span class="property">color</span>: <span class="value">white</span>;
-<span class="property">text-align</span>: <span class="value">center</span>;
-<span class="property">border-radius</span>: <span class="value">10px</span>; } 
-
-/* HTML */ 
-&lt;div class="multi-property-box"&gt;I am a Box!&lt;/div&gt;</div>
-=======
     <div class="code-block">
-      /* CSS */ <span class="selector">.multi-property-box</span> {
-      <span class="property">width</span>: <span class="value">200px</span>;
-      <span class="property">height</span>: <span class="value">100px</span>;
-      <span class="property">background-color</span>:
-      <span class="value">purple</span>; <span class="property">color</span>:
-      <span class="value">white</span>;
-      <span class="property">text-align</span>:
-      <span class="value">center</span>;
-      <span class="property">border-radius</span>:
-      <span class="value">10px</span>; } /* HTML */ &lt;div
-      class="multi-property-box"&gt;I am a Box!&lt;/div&gt;
+      /* CSS */<br />
+      <span class="selector">.multi-property-box</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
+      <span class="value">200px</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">height</span>:
+      <span class="value">100px</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-color</span>:
+      <span class="value">purple</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+      <span class="value">white</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-align</span>:
+      <span class="value">center</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-radius</span>:
+      <span class="value">10px</span>;<br />
+      }<br /><br />
+      /* HTML */<br />
+      &lt;div class="multi-property-box"&gt;I am a Box!&lt;/div&gt;
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -259,10 +373,12 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block"><span class="comment">/* This is a single-line comment */</span>
-<span class="selector">p</span> { <span class="property">color</span>: <span class="value">red</span>; }
-
-<span class="comment">/* This is a multi-line comment */</span></div>
+    <div class="code-block">
+      <span class="comment">/* This is a single-line comment */</span><br />
+      <span class="selector">p</span> { <span class="property">color</span>:
+      <span class="value">red</span>; }<br /><br />
+      <span class="comment">/* This is a multi-line comment */</span>
+    </div>
 
     <!-- Navigation Section -->
     <div class="nav-links">

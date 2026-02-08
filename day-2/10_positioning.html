@@ -9,16 +9,109 @@
       body {
         font-family: Arial, sans-serif;
         padding: 20px;
+        padding-top: 80px; /* Space for fixed header */
         line-height: 1.6;
         background-color: #f9f9f9;
         color: #333;
         padding-bottom: 200px; /* Space for scrolling demos */
       }
+      /* Sticky Header Styles */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        color: #032340;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .home-link {
+        color: #34495e;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .home-link:hover {
+        color: hsl(210, 27%, 50%);
+      }
+      .page-title {
+        font-size: 1rem;
+        color: #34495e;
+        opacity: 0.8;
+        display: none; /* Hidden on small screens */
+      }
+      @media (min-width: 600px) {
+        .page-title {
+          display: block;
+        }
+      }
+
+      /* Dropdown Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        background-color: #34495e;
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: hsl(210, 27%, 50%);
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
       h1.main-title {
-        color: rgb(255, 172, 39);
+        color: hsl(210, 27%, 50%);
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 10px;
+        border-bottom: 2px solid hsl(210, 27%, 50%);
+        padding-bottom: 0.5rem;
       }
       .section-title {
         color: #333;
@@ -33,7 +126,6 @@
         border-radius: 5px;
         font-family: "Courier New", monospace;
         overflow-x: auto;
-        white-space: pre-wrap;
         margin-bottom: 15px;
         border: 1px solid #444;
       }
@@ -213,6 +305,45 @@
     </style>
   </head>
   <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_css_intro.html">00. CSS Intro</a>
+          <a href="01_css_syntax.html">01. CSS Syntax</a>
+          <a href="02_css_selectors.html">02. CSS Selectors</a>
+          <a href="03_box_model.html">03. Box Model</a>
+          <a href="04_typography.html">04. Typography</a>
+          <a href="05_colors.html">05. Colors</a>
+          <a href="06_css_variables_functions.html"
+            >06. CSS Variables & Functions</a
+          >
+          <a href="07_backgrounds.html">07. Backgrounds</a>
+          <a href="08_css_units_shadows.html">08. Units & Shadows</a>
+          <a href="09_animations.html">09. Animations</a>
+          <a href="10_positioning.html">10. Positioning</a>
+          <a href="11_flexbox.html">11. Flexbox</a>
+          <a href="12_grid.html">12. Grid</a>
+          <a href="13_responsive_design.html">13. Responsive Design</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
     <!-- Fixed Element Demo -->
     <div class="box fixed-box">I am FIXED</div>
 
@@ -237,18 +368,11 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.static-box</span> {
-  <span class="property">position</span>: <span class="value">static</span>;
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.static-box</span> {
       <span class="property">position</span>: <span class="value">static</span>;
       }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -271,16 +395,6 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.relative-box</span> {
-  <span class="property">position</span>: <span class="value">relative</span>;
-  <span class="property">top</span>: <span class="value">20px</span>;
-  <span class="comment">/* Move down 20px */</span>
-  <span class="property">left</span>: <span class="value">20px</span>;
-  <span class="comment">/* Move right 20px */</span>
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.relative-box</span> {
       <span class="property">position</span>:
@@ -288,10 +402,8 @@
       <span class="value">20px</span>;
       <span class="comment">/* Move down 20px */</span>
       <span class="property">left</span>: <span class="value">20px</span>;
-      <span class="comment">/* Move right 20px */</span>
-      }
+      <span class="comment">/* Move right 20px */</span> }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -318,34 +430,27 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.relative-container</span> {
-  <span class="property">position</span>: <span class="value">relative</span>;
-  <span class="comment">/* The Anchor */</span>
-  <span class="property">height</span>: <span class="value">250px</span>; }
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.relative-container</span> {
       <span class="property">position</span>:
       <span class="value">relative</span>;
       <span class="comment">/* The Anchor */</span>
       <span class="property">height</span>: <span class="value">250px</span>; }
->>>>>>> dev
 
-<span class="selector">.absolute-tl</span> {
-  <span class="property">position</span>: <span class="value">absolute</span>;
-  <span class="property">top</span>: <span class="value">0</span>;
-  <span class="property">left</span>: <span class="value">0</span>;
-}
+      <span class="selector">.absolute-tl</span> {
+      <span class="property">position</span>:
+      <span class="value">absolute</span>; <span class="property">top</span>:
+      <span class="value">0</span>; <span class="property">left</span>:
+      <span class="value">0</span>; }
 
-<span class="selector">.absolute-center</span> {
-  <span class="property">position</span>: <span class="value">absolute</span>;
-  <span class="property">top</span>: <span class="value">50%</span>;
-  <span class="property">left</span>: <span class="value">50%</span>;
-  <span class="property">transform</span>: <span class="value">translate(-50%, -50%)</span>;
-  <span class="comment">/* Centers it */</span>
-}</div>
+      <span class="selector">.absolute-center</span> {
+      <span class="property">position</span>:
+      <span class="value">absolute</span>; <span class="property">top</span>:
+      <span class="value">50%</span>; <span class="property">left</span>:
+      <span class="value">50%</span>; <span class="property">transform</span>:
+      <span class="value">translate(-50%, -50%)</span>;
+      <span class="comment">/* Centers it */</span> }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output relative-container">
@@ -371,21 +476,12 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.fixed-box</span> {
-  <span class="property">position</span>: <span class="value">fixed</span>;
-  <span class="property">bottom</span>: <span class="value">20px</span>;
-  <span class="property">right</span>: <span class="value">20px</span>;
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.fixed-box</span> {
       <span class="property">position</span>: <span class="value">fixed</span>;
       <span class="property">bottom</span>: <span class="value">20px</span>;
       <span class="property">right</span>: <span class="value">20px</span>; }
     </div>
->>>>>>> dev
 
     <hr />
 
@@ -402,22 +498,12 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.sticky-element</span> {
-  <span class="property">position</span>: <span class="value">sticky</span>;
-  <span class="property">top</span>: <span class="value">0</span>;
-  <span class="comment">/* Sticks to top */</span>
-}</div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.sticky-element</span> {
       <span class="property">position</span>: <span class="value">sticky</span>;
       <span class="property">top</span>: <span class="value">0</span>;
-      <span class="comment">/* Sticks to top */</span>
-      }
+      <span class="comment">/* Sticks to top */</span> }
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output sticky-container">
@@ -443,17 +529,6 @@
     </p>
 
     <h3>Code:</h3>
-<<<<<<< HEAD
-    <div class="code-block">/* CSS */
-<span class="selector">.z-1</span> {
-  <span class="property">z-index</span>: <span class="value">1</span>; }
-<span class="comment">/* Bottom */</span>
-<span class="selector">.z-2</span> {
-  <span class="property">z-index</span>: <span class="value">2</span>; }
-<span class="selector">.z-3</span> {
-  <span class="property">z-index</span>: <span class="value">3</span>; }
-<span class="comment">/* Top */</span></div>
-=======
     <div class="code-block">
       /* CSS */ <span class="selector">.z-1</span> {
       <span class="property">z-index</span>: <span class="value">1</span>; }
@@ -464,7 +539,6 @@
       <span class="property">z-index</span>: <span class="value">3</span>; }
       <span class="comment">/* Top */</span>
     </div>
->>>>>>> dev
 
     <h3>Output:</h3>
     <div class="example-output z-container">
