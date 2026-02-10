@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Grid</title>
     <link rel="stylesheet" href="css/styles.css" />
-</head>
+  </head>
   <body>
     <!-- Sticky Header -->
     <header class="sticky-header">
@@ -51,226 +51,239 @@
       <div class="row">
         <div class="col-12">
           <h1 class="main-title">Day 2 - CSS Grid</h1>
-    <p>
-      CSS Grid is a <strong>2-dimensional</strong> layout system. It handles
-      both columns and rows.
-    </p>
+          <p>
+            CSS Grid is a <strong>2-dimensional</strong> layout system. It
+            handles both columns and rows.
+          </p>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 1: DEFINING COLUMNS
       grid-template-columns sets how many columns the grid has and their widths.
       You can use fixed values (px), or the flexible "fr" unit.
       1fr means "one fraction" of the remaining space — similar to flex-grow.
       repeat(3, 1fr) is a shorthand for "1fr 1fr 1fr".
     -->
-    <h2 class="section-title">1. Defining Columns</h2>
-    <p>
-      Use <code>grid-template-columns</code> to define width of columns. <br />
-      <code>fr</code> stands for "fraction" of available space.
-    </p>
+          <h2 class="section-title">1. Defining Columns</h2>
+          <p>
+            Use <code>grid-template-columns</code> to define width of columns.
+            <br />
+            <code>fr</code> stands for "fraction" of available space.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.cols-3</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-      <span class="value">grid</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-template-columns</span
-      >: <span class="value">100px 100px 100px</span>;<br />
-      }<br /><br />
-      <span class="selector">.cols-fr</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-      <span class="value">grid</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-template-columns</span
-      >: <span class="value">1fr 2fr 1fr</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-        >/* Middle col is 2x wider */</span
-      ><br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.cols-3</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+            <span class="value">grid</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >grid-template-columns</span
+            >: <span class="value">100px 100px 100px</span>;<br />
+            }<br /><br />
+            <span class="selector">.cols-fr</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+            <span class="value">grid</span>;<br />
+            &nbspHeader;&nbsp;&nbsp;&nbsp;<span class="property"
+              >grid-template-columns</span
+            >: <span class="value">1fr 2fr 1fr</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* Middle col is 2x wider */</span
+            ><br />
+            }
+          </div>
 
-    <h3>Output (Fixed 100px):</h3>
-    <div class="example-output">
-      <div class="grid-container cols-3">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-      </div>
-    </div>
+          <h3>Output (Fixed 100px):</h3>
+          <div class="example-output">
+            <div class="grid-container cols-3">
+              <div class="item">1</div>
+              <div class="item">2</div>
+              <div class="item">3</div>
+            </div>
+          </div>
 
-    <h3>Output (Flexible 1fr 2fr 1fr):</h3>
-    <div class="example-output">
-      <div class="grid-container cols-fr">
-        <div class="item">1fr</div>
-        <div class="item">2fr</div>
-        <div class="item">1fr</div>
-      </div>
-    </div>
+          <h3>Output (Flexible 1fr 2fr 1fr):</h3>
+          <div class="example-output">
+            <div class="grid-container cols-fr">
+              <div class="item">1fr</div>
+              <div class="item">2fr</div>
+              <div class="item">1fr</div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 2: GRID GAP
       The gap property adds consistent spacing between grid rows and columns.
       You can also use row-gap and column-gap separately.
       Unlike margins, gap only applies between items — not on the outer edges.
     -->
-    <h2 class="section-title">2. Grid Gap</h2>
-    <p>
-      The <code>gap</code> property sets the space between rows and columns.
-    </p>
+          <h2 class="section-title">2. Grid Gap</h2>
+          <p>
+            The <code>gap</code> property sets the space between rows and
+            columns.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.gap-demo</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-      <span class="value">grid</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-template-columns</span
-      >: <span class="value">1fr 1fr</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">gap</span>:
-      <span class="value">20px</span>;<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.gap-demo</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+            <span class="value">grid</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >grid-template-columns</span
+            >: <span class="value">1fr 1fr</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">gap</span>:
+            <span class="value">20px</span>;<br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="grid-container gap-demo">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
-      </div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="grid-container gap-demo">
+              <div class="item">1</div>
+              <div class="item">2</div>
+              <div class="item">3</div>
+              <div class="item">4</div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 3: SPANNING COLUMNS & ROWS
       By default, each item occupies one cell. Use grid-column: span 2
       to make an item stretch across 2 columns, or grid-row: span 2 for rows.
       This is great for feature cards, headers, or sidebars that need more space.
     -->
-    <h2 class="section-title">3. Spanning Columns & Rows</h2>
-    <p>
-      Items can span multiple tracks using <code>grid-column</code> or
-      <code>grid-row</code>.
-    </p>
+          <h2 class="section-title">3. Spanning Columns & Rows</h2>
+          <p>
+            Items can span multiple tracks using <code>grid-column</code> or
+            <code>grid-row</code>.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.span-grid</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-template-columns</span
-      >: <span class="value">repeat(3, 1fr)</span>;<br />
-      }<br /><br />
-      <span class="selector">.span-col-2</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-column</span>:
-      <span class="value">span 2</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Spans 2 cols */</span
-      ><br />
-      }<br /><br />
-      <span class="selector">.span-row-2</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-row</span>:
-      <span class="value">span 2</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Spans 2 rows */</span
-      ><br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.span-grid</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >grid-template-columns</span
+            >: <span class="value">repeat(3, 1fr)</span>;<br />
+            }<br /><br />
+            <span class="selector">.span-col-2</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-column</span>:
+            <span class="value">span 2</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* Spans 2 cols */</span
+            ><br />
+            }<br /><br />
+            <span class="selector">.span-row-2</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-row</span>:
+            <span class="value">span 2</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* Spans 2 rows */</span
+            ><br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="grid-container span-grid">
-        <div class="item span-col-2">Col Span 2</div>
-        <div class="item">1</div>
-        <div class="item span-row-2">Row Span 2</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
-      </div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="grid-container span-grid">
+              <div class="item span-col-2">Col Span 2</div>
+              <div class="item">1</div>
+              <div class="item span-row-2">Row Span 2</div>
+              <div class="item">2</div>
+              <div class="item">3</div>
+              <div class="item">4</div>
+              <div class="item">5</div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 4: GRID AREAS (DASHBOARD LAYOUT)
       grid-template-areas lets you "draw" your layout in CSS using named regions.
       Each string represents one row; repeating a name spans it across columns.
       Then assign items to areas with grid-area: name.
       This is the most visual and readable way to create complex page layouts.
     -->
-    <h2 class="section-title">4. Grid Areas (Dashboard Layout)</h2>
-    <p>
-      The most powerful feature of Grid. You can name areas and visualize your
-      layout in CSS!
-    </p>
+          <h2 class="section-title">4. Grid Areas (Dashboard Layout)</h2>
+          <p>
+            The most powerful feature of Grid. You can name areas and visualize
+            your layout in CSS!
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.dashboard</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-      <span class="value">grid</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-        >/* Define Columns: Sidebar | Main | Main */</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-template-columns</span
-      >: <span class="value">200px 1fr 1fr</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-        >/* Define Rows: Header | Content | Widgets | Footer */</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-template-rows</span>:
-      <span class="value">60px 1fr 100px 60px</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-        >/* Map the Areas - looks like the layout! */</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-template-areas</span
-      >:<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
-        >"header header header"</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
-        >"nav main main"</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
-        >"nav widget1 widget2"</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
-        >"footer footer footer"</span
-      >;<br />
-      }<br /><br />
-      <span class="comment">/* Assign items to areas */</span><br />
-      <span class="selector">.area-header</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-area</span>:
-      <span class="value">header</span>;<br />
-      }<br />
-      <span class="selector">.area-nav</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-area</span>:
-      <span class="value">nav</span>;<br />
-      }<br />
-      <span class="comment">/* ... etc ... */</span>
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.dashboard</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+            <span class="value">grid</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* Define Columns: Sidebar | Main | Main */</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >grid-template-columns</span
+            >: <span class="value">200px 1fr 1fr</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* Define Rows: Header | Content | Widgets | Footer */</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >grid-template-rows</span
+            >: <span class="value">60px 1fr 100px 60px</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* Map the Areas - looks like the layout! */</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >grid-template-areas</span
+            >:<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
+              >"header header header"</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
+              >"nav main main"</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
+              >"nav widget1 widget2"</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
+              >"footer footer footer"</span
+            >;<br />
+            }<br /><br />
+            <span class="comment">/* Assign items to areas */</span><br />
+            <span class="selector">.area-header</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-area</span>:
+            <span class="value">header</span>;<br />
+            }<br />
+            <span class="selector">.area-nav</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-area</span>:
+            <span class="value">nav</span>;<br />
+            }<br />
+            <span class="comment">/* ... etc ... */</span>
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="dashboard">
-        <div class="item area-header">Header</div>
-        <div class="item area-nav">Nav</div>
-        <div class="item area-main">Main Content</div>
-        <div class="item area-widget1">Widget 1</div>
-        <div class="item area-widget2">Widget 2</div>
-        <div class="item area-footer">Footer</div>
-      </div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="dashboard">
+              <div class="item area-header">Header</div>
+              <div class="item area-nav">Nav</div>
+              <div class="item area-main">Main Content</div>
+              <div class="item area-widget1">Widget 1</div>
+              <div class="item area-widget2">Widget 2</div>
+              <div class="item area-footer">Footer</div>
+            </div>
+          </div>
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
-      <a href="./11_flexbox.html">< Previous: Flexbox</a> |
-      <a href="./13_responsive_design.html">Next: Responsive Design ></a>
-    </div>
+          <!-- Navigation Section -->
+          <div class="nav-links">
+            <a href="./11_flexbox.html">&lt; Previous: Flexbox</a> |
+            <a href="./13_responsive_design.html"
+              >Next: Responsive Design &gt;</a
+            >
+          </div>
         </div>
       </div>
     </main>

@@ -922,6 +922,7 @@ p.element-selector-demo {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 /* Box Sizing */
@@ -1936,6 +1937,10 @@ p.demo {
     "nav main main"
     "nav widget1 widget2"
     "footer footer footer";
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .area-header {

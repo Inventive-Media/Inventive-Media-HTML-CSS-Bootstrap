@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Backgrounds</title>
     <link rel="stylesheet" href="css/styles.css" />
-</head>
+  </head>
   <body>
     <!-- Sticky Header -->
     <header class="sticky-header">
@@ -51,169 +51,175 @@
       <div class="row">
         <div class="col-12">
           <h1 class="main-title">Day 2 - CSS Backgrounds</h1>
-    <p>
-      The background properties allow you to define the background effects for
-      elements.
-    </p>
+          <p>
+            The background properties allow you to define the background effects
+            for elements.
+          </p>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 1: BACKGROUND COLOR
       The simplest background property — fills the element with a solid color.
       Accepts any valid CSS color value (name, hex, rgb, etc.).
     -->
-    <h2 class="section-title">1. Background Color</h2>
-    <p>Sets the background color of an element.</p>
+          <h2 class="section-title">1. Background Color</h2>
+          <p>Sets the background color of an element.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ <span class="selector">.bg-red</span> {
-      <span class="property">background-color</span>:
-      <span class="value">red</span>; } <span class="selector">.bg-blue</span> {
-      <span class="property">background-color</span>:
-      <span class="value">blue</span>; }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */ <span class="selector">.bg-red</span> {
+            <span class="property">background-color</span>:
+            <span class="value">red</span>; }
+            <span class="selector">.bg-blue</span> {
+            <span class="property">background-color</span>:
+            <span class="value">blue</span>; }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="demo-box bg-red">Red</div>
-      <div class="demo-box bg-blue">Blue</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="demo-box bg-red">Red</div>
+            <div class="demo-box bg-blue">Blue</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 2: BACKGROUND GRADIENTS
       Gradients create smooth transitions between two or more colors.
       linear-gradient: colors flow in a straight line (left to right, top to bottom, etc.).
       radial-gradient: colors radiate outward from a center point in circles.
     -->
-    <h2 class="section-title">2. Background Gradients</h2>
-    <p>Gradients allow smooth transitions between two or more colors.</p>
+          <h2 class="section-title">2. Background Gradients</h2>
+          <p>Gradients allow smooth transitions between two or more colors.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ /* Linear Gradient: Goes in a straight line */
-      <span class="selector">.grad-linear</span> {
-      <span class="property">background-image</span>:
-      <span class="value">linear-gradient(to right, red, yellow)</span>; } /*
-      Radial Gradient: Starts from center circles out */
-      <span class="selector">.grad-radial</span> {
-      <span class="property">background-image</span>:
-      <span class="value">radial-gradient(circle, red, yellow, green)</span>; }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */ /* Linear Gradient: Goes in a straight line */
+            <span class="selector">.grad-linear</span> {
+            <span class="property">background-image</span>:
+            <span class="value">linear-gradient(to right, red, yellow)</span>; }
+            /* Radial Gradient: Starts from center circles out */
+            <span class="selector">.grad-radial</span> {
+            <span class="property">background-image</span>:
+            <span class="value"
+              >radial-gradient(circle, red, yellow, green)</span
+            >; }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="demo-box grad-linear">Linear Gradient</div>
-      <div class="demo-box grad-radial">Radial Gradient</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="demo-box grad-linear">Linear Gradient</div>
+            <div class="demo-box grad-radial">Radial Gradient</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 3: BACKGROUND IMAGE & SIZE
       background-image sets an image as the background using url().
       background-size controls how the image is scaled:
         - cover: fills the entire area (may crop the image)
         - contain: fits the entire image inside (may leave empty space)
     -->
-    <h2 class="section-title">3. Background Image & Size</h2>
-    <p>
-      Sets an image as the background. <code>background-size</code> controls
-      scaling.
-    </p>
+          <h2 class="section-title">3. Background Image & Size</h2>
+          <p>
+            Sets an image as the background.
+            <code>background-size</code> controls scaling.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ /* cover: Crop image to fill the entire box */
-      <span class="selector">.bg-img-cover</span> {
-      <span class="property">background-image</span>:
-      <span class="value">url('./img/bg-beach.jpg')</span>;
-      <span class="property">background-size</span>:
-      <span class="value">cover</span>;
-      <span class="property">background-position</span>:
-      <span class="value">center</span>; } /* contain: Scale image to be fully
-      visible */ <span class="selector">.bg-img-contain</span> {
-      <span class="property">background-image</span>:
-      <span class="value">url('./img/bg-beach.jpg')</span>;
-      <span class="property">background-size</span>:
-      <span class="value">contain</span>;
-      <span class="property">background-repeat</span>:
-      <span class="value">no-repeat</span>; }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */ /* cover: Crop image to fill the entire box */
+            <span class="selector">.bg-img-cover</span> {
+            <span class="property">background-image</span>:
+            <span class="value">url('./img/bg-beach.jpg')</span>;
+            <span class="property">background-size</span>:
+            <span class="value">cover</span>;
+            <span class="property">background-position</span>:
+            <span class="value">center</span>; } /* contain: Scale image to be
+            fully visible */ <span class="selector">.bg-img-contain</span> {
+            <span class="property">background-image</span>:
+            <span class="value">url('./img/bg-beach.jpg')</span>;
+            <span class="property">background-size</span>:
+            <span class="value">contain</span>;
+            <span class="property">background-repeat</span>:
+            <span class="value">no-repeat</span>; }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="demo-box bg-img-cover">"cover"</div>
-      <div class="demo-box bg-img-contain">"contain"</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="demo-box bg-img-cover">"cover"</div>
+            <div class="demo-box bg-img-contain">"contain"</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 4: BACKGROUND POSITION
       Controls where the background image is placed within the element.
       Values: center, top, bottom, left, right, or combinations like 'bottom right'.
     -->
-    <h2 class="section-title">4. Background Position</h2>
-    <p>Specifies the starting position of a background image.</p>
+          <h2 class="section-title">4. Background Position</h2>
+          <p>Specifies the starting position of a background image.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ <span class="selector">.bg-pos-center</span> {
-      <span class="property">background-position</span>:
-      <span class="value">center</span>; }
-      <span class="selector">.bg-pos-br</span> {
-      <span class="property">background-position</span>:
-      <span class="value">bottom right</span>; }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */ <span class="selector">.bg-pos-center</span> {
+            <span class="property">background-position</span>:
+            <span class="value">center</span>; }
+            <span class="selector">.bg-pos-br</span> {
+            <span class="property">background-position</span>:
+            <span class="value">bottom right</span>; }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="demo-box bg-pos-center">Center</div>
-      <div class="demo-box bg-pos-br">Bottom Right</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="demo-box bg-pos-center">Center</div>
+            <div class="demo-box bg-pos-br">Bottom Right</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 5: BACKGROUND REPEAT
       By default, small background images tile (repeat) to fill the element.
       Use 'no-repeat' to show the image only once, or 'repeat-x' / 'repeat-y'
       to repeat in only one direction.
     -->
-    <h2 class="section-title">5. Background Repeat</h2>
-    <p>
-      By default, background images repeat both horizontally and vertically.
-    </p>
+          <h2 class="section-title">5. Background Repeat</h2>
+          <p>
+            By default, background images repeat both horizontally and
+            vertically.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */ <span class="selector">.bg-repeat</span> {
-      <span class="property">background-repeat</span>:
-      <span class="value">repeat</span>; }
-      <span class="comment">/* Default */</span>
-      <span class="selector">.bg-norepeat</span> {
-      <span class="property">background-repeat</span>:
-      <span class="value">no-repeat</span>; }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */ <span class="selector">.bg-repeat</span> {
+            <span class="property">background-repeat</span>:
+            <span class="value">repeat</span>; }
+            <span class="comment">/* Default */</span>
+            <span class="selector">.bg-norepeat</span> {
+            <span class="property">background-repeat</span>:
+            <span class="value">no-repeat</span>; }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="demo-box bg-repeat">Repeat Pattern</div>
-      <div class="demo-box bg-norepeat">No Repeat</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="demo-box bg-repeat">Repeat Pattern</div>
+            <div class="demo-box bg-norepeat">No Repeat</div>
+          </div>
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
-      <a href="./06_css_variables_functions.html"
-        >< Previous: Variables & Functions</a
-      >
-      |
-      <a href="./08_css_units_shadows.html">Next: Units & Shadows ></a>
-    </div>
+          <!-- Navigation Section -->
+          <div class="nav-links">
+            <a href="./06_css_variables_functions.html"
+              >&lt; Previous: Variables &amp; Functions</a
+            >
+            |
+            <a href="./08_css_units_shadows.html"
+              >Next: Units &amp; Shadows &gt;</a
+            >
+          </div>
         </div>
       </div>
     </main>
