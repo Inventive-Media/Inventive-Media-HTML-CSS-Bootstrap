@@ -11,9 +11,119 @@
         font-family: Arial, sans-serif;
         padding: 20px;
         line-height: 1.6;
+        padding-top: 80px; /* Space for fixed header */
+      }
+      /* Sticky Header Styles */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        color: #032340;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .home-link {
+        color: #d35400; /* Orange */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .home-link:hover {
+        color: #e67e22;
+      }
+
+      .page-title {
+        font-size: 1rem;
+        color: #34495e;
+        opacity: 0.8;
+        display: none; /* Hidden on small screens */
+      }
+      @media (min-width: 600px) {
+        .page-title {
+          display: block;
+        }
+      }
+      /* Dropdown Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        background-color: #d35400; /* Orange */
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #e67e22;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      /* Navigation Links Styling */
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #d35400; /* Orange to match theme */
+        font-weight: bold;
+        margin: 0 10px;
+        font-size: 1.1rem;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+        color: #e67e22;
       }
       h1.main-title {
-        color: rgb(255, 172, 39);
+        color: #d35400;
         text-align: center;
       }
       .section-title {
@@ -44,6 +154,35 @@
     </style>
   </head>
   <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="block_elements.html">01. Block Elements</a>
+          <a href="inline_elements.html">02. Inline Elements</a>
+          <a href="semantic_elements.html">03. Semantic Elements</a>
+          <a href="form_elements.html">04. Form Elements</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 =
+          document.querySelector("h1.main-title") ||
+          document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
     <h1 class="main-title">Day 1 - Block Elements</h1>
     <p>
       Block-level elements are elements that take up the full width of their
@@ -101,8 +240,10 @@
 
     <h3>Code:</h3>
     <div class="code-block">
-      &lt;p&gt; Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Distinctio, ratione. &lt;/p&gt;
+      &lt;p&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Distinctio, ratione.<br />
+      &lt;/p&gt;
     </div>
 
     <h3>Output:</h3>
@@ -128,8 +269,10 @@
 
     <h3>Code:</h3>
     <div class="code-block">
-      &lt;pre&gt; Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-      Dolore, itaque! &lt;/pre&gt;
+      &lt;pre&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur,
+      adipisicing elit. Dolore, itaque!<br />
+      &lt;/pre&gt;
     </div>
 
     <h3>Output:</h3>
@@ -154,9 +297,12 @@ adipisicing elit. Dolore, itaque!
 
     <h3>Code (Default - Numbers):</h3>
     <div class="code-block">
-      &lt;h3&gt;Milktea Menu&lt;/h3&gt; &lt;ol type="1"&gt;
-      &lt;li&gt;Macha&lt;/li&gt; &lt;li&gt;Taro&lt;/li&gt;
-      &lt;li&gt;Chocolate&lt;/li&gt; &lt;/ol&gt;
+      &lt;h3&gt;Milktea Menu&lt;/h3&gt;<br />
+      &lt;ol type="1"&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+      &lt;/ol&gt;
     </div>
 
     <h3>Output:</h3>
@@ -173,8 +319,10 @@ adipisicing elit. Dolore, itaque!
 
     <h3>Code (Uppercase Letters):</h3>
     <div class="code-block">
-      &lt;ol type="A"&gt; &lt;li&gt;Macha&lt;/li&gt; &lt;li&gt;Taro&lt;/li&gt;
-      &lt;li&gt;Chocolate&lt;/li&gt; &lt;/ol&gt;
+      &lt;ol type="A"&gt; <br />&lt;li&gt;Macha&lt;/li&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt; <br />
+      &lt;/ol&gt;
     </div>
     <h3>Output:</h3>
     <div class="example-output">
@@ -189,8 +337,10 @@ adipisicing elit. Dolore, itaque!
 
     <h3>Code (Lowercase Roman Numerals):</h3>
     <div class="code-block">
-      &lt;ol type="i"&gt; &lt;li&gt;Macha&lt;/li&gt; &lt;li&gt;Taro&lt;/li&gt;
-      &lt;li&gt;Chocolate&lt;/li&gt; &lt;/ol&gt;
+      &lt;ol type="i"&gt; <br />&lt;li&gt;Macha&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt; <br />
+      &lt;/ol&gt;
     </div>
     <h3>Output:</h3>
     <div class="example-output">
@@ -230,9 +380,12 @@ adipisicing elit. Dolore, itaque!
 
     <h3>Code (Circle):</h3>
     <div class="code-block">
-      &lt;h3&gt;Soda's&lt;/h3&gt; &lt;ul type="circle"&gt;
-      &lt;li&gt;Coke&lt;/li&gt; &lt;li&gt;Pepsi&lt;/li&gt;
-      &lt;li&gt;Sarsi&lt;/li&gt; &lt;/ul&gt;
+      &lt;h3&gt;Soda's&lt;/h3&gt; <br />
+      &lt;ul type="circle"&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+      &lt;/ul&gt;
     </div>
 
     <h3>Output:</h3>
@@ -249,8 +402,11 @@ adipisicing elit. Dolore, itaque!
 
     <h3>Code (Square):</h3>
     <div class="code-block">
-      &lt;ul type="square"&gt; &lt;li&gt;Coke&lt;/li&gt;
-      &lt;li&gt;Pepsi&lt;/li&gt; &lt;li&gt;Sarsi&lt;/li&gt; &lt;/ul&gt;
+      &lt;ul type="square"&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+      &lt;/ul&gt;
     </div>
     <h3>Output:</h3>
     <div class="example-output">
@@ -265,8 +421,11 @@ adipisicing elit. Dolore, itaque!
 
     <h3>Code (None):</h3>
     <div class="code-block">
-      &lt;ul type="none"&gt; &lt;li&gt;Coke&lt;/li&gt;
-      &lt;li&gt;Pepsi&lt;/li&gt; &lt;li&gt;Sarsi&lt;/li&gt; &lt;/ul&gt;
+      &lt;ul type="none"&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+      &lt;/ul&gt;
     </div>
     <h3>Output:</h3>
     <div class="example-output">
@@ -293,10 +452,17 @@ adipisicing elit. Dolore, itaque!
 
     <h3>Code:</h3>
     <div class="code-block">
-      &lt;dl&gt; &lt;dt&gt;HTML&lt;/dt&gt; &lt;dd&gt;This is the backbone of the
-      website&lt;/dd&gt; &lt;dt&gt;CSS&lt;/dt&gt; &lt;dd&gt;This is the
-      appearance of the website&lt;/dd&gt; &lt;dt&gt;Javascript&lt;/dt&gt;
-      &lt;dd&gt;This is the behavior of the website&lt;/dd&gt; &lt;/dl&gt;
+      &lt;dl&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the backbone of the
+      website&lt;/dd&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;CSS&lt;/dt&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the appearance of the
+      website&lt;/dd&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;Javascript&lt;/dt&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the behavior of the
+      website&lt;/dd&gt; <br />
+      &lt;/dl&gt;
     </div>
 
     <h3>Output:</h3>
@@ -351,9 +517,11 @@ adipisicing elit. Dolore, itaque!
     <h3>Code:</h3>
     <div class="code-block">
       &lt;div style="height: 50px; width: 50px; background-color:
-      red;"&gt;Box1&lt;/div&gt; &lt;div style="height: 100px; width: 100px;
-      background-color: blueviolet;"&gt;Box2&lt;/div&gt; &lt;div style="height:
-      200px; width: 200px; background-color: green;"&gt;Box3&lt;/div&gt;
+      red;"&gt;Box1&lt;/div&gt; <br />
+      &lt;div style="height: 100px; width: 100px; background-color:
+      blueviolet;"&gt;Box2&lt;/div&gt; <br />
+      &lt;div style="height: 200px; width: 200px; background-color:
+      green;"&gt;Box3&lt;/div&gt;
     </div>
 
     <h3>Output:</h3>
@@ -367,13 +535,9 @@ adipisicing elit. Dolore, itaque!
       </div>
     </div>
 
-    <hr />
-
-    <h2 class="section-title">See more</h2>
-    <ul>
-      <li><a href="./inline_elements.html">Inline Elements</a></li>
-      <li><a href="./form_elements.html">Form Elements</a></li>
-      <li><a href="./semantic_elements.html">Semantic Elements</a></li>
-    </ul>
+    <div class="nav-links">
+      <a href="index.html">&lt; Previous: Home</a> |
+      <a href="inline_elements.html">Next: Inline Elements &gt;</a>
+    </div>
   </body>
 </html>

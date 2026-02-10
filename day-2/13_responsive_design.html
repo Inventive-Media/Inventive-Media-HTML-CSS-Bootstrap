@@ -9,15 +9,108 @@
       body {
         font-family: Arial, sans-serif;
         padding: 20px;
+        padding-top: 80px; /* Space for fixed header */
         line-height: 1.6;
         background-color: #f9f9f9;
         color: #333;
       }
+      /* Sticky Header Styles */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        color: #032340;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .home-link {
+        color: #34495e;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .home-link:hover {
+        color: hsl(210, 27%, 50%);
+      }
+      .page-title {
+        font-size: 1rem;
+        color: #34495e;
+        opacity: 0.8;
+        display: none; /* Hidden on small screens */
+      }
+      @media (min-width: 600px) {
+        .page-title {
+          display: block;
+        }
+      }
+
+      /* Dropdown Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        background-color: #34495e;
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: hsl(210, 27%, 50%);
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
       h1.main-title {
-        color: rgb(255, 172, 39);
+        color: hsl(210, 27%, 50%);
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 10px;
+        border-bottom: 2px solid hsl(210, 27%, 50%);
+        padding-bottom: 0.5rem;
       }
       .section-title {
         color: #333;
@@ -32,8 +125,6 @@
         border-radius: 5px;
         font-family: "Courier New", monospace;
         overflow-x: auto;
-        white-space: pre-wrap;
-        margin-bottom: 15px;
         border: 1px solid #444;
       }
       /* Syntax Highlighting Simulators */
@@ -186,6 +277,45 @@
     </style>
   </head>
   <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_css_intro.html">00. CSS Intro</a>
+          <a href="01_css_syntax.html">01. CSS Syntax</a>
+          <a href="02_css_selectors.html">02. CSS Selectors</a>
+          <a href="03_box_model.html">03. Box Model</a>
+          <a href="04_typography.html">04. Typography</a>
+          <a href="05_colors.html">05. Colors</a>
+          <a href="06_css_variables_functions.html"
+            >06. CSS Variables & Functions</a
+          >
+          <a href="07_backgrounds.html">07. Backgrounds</a>
+          <a href="08_css_units_shadows.html">08. Units & Shadows</a>
+          <a href="09_animations.html">09. Animations</a>
+          <a href="10_positioning.html">10. Positioning</a>
+          <a href="11_flexbox.html">11. Flexbox</a>
+          <a href="12_grid.html">12. Grid</a>
+          <a href="13_responsive_design.html">13. Responsive Design</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
     <h1 class="main-title">Day 2 - Responsive Design</h1>
     <div class="resize-hint">
       <strong>Try This:</strong> Resize your browser window width to see how the
@@ -209,15 +339,23 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */ 
-<span class="selector">.vw-box</span> {
-  <span class="property">width</span>: <span class="value">50vw</span>;
-  <span class="comment">/* 50% of screen width */</span>
-}
-<span class="selector">.pct-box</span> {
-  <span class="property">width</span>: <span class="value">50%</span>;
-  <span class="comment">/* 50% of parent width */</span>
-}</div>
+    <div class="code-block">
+      /* CSS */<br />
+      <span class="selector">.vw-box</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
+      <span class="value">50vw</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+        >/* 50% of screen width */</span
+      ><br />
+      }<br /><br />
+      <span class="selector">.pct-box</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
+      <span class="value">50%</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+        >/* 50% of parent width */</span
+      ><br />
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -241,22 +379,37 @@
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */ 
-<span class="selector">.responsive-box</span> {
-  <span class="property">background-color</span>: <span class="value">#ff5722</span>; /* Red (Mobile) */
-}
-
-<span class="media">@media</span> (min-width: 600px) {
-  <span class="selector">.responsive-box</span> {
-    <span class="property">background-color</span>: <span class="value">#2196f3</span>; /* Blue (Tablet) */
-  }
-}
-
-<span class="media">@media</span> (min-width: 900px) {
-  <span class="selector">.responsive-box</span> {
-    <span class="property">background-color</span>: <span class="value">#4caf50</span>; /* Green (Desktop) */
-  }
-}</div>
+    <div class="code-block">
+      /* CSS */<br />
+      <span class="selector">.responsive-box</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-color</span>:
+      <span class="value">#ff5722</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Red (Mobile) */</span
+      ><br />
+      }<br /><br />
+      <span class="media">@media</span> (min-width: 600px) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.responsive-box</span>
+      {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+        >background-color</span
+      >: <span class="value">#2196f3</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+        >/* Blue (Tablet) */</span
+      ><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      }<br /><br />
+      <span class="media">@media</span> (min-width: 900px) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.responsive-box</span>
+      {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+        >background-color</span
+      >: <span class="value">#4caf50</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+        >/* Green (Desktop) */</span
+      ><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -276,23 +429,35 @@
     <p>Using Grid or Flexbox with media queries to change column counts.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */ 
-<span class="selector">.responsive-grid</span> {
-  <span class="property">grid-template-columns</span>: <span class="value">1fr</span>; <span class="comment">/* 1 Col (Mobile) */</span>
-  <span class="property">gap</span>: <span class="value">10px</span>;
-}
-
-<span class="media">@media</span> (min-width: 600px) {
-  <span class="selector">.responsive-grid</span> {
-    <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr</span>; <span class="comment">/* 2 Cols */</span>
-  } 
-}
-
-<span class="media">@media</span> (min-width: 900px) {
-  <span class="selector">.responsive-grid</span> {
-    <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr 1fr</span>; <span class="comment">/* 3 Cols */</span>
-  }
-}</div>
+    <div class="code-block">
+      /* CSS */<br />
+      <span class="selector">.responsive-grid</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-template-columns</span
+      >: <span class="value">1fr</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* 1 Col (Mobile) */</span
+      ><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">gap</span>:
+      <span class="value">10px</span>;<br />
+      }<br /><br />
+      <span class="media">@media</span> (min-width: 600px) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.responsive-grid</span>
+      {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+        >grid-template-columns</span
+      >: <span class="value">1fr 1fr</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* 2 Cols */</span><br />
+      }<br /><br />
+      <span class="media">@media</span> (min-width: 900px) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.responsive-grid</span>
+      {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+        >grid-template-columns</span
+      >: <span class="value">1fr 1fr 1fr</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* 3 Cols */</span><br />
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
@@ -318,19 +483,26 @@
     <p>Sometimes you want to show different content on mobile vs desktop.</p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */ 
-<span class="selector">.desktop-only</span> {
-  <span class="property">display</span>: <span class="value">none</span>; 
-}
-
-<span class="media">@media</span> (min-width: 768px) {
-  <span class="selector">.mobile-only</span> {
-    <span class="property">display</span>: <span class="value">none</span>; 
-  }
-  <span class="selector">.desktop-only</span> {
-    <span class="property">display</span>: <span class="value">block</span>; 
-  }
-}</div>
+    <div class="code-block">
+      /* CSS */<br />
+      <span class="selector">.desktop-only</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+      <span class="value">none</span>;<br />
+      }<br /><br />
+      <span class="media">@media</span> (min-width: 768px) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.mobile-only</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+        >display</span
+      >: <span class="value">none</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.desktop-only</span>
+      {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+        >display</span
+      >: <span class="value">block</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      }
+    </div>
     <h3>Output:</h3>
     <div class="example-output">
       <div class="mobile-only">📱 You are on a smaller screen.</div>
@@ -370,16 +542,24 @@
     <p>
       There are many online <b>"Clamp Calculators"</b> that can help you
       generate the perfect clamp() formula based on your desired minimum and
-      maximum pixel sizes and viewport widths.
+      maximum pixel sizes and viewport widths. <br /><br />
+      <strong>Reference:</strong>
+      <a href="https://clamp.font-size.app/" target="_blank"
+        >Clamp Calculator (https://clamp.font-size.app/)</a
+      >
     </p>
 
     <h3>Code:</h3>
-    <div class="code-block">/* CSS */ 
-<span class="selector">.clamp-text</span> {
-  <span class="property">font-size</span>:
-  <span class="value">clamp(1rem, 2.5vw, 2rem)</span>;
-  <span class="comment">/* Fluid size between 16px and 32px */</span>
-}</div>
+    <div class="code-block">
+      /* CSS */<br />
+      <span class="selector">.clamp-text</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
+      <span class="value">clamp(1rem, 2.5vw, 2rem)</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+        >/* Fluid size between 16px and 32px */</span
+      ><br />
+      }
+    </div>
 
     <h3>Output:</h3>
     <div class="example-output">
