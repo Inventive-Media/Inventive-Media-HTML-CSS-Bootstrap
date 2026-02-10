@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 1 - HTML Entities</title>
+    <!-- External CSS for Responsive Grid -->
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- Internal CSS: Styles defined here apply to this page only -->
     <style>
       /* Styles for the body of the page */
       body {
         font-family: Arial, sans-serif;
-        padding: 20px;
         line-height: 1.6;
         padding-top: 80px; /* Space for fixed header */
+        margin: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
       }
       /* Sticky Header Styles */
       .sticky-header {
@@ -202,117 +207,122 @@
         }
       });
     </script>
-    <h1 class="main-title">Day 1 - HTML Entities</h1>
-    <p>HTML entities are used to display reserved characters in HTML.</p>
+    <div class="row">
+      <div class="col-12">
+        <h1 class="main-title">Day 1 - HTML Entities</h1>
+        <p>HTML entities are used to display reserved characters in HTML.</p>
 
-    <hr />
+        <hr />
 
-    <!-- 
+        <!-- 
       SECTION 1: POPULAR ENTITIES
     -->
-    <h2 class="section-title">1. Popular HTML Entities</h2>
-    <p>
-      Some characters are reserved in HTML (like <code>&lt;</code> and
-      <code>&gt;</code>) because the browser interprets them as tags. To display
-      these characters, we must use their *entity name* or *entity number*.
-    </p>
+        <h2 class="section-title">1. Popular HTML Entities</h2>
+        <p>
+          Some characters are reserved in HTML (like <code>&lt;</code> and
+          <code>&gt;</code>) because the browser interprets them as tags. To
+          display these characters, we must use their *entity name* or *entity
+          number*.
+        </p>
 
-    <h3>Common Entities Table:</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Character</th>
-          <th>Description</th>
-          <th>Entity Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>&lt;</td>
-          <td>Less than</td>
-          <td><code>&amp;lt;</code></td>
-        </tr>
-        <tr>
-          <td>&gt;</td>
-          <td>Greater than</td>
-          <td><code>&amp;gt;</code></td>
-        </tr>
-        <tr>
-          <td>&amp;</td>
-          <td>Ampersand</td>
-          <td><code>&amp;amp;</code></td>
-        </tr>
-        <tr>
-          <td>&quot;</td>
-          <td>Double quote</td>
-          <td><code>&amp;quot;</code></td>
-        </tr>
-        <tr>
-          <td>&apos;</td>
-          <td>Single quote</td>
-          <td><code>&amp;apos;</code></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>Non-breaking space</td>
-          <td><code>&amp;nbsp;</code></td>
-        </tr>
-        <tr>
-          <td>&copy;</td>
-          <td>Copyright</td>
-          <td><code>&amp;copy;</code></td>
-        </tr>
-      </tbody>
-    </table>
+        <h3>Common Entities Table:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Character</th>
+              <th>Description</th>
+              <th>Entity Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&lt;</td>
+              <td>Less than</td>
+              <td><code>&amp;lt;</code></td>
+            </tr>
+            <tr>
+              <td>&gt;</td>
+              <td>Greater than</td>
+              <td><code>&amp;gt;</code></td>
+            </tr>
+            <tr>
+              <td>&amp;</td>
+              <td>Ampersand</td>
+              <td><code>&amp;amp;</code></td>
+            </tr>
+            <tr>
+              <td>&quot;</td>
+              <td>Double quote</td>
+              <td><code>&amp;quot;</code></td>
+            </tr>
+            <tr>
+              <td>&apos;</td>
+              <td>Single quote</td>
+              <td><code>&amp;apos;</code></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Non-breaking space</td>
+              <td><code>&amp;nbsp;</code></td>
+            </tr>
+            <tr>
+              <td>&copy;</td>
+              <td>Copyright</td>
+              <td><code>&amp;copy;</code></td>
+            </tr>
+          </tbody>
+        </table>
 
-    <hr />
+        <hr />
 
-    <!-- 
+        <!-- 
       SECTION 2: EXAMPLES
     -->
-    <h2 class="section-title">2. Usage Examples</h2>
+        <h2 class="section-title">2. Usage Examples</h2>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      &lt;p&gt;5 &amp;lt; 10&lt;/p&gt; <br />
-      &lt;p&gt;10 &amp;gt; 5&lt;/p&gt; <br />
-      &lt;p&gt;Tom &amp;amp; Jerry&lt;/p&gt;
-    </div>
+        <h3>Code:</h3>
+        <div class="code-block">
+          &lt;p&gt;5 &amp;lt; 10&lt;/p&gt; <br />
+          &lt;p&gt;10 &amp;gt; 5&lt;/p&gt; <br />
+          &lt;p&gt;Tom &amp;amp; Jerry&lt;/p&gt;
+        </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <p>5 &lt; 10</p>
-      <p>10 &gt; 5</p>
-      <p>Tom &amp; Jerry</p>
-    </div>
+        <h3>Output:</h3>
+        <div class="example-output">
+          <p>5 &lt; 10</p>
+          <p>10 &gt; 5</p>
+          <p>Tom &amp; Jerry</p>
+        </div>
 
-    <br />
+        <br />
 
-    <h3>Code (Extra Spaces):</h3>
-    <div class="code-block">
-      &lt;p&gt;Hello&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;World!&lt;/p&gt;
-    </div>
+        <h3>Code (Extra Spaces):</h3>
+        <div class="code-block">
+          &lt;p&gt;Hello&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;World!&lt;/p&gt;
+        </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <p>Hello&nbsp;&nbsp;&nbsp;&nbsp;World!</p>
-    </div>
+        <h3>Output:</h3>
+        <div class="example-output">
+          <p>Hello&nbsp;&nbsp;&nbsp;&nbsp;World!</p>
+        </div>
 
-    <br />
+        <br />
 
-    <h3>Code (Copyright):</h3>
-    <div class="code-block">
-      &lt;p&gt;&amp;copy; 2024 Your Company Name&lt;/p&gt;
-    </div>
+        <h3>Code (Copyright):</h3>
+        <div class="code-block">
+          &lt;p&gt;&amp;copy; 2024 Your Company Name&lt;/p&gt;
+        </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <p>&copy; 2024 Your Company Name</p>
-    </div>
+        <h3>Output:</h3>
+        <div class="example-output">
+          <p>&copy; 2024 Your Company Name</p>
+        </div>
 
-    <div class="nav-links">
-      <a href="form_elements.html">&lt; Previous: Form Elements</a> |
-      <a href="index.html">Home</a>
+        <div class="nav-links">
+          <a href="form_elements.html">&lt; Previous: Form Elements</a> |
+          <a href="index.html">Home</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
