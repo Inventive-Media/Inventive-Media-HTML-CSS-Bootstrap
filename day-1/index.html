@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 1 - HTML Essentials</title>
+    <!-- External CSS for Responsive Grid -->
+    <link rel="stylesheet" href="css/styles.css" />
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f8f9fa;
         color: #333;
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 0 1rem;
+        /* max-width: 800px;  Removed to allow .row to control width */
+        margin: 0; /* Reset margin as .row handles centering */
+        padding: 0; /* Reset padding */
         line-height: 1.6;
         padding-top: 80px; /* Space for fixed header */
       }
@@ -170,6 +172,7 @@
         margin-top: 2rem;
         color: #666;
         font-size: 0.9rem;
+        width: auto; /* Override global block a */
       }
     </style>
   </head>
@@ -204,38 +207,44 @@
       });
     </script>
 
-    <h1>Day 1: HTML Essentials</h1>
-    <p>Welcome to Day 1! Here are the core HTML topics we will cover.</p>
-    <ul>
-      <li>
-        <a href="block_elements.html"
-          >Block Elements
-          <span class="file-name">(block_elements.html)</span></a
-        >
-      </li>
-      <li>
-        <a href="inline_elements.html"
-          >Inline Elements
-          <span class="file-name">(inline_elements.html)</span></a
-        >
-      </li>
-      <li>
-        <a href="semantic_elements.html"
-          >Semantic Elements
-          <span class="file-name">(semantic_elements.html)</span></a
-        >
-      </li>
-      <li>
-        <a href="form_elements.html"
-          >Form Elements <span class="file-name">(form_elements.html)</span></a
-        >
-      </li>
-      <li>
-        <a href="html_entities.html"
-          >HTML Entities <span class="file-name">(html_entities.html)</span></a
-        >
-      </li>
-    </ul>
-    <a href="../index.html" class="back-link">&larr; Back to Main Home</a>
+    <div class="row">
+      <div class="col-12">
+        <h1>Day 1: HTML Essentials</h1>
+        <p>Welcome to Day 1! Here are the core HTML topics we will cover.</p>
+        <ul>
+          <li>
+            <a href="block_elements.html"
+              >Block Elements
+              <span class="file-name">(block_elements.html)</span></a
+            >
+          </li>
+          <li>
+            <a href="inline_elements.html"
+              >Inline Elements
+              <span class="file-name">(inline_elements.html)</span></a
+            >
+          </li>
+          <li>
+            <a href="semantic_elements.html"
+              >Semantic Elements
+              <span class="file-name">(semantic_elements.html)</span></a
+            >
+          </li>
+          <li>
+            <a href="form_elements.html"
+              >Form Elements
+              <span class="file-name">(form_elements.html)</span></a
+            >
+          </li>
+          <li>
+            <a href="html_entities.html"
+              >HTML Entities
+              <span class="file-name">(html_entities.html)</span></a
+            >
+          </li>
+        </ul>
+        <a href="../index.html" class="back-link">&larr; Back to Main Home</a>
+      </div>
+    </div>
   </body>
 </html>
