@@ -1,0 +1,2093 @@
+/*
+========================================
+DAY 2: CSS TRAINING STYLES
+========================================
+Shared stylesheet for all Day 2 lesson pages.
+Includes the 12-column responsive grid system,
+shared layout/component styles, and per-lesson demo styles.
+*/
+
+/* ========================================
+   1. BASE RESET
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   2. 12-COLUMN GRID SYSTEM (MOBILE-FIRST)
+   ======================================== */
+
+/* --- Base Row --- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* --- Base Columns (Mobile Default) --- */
+.col-1 {
+  flex: 0 0 calc((1 / 12) * 100%);
+  max-width: calc((1 / 12) * 100%);
+}
+.col-2 {
+  flex: 0 0 calc((2 / 12) * 100%);
+  max-width: calc((2 / 12) * 100%);
+}
+.col-3 {
+  flex: 0 0 calc((3 / 12) * 100%);
+  max-width: calc((3 / 12) * 100%);
+}
+.col-4 {
+  flex: 0 0 calc((4 / 12) * 100%);
+  max-width: calc((4 / 12) * 100%);
+}
+.col-5 {
+  flex: 0 0 calc((5 / 12) * 100%);
+  max-width: calc((5 / 12) * 100%);
+}
+.col-6 {
+  flex: 0 0 calc((6 / 12) * 100%);
+  max-width: calc((6 / 12) * 100%);
+}
+.col-7 {
+  flex: 0 0 calc((7 / 12) * 100%);
+  max-width: calc((7 / 12) * 100%);
+}
+.col-8 {
+  flex: 0 0 calc((8 / 12) * 100%);
+  max-width: calc((8 / 12) * 100%);
+}
+.col-9 {
+  flex: 0 0 calc((9 / 12) * 100%);
+  max-width: calc((9 / 12) * 100%);
+}
+.col-10 {
+  flex: 0 0 calc((10 / 12) * 100%);
+  max-width: calc((10 / 12) * 100%);
+}
+.col-11 {
+  flex: 0 0 calc((11 / 12) * 100%);
+  max-width: calc((11 / 12) * 100%);
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* --- Small Devices (>576px) --- */
+@media only screen and (min-width: 576px) {
+  .row {
+    max-width: 540px;
+  }
+  .col-1-sm {
+    flex: 0 0 calc((1 / 12) * 100%);
+    max-width: calc((1 / 12) * 100%);
+  }
+  .col-2-sm {
+    flex: 0 0 calc((2 / 12) * 100%);
+    max-width: calc((2 / 12) * 100%);
+  }
+  .col-3-sm {
+    flex: 0 0 calc((3 / 12) * 100%);
+    max-width: calc((3 / 12) * 100%);
+  }
+  .col-4-sm {
+    flex: 0 0 calc((4 / 12) * 100%);
+    max-width: calc((4 / 12) * 100%);
+  }
+  .col-5-sm {
+    flex: 0 0 calc((5 / 12) * 100%);
+    max-width: calc((5 / 12) * 100%);
+  }
+  .col-6-sm {
+    flex: 0 0 calc((6 / 12) * 100%);
+    max-width: calc((6 / 12) * 100%);
+  }
+  .col-7-sm {
+    flex: 0 0 calc((7 / 12) * 100%);
+    max-width: calc((7 / 12) * 100%);
+  }
+  .col-8-sm {
+    flex: 0 0 calc((8 / 12) * 100%);
+    max-width: calc((8 / 12) * 100%);
+  }
+  .col-9-sm {
+    flex: 0 0 calc((9 / 12) * 100%);
+    max-width: calc((9 / 12) * 100%);
+  }
+  .col-10-sm {
+    flex: 0 0 calc((10 / 12) * 100%);
+    max-width: calc((10 / 12) * 100%);
+  }
+  .col-11-sm {
+    flex: 0 0 calc((11 / 12) * 100%);
+    max-width: calc((11 / 12) * 100%);
+  }
+  .col-12-sm {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* --- Medium Devices (>=768px) --- */
+@media only screen and (min-width: 768px) {
+  .row {
+    max-width: 720px;
+  }
+  .col-1-md {
+    flex: 0 0 calc((1 / 12) * 100%);
+    max-width: calc((1 / 12) * 100%);
+  }
+  .col-2-md {
+    flex: 0 0 calc((2 / 12) * 100%);
+    max-width: calc((2 / 12) * 100%);
+  }
+  .col-3-md {
+    flex: 0 0 calc((3 / 12) * 100%);
+    max-width: calc((3 / 12) * 100%);
+  }
+  .col-4-md {
+    flex: 0 0 calc((4 / 12) * 100%);
+    max-width: calc((4 / 12) * 100%);
+  }
+  .col-5-md {
+    flex: 0 0 calc((5 / 12) * 100%);
+    max-width: calc((5 / 12) * 100%);
+  }
+  .col-6-md {
+    flex: 0 0 calc((6 / 12) * 100%);
+    max-width: calc((6 / 12) * 100%);
+  }
+  .col-7-md {
+    flex: 0 0 calc((7 / 12) * 100%);
+    max-width: calc((7 / 12) * 100%);
+  }
+  .col-8-md {
+    flex: 0 0 calc((8 / 12) * 100%);
+    max-width: calc((8 / 12) * 100%);
+  }
+  .col-9-md {
+    flex: 0 0 calc((9 / 12) * 100%);
+    max-width: calc((9 / 12) * 100%);
+  }
+  .col-10-md {
+    flex: 0 0 calc((10 / 12) * 100%);
+    max-width: calc((10 / 12) * 100%);
+  }
+  .col-11-md {
+    flex: 0 0 calc((11 / 12) * 100%);
+    max-width: calc((11 / 12) * 100%);
+  }
+  .col-12-md {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* --- Large Devices (>=992px) --- */
+@media only screen and (min-width: 992px) {
+  .row {
+    max-width: 960px;
+  }
+  .col-1-lg {
+    flex: 0 0 calc((1 / 12) * 100%);
+    max-width: calc((1 / 12) * 100%);
+  }
+  .col-2-lg {
+    flex: 0 0 calc((2 / 12) * 100%);
+    max-width: calc((2 / 12) * 100%);
+  }
+  .col-3-lg {
+    flex: 0 0 calc((3 / 12) * 100%);
+    max-width: calc((3 / 12) * 100%);
+  }
+  .col-4-lg {
+    flex: 0 0 calc((4 / 12) * 100%);
+    max-width: calc((4 / 12) * 100%);
+  }
+  .col-5-lg {
+    flex: 0 0 calc((5 / 12) * 100%);
+    max-width: calc((5 / 12) * 100%);
+  }
+  .col-6-lg {
+    flex: 0 0 calc((6 / 12) * 100%);
+    max-width: calc((6 / 12) * 100%);
+  }
+  .col-7-lg {
+    flex: 0 0 calc((7 / 12) * 100%);
+    max-width: calc((7 / 12) * 100%);
+  }
+  .col-8-lg {
+    flex: 0 0 calc((8 / 12) * 100%);
+    max-width: calc((8 / 12) * 100%);
+  }
+  .col-9-lg {
+    flex: 0 0 calc((9 / 12) * 100%);
+    max-width: calc((9 / 12) * 100%);
+  }
+  .col-10-lg {
+    flex: 0 0 calc((10 / 12) * 100%);
+    max-width: calc((10 / 12) * 100%);
+  }
+  .col-11-lg {
+    flex: 0 0 calc((11 / 12) * 100%);
+    max-width: calc((11 / 12) * 100%);
+  }
+  .col-12-lg {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* --- Extra Large Devices (>=1200px) --- */
+@media only screen and (min-width: 1200px) {
+  .row {
+    max-width: 1140px;
+  }
+  .col-1-xl {
+    flex: 0 0 calc((1 / 12) * 100%);
+    max-width: calc((1 / 12) * 100%);
+  }
+  .col-2-xl {
+    flex: 0 0 calc((2 / 12) * 100%);
+    max-width: calc((2 / 12) * 100%);
+  }
+  .col-3-xl {
+    flex: 0 0 calc((3 / 12) * 100%);
+    max-width: calc((3 / 12) * 100%);
+  }
+  .col-4-xl {
+    flex: 0 0 calc((4 / 12) * 100%);
+    max-width: calc((4 / 12) * 100%);
+  }
+  .col-5-xl {
+    flex: 0 0 calc((5 / 12) * 100%);
+    max-width: calc((5 / 12) * 100%);
+  }
+  .col-6-xl {
+    flex: 0 0 calc((6 / 12) * 100%);
+    max-width: calc((6 / 12) * 100%);
+  }
+  .col-7-xl {
+    flex: 0 0 calc((7 / 12) * 100%);
+    max-width: calc((7 / 12) * 100%);
+  }
+  .col-8-xl {
+    flex: 0 0 calc((8 / 12) * 100%);
+    max-width: calc((8 / 12) * 100%);
+  }
+  .col-9-xl {
+    flex: 0 0 calc((9 / 12) * 100%);
+    max-width: calc((9 / 12) * 100%);
+  }
+  .col-10-xl {
+    flex: 0 0 calc((10 / 12) * 100%);
+    max-width: calc((10 / 12) * 100%);
+  }
+  .col-11-xl {
+    flex: 0 0 calc((11 / 12) * 100%);
+    max-width: calc((11 / 12) * 100%);
+  }
+  .col-12-xl {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* --- XXL Devices (>=1400px) --- */
+@media only screen and (min-width: 1400px) {
+  .row {
+    max-width: 1320px;
+  }
+  .col-1-2xl {
+    flex: 0 0 calc((1 / 12) * 100%);
+    max-width: calc((1 / 12) * 100%);
+  }
+  .col-2-2xl {
+    flex: 0 0 calc((2 / 12) * 100%);
+    max-width: calc((2 / 12) * 100%);
+  }
+  .col-3-2xl {
+    flex: 0 0 calc((3 / 12) * 100%);
+    max-width: calc((3 / 12) * 100%);
+  }
+  .col-4-2xl {
+    flex: 0 0 calc((4 / 12) * 100%);
+    max-width: calc((4 / 12) * 100%);
+  }
+  .col-5-2xl {
+    flex: 0 0 calc((5 / 12) * 100%);
+    max-width: calc((5 / 12) * 100%);
+  }
+  .col-6-2xl {
+    flex: 0 0 calc((6 / 12) * 100%);
+    max-width: calc((6 / 12) * 100%);
+  }
+  .col-7-2xl {
+    flex: 0 0 calc((7 / 12) * 100%);
+    max-width: calc((7 / 12) * 100%);
+  }
+  .col-8-2xl {
+    flex: 0 0 calc((8 / 12) * 100%);
+    max-width: calc((8 / 12) * 100%);
+  }
+  .col-9-2xl {
+    flex: 0 0 calc((9 / 12) * 100%);
+    max-width: calc((9 / 12) * 100%);
+  }
+  .col-10-2xl {
+    flex: 0 0 calc((10 / 12) * 100%);
+    max-width: calc((10 / 12) * 100%);
+  }
+  .col-11-2xl {
+    flex: 0 0 calc((11 / 12) * 100%);
+    max-width: calc((11 / 12) * 100%);
+  }
+  .col-12-2xl {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* ========================================
+   3. CONTAINER & BODY
+   ======================================== */
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Responsive wrapper that provides padding for the fixed header */
+.container {
+  width: 100%;
+  padding: 80px 20px 20px;
+}
+
+/* ========================================
+   4. STICKY HEADER & DROPDOWN
+   ======================================== */
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  color: #032340;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-link {
+  color: #34495e;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.home-link:hover {
+  color: hsl(210, 27%, 50%);
+}
+
+.page-title {
+  font-size: 1rem;
+  color: #34495e;
+  opacity: 0.8;
+  display: none; /* Hidden on small screens */
+}
+
+/* --- Dropdown --- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #34495e;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: hsl(210, 27%, 50%);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 260px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Show page title on wider screens */
+@media (min-width: 600px) {
+  .page-title {
+    display: block;
+  }
+}
+
+/* ========================================
+   5. SHARED LESSON COMPONENTS
+   ======================================== */
+
+/* --- Main Title --- */
+h1.main-title {
+  color: hsl(210, 27%, 50%);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid hsl(210, 27%, 50%);
+  padding-bottom: 0.5rem;
+}
+
+/* --- Section Title --- */
+.section-title {
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-top: 40px;
+}
+
+/* --- Code Block --- */
+.code-block {
+  background-color: #282c34;
+  color: #abb2bf;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  overflow-x: auto;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+}
+
+/* --- Syntax Highlighting --- */
+.selector {
+  color: #e06c75;
+  font-weight: bold;
+}
+.property {
+  color: #98c379;
+}
+.value {
+  color: #d19a66;
+}
+.comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.tag {
+  color: #e06c75;
+}
+.attribute {
+  color: #d19a66;
+}
+.string {
+  color: #98c379;
+}
+.function {
+  color: #61afef;
+}
+.variable {
+  color: #c678dd;
+}
+.keyframes {
+  color: #c678dd;
+  font-weight: bold;
+}
+.media-keyword {
+  color: #c678dd;
+  font-weight: bold;
+}
+
+/* --- Example Output --- */
+.example-output {
+  background-color: white;
+  border: 2px dashed #aaa;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* --- Info & Warning Boxes --- */
+.info-box {
+  background-color: #e3f2fd;
+  border-left: 5px solid #2196f3;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.info-box-orange {
+  background-color: #fff3e0;
+  border-left: 5px solid #ff9800;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.warning-box {
+  background-color: #ffebee;
+  border-left: 5px solid #f44336;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.resize-hint {
+  background-color: #fff3e0;
+  border-left: 5px solid #ff9800;
+  padding: 15px;
+  margin-bottom: 20px;
+  color: #e65100;
+}
+
+/* --- Comparison & Specificity Tables --- */
+.comparison-table,
+.specificity-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.comparison-table th,
+.comparison-table td,
+.specificity-table th,
+.specificity-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.comparison-table th,
+.specificity-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.comparison-table tr:nth-child(even),
+.specificity-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.pros {
+  color: #4caf50;
+}
+.cons {
+  color: #f44336;
+}
+
+.specificity-value {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: #e06c75;
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   6. INDEX PAGE STYLES
+   ======================================== */
+
+.page-index {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+}
+
+.page-index h1 {
+  color: hsl(210, 27%, 50%);
+  border-bottom: 2px solid hsl(210, 27%, 50%);
+  padding-bottom: 0.5rem;
+}
+
+/* Lesson card list */
+.lesson-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .lesson-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lesson-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.lesson-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-card a {
+  text-decoration: none;
+  color: #34495e;
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  font-family: monospace;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   7. LESSON 00: CSS INTRO
+   ======================================== */
+
+.benefit-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.benefit-list li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.benefit-list li::before {
+  content: "\2713";
+  color: #4caf50;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* ========================================
+   8. LESSON 01: CSS SYNTAX
+   ======================================== */
+
+.styled-text {
+  color: blue;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.multi-property-box {
+  width: 200px;
+  height: 100px;
+  background-color: purple;
+  color: white;
+  text-align: center;
+  line-height: 100px; /* Vertically centers text */
+  border-radius: 10px;
+}
+
+/* ========================================
+   9. LESSON 02: CSS SELECTORS
+   ======================================== */
+
+/* Element Selector Demo */
+p.element-selector-demo {
+  color: green;
+  font-weight: bold;
+}
+
+/* Class Selector Demo */
+.highlight {
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+  padding: 5px;
+}
+
+/* ID Selector Demo */
+#unique-element {
+  border: 2px solid orange;
+  padding: 10px;
+  background-color: #fff3e0;
+  color: #d84315;
+}
+
+/* Group Selector Demo */
+.group-demo-h3,
+.group-demo-h4 {
+  color: purple;
+  text-decoration: underline;
+}
+
+/* Descendant Selector Demo */
+.descendant-container p {
+  color: teal;
+  font-style: italic;
+}
+
+/* Child Selector Demo */
+.child-parent > p {
+  border-left: 5px solid blue;
+  padding-left: 10px;
+  background-color: #e3f2fd;
+}
+
+/* Attribute Selector Demo */
+.lesson-02 input[type="text"] {
+  border: 2px solid red;
+  padding: 5px;
+}
+
+.lesson-02 input[type="email"] {
+  border: 2px solid green;
+  padding: 5px;
+}
+
+/* Pseudo-class Selector Demo */
+.hover-link {
+  color: blue;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.hover-link:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.list-demo li:first-child {
+  color: red;
+  font-weight: bold;
+}
+
+.list-demo li:last-child {
+  color: blue;
+  font-weight: bold;
+}
+
+/* Pseudo-element Selector Demo */
+.pseudo-demo::before {
+  content: "\1F449 "; /* pointing right */
+}
+
+.pseudo-demo::after {
+  content: " \1F448"; /* pointing left */
+}
+
+/* ========================================
+   10. LESSON 03: BOX MODEL
+   ======================================== */
+
+.lesson-03 .box {
+  background-color: #e0e0e0;
+  border: 1px solid #999;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Padding */
+.pad-none {
+  padding: 0;
+}
+.pad-20 {
+  padding: 20px;
+  background-color: #c8e6c9;
+}
+.pad-mixed {
+  padding: 10px 40px;
+  background-color: #b9f6ca;
+}
+
+/* Margin */
+.marg-none {
+  margin: 0;
+}
+.marg-20 {
+  margin: 20px;
+  background-color: #ffccbc;
+}
+.marg-auto {
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  background-color: #ffe0b2;
+}
+
+/* Border */
+.bord-solid {
+  border: 5px solid red;
+}
+.bord-dotted {
+  border: 5px dotted blue;
+}
+.bord-mixed {
+  border-top: 5px solid red;
+  border-bottom: 5px dashed green;
+}
+
+/* Border Radius */
+.rad-small {
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid #333;
+}
+.rad-large {
+  border-radius: 20px;
+  padding: 10px;
+  border: 2px solid #333;
+}
+.rad-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Box Sizing */
+.sizing-demo {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 10px solid blue;
+  background-color: #b3e5fc;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.content-box {
+  box-sizing: content-box;
+}
+.border-box {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   11. LESSON 04: TYPOGRAPHY
+   ======================================== */
+
+p.demo {
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-left: 3px solid #ccc;
+}
+
+/* Font Family */
+.font-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.font-sans {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.font-mono {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Font Size */
+.size-small {
+  font-size: 12px;
+}
+.size-medium {
+  font-size: 16px;
+}
+.size-large {
+  font-size: 24px;
+}
+.size-xlarge {
+  font-size: 32px;
+}
+
+/* Font Weight */
+.weight-light {
+  font-weight: 300;
+}
+.weight-normal {
+  font-weight: 400;
+}
+.weight-bold {
+  font-weight: 700;
+}
+.weight-bolder {
+  font-weight: 900;
+}
+
+/* Font Style */
+.style-italic {
+  font-style: italic;
+}
+.style-oblique {
+  font-style: oblique;
+}
+
+/* Text Decoration */
+.dec-underline {
+  text-decoration: underline;
+}
+.dec-line-through {
+  text-decoration: line-through;
+}
+.dec-none {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Text Transform */
+.trans-upper {
+  text-transform: uppercase;
+}
+.trans-lower {
+  text-transform: lowercase;
+}
+.trans-cap {
+  text-transform: capitalize;
+}
+
+/* Text Align */
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-justify {
+  text-align: justify;
+}
+
+/* Line Height */
+.lh-small {
+  line-height: 1;
+  background-color: #ffebee;
+}
+.lh-large {
+  line-height: 2;
+  background-color: #e8f5e9;
+}
+
+/* Letter Spacing */
+.spacing-wide {
+  letter-spacing: 5px;
+}
+.spacing-neg {
+  letter-spacing: -1px;
+}
+
+/* ========================================
+   12. LESSON 05: COLORS
+   ======================================== */
+
+/* Base Color Box */
+.color-box {
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Named Colors */
+.named-red {
+  background-color: red;
+}
+.named-blue {
+  background-color: blue;
+}
+.named-green {
+  background-color: green;
+}
+
+/* Hexadecimal Colors */
+.hex-tomato {
+  background-color: #ff5733;
+}
+.hex-green {
+  background-color: #33ff57;
+}
+.hex-blue {
+  background-color: #3357ff;
+}
+
+/* RGB Colors */
+.rgb-coral {
+  background-color: rgb(255, 99, 71);
+}
+.rgb-sea {
+  background-color: rgb(60, 179, 113);
+}
+.rgb-corn {
+  background-color: rgb(100, 149, 237);
+}
+
+/* RGBA Colors */
+.rgba-container {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYlWNgYGBg+M9AxYBRB4w6YNSBqBwMABm4AwnWgl1WAAAAAElFTkSuQmCC");
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.rgba-100 {
+  background-color: rgba(255, 0, 0, 1);
+}
+.rgba-60 {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.rgba-30 {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* HSL Colors */
+.hsl-red {
+  background-color: hsl(0, 100%, 50%);
+}
+.hsl-green {
+  background-color: hsl(120, 100%, 50%);
+}
+.hsl-blue {
+  background-color: hsl(240, 100%, 50%);
+}
+
+/* ========================================
+   13. LESSON 06: CSS VARIABLES & FUNCTIONS
+   ======================================== */
+
+:root {
+  --primary-color: #e91e63;
+  --secondary-color: #3f51b5;
+  --box-padding: 20px;
+  --border-radius: 8px;
+}
+
+.var-box {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--box-padding);
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.var-box-2 {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: var(--box-padding);
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: bold;
+}
+
+.local-scope {
+  --primary-color: #4caf50;
+  background-color: var(--primary-color);
+  padding: var(--box-padding);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: var(--border-radius);
+}
+
+/* calc() demos */
+.calc-container {
+  border: 2px solid #333;
+  width: 100%;
+  padding: 10px;
+  background-color: #ddd;
+}
+
+.calc-box {
+  background-color: #ff9800;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+
+.calc-fluid {
+  margin-top: 10px;
+  background-color: #9c27b0;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: calc(100% / 3);
+}
+
+/* ========================================
+   14. LESSON 07: BACKGROUNDS
+   ======================================== */
+
+/* Base demo box for backgrounds */
+.demo-box {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* Background Color */
+.bg-red {
+  background-color: red;
+}
+.bg-blue {
+  background-color: blue;
+}
+
+/* Linear Gradient */
+.grad-linear {
+  background-image: linear-gradient(to right, red, yellow);
+}
+.grad-linear-deg {
+  background-image: linear-gradient(45deg, blue, purple);
+}
+
+/* Radial Gradient */
+.grad-radial {
+  background-image: radial-gradient(circle, red, yellow, green);
+}
+
+/* Background Image & Size */
+.bg-img-cover {
+  background-image: url("../img/bg-beach.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-img-contain {
+  background-image: url("../img/bg-beach.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #333;
+}
+
+/* Background Position */
+.bg-pos-center {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="gold"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position: center;
+  background-color: #eee;
+  color: black;
+  text-shadow: none;
+}
+
+.bg-pos-br {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="purple"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position: bottom right;
+  background-color: #eee;
+  color: black;
+  text-shadow: none;
+}
+
+/* Background Repeat */
+.bg-repeat {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect width="10" height="10" fill="blue"/></svg>');
+  background-repeat: repeat;
+  background-color: #e3f2fd;
+  color: black;
+  text-shadow: none;
+}
+
+.bg-norepeat {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect width="10" height="10" fill="red"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position: center;
+  background-color: #ffebee;
+  color: black;
+  text-shadow: none;
+}
+
+/* Background Attachment */
+.attachment-container {
+  height: 200px;
+  border: 2px solid #333;
+  overflow-y: scroll;
+}
+
+.bg-scroll {
+  height: 400px;
+  background-image: linear-gradient(to bottom, #4facfe, #00f2fe);
+  background-attachment: scroll;
+  padding: 20px;
+}
+
+.bg-fixed {
+  height: 400px;
+  background-image: linear-gradient(to bottom, #d4fc79, #96e6a1);
+  padding: 20px;
+}
+
+/* ========================================
+   15. LESSON 08: UNITS & SHADOWS
+   ======================================== */
+
+.unit-container {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.px-box {
+  font-size: 20px;
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin: 5px;
+}
+
+.em-box {
+  font-size: 1.5em;
+  background-color: #d1c4e9;
+  padding: 10px;
+  margin: 5px;
+}
+
+.em-child {
+  font-size: 1.5em;
+  background-color: #b39ddb;
+}
+
+.rem-box {
+  font-size: 1.5rem;
+  background-color: #c8e6c9;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Shadows */
+.shadow-demo {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.box-shadow {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.soft-shadow {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.text-shadow-demo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff5722;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   16. LESSON 09: ANIMATIONS
+   ======================================== */
+
+/* Override example-output for animation demos */
+.lesson-09 .example-output {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 150px;
+  align-items: center;
+}
+
+/* Animation demo box */
+.lesson-09 .box {
+  width: 100px;
+  height: 100px;
+  background-color: #f093fb;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Transitions */
+.trans-color {
+  background-color: #4caf50;
+  transition: background-color 0.5s ease;
+}
+
+.trans-color:hover {
+  background-color: #ff5722;
+}
+
+.trans-transform {
+  background-color: #2196f3;
+  transition: transform 0.3s ease;
+}
+
+.trans-transform:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Transforms */
+.rotate-box:hover {
+  transform: rotate(180deg);
+  transition: transform 0.5s;
+}
+
+.scale-box:hover {
+  transform: scale(0.5);
+  transition: transform 0.5s;
+}
+
+/* Animations */
+.anim-move {
+  background-color: #34495e;
+  animation: moveRight 2s ease-in-out infinite alternate;
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+
+.anim-spin {
+  background-color: #ff9800;
+  animation: spin 2s linear 0s infinite normal none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.anim-bounce {
+  background-color: #9c27b0;
+  animation: bounce 1s ease 0s infinite normal none;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* Loader */
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear 0s infinite normal none;
+}
+
+/* Flip Card */
+.flip-card {
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.flip-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-back {
+  background-color: #2980b9;
+  transform: rotateY(180deg);
+}
+
+/* ========================================
+   17. LESSON 10: POSITIONING
+   ======================================== */
+
+/* Positioning demo box */
+.lesson-10 .box {
+  width: 100px;
+  height: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Override example-output for positioning context */
+.lesson-10 .example-output {
+  position: relative;
+  min-height: 200px;
+}
+
+/* Extra bottom padding for scrolling demos */
+.lesson-10 {
+  padding-bottom: 200px;
+}
+
+/* Static */
+.static-box {
+  position: static;
+  background-color: #9e9e9e;
+}
+
+/* Relative */
+.relative-box {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  background-color: #2196f3;
+  z-index: 10;
+}
+
+.normal-box {
+  background-color: #ccc;
+}
+
+/* Absolute */
+.relative-container {
+  position: relative;
+  height: 250px;
+  border: 3px solid #e91e63;
+  background-color: #fce4ec;
+}
+
+.absolute-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e91e63;
+}
+
+.absolute-br {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #e91e63;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #880e4f;
+}
+
+/* Fixed */
+.fixed-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 60px;
+  background-color: #ff5722;
+  z-index: 1000;
+  border: 4px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Sticky */
+.sticky-container {
+  height: 300px;
+  overflow-y: scroll;
+  border: 3px solid #9c27b0;
+}
+
+.sticky-element {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #9c27b0;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin: 0;
+  border-radius: 0;
+  color: white;
+  font-weight: bold;
+}
+
+.content-block {
+  height: 800px;
+  background: linear-gradient(#f3e5f5, #e1bee7);
+  padding: 20px;
+}
+
+/* Z-Index */
+.z-container {
+  position: relative;
+  height: 200px;
+}
+
+.z-1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: red;
+  z-index: 1;
+}
+
+.z-2 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: green;
+  z-index: 2;
+}
+
+.z-3 {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  background-color: blue;
+  z-index: 3;
+}
+
+/* ========================================
+   18. LESSON 11: FLEXBOX
+   ======================================== */
+
+/* Scoped h3 styling for flexbox and grid lessons */
+.lesson-11 h3,
+.lesson-12 h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Flex Container */
+.flex-container {
+  display: flex;
+  background-color: #e3f2fd;
+  border: 2px solid #2196f3;
+  padding: 10px;
+  margin-bottom: 10px;
+  min-height: 100px;
+}
+
+/* Flex Item */
+.flex-container .item {
+  background-color: #ff9800;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 4px;
+  min-width: 50px;
+}
+
+.flex-container .item:nth-child(2) {
+  background-color: #f57c00;
+}
+
+.flex-container .item:nth-child(3) {
+  background-color: #e65100;
+}
+
+/* Flex Direction (renamed to avoid grid system .row conflict) */
+.dir-row {
+  flex-direction: row;
+}
+.dir-column {
+  flex-direction: column;
+}
+
+/* Justify Content */
+.j-start {
+  justify-content: flex-start;
+}
+.j-center {
+  justify-content: center;
+}
+.j-end {
+  justify-content: flex-end;
+}
+.j-between {
+  justify-content: space-between;
+}
+.j-around {
+  justify-content: space-around;
+}
+
+/* Align Items */
+.a-start {
+  align-items: flex-start;
+}
+.a-center {
+  align-items: center;
+}
+.a-end {
+  align-items: flex-end;
+}
+.a-stretch {
+  align-items: stretch;
+  min-height: 120px;
+}
+
+/* Flex Wrap */
+.wrap-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  background-color: #e8f5e9;
+  border: 2px solid #4caf50;
+  padding: 10px;
+}
+
+.wrap-item {
+  width: 100px;
+  height: 50px;
+  background-color: #4caf50;
+  color: white;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+/* Flex Grow */
+.grow-container {
+  display: flex;
+  gap: 10px;
+  background-color: #f3e5f5;
+  padding: 10px;
+}
+
+.grow-1 {
+  flex-grow: 1;
+  background-color: #9c27b0;
+  padding: 20px;
+  color: white;
+}
+
+.grow-2 {
+  flex-grow: 2;
+  background-color: #7b1fa2;
+  padding: 20px;
+  color: white;
+}
+
+/* Demo Navbar (renamed to avoid grid system .navbar conflict) */
+.demo-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu li {
+  cursor: pointer;
+}
+
+.nav-menu li:hover {
+  color: #ff9800;
+}
+
+/* Demo heights for align-items examples */
+.demo-h-40 {
+  height: 40px;
+}
+.demo-h-60 {
+  height: 60px;
+}
+.demo-h-80 {
+  height: 80px;
+}
+.demo-h-150 {
+  height: 150px;
+}
+
+/* ========================================
+   19. LESSON 12: CSS GRID
+   ======================================== */
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  background-color: #fce4ec;
+  border: 2px solid #e91e63;
+  padding: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+/* Grid Item */
+.grid-container .item {
+  background-color: #ec407a;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+.grid-container .item:nth-child(even) {
+  background-color: #d81b60;
+}
+
+.grid-container .item:nth-child(3n) {
+  background-color: #ad1457;
+}
+
+/* Basic Columns */
+.cols-3 {
+  grid-template-columns: 100px 100px 100px;
+}
+.cols-fr {
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+/* Gap Demo */
+.gap-demo {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Spanning */
+.span-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.span-col-2 {
+  grid-column: span 2;
+  background-color: #880e4f;
+}
+
+.span-row-2 {
+  grid-row: span 2;
+  background-color: #880e4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid Areas (Dashboard) */
+.dashboard {
+  display: grid;
+  height: 400px;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 60px 1fr 100px 60px;
+  gap: 10px;
+  grid-template-areas:
+    "header header header"
+    "nav main main"
+    "nav widget1 widget2"
+    "footer footer footer";
+}
+
+.area-header {
+  grid-area: header;
+  background-color: #1a237e;
+}
+.area-nav {
+  grid-area: nav;
+  background-color: #283593;
+}
+.area-main {
+  grid-area: main;
+  background-color: #3949ab;
+}
+.area-widget1 {
+  grid-area: widget1;
+  background-color: #5c6bc0;
+}
+.area-widget2 {
+  grid-area: widget2;
+  background-color: #7986cb;
+}
+.area-footer {
+  grid-area: footer;
+  background-color: #303f9f;
+}
+
+/* ========================================
+   20. LESSON 13: RESPONSIVE DESIGN
+   ======================================== */
+
+/* Viewport Demo */
+.vw-box {
+  background-color: #00acc1;
+  width: 50vw;
+  color: white;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.pct-box {
+  background-color: #00838f;
+  width: 50%;
+  color: white;
+  padding: 10px;
+}
+
+/* Media Query Demo */
+.responsive-box {
+  background-color: #ff5722;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* Responsive Grid Layout */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.grid-card {
+  background-color: #673ab7;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Hide/Show Demo */
+.mobile-only {
+  display: block;
+  background-color: #e91e63;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.desktop-only {
+  display: none;
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Clamp Demo */
+.clamp-demo {
+  font-size: clamp(1rem, 5vw, 3rem);
+  text-align: center;
+  transition: font-size 0.2s;
+}
+
+/* ========================================
+   21. RESPONSIVE MEDIA QUERIES
+   ======================================== */
+
+/* Tablet breakpoint - responsive design demos */
+@media (min-width: 600px) {
+  .responsive-box {
+    background-color: #2196f3;
+  }
+
+  .responsive-box::after {
+    content: " (Tablet View >= 600px)";
+  }
+
+  .responsive-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop breakpoint - responsive design demos */
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Desktop breakpoint - responsive design demos */
+@media (min-width: 900px) {
+  .responsive-box {
+    background-color: #4caf50;
+  }
+
+  .responsive-box::after {
+    content: " (Desktop View >= 900px)";
+  }
+
+  .responsive-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Dashboard responsive - stack on small screens */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "widget1"
+      "widget2"
+      "footer";
+  }
+}

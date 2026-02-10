@@ -4,247 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Colors</title>
-    <style>
-      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        padding-top: 80px; /* Space for fixed header */
-        line-height: 1.6;
-        background-color: #f9f9f9;
-        color: #333;
-      }
-      /* Sticky Header Styles */
-      .sticky-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background-color: white;
-        color: #032340;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        box-sizing: border-box;
-      }
-      .header-left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .home-link {
-        color: #34495e;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .home-link:hover {
-        color: hsl(210, 27%, 50%);
-      }
-      .page-title {
-        font-size: 1rem;
-        color: #34495e;
-        opacity: 0.8;
-        display: none; /* Hidden on small screens */
-      }
-      @media (min-width: 600px) {
-        .page-title {
-          display: block;
-        }
-      }
-
-      /* Dropdown Styles */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropbtn {
-        background-color: #34495e;
-        color: white;
-        padding: 8px 16px;
-        font-size: 14px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      .dropdown:hover .dropbtn {
-        background-color: hsl(210, 27%, 50%);
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        right: 0;
-        background-color: #f9f9f9;
-        min-width: 260px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 4px;
-        max-height: 400px;
-        overflow-y: auto;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #eee;
-        text-align: left;
-      }
-      .dropdown-content a:hover {
-        background-color: #f1f1f1;
-      }
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      h1.main-title {
-        color: hsl(210, 27%, 50%);
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        border-bottom: 2px solid hsl(210, 27%, 50%);
-        padding-bottom: 0.5rem;
-      }
-      .section-title {
-        color: #333;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 10px;
-        margin-top: 40px;
-      }
-      .code-block {
-        background-color: #282c34;
-        color: #abb2bf;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        overflow-x: auto;
-        margin-bottom: 15px;
-        border: 1px solid #444;
-      }
-      /* Syntax Highlighting Simulators */
-      .selector {
-        color: #e06c75;
-        font-weight: bold;
-      }
-      .property {
-        color: #98c379;
-      }
-      .value {
-        color: #d19a66;
-      }
-      .comment {
-        color: #5c6370;
-        font-style: italic;
-      }
-
-      .example-output {
-        background-color: white;
-        border: 2px dashed #aaa;
-        padding: 20px;
-        border-radius: 5px;
-        margin-top: 10px;
-      }
-
-      /* Base Style for Color Boxes */
-      .color-box {
-        padding: 20px;
-        margin: 10px 0;
-        border-radius: 5px;
-        font-weight: bold;
-        text-align: center;
-        color: white;
-        font-size: 1.1rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      }
-
-      /* --- DEMO STYLES --- */
-
-      /* 1. Named Colors */
-      .named-red {
-        background-color: red;
-      }
-      .named-blue {
-        background-color: blue;
-      }
-      .named-green {
-        background-color: green;
-      }
-
-      /* 2. Hexadecimal Colors */
-      .hex-tomato {
-        background-color: #ff5733;
-      }
-      .hex-green {
-        background-color: #33ff57;
-      }
-      .hex-blue {
-        background-color: #3357ff;
-      }
-
-      /* 3. RGB Colors */
-      .rgb-coral {
-        background-color: rgb(255, 99, 71);
-      }
-      .rgb-sea {
-        background-color: rgb(60, 179, 113);
-      }
-      .rgb-corn {
-        background-color: rgb(100, 149, 237);
-      }
-
-      /* 4. RGBA Colors (Transparency) */
-      .rgba-container {
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYlWNgYGBg+M9AxYBRB4w6YNSBqBwMABm4AwnWgl1WAAAAAElFTkSuQmCC"); /* Checkerboard pattern to show transparency */
-        padding: 20px;
-        border-radius: 5px;
-      }
-      .rgba-100 {
-        background-color: rgba(255, 0, 0, 1);
-      } /* 100% Opaque */
-      .rgba-60 {
-        background-color: rgba(255, 0, 0, 0.6);
-      } /* 60% Opaque */
-      .rgba-30 {
-        background-color: rgba(255, 0, 0, 0.3);
-      } /* 30% Opaque */
-
-      /* 5. HSL Colors */
-      .hsl-red {
-        background-color: hsl(0, 100%, 50%);
-      }
-      .hsl-green {
-        background-color: hsl(120, 100%, 50%);
-      }
-      .hsl-blue {
-        background-color: hsl(240, 100%, 50%);
-      }
-
-      /* Navigation Links Styling */
-      .nav-links {
-        margin-top: 50px;
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-        border-top: 1px solid #ddd;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: #007bff;
-        font-weight: bold;
-        margin: 0 10px;
-      }
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
   <body>
     <!-- Sticky Header -->
     <header class="sticky-header">
@@ -285,7 +46,11 @@
         }
       });
     </script>
-    <h1 class="main-title">Day 2 - CSS Colors</h1>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="main-title">Day 2 - CSS Colors</h1>
     <p>
       Colors can be specified in CSS using different formats: Names, HEX codes,
       RGB, RGBA, and HSL.
@@ -504,5 +269,8 @@
         >Next: Variables & Functions ></a
       >
     </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
