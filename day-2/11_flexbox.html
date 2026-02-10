@@ -4,314 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Flexbox</title>
-    <style>
-      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        padding-top: 80px; /* Space for fixed header */
-        line-height: 1.6;
-        background-color: #f9f9f9;
-        color: #333;
-      }
-      /* Sticky Header Styles */
-      .sticky-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background-color: white;
-        color: #032340;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        box-sizing: border-box;
-      }
-      .header-left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .home-link {
-        color: #34495e;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .home-link:hover {
-        color: hsl(210, 27%, 50%);
-      }
-      .page-title {
-        font-size: 1rem;
-        color: #34495e;
-        opacity: 0.8;
-        display: none; /* Hidden on small screens */
-      }
-      @media (min-width: 600px) {
-        .page-title {
-          display: block;
-        }
-      }
-
-      /* Dropdown Styles */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropbtn {
-        background-color: #34495e;
-        color: white;
-        padding: 8px 16px;
-        font-size: 14px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      .dropdown:hover .dropbtn {
-        background-color: hsl(210, 27%, 50%);
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        right: 0;
-        background-color: #f9f9f9;
-        min-width: 260px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 4px;
-        max-height: 400px;
-        overflow-y: auto;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #eee;
-        text-align: left;
-      }
-      .dropdown-content a:hover {
-        background-color: #f1f1f1;
-      }
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      h1.main-title {
-        color: hsl(210, 27%, 50%);
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        border-bottom: 2px solid hsl(210, 27%, 50%);
-        padding-bottom: 0.5rem;
-      }
-      .section-title {
-        color: #333;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 10px;
-        margin-top: 40px;
-      }
-      h3 {
-        margin-top: 20px;
-        margin-bottom: 5px;
-        color: #555;
-      }
-
-      .code-block {
-        background-color: #282c34;
-        color: #abb2bf;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        overflow-x: auto;
-        margin-bottom: 15px;
-        border: 1px solid #444;
-      }
-      /* Syntax Highlighting Simulators */
-      .selector {
-        color: #e06c75;
-        font-weight: bold;
-      }
-      .property {
-        color: #98c379;
-      }
-      .value {
-        color: #d19a66;
-      }
-      .comment {
-        color: #5c6370;
-        font-style: italic;
-      }
-
-      .example-output {
-        background-color: white;
-        border: 2px dashed #aaa;
-        padding: 20px;
-        border-radius: 5px;
-        margin-top: 10px;
-      }
-
-      /* Flex Container Base */
-      .flex-container {
-        display: flex; /* activates flexbox */
-        background-color: #e3f2fd;
-        border: 2px solid #2196f3;
-        padding: 10px;
-        margin-bottom: 10px;
-        min-height: 100px; /* To show vertical alignment */
-      }
-
-      /* Flex Item Base */
-      .item {
-        background-color: #ff9800;
-        color: white;
-        font-weight: bold;
-        padding: 15px;
-        margin: 5px;
-        text-align: center;
-        border-radius: 4px;
-        min-width: 50px;
-      }
-      .item:nth-child(2) {
-        background-color: #f57c00;
-      }
-      .item:nth-child(3) {
-        background-color: #e65100;
-      }
-
-      /* --- DEMO STYLES (Specifics) --- */
-
-      /* 1. Flex Direction */
-      .row {
-        flex-direction: row;
-      }
-      .column {
-        flex-direction: column;
-      }
-
-      /* 2. Justify Content (Main Axis) */
-      .j-start {
-        justify-content: flex-start;
-      }
-      .j-center {
-        justify-content: center;
-      }
-      .j-end {
-        justify-content: flex-end;
-      }
-      .j-between {
-        justify-content: space-between;
-      }
-      .j-around {
-        justify-content: space-around;
-      }
-
-      /* 3. Align Items (Cross Axis) */
-      .a-start {
-        align-items: flex-start;
-      }
-      .a-center {
-        align-items: center;
-      }
-      .a-end {
-        align-items: flex-end;
-      }
-      .a-stretch {
-        align-items: stretch;
-        min-height: 120px;
-      }
-
-      /* 4. Flex Wrap */
-      .wrap-container {
-        display: flex;
-        flex-wrap: wrap; /* Allows items to wrap */
-        width: 300px; /* Restricted width to force wrap */
-        background-color: #e8f5e9;
-        border: 2px solid #4caf50;
-        padding: 10px;
-      }
-      .wrap-item {
-        width: 100px; /* Fixed width */
-        height: 50px;
-        background-color: #4caf50;
-        color: white;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
-      }
-
-      /* 5. Flex Item Properties - Grow/Shrink */
-      .grow-container {
-        display: flex;
-        gap: 10px;
-        background-color: #f3e5f5;
-        padding: 10px;
-      }
-      .grow-1 {
-        flex-grow: 1;
-        background-color: #9c27b0;
-        padding: 20px;
-        color: white;
-      }
-      .grow-2 {
-        flex-grow: 2;
-        background-color: #7b1fa2;
-        padding: 20px;
-        color: white;
-      }
-
-      /* Practical Navbar */
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #333;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-      }
-      .nav-menu {
-        display: list-item; /* Resetting for this demo, usually flex */
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 15px;
-      }
-      .nav-menu li {
-        cursor: pointer;
-      }
-      .nav-menu li:hover {
-        color: #ff9800;
-      }
-
-      /* Navigation Links Styling */
-      .nav-links {
-        margin-top: 50px;
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-        border-top: 1px solid #ddd;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: #007bff;
-        font-weight: bold;
-        margin: 0 10px;
-      }
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-    </style>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -353,240 +46,252 @@
         }
       });
     </script>
-    <h1 class="main-title">Day 2 - CSS Flexbox</h1>
-    <p>
-      Flexbox is a layout model that allows you to design complex layouts easily
-      and responsively. It usually involves a
-      <strong>Parent Container</strong> and <strong>Child Items</strong>.
-    </p>
 
-    <hr />
+    <main class="container lesson-11">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="main-title">Day 2 - CSS Flexbox</h1>
+          <p>
+            Flexbox is a layout model that allows you to design complex layouts
+            easily and responsively. It usually involves a
+            <strong>Parent Container</strong> and <strong>Child Items</strong>.
+          </p>
 
-    <!-- 
+          <hr />
+
+          <!-- 
       SECTION 1: FLEX DIRECTION
       Flexbox arranges items along a main axis. flex-direction controls that axis.
       row (default): items flow left-to-right in a horizontal line.
       column: items stack top-to-bottom in a vertical line.
       row-reverse and column-reverse flip the direction.
     -->
-    <h2 class="section-title">1. Flex Direction</h2>
-    <p>Controls the direction in which items are laid out.</p>
+          <h2 class="section-title">1. Flex Direction</h2>
+          <p>Controls the direction in which items are laid out.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="comment"
-        >/* Default: Lays out items in a row (Left to Right) */</span
-      ><br />
-      <span class="selector">.row</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-      <span class="value">flex</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-direction</span>:
-      <span class="value">row</span>;<br />
-      }<br /><br />
-      <span class="comment"
-        >/* Lays out items in a column (Top to Bottom) */</span
-      ><br />
-      <span class="selector">.column</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-      <span class="value">flex</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-direction</span>:
-      <span class="value">column</span>;<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="comment"
+              >/* Default: Lays out items in a row (Left to Right) */</span
+            ><br />
+            <span class="selector">.row</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+            <span class="value">flex</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-direction</span
+            >: <span class="value">row</span>;<br />
+            }<br /><br />
+            <span class="comment"
+              >/* Lays out items in a column (Top to Bottom) */</span
+            ><br />
+            <span class="selector">.column</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+            <span class="value">flex</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-direction</span
+            >: <span class="value">column</span>;<br />
+            }
+          </div>
 
-    <h3>Output (Row):</h3>
-    <div class="example-output">
-      <div class="flex-container row">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-      </div>
-    </div>
+          <h3>Output (Row):</h3>
+          <div class="example-output">
+            <div class="flex-container dir-row">
+              <div class="item">1</div>
+              <div class="item">2</div>
+              <div class="item">3</div>
+            </div>
+          </div>
 
-    <h3>Output (Column):</h3>
-    <div class="example-output">
-      <div class="flex-container column">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-      </div>
-    </div>
+          <h3>Output (Column):</h3>
+          <div class="example-output">
+            <div class="flex-container dir-column">
+              <div class="item">1</div>
+              <div class="item">2</div>
+              <div class="item">3</div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 2: JUSTIFY CONTENT (MAIN AXIS)
       Controls how items are distributed along the main axis (horizontal by default).
       flex-start: packed to the start, center: centered, flex-end: packed to the end.
       space-between: first/last item touch edges, equal space in between.
       space-around: equal space around each item.
     -->
-    <h2 class="section-title">2. Justify Content (Main Axis)</h2>
-    <p>Aligns items horizontally (if direction is row). Useful for spacing.</p>
+          <h2 class="section-title">2. Justify Content (Main Axis)</h2>
+          <p>
+            Aligns items horizontally (if direction is row). Useful for spacing.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.j-start</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span>:
-      <span class="value">flex-start</span>;<br />
-      }<br />
-      <span class="comment">/* Default */</span><br />
-      <span class="selector">.j-center</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span>:
-      <span class="value">center</span>;<br />
-      }<br />
-      <span class="selector">.j-end</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span>:
-      <span class="value">flex-end</span>;<br />
-      }<br />
-      <span class="selector">.j-between</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span>:
-      <span class="value">space-between</span>;<br />
-      }<br />
-      <span class="selector">.j-around</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span>:
-      <span class="value">space-around</span>;<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.j-start</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
+            >: <span class="value">flex-start</span>;<br />
+            }<br />
+            <span class="comment">/* Default */</span><br />
+            <span class="selector">.j-center</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
+            >: <span class="value">center</span>;<br />
+            }<br />
+            <span class="selector">.j-end</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
+            >: <span class="value">flex-end</span>;<br />
+            }<br />
+            <span class="selector">.j-between</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
+            >: <span class="value">space-between</span>;<br />
+            }<br />
+            <span class="selector">.j-around</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
+            >: <span class="value">space-around</span>;<br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <h4>space-between (pushes items to edges):</h4>
-      <div class="flex-container j-between">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-      </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <h4>space-between (pushes items to edges):</h4>
+            <div class="flex-container j-between">
+              <div class="item">1</div>
+              <div class="item">2</div>
+              <div class="item">3</div>
+            </div>
 
-      <h4>center:</h4>
-      <div class="flex-container j-center">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-      </div>
-    </div>
+            <h4>center:</h4>
+            <div class="flex-container j-center">
+              <div class="item">1</div>
+              <div class="item">2</div>
+              <div class="item">3</div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 3: ALIGN ITEMS (CROSS AXIS)
       Controls how items are aligned on the cross axis (vertical by default).
       flex-start: top, center: middle, flex-end: bottom.
       stretch (default): items stretch to fill the container's height.
     -->
-    <h2 class="section-title">3. Align Items (Cross Axis)</h2>
-    <p>Aligns items vertically (if direction is row).</p>
+          <h2 class="section-title">3. Align Items (Cross Axis)</h2>
+          <p>Aligns items vertically (if direction is row).</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.a-center</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
-      <span class="value">center</span>;<br />
-      }<br />
-      <span class="selector">.a-stretch</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
-      <span class="value">stretch</span>;<br />
-      }<br />
-      <span class="comment">/* Default: Stretch to fill height */</span>
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.a-center</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
+            <span class="value">center</span>;<br />
+            }<br />
+            <span class="selector">.a-stretch</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
+            <span class="value">stretch</span>;<br />
+            }<br />
+            <span class="comment">/* Default: Stretch to fill height */</span>
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <h4>center (vertical middle):</h4>
-      <div class="flex-container a-center">
-        <div class="item" style="height: 40px">40px</div>
-        <div class="item" style="height: 80px">80px</div>
-        <div class="item" style="height: 60px">60px</div>
-      </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <h4>center (vertical middle):</h4>
+            <div class="flex-container a-center">
+              <div class="item demo-h-40">40px</div>
+              <div class="item demo-h-80">80px</div>
+              <div class="item demo-h-60">60px</div>
+            </div>
 
-      <h4>stretch (default):</h4>
-      <div class="flex-container a-stretch" style="height: 150px">
-        <div class="item">Auto Height</div>
-        <div class="item">Auto Height</div>
-        <div class="item">Auto Height</div>
-      </div>
-    </div>
+            <h4>stretch (default):</h4>
+            <div class="flex-container a-stretch demo-h-150">
+              <div class="item">Auto Height</div>
+              <div class="item">Auto Height</div>
+              <div class="item">Auto Height</div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 4: FLEX WRAP
       By default, flex items try to fit on one line (they shrink if needed).
       flex-wrap: wrap allows items to move to a new line when there isn't enough space.
       This is essential for responsive designs with many items.
     -->
-    <h2 class="section-title">4. Flex Wrap</h2>
-    <p>Allows items to wrap onto multiple lines if there isn't enough space.</p>
+          <h2 class="section-title">4. Flex Wrap</h2>
+          <p>
+            Allows items to wrap onto multiple lines if there isn't enough
+            space.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.wrap-container</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-      <span class="value">flex</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-wrap</span>:
-      <span class="value">wrap</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-      <span class="value">300px</span>;<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.wrap-container</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+            <span class="value">flex</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-wrap</span>:
+            <span class="value">wrap</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
+            <span class="value">300px</span>;<br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="wrap-container">
-        <div class="wrap-item">1</div>
-        <div class="wrap-item">2</div>
-        <div class="wrap-item">3</div>
-        <div class="wrap-item">4</div>
-        <div class="wrap-item">5</div>
-      </div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="wrap-container">
+              <div class="wrap-item">1</div>
+              <div class="wrap-item">2</div>
+              <div class="wrap-item">3</div>
+              <div class="wrap-item">4</div>
+              <div class="wrap-item">5</div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 5: PRACTICAL EXAMPLE — NAVIGATION BAR
       A common real-world use of Flexbox: creating a navigation bar.
       space-between pushes the logo to the left and links to the right.
       align-items: center vertically centers everything.
     -->
-    <h2 class="section-title">5. Practical Example: Navigation Bar</h2>
-    <p>Common pattern: Logo on the left, Links on the right.</p>
+          <h2 class="section-title">5. Practical Example: Navigation Bar</h2>
+          <p>Common pattern: Logo on the left, Links on the right.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.navbar</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-      <span class="value">flex</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span>:
-      <span class="value">space-between</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Push apart */</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
-      <span class="value">center</span>;<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.navbar</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
+            <span class="value">flex</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
+            >: <span class="value">space-between</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Push apart */</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
+            <span class="value">center</span>;<br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <nav class="navbar">
-        <div class="logo"><strong>MyLogo</strong></div>
-        <ul class="nav-menu">
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <nav class="demo-navbar">
+              <div class="logo"><strong>MyLogo</strong></div>
+              <ul class="nav-menu">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+              </ul>
+            </nav>
+          </div>
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
-      <a href="./10_positioning.html">< Previous: Positioning</a> |
-      <a href="./12_grid.html">Next: Grid ></a>
-    </div>
+          <!-- Navigation Section -->
+          <div class="nav-links">
+            <a href="./10_positioning.html">< Previous: Positioning</a> |
+            <a href="./12_grid.html">Next: Grid ></a>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
