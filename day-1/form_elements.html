@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 1 - Form Elements</title>
+    <!-- External CSS for Responsive Grid -->
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- Internal CSS: Styles defined here apply to this page only -->
     <style>
       /* Styles for the body of the page */
       body {
         font-family: Arial, sans-serif;
-        padding: 20px;
         line-height: 1.6;
         padding-top: 80px; /* Space for fixed header */
+        margin: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
       }
       /* Sticky Header Styles */
       .sticky-header {
@@ -184,233 +189,242 @@
         }
       });
     </script>
-    <h1 class="main-title">Day 1 - Form Elements</h1>
-    <p>
-      This guide demonstrates common Form elements with their code and actual
-      output.
-    </p>
+    <div class="row">
+      <div class="col-12">
+        <h1 class="main-title">Day 1 - Form Elements</h1>
+        <p>
+          This guide demonstrates common Form elements with their code and
+          actual output.
+        </p>
 
-    <hr />
+        <hr />
 
-    <!-- 
+        <!-- 
       SECTION 1: TEXT INPUT
       <label> defines a label for <input> elements.
       <input type="text"> defines a one-line text input field.
       <input type="password"> defines a password field (characters are masked).
       <input type="email"> defines a field for an e-mail address.
     -->
-    <!-- Text Input -->
-    <h2 class="section-title">1. Text Input</h2>
-    <form action="/action_page.php">
-      <p>Standard text inputs for names, emails, and passwords.</p>
+        <!-- Text Input -->
+        <h2 class="section-title">1. Text Input</h2>
+        <form action="/action_page.php">
+          <p>Standard text inputs for names, emails, and passwords.</p>
 
-      <h3>Code:</h3>
-      <!-- 
+          <h3>Code:</h3>
+          <!-- 
         NOTE: We use HTML entities &lt; and &gt; here to display the tags as text.
         If we used real < and > signs, the browser would try to render them as elements!
       -->
-      <div class="code-block">
-        &lt;label for="fname"&gt;First name:&lt;/label&gt;<br />
-        &lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;<br />
-        <br />
-        &lt;label for="lname"&gt;Last name:&lt;/label&gt;<br />
-        &lt;input type="text" id="lname" name="lname"&gt;&lt;br&gt;<br />
-        <br />
-        &lt;label for="email"&gt;Email:&lt;/label&gt;<br />
-        &lt;input type="email"
-        placeholder="juandelacruz@gmail.com"&gt;&lt;br&gt;<br />
-        <br />
-        &lt;label for="password"&gt;Password:&lt;/label&gt;<br />
-        &lt;input type="password" placeholder="password"&gt;
-      </div>
+          <div class="code-block">
+            &lt;label for="fname"&gt;First name:&lt;/label&gt;<br />
+            &lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;<br />
+            <br />
+            &lt;label for="lname"&gt;Last name:&lt;/label&gt;<br />
+            &lt;input type="text" id="lname" name="lname"&gt;&lt;br&gt;<br />
+            <br />
+            &lt;label for="email"&gt;Email:&lt;/label&gt;<br />
+            &lt;input type="email"
+            placeholder="juandelacruz@gmail.com"&gt;&lt;br&gt;<br />
+            <br />
+            &lt;label for="password"&gt;Password:&lt;/label&gt;<br />
+            &lt;input type="password" placeholder="password"&gt;
+          </div>
 
-      <h3>Output:</h3>
-      <div class="example-output">
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname" /><br />
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" /><br />
-        <label for="email">Email:</label>
-        <input type="email" placeholder="juandelacruz@gmail.com" /><br />
-        <label for="password">Password:</label>
-        <input type="password" placeholder="password" />
-      </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" /><br />
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" /><br />
+            <label for="email">Email:</label>
+            <input type="email" placeholder="juandelacruz@gmail.com" /><br />
+            <label for="password">Password:</label>
+            <input type="password" placeholder="password" />
+          </div>
 
-      <hr />
+          <hr />
 
-      <!-- 
+          <!-- 
         SECTION 2: SELECT DROPDOWN
         <select> defines a drop-down list.
         <option> defines an option that can be selected.
       -->
-      <!-- Radio Button -->
-      <h2 class="section-title">2. Select Dropdown</h2>
-      <p>Allows users to select one option from a list.</p>
+          <!-- Radio Button -->
+          <h2 class="section-title">2. Select Dropdown</h2>
+          <p>Allows users to select one option from a list.</p>
 
-      <h3>Code:</h3>
-      <div class="code-block">
-        &lt;label for="careers"&gt;Where did you find us:&lt;/label&gt;<br />
-        &lt;select name="careers" id="careers"&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
-        value="indeed"&gt;Indeed&lt;/option&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
-        value="jobstreet"&gt;Jobstreet&lt;/option&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
-        value="facebook"&gt;Facebook&lt;/option&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
-        value="youtube"&gt;Youtube&lt;/option&gt;<br />
-        &lt;/select&gt;
-      </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            &lt;label for="careers"&gt;Where did you find us:&lt;/label&gt;<br />
+            &lt;select name="careers" id="careers"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+            value="indeed"&gt;Indeed&lt;/option&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+            value="jobstreet"&gt;Jobstreet&lt;/option&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+            value="facebook"&gt;Facebook&lt;/option&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+            value="youtube"&gt;Youtube&lt;/option&gt;<br />
+            &lt;/select&gt;
+          </div>
 
-      <h3>Output:</h3>
-      <div class="example-output">
-        <label for="careers">Where did you find us:</label>
-        <select name="careers" id="careers">
-          <option value="indeed">Indeed</option>
-          <option value="jobstreet">Jobstreet</option>
-          <option value="facebook">Facebook</option>
-          <option value="youtube">Youtube</option>
-        </select>
-      </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <label for="careers">Where did you find us:</label>
+            <select name="careers" id="careers">
+              <option value="indeed">Indeed</option>
+              <option value="jobstreet">Jobstreet</option>
+              <option value="facebook">Facebook</option>
+              <option value="youtube">Youtube</option>
+            </select>
+          </div>
 
-      <hr />
+          <hr />
 
-      <!-- 
+          <!-- 
         SECTION 3: RADIO BUTTONS
         <input type="radio"> defines a radio button.
         Radio buttons let a user select ONLY ONE of a limited number of choices.
         Group them by using the same 'name'.
       -->
-      <!-- Checkbox -->
-      <h2 class="section-title">3. Radio Buttons</h2>
-      <p>
-        Select only one option from a group (sharing the same
-        <code>name</code>).
-      </p>
+          <!-- Checkbox -->
+          <h2 class="section-title">3. Radio Buttons</h2>
+          <p>
+            Select only one option from a group (sharing the same
+            <code>name</code>).
+          </p>
 
-      <h3>Code:</h3>
-      <div class="code-block">
-        &lt;p&gt;Select your skills&lt;/p&gt;<br />
-        &lt;input type="radio" id="html" name="fav_language" value="HTML"&gt;<br />
-        &lt;label for="html"&gt;HTML&lt;/label&gt;&lt;br&gt;<br />
-        <br />
-        &lt;input type="radio" id="css" name="fav_language" value="CSS"&gt;<br />
-        &lt;label for="css"&gt;CSS&lt;/label&gt;&lt;br&gt;<br />
-        <br />
-        &lt;input type="radio" id="javascript" name="fav_language"
-        value="JavaScript"&gt;<br />
-        &lt;label for="javascript"&gt;JavaScript&lt;/label&gt;
-      </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            &lt;p&gt;Select your skills&lt;/p&gt;<br />
+            &lt;input type="radio" id="html" name="fav_language"
+            value="HTML"&gt;<br />
+            &lt;label for="html"&gt;HTML&lt;/label&gt;&lt;br&gt;<br />
+            <br />
+            &lt;input type="radio" id="css" name="fav_language"
+            value="CSS"&gt;<br />
+            &lt;label for="css"&gt;CSS&lt;/label&gt;&lt;br&gt;<br />
+            <br />
+            &lt;input type="radio" id="javascript" name="fav_language"
+            value="JavaScript"&gt;<br />
+            &lt;label for="javascript"&gt;JavaScript&lt;/label&gt;
+          </div>
 
-      <h3>Output:</h3>
-      <div class="example-output">
-        <p>Select your skills</p>
-        <input type="radio" id="html" name="fav_language" value="HTML" />
-        <label for="html">HTML</label><br />
-        <input type="radio" id="css" name="fav_language" value="CSS" />
-        <label for="css">CSS</label><br />
-        <input
-          type="radio"
-          id="javascript"
-          name="fav_language"
-          value="JavaScript"
-        />
-        <label for="javascript">JavaScript</label>
-      </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <p>Select your skills</p>
+            <input type="radio" id="html" name="fav_language" value="HTML" />
+            <label for="html">HTML</label><br />
+            <input type="radio" id="css" name="fav_language" value="CSS" />
+            <label for="css">CSS</label><br />
+            <input
+              type="radio"
+              id="javascript"
+              name="fav_language"
+              value="JavaScript"
+            />
+            <label for="javascript">JavaScript</label>
+          </div>
 
-      <hr />
+          <hr />
 
-      <!-- 
+          <!-- 
         SECTION 4: TEXTAREA
         <textarea> defines a multi-line text input control.
         The 'rows' and 'cols' attributes specify the visible size.
       -->
-      <!-- Text Area -->
-      <h2 class="section-title">4. Textarea</h2>
-      <p>For multi-line text input, like reviews or comments.</p>
+          <!-- Text Area -->
+          <h2 class="section-title">4. Textarea</h2>
+          <p>For multi-line text input, like reviews or comments.</p>
 
-      <h3>Code:</h3>
-      <div class="code-block">
-        &lt;label for="review"&gt;Please write your review
-        here:&lt;/label&gt;&lt;br&gt;<br />
-        &lt;textarea name="review" id="review" rows="5"
-        cols="50"&gt;&lt;/textarea&gt;
-      </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            &lt;label for="review"&gt;Please write your review
+            here:&lt;/label&gt;&lt;br&gt;<br />
+            &lt;textarea name="review" id="review" rows="5"
+            cols="50"&gt;&lt;/textarea&gt;
+          </div>
 
-      <h3>Output:</h3>
-      <div class="example-output">
-        <label for="review">Please write your review here:</label><br />
-        <textarea name="review" id="review" rows="5" cols="50"></textarea>
-      </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <label for="review">Please write your review here:</label><br />
+            <textarea name="review" id="review" rows="5" cols="50"></textarea>
+          </div>
 
-      <hr />
+          <hr />
 
-      <!-- 
+          <!-- 
         SECTION 5: CHECKBOXES
         <input type="checkbox"> defines a checkbox.
         Checkboxes let a user select ZERO or MORE options of a limited number of choices.
       -->
-      <!-- Checkbox -->
-      <h2 class="section-title">5. Checkboxes</h2>
-      <p>
-        Select multiple options (sharing the same <code>name</code> is optional
-        but good practice).
-      </p>
+          <!-- Checkbox -->
+          <h2 class="section-title">5. Checkboxes</h2>
+          <p>
+            Select multiple options (sharing the same <code>name</code> is
+            optional but good practice).
+          </p>
 
-      <h3>Code:</h3>
-      <div class="code-block">
-        &lt;p&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-        adipisicing elit.&lt;br&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;Ullam, nesciunt.<br />
-        &lt;/p&gt;<br />
-        &lt;input type="checkbox" id="agree" name="permission"
-        value="agree"&gt;<br />
-        &lt;label for="agree"&gt;I agree&lt;/label&gt;<br />
-        &lt;input type="checkbox" id="disagree" name="permission"
-        value="disagree"&gt;<br />
-        &lt;label for="disagree"&gt;I disagree&lt;/label&gt;
-      </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            &lt;p&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
+            adipisicing elit.&lt;br&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Ullam, nesciunt.<br />
+            &lt;/p&gt;<br />
+            &lt;input type="checkbox" id="agree" name="permission"
+            value="agree"&gt;<br />
+            &lt;label for="agree"&gt;I agree&lt;/label&gt;<br />
+            &lt;input type="checkbox" id="disagree" name="permission"
+            value="disagree"&gt;<br />
+            &lt;label for="disagree"&gt;I disagree&lt;/label&gt;
+          </div>
 
-      <h3>Output:</h3>
-      <div class="example-output">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
-          Ullam, nesciunt.
-        </p>
-        <input type="checkbox" id="agree" name="permission" value="agree" />
-        <label for="agree">I agree</label>
-        <input
-          type="checkbox"
-          id="disagree"
-          name="permission"
-          value="disagree"
-        />
-        <label for="disagree">I disagree</label>
-      </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
+              Ullam, nesciunt.
+            </p>
+            <input type="checkbox" id="agree" name="permission" value="agree" />
+            <label for="agree">I agree</label>
+            <input
+              type="checkbox"
+              id="disagree"
+              name="permission"
+              value="disagree"
+            />
+            <label for="disagree">I disagree</label>
+          </div>
 
-      <hr />
+          <hr />
 
-      <!-- 
+          <!-- 
         SECTION 6: SUBMIT BUTTON
         <input type="submit"> defines a button for submitting the form data to a form-handler.
       -->
-      <!-- Submit Button -->
-      <h2 class="section-title">6. Submit Button</h2>
-      <p>Button to send the form data.</p>
+          <!-- Submit Button -->
+          <h2 class="section-title">6. Submit Button</h2>
+          <p>Button to send the form data.</p>
 
-      <h3>Code:</h3>
-      <div class="code-block">&lt;input type="submit" value="Submit"&gt;</div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            &lt;input type="submit" value="Submit"&gt;
+          </div>
 
-      <h3>Output:</h3>
-      <div class="example-output">
-        <input type="submit" value="Submit" />
+          <h3>Output:</h3>
+          <div class="example-output">
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+
+        <div class="nav-links">
+          <a href="semantic_elements.html">&lt; Previous: Semantic Elements</a>
+          |
+          <a href="index.html">Next: Home &gt;</a>
+        </div>
       </div>
-    </form>
-
-    <div class="nav-links">
-      <a href="semantic_elements.html">&lt; Previous: Semantic Elements</a> |
-      <a href="index.html">Next: Home &gt;</a>
     </div>
   </body>
 </html>
