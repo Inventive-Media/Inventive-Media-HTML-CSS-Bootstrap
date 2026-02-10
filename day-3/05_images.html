@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Image Styling</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="mb-4">Image Styling</h1>
+      <p class="lead">
+        Learn how to style images with Bootstrap's utility classes.
+      </p>
+      <hr class="mb-5" />
+
+      <!-- Section 1: Responsive Images -->
+      <section class="mb-5">
+        <h2 class="mb-3">1. Responsive Images</h2>
+        <p>
+          Use <code>.img-fluid</code> to make an image responsive. It applies
+          <code>max-width: 100%;</code> and <code>height: auto;</code> so the
+          image scales with the parent element.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">Example</div>
+              <div class="card-body">
+                <img
+                  src="./img/sample.jpg"
+                  alt="Responsive Landscape"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Image Thumbnails -->
+      <section class="mb-5">
+        <h2 class="mb-3">2. Image Thumbnails</h2>
+        <p>
+          Use <code>.img-thumbnail</code> to give an image a rounded 1px border
+          appearance.
+        </p>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">Example</div>
+              <div class="card-body text-center">
+                <img
+                  src="./img/sample.jpg"
+                  alt="Thumbnail Example"
+                  class="img-thumbnail"
+                  style="max-width: 200px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Aligning Images -->
+      <section class="mb-5">
+        <h2 class="mb-3">3. Aligning Images</h2>
+        <p>
+          You can align images using float utilities or margin utilities for
+          block elements.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-header">Float Start (Left)</div>
+              <div class="card-body">
+                <img
+                  src="./img/sample.jpg"
+                  alt="Float Start"
+                  class="rounded float-start"
+                  style="width: 150px"
+                />
+                <p class="ms-2">
+                  This text wraps around the image because the image is floated
+                  to the start (left).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-header">Float End (Right)</div>
+              <div class="card-body">
+                <img
+                  src="./img/sample.jpg"
+                  alt="Float End"
+                  class="rounded float-end"
+                  style="width: 150px"
+                />
+                <p>
+                  This text wraps around the image because the image is floated
+                  to the end (right).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">Centered (Block)</div>
+              <div class="card-body">
+                <img
+                  src="./img/sample.jpg"
+                  alt="Centered Image"
+                  class="rounded mx-auto d-block"
+                  style="width: 300px"
+                />
+                <p class="text-center mt-2">
+                  Use <code>.mx-auto</code> and <code>.d-block</code> to center
+                  an image.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Rounded Corners -->
+      <section class="mb-5">
+        <h2 class="mb-3">4. Rounded Corners</h2>
+        <p>Use border radius utilities to round the corners of your images.</p>
+        <div class="row g-4">
+          <div class="col-md-4 text-center">
+            <h5>.rounded</h5>
+            <img
+              src="./img/sample.jpg"
+              alt="Rounded"
+              class="rounded shadow"
+              style="width: 150px; height: 150px; object-fit: cover"
+            />
+          </div>
+          <div class="col-md-4 text-center">
+            <h5>.rounded-circle</h5>
+            <img
+              src="./img/sample.jpg"
+              alt="Rounded Circle"
+              class="rounded-circle shadow"
+              style="width: 150px; height: 150px; object-fit: cover"
+            />
+          </div>
+          <div class="col-md-4 text-center">
+            <h5>.rounded-pill</h5>
+            <img
+              src="./img/sample.jpg"
+              alt="Rounded Pill"
+              class="rounded-pill shadow"
+              style="width: 200px; height: 100px; object-fit: cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <hr />
+      <div class="d-flex justify-content-between">
+        <a href="./04_grid_layout.html" class="btn btn-secondary"
+          >&larr; Previous: Grid Layout</a
+        >
+        <a href="./06_utilities.html" class="btn btn-primary"
+          >Next: Utilities &rarr;</a
+        >
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

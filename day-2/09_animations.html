@@ -207,7 +207,23 @@
         transition: transform 0.5s;
       }
 
-      /* 3. Keyframe Animations */
+      /* 3. Simple Animation (A to B) */
+      .anim-move {
+        background-color: #34495e;
+        /* Move right over 2 seconds, ease-in-out for smoothness, loop forever, alternate direction */
+        animation: moveRight 2s ease-in-out infinite alternate;
+      }
+      @keyframes moveRight {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          /* Move 200px to the right */
+          transform: translateX(200px);
+        }
+      }
+
+      /* 4. Keyframe Animations */
       .anim-spin {
         background-color: #ff9800;
         animation: spin 2s linear 0s infinite normal none;
@@ -423,13 +439,48 @@
     <hr />
 
     <!-- 
-      SECTION 3: KEYFRAME ANIMATIONS
+      SECTION 3: ANIMATING FROM A TO B
+      The fundamental concept: moving an element from one state to another.
+    -->
+    <h2 class="section-title">3. Animation Basics: Point A to Point B</h2>
+    <p>
+      The most common animation is moving an element from a starting position
+      (<strong>Point A</strong>) to an ending position (<strong>Point B</strong
+      >).
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */<br />
+      <span class="selector">.anim-move</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
+      <span class="value">moveRight 2s infinite alternate</span>;<br />
+      }<br /><br />
+      <span class="keyframes">@keyframes</span> moveRight {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">from</span> {
+      <span class="property">transform</span>:
+      <span class="value">translateX(0)</span>; }<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">to</span> {
+      <span class="property">transform</span>:
+      <span class="value">translateX(200px)</span>; }<br />
+      }
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="box anim-move">Moving -></div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 4: KEYFRAME ANIMATIONS
       @keyframes lets you define animation steps (from 0% to 100%).
       Unlike transitions, keyframe animations can run automatically, loop infinitely,
       and have multiple intermediate steps.
       Shorthand: animation: name duration timing delay iterations direction fill;
     -->
-    <h2 class="section-title">3. Keyframe Animations</h2>
+    <h2 class="section-title">4. Keyframe Animations</h2>
     <p>Create complex animations by defining steps (keyframes).</p>
     <p>
       <strong>Shorthand Syntax Order:</strong><br />
@@ -484,11 +535,11 @@
     <hr />
 
     <!-- 
-      SECTION 4: PRACTICAL EXAMPLE — LOADING SPINNER
+      SECTION 5: PRACTICAL EXAMPLE — LOADING SPINNER
       A common real-world use of infinite rotation animation.
       The spinner is a circle with one colored border-top that rotates endlessly.
     -->
-    <h2 class="section-title">4. Practical: Loading Spinner</h2>
+    <h2 class="section-title">5. Practical: Loading Spinner</h2>
     <p>A classic use case for infinite rotation animations.</p>
 
     <h3>Output:</h3>
@@ -499,12 +550,12 @@
     <hr />
 
     <!-- 
-      SECTION 5: PRACTICAL EXAMPLE — 3D CARD FLIP
+      SECTION 6: PRACTICAL EXAMPLE — 3D CARD FLIP
       Combines transforms with perspective for a 3D flip effect on hover.
       Key concepts: perspective (creates 3D depth), backface-visibility (hides
       the back side), and rotateY (flips around the vertical axis).
     -->
-    <h2 class="section-title">5. Practical: 3D Card Flip</h2>
+    <h2 class="section-title">6. Practical: 3D Card Flip</h2>
     <p>
       Using <code>perspective</code>, <code>backface-visibility</code>, and
       <code>transform: rotateY</code>.
