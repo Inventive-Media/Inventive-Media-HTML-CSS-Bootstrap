@@ -9,6 +9,33 @@ RESPONSIVE BREAKPOINTS (MOBILE-FIRST)
   box-sizing: border-box;
 }
 
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes bottom space */
+}
+
+/* Responsive Embeds */
+iframe,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Preformatted Text */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+
+/* Responsive Forms */
+textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Base Row Styles */
 .row {
   display: flex;
@@ -16,6 +43,8 @@ RESPONSIVE BREAKPOINTS (MOBILE-FIRST)
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  padding-left: 15px; /* Mobile left spacing */
+  padding-right: 15px; /* Mobile right spacing */
 }
 
 /* Base column styles using calc() for 12-column math */
