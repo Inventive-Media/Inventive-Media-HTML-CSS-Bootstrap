@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Units & Effects</title>
     <link rel="stylesheet" href="css/styles.css" />
-</head>
+  </head>
   <body>
     <!-- Sticky Header -->
     <header class="sticky-header">
@@ -51,58 +51,60 @@
       <div class="row">
         <div class="col-12">
           <h1 class="main-title">Day 2 - Units & Shadows</h1>
-    <p>Understanding methods for sizing elements and adding depth effects.</p>
+          <p>
+            Understanding methods for sizing elements and adding depth effects.
+          </p>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 1: ABSOLUTE VS RELATIVE UNITS
       px (pixels): A fixed unit — always the same size regardless of context.
       em: Relative to the parent element's font size. Can compound when nested!
       rem: Relative to the root (html) element's font size. More predictable than em.
       Using rem is generally recommended for consistent, scalable designs.
     -->
-    <h2 class="section-title">1. Absolute vs Relative Units</h2>
-    <p>
-      <strong>Absolute (px):</strong> Fixed size. <br />
-      <strong>Relative (em):</strong> Relative to parent font size. <br />
-      <strong>Relative (rem):</strong> Relative to root (html) font size.
-    </p>
+          <h2 class="section-title">1. Absolute vs Relative Units</h2>
+          <p>
+            <strong>Absolute (px):</strong> Fixed size. <br />
+            <strong>Relative (em):</strong> Relative to parent font size. <br />
+            <strong>Relative (rem):</strong> Relative to root (html) font size.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.px-text</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-      <span class="value">20px</span>;<br />
-      } <span class="comment">/* Always 20px */</span><br />
-      <span class="selector">.em-text</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-      <span class="value">1.5em</span>;<br />
-      } <span class="comment">/* 1.5 x Parent Size */</span><br />
-      <span class="selector">.rem-text</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-      <span class="value">1.5rem</span>;<br />
-      }<br />
-      <span class="comment">/* 1.5 x Root Size */</span>
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.px-text</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
+            <span class="value">20px</span>;<br />
+            } <span class="comment">/* Always 20px */</span><br />
+            <span class="selector">.em-text</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
+            <span class="value">1.5em</span>;<br />
+            } <span class="comment">/* 1.5 x Parent Size */</span><br />
+            <span class="selector">.rem-text</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
+            <span class="value">1.5rem</span>;<br />
+            }<br />
+            <span class="comment">/* 1.5 x Root Size */</span>
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="unit-container">
-        Parent Container (16px default)
-        <div class="px-box">20px: I am fixed size.</div>
-        <div class="em-box">
-          1.5em: I am 24px (1.5 * 16).
-          <div class="em-child">I am nested 1.5em! (1.5 * 24 = 36px)</div>
-        </div>
-        <div class="rem-box">1.5rem: I am 24px (based on HTML root).</div>
-      </div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="unit-container">
+              Parent Container (16px default)
+              <div class="px-box">20px: I am fixed size.</div>
+              <div class="em-box">
+                1.5em: I am 24px (1.5 * 16).
+                <div class="em-child">I am nested 1.5em! (1.5 * 24 = 36px)</div>
+              </div>
+              <div class="rem-box">1.5rem: I am 24px (based on HTML root).</div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 2: BOX SHADOW & TEXT SHADOW
       Shadows add depth and dimension to elements.
       box-shadow: adds shadow around the element's box.
@@ -110,40 +112,40 @@
       text-shadow: adds shadow behind text characters.
         Syntax: x-offset y-offset blur-radius color
     -->
-    <h2 class="section-title">2. Box Shadow & Text Shadow</h2>
-    <p>Adding depth with shadows.</p>
+          <h2 class="section-title">2. Box Shadow & Text Shadow</h2>
+          <p>Adding depth with shadows.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.simple-shadow</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-        >/* x-offset | y-offset | blur-radius | color */</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">box-shadow</span>:
-      <span class="value">5px 5px 10px rgba(0,0,0,0.3)</span>;<br />
-      }<br /><br />
-      <span class="selector">.text-effect</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-shadow</span>:
-      <span class="value">2px 2px 4px #000</span>;<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.simple-shadow</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* x-offset | y-offset | blur-radius | color */</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">box-shadow</span>:
+            <span class="value">5px 5px 10px rgba(0,0,0,0.3)</span>;<br />
+            }<br /><br />
+            <span class="selector">.text-effect</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-shadow</span>:
+            <span class="value">2px 2px 4px #000</span>;<br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="shadow-demo">
-        <div class="box-shadow">Box Shadow</div>
-        <div class="soft-shadow">Soft Shadow</div>
-      </div>
-      <br />
-      <div class="text-shadow-demo">Text Shadow Effect</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="shadow-demo">
+              <div class="box-shadow">Box Shadow</div>
+              <div class="soft-shadow">Soft Shadow</div>
+            </div>
+            <br />
+            <div class="text-shadow-demo">Text Shadow Effect</div>
+          </div>
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
-      <a href="./07_backgrounds.html">< Previous: Backgrounds</a> |
-      <a href="./09_animations.html">Next: Animations ></a>
-    </div>
+          <!-- Navigation Section -->
+          <div class="nav-links">
+            <a href="./07_backgrounds.html">&lt; Previous: Backgrounds</a> |
+            <a href="./09_animations.html">Next: Animations &gt;</a>
+          </div>
         </div>
       </div>
     </main>

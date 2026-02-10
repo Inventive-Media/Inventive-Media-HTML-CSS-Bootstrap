@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Animations</title>
     <link rel="stylesheet" href="css/styles.css" />
-</head>
+  </head>
   <body>
     <!-- Sticky Header -->
     <header class="sticky-header">
@@ -51,221 +51,230 @@
       <div class="row">
         <div class="col-12">
           <h1 class="main-title">Day 2 - Animations & Transforms</h1>
-    <p>
-      Bring your web pages to life with smooth transitions and complex keyframe
-      animations.
-    </p>
+          <p>
+            Bring your web pages to life with smooth transitions and complex
+            keyframe animations.
+          </p>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 1: TRANSITIONS
       Transitions smoothly animate property changes over a duration.
       They only activate on state changes (like :hover).
       Syntax: transition: property duration timing-function;
       Example: when you hover, the color smoothly fades instead of snapping.
     -->
-    <h2 class="section-title">1. Transitions</h2>
-    <p>
-      Smoothly change property values (like color or size) over a given duration
-      when an event occurs (like hover).
-    </p>
+          <h2 class="section-title">1. Transitions</h2>
+          <p>
+            Smoothly change property values (like color or size) over a given
+            duration when an event occurs (like hover).
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.trans-box</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-color</span>:
-      <span class="value">green</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transition</span>:
-      <span class="value">background-color 0.5s ease</span>;<br />
-      }<br /><br />
-      <span class="selector">.trans-box:hover</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-color</span>:
-      <span class="value">orange</span>;<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.trans-box</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >background-color</span
+            >: <span class="value">green</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transition</span>:
+            <span class="value">background-color 0.5s ease</span>;<br />
+            }<br /><br />
+            <span class="selector">.trans-box:hover</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >background-color</span
+            >: <span class="value">orange</span>;<br />
+            }
+          </div>
 
-    <h3>Output (Hover over them):</h3>
-    <div class="example-output">
-      <div class="box trans-color">Color Change</div>
-      <div class="box trans-transform">Transform</div>
-    </div>
+          <h3>Output (Hover over them):</h3>
+          <div class="example-output">
+            <div class="box trans-color">Color Change</div>
+            <div class="box trans-transform">Transform</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 2: TRANSFORMS
       Transform changes an element's shape, size, or position visually.
       Common functions: rotate(deg), scale(factor), translate(x, y), skew(deg).
       The element's original space in the layout is preserved.
     -->
-    <h2 class="section-title">2. Transforms</h2>
-    <p>
-      Modify the shape and position of elements: <code>rotate</code>,
-      <code>scale</code>, <code>translate</code>, <code>skew</code>.
-    </p>
+          <h2 class="section-title">2. Transforms</h2>
+          <p>
+            Modify the shape and position of elements: <code>rotate</code>,
+            <code>scale</code>, <code>translate</code>, <code>skew</code>.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.rotate-box:hover</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transform</span>:
-      <span class="value">rotate(180deg)</span>;<br />
-      }<br />
-      <span class="selector">.scale-box:hover</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transform</span>:
-      <span class="value">scale(0.5)</span>;<br />
-      }<br />
-      <span class="comment">/* Shrink to 50% */</span>
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.rotate-box:hover</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transform</span>:
+            <span class="value">rotate(180deg)</span>;<br />
+            }<br />
+            <span class="selector">.scale-box:hover</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transform</span>:
+            <span class="value">scale(0.5)</span>;<br />
+            }<br />
+            <span class="comment">/* Shrink to 50% */</span>
+          </div>
 
-    <h3>Output (Hover over them):</h3>
-    <div class="example-output">
-      <div class="box rotate-box">Rotate 180&deg;</div>
-      <div class="box scale-box">Scale 0.5</div>
-    </div>
+          <h3>Output (Hover over them):</h3>
+          <div class="example-output">
+            <div class="box rotate-box">Rotate 180&deg;</div>
+            <div class="box scale-box">Scale 0.5</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 3: ANIMATING FROM A TO B
       The fundamental concept: moving an element from one state to another.
     -->
-    <h2 class="section-title">3. Animation Basics: Point A to Point B</h2>
-    <p>
-      The most common animation is moving an element from a starting position
-      (<strong>Point A</strong>) to an ending position (<strong>Point B</strong
-      >).
-    </p>
+          <h2 class="section-title">3. Animation Basics: Point A to Point B</h2>
+          <p>
+            The most common animation is moving an element from a starting
+            position (<strong>Point A</strong>) to an ending position (<strong
+              >Point B</strong
+            >).
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.anim-move</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
-      <span class="value">moveRight 2s infinite alternate</span>;<br />
-      }<br /><br />
-      <span class="keyframes">@keyframes</span> moveRight {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">from</span> {
-      <span class="property">transform</span>:
-      <span class="value">translateX(0)</span>; }<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">to</span> {
-      <span class="property">transform</span>:
-      <span class="value">translateX(200px)</span>; }<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.anim-move</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
+            <span class="value">moveRight 2s infinite alternate</span>;<br />
+            }<br /><br />
+            <span class="keyframes">@keyframes</span> moveRight {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">from</span> {
+            <span class="property">transform</span>:
+            <span class="value">translateX(0)</span>; }<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">to</span> {
+            <span class="property">transform</span>:
+            <span class="value">translateX(200px)</span>; }<br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="box anim-move">Moving -></div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="box anim-move">Moving -></div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 4: KEYFRAME ANIMATIONS
       @keyframes lets you define animation steps (from 0% to 100%).
       Unlike transitions, keyframe animations can run automatically, loop infinitely,
       and have multiple intermediate steps.
       Shorthand: animation: name duration timing delay iterations direction fill;
     -->
-    <h2 class="section-title">4. Keyframe Animations</h2>
-    <p>Create complex animations by defining steps (keyframes).</p>
-    <p>
-      <strong>Shorthand Syntax Order:</strong><br />
-      <code
-        >animation: name duration timing-function delay iteration-count
-        direction fill-mode;</code
-      >
-    </p>
+          <h2 class="section-title">4. Keyframe Animations</h2>
+          <p>Create complex animations by defining steps (keyframes).</p>
+          <p>
+            <strong>Shorthand Syntax Order:</strong><br />
+            <code
+              >animation: name duration timing-function delay iteration-count
+              direction fill-mode;</code
+            >
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="keyframes">@keyframes</span> spin {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">0%</span> {
-      <span class="property">transform</span>:
-      <span class="value">rotate(0deg)</span>; }<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">100%</span> {
-      <span class="property">transform</span>:
-      <span class="value">rotate(360deg)</span>; }<br />
-      }<br /><br />
-      <span class="selector">.anim-spin</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-        >/* name | duration | timing-function | delay | iteration-count |
-        direction | fill-mode */</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
-      <span class="value">spin 2s linear 0s infinite normal none</span>;<br />
-      }<br /><br />
-      <span class="keyframes">@keyframes</span> bounce {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">0%</span>,
-      <span class="value">100%</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-        >transform</span
-      >: <span class="value">translateY(0)</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">50%</span> {
-      <span class="property">transform</span>:
-      <span class="value">translateY(-30px)</span>; }<br />
-      }<br /><br />
-      <span class="selector">.anim-bounce</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
-      <span class="value">bounce 1s ease 0s infinite normal none</span>;<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="keyframes">@keyframes</span> spin {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">0%</span> {
+            <span class="property">transform</span>:
+            <span class="value">rotate(0deg)</span>; }<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">100%</span> {
+            <span class="property">transform</span>:
+            <span class="value">rotate(360deg)</span>; }<br />
+            }<br /><br />
+            <span class="selector">.anim-spin</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* name | duration | timing-function | delay | iteration-count |
+              direction | fill-mode */</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
+            <span class="value">spin 2s linear 0s infinite normal none</span
+            >;<br />
+            }<br /><br />
+            <span class="keyframes">@keyframes</span> bounce {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">0%</span>,
+            <span class="value">100%</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              class="property"
+              >transform</span
+            >: <span class="value">translateY(0)</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">50%</span> {
+            <span class="property">transform</span>:
+            <span class="value">translateY(-30px)</span>; }<br />
+            }<br /><br />
+            <span class="selector">.anim-bounce</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
+            <span class="value">bounce 1s ease 0s infinite normal none</span
+            >;<br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="box anim-spin">Spin</div>
-      <div class="box anim-bounce">Bounce</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="box anim-spin">Spin</div>
+            <div class="box anim-bounce">Bounce</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 5: PRACTICAL EXAMPLE — LOADING SPINNER
       A common real-world use of infinite rotation animation.
       The spinner is a circle with one colored border-top that rotates endlessly.
     -->
-    <h2 class="section-title">5. Practical: Loading Spinner</h2>
-    <p>A classic use case for infinite rotation animations.</p>
+          <h2 class="section-title">5. Practical: Loading Spinner</h2>
+          <p>A classic use case for infinite rotation animations.</p>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="loader"></div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="loader"></div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 6: PRACTICAL EXAMPLE — 3D CARD FLIP
       Combines transforms with perspective for a 3D flip effect on hover.
       Key concepts: perspective (creates 3D depth), backface-visibility (hides
       the back side), and rotateY (flips around the vertical axis).
     -->
-    <h2 class="section-title">6. Practical: 3D Card Flip</h2>
-    <p>
-      Using <code>perspective</code>, <code>backface-visibility</code>, and
-      <code>transform: rotateY</code>.
-    </p>
+          <h2 class="section-title">6. Practical: 3D Card Flip</h2>
+          <p>
+            Using <code>perspective</code>, <code>backface-visibility</code>,
+            and <code>transform: rotateY</code>.
+          </p>
 
-    <h3>Output (Hover to flip):</h3>
-    <div class="example-output">
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front">Front</div>
-          <div class="flip-back">Back</div>
-        </div>
-      </div>
-    </div>
+          <h3>Output (Hover to flip):</h3>
+          <div class="example-output">
+            <div class="flip-card">
+              <div class="flip-inner">
+                <div class="flip-front">Front</div>
+                <div class="flip-back">Back</div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
-      <a href="./08_css_units_shadows.html">< Previous: Units & Shadows</a> |
-      <a href="./10_positioning.html">Next: Positioning ></a>
-    </div>
+          <!-- Navigation Section -->
+          <div class="nav-links">
+            <a href="./08_css_units_shadows.html"
+              >&lt; Previous: Units &amp; Shadows</a
+            >
+            |
+            <a href="./10_positioning.html">Next: Positioning &gt;</a>
+          </div>
         </div>
       </div>
     </main>

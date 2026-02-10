@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Variables & Functions</title>
     <link rel="stylesheet" href="css/styles.css" />
-</head>
+  </head>
   <body>
     <!-- Sticky Header -->
     <header class="sticky-header">
@@ -51,107 +51,111 @@
       <div class="row">
         <div class="col-12">
           <h1 class="main-title">Day 2 - CSS Variables & Functions</h1>
-    <p>
-      Modern CSS allows you to use <strong>Variables</strong> to store values
-      and <strong>Functions</strong> to perform calculations.
-    </p>
+          <p>
+            Modern CSS allows you to use <strong>Variables</strong> to store
+            values and <strong>Functions</strong> to perform calculations.
+          </p>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 1: CSS VARIABLES (CUSTOM PROPERTIES)
       Variables let you define a value once and reuse it throughout your CSS.
       They are declared with -- prefix (e.g., --primary-color) inside a selector.
       :root means they're available globally. Access them with var().
       Great for themes — change one variable and the whole site updates!
     -->
-    <h2 class="section-title">1. CSS Variables (Custom Properties)</h2>
-    <p>
-      Defining a value once and reusing it everywhere makes updating themes
-      easy. Variables usually start with <code>--</code> and are accessed using
-      <code>var()</code>.
-    </p>
+          <h2 class="section-title">1. CSS Variables (Custom Properties)</h2>
+          <p>
+            Defining a value once and reusing it everywhere makes updating
+            themes easy. Variables usually start with <code>--</code> and are
+            accessed using <code>var()</code>.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">:root</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">--primary-color</span>:
-      <span class="value">#e91e63</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">--box-padding</span>:
-      <span class="value">20px</span>;<br />
-      }<br /><br />
-      <span class="selector">.box</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-color</span>:
-      <span class="function">var</span>(<span class="variable"
-        >--primary-color</span
-      >);<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">padding</span>:
-      <span class="function">var</span>(<span class="variable"
-        >--box-padding</span
-      >);<br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">:root</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">--primary-color</span
+            >: <span class="value">#e91e63</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">--box-padding</span>:
+            <span class="value">20px</span>;<br />
+            }<br /><br />
+            <span class="selector">.box</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >background-color</span
+            >: <span class="function">var</span>(<span class="variable"
+              >--primary-color</span
+            >);<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">padding</span>:
+            <span class="function">var</span>(<span class="variable"
+              >--box-padding</span
+            >);<br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="var-box">I use --primary-color (Pink)</div>
-      <div class="var-box-2">I use --secondary-color (Blue)</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="var-box">I use --primary-color (Pink)</div>
+            <div class="var-box-2">I use --secondary-color (Blue)</div>
+          </div>
 
-    <h3>Local Scope (Overriding):</h3>
-    <p>You can redefine variables inside specific selectors.</p>
-    <div class="example-output">
-      <div class="local-scope">I redefined --primary-color to Green!</div>
-    </div>
+          <h3>Local Scope (Overriding):</h3>
+          <p>You can redefine variables inside specific selectors.</p>
+          <div class="example-output">
+            <div class="local-scope">I redefined --primary-color to Green!</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 2: CSS FUNCTIONS — calc()
       calc() lets you perform math in CSS, and even mix different units.
       For example: width: calc(100% - 40px) subtracts 40 pixels from full width.
       This is powerful for responsive layouts where you need flexible sizing.
     -->
-    <h2 class="section-title">2. Functions: calc()</h2>
-    <p>
-      Use <code>calc()</code> to perform math on CSS values. You can mix units
-      like <code>%</code> and <code>px</code>.
-    </p>
+          <h2 class="section-title">2. Functions: calc()</h2>
+          <p>
+            Use <code>calc()</code> to perform math on CSS values. You can mix
+            units like <code>%</code> and <code>px</code>.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.calc-box</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-        >/* 100% width minus 40px constant space */</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-      <span class="function">calc</span>(<span class="value">100% - 40px</span
-      >);<br />
-      }<br /><br />
-      <span class="selector">.calc-fluid</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-      <span class="function">calc</span>(<span class="value">100% / 3</span
-      >);<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* One third width */</span
-      ><br />
-      }
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.calc-box</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* 100% width minus 40px constant space */</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
+            <span class="function">calc</span>(<span class="value"
+              >100% - 40px</span
+            >);<br />
+            }<br /><br />
+            <span class="selector">.calc-fluid</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
+            <span class="function">calc</span>(<span class="value"
+              >100% / 3</span
+            >);<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* One third width */</span
+            ><br />
+            }
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="calc-container">
-        <div class="calc-box">Width: 100% - 40px</div>
-        <div class="calc-fluid">Width: 100% / 3</div>
-      </div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="calc-container">
+              <div class="calc-box">Width: 100% - 40px</div>
+              <div class="calc-fluid">Width: 100% / 3</div>
+            </div>
+          </div>
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
-      <a href="./05_colors.html">< Previous: Colors</a> |
-      <a href="./07_backgrounds.html">Next: Backgrounds ></a>
-    </div>
+          <!-- Navigation Section -->
+          <div class="nav-links">
+            <a href="./05_colors.html">&lt; Previous: Colors</a> |
+            <a href="./07_backgrounds.html">Next: Backgrounds &gt;</a>
+          </div>
         </div>
       </div>
     </main>
