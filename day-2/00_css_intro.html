@@ -4,232 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Introduction to CSS</title>
-    <style>
-      /* --- INTERNAL CSS FOR GUIDE STRUCTURE --- */
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        padding-top: 80px; /* Space for fixed header */
-        line-height: 1.6;
-        background-color: #f9f9f9;
-        color: #333;
-      }
-      /* Sticky Header Styles */
-      .sticky-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background-color: white;
-        color: #032340;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        box-sizing: border-box;
-      }
-      .header-left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .home-link {
-        color: #34495e;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .home-link:hover {
-        color: hsl(210, 27%, 50%);
-      }
-      .page-title {
-        font-size: 1rem;
-        color: #34495e;
-        opacity: 0.8;
-        display: none; /* Hidden on small screens */
-      }
-      @media (min-width: 600px) {
-        .page-title {
-          display: block;
-        }
-      }
-
-      /* Dropdown Styles */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropbtn {
-        background-color: #34495e;
-        color: white;
-        padding: 8px 16px;
-        font-size: 14px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      .dropdown:hover .dropbtn {
-        background-color: hsl(210, 27%, 50%);
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        right: 0;
-        background-color: #f9f9f9;
-        min-width: 260px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 4px;
-        max-height: 400px;
-        overflow-y: auto;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #eee;
-        text-align: left;
-      }
-      .dropdown-content a:hover {
-        background-color: #f1f1f1;
-      }
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      h1.main-title {
-        color: hsl(210, 27%, 50%);
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        border-bottom: 2px solid hsl(210, 27%, 50%);
-        padding-bottom: 0.5rem;
-      }
-      .section-title {
-        color: #333;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 10px;
-        margin-top: 40px;
-      }
-      .code-block {
-        background-color: #282c34;
-        color: #abb2bf;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        overflow-x: auto;
-        margin-bottom: 15px;
-        border: 1px solid #444;
-      }
-      /* Syntax Highlighting Simulators */
-      .selector {
-        color: #e06c75;
-        font-weight: bold;
-      }
-      .property {
-        color: #98c379;
-      }
-      .value {
-        color: #d19a66;
-      }
-      .comment {
-        color: #5c6370;
-        font-style: italic;
-      }
-      .tag {
-        color: #e06c75;
-      }
-      .attribute {
-        color: #d19a66;
-      }
-      .string {
-        color: #98c379;
-      }
-
-      .example-output {
-        background-color: white;
-        border: 2px dashed #aaa;
-        padding: 20px;
-        border-radius: 5px;
-        margin-top: 10px;
-      }
-
-      .info-box {
-        background-color: #e3f2fd;
-        border-left: 5px solid #2196f3;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 0 5px 5px 0;
-      }
-
-      .benefit-list {
-        list-style-type: none;
-        padding: 0;
-      }
-      .benefit-list li {
-        padding: 8px 0;
-        padding-left: 25px;
-        position: relative;
-      }
-      .benefit-list li::before {
-        content: "✓";
-        color: #4caf50;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-      }
-
-      .comparison-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-      }
-      .comparison-table th,
-      .comparison-table td {
-        border: 1px solid #ddd;
-        padding: 12px;
-        text-align: left;
-      }
-      .comparison-table th {
-        background-color: #f5f5f5;
-        font-weight: bold;
-      }
-      .comparison-table tr:nth-child(even) {
-        background-color: #fafafa;
-      }
-
-      .pros {
-        color: #4caf50;
-      }
-      .cons {
-        color: #f44336;
-      }
-
-      /* Navigation Links Styling */
-      .nav-links {
-        margin-top: 50px;
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-        border-top: 1px solid #ddd;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: #007bff;
-        font-weight: bold;
-        margin: 0 10px;
-      }
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-    </style>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -271,252 +46,275 @@
         }
       });
     </script>
-    <h1 class="main-title">Day 2 - Introduction to CSS</h1>
-    <p>
-      Welcome to CSS! In this lesson, you'll learn what CSS is, why it's
-      essential for web development, and the three ways to apply styles to your
-      HTML.
-    </p>
 
-    <hr />
+    <main class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="main-title">Day 2 - Introduction to CSS</h1>
+          <p>
+            Welcome to CSS! In this lesson, you'll learn what CSS is, why it's
+            essential for web development, and the three ways to apply styles to
+            your HTML.
+          </p>
 
-    <!-- SECTION 1: WHAT IS CSS? -->
-    <h2 class="section-title">1. What is CSS?</h2>
-    <p>
-      <strong>CSS</strong> stands for <strong>Cascading Style Sheets</strong>.
-      It is a language used to control the appearance and layout of HTML
-      elements on a webpage.
-    </p>
+          <hr />
 
-    <div class="info-box">
-      <strong>💡 Think of it this way:</strong><br />
-      If HTML is the "body" of a webpage (structure and content), then
-      <strong>CSS is the "clothing"</strong> that styles it — controlling
-      colors, fonts, spacing, and layout.
-    </div>
+          <!-- SECTION 1: WHAT IS CSS? -->
+          <h2 class="section-title">1. What is CSS?</h2>
+          <p>
+            <strong>CSS</strong> stands for
+            <strong>Cascading Style Sheets</strong>. It is a language used to
+            control the appearance and layout of HTML elements on a webpage.
+          </p>
 
-    <p>
-      The standard file extension for a CSS file is <code>.css</code> (e.g.,
-      <code>styles.css</code>).
-    </p>
+          <div class="info-box">
+            <strong>💡 Think of it this way:</strong><br />
+            If HTML is the "body" of a webpage (structure and content), then
+            <strong>CSS is the "clothing"</strong> that styles it — controlling
+            colors, fonts, spacing, and layout.
+          </div>
 
-    <hr />
+          <p>
+            The standard file extension for a CSS file is
+            <code>.css</code> (e.g., <code>styles.css</code>).
+          </p>
 
-    <!-- SECTION 2: WHY USE CSS? -->
-    <h2 class="section-title">2. Why Use CSS?</h2>
-    <p>Using CSS offers several key benefits for web development:</p>
+          <hr />
 
-    <ul class="benefit-list">
-      <li>
-        <strong>Separates Content from Design:</strong> HTML handles the content
-        and structure, while CSS specifically handles the visual look.
-      </li>
-      <li>
-        <strong>Saves Time:</strong> You can style multiple pages simultaneously
-        using just one CSS file.
-      </li>
-      <li>
-        <strong>Improves Consistency:</strong> It ensures your website maintains
-        a clean, professional, and uniform look throughout.
-      </li>
-      <li>
-        <strong>Responsive Design:</strong> It allows you to easily adapt styles
-        for different devices — mobile phones, tablets, and desktops.
-      </li>
-    </ul>
+          <!-- SECTION 2: WHY USE CSS? -->
+          <h2 class="section-title">2. Why Use CSS?</h2>
+          <p>Using CSS offers several key benefits for web development:</p>
 
-    <hr />
+          <ul class="benefit-list">
+            <li>
+              <strong>Separates Content from Design:</strong> HTML handles the
+              content and structure, while CSS specifically handles the visual
+              look.
+            </li>
+            <li>
+              <strong>Saves Time:</strong> You can style multiple pages
+              simultaneously using just one CSS file.
+            </li>
+            <li>
+              <strong>Improves Consistency:</strong> It ensures your website
+              maintains a clean, professional, and uniform look throughout.
+            </li>
+            <li>
+              <strong>Responsive Design:</strong> It allows you to easily adapt
+              styles for different devices — mobile phones, tablets, and
+              desktops.
+            </li>
+          </ul>
 
-    <!-- SECTION 3: TYPES OF CSS STYLING -->
-    <h2 class="section-title">3. Types of CSS Styling</h2>
-    <p>
-      There are three primary ways to apply CSS styles to a webpage:
-      <strong>Inline</strong>, <strong>Internal (Embedded)</strong>, and
-      <strong>External</strong>.
-    </p>
+          <hr />
 
-    <!-- 3.1 INLINE STYLE -->
-    <h3>3.1 Inline Style</h3>
-    <p>
-      Write styles directly inside HTML elements using the
-      <code>style</code> attribute.
-    </p>
+          <!-- SECTION 3: TYPES OF CSS STYLING -->
+          <h2 class="section-title">3. Types of CSS Styling</h2>
+          <p>
+            There are three primary ways to apply CSS styles to a webpage:
+            <strong>Inline</strong>, <strong>Internal (Embedded)</strong>, and
+            <strong>External</strong>.
+          </p>
 
-    <h4>Code:</h4>
-    <div class="code-block">
-      <span class="comment">&lt;!-- HTML --&gt;</span><br />
-      <span class="tag">&lt;p</span> <span class="attribute">style</span>=<span
-        class="string"
-        >"color: red;"</span
-      ><span class="tag">&gt;</span>Hello<span class="tag">&lt;/p&gt;</span>
-    </div>
+          <!-- 3.1 INLINE STYLE -->
+          <h3>3.1 Inline Style</h3>
+          <p>
+            Write styles directly inside HTML elements using the
+            <code>style</code> attribute.
+          </p>
 
-    <h4>Output:</h4>
-    <div class="example-output">
-      <p style="color: red">Hello</p>
-    </div>
+          <h4>Code:</h4>
+          <div class="code-block">
+            <span class="comment">&lt;!-- HTML --&gt;</span><br />
+            <span class="tag">&lt;p</span>
+            <span class="attribute">style</span>=<span class="string"
+              >"color: red;"</span
+            ><span class="tag">&gt;</span>Hello<span class="tag"
+              >&lt;/p&gt;</span
+            >
+          </div>
 
-    <h4>Characteristics:</h4>
-    <table class="comparison-table">
-      <tr>
-        <td class="cons">❌ Harder to maintain</td>
-        <td>You must edit each element individually to make changes.</td>
-      </tr>
-      <tr>
-        <td class="cons">❌ Not reusable</td>
-        <td>You must repeat styles for every element.</td>
-      </tr>
-      <tr>
-        <td class="cons">❌ Messy code</td>
-        <td>Breaks the principle of separating content from presentation.</td>
-      </tr>
-      <tr>
-        <td class="pros">✓ Highest specificity</td>
-        <td>Inline styles override other CSS rules (value: 1000).</td>
-      </tr>
-    </table>
+          <h4>Output:</h4>
+          <div class="example-output">
+            <p style="color: red">Hello</p>
+          </div>
 
-    <hr />
+          <h4>Characteristics:</h4>
+          <table class="comparison-table">
+            <tr>
+              <td class="cons">❌ Harder to maintain</td>
+              <td>You must edit each element individually to make changes.</td>
+            </tr>
+            <tr>
+              <td class="cons">❌ Not reusable</td>
+              <td>You must repeat styles for every element.</td>
+            </tr>
+            <tr>
+              <td class="cons">❌ Messy code</td>
+              <td>
+                Breaks the principle of separating content from presentation.
+              </td>
+            </tr>
+            <tr>
+              <td class="pros">✓ Highest specificity</td>
+              <td>Inline styles override other CSS rules (value: 1000).</td>
+            </tr>
+          </table>
 
-    <!-- 3.2 INTERNAL STYLE -->
-    <h3>3.2 Internal Style (Embedded CSS)</h3>
-    <p>
-      Place styles inside a <code>&lt;style&gt;</code> tag within the
-      <code>&lt;head&gt;</code> section of your HTML file.
-    </p>
+          <hr />
 
-    <h4>Code:</h4>
-    <div class="code-block">
-      <span class="tag">&lt;head&gt;</span><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span
-      >Document<span class="tag">&lt;/title&gt;</span><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;style&gt;</span><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="selector"
-        >p</span
-      >
-      { <span class="property">color</span>: <span class="value">red</span>;
-      }<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/style&gt;</span><br />
-      <span class="tag">&lt;/head&gt;</span><br />
-      <span class="tag">&lt;body&gt;</span><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Hello<span
-        class="tag"
-        >&lt;/p&gt;</span
-      ><br />
-      <span class="tag">&lt;/body&gt;</span>
-    </div>
+          <!-- 3.2 INTERNAL STYLE -->
+          <h3>3.2 Internal Style (Embedded CSS)</h3>
+          <p>
+            Place styles inside a <code>&lt;style&gt;</code> tag within the
+            <code>&lt;head&gt;</code> section of your HTML file.
+          </p>
 
-    <h4>Characteristics:</h4>
-    <table class="comparison-table">
-      <tr>
-        <td class="pros">✓ Better than inline</td>
-        <td>More organized and cleaner code structure.</td>
-      </tr>
-      <tr>
-        <td class="cons">❌ Limited reusability</td>
-        <td>Styles only work within the same HTML page.</td>
-      </tr>
-      <tr>
-        <td class="cons">❌ Not ideal for multi-page sites</td>
-        <td>You must duplicate styles across each HTML file.</td>
-      </tr>
-    </table>
+          <h4>Code:</h4>
+          <div class="code-block">
+            <span class="tag">&lt;head&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span
+            >Document<span class="tag">&lt;/title&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;style&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              class="selector"
+              >p</span
+            >
+            { <span class="property">color</span>:
+            <span class="value">red</span>; }<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/style&gt;</span
+            ><br />
+            <span class="tag">&lt;/head&gt;</span><br />
+            <span class="tag">&lt;body&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Hello<span
+              class="tag"
+              >&lt;/p&gt;</span
+            ><br />
+            <span class="tag">&lt;/body&gt;</span>
+          </div>
 
-    <hr />
+          <h4>Characteristics:</h4>
+          <table class="comparison-table">
+            <tr>
+              <td class="pros">✓ Better than inline</td>
+              <td>More organized and cleaner code structure.</td>
+            </tr>
+            <tr>
+              <td class="cons">❌ Limited reusability</td>
+              <td>Styles only work within the same HTML page.</td>
+            </tr>
+            <tr>
+              <td class="cons">❌ Not ideal for multi-page sites</td>
+              <td>You must duplicate styles across each HTML file.</td>
+            </tr>
+          </table>
 
-    <!-- 3.3 EXTERNAL STYLE -->
-    <h3>3.3 External Style (Recommended ✓)</h3>
-    <p>
-      Store all styles in a separate <code>.css</code> file and link it to your
-      HTML document. This is the <strong>best practice</strong> for most
-      projects.
-    </p>
+          <hr />
 
-    <h4>Code:</h4>
-    <p><strong>HTML File:</strong></p>
-    <div class="code-block">
-      <span class="tag">&lt;head&gt;</span><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span
-      >Document<span class="tag">&lt;/title&gt;</span><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;link</span>
-      <span class="attribute">rel</span>=<span class="string">"stylesheet"</span
-      ><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute"
-        >href</span
-      >=<span class="string">"./styles.css"</span><span class="tag">&gt;</span
-      ><br />
-      <span class="tag">&lt;/head&gt;</span><br />
-      <span class="tag">&lt;body&gt;</span><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Hello<span
-        class="tag"
-        >&lt;/p&gt;</span
-      ><br />
-      <span class="tag">&lt;/body&gt;</span>
-    </div>
+          <!-- 3.3 EXTERNAL STYLE -->
+          <h3>3.3 External Style (Recommended ✓)</h3>
+          <p>
+            Store all styles in a separate <code>.css</code> file and link it to
+            your HTML document. This is the <strong>best practice</strong> for
+            most projects.
+          </p>
 
-    <p><strong>CSS File (styles.css):</strong></p>
-    <div class="code-block">
-      <span class="selector">p</span> { <span class="property">color</span>:
-      <span class="value">red</span>; }
-    </div>
+          <h4>Code:</h4>
+          <p><strong>HTML File:</strong></p>
+          <div class="code-block">
+            <span class="tag">&lt;head&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span
+            >Document<span class="tag">&lt;/title&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;link</span>
+            <span class="attribute">rel</span>=<span class="string"
+              >"stylesheet"</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              class="attribute"
+              >href</span
+            >=<span class="string">"./styles.css"</span
+            ><span class="tag">&gt;</span><br />
+            <span class="tag">&lt;/head&gt;</span><br />
+            <span class="tag">&lt;body&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Hello<span
+              class="tag"
+              >&lt;/p&gt;</span
+            ><br />
+            <span class="tag">&lt;/body&gt;</span>
+          </div>
 
-    <h4>Characteristics:</h4>
-    <table class="comparison-table">
-      <tr>
-        <td class="pros">✓ Most maintainable</td>
-        <td>Update styles for multiple pages from a single location.</td>
-      </tr>
-      <tr>
-        <td class="pros">✓ Highly reusable</td>
-        <td>
-          The same stylesheet can be linked to multiple pages and projects.
-        </td>
-      </tr>
-      <tr>
-        <td class="pros">✓ Best practice</td>
-        <td>Keeps HTML clean by completely separating layout from content.</td>
-      </tr>
-      <tr>
-        <td class="pros">✓ Great for teams</td>
-        <td>Makes collaboration and version control easier.</td>
-      </tr>
-    </table>
+          <p><strong>CSS File (styles.css):</strong></p>
+          <div class="code-block">
+            <span class="selector">p</span> {
+            <span class="property">color</span>: <span class="value">red</span>;
+            }
+          </div>
 
-    <hr />
+          <h4>Characteristics:</h4>
+          <table class="comparison-table">
+            <tr>
+              <td class="pros">✓ Most maintainable</td>
+              <td>Update styles for multiple pages from a single location.</td>
+            </tr>
+            <tr>
+              <td class="pros">✓ Highly reusable</td>
+              <td>
+                The same stylesheet can be linked to multiple pages and
+                projects.
+              </td>
+            </tr>
+            <tr>
+              <td class="pros">✓ Best practice</td>
+              <td>
+                Keeps HTML clean by completely separating layout from content.
+              </td>
+            </tr>
+            <tr>
+              <td class="pros">✓ Great for teams</td>
+              <td>Makes collaboration and version control easier.</td>
+            </tr>
+          </table>
 
-    <!-- COMPARISON TABLE -->
-    <h2 class="section-title">4. Quick Comparison</h2>
-    <table class="comparison-table">
-      <tr>
-        <th>Type</th>
-        <th>Where It's Written</th>
-        <th>Reusability</th>
-        <th>Best For</th>
-      </tr>
-      <tr>
-        <td><strong>Inline</strong></td>
-        <td>Inside HTML element (<code>style=""</code>)</td>
-        <td>None</td>
-        <td>Quick fixes, testing</td>
-      </tr>
-      <tr>
-        <td><strong>Internal</strong></td>
-        <td>In <code>&lt;style&gt;</code> tag in <code>&lt;head&gt;</code></td>
-        <td>Same page only</td>
-        <td>Single-page projects</td>
-      </tr>
-      <tr>
-        <td><strong>External</strong></td>
-        <td>Separate <code>.css</code> file</td>
-        <td>Across all pages</td>
-        <td>Multi-page websites ✓</td>
-      </tr>
-    </table>
+          <hr />
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
-      <a href="./index.html">&lt; Back to Day 2 Index</a> |
-      <a href="./01_css_syntax.html">Next: CSS Syntax &gt;</a>
-    </div>
+          <!-- COMPARISON TABLE -->
+          <h2 class="section-title">4. Quick Comparison</h2>
+          <table class="comparison-table">
+            <tr>
+              <th>Type</th>
+              <th>Where It's Written</th>
+              <th>Reusability</th>
+              <th>Best For</th>
+            </tr>
+            <tr>
+              <td><strong>Inline</strong></td>
+              <td>Inside HTML element (<code>style=""</code>)</td>
+              <td>None</td>
+              <td>Quick fixes, testing</td>
+            </tr>
+            <tr>
+              <td><strong>Internal</strong></td>
+              <td>
+                In <code>&lt;style&gt;</code> tag in <code>&lt;head&gt;</code>
+              </td>
+              <td>Same page only</td>
+              <td>Single-page projects</td>
+            </tr>
+            <tr>
+              <td><strong>External</strong></td>
+              <td>Separate <code>.css</code> file</td>
+              <td>Across all pages</td>
+              <td>Multi-page websites ✓</td>
+            </tr>
+          </table>
+
+          <!-- Navigation Section -->
+          <div class="nav-links">
+            <a href="./index.html">&lt; Back to Day 2 Index</a> |
+            <a href="./01_css_syntax.html">Next: CSS Syntax &gt;</a>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
