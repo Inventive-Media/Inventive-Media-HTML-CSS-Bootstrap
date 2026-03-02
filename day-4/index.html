@@ -5,274 +5,408 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 4 - Tailwind CSS Fundamentals</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
-    <div class="max-w-5xl mx-auto px-4 py-8">
-      <!-- Hero Section -->
+  <body class="bg-slate-50 text-slate-900 font-sans">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200"
+    >
       <div
-        class="bg-gradient-to-br from-indigo-500 to-indigo-800 text-white px-8 py-16 rounded-2xl mb-10 text-center"
+        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
       >
-        <h1 class="text-4xl font-black mb-3">
+        <div class="flex items-center gap-4">
+          <a
+            href="../index.html"
+            class="flex items-center gap-2 text-slate-600 hover:text-cyan-600 transition-colors duration-200 text-sm font-medium cursor-pointer"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            Home
+          </a>
+          <span class="hidden sm:block text-sm text-slate-400 font-medium"
+            >Day 4: Tailwind CSS Fundamentals</span
+          >
+        </div>
+        <div class="relative group">
+          <button
+            class="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer"
+          >
+            Jump to Topic
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div
+            class="hidden group-hover:block absolute right-0 top-full mt-1 bg-white border border-slate-200 rounded-xl shadow-lg min-w-[260px] overflow-y-auto max-h-[70vh] z-50"
+          >
+            <a
+              href="./00_intro.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 border-b border-slate-100 transition-colors duration-150"
+              >01. Introduction</a
+            >
+            <a
+              href="./01_setup.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 border-b border-slate-100 transition-colors duration-150"
+              >02. Setup</a
+            >
+            <a
+              href="./02_typography.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 border-b border-slate-100 transition-colors duration-150"
+              >03. Typography</a
+            >
+            <a
+              href="./02_buttons.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 border-b border-slate-100 transition-colors duration-150"
+              >04. Buttons</a
+            >
+            <a
+              href="./03_containers.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 border-b border-slate-100 transition-colors duration-150"
+              >05. Containers &amp; Spacing</a
+            >
+            <a
+              href="./04_grid_layout.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 border-b border-slate-100 transition-colors duration-150"
+              >06. Grid Layout</a
+            >
+            <a
+              href="./05_images.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 border-b border-slate-100 transition-colors duration-150"
+              >07. Images</a
+            >
+            <a
+              href="./06_utilities.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 border-b border-slate-100 transition-colors duration-150"
+              >08. Utility Classes</a
+            >
+            <a
+              href="./07_components.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-150"
+              >09. Components</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+      <!-- Hero -->
+      <div
+        class="bg-gradient-to-br from-cyan-500 to-cyan-700 text-white px-8 py-14 rounded-2xl mb-10 text-center"
+      >
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
           Day 4: Tailwind CSS Fundamentals
         </h1>
-        <p class="text-indigo-100 text-lg max-w-2xl mx-auto">
+        <p class="text-cyan-100 text-lg max-w-xl mx-auto">
           Learn the utility-first CSS framework for building fully custom,
           responsive interfaces — no pre-made components, just pure control.
         </p>
       </div>
 
-      <!-- Lessons Grid -->
-      <h2 class="text-2xl font-bold text-center mb-8 text-indigo-600">
-        📚 Today's Lessons
+      <!-- Lessons -->
+      <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <svg
+          class="w-5 h-5 text-cyan-600"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+          />
+          <polyline points="22 6 12 13 2 6" />
+        </svg>
+        Today's Lessons
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Lesson 1: Introduction -->
-        <a href="./00_intro.html" class="group block no-underline">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <a href="./00_intro.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >1</span
                 >
                 Introduction
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 What is Tailwind CSS? Why use it? How does it compare to
                 Bootstrap?
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >Start here →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >Start here &rarr;</small
               >
             </div>
           </div>
         </a>
 
-        <!-- Lesson 2: Setup -->
-        <a href="./01_setup.html" class="group block no-underline">
+        <a href="./01_setup.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >2</span
                 >
                 Setup
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 Adding Tailwind via Play CDN for learning, or CLI for
                 production.
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >CDN vs CLI →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >CDN vs CLI &rarr;</small
               >
             </div>
           </div>
         </a>
 
-        <!-- Lesson 3: Typography -->
-        <a href="./02_typography.html" class="group block no-underline">
+        <a href="./02_typography.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >3</span
                 >
                 Typography
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 Font sizes, weights, alignment, colors, line-height, and
                 letter-spacing.
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >Text styling →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >Text styling &rarr;</small
               >
             </div>
           </div>
         </a>
 
-        <!-- Lesson 4: Buttons -->
-        <a href="./02_buttons.html" class="group block no-underline">
+        <a href="./02_buttons.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >4</span
                 >
                 Buttons
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 Solid, outlined, disabled, grouped, and icon buttons — all from
                 scratch.
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >Utility buttons →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >Utility buttons &rarr;</small
               >
             </div>
           </div>
         </a>
 
-        <!-- Lesson 5: Containers -->
-        <a href="./03_containers.html" class="group block no-underline">
+        <a href="./03_containers.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >5</span
                 >
                 Containers &amp; Spacing
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 container, max-w-*, mx-auto, padding, margin, and the spacing
                 scale.
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >Layout basics →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >Layout basics &rarr;</small
               >
             </div>
           </div>
         </a>
 
-        <!-- Lesson 6: Grid Layout -->
-        <a href="./04_grid_layout.html" class="group block no-underline">
+        <a href="./04_grid_layout.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >6</span
                 >
                 Grid Layout
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 CSS Grid, column spans, responsive columns, gaps, and flexbox
                 basics.
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >Responsive layouts →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >Responsive layouts &rarr;</small
               >
             </div>
           </div>
         </a>
 
-        <!-- Lesson 7: Images -->
-        <a href="./05_images.html" class="group block no-underline">
+        <a href="./05_images.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >7</span
                 >
                 Images
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 Responsive images, object-fit, alignment, rounded corners, and
                 overlays.
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >Image styling →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >Image styling &rarr;</small
               >
             </div>
           </div>
         </a>
 
-        <!-- Lesson 8: Utilities -->
-        <a href="./06_utilities.html" class="group block no-underline">
+        <a href="./06_utilities.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >8</span
                 >
                 Utility Classes
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 Text colors, backgrounds, display, borders, and box shadows.
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >Core utilities →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >Core utilities &rarr;</small
               >
             </div>
           </div>
         </a>
 
-        <!-- Lesson 9: Components -->
-        <a href="./07_components.html" class="group block no-underline">
+        <a href="./07_components.html" class="group block cursor-pointer">
           <div
-            class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all h-full"
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
           >
-            <div class="p-6">
+            <div class="p-6 flex-grow">
               <h3
-                class="text-base font-bold text-gray-900 flex items-center gap-2 mb-2"
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
               >
                 <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white font-bold text-sm shrink-0"
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-600 text-white font-bold text-sm shrink-0"
                   >9</span
                 >
                 Components
               </h3>
-              <p class="text-sm text-gray-500">
+              <p class="text-sm text-slate-500">
                 Navbars, alerts, buttons, badges, cards, modals, and forms —
                 built from scratch.
               </p>
             </div>
-            <div class="px-6 pb-4 border-t border-gray-100 pt-3">
-              <small class="text-indigo-500 font-semibold text-xs"
-                >Custom components →</small
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-cyan-600 font-semibold text-xs"
+                >Custom components &rarr;</small
               >
             </div>
           </div>
@@ -280,36 +414,46 @@
       </div>
 
       <!-- Footer -->
-      <div
-        class="bg-white border border-gray-200 rounded-2xl p-8 mt-10 text-center"
-      >
-        <h3 class="text-lg font-bold text-gray-900 mb-4">📖 Resources</h3>
+      <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center">
         <div class="flex flex-wrap justify-center gap-4">
           <a
-            href="https://tailwindcss.com/docs"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm"
+            href="../index.html"
+            class="inline-flex items-center gap-2 border-2 border-slate-300 text-slate-600 hover:border-slate-400 hover:text-slate-800 font-semibold py-2.5 px-5 rounded-lg transition-colors duration-200 text-sm cursor-pointer"
           >
-            Tailwind CSS Docs ↗
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            Back to Main Home
           </a>
           <a
-            href="https://play.tailwindcss.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm"
+            href="./00_intro.html"
+            class="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2.5 px-5 rounded-lg transition-colors duration-200 text-sm cursor-pointer"
           >
-            Tailwind Play ↗
+            Start Learning
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </a>
-        </div>
-        <div class="mt-6 pt-4 border-t border-gray-100">
-          <a
-            href="../day-3/index.html"
-            class="text-gray-500 hover:text-indigo-600 text-sm font-medium transition-colors"
-            >← Back to Day 3: Bootstrap</a
-          >
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

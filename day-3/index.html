@@ -4,269 +4,449 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 3 - Bootstrap Fundamentals</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
     <style>
-      .hero-section {
-        background: linear-gradient(135deg, #7952b3 0%, #563d7c 100%);
-        color: white;
-        padding: 60px 20px;
-        border-radius: 10px;
-        margin-bottom: 40px;
-        text-align: center;
-      }
-      .lesson-card {
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-        border: none;
-        border-radius: 12px;
-        overflow: hidden;
-      }
-      .lesson-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      }
-      .lesson-number {
-        display: inline-block;
-        width: 36px;
-        height: 36px;
-        line-height: 36px;
-        text-align: center;
-        background-color: #7952b3;
-        color: white;
-        border-radius: 50%;
-        font-weight: bold;
-        margin-right: 10px;
-      }
-      .lesson-link {
-        text-decoration: none;
-        color: inherit;
-      }
-      .lesson-link:hover {
-        color: inherit;
-      }
-      .footer-section {
-        background-color: #f8f9fa;
-        padding: 30px;
-        border-radius: 10px;
-        margin-top: 40px;
-        text-align: center;
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
       }
     </style>
   </head>
-  <body>
-    <div class="container py-4">
-      <!-- Hero Section -->
-      <div class="hero-section">
-        <h1 class="display-4 fw-bold">Day 3: Bootstrap Fundamentals</h1>
-        <p class="lead mb-0">
+  <body class="bg-slate-50 text-slate-900 font-sans">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-4">
+          <a
+            href="../index.html"
+            class="flex items-center gap-2 text-slate-600 hover:text-violet-600 transition-colors duration-200 text-sm font-medium cursor-pointer"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            Home
+          </a>
+          <span class="hidden sm:block text-sm text-slate-400 font-medium"
+            >Day 3: Bootstrap Fundamentals</span
+          >
+        </div>
+        <div class="relative group">
+          <button
+            class="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer"
+          >
+            Jump to Topic
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div
+            class="hidden group-hover:block absolute right-0 top-full mt-1 bg-white border border-slate-200 rounded-xl shadow-lg min-w-[260px] overflow-y-auto max-h-[70vh] z-50"
+          >
+            <a
+              href="./00_intro.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 border-b border-slate-100 transition-colors duration-150"
+              >01. Introduction</a
+            >
+            <a
+              href="./01_setup.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 border-b border-slate-100 transition-colors duration-150"
+              >02. Setup</a
+            >
+            <a
+              href="./02_typography.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 border-b border-slate-100 transition-colors duration-150"
+              >03. Typography</a
+            >
+            <a
+              href="./02_buttons.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 border-b border-slate-100 transition-colors duration-150"
+              >04. Buttons</a
+            >
+            <a
+              href="./03_containers.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 border-b border-slate-100 transition-colors duration-150"
+              >05. Containers</a
+            >
+            <a
+              href="./04_grid_layout.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 border-b border-slate-100 transition-colors duration-150"
+              >06. Grid Layout</a
+            >
+            <a
+              href="./05_images.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 border-b border-slate-100 transition-colors duration-150"
+              >07. Images</a
+            >
+            <a
+              href="./06_utilities.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 border-b border-slate-100 transition-colors duration-150"
+              >08. Utility Classes</a
+            >
+            <a
+              href="./07_components.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-600 transition-colors duration-150"
+              >09. Components</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+      <!-- Hero -->
+      <div
+        class="bg-gradient-to-br from-violet-600 to-violet-800 text-white px-8 py-14 rounded-2xl mb-10 text-center"
+      >
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+          Day 3: Bootstrap Fundamentals
+        </h1>
+        <p class="text-violet-100 text-lg max-w-xl mx-auto">
           Learn the most popular CSS framework for building responsive,
           mobile-first websites.
         </p>
       </div>
 
-      <!-- Lessons Grid -->
-      <h2 class="mb-4 text-center" style="color: #7952b3">
-        📚 Today's Lessons
+      <!-- Lessons -->
+      <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <svg
+          class="w-5 h-5 text-violet-600"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <line x1="3" y1="9" x2="21" y2="9" />
+          <line x1="9" y1="21" x2="9" y2="9" />
+        </svg>
+        Today's Lessons
       </h2>
 
-      <div class="row g-4">
-        <!-- Lesson 1: Introduction -->
-        <div class="col-md-6 col-lg-4">
-          <a href="./00_intro.html" class="lesson-link">
-            <div class="card lesson-card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span class="lesson-number">1</span>
-                  Introduction
-                </h5>
-                <p class="card-text text-muted">
-                  What is Bootstrap? Why use it? How does it compare to other
-                  frameworks?
-                </p>
-              </div>
-              <div class="card-footer bg-light border-0">
-                <small class="text-primary">Start here →</small>
-              </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <a href="./00_intro.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >1</span
+                >
+                Introduction
+              </h3>
+              <p class="text-sm text-slate-500">
+                What is Bootstrap? Why use it? How does it compare to other
+                frameworks?
+              </p>
             </div>
-          </a>
-        </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >Start here &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
 
-        <!-- Lesson 2: Setup -->
-        <div class="col-md-6 col-lg-4">
-          <a href="./01_setup.html" class="lesson-link">
-            <div class="card lesson-card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span class="lesson-number">2</span>
-                  Setup
-                </h5>
-                <p class="card-text text-muted">
-                  How to add Bootstrap to your project via CDN, download, or
-                  npm.
-                </p>
-              </div>
-              <div class="card-footer bg-light border-0">
-                <small class="text-primary">CDN, Download, NPM →</small>
-              </div>
+        <a href="./01_setup.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >2</span
+                >
+                Setup
+              </h3>
+              <p class="text-sm text-slate-500">
+                How to add Bootstrap to your project via CDN, download, or npm.
+              </p>
             </div>
-          </a>
-        </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >CDN, Download, NPM &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
 
-        <!-- Lesson 3: Typography -->
-        <div class="col-md-6 col-lg-4">
-          <a href="./02_typography.html" class="lesson-link">
-            <div class="card lesson-card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span class="lesson-number">3</span>
-                  Typography
-                </h5>
-                <p class="card-text text-muted">
-                  Headings, display text, font weights, alignment, and line
-                  heights.
-                </p>
-              </div>
-              <div class="card-footer bg-light border-0">
-                <small class="text-primary">Text styling →</small>
-              </div>
+        <a href="./02_typography.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >3</span
+                >
+                Typography
+              </h3>
+              <p class="text-sm text-slate-500">
+                Headings, display text, font weights, alignment, and line
+                heights.
+              </p>
             </div>
-          </a>
-        </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >Text styling &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
 
-        <!-- Lesson 4: Containers -->
-        <div class="col-md-6 col-lg-4">
-          <a href="./03_containers.html" class="lesson-link">
-            <div class="card lesson-card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span class="lesson-number">4</span>
-                  Containers
-                </h5>
-                <p class="card-text text-muted">
-                  Fixed vs fluid containers and responsive breakpoints.
-                </p>
-              </div>
-              <div class="card-footer bg-light border-0">
-                <small class="text-primary">Layout basics →</small>
-              </div>
+        <a href="./02_buttons.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >4</span
+                >
+                Buttons
+              </h3>
+              <p class="text-sm text-slate-500">
+                Primary, outline, sizes, disabled states, and button groups.
+              </p>
             </div>
-          </a>
-        </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >Interactive elements &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
 
-        <!-- Lesson 5: Grid Layout -->
-        <div class="col-md-6 col-lg-4">
-          <a href="./04_grid_layout.html" class="lesson-link">
-            <div class="card lesson-card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span class="lesson-number">5</span>
-                  Grid Layout
-                </h5>
-                <p class="card-text text-muted">
-                  12-column system, rows, columns, gutters, and alignment.
-                </p>
-              </div>
-              <div class="card-footer bg-light border-0">
-                <small class="text-primary">Responsive layouts →</small>
-              </div>
+        <a href="./03_containers.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >5</span
+                >
+                Containers
+              </h3>
+              <p class="text-sm text-slate-500">
+                Fixed vs fluid containers and responsive breakpoints.
+              </p>
             </div>
-          </a>
-        </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >Layout basics &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
 
-        <!-- Lesson 6: Images -->
-        <div class="col-md-6 col-lg-4">
-          <a href="./05_images.html" class="lesson-link">
-            <div class="card lesson-card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span class="lesson-number">6</span>
-                  Images
-                </h5>
-                <p class="card-text text-muted">
-                  Responsive images, thumbnails, alignment, and rounded corners.
-                </p>
-              </div>
-              <div class="card-footer bg-light border-0">
-                <small class="text-primary">Image styling →</small>
-              </div>
+        <a href="./04_grid_layout.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >6</span
+                >
+                Grid Layout
+              </h3>
+              <p class="text-sm text-slate-500">
+                12-column system, rows, columns, gutters, and alignment.
+              </p>
             </div>
-          </a>
-        </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >Responsive layouts &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
 
-        <!-- Lesson 7: Utility Classes -->
-        <div class="col-md-6 col-lg-4">
-          <a href="./06_utilities.html" class="lesson-link">
-            <div class="card lesson-card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span class="lesson-number">7</span>
-                  Utility Classes
-                </h5>
-                <p class="card-text text-muted">
-                  Colors, spacing (padding/margin), borders, and box shadows.
-                </p>
-              </div>
-              <div class="card-footer bg-light border-0">
-                <small class="text-primary">Quick styling →</small>
-              </div>
+        <a href="./05_images.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >7</span
+                >
+                Images
+              </h3>
+              <p class="text-sm text-slate-500">
+                Responsive images, thumbnails, alignment, and rounded corners.
+              </p>
             </div>
-          </a>
-        </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >Image styling &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
 
-        <!-- Lesson 8: Components -->
-        <div class="col-md-6 col-lg-4">
-          <a href="./07_components.html" class="lesson-link">
-            <div class="card lesson-card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span class="lesson-number">8</span>
-                  Components
-                </h5>
-                <p class="card-text text-muted">
-                  Navbar, Buttons, Cards, Modals, Forms, Alerts, and more!
-                </p>
-              </div>
-              <div class="card-footer bg-light border-0">
-                <small class="text-primary">UI building blocks →</small>
-              </div>
+        <a href="./06_utilities.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >8</span
+                >
+                Utility Classes
+              </h3>
+              <p class="text-sm text-slate-500">
+                Colors, spacing (padding/margin), borders, and box shadows.
+              </p>
             </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >Quick styling &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="./07_components.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-violet-600 text-white font-bold text-sm shrink-0"
+                  >9</span
+                >
+                Components
+              </h3>
+              <p class="text-sm text-slate-500">
+                Navbar, Buttons, Cards, Modals, Forms, Alerts, and more!
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-violet-600 font-semibold text-xs"
+                >UI building blocks &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center">
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="../index.html"
+            class="inline-flex items-center gap-2 border-2 border-slate-300 text-slate-600 hover:border-slate-400 hover:text-slate-800 font-semibold py-2.5 px-5 rounded-lg transition-colors duration-200 text-sm cursor-pointer"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            Back to Main Home
+          </a>
+          <a
+            href="./00_intro.html"
+            class="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2.5 px-5 rounded-lg transition-colors duration-200 text-sm cursor-pointer"
+          >
+            Start Learning
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </a>
         </div>
       </div>
-
-      <!-- Footer Section -->
-      <div class="footer-section">
-        <h4>🎯 Learning Objectives</h4>
-        <p class="mb-3">By the end of Day 3, you will be able to:</p>
-        <div class="row text-start">
-          <div class="col-md-6">
-            <ul>
-              <li>Set up Bootstrap in any project</li>
-              <li>Use typography and utility classes</li>
-              <li>Build responsive layouts with the grid system</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <ul>
-              <li>Use containers for proper content alignment</li>
-              <li>Add interactive components like modals and navbars</li>
-              <li>Style forms, buttons, and cards</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-        <div class="mb-3">
-          <a href="../index.html" class="btn btn-outline-secondary me-2"
-            >&larr; Back to Main Home</a
-          >
-          <a href="./00_intro.html" class="btn btn-primary"
-            >Start Learning &rarr;</a
-          >
-        </div>
-      </div>
-    </div>
-
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    </main>
   </body>
 </html>
