@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 - Tailwind Containers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
+        Day 4 - Containers &amp; Spacing
+      </h1>
+      <p class="text-center text-gray-500 text-lg mb-8">
+        Control layout width, centering, padding and margin with Tailwind
+        utilities.
+      </p>
+
+      <hr class="mb-8 border-gray-200" />
+
+      <!--
+        SECTION 1: THE container CLASS
+        Tailwind's `container` class sets the max-width of an element to match
+        the current breakpoint. It does NOT automatically center itself — you
+        must also add mx-auto to center it.
+        Unlike Bootstrap, Tailwind's container is opt-in and requires mx-auto.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        1. The
+        <code class="text-indigo-500 bg-indigo-50 px-1 rounded">container</code>
+        Class
+      </h2>
+
+      <p class="mb-3">
+        The <code class="bg-gray-100 px-1 rounded">container</code> class sets
+        <strong>max-width</strong> to match the current breakpoint. Add
+        <code class="bg-gray-100 px-1 rounded">mx-auto</code> to center it and
+        <code class="bg-gray-100 px-1 rounded">px-4</code> for horizontal
+        padding:
+      </p>
+
+      <div
+        class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto mb-4"
+      >
+        <span class="text-red-400">&lt;div</span>
+        <span class="text-yellow-300"> class</span>=<span class="text-green-400"
+          >"container mx-auto px-4"</span
+        ><span class="text-red-400">&gt;</span><br />
+        &nbsp;&nbsp;Your centered content here<br />
+        <span class="text-red-400">&lt;/div&gt;</span>
+      </div>
+
+      <div
+        class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg mb-6"
+        role="note"
+      >
+        <strong>💡 Key Difference from Bootstrap:</strong> Bootstrap's
+        <code>.container</code> centers automatically. Tailwind requires
+        <code>mx-auto</code> explicitly. This gives you more control.
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 2: MAX-WIDTH UTILITIES (max-w-*)
+        Tailwind provides max-w-{size} utilities for controlling element widths.
+        These are more flexible than Bootstrap's fixed container breakpoints.
+        max-w-sm = 24rem, max-w-md = 28rem, max-w-lg = 32rem, max-w-xl = 36rem,
+        max-w-2xl = 42rem, max-w-4xl = 56rem, max-w-6xl = 72rem, max-w-full = 100%.
+        Pair with mx-auto to center any block element.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        2. Max-Width Utilities
+      </h2>
+      <p class="mb-4">
+        Use
+        <code class="bg-gray-100 px-1 rounded">max-w-{size}</code> to constrain
+        element widths. Combine with
+        <code class="bg-gray-100 px-1 rounded">mx-auto</code> to center:
+      </p>
+
+      <div class="space-y-3 mb-6">
+        <div>
+          <p class="text-xs text-gray-400 mb-1 font-mono">max-w-xs (320px)</p>
+          <div
+            class="max-w-xs bg-dashed border-2 border-dashed border-sky-400 bg-sky-50 p-3 text-center text-sm text-sky-700"
+          >
+            max-w-xs
+          </div>
+        </div>
+        <div>
+          <p class="text-xs text-gray-400 mb-1 font-mono">max-w-sm (384px)</p>
+          <div
+            class="max-w-sm border-2 border-dashed border-indigo-400 bg-indigo-50 p-3 text-center text-sm text-indigo-700"
+          >
+            max-w-sm
+          </div>
+        </div>
+        <div>
+          <p class="text-xs text-gray-400 mb-1 font-mono">max-w-md (448px)</p>
+          <div
+            class="max-w-md border-2 border-dashed border-purple-400 bg-purple-50 p-3 text-center text-sm text-purple-700"
+          >
+            max-w-md
+          </div>
+        </div>
+        <div>
+          <p class="text-xs text-gray-400 mb-1 font-mono">max-w-lg (512px)</p>
+          <div
+            class="max-w-lg border-2 border-dashed border-green-400 bg-green-50 p-3 text-center text-sm text-green-700"
+          >
+            max-w-lg
+          </div>
+        </div>
+        <div>
+          <p class="text-xs text-gray-400 mb-1 font-mono">max-w-xl (576px)</p>
+          <div
+            class="max-w-xl border-2 border-dashed border-teal-400 bg-teal-50 p-3 text-center text-sm text-teal-700"
+          >
+            max-w-xl
+          </div>
+        </div>
+        <div>
+          <p class="text-xs text-gray-400 mb-1 font-mono">max-w-full (100%)</p>
+          <div
+            class="max-w-full border-2 border-dashed border-gray-400 bg-gray-100 p-3 text-center text-sm text-gray-700"
+          >
+            max-w-full
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 3: CONTAINER BREAKPOINTS
+        When you use the `container` class, the max-width automatically changes
+        at each breakpoint, just like Bootstrap's .container but opt-in.
+        You can also use container with breakpoint prefixes: md:container
+        to only apply the container behavior at medium screens and above.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        3. Container Breakpoints
+      </h2>
+      <p class="mb-4">
+        The <code class="bg-gray-100 px-1 rounded">container</code> class
+        automatically sets <code>max-width</code> at each breakpoint:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table
+          class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden"
+        >
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th class="text-left p-3">Breakpoint</th>
+              <th class="text-left p-3">Min Width</th>
+              <th class="text-left p-3">Container Max-Width</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-mono">none (xs)</td>
+              <td class="p-3">0px</td>
+              <td class="p-3">100%</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-mono">sm:</td>
+              <td class="p-3">640px</td>
+              <td class="p-3">640px</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-mono">md:</td>
+              <td class="p-3">768px</td>
+              <td class="p-3">768px</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-mono">lg:</td>
+              <td class="p-3">1024px</td>
+              <td class="p-3">1024px</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-mono">xl:</td>
+              <td class="p-3">1280px</td>
+              <td class="p-3">1280px</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-mono">2xl:</td>
+              <td class="p-3">1536px</td>
+              <td class="p-3">1536px</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 4: SPACING — PADDING & MARGIN
+        Tailwind uses shorthand notation: {property}{sides}-{size}
+        p = padding, m = margin.
+        Sides: t (top), b (bottom), l (left), r (right), x (horizontal), y (vertical), none (all).
+        Sizes: 0, 1 (4px), 2 (8px), 3 (12px), 4 (16px), 6 (24px), 8 (32px), 12 (48px), 16 (64px).
+        mx-auto centers a block element horizontally.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        4. Spacing — Padding &amp; Margin
+      </h2>
+      <p class="mb-3">
+        Tailwind uses shorthand:
+        <code class="bg-gray-100 px-1 rounded">{property}{sides}-{size}</code>
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <h3 class="font-semibold text-gray-700 mb-2">Properties</h3>
+          <ul class="space-y-1 text-sm">
+            <li>
+              <code class="text-indigo-500">p</code> = Padding (all sides)
+            </li>
+            <li><code class="text-indigo-500">m</code> = Margin (all sides)</li>
+          </ul>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <h3 class="font-semibold text-gray-700 mb-2">Sides</h3>
+          <ul class="space-y-1 text-sm">
+            <li><code class="text-indigo-500">t</code> = top</li>
+            <li><code class="text-indigo-500">b</code> = bottom</li>
+            <li><code class="text-indigo-500">l</code> = left</li>
+            <li><code class="text-indigo-500">r</code> = right</li>
+            <li>
+              <code class="text-indigo-500">x</code> = horizontal (left + right)
+            </li>
+            <li>
+              <code class="text-indigo-500">y</code> = vertical (top + bottom)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="font-semibold text-gray-700 mb-3">Padding Demo</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <div class="bg-indigo-100 rounded">
+          <div class="bg-indigo-500 text-white text-center text-xs rounded p-0">
+            p-0
+          </div>
+        </div>
+        <div class="bg-indigo-100 rounded">
+          <div class="bg-indigo-500 text-white text-center text-xs rounded p-2">
+            p-2
+          </div>
+        </div>
+        <div class="bg-indigo-100 rounded">
+          <div class="bg-indigo-500 text-white text-center text-xs rounded p-4">
+            p-4
+          </div>
+        </div>
+        <div class="bg-indigo-100 rounded">
+          <div class="bg-indigo-500 text-white text-center text-xs rounded p-8">
+            p-8
+          </div>
+        </div>
+      </div>
+
+      <h3 class="font-semibold text-gray-700 mb-3">Common Spacing Classes</h3>
+      <div class="overflow-x-auto mb-6">
+        <table
+          class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden"
+        >
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="text-left p-3 font-semibold">Class</th>
+              <th class="text-left p-3 font-semibold">CSS Value</th>
+              <th class="text-left p-3 font-semibold">Pixels</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200">
+              <td class="p-3 font-mono text-indigo-600">p-0 / m-0</td>
+              <td class="p-3">0</td>
+              <td class="p-3">0px</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-mono text-indigo-600">p-1 / m-1</td>
+              <td class="p-3">0.25rem</td>
+              <td class="p-3">4px</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="p-3 font-mono text-indigo-600">p-2 / m-2</td>
+              <td class="p-3">0.5rem</td>
+              <td class="p-3">8px</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-mono text-indigo-600">p-4 / m-4</td>
+              <td class="p-3">1rem</td>
+              <td class="p-3">16px</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="p-3 font-mono text-indigo-600">p-6 / m-6</td>
+              <td class="p-3">1.5rem</td>
+              <td class="p-3">24px</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-mono text-indigo-600">p-8 / m-8</td>
+              <td class="p-3">2rem</td>
+              <td class="p-3">32px</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="p-3 font-mono text-indigo-600">mx-auto</td>
+              <td class="p-3">margin: 0 auto</td>
+              <td class="p-3">Centers block</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Nav Links -->
+      <div
+        class="mt-12 text-center py-5 bg-gray-100 rounded-lg border-t border-gray-200"
+      >
+        <a
+          href="./02_buttons.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >← Previous: Buttons</a
+        >
+        <a
+          href="./04_grid_layout.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >Next: Grid Layout →</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

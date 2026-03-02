@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 - Tailwind CSS Setup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
+        Day 4 - Tailwind CSS Setup
+      </h1>
+      <p class="text-center text-gray-500 text-lg mb-8">
+        Learn the different ways to add Tailwind CSS to your project.
+      </p>
+
+      <hr class="mb-8 border-gray-200" />
+
+      <!--
+        SECTION 1: SETUP METHODS OVERVIEW
+        Just like Bootstrap, Tailwind has several ways to get started.
+        Play CDN is the easiest — drop one script tag in your HTML and you're done.
+        Tailwind CLI is for real projects. It compiles only the CSS classes you
+        actually use, resulting in a very small final file.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        1. Ways to Set Up Tailwind
+      </h2>
+      <p class="mb-4">
+        There are two primary ways to start using Tailwind CSS in your project:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div
+          class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm border-l-4 border-l-indigo-500 hover:translate-x-1 transition-transform"
+        >
+          <div class="text-2xl mb-2">🌐</div>
+          <h3 class="font-bold text-indigo-600 mb-1">Play CDN</h3>
+          <p class="text-xs text-gray-500 mb-2">
+            Quick start, no install needed
+          </p>
+          <span
+            class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded"
+            >Best for beginners</span
+          >
+        </div>
+        <div
+          class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm border-l-4 border-l-yellow-500 hover:translate-x-1 transition-transform"
+        >
+          <div class="text-2xl mb-2">⚙️</div>
+          <h3 class="font-bold text-yellow-600 mb-1">Tailwind CLI</h3>
+          <p class="text-xs text-gray-500 mb-2">
+            Uses npm, compiles CSS locally
+          </p>
+          <span
+            class="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-2 py-1 rounded"
+            >Real projects</span
+          >
+        </div>
+        <div
+          class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm border-l-4 border-l-blue-500 hover:translate-x-1 transition-transform"
+        >
+          <div class="text-2xl mb-2">🔧</div>
+          <h3 class="font-bold text-blue-600 mb-1">PostCSS / Vite</h3>
+          <p class="text-xs text-gray-500 mb-2">
+            Framework integrations (React, Vue…)
+          </p>
+          <span
+            class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded"
+            >Advanced setup</span
+          >
+        </div>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 2: PLAY CDN (RECOMMENDED FOR LEARNING)
+        The Play CDN loads Tailwind's full stylesheet dynamically from a CDN server.
+        Important: This method is ONLY for development and learning — never use the
+        Play CDN in production because it is large and cannot be optimized/purged.
+        For production, always use the CLI or a PostCSS build step.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        2. Method 1: Play CDN (for Learning)
+      </h2>
+      <p class="mb-3">
+        Add a single
+        <code class="bg-gray-100 px-1 rounded">&lt;script&gt;</code> tag inside
+        your HTML <code class="bg-gray-100 px-1 rounded">&lt;head&gt;</code>:
+      </p>
+
+      <div
+        class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto mb-4"
+      >
+        <span class="text-gray-500"
+          >&lt;!-- Paste inside &lt;head&gt; --&gt;</span
+        ><br />
+        <span class="text-red-400">&lt;script</span>
+        <span class="text-yellow-300"> src</span
+        ><span class="text-gray-100">=</span
+        ><span class="text-green-400">"https://cdn.tailwindcss.com"</span
+        ><span class="text-red-400">&gt;&lt;/script&gt;</span>
+      </div>
+
+      <p class="mb-4">Your full HTML boilerplate looks like this:</p>
+
+      <div
+        class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto mb-4 leading-relaxed"
+      >
+        <span class="text-gray-500">&lt;!DOCTYPE html&gt;</span><br />
+        <span class="text-red-400">&lt;html</span>
+        <span class="text-yellow-300">lang</span
+        ><span class="text-gray-100">=</span
+        ><span class="text-green-400">"en"</span
+        ><span class="text-red-400">&gt;</span><br />
+        &nbsp;&nbsp;<span class="text-red-400">&lt;head&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">&lt;meta</span>
+        <span class="text-yellow-300">charset</span
+        ><span class="text-gray-100">=</span
+        ><span class="text-green-400">"UTF-8"</span>
+        <span class="text-red-400">/&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">&lt;meta</span>
+        <span class="text-yellow-300">name</span
+        ><span class="text-gray-100">=</span
+        ><span class="text-green-400">"viewport"</span>
+        <span class="text-yellow-300">content</span
+        ><span class="text-gray-100">=</span
+        ><span class="text-green-400"
+          >"width=device-width, initial-scale=1.0"</span
+        >
+        <span class="text-red-400">/&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">&lt;script</span>
+        <span class="text-yellow-300">src</span
+        ><span class="text-gray-100">=</span
+        ><span class="text-green-400">"https://cdn.tailwindcss.com"</span
+        ><span class="text-red-400">&gt;&lt;/script&gt;</span><br />
+        &nbsp;&nbsp;<span class="text-red-400">&lt;/head&gt;</span><br />
+        &nbsp;&nbsp;<span class="text-red-400">&lt;body&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500"
+          >&lt;!-- Your content here --&gt;</span
+        ><br />
+        &nbsp;&nbsp;<span class="text-red-400">&lt;/body&gt;</span><br />
+        <span class="text-red-400">&lt;/html&gt;</span>
+      </div>
+
+      <div
+        class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg mb-6"
+        role="note"
+      >
+        <strong>⚠️ Note:</strong> The Play CDN is only for
+        <strong>development and learning</strong>. It loads the full Tailwind
+        stylesheet which is very large. For production, use the Tailwind CLI.
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 3: TAILWIND CLI (FOR REAL PROJECTS)
+        The CLI reads your HTML/JS files, scans for all Tailwind class names,
+        and generates a compressed CSS file containing ONLY the classes you used.
+        This "purging" is why Tailwind can produce files under 10KB for production.
+        Steps: install Node.js → npm install tailwindcss → configure tailwind.config.js
+        → run: npx tailwindcss -i ./input.css -o ./output.css --watch
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        3. Method 2: Tailwind CLI (for Real Projects)
+      </h2>
+      <p class="mb-4">
+        The CLI compiles a minimal CSS file containing only the classes you
+        actually use in your project.
+      </p>
+
+      <ol class="list-decimal list-inside space-y-4 mb-6">
+        <li>
+          <strong>Install Tailwind via npm</strong>
+          <div
+            class="bg-gray-800 text-green-400 rounded-lg p-3 text-sm font-mono mt-2 overflow-x-auto"
+          >
+            npm install -D tailwindcss<br />
+            npx tailwindcss init
+          </div>
+        </li>
+        <li>
+          <strong
+            >Configure
+            <code class="bg-gray-100 px-1 rounded"
+              >tailwind.config.js</code
+            ></strong
+          >
+          <div
+            class="bg-gray-800 text-gray-100 rounded-lg p-3 text-sm font-mono mt-2 overflow-x-auto"
+          >
+            <span class="text-gray-500"
+              >/** @type {import('tailwindcss').Config} */</span
+            ><br />
+            module.exports = {<br />
+            &nbsp;&nbsp;content: [<span class="text-green-400"
+              >"./**/*.html"</span
+            >],<br />
+            &nbsp;&nbsp;theme: { extend: {} },<br />
+            &nbsp;&nbsp;plugins: [],<br />
+            }
+          </div>
+        </li>
+        <li>
+          <strong>Create your input CSS file</strong>
+          <div
+            class="bg-gray-800 text-gray-100 rounded-lg p-3 text-sm font-mono mt-2 overflow-x-auto"
+          >
+            <span class="text-gray-500">/* css/input.css */</span><br />
+            <span class="text-red-400">@tailwind</span> base;<br />
+            <span class="text-red-400">@tailwind</span> components;<br />
+            <span class="text-red-400">@tailwind</span> utilities;
+          </div>
+        </li>
+        <li>
+          <strong>Build and watch for changes</strong>
+          <div
+            class="bg-gray-800 text-green-400 rounded-lg p-3 text-sm font-mono mt-2 overflow-x-auto"
+          >
+            npx tailwindcss -i ./css/input.css -o ./css/output.css --watch
+          </div>
+        </li>
+      </ol>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 4: CDN VS CLI COMPARISON
+        Quick comparison table to decide which approach to use.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        4. CDN vs CLI — Quick Comparison
+      </h2>
+
+      <div class="overflow-x-auto mb-6">
+        <table
+          class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden"
+        >
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th class="text-left p-3">Feature</th>
+              <th class="text-left p-3">Play CDN</th>
+              <th class="text-left p-3">Tailwind CLI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-medium">Setup time</td>
+              <td class="p-3 text-green-600">Instant (1 line)</td>
+              <td class="p-3">~5 minutes</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-medium">Requires Node.js?</td>
+              <td class="p-3 text-green-600">No</td>
+              <td class="p-3">Yes</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-medium">CSS bundle size</td>
+              <td class="p-3 text-red-500">Very large (full CSS)</td>
+              <td class="p-3 text-green-600">Tiny (purged CSS)</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-medium">Works offline?</td>
+              <td class="p-3 text-red-500">No</td>
+              <td class="p-3 text-green-600">Yes</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-medium">Use in production?</td>
+              <td class="p-3 text-red-500">No</td>
+              <td class="p-3 text-green-600">Yes</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-medium">Best for</td>
+              <td class="p-3">Learning &amp; prototyping</td>
+              <td class="p-3">Real production projects</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Nav Links -->
+      <div
+        class="mt-12 text-center py-5 bg-gray-100 rounded-lg border-t border-gray-200"
+      >
+        <a
+          href="./00_intro.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >← Previous: Introduction</a
+        >
+        <a
+          href="./02_typography.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >Next: Typography →</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

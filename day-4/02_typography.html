@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 - Tailwind Typography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
+        Day 4 - Typography
+      </h1>
+      <p class="text-center text-gray-500 text-lg mb-8">
+        Master Tailwind's typography utilities for beautiful text styling.
+      </p>
+
+      <hr class="mb-8 border-gray-200" />
+
+      <!--
+        SECTION 1: FONT SIZE
+        Tailwind uses a t-shirt sizing scale for font sizes.
+        text-xs = 12px, text-sm = 14px, text-base = 16px (default),
+        text-lg = 18px, text-xl = 20px, text-2xl = 24px, up to text-9xl.
+        These are responsive — prefix with sm:, md:, lg: to change size at breakpoints.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        1. Font Sizes
+      </h2>
+      <p class="mb-4">
+        Use <code class="bg-gray-100 px-1 rounded text-sm">text-{size}</code>
+        classes to control font size:
+      </p>
+
+      <div class="bg-gray-100 rounded-xl p-5 mb-6 space-y-2">
+        <p class="text-xs text-gray-700">
+          <code class="text-indigo-500">text-xs</code> — Extra small text (12px)
+        </p>
+        <p class="text-sm text-gray-700">
+          <code class="text-indigo-500">text-sm</code> — Small text (14px)
+        </p>
+        <p class="text-base text-gray-700">
+          <code class="text-indigo-500">text-base</code> — Base text (16px) —
+          default
+        </p>
+        <p class="text-lg text-gray-700">
+          <code class="text-indigo-500">text-lg</code> — Large text (18px)
+        </p>
+        <p class="text-xl text-gray-700">
+          <code class="text-indigo-500">text-xl</code> — Extra large (20px)
+        </p>
+        <p class="text-2xl text-gray-700">
+          <code class="text-indigo-500">text-2xl</code> — 2x Extra large (24px)
+        </p>
+        <p class="text-3xl text-gray-700">
+          <code class="text-indigo-500">text-3xl</code> — 3x Extra large (30px)
+        </p>
+        <p class="text-4xl text-gray-700">
+          <code class="text-indigo-500">text-4xl</code> — 4x Extra large (36px)
+        </p>
+        <p class="text-5xl text-gray-700">
+          <code class="text-indigo-500">text-5xl</code> — 5x Extra large (48px)
+        </p>
+        <p class="text-6xl text-gray-700">
+          <code class="text-indigo-500">text-6xl</code> — 6x Extra large (60px)
+        </p>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 2: FONT WEIGHT
+        Font weight controls how bold or light text appears.
+        font-thin = 100, font-light = 300, font-normal = 400, font-medium = 500,
+        font-semibold = 600, font-bold = 700, font-extrabold = 800, font-black = 900.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        2. Font Weights
+      </h2>
+      <p class="mb-4">
+        Use
+        <code class="bg-gray-100 px-1 rounded text-sm">font-{weight}</code>
+        to control text thickness:
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+          <p class="text-xs text-gray-400 mb-1"><code>font-thin</code></p>
+          <p class="font-thin text-lg">Thin</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+          <p class="text-xs text-gray-400 mb-1"><code>font-light</code></p>
+          <p class="font-light text-lg">Light</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+          <p class="text-xs text-gray-400 mb-1"><code>font-normal</code></p>
+          <p class="font-normal text-lg">Normal</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+          <p class="text-xs text-gray-400 mb-1"><code>font-medium</code></p>
+          <p class="font-medium text-lg">Medium</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+          <p class="text-xs text-gray-400 mb-1"><code>font-semibold</code></p>
+          <p class="font-semibold text-lg">Semibold</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+          <p class="text-xs text-gray-400 mb-1"><code>font-bold</code></p>
+          <p class="font-bold text-lg">Bold</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+          <p class="text-xs text-gray-400 mb-1"><code>font-extrabold</code></p>
+          <p class="font-extrabold text-lg">Extrabold</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+          <p class="text-xs text-gray-400 mb-1"><code>font-black</code></p>
+          <p class="font-black text-lg">Black</p>
+        </div>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 3: TEXT STYLES
+        italic makes text italic. underline / line-through / no-underline control decoration.
+        uppercase / lowercase / capitalize transform the text case.
+        Tailwind doesn't have a .lead class like Bootstrap — you combine text-lg font-light instead.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        3. Text Styles &amp; Decoration
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-2"><code>italic</code></p>
+          <p class="italic text-gray-700">
+            This text is italic. Use for emphasis.
+          </p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-2"><code>underline</code></p>
+          <p class="underline text-gray-700">Underlined text</p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-2"><code>line-through</code></p>
+          <p class="line-through text-gray-700">Strikethrough text</p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-2"><code>uppercase</code></p>
+          <p class="uppercase text-gray-700">uppercase text</p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-2"><code>lowercase</code></p>
+          <p class="lowercase text-gray-700">LOWERCASE TEXT</p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-2"><code>capitalize</code></p>
+          <p class="capitalize text-gray-700">each word capitalized</p>
+        </div>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 4: TEXT ALIGNMENT
+        text-left / text-center / text-right / text-justify control alignment.
+        These can also be made responsive: md:text-center applies centering at ≥768px.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        4. Text Alignment
+      </h2>
+
+      <div class="space-y-3 mb-6">
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-1"><code>text-left</code></p>
+          <p class="text-left text-gray-700 border-l-2 border-indigo-400 pl-2">
+            This text is aligned to the left (default behavior).
+          </p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-1"><code>text-center</code></p>
+          <p
+            class="text-center text-gray-700 border-l-2 border-indigo-400 pl-2"
+          >
+            This text is centered on the line.
+          </p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-1"><code>text-right</code></p>
+          <p class="text-right text-gray-700 border-l-2 border-indigo-400 pl-2">
+            This text is aligned to the right.
+          </p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-4">
+          <p class="text-xs text-gray-400 mb-1"><code>text-justify</code></p>
+          <p
+            class="text-justify text-gray-700 border-l-2 border-indigo-400 pl-2"
+          >
+            This text is justified, spreading words across the full line width
+            for a clean block appearance when there's enough text to fill the
+            line.
+          </p>
+        </div>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 5: TEXT COLORS
+        Tailwind's color palette uses a name + shade system: text-{color}-{shade}.
+        Shades range from 50 (lightest) to 900 (darkest).
+        Examples: text-red-500, text-blue-700, text-green-400, text-gray-900.
+        text-inherit, text-current, text-transparent are also available.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        5. Text Colors
+      </h2>
+      <p class="mb-4">
+        Use
+        <code class="bg-gray-100 px-1 rounded text-sm"
+          >text-{color}-{shade}</code
+        >
+        where shade goes from <code>50</code> (lightest) to <code>900</code>
+        (darkest):
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-3">
+          <p class="text-xs text-gray-400 mb-1"><code>text-gray-700</code></p>
+          <p class="text-gray-700 font-medium">Gray text</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3">
+          <p class="text-xs text-gray-400 mb-1"><code>text-red-600</code></p>
+          <p class="text-red-600 font-medium">Red text</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3">
+          <p class="text-xs text-gray-400 mb-1"><code>text-blue-600</code></p>
+          <p class="text-blue-600 font-medium">Blue text</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3">
+          <p class="text-xs text-gray-400 mb-1"><code>text-green-600</code></p>
+          <p class="text-green-600 font-medium">Green text</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3">
+          <p class="text-xs text-gray-400 mb-1"><code>text-yellow-500</code></p>
+          <p class="text-yellow-500 font-medium">Yellow text</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3">
+          <p class="text-xs text-gray-400 mb-1"><code>text-indigo-600</code></p>
+          <p class="text-indigo-600 font-medium">Indigo text</p>
+        </div>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 6: LINE HEIGHT & LETTER SPACING
+        leading-{size} controls line-height. Options: tight, snug, normal, relaxed, loose.
+        tracking-{size} controls letter-spacing. Options: tighter, tight, normal, wide, wider, widest.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        6. Line Height &amp; Letter Spacing
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div>
+          <h3 class="font-semibold text-gray-700 mb-3">
+            Line Height (<code>leading-*</code>)
+          </h3>
+          <div class="space-y-3">
+            <div class="bg-gray-100 rounded-lg p-3">
+              <p class="text-xs text-gray-400 mb-1">
+                <code>leading-tight</code>
+              </p>
+              <p class="leading-tight text-gray-600 text-sm">
+                Tight line height. Lines are close together for compact text
+                blocks.
+              </p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-3">
+              <p class="text-xs text-gray-400 mb-1">
+                <code>leading-normal</code>
+              </p>
+              <p class="leading-normal text-gray-600 text-sm">
+                Normal line height. The default spacing between lines of text.
+              </p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-3">
+              <p class="text-xs text-gray-400 mb-1">
+                <code>leading-loose</code>
+              </p>
+              <p class="leading-loose text-gray-600 text-sm">
+                Loose line height. More space between lines for readability.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-700 mb-3">
+            Letter Spacing (<code>tracking-*</code>)
+          </h3>
+          <div class="space-y-3">
+            <div class="bg-gray-100 rounded-lg p-3">
+              <p class="text-xs text-gray-400 mb-1">
+                <code>tracking-tighter</code>
+              </p>
+              <p class="tracking-tighter text-gray-600">Tighter spacing</p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-3">
+              <p class="text-xs text-gray-400 mb-1">
+                <code>tracking-normal</code>
+              </p>
+              <p class="tracking-normal text-gray-600">Normal spacing</p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-3">
+              <p class="text-xs text-gray-400 mb-1">
+                <code>tracking-widest</code>
+              </p>
+              <p class="tracking-widest text-gray-600">Widest spacing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <div
+        class="mt-12 text-center py-5 bg-gray-100 rounded-lg border-t border-gray-200"
+      >
+        <a
+          href="./01_setup.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >← Previous: Setup</a
+        >
+        <a
+          href="./02_buttons.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >Next: Buttons →</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

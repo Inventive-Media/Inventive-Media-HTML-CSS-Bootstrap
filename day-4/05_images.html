@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 - Image Styling with Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
+        Day 4 - Image Styling
+      </h1>
+      <p class="text-center text-gray-500 text-lg mb-8">
+        Learn how to style images with Tailwind's utility classes.
+      </p>
+
+      <hr class="mb-8 border-gray-200" />
+
+      <!-- Section 1: Responsive Images -->
+      <!--
+        RESPONSIVE IMAGES
+        Bootstrap uses .img-fluid (max-width: 100%; height: auto).
+        In Tailwind, use w-full to make images fill their container width,
+        and h-auto to maintain aspect ratio. This makes them fully responsive.
+        You can also use max-w-full as an alternative.
+      -->
+      <section class="mb-10">
+        <h2
+          class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mb-4"
+        >
+          1. Responsive Images
+        </h2>
+        <p class="mb-4">
+          Use <code class="bg-gray-100 px-1 rounded">w-full h-auto</code> to
+          make an image scale with its parent container — the Tailwind
+          equivalent of Bootstrap's
+          <code class="bg-gray-100 px-1 rounded">.img-fluid</code>.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div
+            class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
+          >
+            <div
+              class="bg-gray-100 px-3 py-2 border-b border-gray-200 text-sm font-semibold text-gray-600"
+            >
+              Example
+            </div>
+            <div class="p-4">
+              <img
+                src="../day-3/img/sample.jpg"
+                alt="Responsive image"
+                class="w-full h-auto rounded"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x300/6366f1/ffffff?text=Responsive+Image';
+                  this.onerror = null;
+                "
+              />
+              <p class="text-xs text-gray-400 mt-2 font-mono">
+                class="w-full h-auto"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Image with Fixed Height (object-cover) -->
+      <!--
+        OBJECT-FIT UTILITIES
+        object-cover makes an image cover its container without distortion (crops edges).
+        object-contain fits the image inside without cropping (may show gaps).
+        object-fill stretches the image to fill (may distort).
+        Pair with w-full h-{size} to set exact dimensions.
+        This is essential for card images to maintain a consistent height.
+      -->
+      <section class="mb-10">
+        <h2
+          class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mb-4"
+        >
+          2. Object Fit Utilities
+        </h2>
+        <p class="mb-4">
+          Control how an image fills its container with
+          <code class="bg-gray-100 px-1 rounded">object-{fit}</code>. Always
+          pair with fixed dimensions.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div
+            class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
+          >
+            <div
+              class="bg-gray-100 px-3 py-2 border-b border-gray-200 text-sm font-semibold"
+            >
+              object-cover
+            </div>
+            <div class="p-3">
+              <div class="w-full h-32 overflow-hidden rounded">
+                <img
+                  src="../day-3/img/sample.jpg"
+                  alt="Object cover"
+                  class="w-full h-32 object-cover"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/400x200/6366f1/ffffff?text=object-cover';
+                    this.onerror = null;
+                  "
+                />
+              </div>
+              <p class="text-xs text-gray-500 mt-2">
+                Crops to fill. Aspect ratio kept.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
+          >
+            <div
+              class="bg-gray-100 px-3 py-2 border-b border-gray-200 text-sm font-semibold"
+            >
+              object-contain
+            </div>
+            <div class="p-3">
+              <div class="w-full h-32 overflow-hidden rounded bg-gray-100">
+                <img
+                  src="../day-3/img/sample.jpg"
+                  alt="Object contain"
+                  class="w-full h-32 object-contain"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/400x200/6366f1/ffffff?text=object-contain';
+                    this.onerror = null;
+                  "
+                />
+              </div>
+              <p class="text-xs text-gray-500 mt-2">
+                Fits inside. May show gaps.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
+          >
+            <div
+              class="bg-gray-100 px-3 py-2 border-b border-gray-200 text-sm font-semibold"
+            >
+              object-fill
+            </div>
+            <div class="p-3">
+              <div class="w-full h-32 overflow-hidden rounded">
+                <img
+                  src="../day-3/img/sample.jpg"
+                  alt="Object fill"
+                  class="w-full h-32 object-fill"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/400x200/6366f1/ffffff?text=object-fill';
+                    this.onerror = null;
+                  "
+                />
+              </div>
+              <p class="text-xs text-gray-500 mt-2">
+                Stretches to fill. May distort.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Aligning Images -->
+      <!--
+        ALIGNING IMAGES
+        Bootstrap uses .float-start, .float-end, .mx-auto .d-block.
+        Tailwind equivalents: float-left (float: left), float-right (float: right),
+        mx-auto block (centers a block image).
+        For flexbox-based centering of containers, use flex justify-center.
+      -->
+      <section class="mb-10">
+        <h2
+          class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mb-4"
+        >
+          3. Aligning Images
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div
+            class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
+          >
+            <div
+              class="bg-gray-100 px-3 py-2 border-b border-gray-200 text-sm font-semibold"
+            >
+              Float Left (float-left)
+            </div>
+            <div class="p-4 clearfix">
+              <img
+                src="../day-3/img/sample.jpg"
+                alt="Float left"
+                class="float-left rounded w-28 mr-3"
+                onerror="
+                  this.src =
+                    'https://placehold.co/150x100/6366f1/ffffff?text=Left';
+                  this.onerror = null;
+                "
+              />
+              <p class="text-sm text-gray-600">
+                Text wraps around the image because the image is floated to the
+                left.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
+          >
+            <div
+              class="bg-gray-100 px-3 py-2 border-b border-gray-200 text-sm font-semibold"
+            >
+              Float Right (float-right)
+            </div>
+            <div class="p-4 clearfix">
+              <img
+                src="../day-3/img/sample.jpg"
+                alt="Float right"
+                class="float-right rounded w-28 ml-3"
+                onerror="
+                  this.src =
+                    'https://placehold.co/150x100/6366f1/ffffff?text=Right';
+                  this.onerror = null;
+                "
+              />
+              <p class="text-sm text-gray-600">
+                Text wraps around the image because the image is floated to the
+                right.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm md:col-span-2"
+          >
+            <div
+              class="bg-gray-100 px-3 py-2 border-b border-gray-200 text-sm font-semibold"
+            >
+              Centered (block mx-auto)
+            </div>
+            <div class="p-4">
+              <img
+                src="../day-3/img/sample.jpg"
+                alt="Centered image"
+                class="block mx-auto rounded w-64"
+                onerror="
+                  this.src =
+                    'https://placehold.co/300x150/6366f1/ffffff?text=Centered';
+                  this.onerror = null;
+                "
+              />
+              <p class="text-center text-xs text-gray-400 mt-2 font-mono">
+                class="block mx-auto"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Rounded Corners -->
+      <!--
+        ROUNDED CORNERS
+        Bootstrap: .rounded, .rounded-circle, .rounded-pill
+        Tailwind: rounded (small), rounded-lg (large), rounded-xl / rounded-2xl (extra large),
+        rounded-full (circle/pill — fully rounded).
+        Always set equal width and height + object-cover for circular profile images.
+      -->
+      <section class="mb-10">
+        <h2
+          class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mb-4"
+        >
+          4. Rounded Corners
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-center">
+          <div>
+            <p class="text-xs text-gray-400 mb-2 font-mono">rounded</p>
+            <img
+              src="../day-3/img/sample.jpg"
+              alt="Rounded"
+              class="rounded shadow w-24 h-24 object-cover mx-auto"
+              onerror="
+                this.src = 'https://placehold.co/100x100/6366f1/ffffff?text=R';
+                this.onerror = null;
+              "
+            />
+          </div>
+          <div>
+            <p class="text-xs text-gray-400 mb-2 font-mono">rounded-xl</p>
+            <img
+              src="../day-3/img/sample.jpg"
+              alt="Rounded XL"
+              class="rounded-xl shadow w-24 h-24 object-cover mx-auto"
+              onerror="
+                this.src = 'https://placehold.co/100x100/6366f1/ffffff?text=XL';
+                this.onerror = null;
+              "
+            />
+          </div>
+          <div>
+            <p class="text-xs text-gray-400 mb-2 font-mono">
+              rounded-full (circle)
+            </p>
+            <img
+              src="../day-3/img/sample.jpg"
+              alt="Circle"
+              class="rounded-full shadow w-24 h-24 object-cover mx-auto"
+              onerror="
+                this.src = 'https://placehold.co/100x100/6366f1/ffffff?text=O';
+                this.onerror = null;
+              "
+            />
+          </div>
+          <div>
+            <p class="text-xs text-gray-400 mb-2 font-mono">
+              rounded-full (pill)
+            </p>
+            <img
+              src="../day-3/img/sample.jpg"
+              alt="Pill"
+              class="rounded-full shadow w-36 h-20 object-cover mx-auto"
+              onerror="
+                this.src =
+                  'https://placehold.co/150x80/6366f1/ffffff?text=Pill';
+                this.onerror = null;
+              "
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Image with Overlay -->
+      <!--
+        IMAGE OVERLAYS
+        Bootstrap doesn't have built-in image overlay utilities, but Tailwind makes
+        it easy with relative/absolute positioning + bg-opacity or bg-*/{opacity}.
+        The pattern: parent = relative overflow-hidden, overlay = absolute inset-0 bg-black/50.
+      -->
+      <section class="mb-10">
+        <h2
+          class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mb-4"
+        >
+          5. Image Overlays
+        </h2>
+        <p class="mb-4 text-sm text-gray-600">
+          Use <code class="bg-gray-100 px-1 rounded">relative</code> on the
+          container and
+          <code class="bg-gray-100 px-1 rounded">absolute inset-0</code> on the
+          overlay:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="relative overflow-hidden rounded-xl w-full h-48">
+            <img
+              src="../day-3/img/sample.jpg"
+              alt="With dark overlay"
+              class="w-full h-48 object-cover"
+              onerror="
+                this.src =
+                  'https://placehold.co/400x200/6366f1/ffffff?text=Background';
+                this.onerror = null;
+              "
+            />
+            <div
+              class="absolute inset-0 bg-black/50 flex items-center justify-center"
+            >
+              <p class="text-white font-bold text-lg">Dark Overlay</p>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-xl w-full h-48">
+            <img
+              src="../day-3/img/sample.jpg"
+              alt="With gradient overlay"
+              class="w-full h-48 object-cover"
+              onerror="
+                this.src =
+                  'https://placehold.co/400x200/6366f1/ffffff?text=Background';
+                this.onerror = null;
+              "
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent flex items-end p-4"
+            >
+              <p class="text-white font-bold">Gradient Overlay</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-8 border-gray-200" />
+      <div class="flex justify-between">
+        <a
+          href="./04_grid_layout.html"
+          class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
+          >&larr; Previous: Grid Layout</a
+        >
+        <a
+          href="./06_utilities.html"
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
+          >Next: Utilities &rarr;</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
