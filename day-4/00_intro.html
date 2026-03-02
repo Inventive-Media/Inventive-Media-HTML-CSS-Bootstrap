@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Introduction to Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-6 text-indigo-600">
+        Day 3 - Introduction to Tailwind CSS
+      </h1>
+
+      <!-- Hero Banner -->
+      <div
+        class="bg-gradient-to-br from-indigo-500 to-indigo-800 text-white p-8 rounded-xl mb-8 text-center"
+      >
+        <h2 class="text-2xl font-bold mb-2">Welcome to Tailwind CSS!</h2>
+        <p class="text-indigo-100 text-lg">
+          A utility-first CSS framework for rapidly building custom user
+          interfaces.
+        </p>
+      </div>
+
+      <hr class="mb-8 border-gray-200" />
+
+      <!--
+        SECTION 1: WHAT IS TAILWIND CSS?
+        Tailwind is a utility-first framework — instead of writing custom CSS,
+        you compose small, single-purpose classes directly on your HTML elements.
+        Unlike Bootstrap, Tailwind gives you NO pre-built components like .btn or .navbar.
+        You build everything yourself by combining utility classes.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        1. What is Tailwind CSS?
+      </h2>
+
+      <p class="mb-4">
+        <strong>Tailwind CSS</strong> is a
+        <strong>utility-first CSS framework</strong> designed for rapidly
+        building custom, modern user interfaces directly in your HTML markup.
+      </p>
+
+      <p class="mb-4">Instead of writing CSS like this:</p>
+      <pre
+        class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm overflow-x-auto mb-4 font-mono"
+      ><code>/* Your CSS file */
+.my-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+}</code></pre>
+
+      <p class="mb-4">You write Tailwind like this:</p>
+      <pre
+        class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm overflow-x-auto mb-4 font-mono"
+      ><code>&lt;button class="bg-blue-500 text-white py-2 px-4 rounded-lg font-bold"&gt;
+  Click Me
+&lt;/button&gt;</code></pre>
+
+      <div
+        class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg mb-6"
+        role="note"
+      >
+        <strong>Key Benefit:</strong> You never leave your HTML to style
+        elements. Every visual decision is visible right on the element itself.
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 2: WHY USE TAILWIND?
+        Tailwind is very popular because it solves real developer problems:
+        - No more naming classes (no more "what should I call this div?")
+        - No more switching between HTML and CSS files
+        - Responsive design is built-in with prefixes like md: and lg:
+        - The final CSS file is tiny because unused styles are removed
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        2. Why Use Tailwind CSS?
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div
+          class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all"
+        >
+          <h3 class="font-bold text-indigo-600 mb-2">No Naming Headaches</h3>
+          <p class="text-sm text-gray-600">
+            Stop inventing class names like
+            <code>.wrapper-inner-container-2</code>. Apply styles directly
+            without writing custom CSS.
+          </p>
+        </div>
+        <div
+          class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all"
+        >
+          <h3 class="font-bold text-indigo-600 mb-2">Responsive by Default</h3>
+          <p class="text-sm text-gray-600">
+            Use breakpoint prefixes (<code>sm:</code>, <code>md:</code>,
+            <code>lg:</code>) to apply styles at specific screen widths.
+          </p>
+        </div>
+        <div
+          class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all"
+        >
+          <h3 class="font-bold text-indigo-600 mb-2">Tiny Final CSS</h3>
+          <p class="text-sm text-gray-600">
+            Tailwind CLI purges unused classes at build time, producing a final
+            CSS file that can be just a few kilobytes.
+          </p>
+        </div>
+        <div
+          class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all"
+        >
+          <h3 class="font-bold text-indigo-600 mb-2">Fully Customizable</h3>
+          <p class="text-sm text-gray-600">
+            Design tokens (colors, spacing, fonts) are configured in a single
+            file, making it easy to maintain a consistent design system.
+          </p>
+        </div>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 3: TAILWIND VS BOOTSTRAP
+        The key philosophical difference:
+        - Bootstrap = component-based. It gives you ready-made .btn, .navbar, .card, etc.
+        - Tailwind = utility-based. It gives you building blocks. You assemble the components yourself.
+        Bootstrap is faster to start, but Tailwind produces more unique, custom designs.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        3. Tailwind vs Bootstrap
+      </h2>
+
+      <div class="overflow-x-auto mb-6">
+        <table
+          class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden"
+        >
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th class="text-left p-3">Feature</th>
+              <th class="text-left p-3">Bootstrap</th>
+              <th class="text-left p-3">Tailwind CSS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-medium">Approach</td>
+              <td class="p-3">Component-based</td>
+              <td class="p-3">Utility-first</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-medium">Pre-built components?</td>
+              <td class="p-3">Yes (.btn, .card, .navbar)</td>
+              <td class="p-3">No — you build from scratch</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-medium">Design uniqueness</td>
+              <td class="p-3">Looks like Bootstrap</td>
+              <td class="p-3">Fully custom</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-gray-50">
+              <td class="p-3 font-medium">CSS file size</td>
+              <td class="p-3">~30KB (minified)</td>
+              <td class="p-3">~5KB (with purging)</td>
+            </tr>
+            <tr class="border-t border-gray-200 bg-white">
+              <td class="p-3 font-medium">Learning curve</td>
+              <td class="p-3">Low (use component classes)</td>
+              <td class="p-3">Medium (memorize utilities)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 4: THE UTILITY-FIRST WORKFLOW
+        Each Tailwind class does ONE thing. You combine them to build designs.
+        For example, a card with a shadow is: bg-white rounded-xl shadow-lg p-6
+        This maps to: background-color + border-radius + box-shadow + padding
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        4. The Utility-First Workflow
+      </h2>
+
+      <p class="mb-4">
+        Each Tailwind class does exactly <strong>one thing</strong>. You combine
+        them directly in HTML to build any design you can imagine:
+      </p>
+
+      <div class="bg-gray-100 rounded-lg p-4 mb-4">
+        <p class="text-sm text-gray-500 mb-2 font-mono">
+          class="bg-white rounded-xl shadow-lg p-6 max-w-sm"
+        </p>
+        <div class="bg-white rounded-xl shadow-lg p-6 max-w-sm">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">Example Card</h3>
+          <p class="text-gray-600 text-sm">
+            This card is built with 4 utility classes applied to a single div.
+          </p>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <div
+        class="mt-12 text-center py-5 bg-gray-100 rounded-lg border-t border-gray-200"
+      >
+        <a
+          href="./index.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >← Back to Index</a
+        >
+        <a
+          href="./01_setup.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >Next: Setup →</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

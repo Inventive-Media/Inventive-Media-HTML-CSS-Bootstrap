@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Tailwind Buttons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
+        Day 3 - Tailwind Sandbox
+      </h1>
+      <hr class="mb-8 border-gray-200" />
+
+      <p class="font-bold text-lg mb-4">Buttons</p>
+
+      <!--
+        BUTTON SIZES
+        Unlike Bootstrap's btn-sm / btn-lg helper classes, in Tailwind you
+        construct button sizes by combining padding and text-size utilities.
+        py-1 px-2 text-sm = small | py-2 px-4 text-base = medium | py-3 px-6 text-lg = large
+        The base styles (font-bold rounded cursor-pointer) are always present.
+      -->
+      <p class="font-semibold mb-2">Button sizes</p>
+      <div class="flex items-center gap-2 flex-wrap mb-6">
+        <a
+          href="./index.html"
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-2 rounded text-sm"
+          >Link button small</a
+        >
+        <a
+          href="./index.html"
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded text-base"
+          >Link button medium</a
+        >
+        <a
+          href="./index.html"
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded text-lg"
+          >Link button large</a
+        >
+      </div>
+
+      <hr class="my-6 border-gray-200" />
+
+      <!--
+        BUTTON COLORS
+        Tailwind uses bg-{color}-{shade} for background and a lighter hover shade.
+        Always pair dark backgrounds with text-white, and light backgrounds with text-gray-900.
+        These are the semantic "Bootstrap-equivalent" color roles mapped to Tailwind palette:
+        primary → indigo, secondary → gray, danger → red, warning → amber, info → sky, success → green
+      -->
+      <p class="font-semibold mb-2">Button colors</p>
+      <div class="flex items-center gap-2 flex-wrap mb-6">
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-3 rounded text-sm"
+        >
+          Primary
+        </button>
+        <button
+          class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded text-sm"
+        >
+          Secondary
+        </button>
+        <button
+          class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 rounded text-sm"
+        >
+          Danger
+        </button>
+        <button
+          class="bg-amber-400 hover:bg-amber-500 text-white font-bold py-1 px-3 rounded text-sm"
+        >
+          Warning
+        </button>
+        <button
+          class="bg-sky-400 hover:bg-sky-500 text-white font-bold py-1 px-3 rounded text-sm"
+        >
+          Info
+        </button>
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-3 rounded text-sm"
+        >
+          Success
+        </button>
+      </div>
+
+      <hr class="my-6 border-gray-200" />
+
+      <!--
+        OUTLINED BUTTONS
+        Outline buttons have a transparent background and a colored border + text.
+        Use border-2 border-{color}-500 text-{color}-500 hover:bg-{color}-500 hover:text-white.
+        This gives the same fill-on-hover effect as Bootstrap's btn-outline-*.
+      -->
+      <p class="font-semibold mb-2">Outlined buttons</p>
+      <div class="flex items-center gap-2 flex-wrap mb-6">
+        <button
+          class="border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white font-bold py-1 px-3 rounded text-sm transition-colors"
+        >
+          Primary
+        </button>
+        <button
+          class="border-2 border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white font-bold py-1 px-3 rounded text-sm transition-colors"
+        >
+          Secondary
+        </button>
+        <button
+          class="border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-1 px-3 rounded text-sm transition-colors"
+        >
+          Danger
+        </button>
+        <button
+          class="border-2 border-amber-400 text-amber-500 hover:bg-amber-400 hover:text-white font-bold py-1 px-3 rounded text-sm transition-colors"
+        >
+          Warning
+        </button>
+        <button
+          class="border-2 border-sky-400 text-sky-500 hover:bg-sky-400 hover:text-white font-bold py-1 px-3 rounded text-sm transition-colors"
+        >
+          Info
+        </button>
+        <button
+          class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold py-1 px-3 rounded text-sm transition-colors"
+        >
+          Success
+        </button>
+      </div>
+
+      <hr class="my-6 border-gray-200" />
+
+      <!--
+        DISABLED BUTTONS
+        In Tailwind there's no single disabled class. Instead, combine:
+        opacity-50 (fades the button) + cursor-not-allowed (changes cursor).
+        You can also add the HTML `disabled` attribute and use disabled: variants.
+        Here we use the `disabled` attribute + Tailwind's disabled: prefix.
+      -->
+      <p class="font-semibold mb-2">Disabled buttons</p>
+      <div class="flex items-center gap-2 flex-wrap mb-6">
+        <button
+          class="bg-indigo-500 text-white font-bold py-1 px-3 rounded text-sm opacity-50 cursor-not-allowed"
+          disabled
+        >
+          Primary
+        </button>
+        <button
+          class="bg-gray-500 text-white font-bold py-1 px-3 rounded text-sm opacity-50 cursor-not-allowed"
+          disabled
+        >
+          Secondary
+        </button>
+        <button
+          class="bg-red-500 text-white font-bold py-1 px-3 rounded text-sm opacity-50 cursor-not-allowed"
+          disabled
+        >
+          Danger
+        </button>
+        <button
+          class="bg-amber-400 text-white font-bold py-1 px-3 rounded text-sm opacity-50 cursor-not-allowed"
+          disabled
+        >
+          Warning
+        </button>
+        <button
+          class="bg-green-500 text-white font-bold py-1 px-3 rounded text-sm opacity-50 cursor-not-allowed"
+          disabled
+        >
+          Success
+        </button>
+        <button
+          class="border-2 border-green-500 text-green-500 font-bold py-1 px-3 rounded text-sm opacity-50 cursor-not-allowed"
+          disabled
+        >
+          Outline
+        </button>
+      </div>
+
+      <hr class="my-6 border-gray-200" />
+
+      <!--
+        BUTTON GROUPS
+        Tailwind has no btn-group component. You create groups by removing the
+        rounded corners on the inner edges using rounded-l-lg (left only) and
+        rounded-r-lg (right only), and -ml-px to collapse the borders.
+      -->
+      <p class="font-semibold mb-2">Button groups</p>
+      <div class="flex mb-6" role="group" aria-label="Basic example">
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-3 rounded-l text-sm border-r border-indigo-400"
+        >
+          Left
+        </button>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-3 text-sm border-r border-indigo-400"
+        >
+          Middle
+        </button>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-3 rounded-r text-sm"
+        >
+          Right
+        </button>
+      </div>
+
+      <p class="font-semibold mb-2">With style</p>
+      <div class="flex mb-6" role="group" aria-label="Styled example">
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-3 rounded-l text-sm"
+        >
+          Left
+        </button>
+        <button
+          class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 text-sm"
+        >
+          Middle
+        </button>
+        <button
+          class="bg-amber-400 hover:bg-amber-500 text-white font-bold py-1 px-3 rounded-r text-sm"
+        >
+          Right
+        </button>
+      </div>
+
+      <p class="font-semibold mb-2">Outlined</p>
+      <div class="flex mb-6" role="group" aria-label="Outlined example">
+        <button
+          class="border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white font-bold py-1 px-3 rounded-l text-sm transition-colors border-r-0"
+        >
+          Middle
+        </button>
+        <button
+          class="border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white font-bold py-1 px-3 text-sm transition-colors border-r-0"
+        >
+          Left
+        </button>
+        <button
+          class="border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white font-bold py-1 px-3 rounded-r text-sm transition-colors"
+        >
+          Right
+        </button>
+      </div>
+
+      <hr class="my-6 border-gray-200" />
+
+      <!--
+        VERTICAL ALIGNMENT
+        In Tailwind, vertical button groups are created with flex-col instead of flex.
+        No special wrapper class is needed — just change the flex direction.
+      -->
+      <p class="font-semibold mb-2">Vertical Alignment</p>
+      <div
+        class="inline-flex flex-col mb-6"
+        role="group"
+        aria-label="Vertical button group"
+      >
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-4 rounded-t text-sm border-b border-indigo-400"
+        >
+          Button
+        </button>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-4 text-sm border-b border-indigo-400"
+        >
+          Button
+        </button>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-4 text-sm border-b border-indigo-400"
+        >
+          Button
+        </button>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-4 rounded-b text-sm"
+        >
+          Button
+        </button>
+      </div>
+
+      <hr class="my-6 border-gray-200" />
+
+      <!--
+        FULL-WIDTH BUTTON
+        Use w-full to make a button span the full width of its container.
+        This is the equivalent of Bootstrap's .btn.w-100 / d-grid approach.
+      -->
+      <p class="font-semibold mb-2">Full-width button</p>
+      <button
+        class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded text-base mb-6"
+      >
+        Full Width Button
+      </button>
+
+      <hr class="my-6 border-gray-200" />
+
+      <!--
+        ICON BUTTONS
+        Combine inline-flex items-center gap-2 to add icons alongside button text.
+        You can use any SVG icon or emoji. Shadow and rounded-full create pill buttons.
+      -->
+      <p class="font-semibold mb-2">Icon &amp; Pill buttons</p>
+      <div class="flex items-center gap-2 flex-wrap">
+        <button
+          class="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg text-sm"
+        >
+          <span>📧</span> Send Email
+        </button>
+        <button
+          class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full text-sm"
+        >
+          <span>✅</span> Confirm
+        </button>
+        <button
+          class="inline-flex items-center gap-2 border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-2 px-4 rounded-full text-sm transition-colors"
+        >
+          <span>🗑️</span> Delete
+        </button>
+      </div>
+
+      <hr class="my-6 border-gray-200" />
+
+      <!-- Nav Links -->
+      <div
+        class="mt-12 text-center py-5 bg-gray-100 rounded-lg border-t border-gray-200"
+      >
+        <a
+          href="./02_typography.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >← Previous: Typography</a
+        >
+        <a
+          href="./03_containers.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >Next: Containers →</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

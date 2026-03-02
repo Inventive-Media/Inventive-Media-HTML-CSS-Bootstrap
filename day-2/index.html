@@ -4,99 +4,605 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Styling</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
-  <body class="page-index">
-    <!-- Sticky Header -->
-    <header class="sticky-header">
-      <div class="header-left">
-        <a href="index.html" class="home-link">Home</a>
-        <span id="header-title" class="page-title">Loading...</span>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Jump to Topic ▼</button>
-        <div class="dropdown-content">
-          <a href="00_css_intro.html">00. CSS Intro</a>
-          <a href="01_css_syntax.html">01. CSS Syntax</a>
-          <a href="02_css_selectors.html">02. CSS Selectors</a>
-          <a href="03_box_model.html">03. Box Model</a>
-          <a href="04_typography.html">04. Typography</a>
-          <a href="05_colors.html">05. Colors</a>
-          <a href="06_css_variables_functions.html">06. CSS Variables &amp; Functions</a>
-          <a href="07_backgrounds.html">07. Backgrounds</a>
-          <a href="08_css_units_shadows.html">08. Units &amp; Shadows</a>
-          <a href="09_animations.html">09. Animations</a>
-          <a href="10_positioning.html">10. Positioning</a>
-          <a href="11_flexbox.html">11. Flexbox</a>
-          <a href="12_grid.html">12. Grid</a>
-          <a href="13_responsive_design.html">13. Responsive Design</a>
+  <body class="bg-slate-50 text-slate-900 font-sans">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-4">
+          <a
+            href="../index.html"
+            class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors duration-200 text-sm font-medium cursor-pointer"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            Home
+          </a>
+          <span class="hidden sm:block text-sm text-slate-400 font-medium"
+            >Day 2: CSS Styling</span
+          >
+        </div>
+        <div class="relative group">
+          <button
+            class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer"
+          >
+            Jump to Topic
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div
+            class="hidden group-hover:block absolute right-0 top-full mt-1 bg-white border border-slate-200 rounded-xl shadow-lg min-w-[280px] overflow-y-auto max-h-[70vh] z-50"
+          >
+            <a
+              href="00_css_intro.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >00. CSS Intro</a
+            >
+            <a
+              href="01_css_syntax.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >01. CSS Syntax</a
+            >
+            <a
+              href="02_css_selectors.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >02. CSS Selectors</a
+            >
+            <a
+              href="03_box_model.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >03. Box Model</a
+            >
+            <a
+              href="04_typography.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >04. Typography</a
+            >
+            <a
+              href="05_colors.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >05. Colors</a
+            >
+            <a
+              href="06_css_variables_functions.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >06. CSS Variables &amp; Functions</a
+            >
+            <a
+              href="07_backgrounds.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >07. Backgrounds</a
+            >
+            <a
+              href="08_css_units_shadows.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >08. Units &amp; Shadows</a
+            >
+            <a
+              href="09_animations.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >09. Animations</a
+            >
+            <a
+              href="10_positioning.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >10. Positioning</a
+            >
+            <a
+              href="11_flexbox.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >11. Flexbox</a
+            >
+            <a
+              href="12_grid.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-100 transition-colors duration-150"
+              >12. Grid</a
+            >
+            <a
+              href="13_responsive_design.html"
+              class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150"
+              >13. Responsive Design</a
+            >
+          </div>
         </div>
       </div>
-    </header>
-    <script>
-      // Dynamically set the header title from the main h1
-      document.addEventListener("DOMContentLoaded", function () {
-        var h1 = document.querySelector("h1");
-        if (h1) {
-          document.getElementById("header-title").textContent = h1.textContent;
-        } else {
-          document.getElementById("header-title").textContent = document.title;
-        }
-      });
-    </script>
+    </nav>
 
-    <main class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>Day 2: CSS Styling</h1>
-          <p>Dive into styling with Cascading Style Sheets.</p>
+    <main class="max-w-5xl mx-auto px-6 py-12">
+      <!-- Hero -->
+      <div
+        class="bg-gradient-to-br from-blue-600 to-blue-800 text-white px-8 py-14 rounded-2xl mb-10 text-center"
+      >
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+          Day 2: CSS Styling
+        </h1>
+        <p class="text-blue-100 text-lg max-w-xl mx-auto">
+          Dive into styling with Cascading Style Sheets — colors, layouts,
+          animations, and responsive design.
+        </p>
+      </div>
 
-          <ul class="lesson-list">
-            <li class="lesson-card">
-              <a href="00_css_intro.html">Introduction to CSS<span class="file-name">(00_css_intro.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="01_css_syntax.html">CSS Syntax <span class="file-name">(01_css_syntax.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="02_css_selectors.html">CSS Selectors <span class="file-name">(02_css_selectors.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="03_box_model.html">Box Model <span class="file-name">(03_box_model.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="04_typography.html">Typography <span class="file-name">(04_typography.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="05_colors.html">Colors <span class="file-name">(05_colors.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="06_css_variables_functions.html">CSS Variables &amp; Functions <span class="file-name">(06_css_variables_functions.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="07_backgrounds.html">Backgrounds <span class="file-name">(07_backgrounds.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="08_css_units_shadows.html">Units &amp; Shadows <span class="file-name">(08_css_units_shadows.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="09_animations.html">Animations <span class="file-name">(09_animations.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="10_positioning.html">Positioning <span class="file-name">(10_positioning.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="11_flexbox.html">Flexbox <span class="file-name">(11_flexbox.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="12_grid.html">CSS Grid <span class="file-name">(12_grid.html)</span></a>
-            </li>
-            <li class="lesson-card">
-              <a href="13_responsive_design.html">Responsive Design <span class="file-name">(13_responsive_design.html)</span></a>
-            </li>
-          </ul>
+      <!-- Lessons -->
+      <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <svg
+          class="w-5 h-5 text-blue-600"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
+        </svg>
+        Today's Lessons
+      </h2>
 
-          <a href="../index.html" class="back-link">&larr; Back to Main Home</a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <a href="00_css_intro.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >1</span
+                >
+                Introduction to CSS
+              </h3>
+              <p class="text-sm text-slate-500">
+                What is CSS? How does it work with HTML to style web pages?
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Start here &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="01_css_syntax.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >2</span
+                >
+                CSS Syntax
+              </h3>
+              <p class="text-sm text-slate-500">
+                Rules, declarations, properties, and values — the language of
+                CSS.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Fundamentals &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="02_css_selectors.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >3</span
+                >
+                CSS Selectors
+              </h3>
+              <p class="text-sm text-slate-500">
+                Target elements with class, ID, attribute, and pseudo-selectors.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Targeting elements &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="03_box_model.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >4</span
+                >
+                Box Model
+              </h3>
+              <p class="text-sm text-slate-500">
+                Content, padding, border, and margin — the foundation of layout.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Layout basics &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="04_typography.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >5</span
+                >
+                Typography
+              </h3>
+              <p class="text-sm text-slate-500">
+                Font families, sizes, weights, line-height, and text decoration.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Text styling &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="05_colors.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >6</span
+                >
+                Colors
+              </h3>
+              <p class="text-sm text-slate-500">
+                Hex, RGB, HSL, opacity, and color theory for web design.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Color systems &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="06_css_variables_functions.html"
+          class="group block cursor-pointer"
+        >
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >7</span
+                >
+                CSS Variables &amp; Functions
+              </h3>
+              <p class="text-sm text-slate-500">
+                Custom properties, calc(), min(), max(), and clamp().
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Dynamic values &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="07_backgrounds.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >8</span
+                >
+                Backgrounds
+              </h3>
+              <p class="text-sm text-slate-500">
+                Background colors, images, gradients, and positioning.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Visual effects &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="08_css_units_shadows.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >9</span
+                >
+                Units &amp; Shadows
+              </h3>
+              <p class="text-sm text-slate-500">
+                px, em, rem, vw, vh, and box/text shadow effects.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Sizing &amp; depth &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="09_animations.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >10</span
+                >
+                Animations
+              </h3>
+              <p class="text-sm text-slate-500">
+                Transitions, keyframes, and bringing elements to life.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Motion design &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="10_positioning.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >11</span
+                >
+                Positioning
+              </h3>
+              <p class="text-sm text-slate-500">
+                Static, relative, absolute, fixed, sticky — element placement.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Element placement &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="11_flexbox.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >12</span
+                >
+                Flexbox
+              </h3>
+              <p class="text-sm text-slate-500">
+                One-dimensional layouts with flexible alignment and
+                distribution.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Flex layouts &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="12_grid.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >13</span
+                >
+                CSS Grid
+              </h3>
+              <p class="text-sm text-slate-500">
+                Two-dimensional layouts with rows, columns, and areas.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Grid layouts &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="13_responsive_design.html" class="group block cursor-pointer">
+          <div
+            class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col"
+          >
+            <div class="p-6 flex-grow">
+              <h3
+                class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0"
+                  >14</span
+                >
+                Responsive Design
+              </h3>
+              <p class="text-sm text-slate-500">
+                Media queries, mobile-first, and adapting to any screen size.
+              </p>
+            </div>
+            <div class="px-6 pb-4 border-t border-slate-100 pt-3">
+              <small class="text-blue-600 font-semibold text-xs"
+                >Multi-device &rarr;</small
+              >
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center">
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="../index.html"
+            class="inline-flex items-center gap-2 border-2 border-slate-300 text-slate-600 hover:border-slate-400 hover:text-slate-800 font-semibold py-2.5 px-5 rounded-lg transition-colors duration-200 text-sm cursor-pointer"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            Back to Main Home
+          </a>
+          <a
+            href="00_css_intro.html"
+            class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-5 rounded-lg transition-colors duration-200 text-sm cursor-pointer"
+          >
+            Start Learning
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </a>
         </div>
       </div>
     </main>

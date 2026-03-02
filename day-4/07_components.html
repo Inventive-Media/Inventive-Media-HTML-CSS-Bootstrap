@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Tailwind Components</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
+        Day 3 - Components
+      </h1>
+      <p class="text-center text-gray-500 text-lg mb-6">
+        Build reusable UI elements from scratch using utility classes.
+      </p>
+
+      <div
+        class="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r-lg mb-8"
+        role="note"
+      >
+        <strong>What are Tailwind Components?</strong> Unlike Bootstrap,
+        Tailwind has no pre-made components. Instead, you build every component
+        yourself by composing utility classes — giving you full control over
+        appearance.
+      </div>
+
+      <hr class="mb-8 border-gray-200" />
+
+      <!--
+        SECTION 1: NAVBAR
+        Tailwind has no .navbar class. You build it with:
+        - A flex container for layout (flex items-center justify-between)
+        - bg-gray-900 for dark background, text-white for text
+        - md:flex hidden to show/hide nav links on mobile
+        Unlike Bootstrap, there's no built-in JS for the hamburger toggle.
+        For interactivity you'd use Alpine.js or plain JS.
+        Here we show the structure with a JS toggle for the mobile menu.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        1. Navbar
+      </h2>
+      <p class="mb-4 text-sm text-gray-600">
+        A responsive navigation bar built from scratch with Tailwind utilities
+        and a small JavaScript toggle.
+      </p>
+
+      <div class="mb-4 rounded-xl overflow-hidden border border-gray-200">
+        <nav class="bg-gray-900 px-4 py-3">
+          <div class="flex items-center justify-between">
+            <a href="#" class="text-white font-bold text-lg">MyBrand</a>
+
+            <!-- Hamburger button (mobile) -->
+            <button
+              id="nav-toggle"
+              class="md:hidden text-white focus:outline-none"
+              onclick="
+                document.getElementById('nav-menu').classList.toggle('hidden')
+              "
+              aria-label="Toggle menu"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+
+            <!-- Desktop nav links -->
+            <ul class="hidden md:flex gap-6">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white font-medium transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white font-medium transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white font-medium transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mobile nav links (togglable) -->
+          <div
+            id="nav-menu"
+            class="hidden md:hidden mt-3 border-t border-gray-700 pt-3"
+          >
+            <ul class="flex flex-col gap-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white block py-1 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white block py-1 transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white block py-1 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <p class="text-xs text-gray-400 mb-6">
+        Key classes:
+        <code class="bg-gray-100 px-1 rounded"
+          >flex items-center justify-between</code
+        >, <code class="bg-gray-100 px-1 rounded">bg-gray-900</code>,
+        <code class="bg-gray-100 px-1 rounded">hidden md:flex</code>
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 2: ALERTS
+        Bootstrap has .alert + .alert-{color}. In Tailwind, you build these
+        by combining background color, border, padding, and text color utilities.
+        The pattern: bg-{color}-50 border-l-4 border-{color}-500 text-{color}-800 p-4 rounded-r-lg.
+        This creates the classic "left-bordered alert" style.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        2. Alerts
+      </h2>
+      <p class="mb-4 text-sm text-gray-600">
+        Contextual feedback messages built with background + border utilities:
+      </p>
+
+      <div class="space-y-3 mb-4">
+        <div
+          class="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-4 rounded-r-lg"
+          role="alert"
+        >
+          <strong>Primary!</strong> This is a primary alert message.
+        </div>
+        <div
+          class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-r-lg"
+          role="alert"
+        >
+          <strong>Success!</strong> Your action was completed successfully.
+        </div>
+        <div
+          class="bg-amber-50 border-l-4 border-amber-500 text-amber-800 p-4 rounded-r-lg"
+          role="alert"
+        >
+          <strong>Warning!</strong> Please review before proceeding.
+        </div>
+        <div
+          class="bg-red-50 border-l-4 border-red-500 text-red-800 p-4 rounded-r-lg"
+          role="alert"
+        >
+          <strong>Danger!</strong> Something went wrong.
+        </div>
+      </div>
+      <p class="text-xs text-gray-400 mb-6">
+        Key pattern:
+        <code class="bg-gray-100 px-1 rounded"
+          >bg-{color}-50 border-l-4 border-{color}-500 text-{color}-800 p-4
+          rounded-r-lg</code
+        >
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 3: BUTTONS
+        Unlike Bootstrap's .btn .btn-primary, Tailwind buttons are built from scratch.
+        Combine: bg-{color}-500 hover:bg-{color}-600 text-white font-bold py-2 px-4 rounded
+        + transition-colors for smooth hover effect.
+        This gives you complete control — sizes, colors, and shapes are all utilities.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        3. Buttons
+      </h2>
+      <p class="mb-4 text-sm text-gray-600">Standard utility-built buttons:</p>
+
+      <div class="bg-gray-100 rounded-xl p-5 mb-4">
+        <p
+          class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"
+        >
+          Button Colors
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <button
+            class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Primary
+          </button>
+          <button
+            class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Secondary
+          </button>
+          <button
+            class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Success
+          </button>
+          <button
+            class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Danger
+          </button>
+          <button
+            class="bg-amber-400 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Warning
+          </button>
+          <button
+            class="bg-sky-400 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Info
+          </button>
+        </div>
+
+        <p
+          class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"
+        >
+          Outlined Buttons
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <button
+            class="border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Primary
+          </button>
+          <button
+            class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Success
+          </button>
+          <button
+            class="border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Danger
+          </button>
+        </div>
+
+        <p
+          class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"
+        >
+          Button Sizes
+        </p>
+        <div class="flex flex-wrap items-center gap-2">
+          <button
+            class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-2 rounded text-sm transition-colors"
+          >
+            Small
+          </button>
+          <button
+            class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded transition-colors"
+          >
+            Normal
+          </button>
+          <button
+            class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded text-lg transition-colors"
+          >
+            Large
+          </button>
+        </div>
+      </div>
+      <p class="text-xs text-gray-400 mb-6">
+        Key classes:
+        <code class="bg-gray-100 px-1 rounded">bg-{color}-500</code>,
+        <code class="bg-gray-100 px-1 rounded">hover:bg-{color}-600</code>,
+        <code class="bg-gray-100 px-1 rounded"
+          >text-white font-bold py-2 px-4 rounded</code
+        >
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 4: BADGES
+        Bootstrap uses .badge .bg-{color}. In Tailwind, combine:
+        inline-flex items-center bg-{color}-100 text-{color}-800 text-xs font-semibold px-2.5 py-0.5 rounded-full.
+        This creates a clean, modern badge/pill component.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        4. Badges
+      </h2>
+      <p class="mb-4 text-sm text-gray-600">
+        Small label elements for counts and status indicators:
+      </p>
+
+      <div class="bg-gray-100 rounded-xl p-5 mb-4">
+        <p
+          class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"
+        >
+          Solid Badges
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span
+            class="bg-indigo-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+            >Primary</span
+          >
+          <span
+            class="bg-gray-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+            >Secondary</span
+          >
+          <span
+            class="bg-green-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+            >Success</span
+          >
+          <span
+            class="bg-red-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+            >Danger</span
+          >
+          <span
+            class="bg-amber-400 text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+            >Warning</span
+          >
+          <span
+            class="bg-sky-400 text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+            >Info</span
+          >
+        </div>
+
+        <p
+          class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"
+        >
+          Pill (Soft) Badges
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span
+            class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Pill</span
+          >
+          <span
+            class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >99+</span
+          >
+          <span
+            class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >New</span
+          >
+        </div>
+
+        <p
+          class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"
+        >
+          Badges in Buttons
+        </p>
+        <button
+          class="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded transition-colors"
+        >
+          Notifications
+          <span
+            class="bg-white text-indigo-700 text-xs font-bold px-2 py-0.5 rounded-full"
+            >4</span
+          >
+        </button>
+      </div>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 5: CARDS
+        Bootstrap's .card with .card-body, .card-header, etc. are replaced
+        by simple composition in Tailwind. Pattern:
+        - Wrapper: bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200
+        - Image: w-full h-48 object-cover
+        - Body: p-6
+        - Title: text-xl font-bold text-gray-900 mb-2
+        - Text: text-gray-600 text-sm
+        This is the "card profile" example from the course outline.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        5. Cards
+      </h2>
+      <p class="mb-4 text-sm text-gray-600">
+        A reusable card component built entirely with Tailwind utilities:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <!-- Profile Card -->
+        <div
+          class="max-w-sm mx-auto md:mx-0 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden"
+        >
+          <img
+            class="w-full h-48 object-cover"
+            src="../day-3/img/sample.jpg"
+            alt="Profile"
+            onerror="
+              this.src =
+                'https://placehold.co/400x200/6366f1/ffffff?text=Profile+Image';
+              this.onerror = null;
+            "
+          />
+          <div class="p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">John Doe</h2>
+            <p class="text-gray-600 text-sm">
+              Web Developer specializing in Tailwind CSS.
+            </p>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="bg-white border border-gray-200 rounded-xl shadow-md p-6">
+          <div
+            class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <span class="text-indigo-600 text-lg">⚡</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Fast Performance</h3>
+          <p class="text-gray-500 text-sm">
+            Tailwind generates only the CSS you use, resulting in tiny files.
+          </p>
+          <a
+            href="#"
+            class="inline-block mt-4 text-indigo-600 text-sm font-semibold hover:underline"
+            >Learn more →</a
+          >
+        </div>
+
+        <!-- Stat Card -->
+        <div
+          class="bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl shadow-md p-6 text-white"
+        >
+          <p
+            class="text-indigo-200 text-sm font-medium uppercase tracking-wider mb-1"
+          >
+            Total Users
+          </p>
+          <p class="text-4xl font-black mb-1">12,430</p>
+          <p class="text-indigo-200 text-sm">
+            <span class="text-green-300 font-semibold">↑ 8.2%</span> from last
+            month
+          </p>
+        </div>
+      </div>
+
+      <p class="text-xs text-gray-400 mb-6">
+        Key pattern:
+        <code class="bg-gray-100 px-1 rounded"
+          >bg-white border border-gray-200 rounded-xl shadow-lg
+          overflow-hidden</code
+        >
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 6: MODAL (CONCEPTUAL)
+        Bootstrap has a JS-powered .modal component. In Tailwind, you create
+        the visual structure with positioning utilities:
+        - Backdrop: fixed inset-0 bg-black/50 z-50 flex items-center justify-center
+        - Dialog: bg-white rounded-2xl shadow-2xl max-w-md w-full p-6
+        For real interactivity, pair with Alpine.js or plain JavaScript.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        6. Modal (Dialog) Pattern
+      </h2>
+      <p class="mb-4 text-sm text-gray-600">
+        The visual structure of a modal — toggle visibility with JS:
+      </p>
+
+      <div class="mb-4">
+        <button
+          onclick="
+            document.getElementById('demo-modal').classList.remove('hidden')
+          "
+          class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded transition-colors"
+        >
+          Open Modal Demo
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div
+        id="demo-modal"
+        class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+        onclick="if (event.target === this) this.classList.add('hidden');"
+      >
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-gray-900">Modal Title</h3>
+            <button
+              onclick="
+                document.getElementById('demo-modal').classList.add('hidden')
+              "
+              class="text-gray-400 hover:text-gray-600 text-xl leading-none"
+            >
+              &times;
+            </button>
+          </div>
+          <p class="text-gray-600 text-sm mb-6">
+            This modal is built entirely with Tailwind utilities. The backdrop
+            uses
+            <code class="bg-gray-100 px-1 rounded"
+              >fixed inset-0 bg-black/50</code
+            >
+            and the dialog uses
+            <code class="bg-gray-100 px-1 rounded"
+              >bg-white rounded-2xl shadow-2xl</code
+            >.
+          </p>
+          <div class="flex justify-end gap-2">
+            <button
+              onclick="
+                document.getElementById('demo-modal').classList.add('hidden')
+              "
+              class="border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded hover:bg-gray-50 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              onclick="
+                document.getElementById('demo-modal').classList.add('hidden')
+              "
+              class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded transition-colors"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-xs text-gray-400 mb-6">
+        Key pattern:
+        <code class="bg-gray-100 px-1 rounded"
+          >fixed inset-0 bg-black/50 z-50 flex items-center justify-center</code
+        >
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <!--
+        SECTION 7: FORM ELEMENTS
+        Bootstrap provides styled .form-control, .form-label, .input-group, etc.
+        In Tailwind, inputs are styled from scratch:
+        - Input: w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500
+        - Label: block text-sm font-medium text-gray-700 mb-1
+        The focus:ring-2 focus:ring-indigo-500 gives the on-focus highlight.
+      -->
+      <h2
+        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+      >
+        7. Form Elements
+      </h2>
+      <p class="mb-4 text-sm text-gray-600">
+        Styled form inputs using Tailwind utilities:
+      </p>
+
+      <div
+        class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 max-w-md mb-6"
+      >
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Contact Form</h3>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Name</label
+            >
+            <input
+              type="text"
+              placeholder="John Doe"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              placeholder="john@example.com"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Message</label
+            >
+            <textarea
+              rows="3"
+              placeholder="Your message..."
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+            ></textarea>
+          </div>
+          <button
+            class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition-colors"
+          >
+            Send Message
+          </button>
+        </div>
+      </div>
+      <p class="text-xs text-gray-400 mb-6">
+        Key pattern:
+        <code class="bg-gray-100 px-1 rounded"
+          >border border-gray-300 rounded-lg px-3 py-2 focus:ring-2
+          focus:ring-indigo-500</code
+        >
+      </p>
+
+      <!-- Nav Links -->
+      <div
+        class="mt-12 text-center py-5 bg-gray-100 rounded-lg border-t border-gray-200"
+      >
+        <a
+          href="./06_utilities.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >← Previous: Utilities</a
+        >
+        <a
+          href="./index.html"
+          class="text-indigo-600 font-bold mx-4 hover:underline"
+          >← Back to Index</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
