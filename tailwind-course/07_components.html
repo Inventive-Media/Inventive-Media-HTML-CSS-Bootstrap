@@ -5,10 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 3 - Tailwind Components</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Sticky Header Styles */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        color: #032340;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .home-link {
+        color: #06b6d4; /* Tailwind cyan */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .home-link:hover {
+        color: #0891b2;
+      }
+
+      .page-title {
+        font-size: 1rem;
+        color: #34495e;
+        opacity: 0.8;
+        display: none; /* Hidden on small screens */
+        margin: 0;
+      }
+      @media (min-width: 600px) {
+        .page-title {
+          display: block;
+        }
+      }
+      /* Dropdown Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        background-color: #06b6d4; /* Tailwind cyan */
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #0891b2;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        text-decoration: none;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-gray-50 text-gray-800 pt-20">
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_intro.html">00. Intro</a>
+          <a href="01_setup.html">01. Setup</a>
+          <a href="02_typography.html">02. Typography</a>
+          <a href="02_buttons.html">03. Buttons</a>
+          <a href="03_containers.html">04. Containers</a>
+          <a href="04_grid_layout.html">05. Grid Layout</a>
+          <a href="05_images.html">06. Images</a>
+          <a href="06_utilities.html">07. Utilities</a>
+          <a href="07_components.html">08. Components</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
     <div class="max-w-4xl mx-auto px-4 py-8">
-      <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
+      <h1 class="text-3xl font-bold text-center mb-2 text-cyan-600">
         Day 3 - Components
       </h1>
       <p class="text-center text-gray-500 text-lg mb-6">
@@ -38,7 +164,7 @@
         Here we show the structure with a JS toggle for the mobile menu.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         1. Navbar
       </h2>
@@ -151,7 +277,7 @@
         This creates the classic "left-bordered alert" style.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         2. Alerts
       </h2>
@@ -203,7 +329,7 @@
         This gives you complete control — sizes, colors, and shapes are all utilities.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         3. Buttons
       </h2>
@@ -312,7 +438,7 @@
         This creates a clean, modern badge/pill component.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         4. Badges
       </h2>
@@ -403,7 +529,7 @@
         This is the "card profile" example from the course outline.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         5. Cards
       </h2>
@@ -439,7 +565,7 @@
           <div
             class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mb-4"
           >
-            <span class="text-indigo-600 text-lg">⚡</span>
+            <span class="text-cyan-600 text-lg">⚡</span>
           </div>
           <h3 class="text-lg font-bold text-gray-900 mb-2">Fast Performance</h3>
           <p class="text-gray-500 text-sm">
@@ -447,7 +573,7 @@
           </p>
           <a
             href="#"
-            class="inline-block mt-4 text-indigo-600 text-sm font-semibold hover:underline"
+            class="inline-block mt-4 text-cyan-600 text-sm font-semibold hover:underline"
             >Learn more →</a
           >
         </div>
@@ -488,7 +614,7 @@
         For real interactivity, pair with Alpine.js or plain JavaScript.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         6. Modal (Dialog) Pattern
       </h2>
@@ -575,7 +701,7 @@
         The focus:ring-2 focus:ring-indigo-500 gives the on-focus highlight.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         7. Form Elements
       </h2>
@@ -639,12 +765,12 @@
       >
         <a
           href="./06_utilities.html"
-          class="text-indigo-600 font-bold mx-4 hover:underline"
+          class="text-cyan-600 font-bold mx-4 hover:underline"
           >← Previous: Utilities</a
         >
         <a
           href="./index.html"
-          class="text-indigo-600 font-bold mx-4 hover:underline"
+          class="text-cyan-600 font-bold mx-4 hover:underline"
           >← Back to Index</a
         >
       </div>

@@ -5,10 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 3 - Tailwind Utility Classes</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Sticky Header Styles */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        color: #032340;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .home-link {
+        color: #06b6d4; /* Tailwind cyan */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .home-link:hover {
+        color: #0891b2;
+      }
+
+      .page-title {
+        font-size: 1rem;
+        color: #34495e;
+        opacity: 0.8;
+        display: none; /* Hidden on small screens */
+        margin: 0;
+      }
+      @media (min-width: 600px) {
+        .page-title {
+          display: block;
+        }
+      }
+      /* Dropdown Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        background-color: #06b6d4; /* Tailwind cyan */
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #0891b2;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        text-decoration: none;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-gray-50 text-gray-800 pt-20">
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_intro.html">00. Intro</a>
+          <a href="01_setup.html">01. Setup</a>
+          <a href="02_typography.html">02. Typography</a>
+          <a href="02_buttons.html">03. Buttons</a>
+          <a href="03_containers.html">04. Containers</a>
+          <a href="04_grid_layout.html">05. Grid Layout</a>
+          <a href="05_images.html">06. Images</a>
+          <a href="06_utilities.html">07. Utilities</a>
+          <a href="07_components.html">08. Components</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
     <div class="max-w-4xl mx-auto px-4 py-8">
-      <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
+      <h1 class="text-3xl font-bold text-center mb-2 text-cyan-600">
         Day 3 - Utility Classes
       </h1>
       <p class="text-center text-gray-500 text-lg mb-8">
@@ -26,7 +152,7 @@
         text-black and text-white are also available without a shade number.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         1. Text Colors
       </h2>
@@ -37,8 +163,8 @@
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
         <div class="bg-white border border-gray-200 rounded-lg p-3">
-          <p class="text-xs text-gray-400 mb-1 font-mono">text-indigo-600</p>
-          <p class="text-indigo-600 font-bold">Primary text</p>
+          <p class="text-xs text-gray-400 mb-1 font-mono">text-cyan-600</p>
+          <p class="text-cyan-600 font-bold">Primary text</p>
         </div>
         <div class="bg-white border border-gray-200 rounded-lg p-3">
           <p class="text-xs text-gray-400 mb-1 font-mono">text-gray-500</p>
@@ -81,7 +207,7 @@
         You can also use bg-opacity-{n} for transparent backgrounds.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         2. Background Colors
       </h2>
@@ -142,7 +268,7 @@
         p-[20px], mt-[3rem], etc. — useful when the scale doesn't provide what you need.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         3. Spacing (Padding &amp; Margin)
       </h2>
@@ -223,7 +349,7 @@
         These can also be made responsive: md:block, lg:flex, etc.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         4. Display Utilities
       </h2>
@@ -307,7 +433,7 @@
         rounded / rounded-lg / rounded-xl / rounded-full sets border radius.
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         5. Border Utilities
       </h2>
@@ -376,7 +502,7 @@
         Shadows can also be colored: shadow-indigo-500/50 (50% opacity).
       -->
       <h2
-        class="text-xl font-bold text-indigo-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
+        class="text-xl font-bold text-cyan-600 border-b-2 border-gray-200 pb-2 mt-10 mb-4"
       >
         6. Shadow Utilities
       </h2>
@@ -408,12 +534,12 @@
       >
         <a
           href="./05_images.html"
-          class="text-indigo-600 font-bold mx-4 hover:underline"
+          class="text-cyan-600 font-bold mx-4 hover:underline"
           >← Previous: Images</a
         >
         <a
           href="./07_components.html"
-          class="text-indigo-600 font-bold mx-4 hover:underline"
+          class="text-cyan-600 font-bold mx-4 hover:underline"
           >Next: Components →</a
         >
       </div>
