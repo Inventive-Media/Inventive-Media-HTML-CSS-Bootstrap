@@ -390,12 +390,206 @@ adipisicing elit. Dolore, itaque!
       <hr />
 
       <!-- 
-      SECTION 4: ORDERED LISTS
+      SECTION 4: UNORDERED LISTS
+      <ul> creates a bulleted list. You can change the bullet style
+      using the 'type' attribute (circle, square, none).
+    -->
+      <!-- Unordered Lists -->
+      <h2 class="section-title">4. Unordered Lists</h2>
+      <p>
+        <strong>What it does:</strong> <code>&lt;ul&gt;</code> renders a bulleted list where sequence doesn't matter.
+        The <code>type</code> attribute (or CSS <code>list-style-type</code>) controls the bullet marker.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Navigation menus:</strong> Nearly every nav bar is an unstyled <code>&lt;ul&gt;</code> underneath —
+          reset bullets with <code>list-style: none</code> and lay items out with flexbox.</li>
+        <li><strong>Feature lists on landing pages:</strong> A bullet-pointed list of product benefits or plan features
+          is semantically correct here and trivial to restyle per brand.</li>
+        <li><strong>Sidebar / tag clouds:</strong> Tag lists, related-post links, and filter options in dashboards are
+          typically unordered lists with custom marker styles or none at all.</li>
+      </ul>
+
+      <h3>Approach 1: Legacy HTML Attributes</h3>
+      <p>Simple markers defined directly in the HTML tag. Modern development prefers CSS for this.</p>
+
+      <div class="examples-grid">
+        <!-- Item 0: Disc (browser default) -->
+        <div class="example-item">
+          <h3>0. Disc (Browser Default)</h3>
+          <div class="code-block">
+            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+            &lt;ul type="disc"&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <h3>Soft Drinks</h3>
+            <ul type="disc">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 1 -->
+        <div class="example-item">
+          <h3>1. Circle</h3>
+          <div class="code-block">
+            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+            &lt;ul type="circle"&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <h3>Soft Drinks</h3>
+            <ul type="circle">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="example-item">
+          <h3>2. Square</h3>
+          <div class="code-block">
+            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+            &lt;ul type="square"&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <h3>Soft Drinks</h3>
+            <ul type="square">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="example-item">
+          <h3>3. None</h3>
+          <div class="code-block">
+            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+            &lt;ul type="none"&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <h3>Soft Drinks</h3>
+            <ul type="none">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3>Approach 2: CSS Inline Styles (Modern)</h3>
+      <p>Using <code>list-style-type</code> for more flexibility and consistent styling.</p>
+
+      <div class="examples-grid">
+        <!-- Item 1: Disc -->
+        <div class="example-item">
+          <h3>1. Disc</h3>
+          <div class="code-block">
+            &lt;ul style="list-style-type: disc;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <ul style="list-style-type: disc">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2: Circle -->
+        <div class="example-item">
+          <h3>2. Circle</h3>
+          <div class="code-block">
+            &lt;ul style="list-style-type: circle;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <ul style="list-style-type: circle">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 3: Square -->
+        <div class="example-item">
+          <h3>3. Square</h3>
+          <div class="code-block">
+            &lt;ul style="list-style-type: square;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <ul style="list-style-type: square">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 4: None -->
+        <div class="example-item">
+          <h3>4. None</h3>
+          <div class="code-block">
+            &lt;ul style="list-style-type: none;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <ul style="list-style-type: none">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- 
+      SECTION 5: ORDERED LISTS
       <ol> creates a numbered list. You can change the numbering style
       using the 'type' attribute (1, A, a, I, i).
     -->
       <!-- Ordered Lists -->
-      <h2 class="section-title">4. Ordered Lists</h2>
+      <h2 class="section-title">5. Ordered Lists</h2>
       <p>
         <strong>What it does:</strong> <code>&lt;ol&gt;</code> renders a sequentially numbered list where order is
         semantically significant. The <code>type</code> attribute switches the counter style (1, A, a, I, i).
@@ -616,200 +810,6 @@ adipisicing elit. Dolore, itaque!
 
       <hr />
 
-      <!-- 
-      SECTION 5: UNORDERED LISTS
-      <ul> creates a bulleted list. You can change the bullet style
-      using the 'type' attribute (circle, square, none).
-    -->
-      <!-- Unordered Lists -->
-      <h2 class="section-title">5. Unordered Lists</h2>
-      <p>
-        <strong>What it does:</strong> <code>&lt;ul&gt;</code> renders a bulleted list where sequence doesn't matter.
-        The <code>type</code> attribute (or CSS <code>list-style-type</code>) controls the bullet marker.
-      </p>
-      <p>
-        <strong>When to use it in real projects:</strong>
-      </p>
-      <ul>
-        <li><strong>Navigation menus:</strong> Nearly every nav bar is an unstyled <code>&lt;ul&gt;</code> underneath —
-          reset bullets with <code>list-style: none</code> and lay items out with flexbox.</li>
-        <li><strong>Feature lists on landing pages:</strong> A bullet-pointed list of product benefits or plan features
-          is semantically correct here and trivial to restyle per brand.</li>
-        <li><strong>Sidebar / tag clouds:</strong> Tag lists, related-post links, and filter options in dashboards are
-          typically unordered lists with custom marker styles or none at all.</li>
-      </ul>
-
-      <h3>Approach 1: Legacy HTML Attributes</h3>
-      <p>Simple markers defined directly in the HTML tag. Modern development prefers CSS for this.</p>
-
-      <div class="examples-grid">
-        <!-- Item 0: Disc (browser default) -->
-        <div class="example-item">
-          <h3>0. Disc (Browser Default)</h3>
-          <div class="code-block">
-            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-            &lt;ul type="disc"&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-            &lt;/ul&gt;
-          </div>
-          <div class="example-output">
-            <h3>Soft Drinks</h3>
-            <ul type="disc">
-              <li>Coke</li>
-              <li>Pepsi</li>
-              <li>Sarsi</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Item 1 -->
-        <div class="example-item">
-          <h3>1. Circle</h3>
-          <div class="code-block">
-            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-            &lt;ul type="circle"&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-            &lt;/ul&gt;
-          </div>
-          <div class="example-output">
-            <h3>Soft Drinks</h3>
-            <ul type="circle">
-              <li>Coke</li>
-              <li>Pepsi</li>
-              <li>Sarsi</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="example-item">
-          <h3>2. Square</h3>
-          <div class="code-block">
-            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-            &lt;ul type="square"&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-            &lt;/ul&gt;
-          </div>
-          <div class="example-output">
-            <h3>Soft Drinks</h3>
-            <ul type="square">
-              <li>Coke</li>
-              <li>Pepsi</li>
-              <li>Sarsi</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="example-item">
-          <h3>3. None</h3>
-          <div class="code-block">
-            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-            &lt;ul type="none"&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-            &lt;/ul&gt;
-          </div>
-          <div class="example-output">
-            <h3>Soft Drinks</h3>
-            <ul type="none">
-              <li>Coke</li>
-              <li>Pepsi</li>
-              <li>Sarsi</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <h3>Approach 2: CSS Inline Styles (Modern)</h3>
-      <p>Using <code>list-style-type</code> for more flexibility and consistent styling.</p>
-
-      <div class="examples-grid">
-        <!-- Item 1: Disc -->
-        <div class="example-item">
-          <h3>1. Disc</h3>
-          <div class="code-block">
-            &lt;ul style="list-style-type: disc;"&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-            &lt;/ul&gt;
-          </div>
-          <div class="example-output">
-            <ul style="list-style-type: disc">
-              <li>Coke</li>
-              <li>Pepsi</li>
-              <li>Sarsi</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Item 2: Circle -->
-        <div class="example-item">
-          <h3>2. Circle</h3>
-          <div class="code-block">
-            &lt;ul style="list-style-type: circle;"&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-            &lt;/ul&gt;
-          </div>
-          <div class="example-output">
-            <ul style="list-style-type: circle">
-              <li>Coke</li>
-              <li>Pepsi</li>
-              <li>Sarsi</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Item 3: Square -->
-        <div class="example-item">
-          <h3>3. Square</h3>
-          <div class="code-block">
-            &lt;ul style="list-style-type: square;"&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-            &lt;/ul&gt;
-          </div>
-          <div class="example-output">
-            <ul style="list-style-type: square">
-              <li>Coke</li>
-              <li>Pepsi</li>
-              <li>Sarsi</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Item 4: None -->
-        <div class="example-item">
-          <h3>4. None</h3>
-          <div class="code-block">
-            &lt;ul style="list-style-type: none;"&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-            &lt;/ul&gt;
-          </div>
-          <div class="example-output">
-            <ul style="list-style-type: none">
-              <li>Coke</li>
-              <li>Pepsi</li>
-              <li>Sarsi</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
       <!-- Description Lists -->
       <h2 class="section-title">6. Description Lists</h2>
       <p>
@@ -900,12 +900,54 @@ adipisicing elit. Dolore, itaque!
       <hr />
 
       <!-- 
-        SECTION 8: DIV TAGS
+      SECTION 8: EMOJIS
+      Using Emojis in HTML.
+    -->
+      <!-- Emoji Lesson -->
+      <h2 class="section-title">8. Emojis</h2>
+      <p>
+        <strong>What it does:</strong> Emojis are treated as regular text characters (Unicode) in HTML. They don't require special image tags, just the character itself.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Microcopy and UI:</strong> Adding quick visual cues to buttons or alerts without needing an icon library.</li>
+        <li><strong>Marketing pages:</strong> Adding personality to headings or bullet points.</li>
+        <li><strong>Custom list markers:</strong> Using emojis as bullet points for a more unique and branded feel compared to standard discs or squares.</li>
+      </ul>
+
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;p&gt;Warning: Server is down 🚨&lt;/p&gt;<br />
+        &lt;button&gt;Add to Cart 🛒&lt;/button&gt;<br /><br />
+        &lt;!-- Emoji List Marker --&gt;<br />
+        &lt;ul style="list-style-type: '🚀 ';"&gt;<br />
+        &nbsp;&nbsp;&lt;li&gt;Fast Delivery&lt;/li&gt;<br />
+        &nbsp;&nbsp;&lt;li&gt;Global Support&lt;/li&gt;<br />
+        &lt;/ul&gt;
+      </div>
+
+      <h3>Output:</h3>
+      <div class="example-output">
+        <p>Warning: Server is down 🚨</p>
+        <button>Add to Cart 🛒</button>
+
+        <ul style="list-style-type: '🚀 '">
+          <li>Fast Delivery</li>
+          <li>Global Support</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <!-- 
+        SECTION 9: DIV TAGS
         <div> is a container unit used to group other HTML elements.
         It has no special meaning but is very common for layout/styling.
     -->
       <!-- Div Styles -->
-      <h2 class="section-title">8. Div Blocks with Inline Styles</h2>
+      <h2 class="section-title">9. Div Blocks with Inline Styles</h2>
       <p>
         <strong>What it does:</strong> <code>&lt;div&gt;</code> is a generic block container with no implicit meaning —
         it groups elements purely for layout and styling purposes, taking the full width of its parent by default.
