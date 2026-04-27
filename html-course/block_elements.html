@@ -252,7 +252,7 @@
       <hr />
 
       <!-- 
-      SECTION 1: HEADINGS
+      SECTION: HEADINGS
       Headings are used to define the structure and hierarchy of your content.
       <h1> is the most important, and <h6> is the least important.
     -->
@@ -304,7 +304,7 @@
       <hr />
 
       <!-- 
-      SECTION 2: PARAGRAPHS
+      SECTION: PARAGRAPHS
       <p> tags are used for blocks of text. Browsers automatically add 
       some white space (a margin) before and after a paragraph.
     -->
@@ -347,7 +347,7 @@
       <hr />
 
       <!-- 
-      SECTION 3: PREFORMATTED TEXT
+      SECTION: PREFORMATTED TEXT
       The <pre> tag displays text exactly as it is written in the HTML file,
       preserving all spaces and line breaks.
     -->
@@ -390,7 +390,7 @@ adipisicing elit. Dolore, itaque!
       <hr />
 
       <!-- 
-      SECTION 4: UNORDERED LISTS
+      SECTION: UNORDERED LISTS
       <ul> creates a bulleted list. You can change the bullet style
       using the 'type' attribute (circle, square, none).
     -->
@@ -584,7 +584,7 @@ adipisicing elit. Dolore, itaque!
       <hr />
 
       <!-- 
-      SECTION 5: ORDERED LISTS
+      SECTION: ORDERED LISTS
       <ol> creates a numbered list. You can change the numbering style
       using the 'type' attribute (1, A, a, I, i).
     -->
@@ -859,98 +859,101 @@ adipisicing elit. Dolore, itaque!
 
       <hr />
 
-      <!-- 
-      SECTION 7: SPECIAL CHARACTERS
-      Some characters are reserved in HTML (like < and >).
-      To display them, we use character entities (e.g., &lt; for <).
-    -->
-      <!-- Special Characters -->
-      <h2 class="section-title">7. Special Characters</h2>
-      <p>
-        <strong>What it does:</strong> HTML entities let you render characters that the parser would otherwise
-        misinterpret as markup — specifically <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, and
-        <code>&quot;</code> — plus hundreds of typographic and symbolic glyphs.
-      </p>
-      <p>
-        <strong>When to use it in real projects:</strong>
-      </p>
-      <ul>
-        <li><strong>Code documentation / tutorials:</strong> Any page that displays raw HTML snippets must entity-escape
-          angle brackets, otherwise the browser renders the example instead of showing it as text.</li>
-        <li><strong>CMS and user-generated content:</strong> Always sanitize and entity-encode output from untrusted
-          sources to prevent XSS attacks — your backend or templating engine should do this automatically, but knowing
-          why matters.</li>
-        <li><strong>Typographic polish:</strong> Use <code>&amp;mdash;</code>, <code>&amp;laquo;</code>, or
-          <code>&amp;copy;</code> instead of copy-pasting Unicode characters that can get mangled by encoding mismatches
-          in email or legacy systems.</li>
-      </ul>
-
-      <h3>Code:</h3>
-      <div class="code-block">
-        &lt;h2&gt;Is 71 &amp;gt; 13 &amp;amp; 22 &amp;lt; 5?&lt;/h2&gt;
-      </div>
-
-      <h3>Output:</h3>
-      <div class="example-output">
-        <h2>Is 71 &gt; 13 &amp; 22 &lt; 5?</h2>
-      </div>
-
-      <hr />
-
-      <hr />
-
-      <!-- 
-      SECTION 8: EMOJIS
-      Using Emojis in HTML.
-    -->
-      <!-- Emoji Lesson -->
-      <h2 class="section-title">8. Emojis</h2>
-      <p>
-        <strong>What it does:</strong> Emojis are treated as regular text characters (Unicode) in HTML. They don't require special image tags, just the character itself.
-      </p>
-      <p>
-        <strong>Pro Tip:</strong> To quickly insert emojis while coding, use the system shortcuts: <code>Win + .</code> (Windows) or <code>Cmd + Ctrl + Space</code> (macOS).
-      </p>
-      <p>
-        <strong>When to use it in real projects:</strong>
-      </p>
-      <ul>
-        <li><strong>Microcopy and UI:</strong> Adding quick visual cues to buttons or alerts without needing an icon library.</li>
-        <li><strong>Marketing pages:</strong> Adding personality to headings or bullet points.</li>
-        <li><strong>Custom list markers:</strong> Using emojis as bullet points for a more unique and branded feel compared to standard discs or squares.</li>
-      </ul>
-
-      <h3>Code:</h3>
-      <div class="code-block">
-        &lt;p&gt;Warning: Server is down 🚨&lt;/p&gt;<br />
-        &lt;button&gt;Add to Cart 🛒&lt;/button&gt;<br /><br />
-        &lt;!-- Emoji List Marker --&gt;<br />
-        &lt;ul style="list-style-type: '🚀 ';"&gt;<br />
-        &nbsp;&nbsp;&lt;li&gt;Fast Delivery&lt;/li&gt;<br />
-        &nbsp;&nbsp;&lt;li&gt;Global Support&lt;/li&gt;<br />
-        &lt;/ul&gt;
-      </div>
-
-      <h3>Output:</h3>
-      <div class="example-output">
-        <p>Warning: Server is down 🚨</p>
-        <button>Add to Cart 🛒</button>
-
-        <ul style="list-style-type: '🚀 '">
-          <li>Fast Delivery</li>
-          <li>Global Support</li>
+      <!-- Tables -->
+        <h2 class="section-title">7. Tables</h2>
+        <p>
+          <strong>What it does:</strong> <code>&lt;table&gt;</code> organizes data into a two-dimensional grid of rows and columns, creating a semantic link between headers (<code>&lt;th&gt;</code>) and data cells (<code>&lt;td&gt;</code>).
+        </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Data dashboards:</strong> Displaying structured datasets like transaction logs, user management lists, or inventory reports where users need to compare values across rows.</li>
+          <li><strong>Comparison matrices:</strong> Pricing tables or product spec sheets where features are mapped against different tiers or models.</li>
+          <li><strong>Itemized documents:</strong> Financial statements, invoices, and order summaries where quantities, descriptions, and prices must be precisely aligned.</li>
         </ul>
-      </div>
 
-      <hr />
+        <h3>Code:</h3>
+        <div class="code-block">
+          &lt;table border="1"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;thead&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr
+          style="background: cadetblue;"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th
+          colspan="4"&gt;Marvel Movie&lt;/th&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/thead&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tbody&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th
+          rowspan="3"&gt;Avengers Cast&lt;/th&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;First
+          name&lt;/th&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Last
+          name&lt;/th&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;ID&lt;/th&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Robert&lt;/td&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Downey&lt;/td&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;1&lt;/td&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Chris&lt;/td&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Evans&lt;/td&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;2&lt;/td&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tbody&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tfoot&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td
+          colspan="4"&gt;Batch 2012&lt;/td&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tfoot&gt;<br />
+          &lt;/table&gt;
+        </div>
 
-      <!-- 
-        SECTION 9: DIV TAGS
+        <h3>Output:</h3>
+        <div class="example-output">
+          <table border="1">
+            <thead>
+              <tr style="background: cadetblue">
+                <th colspan="4">Marvel Movie</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th rowspan="3">Avengers Cast</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>ID</th>
+              </tr>
+              <tr>
+                <td>Robert</td>
+                <td>Downey</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Chris</td>
+                <td>Evans</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4">Batch 2012</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <!-- 
+        SECTION: DIV TAGS
         <div> is a container unit used to group other HTML elements.
         It has no special meaning but is very common for layout/styling.
     -->
       <!-- Div Styles -->
-      <h2 class="section-title">9. Div Blocks with Inline Styles</h2>
+      <h2 class="section-title">8. Div Blocks with Inline Styles</h2>
       <p>
         <strong>What it does:</strong> <code>&lt;div&gt;</code> is a generic block container with no implicit meaning —
         it groups elements purely for layout and styling purposes, taking the full width of its parent by default.

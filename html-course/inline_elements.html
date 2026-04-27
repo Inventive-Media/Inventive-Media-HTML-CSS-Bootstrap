@@ -209,7 +209,7 @@
         <hr />
 
         <!-- 
-      SECTION 1: LINKS
+      SECTION: LINKS
       The <a> tag defines a hyperlink. The 'href' attribute specifies
       the URL of the page the link goes to.
     -->
@@ -242,7 +242,7 @@
         <hr />
 
         <!-- 
-      SECTION 2: TEXT FORMATTING
+      SECTION: TEXT FORMATTING
       These tags change the appearance or meaning of text inline.
       <b> and <strong> make text bold.
       <i> and <em> make text italic.
@@ -284,7 +284,7 @@
         <hr />
 
         <!-- 
-      SECTION 3: SUBSCRIPT AND SUPERSCRIPT
+      SECTION: SUBSCRIPT AND SUPERSCRIPT
       <sub> displays text as subscript (lower).
       <sup> displays text as superscript (higher).
     -->
@@ -307,34 +307,95 @@
         <hr />
 
         <!-- 
-      SECTION 4: SPECIAL CHARACTERS
-      Entities for symbols like copyright (©) and registered (®).
+      SECTION: SPECIAL CHARACTERS
+      Some characters are reserved in HTML (like < and >).
+      To display them, we use character entities (e.g., &lt; for <).
     -->
-        <!-- Special Characters -->
-        <h2 class="section-title">4. Special Characters</h2>
-        <p>Using HTML entities for symbols.</p>
+      <!-- Special Characters -->
+      <h2 class="section-title">4. Special Characters</h2>
+      <p>
+        <strong>What it does:</strong> HTML entities let you render characters that the parser would otherwise
+        misinterpret as markup — specifically <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, and
+        <code>&quot;</code> — plus hundreds of typographic and symbolic glyphs.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Code documentation / tutorials:</strong> Any page that displays raw HTML snippets must entity-escape
+          angle brackets, otherwise the browser renders the example instead of showing it as text.</li>
+        <li><strong>CMS and user-generated content:</strong> Always sanitize and entity-encode output from untrusted
+          sources to prevent XSS attacks — your backend or templating engine should do this automatically, but knowing
+          why matters.</li>
+        <li><strong>Typographic polish:</strong> Use <code>&amp;mdash;</code>, <code>&amp;laquo;</code>, or
+          <code>&amp;copy;</code> instead of copy-pasting Unicode characters that can get mangled by encoding mismatches
+          in email or legacy systems.</li>
+      </ul>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;p&gt;Copyright &amp;copy;&lt;/p&gt;<br />
-          &lt;p&gt;Registered&lt;sub&gt;&amp;reg;&lt;/sub&gt;&lt;/p&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;h2&gt;Is 71 &amp;gt; 13 &amp;amp; 22 &amp;lt; 5?&lt;/h2&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <p>Copyright &copy;</p>
-          <p>Registered<sub>&reg;</sub></p>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <h2>Is 71 &gt; 13 &amp; 22 &lt; 5?</h2>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
-      SECTION 5: ABBREVIATIONS
+      <!-- 
+      SECTION: EMOJIS
+      Using Emojis in HTML.
+    -->
+      <!-- Emoji Lesson -->
+      <h2 class="section-title">5. Emojis</h2>
+      <p>
+        <strong>What it does:</strong> Emojis are treated as regular text characters (Unicode) in HTML. They don't require special image tags, just the character itself.
+      </p>
+      <p>
+        <strong>Pro Tip:</strong> To quickly insert emojis while coding, use the system shortcuts: <code>Win + .</code> (Windows) or <code>Cmd + Ctrl + Space</code> (macOS).
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Microcopy and UI:</strong> Adding quick visual cues to buttons or alerts without needing an icon library.</li>
+        <li><strong>Marketing pages:</strong> Adding personality to headings or bullet points.</li>
+        <li><strong>Custom list markers:</strong> Using emojis as bullet points for a more unique and branded feel compared to standard discs or squares.</li>
+      </ul>
+
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;p&gt;Warning: Server is down 🚨&lt;/p&gt;<br />
+        &lt;button&gt;Add to Cart 🛒&lt;/button&gt;<br /><br />
+        &lt;!-- Emoji List Marker --&gt;<br />
+        &lt;ul style="list-style-type: '🚀 ';"&gt;<br />
+        &nbsp;&nbsp;&lt;li&gt;Fast Delivery&lt;/li&gt;<br />
+        &nbsp;&nbsp;&lt;li&gt;Global Support&lt;/li&gt;<br />
+        &lt;/ul&gt;
+      </div>
+
+      <h3>Output:</h3>
+      <div class="example-output">
+        <p>Warning: Server is down 🚨</p>
+        <button>Add to Cart 🛒</button>
+
+        <ul style="list-style-type: '🚀 '">
+          <li>Fast Delivery</li>
+          <li>Global Support</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <!-- 
+      SECTION: ABBREVIATIONS
       <abbr> marks an abbreviation or acronym.
       The 'title' attribute provides the full description (shown on hover).
     -->
         <!-- Abbreviation -->
-        <h2 class="section-title">5. Abbreviation</h2>
+        <h2 class="section-title">6. Abbreviation</h2>
         <p>Hover over the text to see the full meaning.</p>
 
         <h3>Code:</h3>
@@ -350,11 +411,11 @@
         <hr />
 
         <!-- 
-      SECTION 6: LINE BREAK
+      SECTION: LINE BREAK
       <br> inserts a single line break. It is an empty tag (no closing tag).
     -->
         <!-- Line Break -->
-        <h2 class="section-title">6. Line Break</h2>
+        <h2 class="section-title">7. Line Break</h2>
         <p>Using &lt;br&gt; to force a new line.</p>
 
         <h3>Code:</h3>
@@ -378,12 +439,12 @@
         <hr />
 
         <!-- 
-      SECTION 7: ADDRESS
+      SECTION: ADDRESS
       <address> defines contact information for the author/owner.
       The text is usually rendered in italic.
     -->
         <!-- Address -->
-        <h2 class="section-title">7. Address</h2>
+        <h2 class="section-title">8. Address</h2>
         <p>Defining contact information.</p>
 
         <h3>Code:</h3>
@@ -417,13 +478,13 @@
         <hr />
 
         <!-- 
-      SECTION 8: QUOTATIONS
+      SECTION: QUOTATIONS
       <blockquote> defines a section that is quoted from another source.
       <cite> defines the title of a creative work.
       <q> defines a short inline quotation.
     -->
         <!-- Quotations -->
-        <h2 class="section-title">8. Quotations</h2>
+        <h2 class="section-title">9. Quotations</h2>
         <p>Blockquotes, citations, and inline quotes.</p>
 
         <h3>Code:</h3>
@@ -468,14 +529,14 @@
         <hr />
 
         <!-- 
-      SECTION 9: MEDIA ELEMENTS
+      SECTION: MEDIA ELEMENTS
       <audio> is used to embed sound content.
       <video> is used to embed video content.
       <img> embeds an image.
       <iframe> embeds another document within the current HTML document (maps, videos, etc).
     -->
         <!-- Media -->
-        <h2 class="section-title">9. Media - Audio, Video, Image, Iframe</h2>
+        <h2 class="section-title">10. Media - Audio, Video, Image, Iframe</h2>
         <p>Embedding multimedia content.</p>
 
         <h3>Code:</h3>
@@ -517,11 +578,11 @@
         <hr />
 
         <!-- 
-      SECTION 10: EMBEDS & IFRAMES
+      SECTION: EMBEDS & IFRAMES
       Iframes allow you to embed external content like SoundCloud players, YouTube videos, PDFs, and Google Maps.
     -->
         <!-- Embeds -->
-        <h2 class="section-title">10. Embeds & Iframes</h2>
+        <h2 class="section-title">11. Embeds & Iframes</h2>
         <p>Embedding external resources.</p>
 
         <h3>Code (SoundCloud):</h3>
@@ -613,7 +674,7 @@
         <hr />
 
         <!-- 
-      SECTION 11: TABLES
+      SECTION: TABLES
       <table> defines the table.
       <thead> groups the header content.
       <tbody> groups the body content.
@@ -623,84 +684,6 @@
       <td> defines a table data cell.
       'rowspan' and 'colspan' allow cells to span multiple rows or columns.
     -->
-        <!-- Tables -->
-        <h2 class="section-title">11. Tables</h2>
-        <p>Creating tables with rows, columns, and headers.</p>
-
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;table&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;thead&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr
-          style="background: cadetblue;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th
-          colspan="4"&gt;Marvel Movie&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/thead&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tbody&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th
-          rowspan="3"&gt;Avengers Cast&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;First
-          name&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Last
-          name&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;ID&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Robert&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Downey&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;1&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Chris&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Evans&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;2&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tbody&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tfoot&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td
-          colspan="4"&gt;Batch 2012&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tfoot&gt;<br />
-          &lt;/table&gt;
-        </div>
-
-        <h3>Output:</h3>
-        <div class="example-output">
-          <table>
-            <thead>
-              <tr style="background: cadetblue">
-                <th colspan="4">Marvel Movie</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th rowspan="3">Avengers Cast</th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>ID</th>
-              </tr>
-              <tr>
-                <td>Robert</td>
-                <td>Downey</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Chris</td>
-                <td>Evans</td>
-                <td>2</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="4">Batch 2012</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-
         <div class="nav-links">
           <a href="block_elements.html">&lt; Previous: Block Elements</a> |
           <a href="html_entities.html">Next: HTML Special Characters &gt;</a>
