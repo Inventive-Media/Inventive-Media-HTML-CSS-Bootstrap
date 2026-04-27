@@ -1,857 +1,959 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Day 1 - Block Elements</title>
-    <!-- External CSS for Responsive Grid -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Internal CSS: Styles defined here apply to this page only -->
-    <style>
-      /* Styles for the body of the page */
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        padding-top: 80px; /* Space for fixed header */
-        margin: 0;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      /* Sticky Header Styles */
-      .sticky-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background-color: white;
-        color: #032340;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        box-sizing: border-box;
-      }
-      .header-left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .home-link {
-        color: #d35400; /* Orange */
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .home-link:hover {
-        color: #e67e22;
-      }
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 1 - Block Elements</title>
+  <!-- External CSS for Responsive Grid -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Internal CSS: Styles defined here apply to this page only -->
+  <style>
+    /* Styles for the body of the page */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding-top: 80px;
+      /* Space for fixed header */
+      margin: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    /* Sticky Header Styles */
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: white;
+      color: #032340;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .home-link {
+      color: #d35400;
+      /* Orange */
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .home-link:hover {
+      color: #e67e22;
+    }
+
+    .page-title {
+      font-size: 1rem;
+      color: #34495e;
+      opacity: 0.8;
+      display: none;
+      /* Hidden on small screens */
+    }
+
+    @media (min-width: 600px) {
       .page-title {
-        font-size: 1rem;
-        color: #34495e;
-        opacity: 0.8;
-        display: none; /* Hidden on small screens */
-      }
-      @media (min-width: 600px) {
-        .page-title {
-          display: block;
-        }
-      }
-      /* Dropdown Styles */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropbtn {
-        background-color: #d35400; /* Orange */
-        color: white;
-        padding: 8px 16px;
-        font-size: 14px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      .dropdown:hover .dropbtn {
-        background-color: #e67e22;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        right: 0;
-        background-color: #f9f9f9;
-        min-width: 260px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 4px;
-        max-height: 400px;
-        overflow-y: auto;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #eee;
-        text-align: left;
-      }
-      .dropdown-content a:hover {
-        background-color: #f1f1f1;
-      }
-      .dropdown:hover .dropdown-content {
         display: block;
       }
-      /* Navigation Links Styling */
-      .nav-links {
-        margin-top: 50px;
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-        border-top: 1px solid #ddd;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: #d35400; /* Orange to match theme */
-        font-weight: bold;
-        margin: 0 10px;
-        font-size: 1.1rem;
-      }
-      .nav-links a:hover {
-        text-decoration: underline;
-        color: #e67e22;
-      }
-      h1.main-title {
-        color: #d35400;
-        text-align: center;
-      }
-      .section-title {
-        color: #333;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 5px;
-        margin-top: 30px;
-      }
-      .code-block {
-        background-color: #f4f4f4;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-family: monospace;
-        overflow-x: auto;
-      }
-      .example-output {
-        border: 1px dashed #aaa;
-        padding: 15px;
-        margin-top: 10px;
-        border-radius: 5px;
-      }
-      hr {
-        margin: 40px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-      }
-      /* Grid Layout for Examples */
-      .examples-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-      }
-      .example-item {
-        background: #fff;
-        border: 1px solid #eee;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      }
-      .example-item h3 {
-        margin-top: 0;
-        font-size: 1.1rem;
-        color: #d35400;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Sticky Header -->
-    <header class="sticky-header">
-      <div class="header-left">
-        <a href="index.html" class="home-link">Home</a>
-        <span id="header-title" class="page-title">Loading...</span>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Jump to Topic ▼</button>
-        <div class="dropdown-content">
-          <a href="block_elements.html">01. Block Elements</a>
-          <a href="inline_elements.html">02. Inline Elements</a>
-          <a href="html_entities.html">03. HTML Special Characters</a>
-          <a href="semantic_elements.html">04. Semantic Elements</a>
-          <a href="form_elements.html">05. Form Elements</a>
-        </div>
-      </div>
-    </header>
-    <script>
-      // Dynamically set the header title from the main h1
-      document.addEventListener("DOMContentLoaded", function () {
-        var h1 =
-          document.querySelector("h1.main-title") ||
-          document.querySelector("h1");
-        if (h1) {
-          document.getElementById("header-title").textContent = h1.textContent;
-        } else {
-          document.getElementById("header-title").textContent = document.title;
-        }
-      });
-    </script>
-    <div class="row">
-      <div class="col-12">
-        <h1 class="main-title">Day 1 - Block Elements</h1>
-        <p>
-          Block-level elements are elements that take up the full width of their
-          parent container.
-        </p>
+    }
 
-        <hr />
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
-        <!-- 
+    .dropbtn {
+      background-color: #d35400;
+      /* Orange */
+      color: white;
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #e67e22;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #f9f9f9;
+      min-width: 260px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 4px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Navigation Links Styling */
+    .nav-links {
+      margin-top: 50px;
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d35400;
+      /* Orange to match theme */
+      font-weight: bold;
+      margin: 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+      color: #e67e22;
+    }
+
+    h1.main-title {
+      color: #d35400;
+      text-align: center;
+    }
+
+    .section-title {
+      color: #333;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+
+    .code-block {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    .example-output {
+      border: 1px dashed #aaa;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    hr {
+      margin: 40px 0;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    /* Grid Layout for Examples */
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .example-item {
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .example-item h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #d35400;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="header-left">
+      <a href="index.html" class="home-link">Home</a>
+      <span id="header-title" class="page-title">Loading...</span>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Jump to Topic ▼</button>
+      <div class="dropdown-content">
+        <a href="block_elements.html">01. Block Elements</a>
+        <a href="inline_elements.html">02. Inline Elements</a>
+        <a href="html_entities.html">03. HTML Special Characters</a>
+        <a href="semantic_elements.html">04. Semantic Elements</a>
+        <a href="form_elements.html">05. Form Elements</a>
+      </div>
+    </div>
+  </header>
+  <script>
+    // Dynamically set the header title from the main h1
+    document.addEventListener("DOMContentLoaded", function () {
+      var h1 =
+        document.querySelector("h1.main-title") ||
+        document.querySelector("h1");
+      if (h1) {
+        document.getElementById("header-title").textContent = h1.textContent;
+      } else {
+        document.getElementById("header-title").textContent = document.title;
+      }
+    });
+  </script>
+  <div class="row">
+    <div class="col-12">
+      <h1 class="main-title">Day 1 - Block Elements</h1>
+      <p>
+        Block-level elements are elements that take up the full width of their
+        parent container.
+      </p>
+
+      <hr />
+
+      <!-- 
       SECTION 1: HEADINGS
       Headings are used to define the structure and hierarchy of your content.
       <h1> is the most important, and <h6> is the least important.
     -->
-        <!-- Headings -->
-        <h2 class="section-title">1. Headings</h2>
-        <p>
-          <strong>What it does:</strong> <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> mark six levels of document hierarchy — from the page's primary topic down to minor subsections.
-        </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Landing pages:</strong> One <code>&lt;h1&gt;</code> for the hero headline; <code>&lt;h2&gt;</code>/<code>&lt;h3&gt;</code> for feature sections and sub-headings. Never skip levels — crawlers and screen readers depend on the hierarchy.</li>
-          <li><strong>CMS / blog layouts:</strong> Article titles go in <code>&lt;h1&gt;</code> (or <code>&lt;h2&gt;</code> inside a list), sub-topics in <code>&lt;h3&gt;</code>. Keep the outline logical so auto-generated tables of contents work correctly.</li>
-          <li><strong>Dashboards:</strong> Section labels like "Revenue" or "Active Users" are typically <code>&lt;h2&gt;</code> or <code>&lt;h3&gt;</code> — use them even if you reset their visual size with CSS; the semantic meaning matters for accessibility.</li>
-        </ul>
+      <!-- Headings -->
+      <h2 class="section-title">1. Headings</h2>
+      <p>
+        <strong>What it does:</strong> <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> mark six levels of
+        document hierarchy — from the page's primary topic down to minor subsections.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Landing pages:</strong> One <code>&lt;h1&gt;</code> for the hero headline;
+          <code>&lt;h2&gt;</code>/<code>&lt;h3&gt;</code> for feature sections and sub-headings. Never skip levels —
+          crawlers and screen readers depend on the hierarchy.</li>
+        <li><strong>CMS / blog layouts:</strong> Article titles go in <code>&lt;h1&gt;</code> (or
+          <code>&lt;h2&gt;</code> inside a list), sub-topics in <code>&lt;h3&gt;</code>. Keep the outline logical so
+          auto-generated tables of contents work correctly.</li>
+        <li><strong>Dashboards:</strong> Section labels like "Revenue" or "Active Users" are typically
+          <code>&lt;h2&gt;</code> or <code>&lt;h3&gt;</code> — use them even if you reset their visual size with CSS;
+          the semantic meaning matters for accessibility.</li>
+      </ul>
 
-        <h3>Code:</h3>
-        <!-- 
+      <h3>Code:</h3>
+      <!-- 
       NOTE: We use HTML entities &lt; and &gt; here to display the tags as text.
       If we used real < and > signs, the browser would try to render them as elements!
     -->
-        <div class="code-block">
-          &lt;h1&gt;This is heading 1&lt;/h1&gt; <br />
-          &lt;h2&gt;This is heading 2&lt;/h2&gt; <br />
-          &lt;h3&gt;This is heading 3&lt;/h3&gt; <br />
-          &lt;h4&gt;This is heading 4&lt;/h4&gt; <br />
-          &lt;h5&gt;This is heading 5&lt;/h5&gt; <br />
-          &lt;h6&gt;This is heading 6&lt;/h6&gt;
-        </div>
+      <div class="code-block">
+        &lt;h1&gt;This is heading 1&lt;/h1&gt; <br />
+        &lt;h2&gt;This is heading 2&lt;/h2&gt; <br />
+        &lt;h3&gt;This is heading 3&lt;/h3&gt; <br />
+        &lt;h4&gt;This is heading 4&lt;/h4&gt; <br />
+        &lt;h5&gt;This is heading 5&lt;/h5&gt; <br />
+        &lt;h6&gt;This is heading 6&lt;/h6&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <h1>This is heading 1</h1>
-          <h2>This is heading 2</h2>
-          <h3>This is heading 3</h3>
-          <h4>This is heading 4</h4>
-          <h5>This is heading 5</h5>
-          <h6>This is heading 6</h6>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <h1>This is heading 1</h1>
+        <h2>This is heading 2</h2>
+        <h3>This is heading 3</h3>
+        <h4>This is heading 4</h4>
+        <h5>This is heading 5</h5>
+        <h6>This is heading 6</h6>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION 2: PARAGRAPHS
       <p> tags are used for blocks of text. Browsers automatically add 
       some white space (a margin) before and after a paragraph.
     -->
-        <!-- Paragraphs -->
-        <h2 class="section-title">2. Paragraphs</h2>
+      <!-- Paragraphs -->
+      <h2 class="section-title">2. Paragraphs</h2>
+      <p>
+        <strong>What it does:</strong> <code>&lt;p&gt;</code> wraps a discrete block of text, automatically adding
+        vertical margin above and below it — the browser's way of visually separating thoughts.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Content-heavy pages:</strong> Body copy, product descriptions, and blog posts all live in
+          <code>&lt;p&gt;</code> tags. If your text is prose, it belongs here — not in a <code>&lt;div&gt;</code>.</li>
+        <li><strong>CMS-generated content:</strong> Most WYSIWYG editors and Markdown converters output
+          <code>&lt;p&gt;</code> tags automatically. Style them globally in your CSS rather than applying inline styles
+          per paragraph.</li>
+        <li><strong>Form help text:</strong> Short instructional copy beneath a form field is almost always a
+          <code>&lt;p&gt;</code> (or <code>&lt;small&gt;</code> inside one), giving assistive technologies the right
+          context.</li>
+      </ul>
+
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;p&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Distinctio, ratione.<br />
+        &lt;/p&gt;
+      </div>
+
+      <h3>Output:</h3>
+      <div class="example-output">
         <p>
-          <strong>What it does:</strong> <code>&lt;p&gt;</code> wraps a discrete block of text, automatically adding vertical margin above and below it — the browser's way of visually separating thoughts.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,
+          ratione.
         </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Content-heavy pages:</strong> Body copy, product descriptions, and blog posts all live in <code>&lt;p&gt;</code> tags. If your text is prose, it belongs here — not in a <code>&lt;div&gt;</code>.</li>
-          <li><strong>CMS-generated content:</strong> Most WYSIWYG editors and Markdown converters output <code>&lt;p&gt;</code> tags automatically. Style them globally in your CSS rather than applying inline styles per paragraph.</li>
-          <li><strong>Form help text:</strong> Short instructional copy beneath a form field is almost always a <code>&lt;p&gt;</code> (or <code>&lt;small&gt;</code> inside one), giving assistive technologies the right context.</li>
-        </ul>
+      </div>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;p&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Distinctio, ratione.<br />
-          &lt;/p&gt;
-        </div>
+      <hr />
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,
-            ratione.
-          </p>
-        </div>
-
-        <hr />
-
-        <!-- 
+      <!-- 
       SECTION 3: PREFORMATTED TEXT
       The <pre> tag displays text exactly as it is written in the HTML file,
       preserving all spaces and line breaks.
     -->
-        <!-- Preformatted Text -->
-        <h2 class="section-title">3. Preformatted Text</h2>
-        <p>
-          <strong>What it does:</strong> <code>&lt;pre&gt;</code> renders text in a monospace font exactly as written in the source — every space, tab, and newline is preserved, with no collapsing.
-        </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Documentation sites:</strong> Wrap code snippets in <code>&lt;pre&gt;&lt;code&gt;</code> (not just <code>&lt;code&gt;</code> alone) so indentation and line breaks render faithfully — syntax highlighters like Prism.js also expect this structure.</li>
-          <li><strong>Terminal / CLI output:</strong> When showing command output, error traces, or log snippets, <code>&lt;pre&gt;</code> ensures the columnar formatting isn't mangled by the browser's whitespace rules.</li>
-          <li><strong>ASCII art or structured data previews:</strong> Any content where spatial alignment carries meaning — think configuration files, schema diffs, or poetry — requires <code>&lt;pre&gt;</code> to render correctly.</li>
-        </ul>
+      <!-- Preformatted Text -->
+      <h2 class="section-title">3. Preformatted Text</h2>
+      <p>
+        <strong>What it does:</strong> <code>&lt;pre&gt;</code> renders text in a monospace font exactly as written in
+        the source — every space, tab, and newline is preserved, with no collapsing.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Documentation sites:</strong> Wrap code snippets in <code>&lt;pre&gt;&lt;code&gt;</code> (not just
+          <code>&lt;code&gt;</code> alone) so indentation and line breaks render faithfully — syntax highlighters like
+          Prism.js also expect this structure.</li>
+        <li><strong>Terminal / CLI output:</strong> When showing command output, error traces, or log snippets,
+          <code>&lt;pre&gt;</code> ensures the columnar formatting isn't mangled by the browser's whitespace rules.</li>
+        <li><strong>ASCII art or structured data previews:</strong> Any content where spatial alignment carries meaning
+          — think configuration files, schema diffs, or poetry — requires <code>&lt;pre&gt;</code> to render correctly.
+        </li>
+      </ul>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;pre&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Dolore, itaque!<br />
-          &lt;/pre&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;pre&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Dolore, itaque!<br />
+        &lt;/pre&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <pre>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <pre>
 Lorem            ipsum dolor sit amet consectetur, 
 adipisicing elit. Dolore, itaque!
-        </pre
-          >
-        </div>
+        </pre>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION 4: ORDERED LISTS
       <ol> creates a numbered list. You can change the numbering style
       using the 'type' attribute (1, A, a, I, i).
     -->
-        <!-- Ordered Lists -->
-        <h2 class="section-title">4. Ordered Lists</h2>
-        <p>
-          <strong>What it does:</strong> <code>&lt;ol&gt;</code> renders a sequentially numbered list where order is semantically significant. The <code>type</code> attribute switches the counter style (1, A, a, I, i).
-        </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Step-by-step instructions:</strong> Onboarding flows, installation guides, and checkout steps — anywhere the user must follow a sequence — are prime <code>&lt;ol&gt;</code> territory.</li>
-          <li><strong>Ranked content:</strong> "Top 10" lists, leaderboards, or search result snippets where position carries meaning benefit from an ordered list over a styled <code>&lt;div&gt;</code> stack.</li>
-          <li><strong>Legal / academic documents:</strong> Numbered clauses, terms and conditions, and footnoted references use Roman numeral or letter variants to match document conventions.</li>
-        </ul>
+      <!-- Ordered Lists -->
+      <h2 class="section-title">4. Ordered Lists</h2>
+      <p>
+        <strong>What it does:</strong> <code>&lt;ol&gt;</code> renders a sequentially numbered list where order is
+        semantically significant. The <code>type</code> attribute switches the counter style (1, A, a, I, i).
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Step-by-step instructions:</strong> Onboarding flows, installation guides, and checkout steps —
+          anywhere the user must follow a sequence — are prime <code>&lt;ol&gt;</code> territory.</li>
+        <li><strong>Ranked content:</strong> "Top 10" lists, leaderboards, or search result snippets where position
+          carries meaning benefit from an ordered list over a styled <code>&lt;div&gt;</code> stack.</li>
+        <li><strong>Legal / academic documents:</strong> Numbered clauses, terms and conditions, and footnoted
+          references use Roman numeral or letter variants to match document conventions.</li>
+      </ul>
 
-        <div class="examples-grid">
-          <!-- Item 1 -->
-          <div class="example-item">
-            <h3>1. Default (Numbers)</h3>
-            <div class="code-block">
-              &lt;ol type="1"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
-            <div class="example-output">
-              <ol type="1">
-                <li>Macha</li>
-                <li>Taro</li>
-                <li>Chocolate</li>
-              </ol>
-            </div>
+      <h3>Approach 1: Legacy HTML Attributes</h3>
+      <p>The <code>type</code> attribute is the original way to change list markers, still supported but limited to five
+        basic styles.</p>
+
+      <div class="examples-grid">
+        <!-- Item 1 -->
+        <div class="example-item">
+          <h3>1. Default (Numbers)</h3>
+          <div class="code-block">
+            &lt;ol type="1"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
           </div>
-
-          <!-- Item 2 -->
-          <div class="example-item">
-            <h3>2. Uppercase Letters</h3>
-            <div class="code-block">
-              &lt;ol type="A"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
-            <div class="example-output">
-              <ol type="A">
-                <li>Macha</li>
-                <li>Taro</li>
-                <li>Chocolate</li>
-              </ol>
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="example-item">
-            <h3>3. Lowercase Roman</h3>
-            <div class="code-block">
-              &lt;ol type="i"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
-            <div class="example-output">
-              <ol type="i">
-                <li>Macha</li>
-                <li>Taro</li>
-                <li>Chocolate</li>
-              </ol>
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="example-item">
-            <h3>4. Uppercase Roman</h3>
-            <div class="code-block">
-              &lt;ol type="I"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
-            <div class="example-output">
-              <ol type="I">
-                <li>Macha</li>
-                <li>Taro</li>
-                <li>Chocolate</li>
-              </ol>
-            </div>
+          <div class="example-output">
+            <ol type="1">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
           </div>
         </div>
 
-        <hr />
+        <!-- Item 2 -->
+        <div class="example-item">
+          <h3>2. Uppercase Letters</h3>
+          <div class="code-block">
+            &lt;ol type="A"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol type="A">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
 
-        <!-- 
+        <!-- Item 3 -->
+        <div class="example-item">
+          <h3>3. Lowercase Roman</h3>
+          <div class="code-block">
+            &lt;ol type="i"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol type="i">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="example-item">
+          <h3>4. Uppercase Roman</h3>
+          <div class="code-block">
+            &lt;ol type="I"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol type="I">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <h3>Approach 2: CSS Inline Styles (Modern)</h3>
+      <p>The <code>list-style-type</code> property is the modern standard, offering more options and better integration
+        with design systems.</p>
+
+      <div class="examples-grid">
+        <!-- Item 1: Decimal -->
+        <div class="example-item">
+          <h3>1. Decimal (1, 2, 3)</h3>
+          <div class="code-block">
+            &lt;ol style="list-style-type: decimal;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol style="list-style-type: decimal">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Item 2: Lower Alpha -->
+        <div class="example-item">
+          <h3>2. Lower Alpha (a, b, c)</h3>
+          <div class="code-block">
+            &lt;ol style="list-style-type: lower-alpha;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol style="list-style-type: lower-alpha">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Item 3: Upper Alpha -->
+        <div class="example-item">
+          <h3>3. Upper Alpha (A, B, C)</h3>
+          <div class="code-block">
+            &lt;ol style="list-style-type: upper-alpha;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol style="list-style-type: upper-alpha">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Item 4: Lower Roman -->
+        <div class="example-item">
+          <h3>4. Lower Roman (i, ii, iii)</h3>
+          <div class="code-block">
+            &lt;ol style="list-style-type: lower-roman;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol style="list-style-type: lower-roman">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Item 5: Upper Roman -->
+        <div class="example-item">
+          <h3>5. Upper Roman (I, II, III)</h3>
+          <div class="code-block">
+            &lt;ol style="list-style-type: upper-roman;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol style="list-style-type: upper-roman">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Item 6: None -->
+        <div class="example-item">
+          <h3>6. None (no display)</h3>
+          <div class="code-block">
+            &lt;ol style="list-style-type: none;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
+            &lt;/ol&gt;
+          </div>
+          <div class="example-output">
+            <ol style="list-style-type: none">
+              <li>Macha</li>
+              <li>Taro</li>
+              <li>Chocolate</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- 
       SECTION 5: UNORDERED LISTS
       <ul> creates a bulleted list. You can change the bullet style
       using the 'type' attribute (circle, square, none).
     -->
-        <!-- Unordered Lists -->
-        <h2 class="section-title">5. Unordered Lists</h2>
-        <p>
-          <strong>What it does:</strong> <code>&lt;ul&gt;</code> renders a bulleted list where sequence doesn't matter. The <code>type</code> attribute (or CSS <code>list-style-type</code>) controls the bullet marker.
-        </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Navigation menus:</strong> Nearly every nav bar is an unstyled <code>&lt;ul&gt;</code> underneath — reset bullets with <code>list-style: none</code> and lay items out with flexbox.</li>
-          <li><strong>Feature lists on landing pages:</strong> A bullet-pointed list of product benefits or plan features is semantically correct here and trivial to restyle per brand.</li>
-          <li><strong>Sidebar / tag clouds:</strong> Tag lists, related-post links, and filter options in dashboards are typically unordered lists with custom marker styles or none at all.</li>
-        </ul>
+      <!-- Unordered Lists -->
+      <h2 class="section-title">5. Unordered Lists</h2>
+      <p>
+        <strong>What it does:</strong> <code>&lt;ul&gt;</code> renders a bulleted list where sequence doesn't matter.
+        The <code>type</code> attribute (or CSS <code>list-style-type</code>) controls the bullet marker.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Navigation menus:</strong> Nearly every nav bar is an unstyled <code>&lt;ul&gt;</code> underneath —
+          reset bullets with <code>list-style: none</code> and lay items out with flexbox.</li>
+        <li><strong>Feature lists on landing pages:</strong> A bullet-pointed list of product benefits or plan features
+          is semantically correct here and trivial to restyle per brand.</li>
+        <li><strong>Sidebar / tag clouds:</strong> Tag lists, related-post links, and filter options in dashboards are
+          typically unordered lists with custom marker styles or none at all.</li>
+      </ul>
 
-        <div class="examples-grid">
-          <!-- Item 0: Disc (browser default) -->
-          <div class="example-item">
-            <h3>0. Disc (Browser Default)</h3>
-            <div class="code-block">
-              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-              &lt;ul type="disc"&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <h3>Soft Drinks</h3>
-              <ul type="disc">
-                <li>Coke</li>
-                <li>Pepsi</li>
-                <li>Sarsi</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Item 1 -->
-          <div class="example-item">
-            <h3>1. Circle</h3>
-            <div class="code-block">
-              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-              &lt;ul type="circle"&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <h3>Soft Drinks</h3>
-              <ul type="circle">
-                <li>Coke</li>
-                <li>Pepsi</li>
-                <li>Sarsi</li>
-              </ul>
-            </div>
-          </div>
+      <h3>Approach 1: Legacy HTML Attributes</h3>
+      <p>Simple markers defined directly in the HTML tag. Modern development prefers CSS for this.</p>
 
-          <!-- Item 2 -->
-          <div class="example-item">
-            <h3>2. Square</h3>
-            <div class="code-block">
-              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-              &lt;ul type="square"&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <h3>Soft Drinks</h3>
-              <ul type="square">
-                <li>Coke</li>
-                <li>Pepsi</li>
-                <li>Sarsi</li>
-              </ul>
-            </div>
+      <div class="examples-grid">
+        <!-- Item 0: Disc (browser default) -->
+        <div class="example-item">
+          <h3>0. Disc (Browser Default)</h3>
+          <div class="code-block">
+            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+            &lt;ul type="disc"&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+            &lt;/ul&gt;
           </div>
-
-          <!-- Item 3 -->
-          <div class="example-item">
-            <h3>3. None</h3>
-            <div class="code-block">
-              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-              &lt;ul type="none"&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <h3>Soft Drinks</h3>
-              <ul type="none">
-                <li>Coke</li>
-                <li>Pepsi</li>
-                <li>Sarsi</li>
-              </ul>
-            </div>
+          <div class="example-output">
+            <h3>Soft Drinks</h3>
+            <ul type="disc">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 1 -->
+        <div class="example-item">
+          <h3>1. Circle</h3>
+          <div class="code-block">
+            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+            &lt;ul type="circle"&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <h3>Soft Drinks</h3>
+            <ul type="circle">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
           </div>
         </div>
 
-        <hr />
-
-        <!-- 
-      SECTION 6: LIST STYLING (CSS)
-      You can also change the list item marker using the CSS 'list-style-type' property.
-    -->
-        <h2 class="section-title">6. List Styling (CSS)</h2>
-        <p>
-          <strong>What it does:</strong> The CSS <code>list-style-type</code> property overrides the default marker on any list element, giving you far more control than the HTML <code>type</code> attribute — including custom strings and emoji.
-        </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Design systems:</strong> Define marker styles once in your CSS component library rather than scattering <code>type</code> attributes across markup. Swap a value in one place and every list in the app updates.</li>
-          <li><strong>Marketing / editorial pages:</strong> Brand-aligned emoji markers (e.g., a checkmark ✅ for feature lists) add personality without SVG overhead — just set <code>list-style-type: '✅ '</code>.</li>
-          <li><strong>Formatted reports or invoices:</strong> <code>decimal-leading-zero</code> and <code>upper-latin</code> make numbered sections match document conventions expected by clients or auditors.</li>
-        </ul>
-
-        <h3>Ordered Lists (CSS)</h3>
-
-        <div class="examples-grid">
-          <!-- Item 1: Decimal Leading Zero -->
-          <div class="example-item">
-            <h3>1. Decimal Leading Zero (OL)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: decimal-leading-zero;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
-            <div class="example-output">
-              <ol style="list-style-type: decimal-leading-zero">
-                <li>Macha</li>
-                <li>Taro</li>
-                <li>Chocolate</li>
-              </ol>
-            </div>
+        <!-- Item 2 -->
+        <div class="example-item">
+          <h3>2. Square</h3>
+          <div class="code-block">
+            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+            &lt;ul type="square"&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+            &lt;/ul&gt;
           </div>
-
-          <!-- Item 2: Lower Greek -->
-          <div class="example-item">
-            <h3>2. Lower Greek (OL)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: lower-greek;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
-            <div class="example-output">
-              <ol style="list-style-type: lower-greek">
-                <li>Macha</li>
-                <li>Taro</li>
-                <li>Chocolate</li>
-              </ol>
-            </div>
-          </div>
-
-          <!-- Item 3: Upper Latin -->
-          <div class="example-item">
-            <h3>3. Upper Latin (OL)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: upper-latin;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
-            <div class="example-output">
-              <ol style="list-style-type: upper-latin">
-                <li>Macha</li>
-                <li>Taro</li>
-                <li>Chocolate</li>
-              </ol>
-            </div>
+          <div class="example-output">
+            <h3>Soft Drinks</h3>
+            <ul type="square">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
           </div>
         </div>
 
-        <h3>Unordered Lists (CSS)</h3>
-        <div class="examples-grid">
-          <!-- Item 4: Disc (Unordered) -->
-          <div class="example-item">
-            <h3>1. Disc (UL)</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: disc;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <ul style="list-style-type: disc">
-                <li>Coke</li>
-                <li>Pepsi</li>
-                <li>Sarsi</li>
-              </ul>
-            </div>
+        <!-- Item 3 -->
+        <div class="example-item">
+          <h3>3. None</h3>
+          <div class="code-block">
+            &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+            &lt;ul type="none"&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+            &lt;/ul&gt;
           </div>
+          <div class="example-output">
+            <h3>Soft Drinks</h3>
+            <ul type="none">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-          <!-- Item 5: Square (Unordered) -->
-          <div class="example-item">
-            <h3>2. Square (UL)</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: square;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <ul style="list-style-type: square">
-                <li>Coke</li>
-                <li>Pepsi</li>
-                <li>Sarsi</li>
-              </ul>
-            </div>
+      <h3>Approach 2: CSS Inline Styles (Modern)</h3>
+      <p>Using <code>list-style-type</code> for more flexibility and consistent styling.</p>
+
+      <div class="examples-grid">
+        <!-- Item 1: Disc -->
+        <div class="example-item">
+          <h3>1. Disc</h3>
+          <div class="code-block">
+            &lt;ul style="list-style-type: disc;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <ul style="list-style-type: disc">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
           </div>
         </div>
 
-        <h3>Alternative Approach (Custom Markers)</h3>
-        <p>Using <code>list-style-type</code> with a string or emojis.</p>
-        <div class="examples-grid">
-          <div class="example-item">
-            <h3>Custom Emoji Marker</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: '👉 ';"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Custom Item 1&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Custom Item 2&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <ul style="list-style-type: &quot;👉 &quot;">
-                <li>Custom Item 1</li>
-                <li>Custom Item 2</li>
-              </ul>
-            </div>
+        <!-- Item 2: Circle -->
+        <div class="example-item">
+          <h3>2. Circle</h3>
+          <div class="code-block">
+            &lt;ul style="list-style-type: circle;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
+            &lt;/ul&gt;
           </div>
-
-          <!-- New Example 1: Custom Text -->
-          <div class="example-item">
-            <h3>Custom Smile Emoji Marker</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: '😄 ';"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Next Step&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Final Step&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <ul style="list-style-type: &quot;😄 &quot;">
-                <li>Next Step</li>
-                <li>Final Step</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- New Example 2: Star Emoji -->
-          <div class="example-item">
-            <h3>Custom Star Marker</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: '⭐ ';"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Top Pick&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Best Choice&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
-            <div class="example-output">
-              <ul style="list-style-type: &quot;⭐ &quot;">
-                <li>Top Pick</li>
-                <li>Best Choice</li>
-              </ul>
-            </div>
+          <div class="example-output">
+            <ul style="list-style-type: circle">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
           </div>
         </div>
 
-        <hr />
-
-        <!-- 
-      SECTION 7: DESCRIPTION LISTS
-      <dl> defines the list.
-      <dt> defines the term (name).
-      <dd> describes each term.
-    -->
-        <!-- Description Lists -->
-        <h2 class="section-title">7. Description Lists</h2>
-        <p>
-          <strong>What it does:</strong> <code>&lt;dl&gt;</code> pairs terms (<code>&lt;dt&gt;</code>) with their definitions or descriptions (<code>&lt;dd&gt;</code>), providing a semantic key-value structure that plain paragraphs can't express.
-        </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Glossaries and documentation:</strong> API reference docs, knowledge bases, and technical glossaries are textbook <code>&lt;dl&gt;</code> use cases — term on the left, explanation indented below.</li>
-          <li><strong>Product detail pages:</strong> Spec sheets ("Processor: M3 Pro", "RAM: 18 GB") map naturally to <code>&lt;dt&gt;</code>/<code>&lt;dd&gt;</code> pairs. Screen readers announce them as definition groups, improving accessibility.</li>
-          <li><strong>FAQ sections:</strong> Question in <code>&lt;dt&gt;</code>, answer in <code>&lt;dd&gt;</code> — semantically cleaner than a heading-paragraph pattern and easier to style consistently across a CMS.</li>
-        </ul>
-
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;dl&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the backbone of the
-          website&lt;/dd&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;CSS&lt;/dt&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the appearance of the
-          website&lt;/dd&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;Javascript&lt;/dt&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the behavior of the
-          website&lt;/dd&gt; <br />
-          &lt;/dl&gt;
+        <!-- Item 3: Square -->
+        <div class="example-item">
+          <h3>3. Square</h3>
+          <div class="code-block">
+            &lt;ul style="list-style-type: square;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <ul style="list-style-type: square">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
         </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <dl>
-            <dt>HTML</dt>
-            <dd>This is the backbone of the website</dd>
-            <dt>CSS</dt>
-            <dd>This is the appearance of the website</dd>
-            <dt>Javascript</dt>
-            <dd>This is the behavior of the website</dd>
-          </dl>
+        <!-- Item 4: None -->
+        <div class="example-item">
+          <h3>4. None</h3>
+          <div class="code-block">
+            &lt;ul style="list-style-type: none;"&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
+            &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
+            &lt;/ul&gt;
+          </div>
+          <div class="example-output">
+            <ul style="list-style-type: none">
+              <li>Coke</li>
+              <li>Pepsi</li>
+              <li>Sarsi</li>
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
-      SECTION 8: SPECIAL CHARACTERS
+      <!-- Description Lists -->
+      <h2 class="section-title">6. Description Lists</h2>
+      <p>
+        <strong>What it does:</strong> <code>&lt;dl&gt;</code> pairs terms (<code>&lt;dt&gt;</code>) with their
+        definitions or descriptions (<code>&lt;dd&gt;</code>), providing a semantic key-value structure that plain
+        paragraphs can't express.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Glossaries and documentation:</strong> API reference docs, knowledge bases, and technical glossaries
+          are textbook <code>&lt;dl&gt;</code> use cases — term on the left, explanation indented below.</li>
+        <li><strong>Product detail pages:</strong> Spec sheets ("Processor: M3 Pro", "RAM: 18 GB") map naturally to
+          <code>&lt;dt&gt;</code>/<code>&lt;dd&gt;</code> pairs. Screen readers announce them as definition groups,
+          improving accessibility.</li>
+        <li><strong>FAQ sections:</strong> Question in <code>&lt;dt&gt;</code>, answer in <code>&lt;dd&gt;</code> —
+          semantically cleaner than a heading-paragraph pattern and easier to style consistently across a CMS.</li>
+      </ul>
+
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;dl&gt; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the backbone of the
+        website&lt;/dd&gt; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;CSS&lt;/dt&gt; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the appearance of the
+        website&lt;/dd&gt; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;Javascript&lt;/dt&gt; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the behavior of the
+        website&lt;/dd&gt; <br />
+        &lt;/dl&gt;
+      </div>
+
+      <h3>Output:</h3>
+      <div class="example-output">
+        <dl>
+          <dt>HTML</dt>
+          <dd>This is the backbone of the website</dd>
+          <dt>CSS</dt>
+          <dd>This is the appearance of the website</dd>
+          <dt>Javascript</dt>
+          <dd>This is the behavior of the website</dd>
+        </dl>
+      </div>
+
+      <hr />
+
+      <!-- 
+      SECTION 7: SPECIAL CHARACTERS
       Some characters are reserved in HTML (like < and >).
       To display them, we use character entities (e.g., &lt; for <).
     -->
-        <!-- Special Characters -->
-        <h2 class="section-title">8. Special Characters</h2>
-        <p>
-          <strong>What it does:</strong> HTML entities let you render characters that the parser would otherwise misinterpret as markup — specifically <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, and <code>&quot;</code> — plus hundreds of typographic and symbolic glyphs.
-        </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Code documentation / tutorials:</strong> Any page that displays raw HTML snippets must entity-escape angle brackets, otherwise the browser renders the example instead of showing it as text.</li>
-          <li><strong>CMS and user-generated content:</strong> Always sanitize and entity-encode output from untrusted sources to prevent XSS attacks — your backend or templating engine should do this automatically, but knowing why matters.</li>
-          <li><strong>Typographic polish:</strong> Use <code>&amp;mdash;</code>, <code>&amp;laquo;</code>, or <code>&amp;copy;</code> instead of copy-pasting Unicode characters that can get mangled by encoding mismatches in email or legacy systems.</li>
-        </ul>
+      <!-- Special Characters -->
+      <h2 class="section-title">7. Special Characters</h2>
+      <p>
+        <strong>What it does:</strong> HTML entities let you render characters that the parser would otherwise
+        misinterpret as markup — specifically <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, and
+        <code>&quot;</code> — plus hundreds of typographic and symbolic glyphs.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Code documentation / tutorials:</strong> Any page that displays raw HTML snippets must entity-escape
+          angle brackets, otherwise the browser renders the example instead of showing it as text.</li>
+        <li><strong>CMS and user-generated content:</strong> Always sanitize and entity-encode output from untrusted
+          sources to prevent XSS attacks — your backend or templating engine should do this automatically, but knowing
+          why matters.</li>
+        <li><strong>Typographic polish:</strong> Use <code>&amp;mdash;</code>, <code>&amp;laquo;</code>, or
+          <code>&amp;copy;</code> instead of copy-pasting Unicode characters that can get mangled by encoding mismatches
+          in email or legacy systems.</li>
+      </ul>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;h2&gt;Is 71 &amp;gt; 13 &amp;amp; 22 &amp;lt; 5?&lt;/h2&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;h2&gt;Is 71 &amp;gt; 13 &amp;amp; 22 &amp;lt; 5?&lt;/h2&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <h2>Is 71 &gt; 13 &amp; 22 &lt; 5?</h2>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <h2>Is 71 &gt; 13 &amp; 22 &lt; 5?</h2>
+      </div>
 
-        <hr />
+      <hr />
 
-        <hr />
+      <hr />
 
-        <!-- 
-        SECTION 9: DIV TAGS
+      <!-- 
+        SECTION 8: DIV TAGS
         <div> is a container unit used to group other HTML elements.
         It has no special meaning but is very common for layout/styling.
     -->
-        <!-- Div Styles -->
-        <h2 class="section-title">9. Div Blocks with Inline Styles</h2>
-        <p>
-          <strong>What it does:</strong> <code>&lt;div&gt;</code> is a generic block container with no implicit meaning — it groups elements purely for layout and styling purposes, taking the full width of its parent by default.
-        </p>
-        <p>
-          <strong>When to use it in real projects:</strong>
-        </p>
-        <ul>
-          <li><strong>Layout scaffolding:</strong> Grid wrappers, flex containers, card shells — anytime you need a box that CSS can target, a <code>&lt;div&gt;</code> is the right choice when no semantic element fits (prefer <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, or <code>&lt;main&gt;</code> when they do).</li>
-          <li><strong>Component boundaries:</strong> In React, Vue, or any component-based system, the root element of a component is almost always a <code>&lt;div&gt;</code> (or a Fragment), scoping its styles and event handlers.</li>
-          <li><strong>Dashboard widgets:</strong> Metric cards, charts, and data panels are each wrapped in a <code>&lt;div&gt;</code> with explicit dimensions, making them independently scrollable, positionable, and styleable.</li>
-        </ul>
+      <!-- Div Styles -->
+      <h2 class="section-title">8. Div Blocks with Inline Styles</h2>
+      <p>
+        <strong>What it does:</strong> <code>&lt;div&gt;</code> is a generic block container with no implicit meaning —
+        it groups elements purely for layout and styling purposes, taking the full width of its parent by default.
+      </p>
+      <p>
+        <strong>When to use it in real projects:</strong>
+      </p>
+      <ul>
+        <li><strong>Layout scaffolding:</strong> Grid wrappers, flex containers, card shells — anytime you need a box
+          that CSS can target, a <code>&lt;div&gt;</code> is the right choice when no semantic element fits (prefer
+          <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, or <code>&lt;main&gt;</code> when they do).</li>
+        <li><strong>Component boundaries:</strong> In React, Vue, or any component-based system, the root element of a
+          component is almost always a <code>&lt;div&gt;</code> (or a Fragment), scoping its styles and event handlers.
+        </li>
+        <li><strong>Dashboard widgets:</strong> Metric cards, charts, and data panels are each wrapped in a
+          <code>&lt;div&gt;</code> with explicit dimensions, making them independently scrollable, positionable, and
+          styleable.</li>
+      </ul>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;div style="height: 50px; width: 50px; background-color:
-          red;"&gt;Box1&lt;/div&gt; <br />
-          &lt;div style="height: 100px; width: 100px; background-color:
-          blueviolet;"&gt;Box2&lt;/div&gt; <br />
-          &lt;div style="height: 200px; width: 200px; background-color:
-          green;"&gt;Box3&lt;/div&gt;
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;div style="height: 50px; width: 50px; background-color:
+        red;"&gt;Box1&lt;/div&gt; <br />
+        &lt;div style="height: 100px; width: 100px; background-color:
+        blueviolet;"&gt;Box2&lt;/div&gt; <br />
+        &lt;div style="height: 200px; width: 200px; background-color:
+        green;"&gt;Box3&lt;/div&gt;
+      </div>
+
+      <h3>Output:</h3>
+      <div class="example-output">
+        <div style="height: 50px; width: 50px; background-color: red">
+          Box1
         </div>
-
-        <h3>Output:</h3>
-        <div class="example-output">
-          <div style="height: 50px; width: 50px; background-color: red">
-            Box1
-          </div>
-          <div
-            style="height: 100px; width: 100px; background-color: blueviolet"
-          >
-            Box2
-          </div>
-          <div style="height: 200px; width: 200px; background-color: green">
-            Box3
-          </div>
+        <div style="height: 100px; width: 100px; background-color: blueviolet">
+          Box2
         </div>
-
-        <div class="nav-links">
-          <a href="index.html">&lt; Previous: Home</a> |
-          <a href="inline_elements.html">Next: Inline Elements &gt;</a>
+        <div style="height: 200px; width: 200px; background-color: green">
+          Box3
         </div>
       </div>
+
+      <div class="nav-links">
+        <a href="index.html">&lt; Previous: Home</a> |
+        <a href="inline_elements.html">Next: Inline Elements &gt;</a>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
