@@ -229,9 +229,16 @@
         <!-- Headings -->
         <h2 class="section-title">1. Headings</h2>
         <p>
-          Headings are defined with the <code>&lt;h1&gt;</code> to
-          <code>&lt;h6&gt;</code> tags.
+          <strong>What it does:</strong> <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> mark six levels of document hierarchy — from the page's primary topic down to minor subsections.
         </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Landing pages:</strong> One <code>&lt;h1&gt;</code> for the hero headline; <code>&lt;h2&gt;</code>/<code>&lt;h3&gt;</code> for feature sections and sub-headings. Never skip levels — crawlers and screen readers depend on the hierarchy.</li>
+          <li><strong>CMS / blog layouts:</strong> Article titles go in <code>&lt;h1&gt;</code> (or <code>&lt;h2&gt;</code> inside a list), sub-topics in <code>&lt;h3&gt;</code>. Keep the outline logical so auto-generated tables of contents work correctly.</li>
+          <li><strong>Dashboards:</strong> Section labels like "Revenue" or "Active Users" are typically <code>&lt;h2&gt;</code> or <code>&lt;h3&gt;</code> — use them even if you reset their visual size with CSS; the semantic meaning matters for accessibility.</li>
+        </ul>
 
         <h3>Code:</h3>
         <!-- 
@@ -266,7 +273,17 @@
     -->
         <!-- Paragraphs -->
         <h2 class="section-title">2. Paragraphs</h2>
-        <p>Paragraphs are defined with the <code>&lt;p&gt;</code> tag.</p>
+        <p>
+          <strong>What it does:</strong> <code>&lt;p&gt;</code> wraps a discrete block of text, automatically adding vertical margin above and below it — the browser's way of visually separating thoughts.
+        </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Content-heavy pages:</strong> Body copy, product descriptions, and blog posts all live in <code>&lt;p&gt;</code> tags. If your text is prose, it belongs here — not in a <code>&lt;div&gt;</code>.</li>
+          <li><strong>CMS-generated content:</strong> Most WYSIWYG editors and Markdown converters output <code>&lt;p&gt;</code> tags automatically. Style them globally in your CSS rather than applying inline styles per paragraph.</li>
+          <li><strong>Form help text:</strong> Short instructional copy beneath a form field is almost always a <code>&lt;p&gt;</code> (or <code>&lt;small&gt;</code> inside one), giving assistive technologies the right context.</li>
+        </ul>
 
         <h3>Code:</h3>
         <div class="code-block">
@@ -294,9 +311,16 @@
         <!-- Preformatted Text -->
         <h2 class="section-title">3. Preformatted Text</h2>
         <p>
-          The <code>&lt;pre&gt;</code> tag preserves both spaces and line
-          breaks.
+          <strong>What it does:</strong> <code>&lt;pre&gt;</code> renders text in a monospace font exactly as written in the source — every space, tab, and newline is preserved, with no collapsing.
         </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Documentation sites:</strong> Wrap code snippets in <code>&lt;pre&gt;&lt;code&gt;</code> (not just <code>&lt;code&gt;</code> alone) so indentation and line breaks render faithfully — syntax highlighters like Prism.js also expect this structure.</li>
+          <li><strong>Terminal / CLI output:</strong> When showing command output, error traces, or log snippets, <code>&lt;pre&gt;</code> ensures the columnar formatting isn't mangled by the browser's whitespace rules.</li>
+          <li><strong>ASCII art or structured data previews:</strong> Any content where spatial alignment carries meaning — think configuration files, schema diffs, or poetry — requires <code>&lt;pre&gt;</code> to render correctly.</li>
+        </ul>
 
         <h3>Code:</h3>
         <div class="code-block">
@@ -324,7 +348,17 @@ adipisicing elit. Dolore, itaque!
     -->
         <!-- Ordered Lists -->
         <h2 class="section-title">4. Ordered Lists</h2>
-        <p>Ordered lists usage with different <code>type</code> attributes.</p>
+        <p>
+          <strong>What it does:</strong> <code>&lt;ol&gt;</code> renders a sequentially numbered list where order is semantically significant. The <code>type</code> attribute switches the counter style (1, A, a, I, i).
+        </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Step-by-step instructions:</strong> Onboarding flows, installation guides, and checkout steps — anywhere the user must follow a sequence — are prime <code>&lt;ol&gt;</code> territory.</li>
+          <li><strong>Ranked content:</strong> "Top 10" lists, leaderboards, or search result snippets where position carries meaning benefit from an ordered list over a styled <code>&lt;div&gt;</code> stack.</li>
+          <li><strong>Legal / academic documents:</strong> Numbered clauses, terms and conditions, and footnoted references use Roman numeral or letter variants to match document conventions.</li>
+        </ul>
 
         <div class="examples-grid">
           <!-- Item 1 -->
@@ -414,10 +448,38 @@ adipisicing elit. Dolore, itaque!
         <!-- Unordered Lists -->
         <h2 class="section-title">5. Unordered Lists</h2>
         <p>
-          Unordered lists usage with different <code>type</code> attributes.
+          <strong>What it does:</strong> <code>&lt;ul&gt;</code> renders a bulleted list where sequence doesn't matter. The <code>type</code> attribute (or CSS <code>list-style-type</code>) controls the bullet marker.
         </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Navigation menus:</strong> Nearly every nav bar is an unstyled <code>&lt;ul&gt;</code> underneath — reset bullets with <code>list-style: none</code> and lay items out with flexbox.</li>
+          <li><strong>Feature lists on landing pages:</strong> A bullet-pointed list of product benefits or plan features is semantically correct here and trivial to restyle per brand.</li>
+          <li><strong>Sidebar / tag clouds:</strong> Tag lists, related-post links, and filter options in dashboards are typically unordered lists with custom marker styles or none at all.</li>
+        </ul>
 
         <div class="examples-grid">
+          <!-- Item 0: Disc (browser default) -->
+          <div class="example-item">
+            <h3>0. Disc (Browser Default)</h3>
+            <div class="code-block">
+              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
+              &lt;ul type="disc"&gt; <br />
+              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
+              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
+              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
+              &lt;/ul&gt;
+            </div>
+            <div class="example-output">
+              <h3>Soft Drinks</h3>
+              <ul type="disc">
+                <li>Coke</li>
+                <li>Pepsi</li>
+                <li>Sarsi</li>
+              </ul>
+            </div>
+          </div>
           <!-- Item 1 -->
           <div class="example-item">
             <h3>1. Circle</h3>
@@ -489,7 +551,17 @@ adipisicing elit. Dolore, itaque!
       You can also change the list item marker using the CSS 'list-style-type' property.
     -->
         <h2 class="section-title">6. List Styling (CSS)</h2>
-        <p>Using CSS <code>list-style-type</code> to customize list markers.</p>
+        <p>
+          <strong>What it does:</strong> The CSS <code>list-style-type</code> property overrides the default marker on any list element, giving you far more control than the HTML <code>type</code> attribute — including custom strings and emoji.
+        </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Design systems:</strong> Define marker styles once in your CSS component library rather than scattering <code>type</code> attributes across markup. Swap a value in one place and every list in the app updates.</li>
+          <li><strong>Marketing / editorial pages:</strong> Brand-aligned emoji markers (e.g., a checkmark ✅ for feature lists) add personality without SVG overhead — just set <code>list-style-type: '✅ '</code>.</li>
+          <li><strong>Formatted reports or invoices:</strong> <code>decimal-leading-zero</code> and <code>upper-latin</code> make numbered sections match document conventions expected by clients or auditors.</li>
+        </ul>
 
         <h3>Ordered Lists (CSS)</h3>
 
@@ -658,9 +730,16 @@ adipisicing elit. Dolore, itaque!
         <!-- Description Lists -->
         <h2 class="section-title">7. Description Lists</h2>
         <p>
-          A description list is a list of terms, with a description of each
-          term.
+          <strong>What it does:</strong> <code>&lt;dl&gt;</code> pairs terms (<code>&lt;dt&gt;</code>) with their definitions or descriptions (<code>&lt;dd&gt;</code>), providing a semantic key-value structure that plain paragraphs can't express.
         </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Glossaries and documentation:</strong> API reference docs, knowledge bases, and technical glossaries are textbook <code>&lt;dl&gt;</code> use cases — term on the left, explanation indented below.</li>
+          <li><strong>Product detail pages:</strong> Spec sheets ("Processor: M3 Pro", "RAM: 18 GB") map naturally to <code>&lt;dt&gt;</code>/<code>&lt;dd&gt;</code> pairs. Screen readers announce them as definition groups, improving accessibility.</li>
+          <li><strong>FAQ sections:</strong> Question in <code>&lt;dt&gt;</code>, answer in <code>&lt;dd&gt;</code> — semantically cleaner than a heading-paragraph pattern and easier to style consistently across a CMS.</li>
+        </ul>
 
         <h3>Code:</h3>
         <div class="code-block">
@@ -698,7 +777,17 @@ adipisicing elit. Dolore, itaque!
     -->
         <!-- Special Characters -->
         <h2 class="section-title">8. Special Characters</h2>
-        <p>Using entities to display reserved characters.</p>
+        <p>
+          <strong>What it does:</strong> HTML entities let you render characters that the parser would otherwise misinterpret as markup — specifically <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, and <code>&quot;</code> — plus hundreds of typographic and symbolic glyphs.
+        </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Code documentation / tutorials:</strong> Any page that displays raw HTML snippets must entity-escape angle brackets, otherwise the browser renders the example instead of showing it as text.</li>
+          <li><strong>CMS and user-generated content:</strong> Always sanitize and entity-encode output from untrusted sources to prevent XSS attacks — your backend or templating engine should do this automatically, but knowing why matters.</li>
+          <li><strong>Typographic polish:</strong> Use <code>&amp;mdash;</code>, <code>&amp;laquo;</code>, or <code>&amp;copy;</code> instead of copy-pasting Unicode characters that can get mangled by encoding mismatches in email or legacy systems.</li>
+        </ul>
 
         <h3>Code:</h3>
         <div class="code-block">
@@ -722,9 +811,16 @@ adipisicing elit. Dolore, itaque!
         <!-- Div Styles -->
         <h2 class="section-title">9. Div Blocks with Inline Styles</h2>
         <p>
-          Using <code>&lt;div&gt;</code> to create block elements with specific
-          dimensions and colors.
+          <strong>What it does:</strong> <code>&lt;div&gt;</code> is a generic block container with no implicit meaning — it groups elements purely for layout and styling purposes, taking the full width of its parent by default.
         </p>
+        <p>
+          <strong>When to use it in real projects:</strong>
+        </p>
+        <ul>
+          <li><strong>Layout scaffolding:</strong> Grid wrappers, flex containers, card shells — anytime you need a box that CSS can target, a <code>&lt;div&gt;</code> is the right choice when no semantic element fits (prefer <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, or <code>&lt;main&gt;</code> when they do).</li>
+          <li><strong>Component boundaries:</strong> In React, Vue, or any component-based system, the root element of a component is almost always a <code>&lt;div&gt;</code> (or a Fragment), scoping its styles and event handlers.</li>
+          <li><strong>Dashboard widgets:</strong> Metric cards, charts, and data panels are each wrapped in a <code>&lt;div&gt;</code> with explicit dimensions, making them independently scrollable, positionable, and styleable.</li>
+        </ul>
 
         <h3>Code:</h3>
         <div class="code-block">
