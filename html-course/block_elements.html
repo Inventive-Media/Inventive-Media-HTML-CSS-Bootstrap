@@ -981,28 +981,69 @@ adipisicing elit. Dolore, itaque!
           styleable.</li>
       </ul>
 
-      <h3>Code:</h3>
-      <div class="code-block">
-        &lt;div style="height: 50px; width: 50px; background-color:
-        red;"&gt;Box1&lt;/div&gt; <br />
-        &lt;div style="height: 100px; width: 100px; background-color:
-        blueviolet;"&gt;Box2&lt;/div&gt; <br />
-        &lt;div style="height: 200px; width: 200px; background-color:
-        green;"&gt;Box3&lt;/div&gt;
-      </div>
+       <h3>Code:</h3>
+       <div class="code-block">
+         &lt;div style="display: flex; gap: 20px; flex-wrap: wrap;"&gt;<br />
+         &nbsp;&nbsp;&lt;!-- Example 1: Using Picsum --&gt;<br />
+         &nbsp;&nbsp;&lt;div style="max-width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="https://picsum.photos/seed/card1/300/160" alt="Picsum example" style="width: 100%; height: auto; display: block;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="padding: 16px;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 style="margin: 0 0 8px 0; color: #333;"&gt;Picsum Photo&lt;/h3&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style="margin: 0; color: #666; font-size: 14px; line-height: 1.5;"&gt;Random images from Lorem Picsum service.&lt;/p&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+         &nbsp;&nbsp;&lt;/div&gt;<br />
+         <br />
+         &nbsp;&nbsp;&lt;!-- Example 2: Using Pravatar --&gt;<br />
+         &nbsp;&nbsp;&lt;div style="max-width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="https://i.pravatar.cc/300" alt="Pravatar example" style="width: 100%; height: auto; display: block;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="padding: 16px;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 style="margin: 0 0 8px 0; color: #333;"&gt;Pravatar Avatar&lt;/h3&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style="margin: 0; color: #666; font-size: 14px; line-height: 1.5;"&gt;Placeholder avatars from Pravatar service.&lt;/p&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+         &nbsp;&nbsp;&lt;/div&gt;<br />
+         <br />
+         &nbsp;&nbsp;&lt;!-- Example 3: Using LoremFlickr --&gt;<br />
+         &nbsp;&nbsp;&lt;div style="max-width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="https://loremflickr.com/300/160/people" alt="LoremFlickr example" style="width: 100%; height: auto; display: block;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="padding: 16px;"&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 style="margin: 0 0 8px 0; color: #333;"&gt;LoremFlickr People&lt;/h3&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style="margin: 0; color: #666; font-size: 14px; line-height: 1.5;"&gt;Random people images from LoremFlickr service.&lt;/p&gt;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+         &nbsp;&nbsp;&lt;/div&gt;<br />
+         &lt;/div&gt;
+       </div>
 
-      <h3>Output:</h3>
-      <div class="example-output">
-        <div style="height: 50px; width: 50px; background-color: red">
-          Box1
-        </div>
-        <div style="height: 100px; width: 100px; background-color: blueviolet">
-          Box2
-        </div>
-        <div style="height: 200px; width: 200px; background-color: green">
-          Box3
-        </div>
-      </div>
+       <h3>Output:</h3>
+       <div class="example-output">
+         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+           <!-- Example 1: Using Picsum -->
+           <div style="max-width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+             <img src="https://picsum.photos/seed/card1/300/160" alt="Picsum example" style="width: 100%; height: auto; display: block;">
+             <div style="padding: 16px;">
+               <h3 style="margin: 0 0 8px 0; color: #333;">Picsum Photo</h3>
+               <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.5;">Random images from Lorem Picsum service.</p>
+             </div>
+           </div>
+
+           <!-- Example 2: Using Pravatar -->
+           <div style="max-width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+             <img src="https://i.pravatar.cc/300" alt="Pravatar example" style="width: 100%; height: auto; display: block;">
+             <div style="padding: 16px;">
+               <h3 style="margin: 0 0 8px 0; color: #333;">Pravatar Avatar</h3>
+               <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.5;">Placeholder avatars from Pravatar service.</p>
+             </div>
+           </div>
+
+           <!-- Example 3: Using LoremFlickr -->
+           <div style="max-width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+             <img src="https://loremflickr.com/300/160/people" alt="LoremFlickr example" style="width: 100%; height: auto; display: block;">
+             <div style="padding: 16px;">
+               <h3 style="margin: 0 0 8px 0; color: #333;">LoremFlickr People</h3>
+               <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.5;">Random people images from LoremFlickr service.</p>
+             </div>
+           </div>
+         </div>
+       </div>
 
       <div class="nav-links">
         <a href="index.html">&lt; Previous: Home</a> |
