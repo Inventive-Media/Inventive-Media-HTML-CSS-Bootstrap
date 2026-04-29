@@ -567,149 +567,229 @@
       <iframe> embeds another document within the current HTML document (maps, videos, etc).
     -->
       <!-- Media -->
-      <h2 class="section-title">10. Media - Audio, Video, Image, Iframe</h2>
-      <p>Embedding multimedia content.</p>
+      <h2 class="section-title">10. Media & Embeds</h2>
+      <p>Embedding multimedia and external content.</p>
 
       <h3>Code:</h3>
       <div class="code-block">
-        &lt;!-- Audio --&gt;<br />
-        &lt;audio controls autoplay muted loop&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./audio/music.mp3"
-        type="audio/mp3"&gt;<br />
-        &lt;/audio&gt;<br />
-        <br />
-        &lt;!-- Video --&gt;<br />
-        &lt;video height="220" width="340" controls autoplay muted loop&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./video/videoplayback.mp4"
-        type="video/mp4"&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;test<br />
-        &lt;/video&gt;<br />
-        <br />
-        &lt;!-- Images --&gt;<br />
-        &lt;h4&gt;1. Picsum Photo&lt;/h4&gt;<br />
+        &lt;!-- 1. Images --&gt;<br />
+        &lt;h4&gt;Picsum Photo&lt;/h4&gt;<br />
         &lt;img src="https://picsum.photos/300/160?random=1" alt="Picsum example" width="300"&gt;<br /><br />
-        &lt;h4&gt;2. Pravatar Avatar&lt;/h4&gt;<br />
+        &lt;h4&gt;Pravatar Avatar&lt;/h4&gt;<br />
         &lt;img src="https://i.pravatar.cc/300" alt="Pravatar example" width="150"&gt;<br /><br />
-        &lt;h4&gt;3. LoremFlickr People&lt;/h4&gt;<br />
-        &lt;img src="https://loremflickr.com/300/160/people" alt="LoremFlickr example" width="300"&gt;
+        &lt;h4&gt;LoremFlickr People&lt;/h4&gt;<br />
+        &lt;img src="https://loremflickr.com/300/160/people" alt="LoremFlickr example" width="300"&gt;<br /><br />
+
+        &lt;!-- 2. Audio --&gt;<br />
+        &lt;audio controls autoplay muted loop&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./audio/music.mp3" type="audio/mp3"&gt;<br />
+        &lt;/audio&gt;<br /><br />
+
+        &lt;!-- 3. Video --&gt;<br />
+        &lt;video height="220" width="340" controls autoplay muted loop&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./video/videoplayback.mp4" type="video/mp4"&gt;<br />
+        &lt;/video&gt;<br /><br />
+
+        &lt;!-- 4. PDF (Embed) --&gt;<br />
+        &lt;embed src="./misc/html-slides.pdf" width="500" height="500" type="application/pdf"&gt;<br /><br />
+
+        &lt;!-- 5. IFrame (Google Map) --&gt;<br />
+        &lt;iframe src="https://www.google.com/maps/embed?..." width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;
       </div>
 
       <h3>Output:</h3>
       <div class="example-output">
-        <p>Click the play button for music</p>
+        <p><strong>1. Images:</strong></p>
+        <h4>Picsum Photo</h4>
+        <img src="https://picsum.photos/300/160?random=1" alt="Picsum example" width="300" />
+        <h4>Pravatar Avatar</h4>
+        <img src="https://i.pravatar.cc/300" alt="Pravatar example" width="150" />
+        <h4>LoremFlickr People</h4>
+        <img src="https://loremflickr.com/300/160/people" alt="LoremFlickr example" width="300" />
+
+        <hr />
+
+        <p><strong>2. Audio:</strong></p>
         <audio controls autoplay muted loop>
           <source src="./audio/music.mp3" type="audio/mp3" />
         </audio>
 
-        <p>Click the play button for video</p>
+        <hr />
+
+        <p><strong>3. Video:</strong></p>
         <video height="220" width="340" controls autoplay muted loop>
           <source src="./video/videoplayback.mp4" type="video/mp4" />
           test
         </video>
 
-        <p><strong>Images:</strong></p>
-        <h4>1. Picsum Photo</h4>
-        <img src="https://picsum.photos/300/160?random=1" alt="Picsum example" width="300" />
-        <h4>2. Pravatar Avatar</h4>
-        <img src="https://i.pravatar.cc/300" alt="Pravatar example" width="150" />
-        <h4>3. LoremFlickr People</h4>
-        <img src="https://loremflickr.com/300/160/people" alt="LoremFlickr example" width="300" />
-      </div>
+        <hr />
 
-      <hr />
+        <p><strong>4. PDF (Embed):</strong></p>
+        <embed src="./misc/html-slides.pdf" width="500" height="500" type="application/pdf">
 
-      <!-- 
-      SECTION: EMBEDS & IFRAMES
-      Iframes allow you to embed external content like SoundCloud players, YouTube videos, PDFs, and Google Maps.
-    -->
-      <!-- Embeds -->
-      <h2 class="section-title">11. Embeds & Iframes</h2>
-      <p>Embedding external resources.</p>
+        <hr />
 
-      <h3>Code (SoundCloud):</h3>
-      <div class="code-block">
-        &lt;iframe width="100%" height="166" scrolling="no" frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=..."&gt;&lt;/iframe&gt;
-      </div>
-      <h3>Output:</h3>
-      <div class="example-output">
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1997260627&color=%23ca4b85&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-      </div>
-
-      <br />
-
-      <h3>Code (YouTube):</h3>
-      <div class="code-block">
-        &lt;iframe width="560" height="315"
-        src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl"
-        ... &gt;&lt;/iframe&gt;
-      </div>
-      <h3>Output:</h3>
-      <div class="example-output">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl"
-          title="YouTube video player" frameborder="0" allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-              web-share;
-            " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-
-      <br />
-
-      <h3>Code (PDF):</h3>
-      <div class="code-block">
-        &lt;iframe width="250" height="250" src="./misc/html-slides.pdf"
-        frameborder="0"&gt;&lt;/iframe&gt;
-      </div>
-      <h3>Output:</h3>
-      <div class="example-output">
-        <iframe width="250" height="250" src="./misc/html-slides.pdf" frameborder="0"></iframe>
-      </div>
-
-      <br />
-
-      <h3>Code (Google Maps):</h3>
-      <div class="code-block">
-        &lt;iframe src="https://www.google.com/maps/embed?..." width="250"
-        height="250" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;
-      </div>
-      <h3>Output:</h3>
-      <div class="example-output">
+        <p><strong>5. IFrame (Google Map):</strong></p>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3861.665797248736!2d121.01478521442917!3d14.561094311994104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDMzJzQxLjciTiAxMjHCsDAwJzU0LjUiRQ!5e0!3m2!1sen!2sph!4v1741332964480!5m2!1sen!2sph"
           width="250" height="250" style="border: 0" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <br />
-
-      <h3>Code (Embed - PDF):</h3>
-      <div class="code-block">
-        &lt;embed src="./misc/html-slides.pdf" width="500" height="500"
-        type="application/pdf"&gt;
-      </div>
-      <h3>Output:</h3>
-      <div class="example-output">
-        <embed src="./misc/html-slides.pdf" width="500" height="500" type="application/pdf">
       </div>
 
       <hr />
 
-      <!-- 
-      SECTION: TABLES
-      <table> defines the table.
-      <thead> groups the header content.
-      <tbody> groups the body content.
-      <tfoot> groups the footer content.
-      <tr> defines a table row.
-      <th> defines a table header (bold and centered).
-      <td> defines a table data cell.
-      'rowspan' and 'colspan' allow cells to span multiple rows or columns.
+      <!--
+      SECTION: HYPERLINKS
+      <a> (anchor) creates a clickable link. The 'href' attribute defines the destination.
+      Links can point to pages, emails, phone numbers, files, or sections within the same page.
+    -->
+      <!-- Hyperlinks -->
+      <h2 class="section-title">11. Hyperlinks</h2>
+      <p>The <code>&lt;a&gt;</code> tag creates clickable hyperlinks. The <code>href</code> attribute defines the destination.</p>
+
+      <hr />
+
+      <!-- 1. Relative vs Absolute URLs -->
+      <h3>1. Relative vs Absolute URLs</h3>
+      <!-- Relative URLs point to files within the same site; Absolute URLs include the full address (protocol + domain). Use relative for internal links and absolute for external sites. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;!-- Relative URL: path is relative to the current file --&gt;<br />
+        &lt;a href="block_elements.html"&gt;Go to Block Elements (Relative)&lt;/a&gt;<br />
+        <br />
+        &lt;!-- Absolute URL: full address including protocol and domain --&gt;<br />
+        &lt;a href="https://www.google.com" target="_blank"&gt;Go to Google (Absolute)&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <!-- Relative URL: navigates within the same site without needing the full domain -->
+        <p><a href="block_elements.html">Go to Block Elements (Relative)</a></p>
+        <!-- Absolute URL: full web address used for linking to external websites -->
+        <p><a href="https://www.google.com" target="_blank">Go to Google (Absolute)</a></p>
+      </div>
+
+      <hr />
+
+      <!-- 2. Text Hyperlink — Relative -->
+      <h3>2. Text Hyperlink — Relative</h3>
+      <!-- href with a relative path links to another page inside the same project folder. Ideal for internal site navigation. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;a href="block_elements.html"&gt;Block Elements Lesson&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="block_elements.html">Block Elements Lesson</a>
+      </div>
+
+      <hr />
+
+      <!-- 3. Text Hyperlink — Absolute -->
+      <h3>3. Text Hyperlink — Absolute</h3>
+      <!-- href with a full https:// URL links to any page on the web. Use target="_blank" to open in a new tab so the user doesn't leave your site. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;a href="https://developer.mozilla.org" target="_blank"&gt;MDN Web Docs&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
+      </div>
+
+      <hr />
+
+      <!-- 4. Email Hyperlink -->
+      <h3>4. Email Hyperlink</h3>
+      <!-- mailto: opens the user's default email client with the To field pre-filled. Commonly used on contact pages. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;a href="mailto:hello@example.com"&gt;Send us an email&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="mailto:hello@example.com">Send us an email</a>
+      </div>
+
+      <hr />
+
+      <!-- 5. Telephone Hyperlink -->
+      <h3>5. Telephone Hyperlink</h3>
+      <!-- tel: triggers a phone call on mobile devices or prompts a call app on desktop. Used in contact sections and headers for click-to-call functionality. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;a href="tel:+639171234567"&gt;+63 917 123 4567&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="tel:+639171234567">+63 917 123 4567</a>
+      </div>
+
+      <hr />
+
+      <!-- 6. PDF Hyperlink -->
+      <h3>6. PDF Hyperlink</h3>
+      <!-- Linking to a .pdf file with target="_blank" opens the PDF in a new browser tab instead of navigating away from the current page. Common for downloadable documents, brochures, and reports. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;a href="./misc/html-slides.pdf" target="_blank"&gt;View HTML Slides (PDF)&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="./misc/html-slides.pdf" target="_blank">View HTML Slides (PDF)</a>
+      </div>
+
+      <hr />
+
+      <!-- 7. Download Hyperlink -->
+      <h3>7. Download Hyperlink</h3>
+      <!-- The 'download' attribute tells the browser to download the file instead of navigating to it. You can optionally give the downloaded file a custom name as the attribute value. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;a href="./misc/html-slides.pdf" download="html-slides"&gt;Download HTML Slides&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="./misc/html-slides.pdf" download="html-slides">Download HTML Slides</a>
+      </div>
+
+      <hr />
+
+      <!-- 8. Named Anchor -->
+      <h3>8. Named Anchor</h3>
+      <!-- A named anchor links to a specific section on the same page. Add id="" to the target element, then use #id as the href value. Used for table of contents, FAQ sections, and long-form pages. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;!-- The link --&gt;<br />
+        &lt;a href="#anchor-target"&gt;Jump to the target section below&lt;/a&gt;<br />
+        <br />
+        &lt;!-- The target element --&gt;<br />
+        &lt;h4 id="anchor-target"&gt;You landed here!&lt;/h4&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="#anchor-target">Jump to the target section below</a>
+        <p style="margin: 10px 0; color: #888; font-size: 0.875rem;">(scroll down — the target is a few lines below)</p>
+        <br /><br /><br />
+        <h4 id="anchor-target">📍 You landed here!</h4>
+        <p>This element has <code>id="anchor-target"</code>, making it a named anchor destination.</p>
+      </div>
+
+      <!-- 9. Hyperlink — New Tab -->
+      <h3>9. Hyperlink — New Tab</h3>
+      <!-- Use the target="_blank" attribute to open a link in a new browser tab. This is recommended for external links so users don't leave your website. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;a href="https://www.google.com" target="_blank"&gt;Open Google in New Tab&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="https://www.google.com" target="_blank">Open Google in New Tab</a>
+      </div>
+
+      <hr />
+
+      <!--
+      SECTION: TABLES (placeholder comment — no table lesson in this file)
     -->
       <div class="nav-links">
         <a href="block_elements.html">&lt; Previous: Block Elements</a> |
