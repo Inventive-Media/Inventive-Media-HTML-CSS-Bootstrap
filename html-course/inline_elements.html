@@ -594,7 +594,8 @@
         &lt;embed src="./misc/html-slides.pdf" width="500" height="500" type="application/pdf"&gt;<br /><br />
 
         &lt;!-- 5. IFrame (Google Map) --&gt;<br />
-        &lt;iframe src="https://www.google.com/maps/embed?..." width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;
+        &lt;iframe src="https://www.google.com/maps/embed?..." width="250" height="250" style="border:0;"
+        allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;
       </div>
 
       <h3>Output:</h3>
@@ -645,7 +646,8 @@
     -->
       <!-- Hyperlinks -->
       <h2 class="section-title">11. Hyperlinks</h2>
-      <p>The <code>&lt;a&gt;</code> tag creates clickable hyperlinks. The <code>href</code> attribute defines the destination.</p>
+      <p>The <code>&lt;a&gt;</code> tag creates clickable hyperlinks. The <code>href</code> attribute defines the
+        destination.</p>
 
       <hr />
 
@@ -698,8 +700,22 @@
 
       <hr />
 
-      <!-- 4. Email Hyperlink -->
-      <h3>4. Email Hyperlink</h3>
+      <!-- 4. Hyperlink — New Tab -->
+      <h3>4. Hyperlink — New Tab</h3>
+      <!-- Use the target="_blank" attribute to open a link in a new browser tab. This is recommended for external links so users don't leave your website. -->
+      <h4>Code:</h4>
+      <div class="code-block">
+        &lt;a href="https://www.google.com" target="_blank"&gt;Open Google in New Tab&lt;/a&gt;
+      </div>
+      <h4>Output:</h4>
+      <div class="example-output">
+        <a href="https://www.google.com" target="_blank">Open Google in New Tab</a>
+      </div>
+
+      <hr />
+
+      <!-- 5. Email Hyperlink -->
+      <h3>5. Email Hyperlink</h3>
       <!-- mailto: opens the user's default email client with the To field pre-filled. Commonly used on contact pages. -->
       <h4>Code:</h4>
       <div class="code-block">
@@ -712,8 +728,8 @@
 
       <hr />
 
-      <!-- 5. Telephone Hyperlink -->
-      <h3>5. Telephone Hyperlink</h3>
+      <!-- 6. Telephone Hyperlink -->
+      <h3>6. Telephone Hyperlink</h3>
       <!-- tel: triggers a phone call on mobile devices or prompts a call app on desktop. Used in contact sections and headers for click-to-call functionality. -->
       <h4>Code:</h4>
       <div class="code-block">
@@ -726,8 +742,8 @@
 
       <hr />
 
-      <!-- 6. PDF Hyperlink -->
-      <h3>6. PDF Hyperlink</h3>
+      <!-- 7. PDF Hyperlink -->
+      <h3>7. PDF Hyperlink</h3>
       <!-- Linking to a .pdf file with target="_blank" opens the PDF in a new browser tab instead of navigating away from the current page. Common for downloadable documents, brochures, and reports. -->
       <h4>Code:</h4>
       <div class="code-block">
@@ -740,8 +756,8 @@
 
       <hr />
 
-      <!-- 7. Download Hyperlink -->
-      <h3>7. Download Hyperlink</h3>
+      <!-- 8. Download Hyperlink -->
+      <h3>8. Download Hyperlink</h3>
       <!-- The 'download' attribute tells the browser to download the file instead of navigating to it. You can optionally give the downloaded file a custom name as the attribute value. -->
       <h4>Code:</h4>
       <div class="code-block">
@@ -749,13 +765,13 @@
       </div>
       <h4>Output:</h4>
       <div class="example-output">
-        <a href="./misc/html-slides.pdf" download="html-slides">Download HTML Slides</a>
+        <a href="./misc/html-slides.pdf" download="html-slides.zip">Download HTML Slides</a>
       </div>
 
       <hr />
 
-      <!-- 8. Named Anchor -->
-      <h3>8. Named Anchor</h3>
+      <!-- 9. Named Anchor -->
+      <h3>9. Named Anchor</h3>
       <!-- A named anchor links to a specific section on the same page. Add id="" to the target element, then use #id as the href value. Used for table of contents, FAQ sections, and long-form pages. -->
       <h4>Code:</h4>
       <div class="code-block">
@@ -774,19 +790,7 @@
         <p>This element has <code>id="anchor-target"</code>, making it a named anchor destination.</p>
       </div>
 
-      <!-- 9. Hyperlink — New Tab -->
-      <h3>9. Hyperlink — New Tab</h3>
-      <!-- Use the target="_blank" attribute to open a link in a new browser tab. This is recommended for external links so users don't leave your website. -->
-      <h4>Code:</h4>
-      <div class="code-block">
-        &lt;a href="https://www.google.com" target="_blank"&gt;Open Google in New Tab&lt;/a&gt;
-      </div>
-      <h4>Output:</h4>
-      <div class="example-output">
-        <a href="https://www.google.com" target="_blank">Open Google in New Tab</a>
-      </div>
 
-      <hr />
 
       <!--
       SECTION: TABLES (placeholder comment — no table lesson in this file)
