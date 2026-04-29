@@ -401,21 +401,49 @@
           <hr />
 
           <!-- 
-        SECTION 6: SUBMIT BUTTON
-        <input type="submit"> defines a button for submitting the form data to a form-handler.
+        SECTION 6: FORM ATTRIBUTES & BUTTONS
+        Examples of autofocus, disabled, submit, and clear (reset) buttons.
       -->
-          <!-- Submit Button -->
-          <h2 class="section-title">6. Submit Button</h2>
-          <p>Button to send the form data.</p>
+          <h2 class="section-title">6. Form Attributes & Buttons</h2>
+          <p>
+            Examples of <code>autofocus</code>,
+            <code>disabled</code> attributes, and buttons to submit or clear
+            (reset) the form.
+          </p>
 
           <h3>Code:</h3>
           <div class="code-block">
-            &lt;input type="submit" value="Submit"&gt;
+            &lt;!-- Autofocus focuses the input on page load --&gt;<br />
+            &lt;label for="promo"&gt;Promo Code:&lt;/label&gt;<br />
+            &lt;input type="text" id="promo" name="promo"
+            autofocus&gt;&lt;br&gt;&lt;br&gt;<br />
+            <br />
+            &lt;!-- Disabled makes the input uneditable --&gt;<br />
+            &lt;label for="username"&gt;Username (Disabled):&lt;/label&gt;<br />
+            &lt;input type="text" id="username" name="username" value="admin"
+            disabled&gt;&lt;br&gt;&lt;br&gt;<br />
+            <br />
+            &lt;!-- Submit and Reset Buttons --&gt;<br />
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;<br />
+            &lt;button type="reset"&gt;Clear&lt;/button&gt;
           </div>
 
           <h3>Output:</h3>
           <div class="example-output">
-            <input type="submit" value="Submit" />
+            <label for="promo">Promo Code:</label>
+            <input type="text" id="promo" name="promo" autofocus /><br /><br />
+
+            <label for="username">Username (Disabled):</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value="admin"
+              disabled
+            /><br /><br />
+
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
           </div>
         </form>
 
