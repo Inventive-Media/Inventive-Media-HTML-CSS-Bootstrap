@@ -1377,6 +1377,104 @@ p.demo {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+/* --- Units Demo Container --- */
+.units-demo-container {
+  margin-top: 30px;
+}
+
+.units-demo-container section {
+  background-color: white;
+  border: 2px dashed #aaa;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.units-demo-container h3 {
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* px demo — fixed, never changes regardless of context */
+.ud-px-box {
+  width: 200px;
+  height: 60px;
+  background-color: #e0e0e0;
+  font-size: 20px;
+  padding: 10px;
+  line-height: 40px;
+  text-align: center;
+}
+
+/* em demo — relative to parent font-size; can compound when nested */
+.ud-em-parent {
+  font-size: 16px;
+  background-color: #d1c4e9;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.ud-em-box {
+  font-size: 1.5em; /* 1.5 × 16px = 24px */
+  background-color: #b39ddb;
+  padding: 8px;
+}
+
+.ud-em-child {
+  font-size: 1.5em; /* 1.5 × 24px = 36px — compounds! */
+  background-color: #9575cd;
+  padding: 6px;
+  color: white;
+}
+
+/* rem demo — always relative to the root <html> font-size (16px default) */
+.ud-rem-box {
+  font-size: 1.5rem; /* always 24px regardless of nesting depth */
+  background-color: #c8e6c9;
+  padding: 10px;
+}
+
+/* % demo — relative to the parent element's width/height */
+.ud-pct-parent {
+  background-color: #e0e0e0;
+  padding: 10px;
+}
+
+.ud-pct-bar {
+  width: 60%; /* 60% of parent container */
+  background-color: #29b6f6;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* vw demo — relative to 1% of the viewport width */
+.ud-vw-bar {
+  width: 50vw; /* 50% of the browser window's width */
+  background-color: #ff7043;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* vh demo — relative to 1% of the viewport height */
+.ud-vh-box {
+  height: 30vh; /* 30% of the browser window's height */
+  background-color: #26a69a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
 /* ========================================
    16. LESSON 09: ANIMATIONS
    ======================================== */

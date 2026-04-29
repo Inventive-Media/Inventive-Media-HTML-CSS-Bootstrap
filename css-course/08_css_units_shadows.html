@@ -141,6 +141,143 @@
             <div class="text-shadow-demo">Text Shadow Effect</div>
           </div>
 
+          <hr />
+
+          <!-- Units Demo Container: four stacked section demos, one per unit type -->
+          <div class="units-demo-container">
+
+            <!--
+              Fixed Units — px
+              px is an absolute unit. The size is fixed in physical screen pixels
+              and does NOT change when the user resizes text or the parent changes.
+              Use px for: borders, fine-grained spacing, icon sizes.
+            -->
+            <section>
+              <h3>Fixed Units — px</h3>
+              <p>
+                This box is <code>width: 200px; height: 60px; font-size: 20px</code>.
+                Its size never changes no matter what the parent or root font-size is.
+              </p>
+              <div class="ud-px-box">I am 200 × 60 px. Always.</div>
+            </section>
+
+            <!--
+              Relative Units — em &amp; rem
+              em: relative to the PARENT element's font-size. Compounds when nested.
+              rem: relative to the ROOT (html) element's font-size. Predictable.
+              Use rem for: typography, spacing that should scale with user prefs.
+              Use em for: component-local spacing relative to its own font-size.
+            -->
+            <section>
+              <h3>Relative Units — em &amp; rem</h3>
+              <p>
+                Parent is <code>font-size: 16px</code>. Each child uses
+                <code>1.5em</code> — so nesting compounds. The rem box always
+                resolves to <code>1.5 × 16px = 24px</code> from the root.
+              </p>
+              <div class="ud-em-parent">
+                Parent (16px)
+                <div class="ud-em-box">
+                  1.5em child → 24px
+                  <div class="ud-em-child">1.5em grandchild → 36px (compounds!)</div>
+                </div>
+              </div>
+              <div class="ud-rem-box">1.5rem → always 24px, no matter the nesting depth.</div>
+            </section>
+
+            <!--
+              Percentage — %
+              % is relative to the PARENT element's corresponding dimension.
+              Use % for: fluid layouts, widths that adapt to their container.
+            -->
+            <section>
+              <h3>Percentage — %</h3>
+              <p>
+                The blue bar is <code>width: 60%</code>. Resize the window and
+                it stays at 60% of its parent container.
+              </p>
+              <div class="ud-pct-parent">
+                <div class="ud-pct-bar">60% of parent width</div>
+              </div>
+            </section>
+
+            <!--
+              Viewport Units — vw &amp; vh
+              vw: 1% of the browser viewport WIDTH.
+              vh: 1% of the browser viewport HEIGHT.
+              Use vw/vh for: full-screen sections, hero banners, viewport-relative type.
+            -->
+            <section>
+              <h3>Viewport Units — vw &amp; vh</h3>
+              <p>
+                The orange bar is <code>width: 50vw</code> — half the browser window's
+                width. The teal box is <code>height: 30vh</code> — 30% of the window's height.
+                Resize the browser to see them respond.
+              </p>
+              <div class="ud-vw-bar">50vw wide — half your browser window</div>
+              <br />
+              <div class="ud-vh-box">30vh tall — 30% of your browser window height</div>
+            </section>
+
+            <!--
+              rem Reference
+              A quick guide to standard rem values based on the default browser font size.
+            -->
+            <section>
+              <h3>rem Reference — Browser Default Font Sizes</h3>
+              <p>
+                The standard browser default font size is 16px, which equals 1rem. 
+                All <code>rem</code> values are calculated relative to that base size.
+              </p>
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>px value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Very Small</td>
+                    <td>
+                      10px
+                      <div style="font-size: 0.625rem; margin-top: 5px; color: #555;">Live sample text (0.625rem)</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Small</td>
+                    <td>
+                      12px
+                      <div style="font-size: 0.75rem; margin-top: 5px; color: #555;">Live sample text (0.75rem)</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Medium</td>
+                    <td>
+                      16px
+                      <div style="font-size: 1rem; margin-top: 5px; color: #555;">Live sample text (1rem)</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Large</td>
+                    <td>
+                      20px
+                      <div style="font-size: 1.25rem; margin-top: 5px; color: #555;">Live sample text (1.25rem)</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Very Large</td>
+                    <td>
+                      24px
+                      <div style="font-size: 1.5rem; margin-top: 5px; color: #555;">Live sample text (1.5rem)</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+
+          </div>
+
           <!-- Navigation Section -->
           <div class="nav-links">
             <a href="./07_backgrounds.html">&lt; Previous: Backgrounds</a> |
