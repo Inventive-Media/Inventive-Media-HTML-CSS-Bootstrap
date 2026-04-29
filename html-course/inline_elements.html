@@ -1,247 +1,275 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Day 1 - Inline Elements</title>
-    <!-- External CSS for Responsive Grid -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Internal CSS: Styles defined here apply to this page only -->
-    <style>
-      /* Styles for the body of the page */
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        padding-top: 80px; /* Space for fixed header */
-        margin: 0;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      /* Sticky Header Styles */
-      .sticky-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background-color: white;
-        color: #032340;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        box-sizing: border-box;
-      }
-      .header-left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .home-link {
-        color: #d35400; /* Orange */
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .home-link:hover {
-        color: #e67e22;
-      }
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 1 - Inline Elements</title>
+  <!-- External CSS for Responsive Grid -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Internal CSS: Styles defined here apply to this page only -->
+  <style>
+    /* Styles for the body of the page */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding-top: 80px;
+      /* Space for fixed header */
+      margin: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    /* Sticky Header Styles */
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: white;
+      color: #032340;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .home-link {
+      color: #d35400;
+      /* Orange */
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .home-link:hover {
+      color: #e67e22;
+    }
+
+    .page-title {
+      font-size: 1rem;
+      color: #34495e;
+      opacity: 0.8;
+      display: none;
+      /* Hidden on small screens */
+    }
+
+    @media (min-width: 600px) {
       .page-title {
-        font-size: 1rem;
-        color: #34495e;
-        opacity: 0.8;
-        display: none; /* Hidden on small screens */
-      }
-      @media (min-width: 600px) {
-        .page-title {
-          display: block;
-        }
-      }
-      /* Dropdown Styles */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropbtn {
-        background-color: #d35400; /* Orange */
-        color: white;
-        padding: 8px 16px;
-        font-size: 14px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      .dropdown:hover .dropbtn {
-        background-color: #e67e22;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        right: 0;
-        background-color: #f9f9f9;
-        min-width: 260px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 4px;
-        max-height: 400px;
-        overflow-y: auto;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #eee;
-        text-align: left;
-      }
-      .dropdown-content a:hover {
-        background-color: #f1f1f1;
-      }
-      .dropdown:hover .dropdown-content {
         display: block;
       }
-      /* Navigation Links Styling */
-      .nav-links {
-        margin-top: 50px;
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-        border-top: 1px solid #ddd;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: #d35400; /* Orange to match theme */
-        font-weight: bold;
-        margin: 0 10px;
-        font-size: 1.1rem;
-      }
-      .nav-links a:hover {
-        text-decoration: underline;
-        color: #e67e22;
-      }
-      h1.main-title {
-        color: #d35400;
-        text-align: center;
-      }
-      .section-title {
-        color: #333;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 5px;
-        margin-top: 30px;
-      }
-      .code-block {
-        background-color: #f4f4f4;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-family: monospace;
-        overflow-x: auto;
-      }
-      .example-output {
-        border: 1px dashed #aaa;
-        padding: 15px;
-        margin-top: 10px;
-        border-radius: 5px;
-      }
-      hr {
-        margin: 40px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-      }
-      /* Specific styles for the table example */
-      table,
-      thead,
-      th,
-      td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Sticky Header -->
-    <header class="sticky-header">
-      <div class="header-left">
-        <a href="index.html" class="home-link">Home</a>
-        <span id="header-title" class="page-title">Loading...</span>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Jump to Topic ▼</button>
-        <div class="dropdown-content">
-          <a href="block_elements.html">01. Block Elements</a>
-          <a href="inline_elements.html">02. Inline Elements</a>
-          <a href="html_entities.html">03. HTML Special Characters</a>
-          <a href="semantic_elements.html">04. Semantic Elements</a>
-          <a href="form_elements.html">05. Form Elements</a>
-        </div>
-      </div>
-    </header>
-    <script>
-      // Dynamically set the header title from the main h1
-      document.addEventListener("DOMContentLoaded", function () {
-        var h1 =
-          document.querySelector("h1.main-title") ||
-          document.querySelector("h1");
-        if (h1) {
-          document.getElementById("header-title").textContent = h1.textContent;
-        } else {
-          document.getElementById("header-title").textContent = document.title;
-        }
-      });
-    </script>
-    <div class="row">
-      <div class="col-12">
-        <h1 class="main-title">Day 1 - Inline Elements</h1>
-        <p>
-          This guide demonstrates common Inline elements, Media, and Tables with
-          their code and actual output.
-        </p>
+    }
 
-        <hr />
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
-        <!-- 
+    .dropbtn {
+      background-color: #d35400;
+      /* Orange */
+      color: white;
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #e67e22;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #f9f9f9;
+      min-width: 260px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 4px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Navigation Links Styling */
+    .nav-links {
+      margin-top: 50px;
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d35400;
+      /* Orange to match theme */
+      font-weight: bold;
+      margin: 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+      color: #e67e22;
+    }
+
+    h1.main-title {
+      color: #d35400;
+      text-align: center;
+    }
+
+    .section-title {
+      color: #333;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+
+    .code-block {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    .example-output {
+      border: 1px dashed #aaa;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    hr {
+      margin: 40px 0;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    /* Specific styles for the table example */
+    table,
+    thead,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="header-left">
+      <a href="index.html" class="home-link">Home</a>
+      <span id="header-title" class="page-title">Loading...</span>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Jump to Topic ▼</button>
+      <div class="dropdown-content">
+        <a href="block_elements.html">01. Block Elements</a>
+        <a href="inline_elements.html">02. Inline Elements</a>
+        <a href="html_entities.html">03. HTML Special Characters</a>
+        <a href="semantic_elements.html">04. Semantic Elements</a>
+        <a href="form_elements.html">05. Form Elements</a>
+      </div>
+    </div>
+  </header>
+  <script>
+    // Dynamically set the header title from the main h1
+    document.addEventListener("DOMContentLoaded", function () {
+      var h1 =
+        document.querySelector("h1.main-title") ||
+        document.querySelector("h1");
+      if (h1) {
+        document.getElementById("header-title").textContent = h1.textContent;
+      } else {
+        document.getElementById("header-title").textContent = document.title;
+      }
+    });
+  </script>
+  <div class="row">
+    <div class="col-12">
+      <h1 class="main-title">Day 1 - Inline Elements</h1>
+      <p>
+        This guide demonstrates common Inline elements, Media, and Tables with
+        their code and actual output.
+      </p>
+
+      <hr />
+
+      <!-- 
       SECTION: LINKS
       The <a> tag defines a hyperlink. The 'href' attribute specifies
       the URL of the page the link goes to.
     -->
-        <!-- Links -->
-        <h2 class="section-title">1. Links</h2>
-        <p>
-          Using <code>&lt;a&gt;</code> tags for navigation (Links may not work
-          in this demo context).
-        </p>
+      <!-- Links -->
+      <h2 class="section-title">1. Links</h2>
+      <p>
+        Using <code>&lt;a&gt;</code> tags for navigation (Links may not work
+        in this demo context).
+      </p>
 
-        <h3>Code:</h3>
-        <!-- 
+      <h3>Code:</h3>
+      <!-- 
       NOTE: We use HTML entities &lt; and &gt; here to display the tags as text.
       If we used real < and > signs, the browser would try to render them as elements!
     -->
-        <div class="code-block">
-          &lt;a href="/"&gt;Block elements page&lt;/a&gt; |<br />
-          &lt;a href="./inline_elements.html"&gt;Inline elements page&lt;/a&gt;
-          |<br />
-          &lt;a href="./form_elements.html"&gt;Form elements page&lt;/a&gt;
-        </div>
+      <div class="code-block">
+        &lt;a href="/"&gt;Block elements page&lt;/a&gt; |<br />
+        &lt;a href="./inline_elements.html"&gt;Inline elements page&lt;/a&gt;
+        |<br />
+        &lt;a href="./form_elements.html"&gt;Form elements page&lt;/a&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <a href="/">Block elements page</a> |
-          <a href="./inline_elements.html">Inline elements page</a> |
-          <a href="./form_elements.html">Form elements page</a>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <a href="/">Block elements page</a> |
+        <a href="./inline_elements.html">Inline elements page</a> |
+        <a href="./form_elements.html">Form elements page</a>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION: TEXT FORMATTING
       These tags change the appearance or meaning of text inline.
       <b> and <strong> make text bold.
@@ -251,62 +279,62 @@
       <del> shows deleted text (strikethrough).
       <ins> shows inserted text (underline).
     -->
-        <!-- Text Formatting -->
-        <h2 class="section-title">2. Text Formatting</h2>
-        <p>Various tags for formatting text within a paragraph.</p>
+      <!-- Text Formatting -->
+      <h2 class="section-title">2. Text Formatting</h2>
+      <p>Various tags for formatting text within a paragraph.</p>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;p&gt;Hello I am &lt;b&gt;superman!&lt;/b&gt;&lt;/p&gt;<br />
-          &lt;p&gt;I am very &lt;strong&gt;strong&lt;/strong&gt;&lt;/p&gt;<br />
-          &lt;p&gt;I have &lt;i&gt;lasser eyes&lt;/i&gt;&lt;/p&gt;<br />
-          &lt;p&gt;I can &lt;em&gt;fly&lt;/em&gt; in the sky&lt;/p&gt;<br />
-          &lt;p&gt;I have a dog named
-          &lt;mark&gt;Krypto&lt;/mark&gt;&lt;/p&gt;<br />
-          &lt;p&gt;He's a &lt;small&gt;strong&lt;/small&gt; dog too&lt;/p&gt;<br />
-          &lt;p&gt;Lorem ipsum dolor &lt;del&gt;sit&lt;/del&gt;
-          amet.&lt;/p&gt;<br />
-          &lt;p&gt;&lt;ins&gt;Lorem&lt;/ins&gt; ipsum dolor sit amet.&lt;/p&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;p&gt;Hello I am &lt;b&gt;superman!&lt;/b&gt;&lt;/p&gt;<br />
+        &lt;p&gt;I am very &lt;strong&gt;strong&lt;/strong&gt;&lt;/p&gt;<br />
+        &lt;p&gt;I have &lt;i&gt;lasser eyes&lt;/i&gt;&lt;/p&gt;<br />
+        &lt;p&gt;I can &lt;em&gt;fly&lt;/em&gt; in the sky&lt;/p&gt;<br />
+        &lt;p&gt;I have a dog named
+        &lt;mark&gt;Krypto&lt;/mark&gt;&lt;/p&gt;<br />
+        &lt;p&gt;He's a &lt;small&gt;strong&lt;/small&gt; dog too&lt;/p&gt;<br />
+        &lt;p&gt;Lorem ipsum dolor &lt;del&gt;sit&lt;/del&gt;
+        amet.&lt;/p&gt;<br />
+        &lt;p&gt;&lt;ins&gt;Lorem&lt;/ins&gt; ipsum dolor sit amet.&lt;/p&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <p>Hello I am <b>superman!</b></p>
-          <p>I am very <strong>strong</strong></p>
-          <p>I have <i>lasser eyes</i></p>
-          <p>I can <em>fly</em> in the sky</p>
-          <p>I have a dog named <mark>Krypto</mark></p>
-          <p>He's a <small>strong</small> dog too</p>
-          <p>Lorem ipsum dolor <del>sit</del> amet.</p>
-          <p><ins>Lorem</ins> ipsum dolor sit amet.</p>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <p>Hello I am <b>superman!</b></p>
+        <p>I am very <strong>strong</strong></p>
+        <p>I have <i>lasser eyes</i></p>
+        <p>I can <em>fly</em> in the sky</p>
+        <p>I have a dog named <mark>Krypto</mark></p>
+        <p>He's a <small>strong</small> dog too</p>
+        <p>Lorem ipsum dolor <del>sit</del> amet.</p>
+        <p><ins>Lorem</ins> ipsum dolor sit amet.</p>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION: SUBSCRIPT AND SUPERSCRIPT
       <sub> displays text as subscript (lower).
       <sup> displays text as superscript (higher).
     -->
-        <!-- Subscript & Superscript -->
-        <h2 class="section-title">3. Subscript & Superscript</h2>
-        <p>Useful for chemical formulas or ordinal numbers.</p>
+      <!-- Subscript & Superscript -->
+      <h2 class="section-title">3. Subscript & Superscript</h2>
+      <p>Useful for chemical formulas or ordinal numbers.</p>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;h3&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/h3&gt;<br />
-          &lt;h3&gt;13&lt;sup&gt;th&lt;/sup&gt; floor&lt;/h3&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;h3&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/h3&gt;<br />
+        &lt;h3&gt;13&lt;sup&gt;th&lt;/sup&gt; floor&lt;/h3&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <h3>H<sub>2</sub>O</h3>
-          <h3>13<sup>th</sup> floor</h3>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <h3>H<sub>2</sub>O</h3>
+        <h3>13<sup>th</sup> floor</h3>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION: SPECIAL CHARACTERS
       Some characters are reserved in HTML (like < and >).
       To display them, we use character entities (e.g., &lt; for <).
@@ -329,7 +357,8 @@
           why matters.</li>
         <li><strong>Typographic polish:</strong> Use <code>&amp;mdash;</code>, <code>&amp;laquo;</code>, or
           <code>&amp;copy;</code> instead of copy-pasting Unicode characters that can get mangled by encoding mismatches
-          in email or legacy systems.</li>
+          in email or legacy systems.
+        </li>
       </ul>
 
       <h3>Code:</h3>
@@ -351,18 +380,22 @@
       <!-- Emoji Lesson -->
       <h2 class="section-title">5. Emojis</h2>
       <p>
-        <strong>What it does:</strong> Emojis are treated as regular text characters (Unicode) in HTML. They don't require special image tags, just the character itself.
+        <strong>What it does:</strong> Emojis are treated as regular text characters (Unicode) in HTML. They don't
+        require special image tags, just the character itself.
       </p>
       <p>
-        <strong>Pro Tip:</strong> To quickly insert emojis while coding, use the system shortcuts: <code>Win + .</code> (Windows) or <code>Cmd + Ctrl + Space</code> (macOS).
+        <strong>Pro Tip:</strong> To quickly insert emojis while coding, use the system shortcuts: <code>Win + .</code>
+        (Windows) or <code>Cmd + Ctrl + Space</code> (macOS).
       </p>
       <p>
         <strong>When to use it in real projects:</strong>
       </p>
       <ul>
-        <li><strong>Microcopy and UI:</strong> Adding quick visual cues to buttons or alerts without needing an icon library.</li>
+        <li><strong>Microcopy and UI:</strong> Adding quick visual cues to buttons or alerts without needing an icon
+          library.</li>
         <li><strong>Marketing pages:</strong> Adding personality to headings or bullet points.</li>
-        <li><strong>Custom list markers:</strong> Using emojis as bullet points for a more unique and branded feel compared to standard discs or squares.</li>
+        <li><strong>Custom list markers:</strong> Using emojis as bullet points for a more unique and branded feel
+          compared to standard discs or squares.</li>
       </ul>
 
       <h3>Code:</h3>
@@ -394,232 +427,229 @@
       <abbr> marks an abbreviation or acronym.
       The 'title' attribute provides the full description (shown on hover).
     -->
-        <!-- Abbreviation -->
-        <h2 class="section-title">6. Abbreviation</h2>
-        <p>Hover over the text to see the full meaning.</p>
+      <!-- Abbreviation -->
+      <h2 class="section-title">6. Abbreviation</h2>
+      <p>Hover over the text to see the full meaning.</p>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;abbr title="Inventive Media"&gt;IM&lt;/abbr&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;abbr title="Inventive Media"&gt;IM&lt;/abbr&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <abbr title="Inventive Media">IM</abbr>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <abbr title="Inventive Media">IM</abbr>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION: LINE BREAK
       <br> inserts a single line break. It is an empty tag (no closing tag).
     -->
-        <!-- Line Break -->
-        <h2 class="section-title">7. Line Break</h2>
-        <p>Using &lt;br&gt; to force a new line.</p>
+      <!-- Line Break -->
+      <h2 class="section-title">7. Line Break</h2>
+      <p>Using &lt;br&gt; to force a new line.</p>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;p&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Lorem, ipsum dolor sit amet... &lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Possimus cupiditate...<br />
-          &lt;/p&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;p&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Lorem, ipsum dolor sit amet... &lt;br&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Possimus cupiditate...<br />
+        &lt;/p&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            <br />Possimus cupiditate eligendi totam expedita, nam hic earum eos
-            officia ipsam quos sunt error, temporibus cum ipsa consequatur
-            laudantium laboriosam enim ullam.
-          </p>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          <br />Possimus cupiditate eligendi totam expedita, nam hic earum eos
+          officia ipsam quos sunt error, temporibus cum ipsa consequatur
+          laudantium laboriosam enim ullam.
+        </p>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION: ADDRESS
       <address> defines contact information for the author/owner.
       The text is usually rendered in italic.
     -->
-        <!-- Address -->
-        <h2 class="section-title">8. Address</h2>
-        <p>Defining contact information.</p>
+      <!-- Address -->
+      <h2 class="section-title">8. Address</h2>
+      <p>Defining contact information.</p>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;address&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Inventive Media Philippines&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Karmela Building 2590&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Makati City, Metro Manila&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Philippines&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;a
-          href="mailto:inventivemedia.ph@gmail.com"&gt;inventivemedia.ph@gmail.com&lt;/a&gt;&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="tel:+63288242145"&gt;+63 2
-          88242145&lt;/a&gt;<br />
-          &lt;/address&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;address&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Inventive Media Philippines&lt;br&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Karmela Building 2590&lt;br&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Makati City, Metro Manila&lt;br&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Philippines&lt;br&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a
+        href="mailto:inventivemedia.ph@gmail.com"&gt;inventivemedia.ph@gmail.com&lt;/a&gt;&lt;br&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="tel:+63288242145"&gt;+63 2
+        88242145&lt;/a&gt;<br />
+        &lt;/address&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <address>
-            Inventive Media Philippines<br />
-            Karmela Building 2590<br />
-            Makati City, Metro Manila<br />
-            Philippines<br />
-            <a href="mailto:inventivemedia.ph@gmail.com"
-              >inventivemedia.ph@gmail.com</a
-            ><br />
-            <a href="tel:+63288242145">+63 2 88242145</a>
-          </address>
-        </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <address>
+          Inventive Media Philippines<br />
+          Karmela Building 2590<br />
+          Makati City, Metro Manila<br />
+          Philippines<br />
+          <a href="mailto:inventivemedia.ph@gmail.com">inventivemedia.ph@gmail.com</a><br />
+          <a href="tel:+63288242145">+63 2 88242145</a>
+        </address>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION: QUOTATIONS
       <blockquote> defines a section that is quoted from another source.
       <cite> defines the title of a creative work.
       <q> defines a short inline quotation.
     -->
-        <!-- Quotations -->
-        <h2 class="section-title">9. Quotations</h2>
-        <p>Blockquotes, citations, and inline quotes.</p>
+      <!-- Quotations -->
+      <h2 class="section-title">9. Quotations</h2>
+      <p>Blockquotes, citations, and inline quotes.</p>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;h3&gt;Block quote&lt;/h3&gt;<br />
-          &lt;blockquote
-          cite="https://www.inventivemedia.com.ph/faculty/"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;It is a fact that people...<br />
-          &lt;/blockquote&gt;<br />
-          <br />
-          &lt;h3&gt;Citation&lt;/h3&gt;<br />
-          &lt;p&gt;One of the best novels I've read is &lt;cite&gt;To Kill a
-          Mockingbird&lt;/cite&gt; by Harper Lee.&lt;/p&gt;<br />
-          <br />
-          &lt;h3&gt;Quote&lt;/h3&gt;<br />
-          &lt;p&gt;Steve Jobs once said, &lt;q&gt;Innovation distinguishes
-          between a leader and a follower.&lt;/q&gt;&lt;/p&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;h3&gt;Block quote&lt;/h3&gt;<br />
+        &lt;blockquote
+        cite="https://www.inventivemedia.com.ph/faculty/"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;It is a fact that people...<br />
+        &lt;/blockquote&gt;<br />
+        <br />
+        &lt;h3&gt;Citation&lt;/h3&gt;<br />
+        &lt;p&gt;One of the best novels I've read is &lt;cite&gt;To Kill a
+        Mockingbird&lt;/cite&gt; by Harper Lee.&lt;/p&gt;<br />
+        <br />
+        &lt;h3&gt;Quote&lt;/h3&gt;<br />
+        &lt;p&gt;Steve Jobs once said, &lt;q&gt;Innovation distinguishes
+        between a leader and a follower.&lt;/q&gt;&lt;/p&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <h3>Block quote</h3>
-          <blockquote cite="https://www.inventivemedia.com.ph/faculty/">
-            It is a fact that people need to study and have the right to quality
-            education. Education is perhaps the best solution to end illiteracy,
-            injustice and poverty.
-          </blockquote>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <h3>Block quote</h3>
+        <blockquote cite="https://www.inventivemedia.com.ph/faculty/">
+          It is a fact that people need to study and have the right to quality
+          education. Education is perhaps the best solution to end illiteracy,
+          injustice and poverty.
+        </blockquote>
 
-          <h3>Citation</h3>
-          <p>
-            One of the best novels I've read is
-            <cite>To Kill a Mockingbird</cite> by Harper Lee.
-          </p>
+        <h3>Citation</h3>
+        <p>
+          One of the best novels I've read is
+          <cite>To Kill a Mockingbird</cite> by Harper Lee.
+        </p>
 
-          <h3>Quote</h3>
-          <p>
-            Steve Jobs once said,
-            <q>Innovation distinguishes between a leader and a follower.</q>
-          </p>
-        </div>
+        <h3>Quote</h3>
+        <p>
+          Steve Jobs once said,
+          <q>Innovation distinguishes between a leader and a follower.</q>
+        </p>
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION: MEDIA ELEMENTS
       <audio> is used to embed sound content.
       <video> is used to embed video content.
       <img> embeds an image.
       <iframe> embeds another document within the current HTML document (maps, videos, etc).
     -->
-        <!-- Media -->
-        <h2 class="section-title">10. Media - Audio, Video, Image, Iframe</h2>
-        <p>Embedding multimedia content.</p>
+      <!-- Media -->
+      <h2 class="section-title">10. Media - Audio, Video, Image, Iframe</h2>
+      <p>Embedding multimedia content.</p>
 
-        <h3>Code:</h3>
-        <div class="code-block">
-          &lt;!-- Audio --&gt;<br />
-          &lt;audio controls&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./audio/music.mp3"
-          type="audio/mp3"&gt;<br />
-          &lt;/audio&gt;<br />
-          <br />
-          &lt;!-- Video --&gt;<br />
-          &lt;video height="220" width="340" controls &gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./video/videoplayback.mp4"
-          type="video/mp4"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;test<br />
-          &lt;/video&gt;<br />
-          <br />
-          &lt;!-- Image --&gt;<br />
-          &lt;img src="./img/image.jpg" alt="programming is fun" width="500"&gt;
-        </div>
+      <h3>Code:</h3>
+      <div class="code-block">
+        &lt;!-- Audio --&gt;<br />
+        &lt;audio controls autoplay muted loop&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./audio/music.mp3"
+        type="audio/mp3"&gt;<br />
+        &lt;/audio&gt;<br />
+        <br />
+        &lt;!-- Video --&gt;<br />
+        &lt;video height="220" width="340" controls autoplay muted loop&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./video/videoplayback.mp4"
+        type="video/mp4"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;test<br />
+        &lt;/video&gt;<br />
+        <br />
+        &lt;!-- Images --&gt;<br />
+        &lt;h4&gt;1. Picsum Photo&lt;/h4&gt;<br />
+        &lt;img src="https://picsum.photos/300/160?random=1" alt="Picsum example" width="300"&gt;<br /><br />
+        &lt;h4&gt;2. Pravatar Avatar&lt;/h4&gt;<br />
+        &lt;img src="https://i.pravatar.cc/300" alt="Pravatar example" width="150"&gt;<br /><br />
+        &lt;h4&gt;3. LoremFlickr People&lt;/h4&gt;<br />
+        &lt;img src="https://loremflickr.com/300/160/people" alt="LoremFlickr example" width="300"&gt;
+      </div>
 
-        <h3>Output:</h3>
-        <div class="example-output">
-          <p>Click the play button for music</p>
-          <audio controls>
-            <source src="./audio/music.mp3" type="audio/mp3" />
-          </audio>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <p>Click the play button for music</p>
+        <audio controls autoplay muted loop>
+          <source src="./audio/music.mp3" type="audio/mp3" />
+        </audio>
 
-          <p>Click the play button for video</p>
-          <video height="220" width="340" controls>
-            <source src="./video/videoplayback.mp4" type="video/mp4" />
-            test
-          </video>
+        <p>Click the play button for video</p>
+        <video height="220" width="340" controls autoplay muted loop>
+          <source src="./video/videoplayback.mp4" type="video/mp4" />
+          test
+        </video>
 
-          <p>This is image</p>
-          <img src="./img/image.jpg" alt="programming is fun" width="500" />
-        </div>
+        <p><strong>Images:</strong></p>
+        <h4>1. Picsum Photo</h4>
+        <img src="https://picsum.photos/300/160?random=1" alt="Picsum example" width="300" />
+        <h4>2. Pravatar Avatar</h4>
+        <img src="https://i.pravatar.cc/300" alt="Pravatar example" width="150" />
+        <h4>3. LoremFlickr People</h4>
+        <img src="https://loremflickr.com/300/160/people" alt="LoremFlickr example" width="300" />
+      </div>
 
-        <hr />
+      <hr />
 
-        <!-- 
+      <!-- 
       SECTION: EMBEDS & IFRAMES
       Iframes allow you to embed external content like SoundCloud players, YouTube videos, PDFs, and Google Maps.
     -->
-        <!-- Embeds -->
-        <h2 class="section-title">11. Embeds & Iframes</h2>
-        <p>Embedding external resources.</p>
+      <!-- Embeds -->
+      <h2 class="section-title">11. Embeds & Iframes</h2>
+      <p>Embedding external resources.</p>
 
-        <h3>Code (SoundCloud):</h3>
-        <div class="code-block">
-          &lt;iframe width="100%" height="166" scrolling="no" frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=..."&gt;&lt;/iframe&gt;
-        </div>
-        <h3>Output:</h3>
-        <div class="example-output">
-          <iframe
-            width="100%"
-            height="166"
-            scrolling="no"
-            frameborder="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1997260627&color=%23ca4b85&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-          ></iframe>
-        </div>
+      <h3>Code (SoundCloud):</h3>
+      <div class="code-block">
+        &lt;iframe width="100%" height="166" scrolling="no" frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=..."&gt;&lt;/iframe&gt;
+      </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1997260627&color=%23ca4b85&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+      </div>
 
-        <br />
+      <br />
 
-        <h3>Code (YouTube):</h3>
-        <div class="code-block">
-          &lt;iframe width="560" height="315"
-          src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl"
-          ... &gt;&lt;/iframe&gt;
-        </div>
-        <h3>Output:</h3>
-        <div class="example-output">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl"
-            title="YouTube video player"
-            frameborder="0"
-            allow="
+      <h3>Code (YouTube):</h3>
+      <div class="code-block">
+        &lt;iframe width="560" height="315"
+        src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl"
+        ... &gt;&lt;/iframe&gt;
+      </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/q4v-nYpfouA?si=_xNJ_VVhye9WnZHl"
+          title="YouTube video player" frameborder="0" allow="
               accelerometer;
               autoplay;
               clipboard-write;
@@ -627,53 +657,50 @@
               gyroscope;
               picture-in-picture;
               web-share;
-            "
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
+            " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
 
-        <br />
+      <br />
 
-        <h3>Code (PDF):</h3>
-        <div class="code-block">
-          &lt;iframe width="250" height="250" src="./misc/html-slides.pdf"
-          frameborder="0"&gt;&lt;/iframe&gt;
-        </div>
-        <h3>Output:</h3>
-        <div class="example-output">
-          <iframe
-            width="250"
-            height="250"
-            src="./misc/html-slides.pdf"
-            frameborder="0"
-          ></iframe>
-        </div>
+      <h3>Code (PDF):</h3>
+      <div class="code-block">
+        &lt;iframe width="250" height="250" src="./misc/html-slides.pdf"
+        frameborder="0"&gt;&lt;/iframe&gt;
+      </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <iframe width="250" height="250" src="./misc/html-slides.pdf" frameborder="0"></iframe>
+      </div>
 
-        <br />
+      <br />
 
-        <h3>Code (Google Maps):</h3>
-        <div class="code-block">
-          &lt;iframe src="https://www.google.com/maps/embed?..." width="250"
-          height="250" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;
-        </div>
-        <h3>Output:</h3>
-        <div class="example-output">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3861.665797248736!2d121.01478521442917!3d14.561094311994104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDMzJzQxLjciTiAxMjHCsDAwJzU0LjUiRQ!5e0!3m2!1sen!2sph!4v1741332964480!5m2!1sen!2sph"
-            width="250"
-            height="250"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+      <h3>Code (Google Maps):</h3>
+      <div class="code-block">
+        &lt;iframe src="https://www.google.com/maps/embed?..." width="250"
+        height="250" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;
+      </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3861.665797248736!2d121.01478521442917!3d14.561094311994104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDMzJzQxLjciTiAxMjHCsDAwJzU0LjUiRQ!5e0!3m2!1sen!2sph!4v1741332964480!5m2!1sen!2sph"
+          width="250" height="250" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <br />
 
-        <hr />
+      <h3>Code (Embed - PDF):</h3>
+      <div class="code-block">
+        &lt;embed src="./misc/html-slides.pdf" width="500" height="500"
+        type="application/pdf"&gt;
+      </div>
+      <h3>Output:</h3>
+      <div class="example-output">
+        <embed src="./misc/html-slides.pdf" width="500" height="500" type="application/pdf">
+      </div>
 
-        <!-- 
+      <hr />
+
+      <!-- 
       SECTION: TABLES
       <table> defines the table.
       <thead> groups the header content.
@@ -684,11 +711,12 @@
       <td> defines a table data cell.
       'rowspan' and 'colspan' allow cells to span multiple rows or columns.
     -->
-        <div class="nav-links">
-          <a href="block_elements.html">&lt; Previous: Block Elements</a> |
-          <a href="html_entities.html">Next: HTML Special Characters &gt;</a>
-        </div>
+      <div class="nav-links">
+        <a href="block_elements.html">&lt; Previous: Block Elements</a> |
+        <a href="html_entities.html">Next: HTML Special Characters &gt;</a>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
