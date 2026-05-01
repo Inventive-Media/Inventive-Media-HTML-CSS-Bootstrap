@@ -44,9 +44,63 @@
       .nav-links a:hover {
         text-decoration: underline;
       }
+    
+    /* Sticky Header Styles */
+    body { padding-top: 80px; }
+    .sticky-header {
+      position: fixed; top: 0; left: 0;
+  width: 100%;
+       
+      height: 60px; background-color: white; color: #7952b3;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 max(20px, calc(50vw - 660px)); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000; box-sizing: border-box;
+    }
+    .header-left { display: flex; align-items: center; gap: 20px; }
+    .home-link { color: #7952b3; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+    .home-link:hover { color: #563d7c; }
+    .page-title { font-size: 1rem; color: #34495e; opacity: 0.8; display: none; }
+    @media (min-width: 600px) { .page-title { display: block; } }
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn { background-color: #7952b3; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; }
+    .dropdown:hover .dropbtn { background-color: #563d7c; }
+    .dropdown-content { display: none; position: absolute; right: 0; left: auto; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; border-radius: 4px; overflow: hidden; }
+    .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; border-bottom: 1px solid #ddd; }
+    .dropdown-content a:last-child { border-bottom: none; }
+    .dropdown-content a:hover { background-color: #f1f1f1; color: #7952b3; }
+    .dropdown:hover .dropdown-content { display: block; }
+
     </style>
   </head>
   <body>
+
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Bootstrap</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_intro.html">00. Intro</a>
+          <a href="01_setup.html">01. Setup</a>
+          <a href="02_containers.html">02. Containers</a>
+          <a href="03_grid_layout.html">03. Grid</a>
+          <a href="04_utilities.html">04. Utilities</a>
+          <a href="05_typography.html">05. Typography</a>
+          <a href="06_images.html">06. Images</a>
+          <a href="07_components.html">07. Components</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) document.getElementById("header-title").textContent = h1.textContent;
+      });
+    </script>
+
     <div class="container py-4">
       <h1 class="text-center mb-4" style="color: #7952b3">
         Day 3 - Introduction to Bootstrap

@@ -24,13 +24,16 @@
         top: 0;
         left: 0;
         width: 100%;
+      
+      
+      left: 0;
         height: 60px;
         background-color: white;
         color: #032340;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 max(20px, calc(50vw - 660px));
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 1000;
         box-sizing: border-box;
@@ -171,7 +174,7 @@
         text-align: center;
         font-weight: bold;
       }
-      @media (max-width: 768px) {
+      @media () {
         .layout-container {
           grid-template-areas:
             "header"

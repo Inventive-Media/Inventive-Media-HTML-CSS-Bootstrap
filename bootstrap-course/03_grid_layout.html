@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 - Grid Layout</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .section-title {
+        color: #7952b3;
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .demo-col {
+        background-color: #7952b3;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #563d7c;
+        margin-bottom: 5px;
+      }
+      .demo-col-alt {
+        background-color: #c9a0dc;
+        color: #333;
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #9b59b6;
+        margin-bottom: 5px;
+      }
+      .demo-row {
+        background-color: #f8f9fa;
+        border: 2px dashed #dee2e6;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+      .tall-col {
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav-links {
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #7952b3;
+        font-weight: bold;
+        margin: 0 15px;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    
+    /* Sticky Header Styles */
+    body { padding-top: 80px; }
+    .sticky-header {
+      position: fixed; top: 0; left: 0;
+  width: 100%;
+       
+      height: 60px; background-color: white; color: #7952b3;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 max(20px, calc(50vw - 660px)); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000; box-sizing: border-box;
+    }
+    .header-left { display: flex; align-items: center; gap: 20px; }
+    .home-link { color: #7952b3; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+    .home-link:hover { color: #563d7c; }
+    .page-title { font-size: 1rem; color: #34495e; opacity: 0.8; display: none; }
+    @media (min-width: 600px) { .page-title { display: block; } }
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn { background-color: #7952b3; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; }
+    .dropdown:hover .dropbtn { background-color: #563d7c; }
+    .dropdown-content { display: none; position: absolute; right: 0; left: auto; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; border-radius: 4px; overflow: hidden; }
+    .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; border-bottom: 1px solid #ddd; }
+    .dropdown-content a:last-child { border-bottom: none; }
+    .dropdown-content a:hover { background-color: #f1f1f1; color: #7952b3; }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    </style>
+  </head>
+  <body>
+
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Bootstrap</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_intro.html">00. Intro</a>
+          <a href="01_setup.html">01. Setup</a>
+          <a href="02_containers.html">02. Containers</a>
+          <a href="03_grid_layout.html">03. Grid</a>
+          <a href="04_utilities.html">04. Utilities</a>
+          <a href="05_typography.html">05. Typography</a>
+          <a href="06_images.html">06. Images</a>
+          <a href="07_components.html">07. Components</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) document.getElementById("header-title").textContent = h1.textContent;
+      });
+    </script>
+
+    <div class="container py-4">
+      <h1 class="text-center mb-4" style="color: #7952b3">
+        Day 3 - Grid Layout
+      </h1>
+      <p class="lead text-center text-muted">
+        Master Bootstrap's powerful 12-column grid system for responsive
+        layouts.
+      </p>
+
+      <hr />
+
+      <!-- 
+        SECTION 1: THE 12-COLUMN GRID
+        Bootstrap divides every row into 12 equal columns.
+        You build layouts by choosing how many columns each element takes.
+        For example, col-6 takes half the row (6 out of 12).
+        The 12 boxes below visualize each individual column.
+      -->
+      <h2 class="section-title">1. The 12-Column Grid</h2>
+      <p>
+        Bootstrap's grid system divides the page into
+        <strong>12 equal columns</strong>. You can combine these columns to
+        create any layout.
+      </p>
+
+      <div class="demo-row">
+        <div class="row">
+          <div class="col"><div class="demo-col py-1">1</div></div>
+          <div class="col"><div class="demo-col py-1">2</div></div>
+          <div class="col"><div class="demo-col py-1">3</div></div>
+          <div class="col"><div class="demo-col py-1">4</div></div>
+          <div class="col"><div class="demo-col py-1">5</div></div>
+          <div class="col"><div class="demo-col py-1">6</div></div>
+          <div class="col"><div class="demo-col py-1">7</div></div>
+          <div class="col"><div class="demo-col py-1">8</div></div>
+          <div class="col"><div class="demo-col py-1">9</div></div>
+          <div class="col"><div class="demo-col py-1">10</div></div>
+          <div class="col"><div class="demo-col py-1">11</div></div>
+          <div class="col"><div class="demo-col py-1">12</div></div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- 
+        SECTION 2: ROWS AND COLUMNS
+        .row creates a horizontal group that holds columns.
+        .col gives each child an equal share of the available space.
+        .col-{number} sets a specific width (e.g., col-6 = 50%, col-4 = 33%).
+        Column numbers in a row should add up to 12 for a full-width layout.
+      -->
+      <h2 class="section-title">2. Rows and Columns</h2>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+              <code class="text-white">.row</code>
+            </div>
+            <div class="card-body">
+              <p>
+                Defines a horizontal group of columns. Ensures columns line up
+                correctly.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white">
+              <code class="text-white">.col</code>
+            </div>
+            <div class="card-body">
+              <p>
+                Creates auto-sized columns that share available space equally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5>Auto Columns</h5>
+      <p><code>.col</code> creates equal-width columns:</p>
+      <div class="demo-row">
+        <div class="row">
+          <div class="col"><div class="demo-col">col</div></div>
+          <div class="col"><div class="demo-col">col</div></div>
+          <div class="col"><div class="demo-col">col</div></div>
+        </div>
+      </div>
+
+      <h5 class="mt-4">Specific Column Widths</h5>
+      <p>Use <code>.col-{number}</code> for specific widths (out of 12):</p>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2"><code>.col-6 + .col-6</code> = 12</p>
+        <div class="row">
+          <div class="col-6"><div class="demo-col">col-6</div></div>
+          <div class="col-6"><div class="demo-col-alt">col-6</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2">
+          <code>.col-4 + .col-4 + .col-4</code> = 12
+        </p>
+        <div class="row">
+          <div class="col-4"><div class="demo-col">col-4</div></div>
+          <div class="col-4"><div class="demo-col-alt">col-4</div></div>
+          <div class="col-4"><div class="demo-col">col-4</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2">
+          <code>.col-3 + .col-6 + .col-3</code> = 12
+        </p>
+        <div class="row">
+          <div class="col-3"><div class="demo-col">col-3</div></div>
+          <div class="col-6"><div class="demo-col-alt">col-6</div></div>
+          <div class="col-3"><div class="demo-col">col-3</div></div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- 
+        SECTION 3: RESPONSIVE COLUMNS
+        Add breakpoint prefixes to make columns adapt to screen size.
+        .col-12 = full width on mobile, .col-md-6 = half on tablets (≥768px),
+        .col-lg-3 = quarter on desktops (≥992px).
+        This "mobile-first" approach means smaller breakpoints apply first,
+        then larger ones override them as the screen grows.
+      -->
+      <h2 class="section-title">3. Responsive Columns</h2>
+      <p>
+        Add breakpoint prefixes to make columns respond to screen size:
+        <code>.col-sm-</code>, <code>.col-md-</code>, <code>.col-lg-</code>,
+        <code>.col-xl-</code>
+      </p>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2">
+          <code>.col-12 .col-md-6 .col-lg-3</code> - Stack on mobile, 2 on
+          tablet, 4 on desktop
+        </p>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="demo-col">Responsive</div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="demo-col-alt">Responsive</div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="demo-col">Responsive</div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="demo-col-alt">Responsive</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <strong>💡 Tip:</strong> Resize your browser to see how responsive
+        columns adapt!
+      </div>
+
+      <hr />
+
+      <!-- 
+        SECTION 4: GUTTERS (SPACING BETWEEN COLUMNS)
+        Gutters are the gaps between columns in a row.
+        .g-{0-5} controls both horizontal and vertical gutters.
+        .gx-{0-5} controls horizontal (left/right) gutters only.
+        .gy-{0-5} controls vertical (top/bottom) gutters only.
+        .g-0 removes all spacing between columns.
+      -->
+      <h2 class="section-title">4. Gutters (Spacing)</h2>
+      <p>
+        Gutters control the spacing between columns. Use
+        <code>.g-{0-5}</code>, <code>.gx-{0-5}</code>, or
+        <code>.gy-{0-5}</code>:
+      </p>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <code>.g-0</code> - <code>.g-5</code>
+              <p class="small text-muted mb-0">All sides</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <code>.gx-0</code> - <code>.gx-5</code>
+              <p class="small text-muted mb-0">Horizontal only</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <code>.gy-0</code> - <code>.gy-5</code>
+              <p class="small text-muted mb-0">Vertical only</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5>Gutter Examples</h5>
+      <div class="demo-row">
+        <p class="small text-muted mb-2"><code>.g-0</code> - No gutter:</p>
+        <div class="row g-0">
+          <div class="col-4"><div class="demo-col">col</div></div>
+          <div class="col-4"><div class="demo-col-alt">col</div></div>
+          <div class="col-4"><div class="demo-col">col</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2"><code>.g-4</code> - Large gutter:</p>
+        <div class="row g-4">
+          <div class="col-4"><div class="demo-col">col</div></div>
+          <div class="col-4"><div class="demo-col-alt">col</div></div>
+          <div class="col-4"><div class="demo-col">col</div></div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- 
+        SECTION 5: ALIGNMENT
+        Control how columns are positioned within a row.
+        Vertical: .align-items-start (top), .align-items-center (middle), .align-items-end (bottom).
+        Horizontal: .justify-content-start, -center, -end, -between, -around, -evenly.
+        These work just like CSS Flexbox — Bootstrap's grid is built on Flexbox!
+      -->
+      <h2 class="section-title">5. Alignment</h2>
+
+      <h5>Vertical Alignment</h5>
+      <p>Apply to <code>.row</code> to align columns vertically:</p>
+
+      <div class="demo-row" style="min-height: 120px">
+        <p class="small text-muted mb-2"><code>.align-items-start</code></p>
+        <div class="row align-items-start" style="min-height: 100px">
+          <div class="col"><div class="demo-col">Start</div></div>
+          <div class="col"><div class="demo-col">Start</div></div>
+          <div class="col"><div class="demo-col">Start</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row" style="min-height: 120px">
+        <p class="small text-muted mb-2"><code>.align-items-center</code></p>
+        <div class="row align-items-center" style="min-height: 100px">
+          <div class="col"><div class="demo-col">Center</div></div>
+          <div class="col"><div class="demo-col">Center</div></div>
+          <div class="col"><div class="demo-col">Center</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row" style="min-height: 120px">
+        <p class="small text-muted mb-2"><code>.align-items-end</code></p>
+        <div class="row align-items-end" style="min-height: 100px">
+          <div class="col"><div class="demo-col">End</div></div>
+          <div class="col"><div class="demo-col">End</div></div>
+          <div class="col"><div class="demo-col">End</div></div>
+        </div>
+      </div>
+
+      <h5 class="mt-4">Horizontal Alignment</h5>
+      <p>Apply to <code>.row</code> to align columns horizontally:</p>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2"><code>.justify-content-start</code></p>
+        <div class="row justify-content-start">
+          <div class="col-3"><div class="demo-col">Start</div></div>
+          <div class="col-3"><div class="demo-col">Start</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2">
+          <code>.justify-content-center</code>
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-3"><div class="demo-col">Center</div></div>
+          <div class="col-3"><div class="demo-col">Center</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2"><code>.justify-content-end</code></p>
+        <div class="row justify-content-end">
+          <div class="col-3"><div class="demo-col">End</div></div>
+          <div class="col-3"><div class="demo-col">End</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2">
+          <code>.justify-content-between</code>
+        </p>
+        <div class="row justify-content-between">
+          <div class="col-3"><div class="demo-col">Between</div></div>
+          <div class="col-3"><div class="demo-col">Between</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2">
+          <code>.justify-content-around</code>
+        </p>
+        <div class="row justify-content-around">
+          <div class="col-3"><div class="demo-col">Around</div></div>
+          <div class="col-3"><div class="demo-col">Around</div></div>
+        </div>
+      </div>
+
+      <div class="demo-row">
+        <p class="small text-muted mb-2">
+          <code>.justify-content-evenly</code>
+        </p>
+        <div class="row justify-content-evenly">
+          <div class="col-3"><div class="demo-col">Evenly</div></div>
+          <div class="col-3"><div class="demo-col">Evenly</div></div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-links">
+        <a href="./02_containers.html">&lt; Previous: Containers</a> |
+        <a href="./06_images.html">Next: Images &gt;</a>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

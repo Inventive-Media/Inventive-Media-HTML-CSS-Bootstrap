@@ -5,8 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 3 - Tailwind Utility Classes</title>
     <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+    /* Sticky Header Styles */
+    body { padding-top: 80px; }
+    .sticky-header {
+      position: fixed; top: 0; left: 0;
+  width: 100%;
+       
+      height: 60px; background-color: white; color: #0ea5e9;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 max(20px, calc(50vw - 640px)); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000; box-sizing: border-box;
+    }
+    .header-left { display: flex; align-items: center; gap: 20px; }
+    .home-link { color: #0ea5e9; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+    .home-link:hover { color: #0284c7; }
+    .page-title { font-size: 1rem; color: #34495e; opacity: 0.8; display: none; }
+    @media (min-width: 600px) { .page-title { display: block; } }
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn { background-color: #0ea5e9; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; }
+    .dropdown:hover .dropbtn { background-color: #0284c7; }
+    .dropdown-content { display: none; position: absolute; right: 0; left: auto; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; border-radius: 4px; overflow: hidden; }
+    .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; border-bottom: 1px solid #ddd; }
+    .dropdown-content a:last-child { border-bottom: none; }
+    .dropdown-content a:hover { background-color: #f1f1f1; color: #0ea5e9; }
+    .dropdown:hover .dropdown-content { display: block; }
+    </style>
   </head>
   <body class="bg-gray-50 text-gray-800">
+
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Tailwind</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+          <a href="00_intro.html">00. Intro</a>
+          <a href="01_setup.html">01. Setup</a>
+          <a href="02_buttons.html">02. Buttons</a>
+          <a href="02_typography.html">02. Typography</a>
+          <a href="03_containers.html">03. Containers</a>
+          <a href="04_grid_layout.html">04. Grid</a>
+          <a href="05_images.html">05. Images</a>
+          <a href="06_utilities.html">06. Utilities</a>
+          <a href="07_components.html">07. Components</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) document.getElementById("header-title").textContent = h1.textContent;
+      });
+    </script>
+
     <div class="max-w-4xl mx-auto px-4 py-8">
       <h1 class="text-3xl font-bold text-center mb-2 text-indigo-600">
         Day 3 - Utility Classes
