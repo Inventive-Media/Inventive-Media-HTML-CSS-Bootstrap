@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Selectors</title>
     <link rel="stylesheet" href="css/styles.css" />
-</head>
+  </head>
   <body>
     <!-- Sticky Header -->
     <header class="sticky-header">
@@ -16,22 +16,24 @@
       <div class="dropdown">
         <button class="dropbtn">Jump to Topic ▼</button>
         <div class="dropdown-content">
-<a href="00_css_intro.html">00. CSS Intro</a>
-<a href="01_css_syntax.html">01. CSS Syntax</a>
-<a href="02_css_selectors.html">02. CSS Selectors</a>
-<a href="03_box_model.html">03. Box Model</a>
-<a href="04_text_overflow.html">04. Text Overflow</a>
-<a href="05_typography.html">05. Typography</a>
-<a href="06_colors.html">06. Colors</a>
-<a href="07_css_variables_functions.html">07. CSS Variables &amp; Functions</a>
-<a href="08_backgrounds.html">08. Backgrounds</a>
-<a href="09_css_units_shadows.html">09. Units &amp; Shadows</a>
-<a href="10_animations.html">10. Animations</a>
-<a href="11_positioning.html">11. Positioning</a>
-<a href="12_flexbox.html">12. Flexbox</a>
-<a href="13_grid.html">13. Grid</a>
-<a href="14_responsive_design.html">14. Responsive Design</a>
-</div>
+          <a href="00_css_intro.html">00. CSS Intro</a>
+          <a href="01_css_syntax.html">01. CSS Syntax</a>
+          <a href="02_css_selectors.html">02. CSS Selectors</a>
+          <a href="03_box_model.html">03. Box Model</a>
+          <a href="04_text_overflow.html">04. Text Overflow</a>
+          <a href="05_typography.html">05. Typography</a>
+          <a href="06_colors.html">06. Colors</a>
+          <a href="07_css_variables_functions.html"
+            >07. CSS Variables &amp; Functions</a
+          >
+          <a href="08_backgrounds.html">08. Backgrounds</a>
+          <a href="09_css_units_shadows.html">09. Units &amp; Shadows</a>
+          <a href="10_animations.html">10. Animations</a>
+          <a href="11_positioning.html">11. Positioning</a>
+          <a href="12_flexbox.html">12. Flexbox</a>
+          <a href="13_grid.html">13. Grid</a>
+          <a href="14_responsive_design.html">14. Responsive Design</a>
+        </div>
       </div>
     </header>
     <script>
@@ -50,439 +52,480 @@
       <div class="row">
         <div class="col-12">
           <h1 class="main-title">Day 2 - CSS Selectors</h1>
-    <p>
-      Selectors are patterns used to select the element(s) you want to style.
-    </p>
+          <p>
+            Selectors are patterns used to select the element(s) you want to
+            style.
+          </p>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 1: ELEMENT SELECTOR
       The simplest selector — targets all elements of a given tag name.
       For example, 'p' selects every <p> on the page.
     -->
-    <h2 class="section-title">1. Element Selector</h2>
-    <p>
-      Selects elements based on the tag name (e.g., <code>p</code>,
-      <code>h1</code>, <code>div</code>).
-    </p>
+          <h2 class="section-title">1. Element Selector</h2>
+          <p>
+            Selects elements based on the tag name (e.g., <code>p</code>,
+            <code>h1</code>, <code>div</code>).
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">p</span> { <span class="property">color</span>:
-      <span class="value">green</span>; }<br /><br />
-      /* HTML */<br />
-      &lt;p&gt;This paragraph is selected by its tag name.&lt;/p&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">p</span> {
+            <span class="property">color</span>:
+            <span class="value">green</span>; }<br /><br />
+            /* HTML */<br />
+            &lt;p&gt;This paragraph is selected by its tag name.&lt;/p&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <p class="element-selector-demo">
-        This paragraph is selected by its tag name.
-      </p>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <p class="element-selector-demo">
+              This paragraph is selected by its tag name.
+            </p>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 2: CLASS SELECTOR
       Targets elements by their class attribute. Prefix with a dot (.).
       Classes are reusable — you can apply the same class to many elements.
     -->
-    <h2 class="section-title">2. Class Selector</h2>
-    <p>
-      Selects elements with a specific class attribute. Starts with a dot
-      (<code>.</code>).
-    </p>
-    <p><strong>Tip:</strong> You can reuse classes on many elements.</p>
+          <h2 class="section-title">2. Class Selector</h2>
+          <p>
+            Selects elements with a specific class attribute. Starts with a dot
+            (<code>.</code>).
+          </p>
+          <p><strong>Tip:</strong> You can reuse classes on many elements.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.highlight</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-color</span>:
-      <span class="value">yellow</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">red</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;p class="highlight"&gt;This paragraph uses a class.&lt;/p&gt;<br />
-      &lt;span class="highlight"&gt;So does this span!&lt;/span&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.highlight</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >background-color</span
+            >: <span class="value">yellow</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">red</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;p class="highlight"&gt;This paragraph uses a class.&lt;/p&gt;<br />
+            &lt;span class="highlight"&gt;So does this span!&lt;/span&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <p class="highlight">This paragraph uses a class.</p>
-      <span class="highlight">So does this span!</span>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <p class="highlight">This paragraph uses a class.</p>
+            <span class="highlight">So does this span!</span>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 3: ID SELECTOR
       Targets a single, unique element by its id attribute. Prefix with a hash (#).
       Each id should only appear once per page.
     -->
-    <h2 class="section-title">3. ID Selector</h2>
-    <p>
-      Selects a unique element with a specific id attribute. Starts with a hash
-      (<code>#</code>).
-    </p>
-    <p><strong>Important:</strong> IDs must be unique on a page.</p>
+          <h2 class="section-title">3. ID Selector</h2>
+          <p>
+            Selects a unique element with a specific id attribute. Starts with a
+            hash (<code>#</code>).
+          </p>
+          <p><strong>Important:</strong> IDs must be unique on a page.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">#unique-element</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-      <span class="value">2px solid orange</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-color</span>:
-      <span class="value">#fff3e0</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;div id="unique-element"&gt;I am unique!&lt;/div&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">#unique-element</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
+            <span class="value">2px solid orange</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >background-color</span
+            >: <span class="value">#fff3e0</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;div id="unique-element"&gt;I am unique!&lt;/div&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div id="unique-element">I am unique!</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div id="unique-element">I am unique!</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 4. CSS Hierarchy / Specificity -->
-    <h2 class="section-title">4. CSS Hierarchy (Specificity)</h2>
-    <p>
-      When multiple CSS rules target the same element, the browser uses
-      <strong>specificity</strong> to determine which rule is applied.
-    </p>
+          <!-- 4. CSS Hierarchy / Specificity -->
+          <h2 class="section-title">4. CSS Hierarchy (Specificity)</h2>
+          <p>
+            When multiple CSS rules target the same element, the browser uses
+            <strong>specificity</strong> to determine which rule is applied.
+          </p>
 
-    <h3>Specificity Values</h3>
-    <p>
-      The browser calculates specificity values. The higher the value, the
-      higher the priority:
-    </p>
+          <h3>Specificity Values</h3>
+          <p>
+            The browser calculates specificity values. The higher the value, the
+            higher the priority:
+          </p>
 
-    <table class="specificity-table">
-      <tr>
-        <th>Selector Type</th>
-        <th>Specificity Value</th>
-        <th>Example</th>
-      </tr>
-      <tr>
-        <td><strong>Inline styles</strong></td>
-        <td><span class="specificity-value">1000</span></td>
-        <td><code>style="color: red;"</code></td>
-      </tr>
-      <tr>
-        <td><strong>ID selector</strong></td>
-        <td><span class="specificity-value">0100</span></td>
-        <td><code>#header</code></td>
-      </tr>
-      <tr>
-        <td><strong>Class / Pseudo-class</strong></td>
-        <td><span class="specificity-value">0010</span></td>
-        <td><code>.nav</code>, <code>:hover</code></td>
-      </tr>
-      <tr>
-        <td><strong>Element / Pseudo-element</strong></td>
-        <td><span class="specificity-value">0001</span></td>
-        <td><code>div</code>, <code>p</code>, <code>::before</code></td>
-      </tr>
-    </table>
+          <table class="specificity-table">
+            <tr>
+              <th>Selector Type</th>
+              <th>Specificity Value</th>
+              <th>Example</th>
+            </tr>
+            <tr>
+              <td><strong>Inline styles</strong></td>
+              <td><span class="specificity-value">1000</span></td>
+              <td><code>style="color: red;"</code></td>
+            </tr>
+            <tr>
+              <td><strong>ID selector</strong></td>
+              <td><span class="specificity-value">0100</span></td>
+              <td><code>#header</code></td>
+            </tr>
+            <tr>
+              <td><strong>Class / Pseudo-class</strong></td>
+              <td><span class="specificity-value">0010</span></td>
+              <td><code>.nav</code>, <code>:hover</code></td>
+            </tr>
+            <tr>
+              <td><strong>Element / Pseudo-element</strong></td>
+              <td><span class="specificity-value">0001</span></td>
+              <td><code>div</code>, <code>p</code>, <code>::before</code></td>
+            </tr>
+          </table>
 
-    <div class="info-box">
-      <strong>💡 Remember:</strong> Inline > ID > Class > Element
-    </div>
+          <div class="info-box">
+            <strong>💡 Remember:</strong> Inline > ID > Class > Element
+          </div>
 
-    <h3>Source Order</h3>
-    <p>
-      If two rules have the <strong>same specificity</strong>, the one that
-      appears <strong>later</strong> in the CSS takes precedence.
-    </p>
+          <h3>Source Order</h3>
+          <p>
+            If two rules have the <strong>same specificity</strong>, the one
+            that appears <strong>later</strong> in the CSS takes precedence.
+          </p>
 
-    <h4>Code:</h4>
-    <div class="code-block">
-      <span class="selector">p</span> { <span class="property">color</span>:
-      <span class="value">blue</span>;
-      <span class="comment">/* gets overridden */</span> }<br />
-      <span class="selector">p</span> { <span class="property">color</span>:
-      <span class="value">red</span>;
-      <span class="comment">/* this one is applied */</span> }
-    </div>
+          <h4>Code:</h4>
+          <div class="code-block">
+            <span class="selector">p</span> {
+            <span class="property">color</span>:
+            <span class="value">blue</span>;
+            <span class="comment">/* gets overridden */</span> }<br />
+            <span class="selector">p</span> {
+            <span class="property">color</span>: <span class="value">red</span>;
+            <span class="comment">/* this one is applied */</span> }
+          </div>
 
-    <p>
-      <strong>Result:</strong> The text will be
-      <span style="color: red">red</span>
-      because the second rule comes last.
-    </p>
+          <p>
+            <strong>Result:</strong> The text will be
+            <span style="color: red">red</span>
+            because the second rule comes last.
+          </p>
 
-    <h3>The !important Rule</h3>
-    <p>
-      The <code>!important</code> keyword is the most powerful rule in CSS. It
-      <strong>overrides all other styles</strong>, regardless of specificity.
-    </p>
+          <h3>The !important Rule</h3>
+          <p>
+            The <code>!important</code> keyword is the most powerful rule in
+            CSS. It <strong>overrides all other styles</strong>, regardless of
+            specificity.
+          </p>
 
-    <h4>Code:</h4>
-    <div class="code-block">
-      <span class="selector">p</span> { <span class="property">color</span>:
-      <span class="value">blue</span> <span class="value">!important</span>;
-      }<br /><br />
-      <span class="selector">#special</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">red</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-        >/* Will NOT override !important */</span
-      ><br />
-      }
-    </div>
+          <h4>Code:</h4>
+          <div class="code-block">
+            <span class="selector">p</span> {
+            <span class="property">color</span>: <span class="value">blue</span>
+            <span class="value">!important</span>; }<br /><br />
+            <span class="selector">#special</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">red</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* Will NOT override !important */</span
+            ><br />
+            }
+          </div>
 
-    <div class="warning-box">
-      <strong>⚠️ Warning:</strong> Avoid overusing <code>!important</code>. It
-      makes debugging difficult because it breaks the natural cascade of CSS.
-      Use it only when absolutely necessary.
-    </div>
+          <div class="warning-box">
+            <strong>⚠️ Warning:</strong> Avoid overusing
+            <code>!important</code>. It makes debugging difficult because it
+            breaks the natural cascade of CSS. Use it only when absolutely
+            necessary.
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 5: GROUP SELECTOR
       Applies the same styles to multiple selectors at once.
       Selectors are separated by commas (e.g., h3, h4 { ... }).
     -->
-    <h2 class="section-title">5. Group Selector</h2>
-    <p>
-      Selects multiple elements and applies the same style. Separated by commas.
-    </p>
+          <h2 class="section-title">5. Group Selector</h2>
+          <p>
+            Selects multiple elements and applies the same style. Separated by
+            commas.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">h3, h4</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">purple</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-decoration</span>:
-      <span class="value">underline</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;h3&gt;Heading 3&lt;/h3&gt;<br />
-      &lt;h4&gt;Heading 4&lt;/h4&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">h3, h4</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">purple</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-decoration</span
+            >: <span class="value">underline</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;h3&gt;Heading 3&lt;/h3&gt;<br />
+            &lt;h4&gt;Heading 4&lt;/h4&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <h3 class="group-demo-h3">Heading 3</h3>
-      <h4 class="group-demo-h4">Heading 4</h4>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <h3 class="group-demo-h3">Heading 3</h3>
+            <h4 class="group-demo-h4">Heading 4</h4>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 6: DESCENDANT SELECTOR (SPACE)
       Selects elements that are nested inside another element, at any depth.
       Written as: parent descendant (with a space between).
     -->
-    <h2 class="section-title">6. Descendant Selector (Space)</h2>
-    <p>
-      Selects elements that are descendants (inside) of a specified element.
-    </p>
+          <h2 class="section-title">6. Descendant Selector (Space)</h2>
+          <p>
+            Selects elements that are descendants (inside) of a specified
+            element.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      /* Selects all &lt;p&gt; inside .container */<br />
-      <span class="selector">.container p</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">teal</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-style</span>:
-      <span class="value">italic</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;div class="container"&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am inside the container.&lt;/p&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am nested
-      deeper, but still inside, so I get styled!&lt;/p&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-      &lt;/div&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            /* Selects all &lt;p&gt; inside .container */<br />
+            <span class="selector">.container p</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">teal</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-style</span>:
+            <span class="value">italic</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;div class="container"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am inside the
+            container.&lt;/p&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am nested
+            deeper, but still inside, so I get styled!&lt;/p&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+            &lt;/div&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="descendant-container">
-        <p>I am inside the container.</p>
-        <div>
-          <p>I am nested deeper, but still inside, so I get styled!</p>
-        </div>
-      </div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="descendant-container">
+              <p>I am inside the container.</p>
+              <div>
+                <p>I am nested deeper, but still inside, so I get styled!</p>
+              </div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 7: CHILD SELECTOR (>)
       Selects only direct children, not deeper descendants.
       Written as: parent > child (with the > symbol).
       The difference from descendant: this ignores grandchildren and deeper.
     -->
-    <h2 class="section-title">7. Child Selector (>)</h2>
-    <p>
-      Selects all elements that are the <strong>direct</strong> children of a
-      specified element.
-    </p>
+          <h2 class="section-title">7. Child Selector (>)</h2>
+          <p>
+            Selects all elements that are the <strong>direct</strong> children
+            of a specified element.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      /* Selects only direct &lt;p&gt; children of .parent */<br />
-      <span class="selector">.parent > p</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-left</span>:
-      <span class="value">5px solid blue</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;div class="parent"&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a direct child (Styled)&lt;/p&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a grandchild
-      (Not styled)&lt;/p&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-      &lt;/div&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            /* Selects only direct &lt;p&gt; children of .parent */<br />
+            <span class="selector">.parent > p</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-left</span>:
+            <span class="value">5px solid blue</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;div class="parent"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a direct child
+            (Styled)&lt;/p&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a
+            grandchild (Not styled)&lt;/p&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+            &lt;/div&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="child-parent">
-        <p>I am a direct child (Styled)</p>
-        <div>
-          <p>I am a grandchild (Not styled)</p>
-        </div>
-      </div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="child-parent">
+              <p>I am a direct child (Styled)</p>
+              <div>
+                <p>I am a grandchild (Not styled)</p>
+              </div>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 8: ATTRIBUTE SELECTOR
       Targets elements based on their HTML attributes or attribute values.
       Useful for styling specific input types differently.
     -->
-    <h2 class="section-title">8. Attribute Selector</h2>
-    <p>Selects elements based on an attribute or attribute value.</p>
+          <h2 class="section-title">8. Attribute Selector</h2>
+          <p>Selects elements based on an attribute or attribute value.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">input[type="text"]</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-      <span class="value">2px solid red</span>;<br />
-      }<br />
-      <span class="selector">input[type="email"]</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-      <span class="value">2px solid green</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;input type="text" placeholder="Text Input"&gt;<br />
-      &lt;input type="email" placeholder="Email Input"&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">input[type="text"]</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
+            <span class="value">2px solid red</span>;<br />
+            }<br />
+            <span class="selector">input[type="email"]</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
+            <span class="value">2px solid green</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;input type="text" placeholder="Text Input"&gt;<br />
+            &lt;input type="email" placeholder="Email Input"&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <input type="text" placeholder="Text Input" />
-      <br /><br />
-      <input type="email" placeholder="Email Input" />
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <input type="text" placeholder="Text Input" />
+            <br /><br />
+            <input type="email" placeholder="Email Input" />
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 9: PSEUDO-CLASS SELECTOR
       Targets elements in a special state (e.g., :hover when the mouse is over it,
       :first-child for the first item in a list). Uses a single colon (:).
     -->
-    <h2 class="section-title">9. Pseudo-class Selector</h2>
-    <p>Used to define a special state of an element.</p>
+          <h2 class="section-title">9. Pseudo-class Selector</h2>
+          <p>Used to define a special state of an element.</p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      /* Changes color when mouse hovers over the link */<br />
-      <span class="selector">a:hover</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">red</span>;<br />
-      }<br /><br />
-      /* Selects the first item in a list */<br />
-      <span class="selector">li:first-child</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">red</span>;<br />
-      }<br /><br />
-      /* Selects the last item in a list */<br />
-      <span class="selector">li:last-child</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">blue</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;a href="#"&gt;Hover me!&lt;/a&gt;<br />
-      &lt;ul&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;First item&lt;/li&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Second item&lt;/li&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Last item&lt;/li&gt;<br />
-      &lt;/ul&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            /* Changes color when mouse hovers over the link */<br />
+            <span class="selector">a:hover</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">red</span>;<br />
+            }<br /><br />
+            /* Selects the first item in a list */<br />
+            <span class="selector">li:first-child</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">red</span>;<br />
+            }<br /><br />
+            /* Selects the last item in a list */<br />
+            <span class="selector">li:last-child</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">blue</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;a href="#"&gt;Hover me!&lt;/a&gt;<br />
+            &lt;ul&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;First item&lt;/li&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Second item&lt;/li&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Last item&lt;/li&gt;<br />
+            &lt;/ul&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <a href="#" class="hover-link">Hover me!</a>
-      <ul class="list-demo">
-        <li>First item</li>
-        <li>Second item</li>
-        <li>Last item</li>
-      </ul>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <a href="#" class="hover-link">Hover me!</a>
+            <ul class="list-demo">
+              <li>First item</li>
+              <li>Second item</li>
+              <li>Last item</li>
+            </ul>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 10: PSEUDO-ELEMENT SELECTOR
       Targets specific parts of an element or inserts virtual content.
       Uses a double colon (::). Common ones: ::before and ::after
       insert content before/after the element's actual content.
     -->
-    <h2 class="section-title">10. Pseudo-element Selector</h2>
-    <p>
-      Used to style specified parts of an element, or insert content
-      before/after.
-    </p>
+          <h2 class="section-title">10. Pseudo-element Selector</h2>
+          <p>
+            Used to style specified parts of an element, or insert content
+            before/after.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      /* Inserts content before the element */<br />
-      <span class="selector">.pseudo-demo::before</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
-      <span class="value">"👉 "</span>;<br />
-      }<br /><br />
-      /* Inserts content after the element */<br />
-      <span class="selector">.pseudo-demo::after</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
-      <span class="value">" 👈"</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;p class="pseudo-demo"&gt;Look at my pointers!&lt;/p&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            /* Inserts content before the element */<br />
+            <span class="selector">.pseudo-demo::before</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
+            <span class="value">"👉 "</span>;<br />
+            }<br /><br />
+            /* Inserts content after the element */<br />
+            <span class="selector">.pseudo-demo::after</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
+            <span class="value">" 👈"</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;p class="pseudo-demo"&gt;Look at my pointers!&lt;/p&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <p class="pseudo-demo">Look at my pointers!</p>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <p class="pseudo-demo">Look at my pointers!</p>
+          </div>
 
+          <hr />
 
+          <!-- 
+      SECTION 11: UNIVERSAL SELECTOR
+      Targets all elements. It is represented by an asterisk (*). Commonly used to remove default margins and paddings globally.
+    -->
+          <h2 class="section-title">11. Universal Selector</h2>
+          <p>
+            Selects all elements in a document. It is represented by an asterisk
+            (<code>*</code>).
+          </p>
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
-      <a href="./01_css_syntax.html">&lt; Previous: CSS Syntax</a> |
-      <a href="./03_box_model.html">Next: Box Model &gt;</a>
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">*</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">green</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;p&gt;This paragraph text turns green.&lt;/p&gt;<br />
+            &lt;div&gt;So does this div text.&lt;/div&gt;
+          </div>
+
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div style="color: green">
+              <p style="color: green">This paragraph text turns green.</p>
+              <div style="color: green">So does this div text.</div>
+            </div>
+          </div>
+
+          <!-- Navigation Section -->
+          <div class="nav-links">
+            <a href="./01_css_syntax.html">&lt; Previous: CSS Syntax</a> |
+            <a href="./03_box_model.html">Next: Box Model &gt;</a>
+          </div>
         </div>
       </div>
     </main>
