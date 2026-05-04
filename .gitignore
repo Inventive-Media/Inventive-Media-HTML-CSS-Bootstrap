@@ -5,3 +5,9 @@
 
 .env*
 !.env.example
+
+# Graphify
+graphify-out/
+
+# Agents
+.agents/

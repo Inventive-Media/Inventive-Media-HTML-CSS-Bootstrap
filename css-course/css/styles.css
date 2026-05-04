@@ -2194,3 +2194,46 @@ p.demo {
       "footer";
   }
 }
+
+/* --- 04: Text Overflow --- */
+.demo.ov-clip {
+max-width: 300px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: clip;
+}
+
+.demo.ov-ellipsis {
+max-width: 300px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.demo.clamp-2 {
+max-width: 350px;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+
+.demo.clamp-4 {
+max-width: 350px;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+overflow: hidden;
+}
+
+.demo.wrap-normal {
+max-width: 250px;
+border: 1px solid #ccc;
+overflow-wrap: normal;
+}
+
+.demo.wrap-anywhere {
+max-width: 250px;
+border: 1px solid #ccc;
+overflow-wrap: anywhere;
+}
