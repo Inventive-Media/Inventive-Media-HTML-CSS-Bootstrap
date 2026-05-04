@@ -151,240 +151,8 @@
 
     <hr />
 
-    <!-- 
-      SECTION 4: GROUP SELECTOR
-      Applies the same styles to multiple selectors at once.
-      Selectors are separated by commas (e.g., h3, h4 { ... }).
-    -->
-    <h2 class="section-title">4. Group Selector</h2>
-    <p>
-      Selects multiple elements and applies the same style. Separated by commas.
-    </p>
-
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">h3, h4</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">purple</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-decoration</span>:
-      <span class="value">underline</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;h3&gt;Heading 3&lt;/h3&gt;<br />
-      &lt;h4&gt;Heading 4&lt;/h4&gt;
-    </div>
-
-    <h3>Output:</h3>
-    <div class="example-output">
-      <h3 class="group-demo-h3">Heading 3</h3>
-      <h4 class="group-demo-h4">Heading 4</h4>
-    </div>
-
-    <hr />
-
-    <!-- 
-      SECTION 5: DESCENDANT SELECTOR (SPACE)
-      Selects elements that are nested inside another element, at any depth.
-      Written as: parent descendant (with a space between).
-    -->
-    <h2 class="section-title">5. Descendant Selector (Space)</h2>
-    <p>
-      Selects elements that are descendants (inside) of a specified element.
-    </p>
-
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      /* Selects all &lt;p&gt; inside .container */<br />
-      <span class="selector">.container p</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">teal</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-style</span>:
-      <span class="value">italic</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;div class="container"&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am inside the container.&lt;/p&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am nested
-      deeper, but still inside, so I get styled!&lt;/p&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-      &lt;/div&gt;
-    </div>
-
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="descendant-container">
-        <p>I am inside the container.</p>
-        <div>
-          <p>I am nested deeper, but still inside, so I get styled!</p>
-        </div>
-      </div>
-    </div>
-
-    <hr />
-
-    <!-- 
-      SECTION 6: CHILD SELECTOR (>)
-      Selects only direct children, not deeper descendants.
-      Written as: parent > child (with the > symbol).
-      The difference from descendant: this ignores grandchildren and deeper.
-    -->
-    <h2 class="section-title">6. Child Selector (>)</h2>
-    <p>
-      Selects all elements that are the <strong>direct</strong> children of a
-      specified element.
-    </p>
-
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      /* Selects only direct &lt;p&gt; children of .parent */<br />
-      <span class="selector">.parent > p</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-left</span>:
-      <span class="value">5px solid blue</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;div class="parent"&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a direct child (Styled)&lt;/p&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a grandchild
-      (Not styled)&lt;/p&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-      &lt;/div&gt;
-    </div>
-
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="child-parent">
-        <p>I am a direct child (Styled)</p>
-        <div>
-          <p>I am a grandchild (Not styled)</p>
-        </div>
-      </div>
-    </div>
-
-    <hr />
-
-    <!-- 
-      SECTION 7: ATTRIBUTE SELECTOR
-      Targets elements based on their HTML attributes or attribute values.
-      Useful for styling specific input types differently.
-    -->
-    <h2 class="section-title">7. Attribute Selector</h2>
-    <p>Selects elements based on an attribute or attribute value.</p>
-
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">input[type="text"]</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-      <span class="value">2px solid red</span>;<br />
-      }<br />
-      <span class="selector">input[type="email"]</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-      <span class="value">2px solid green</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;input type="text" placeholder="Text Input"&gt;<br />
-      &lt;input type="email" placeholder="Email Input"&gt;
-    </div>
-
-    <h3>Output:</h3>
-    <div class="example-output">
-      <input type="text" placeholder="Text Input" />
-      <br /><br />
-      <input type="email" placeholder="Email Input" />
-    </div>
-
-    <hr />
-
-    <!-- 
-      SECTION 8: PSEUDO-CLASS SELECTOR
-      Targets elements in a special state (e.g., :hover when the mouse is over it,
-      :first-child for the first item in a list). Uses a single colon (:).
-    -->
-    <h2 class="section-title">8. Pseudo-class Selector</h2>
-    <p>Used to define a special state of an element.</p>
-
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      /* Changes color when mouse hovers over the link */<br />
-      <span class="selector">a:hover</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">red</span>;<br />
-      }<br /><br />
-      /* Selects the first item in a list */<br />
-      <span class="selector">li:first-child</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">red</span>;<br />
-      }<br /><br />
-      /* Selects the last item in a list */<br />
-      <span class="selector">li:last-child</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">blue</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;a href="#"&gt;Hover me!&lt;/a&gt;<br />
-      &lt;ul&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;First item&lt;/li&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Second item&lt;/li&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Last item&lt;/li&gt;<br />
-      &lt;/ul&gt;
-    </div>
-
-    <h3>Output:</h3>
-    <div class="example-output">
-      <a href="#" class="hover-link">Hover me!</a>
-      <ul class="list-demo">
-        <li>First item</li>
-        <li>Second item</li>
-        <li>Last item</li>
-      </ul>
-    </div>
-
-    <hr />
-
-    <!-- 
-      SECTION 9: PSEUDO-ELEMENT SELECTOR
-      Targets specific parts of an element or inserts virtual content.
-      Uses a double colon (::). Common ones: ::before and ::after
-      insert content before/after the element's actual content.
-    -->
-    <h2 class="section-title">9. Pseudo-element Selector</h2>
-    <p>
-      Used to style specified parts of an element, or insert content
-      before/after.
-    </p>
-
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      /* Inserts content before the element */<br />
-      <span class="selector">.pseudo-demo::before</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
-      <span class="value">"👉 "</span>;<br />
-      }<br /><br />
-      /* Inserts content after the element */<br />
-      <span class="selector">.pseudo-demo::after</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
-      <span class="value">" 👈"</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;p class="pseudo-demo"&gt;Look at my pointers!&lt;/p&gt;
-    </div>
-
-    <h3>Output:</h3>
-    <div class="example-output">
-      <p class="pseudo-demo">Look at my pointers!</p>
-    </div>
-
-    <hr />
-
-    <!-- 10. CSS Hierarchy / Specificity -->
-    <h2 class="section-title">10. CSS Hierarchy (Specificity)</h2>
+    <!-- 4. CSS Hierarchy / Specificity -->
+    <h2 class="section-title">4. CSS Hierarchy (Specificity)</h2>
     <p>
       When multiple CSS rules target the same element, the browser uses
       <strong>specificity</strong> to determine which rule is applied.
@@ -475,6 +243,240 @@
       makes debugging difficult because it breaks the natural cascade of CSS.
       Use it only when absolutely necessary.
     </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 5: GROUP SELECTOR
+      Applies the same styles to multiple selectors at once.
+      Selectors are separated by commas (e.g., h3, h4 { ... }).
+    -->
+    <h2 class="section-title">5. Group Selector</h2>
+    <p>
+      Selects multiple elements and applies the same style. Separated by commas.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */<br />
+      <span class="selector">h3, h4</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+      <span class="value">purple</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-decoration</span>:
+      <span class="value">underline</span>;<br />
+      }<br /><br />
+      /* HTML */<br />
+      &lt;h3&gt;Heading 3&lt;/h3&gt;<br />
+      &lt;h4&gt;Heading 4&lt;/h4&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <h3 class="group-demo-h3">Heading 3</h3>
+      <h4 class="group-demo-h4">Heading 4</h4>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 6: DESCENDANT SELECTOR (SPACE)
+      Selects elements that are nested inside another element, at any depth.
+      Written as: parent descendant (with a space between).
+    -->
+    <h2 class="section-title">6. Descendant Selector (Space)</h2>
+    <p>
+      Selects elements that are descendants (inside) of a specified element.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */<br />
+      /* Selects all &lt;p&gt; inside .container */<br />
+      <span class="selector">.container p</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+      <span class="value">teal</span>;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-style</span>:
+      <span class="value">italic</span>;<br />
+      }<br /><br />
+      /* HTML */<br />
+      &lt;div class="container"&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am inside the container.&lt;/p&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am nested
+      deeper, but still inside, so I get styled!&lt;/p&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+      &lt;/div&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="descendant-container">
+        <p>I am inside the container.</p>
+        <div>
+          <p>I am nested deeper, but still inside, so I get styled!</p>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 7: CHILD SELECTOR (>)
+      Selects only direct children, not deeper descendants.
+      Written as: parent > child (with the > symbol).
+      The difference from descendant: this ignores grandchildren and deeper.
+    -->
+    <h2 class="section-title">7. Child Selector (>)</h2>
+    <p>
+      Selects all elements that are the <strong>direct</strong> children of a
+      specified element.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */<br />
+      /* Selects only direct &lt;p&gt; children of .parent */<br />
+      <span class="selector">.parent > p</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-left</span>:
+      <span class="value">5px solid blue</span>;<br />
+      }<br /><br />
+      /* HTML */<br />
+      &lt;div class="parent"&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a direct child (Styled)&lt;/p&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a grandchild
+      (Not styled)&lt;/p&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+      &lt;/div&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <div class="child-parent">
+        <p>I am a direct child (Styled)</p>
+        <div>
+          <p>I am a grandchild (Not styled)</p>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 8: ATTRIBUTE SELECTOR
+      Targets elements based on their HTML attributes or attribute values.
+      Useful for styling specific input types differently.
+    -->
+    <h2 class="section-title">8. Attribute Selector</h2>
+    <p>Selects elements based on an attribute or attribute value.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */<br />
+      <span class="selector">input[type="text"]</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
+      <span class="value">2px solid red</span>;<br />
+      }<br />
+      <span class="selector">input[type="email"]</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
+      <span class="value">2px solid green</span>;<br />
+      }<br /><br />
+      /* HTML */<br />
+      &lt;input type="text" placeholder="Text Input"&gt;<br />
+      &lt;input type="email" placeholder="Email Input"&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <input type="text" placeholder="Text Input" />
+      <br /><br />
+      <input type="email" placeholder="Email Input" />
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 9: PSEUDO-CLASS SELECTOR
+      Targets elements in a special state (e.g., :hover when the mouse is over it,
+      :first-child for the first item in a list). Uses a single colon (:).
+    -->
+    <h2 class="section-title">9. Pseudo-class Selector</h2>
+    <p>Used to define a special state of an element.</p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */<br />
+      /* Changes color when mouse hovers over the link */<br />
+      <span class="selector">a:hover</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+      <span class="value">red</span>;<br />
+      }<br /><br />
+      /* Selects the first item in a list */<br />
+      <span class="selector">li:first-child</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+      <span class="value">red</span>;<br />
+      }<br /><br />
+      /* Selects the last item in a list */<br />
+      <span class="selector">li:last-child</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+      <span class="value">blue</span>;<br />
+      }<br /><br />
+      /* HTML */<br />
+      &lt;a href="#"&gt;Hover me!&lt;/a&gt;<br />
+      &lt;ul&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;First item&lt;/li&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Second item&lt;/li&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Last item&lt;/li&gt;<br />
+      &lt;/ul&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <a href="#" class="hover-link">Hover me!</a>
+      <ul class="list-demo">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Last item</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- 
+      SECTION 10: PSEUDO-ELEMENT SELECTOR
+      Targets specific parts of an element or inserts virtual content.
+      Uses a double colon (::). Common ones: ::before and ::after
+      insert content before/after the element's actual content.
+    -->
+    <h2 class="section-title">10. Pseudo-element Selector</h2>
+    <p>
+      Used to style specified parts of an element, or insert content
+      before/after.
+    </p>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+      /* CSS */<br />
+      /* Inserts content before the element */<br />
+      <span class="selector">.pseudo-demo::before</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
+      <span class="value">"👉 "</span>;<br />
+      }<br /><br />
+      /* Inserts content after the element */<br />
+      <span class="selector">.pseudo-demo::after</span> {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
+      <span class="value">" 👈"</span>;<br />
+      }<br /><br />
+      /* HTML */<br />
+      &lt;p class="pseudo-demo"&gt;Look at my pointers!&lt;/p&gt;
+    </div>
+
+    <h3>Output:</h3>
+    <div class="example-output">
+      <p class="pseudo-demo">Look at my pointers!</p>
+    </div>
+
+
 
     <!-- Navigation Section -->
     <div class="nav-links">
