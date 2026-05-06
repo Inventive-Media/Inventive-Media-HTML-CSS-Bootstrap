@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - Shadows</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-left">
+        <a href="index.html" class="home-link">Home</a>
+        <span id="header-title" class="page-title">Loading...</span>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Jump to Topic ▼</button>
+        <div class="dropdown-content">
+<a href="01_what_is_css.html">01. What is CSS?</a>
+<a href="02_types_of_css_styling.html">02. Types of CSS Styling</a>
+<a href="03_typography.html">03. Typography</a>
+<a href="04_css_selectors.html">04. CSS Selectors</a>
+<a href="05_box_model.html">05. Box Model</a>
+<a href="06_css_functions.html">06. CSS Functions</a>
+<a href="07_backgrounds.html">07. Backgrounds</a>
+<a href="08_units_in_css.html">08. Units in CSS</a>
+<a href="09_shadows.html">09. Shadows</a>
+<a href="10_animations.html">10. Animations</a>
+<a href="11_positioning.html">11. Positioning</a>
+<a href="12_flexbox.html">12. Flexbox</a>
+<a href="13_css_grid.html">13. CSS Grid</a>
+<a href="14_responsive_design.html">14. Responsive Design</a>
+<a href="15_css_frameworks.html">15. CSS Frameworks</a>
+</div>
+      </div>
+    </header>
+    <script>
+      // Dynamically set the header title from the main h1
+      document.addEventListener("DOMContentLoaded", function () {
+        var h1 = document.querySelector("h1");
+        if (h1) {
+          document.getElementById("header-title").textContent = h1.textContent;
+        } else {
+          document.getElementById("header-title").textContent = document.title;
+        }
+      });
+    </script>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="main-title">Day 2 - Shadows</h1>
+          <p>
+            Understanding methods for sizing elements and adding depth effects.
+          </p>
+
+          <hr />
+
+          <!-- 
+      SECTION 2: BOX SHADOW & TEXT SHADOW
+      Shadows add depth and dimension to elements.
+      box-shadow: adds shadow around the element's box.
+        Syntax: x-offset y-offset blur-radius spread-radius color
+      text-shadow: adds shadow behind text characters.
+        Syntax: x-offset y-offset blur-radius color
+    -->
+          <h2 class="section-title">1. Box Shadow & Text Shadow</h2>
+          <p>Adding depth with shadows.</p>
+
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.simple-shadow</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
+              >/* x-offset | y-offset | blur-radius | color */</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">box-shadow</span>:
+            <span class="value">5px 5px 10px rgba(0,0,0,0.3)</span>;<br />
+            }<br /><br />
+            <span class="selector">.text-effect</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-shadow</span>:
+            <span class="value">2px 2px 4px #000</span>;<br />
+            }
+          </div>
+
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="shadow-demo">
+              <div class="box-shadow">Box Shadow</div>
+              <div class="soft-shadow">Soft Shadow</div>
+            </div>
+            <br />
+            <div class="text-shadow-demo">Text Shadow Effect</div>
+          </div>
+
+          <div class="nav-links">
+            <a href="./08_units_in_css.html">&lt; Previous: Units in CSS</a> |
+            <a href="./10_animations.html">Next: Animations &gt;</a>
+          </div>
+</div></div></main></body></html>
