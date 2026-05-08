@@ -33,46 +33,57 @@ shared layout/component styles, and per-lesson demo styles.
   flex: 0 0 calc((1 / 12) * 100%);
   max-width: calc((1 / 12) * 100%);
 }
+
 .col-2 {
   flex: 0 0 calc((2 / 12) * 100%);
   max-width: calc((2 / 12) * 100%);
 }
+
 .col-3 {
   flex: 0 0 calc((3 / 12) * 100%);
   max-width: calc((3 / 12) * 100%);
 }
+
 .col-4 {
   flex: 0 0 calc((4 / 12) * 100%);
   max-width: calc((4 / 12) * 100%);
 }
+
 .col-5 {
   flex: 0 0 calc((5 / 12) * 100%);
   max-width: calc((5 / 12) * 100%);
 }
+
 .col-6 {
   flex: 0 0 calc((6 / 12) * 100%);
   max-width: calc((6 / 12) * 100%);
 }
+
 .col-7 {
   flex: 0 0 calc((7 / 12) * 100%);
   max-width: calc((7 / 12) * 100%);
 }
+
 .col-8 {
   flex: 0 0 calc((8 / 12) * 100%);
   max-width: calc((8 / 12) * 100%);
 }
+
 .col-9 {
   flex: 0 0 calc((9 / 12) * 100%);
   max-width: calc((9 / 12) * 100%);
 }
+
 .col-10 {
   flex: 0 0 calc((10 / 12) * 100%);
   max-width: calc((10 / 12) * 100%);
 }
+
 .col-11 {
   flex: 0 0 calc((11 / 12) * 100%);
   max-width: calc((11 / 12) * 100%);
 }
+
 .col-12 {
   flex: 0 0 100%;
   max-width: 100%;
@@ -83,50 +94,62 @@ shared layout/component styles, and per-lesson demo styles.
   .row {
     max-width: 540px;
   }
+
   .col-1-sm {
     flex: 0 0 calc((1 / 12) * 100%);
     max-width: calc((1 / 12) * 100%);
   }
+
   .col-2-sm {
     flex: 0 0 calc((2 / 12) * 100%);
     max-width: calc((2 / 12) * 100%);
   }
+
   .col-3-sm {
     flex: 0 0 calc((3 / 12) * 100%);
     max-width: calc((3 / 12) * 100%);
   }
+
   .col-4-sm {
     flex: 0 0 calc((4 / 12) * 100%);
     max-width: calc((4 / 12) * 100%);
   }
+
   .col-5-sm {
     flex: 0 0 calc((5 / 12) * 100%);
     max-width: calc((5 / 12) * 100%);
   }
+
   .col-6-sm {
     flex: 0 0 calc((6 / 12) * 100%);
     max-width: calc((6 / 12) * 100%);
   }
+
   .col-7-sm {
     flex: 0 0 calc((7 / 12) * 100%);
     max-width: calc((7 / 12) * 100%);
   }
+
   .col-8-sm {
     flex: 0 0 calc((8 / 12) * 100%);
     max-width: calc((8 / 12) * 100%);
   }
+
   .col-9-sm {
     flex: 0 0 calc((9 / 12) * 100%);
     max-width: calc((9 / 12) * 100%);
   }
+
   .col-10-sm {
     flex: 0 0 calc((10 / 12) * 100%);
     max-width: calc((10 / 12) * 100%);
   }
+
   .col-11-sm {
     flex: 0 0 calc((11 / 12) * 100%);
     max-width: calc((11 / 12) * 100%);
   }
+
   .col-12-sm {
     flex: 0 0 100%;
     max-width: 100%;
@@ -138,50 +161,62 @@ shared layout/component styles, and per-lesson demo styles.
   .row {
     max-width: 720px;
   }
+
   .col-1-md {
     flex: 0 0 calc((1 / 12) * 100%);
     max-width: calc((1 / 12) * 100%);
   }
+
   .col-2-md {
     flex: 0 0 calc((2 / 12) * 100%);
     max-width: calc((2 / 12) * 100%);
   }
+
   .col-3-md {
     flex: 0 0 calc((3 / 12) * 100%);
     max-width: calc((3 / 12) * 100%);
   }
+
   .col-4-md {
     flex: 0 0 calc((4 / 12) * 100%);
     max-width: calc((4 / 12) * 100%);
   }
+
   .col-5-md {
     flex: 0 0 calc((5 / 12) * 100%);
     max-width: calc((5 / 12) * 100%);
   }
+
   .col-6-md {
     flex: 0 0 calc((6 / 12) * 100%);
     max-width: calc((6 / 12) * 100%);
   }
+
   .col-7-md {
     flex: 0 0 calc((7 / 12) * 100%);
     max-width: calc((7 / 12) * 100%);
   }
+
   .col-8-md {
     flex: 0 0 calc((8 / 12) * 100%);
     max-width: calc((8 / 12) * 100%);
   }
+
   .col-9-md {
     flex: 0 0 calc((9 / 12) * 100%);
     max-width: calc((9 / 12) * 100%);
   }
+
   .col-10-md {
     flex: 0 0 calc((10 / 12) * 100%);
     max-width: calc((10 / 12) * 100%);
   }
+
   .col-11-md {
     flex: 0 0 calc((11 / 12) * 100%);
     max-width: calc((11 / 12) * 100%);
   }
+
   .col-12-md {
     flex: 0 0 100%;
     max-width: 100%;
@@ -193,50 +228,62 @@ shared layout/component styles, and per-lesson demo styles.
   .row {
     max-width: 960px;
   }
+
   .col-1-lg {
     flex: 0 0 calc((1 / 12) * 100%);
     max-width: calc((1 / 12) * 100%);
   }
+
   .col-2-lg {
     flex: 0 0 calc((2 / 12) * 100%);
     max-width: calc((2 / 12) * 100%);
   }
+
   .col-3-lg {
     flex: 0 0 calc((3 / 12) * 100%);
     max-width: calc((3 / 12) * 100%);
   }
+
   .col-4-lg {
     flex: 0 0 calc((4 / 12) * 100%);
     max-width: calc((4 / 12) * 100%);
   }
+
   .col-5-lg {
     flex: 0 0 calc((5 / 12) * 100%);
     max-width: calc((5 / 12) * 100%);
   }
+
   .col-6-lg {
     flex: 0 0 calc((6 / 12) * 100%);
     max-width: calc((6 / 12) * 100%);
   }
+
   .col-7-lg {
     flex: 0 0 calc((7 / 12) * 100%);
     max-width: calc((7 / 12) * 100%);
   }
+
   .col-8-lg {
     flex: 0 0 calc((8 / 12) * 100%);
     max-width: calc((8 / 12) * 100%);
   }
+
   .col-9-lg {
     flex: 0 0 calc((9 / 12) * 100%);
     max-width: calc((9 / 12) * 100%);
   }
+
   .col-10-lg {
     flex: 0 0 calc((10 / 12) * 100%);
     max-width: calc((10 / 12) * 100%);
   }
+
   .col-11-lg {
     flex: 0 0 calc((11 / 12) * 100%);
     max-width: calc((11 / 12) * 100%);
   }
+
   .col-12-lg {
     flex: 0 0 100%;
     max-width: 100%;
@@ -248,50 +295,62 @@ shared layout/component styles, and per-lesson demo styles.
   .row {
     max-width: 1140px;
   }
+
   .col-1-xl {
     flex: 0 0 calc((1 / 12) * 100%);
     max-width: calc((1 / 12) * 100%);
   }
+
   .col-2-xl {
     flex: 0 0 calc((2 / 12) * 100%);
     max-width: calc((2 / 12) * 100%);
   }
+
   .col-3-xl {
     flex: 0 0 calc((3 / 12) * 100%);
     max-width: calc((3 / 12) * 100%);
   }
+
   .col-4-xl {
     flex: 0 0 calc((4 / 12) * 100%);
     max-width: calc((4 / 12) * 100%);
   }
+
   .col-5-xl {
     flex: 0 0 calc((5 / 12) * 100%);
     max-width: calc((5 / 12) * 100%);
   }
+
   .col-6-xl {
     flex: 0 0 calc((6 / 12) * 100%);
     max-width: calc((6 / 12) * 100%);
   }
+
   .col-7-xl {
     flex: 0 0 calc((7 / 12) * 100%);
     max-width: calc((7 / 12) * 100%);
   }
+
   .col-8-xl {
     flex: 0 0 calc((8 / 12) * 100%);
     max-width: calc((8 / 12) * 100%);
   }
+
   .col-9-xl {
     flex: 0 0 calc((9 / 12) * 100%);
     max-width: calc((9 / 12) * 100%);
   }
+
   .col-10-xl {
     flex: 0 0 calc((10 / 12) * 100%);
     max-width: calc((10 / 12) * 100%);
   }
+
   .col-11-xl {
     flex: 0 0 calc((11 / 12) * 100%);
     max-width: calc((11 / 12) * 100%);
   }
+
   .col-12-xl {
     flex: 0 0 100%;
     max-width: 100%;
@@ -303,50 +362,62 @@ shared layout/component styles, and per-lesson demo styles.
   .row {
     max-width: 1320px;
   }
+
   .col-1-2xl {
     flex: 0 0 calc((1 / 12) * 100%);
     max-width: calc((1 / 12) * 100%);
   }
+
   .col-2-2xl {
     flex: 0 0 calc((2 / 12) * 100%);
     max-width: calc((2 / 12) * 100%);
   }
+
   .col-3-2xl {
     flex: 0 0 calc((3 / 12) * 100%);
     max-width: calc((3 / 12) * 100%);
   }
+
   .col-4-2xl {
     flex: 0 0 calc((4 / 12) * 100%);
     max-width: calc((4 / 12) * 100%);
   }
+
   .col-5-2xl {
     flex: 0 0 calc((5 / 12) * 100%);
     max-width: calc((5 / 12) * 100%);
   }
+
   .col-6-2xl {
     flex: 0 0 calc((6 / 12) * 100%);
     max-width: calc((6 / 12) * 100%);
   }
+
   .col-7-2xl {
     flex: 0 0 calc((7 / 12) * 100%);
     max-width: calc((7 / 12) * 100%);
   }
+
   .col-8-2xl {
     flex: 0 0 calc((8 / 12) * 100%);
     max-width: calc((8 / 12) * 100%);
   }
+
   .col-9-2xl {
     flex: 0 0 calc((9 / 12) * 100%);
     max-width: calc((9 / 12) * 100%);
   }
+
   .col-10-2xl {
     flex: 0 0 calc((10 / 12) * 100%);
     max-width: calc((10 / 12) * 100%);
   }
+
   .col-11-2xl {
     flex: 0 0 calc((11 / 12) * 100%);
     max-width: calc((11 / 12) * 100%);
   }
+
   .col-12-2xl {
     flex: 0 0 100%;
     max-width: 100%;
@@ -414,7 +485,8 @@ body {
   font-size: 1rem;
   color: #34495e;
   opacity: 0.8;
-  display: none; /* Hidden on small screens */
+  display: none;
+  /* Hidden on small screens */
 }
 
 /* --- Dropdown --- */
@@ -514,35 +586,45 @@ h1.main-title {
   color: #e06c75;
   font-weight: bold;
 }
+
 .property {
   color: #98c379;
 }
+
 .value {
   color: #d19a66;
 }
+
 .comment {
   color: #5c6370;
   font-style: italic;
 }
+
 .tag {
   color: #e06c75;
 }
+
 .attribute {
   color: #d19a66;
 }
+
 .string {
   color: #98c379;
 }
+
 .function {
   color: #61afef;
 }
+
 .variable {
   color: #c678dd;
 }
+
 .keyframes {
   color: #c678dd;
   font-weight: bold;
 }
+
 .media-keyword {
   color: #c678dd;
   font-weight: bold;
@@ -621,6 +703,7 @@ h1.main-title {
 .pros {
   color: #4caf50;
 }
+
 .cons {
   color: #f44336;
 }
@@ -759,7 +842,8 @@ h1.main-title {
   background-color: purple;
   color: white;
   text-align: center;
-  line-height: 100px; /* Vertically centers text */
+  line-height: 100px;
+  /* Vertically centers text */
   border-radius: 10px;
 }
 
@@ -845,11 +929,13 @@ p.element-selector-demo {
 
 /* Pseudo-element Selector Demo */
 .pseudo-demo::before {
-  content: "\1F449 "; /* pointing right */
+  content: "\1F449 ";
+  /* pointing right */
 }
 
 .pseudo-demo::after {
-  content: " \1F448"; /* pointing left */
+  content: " \1F448";
+  /* pointing left */
 }
 
 /* ========================================
@@ -867,10 +953,12 @@ p.element-selector-demo {
 .pad-none {
   padding: 0;
 }
+
 .pad-20 {
   padding: 20px;
   background-color: #c8e6c9;
 }
+
 .pad-mixed {
   padding: 10px 40px;
   background-color: #b9f6ca;
@@ -880,10 +968,12 @@ p.element-selector-demo {
 .marg-none {
   margin: 0;
 }
+
 .marg-20 {
   margin: 20px;
   background-color: #ffccbc;
 }
+
 .marg-auto {
   margin: 0 auto;
   display: block;
@@ -895,9 +985,11 @@ p.element-selector-demo {
 .bord-solid {
   border: 5px solid red;
 }
+
 .bord-dotted {
   border: 5px dotted blue;
 }
+
 .bord-mixed {
   border-top: 5px solid red;
   border-bottom: 5px dashed green;
@@ -909,11 +1001,13 @@ p.element-selector-demo {
   padding: 10px;
   border: 2px solid #333;
 }
+
 .rad-large {
   border-radius: 20px;
   padding: 10px;
   border: 2px solid #333;
 }
+
 .rad-circle {
   width: 100px;
   height: 100px;
@@ -939,6 +1033,7 @@ p.element-selector-demo {
 .content-box {
   box-sizing: content-box;
 }
+
 .border-box {
   box-sizing: border-box;
 }
@@ -958,9 +1053,11 @@ p.demo {
 .font-serif {
   font-family: Georgia, "Times New Roman", serif;
 }
+
 .font-sans {
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .font-mono {
   font-family: "Courier New", Courier, monospace;
 }
@@ -969,12 +1066,15 @@ p.demo {
 .size-small {
   font-size: 12px;
 }
+
 .size-medium {
   font-size: 16px;
 }
+
 .size-large {
   font-size: 24px;
 }
+
 .size-xlarge {
   font-size: 32px;
 }
@@ -983,12 +1083,15 @@ p.demo {
 .weight-light {
   font-weight: 300;
 }
+
 .weight-normal {
   font-weight: 400;
 }
+
 .weight-bold {
   font-weight: 700;
 }
+
 .weight-bolder {
   font-weight: 900;
 }
@@ -997,6 +1100,7 @@ p.demo {
 .style-italic {
   font-style: italic;
 }
+
 .style-oblique {
   font-style: oblique;
 }
@@ -1005,9 +1109,11 @@ p.demo {
 .dec-underline {
   text-decoration: underline;
 }
+
 .dec-line-through {
   text-decoration: line-through;
 }
+
 .dec-none {
   text-decoration: none;
   border-bottom: none;
@@ -1017,9 +1123,11 @@ p.demo {
 .trans-upper {
   text-transform: uppercase;
 }
+
 .trans-lower {
   text-transform: lowercase;
 }
+
 .trans-cap {
   text-transform: capitalize;
 }
@@ -1028,9 +1136,11 @@ p.demo {
 .align-center {
   text-align: center;
 }
+
 .align-right {
   text-align: right;
 }
+
 .align-justify {
   text-align: justify;
 }
@@ -1040,6 +1150,7 @@ p.demo {
   line-height: 1;
   background-color: #ffebee;
 }
+
 .lh-large {
   line-height: 2;
   background-color: #e8f5e9;
@@ -1049,6 +1160,7 @@ p.demo {
 .spacing-wide {
   letter-spacing: 5px;
 }
+
 .spacing-neg {
   letter-spacing: -1px;
 }
@@ -1073,9 +1185,11 @@ p.demo {
 .named-red {
   background-color: red;
 }
+
 .named-blue {
   background-color: blue;
 }
+
 .named-green {
   background-color: green;
 }
@@ -1084,9 +1198,11 @@ p.demo {
 .hex-tomato {
   background-color: #ff5733;
 }
+
 .hex-green {
   background-color: #33ff57;
 }
+
 .hex-blue {
   background-color: #3357ff;
 }
@@ -1095,9 +1211,11 @@ p.demo {
 .rgb-coral {
   background-color: rgb(255, 99, 71);
 }
+
 .rgb-sea {
   background-color: rgb(60, 179, 113);
 }
+
 .rgb-corn {
   background-color: rgb(100, 149, 237);
 }
@@ -1112,9 +1230,11 @@ p.demo {
 .rgba-100 {
   background-color: rgba(255, 0, 0, 1);
 }
+
 .rgba-60 {
   background-color: rgba(255, 0, 0, 0.6);
 }
+
 .rgba-30 {
   background-color: rgba(255, 0, 0, 0.3);
 }
@@ -1123,9 +1243,11 @@ p.demo {
 .hsl-red {
   background-color: hsl(0, 100%, 50%);
 }
+
 .hsl-green {
   background-color: hsl(120, 100%, 50%);
 }
+
 .hsl-blue {
   background-color: hsl(240, 100%, 50%);
 }
@@ -1219,6 +1341,7 @@ p.demo {
 .bg-red {
   background-color: red;
 }
+
 .bg-blue {
   background-color: blue;
 }
@@ -1227,6 +1350,7 @@ p.demo {
 .grad-linear {
   background-image: linear-gradient(to right, red, yellow);
 }
+
 .grad-linear-deg {
   background-image: linear-gradient(45deg, blue, purple);
 }
@@ -1248,6 +1372,40 @@ p.demo {
   background-size: contain;
   background-repeat: no-repeat;
   background-color: #333;
+}
+
+.demo-box.obj-fit-demo {
+  flex-direction: column;
+  height: auto;
+  gap: 1rem;
+}
+
+.img-container {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.obj-fit-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.obj-fit-contain {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.obj-fit-text {
+  z-index: 100;
 }
 
 /* Background Position */
@@ -1418,13 +1576,15 @@ p.demo {
 }
 
 .ud-em-box {
-  font-size: 1.5em; /* 1.5 × 16px = 24px */
+  font-size: 1.5em;
+  /* 1.5 × 16px = 24px */
   background-color: #b39ddb;
   padding: 8px;
 }
 
 .ud-em-child {
-  font-size: 1.5em; /* 1.5 × 24px = 36px — compounds! */
+  font-size: 1.5em;
+  /* 1.5 × 24px = 36px — compounds! */
   background-color: #9575cd;
   padding: 6px;
   color: white;
@@ -1432,7 +1592,8 @@ p.demo {
 
 /* rem demo — always relative to the root <html> font-size (16px default) */
 .ud-rem-box {
-  font-size: 1.5rem; /* always 24px regardless of nesting depth */
+  font-size: 1.5rem;
+  /* always 24px regardless of nesting depth */
   background-color: #c8e6c9;
   padding: 10px;
 }
@@ -1444,7 +1605,8 @@ p.demo {
 }
 
 .ud-pct-bar {
-  width: 60%; /* 60% of parent container */
+  width: 60%;
+  /* 60% of parent container */
   background-color: #29b6f6;
   color: white;
   padding: 10px;
@@ -1454,7 +1616,8 @@ p.demo {
 
 /* vw demo — relative to 1% of the viewport width */
 .ud-vw-bar {
-  width: 50vw; /* 50% of the browser window's width */
+  width: 50vw;
+  /* 50% of the browser window's width */
   background-color: #ff7043;
   color: white;
   padding: 10px;
@@ -1464,7 +1627,8 @@ p.demo {
 
 /* vh demo — relative to 1% of the viewport height */
 .ud-vh-box {
-  height: 30vh; /* 30% of the browser window's height */
+  height: 30vh;
+  /* 30% of the browser window's height */
   background-color: #26a69a;
   color: white;
   display: flex;
@@ -1545,6 +1709,7 @@ p.demo {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(200px);
   }
@@ -1559,6 +1724,7 @@ p.demo {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -1574,6 +1740,7 @@ p.demo {
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-30px);
   }
@@ -1837,6 +2004,7 @@ p.demo {
 .dir-row {
   flex-direction: row;
 }
+
 .dir-column {
   flex-direction: column;
 }
@@ -1845,15 +2013,19 @@ p.demo {
 .j-start {
   justify-content: flex-start;
 }
+
 .j-center {
   justify-content: center;
 }
+
 .j-end {
   justify-content: flex-end;
 }
+
 .j-between {
   justify-content: space-between;
 }
+
 .j-around {
   justify-content: space-around;
 }
@@ -1862,12 +2034,15 @@ p.demo {
 .a-start {
   align-items: flex-start;
 }
+
 .a-center {
   align-items: center;
 }
+
 .a-end {
   align-items: flex-end;
 }
+
 .a-stretch {
   align-items: stretch;
   min-height: 120px;
@@ -1948,12 +2123,15 @@ p.demo {
 .demo-h-40 {
   height: 40px;
 }
+
 .demo-h-60 {
   height: 60px;
 }
+
 .demo-h-80 {
   height: 80px;
 }
+
 .demo-h-150 {
   height: 150px;
 }
@@ -1995,6 +2173,7 @@ p.demo {
 .cols-3 {
   grid-template-columns: 100px 100px 100px;
 }
+
 .cols-fr {
   grid-template-columns: 1fr 2fr 1fr;
 }
@@ -2045,22 +2224,27 @@ p.demo {
   grid-area: header;
   background-color: #1a237e;
 }
+
 .area-nav {
   grid-area: nav;
   background-color: #283593;
 }
+
 .area-main {
   grid-area: main;
   background-color: #3949ab;
 }
+
 .area-widget1 {
   grid-area: widget1;
   background-color: #5c6bc0;
 }
+
 .area-widget2 {
   grid-area: widget2;
   background-color: #7986cb;
 }
+
 .area-footer {
   grid-area: footer;
   background-color: #303f9f;
