@@ -98,6 +98,7 @@
         display: block;
       }
     </style>
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Sticky Header -->
@@ -217,59 +218,22 @@
         your HTML <code class="bg-gray-100 px-1 rounded">&lt;head&gt;</code>:
       </p>
 
-      <div
-        class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto mb-4"
-      >
-        <span class="text-gray-500"
-          >&lt;!-- Paste inside &lt;head&gt; --&gt;</span
-        ><br />
-        <span class="text-red-400">&lt;script</span>
-        <span class="text-yellow-300"> src</span
-        ><span class="text-gray-100">=</span
-        ><span class="text-green-400">"https://cdn.tailwindcss.com"</span
-        ><span class="text-red-400">&gt;&lt;/script&gt;</span>
-      </div>
+      <pre><code class="language-html">&lt;!-- Paste inside &lt;head&gt; --&gt;
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</code></pre>
 
       <p class="mb-4">Your full HTML boilerplate looks like this:</p>
 
-      <div
-        class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto mb-4 leading-relaxed"
-      >
-        <span class="text-gray-500">&lt;!DOCTYPE html&gt;</span><br />
-        <span class="text-red-400">&lt;html</span>
-        <span class="text-yellow-300">lang</span
-        ><span class="text-gray-100">=</span
-        ><span class="text-green-400">"en"</span
-        ><span class="text-red-400">&gt;</span><br />
-        &nbsp;&nbsp;<span class="text-red-400">&lt;head&gt;</span><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">&lt;meta</span>
-        <span class="text-yellow-300">charset</span
-        ><span class="text-gray-100">=</span
-        ><span class="text-green-400">"UTF-8"</span>
-        <span class="text-red-400">/&gt;</span><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">&lt;meta</span>
-        <span class="text-yellow-300">name</span
-        ><span class="text-gray-100">=</span
-        ><span class="text-green-400">"viewport"</span>
-        <span class="text-yellow-300">content</span
-        ><span class="text-gray-100">=</span
-        ><span class="text-green-400"
-          >"width=device-width, initial-scale=1.0"</span
-        >
-        <span class="text-red-400">/&gt;</span><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">&lt;script</span>
-        <span class="text-yellow-300">src</span
-        ><span class="text-gray-100">=</span
-        ><span class="text-green-400">"https://cdn.tailwindcss.com"</span
-        ><span class="text-red-400">&gt;&lt;/script&gt;</span><br />
-        &nbsp;&nbsp;<span class="text-red-400">&lt;/head&gt;</span><br />
-        &nbsp;&nbsp;<span class="text-red-400">&lt;body&gt;</span><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500"
-          >&lt;!-- Your content here --&gt;</span
-        ><br />
-        &nbsp;&nbsp;<span class="text-red-400">&lt;/body&gt;</span><br />
-        <span class="text-red-400">&lt;/html&gt;</span>
-      </div>
+      <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Your content here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 
       <div
         class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg mb-6"
@@ -303,12 +267,8 @@
       <ol class="list-decimal list-inside space-y-4 mb-6">
         <li>
           <strong>Install Tailwind via npm</strong>
-          <div
-            class="bg-gray-800 text-green-400 rounded-lg p-3 text-sm font-mono mt-2 overflow-x-auto"
-          >
-            npm install -D tailwindcss<br />
-            npx tailwindcss init
-          </div>
+          <pre><code class="language-html">npm install -D tailwindcss
+npx tailwindcss init</code></pre>
         </li>
         <li>
           <strong
@@ -317,39 +277,23 @@
               >tailwind.config.js</code
             ></strong
           >
-          <div
-            class="bg-gray-800 text-gray-100 rounded-lg p-3 text-sm font-mono mt-2 overflow-x-auto"
-          >
-            <span class="text-gray-500"
-              >/** @type {import('tailwindcss').Config} */</span
-            ><br />
-            module.exports = {<br />
-            &nbsp;&nbsp;content: [<span class="text-green-400"
-              >"./**/*.html"</span
-            >],<br />
-            &nbsp;&nbsp;theme: { extend: {} },<br />
-            &nbsp;&nbsp;plugins: [],<br />
-            }
-          </div>
+          <pre><code class="language-javascript">/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./**/*.html"],
+  theme: { extend: {} },
+  plugins: [],
+}</code></pre>
         </li>
         <li>
           <strong>Create your input CSS file</strong>
-          <div
-            class="bg-gray-800 text-gray-100 rounded-lg p-3 text-sm font-mono mt-2 overflow-x-auto"
-          >
-            <span class="text-gray-500">/* css/input.css */</span><br />
-            <span class="text-red-400">@tailwind</span> base;<br />
-            <span class="text-red-400">@tailwind</span> components;<br />
-            <span class="text-red-400">@tailwind</span> utilities;
-          </div>
+          <pre><code class="language-css">/* css/input.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;</code></pre>
         </li>
         <li>
           <strong>Build and watch for changes</strong>
-          <div
-            class="bg-gray-800 text-green-400 rounded-lg p-3 text-sm font-mono mt-2 overflow-x-auto"
-          >
-            npx tailwindcss -i ./css/input.css -o ./css/output.css --watch
-          </div>
+          <pre><code class="language-html">npx tailwindcss -i ./css/input.css -o ./css/output.css --watch</code></pre>
         </li>
       </ol>
 
@@ -427,5 +371,6 @@
         >
       </div>
     </div>
+    <script src="../prism.js"></script>
   </body>
 </html>
