@@ -6,6 +6,7 @@
     <title>Day 2 - Backgrounds</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
     <!-- Sticky Header -->
     <header class="sticky-header">
@@ -67,7 +68,8 @@
 
           <h3>Code:</h3>
           <div class="code-block">
-            /* CSS */ <span class="selector">.bg-red</span> {
+            /* CSS */
+            <span class="selector">.bg-red</span> {
             <span class="property">background-color</span>:
             <span class="value">red</span>; }
             <span class="selector">.bg-blue</span> {
@@ -150,6 +152,74 @@
           <div class="example-output">
             <div class="demo-box bg-img-cover">"cover"</div>
             <div class="demo-box bg-img-contain">"contain"</div>
+          </div>
+
+          <hr />
+
+          <!-- 
+      SECTION 3.5: OBJECT FIT (FOR IMAGES/VIDEO)
+      Unlike background images, real <img> tags stretch by default.
+      object-fit applies cover/contain logic to actual media elements.
+    -->
+          <h2 class="section-title">3.5. Object Fit (For Img Tags)</h2>
+          <p>
+            While <code>background-size</code> works on backgrounds,
+            <code>object-fit</code> controls how <code>&lt;img&gt;</code> tags
+            scale inside their bounds.
+          </p>
+          <p>
+            Note: The <code>position</code> property
+            (static/relative/absolute/fixed/sticky) controls element placement.
+            Covered in detail later.
+          </p>
+
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */
+            <span class="selector">.img-container</span> {
+            <span class="property">position</span>:
+            <span class="value">relative</span>; }
+            <span class="selector">.obj-fit-cover</span> {
+            <span class="property">width</span>:
+            <span class="value">100%</span>;
+            <span class="property">height</span>:
+            <span class="value">100%</span>;
+            <span class="property">object-fit</span>:
+            <span class="value">cover</span>;
+            <span class="property">position</span>:
+            <span class="value">absolute</span>; }
+
+            <span class="selector">.obj-fit-contain</span> {
+            <span class="property">width</span>:
+            <span class="value">100%</span>;
+            <span class="property">height</span>:
+            <span class="value">100%</span>;
+            <span class="property">object-fit</span>:
+            <span class="value">contain</span>;
+            <span class="property">position</span>:
+            <span class="value">absolute</span>; }
+          </div>
+
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="demo-box obj-fit-demo">
+              <div class="img-container">
+                <p class="obj-fit-text">"cover"</p>
+                <img
+                  src="./img/bg-beach.jpg"
+                  class="obj-fit-cover"
+                  alt="Beach"
+                />
+              </div>
+              <div class="img-container">
+                <p class="obj-fit-text">"contain"</p>
+                <img
+                  src="./img/bg-beach.jpg"
+                  class="obj-fit-contain"
+                  alt="Beach"
+                />
+              </div>
+            </div>
           </div>
 
           <hr />
