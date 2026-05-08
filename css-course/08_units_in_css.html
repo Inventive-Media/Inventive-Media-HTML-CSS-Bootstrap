@@ -16,22 +16,22 @@
       <div class="dropdown">
         <button class="dropbtn">Jump to Topic ▼</button>
         <div class="dropdown-content">
-<a href="01_what_is_css.html">01. What is CSS?</a>
-<a href="02_types_of_css_styling.html">02. Types of CSS Styling</a>
-<a href="03_typography.html">03. Typography</a>
-<a href="04_css_selectors.html">04. CSS Selectors</a>
-<a href="05_box_model.html">05. Box Model</a>
-<a href="06_css_functions.html">06. CSS Functions</a>
-<a href="07_backgrounds.html">07. Backgrounds</a>
-<a href="08_units_in_css.html">08. Units in CSS</a>
-<a href="09_shadows.html">09. Shadows</a>
-<a href="10_animations.html">10. Animations</a>
-<a href="11_positioning.html">11. Positioning</a>
-<a href="12_flexbox.html">12. Flexbox</a>
-<a href="13_css_grid.html">13. CSS Grid</a>
-<a href="14_responsive_design.html">14. Responsive Design</a>
-<a href="15_css_frameworks.html">15. CSS Frameworks</a>
-</div>
+          <a href="01_what_is_css.html">01. What is CSS?</a>
+          <a href="02_types_of_css_styling.html">02. Types of CSS Styling</a>
+          <a href="03_typography.html">03. Typography</a>
+          <a href="04_css_selectors.html">04. CSS Selectors</a>
+          <a href="05_box_model.html">05. Box Model</a>
+          <a href="06_css_functions.html">06. CSS Functions</a>
+          <a href="07_backgrounds.html">07. Backgrounds</a>
+          <a href="08_units_in_css.html">08. Units in CSS</a>
+          <a href="09_shadows.html">09. Shadows</a>
+          <a href="10_animations.html">10. Animations</a>
+          <a href="11_positioning.html">11. Positioning</a>
+          <a href="12_flexbox.html">12. Flexbox</a>
+          <a href="13_css_grid.html">13. CSS Grid</a>
+          <a href="14_responsive_design.html">14. Responsive Design</a>
+          <a href="15_css_frameworks.html">15. CSS Frameworks</a>
+        </div>
       </div>
     </header>
     <script>
@@ -105,7 +105,6 @@
 
           <!-- Units Demo Container: four stacked section demos, one per unit type -->
           <div class="units-demo-container">
-
             <!--
               Fixed Units — px
               px is an absolute unit. The size is fixed in physical screen pixels
@@ -115,8 +114,10 @@
             <section>
               <h3>Fixed Units — px</h3>
               <p>
-                This box is <code>width: 200px; height: 60px; font-size: 20px</code>.
-                Its size never changes no matter what the parent or root font-size is.
+                This box is
+                <code>width: 200px; height: 60px; font-size: 20px</code>. Its
+                size never changes no matter what the parent or root font-size
+                is.
               </p>
               <div class="ud-px-box">I am 200 × 60 px. Always.</div>
             </section>
@@ -139,10 +140,14 @@
                 Parent (16px)
                 <div class="ud-em-box">
                   1.5em child → 24px
-                  <div class="ud-em-child">1.5em grandchild → 36px (compounds!)</div>
+                  <div class="ud-em-child">
+                    1.5em grandchild → 36px (compounds!)
+                  </div>
                 </div>
               </div>
-              <div class="ud-rem-box">1.5rem → always 24px, no matter the nesting depth.</div>
+              <div class="ud-rem-box">
+                1.5rem → always 24px, no matter the nesting depth.
+              </div>
             </section>
 
             <!--
@@ -170,13 +175,15 @@
             <section>
               <h3>Viewport Units — vw &amp; vh</h3>
               <p>
-                The orange bar is <code>width: 50vw</code> — half the browser window's
-                width. The teal box is <code>height: 30vh</code> — 30% of the window's height.
-                Resize the browser to see them respond.
+                The orange bar is <code>width: 50vw</code> — half the browser
+                window's width. The teal box is <code>height: 30vh</code> — 30%
+                of the window's height. Resize the browser to see them respond.
               </p>
               <div class="ud-vw-bar">50vw wide — half your browser window</div>
               <br />
-              <div class="ud-vh-box">30vh tall — 30% of your browser window height</div>
+              <div class="ud-vh-box">
+                30vh tall — 30% of your browser window height
+              </div>
             </section>
 
             <!--
@@ -186,8 +193,9 @@
             <section>
               <h3>rem Reference — Browser Default Font Sizes</h3>
               <p>
-                The standard browser default font size is 16px, which equals 1rem. 
-                All <code>rem</code> values are calculated relative to that base size.
+                The standard browser default font size is 16px, which equals
+                1rem. All <code>rem</code> values are calculated relative to
+                that base size.
               </p>
               <table class="comparison-table">
                 <thead>
@@ -201,41 +209,64 @@
                     <td>Very Small</td>
                     <td>
                       10px
-                      <div style="font-size: 0.625rem; margin-top: 5px; color: #555;">Live sample text (0.625rem)</div>
+                      <div
+                        style="
+                          font-size: 0.625rem;
+                          margin-top: 5px;
+                          color: #555;
+                        "
+                      >
+                        Live sample text (0.625rem)
+                      </div>
                     </td>
                   </tr>
                   <tr>
                     <td>Small</td>
                     <td>
                       12px
-                      <div style="font-size: 0.75rem; margin-top: 5px; color: #555;">Live sample text (0.75rem)</div>
+                      <div
+                        style="font-size: 0.75rem; margin-top: 5px; color: #555"
+                      >
+                        Live sample text (0.75rem)
+                      </div>
                     </td>
                   </tr>
                   <tr>
                     <td>Medium</td>
                     <td>
                       16px
-                      <div style="font-size: 1rem; margin-top: 5px; color: #555;">Live sample text (1rem)</div>
+                      <div
+                        style="font-size: 1rem; margin-top: 5px; color: #555"
+                      >
+                        Live sample text (1rem)
+                      </div>
                     </td>
                   </tr>
                   <tr>
                     <td>Large</td>
                     <td>
                       20px
-                      <div style="font-size: 1.25rem; margin-top: 5px; color: #555;">Live sample text (1.25rem)</div>
+                      <div
+                        style="font-size: 1.25rem; margin-top: 5px; color: #555"
+                      >
+                        Live sample text (1.25rem)
+                      </div>
                     </td>
                   </tr>
                   <tr>
                     <td>Very Large</td>
                     <td>
                       24px
-                      <div style="font-size: 1.5rem; margin-top: 5px; color: #555;">Live sample text (1.5rem)</div>
+                      <div
+                        style="font-size: 1.5rem; margin-top: 5px; color: #555"
+                      >
+                        Live sample text (1.5rem)
+                      </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </section>
-
           </div>
 
           <!-- Navigation Section -->

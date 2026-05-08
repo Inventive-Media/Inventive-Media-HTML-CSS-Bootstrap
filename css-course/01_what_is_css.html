@@ -16,22 +16,22 @@
       <div class="dropdown">
         <button class="dropbtn">Jump to Topic ▼</button>
         <div class="dropdown-content">
-<a href="01_what_is_css.html">01. What is CSS?</a>
-<a href="02_types_of_css_styling.html">02. Types of CSS Styling</a>
-<a href="03_typography.html">03. Typography</a>
-<a href="04_css_selectors.html">04. CSS Selectors</a>
-<a href="05_box_model.html">05. Box Model</a>
-<a href="06_css_functions.html">06. CSS Functions</a>
-<a href="07_backgrounds.html">07. Backgrounds</a>
-<a href="08_units_in_css.html">08. Units in CSS</a>
-<a href="09_shadows.html">09. Shadows</a>
-<a href="10_animations.html">10. Animations</a>
-<a href="11_positioning.html">11. Positioning</a>
-<a href="12_flexbox.html">12. Flexbox</a>
-<a href="13_css_grid.html">13. CSS Grid</a>
-<a href="14_responsive_design.html">14. Responsive Design</a>
-<a href="15_css_frameworks.html">15. CSS Frameworks</a>
-</div>
+          <a href="01_what_is_css.html">01. What is CSS?</a>
+          <a href="02_types_of_css_styling.html">02. Types of CSS Styling</a>
+          <a href="03_typography.html">03. Typography</a>
+          <a href="04_css_selectors.html">04. CSS Selectors</a>
+          <a href="05_box_model.html">05. Box Model</a>
+          <a href="06_css_functions.html">06. CSS Functions</a>
+          <a href="07_backgrounds.html">07. Backgrounds</a>
+          <a href="08_units_in_css.html">08. Units in CSS</a>
+          <a href="09_shadows.html">09. Shadows</a>
+          <a href="10_animations.html">10. Animations</a>
+          <a href="11_positioning.html">11. Positioning</a>
+          <a href="12_flexbox.html">12. Flexbox</a>
+          <a href="13_css_grid.html">13. CSS Grid</a>
+          <a href="14_responsive_design.html">14. Responsive Design</a>
+          <a href="15_css_frameworks.html">15. CSS Frameworks</a>
+        </div>
       </div>
     </header>
     <script>
@@ -107,135 +107,143 @@
 
           <hr />
 
-    <!-- 
+          <!-- 
       SECTION 1: THE CSS SYNTAX
       Every CSS rule has two parts:
       1. Selector — which HTML element(s) to style
       2. Declaration Block — curly braces {} containing property: value pairs
       Each declaration ends with a semicolon (;).
     -->
-    <h2 class="section-title">1. The CSS Syntax</h2>
-    <p>
-      A CSS rule consists of a <strong>Selector</strong> and a
-      <strong>Declaration Block</strong>.
-    </p>
-    <ul>
-      <li>
-        <strong>Selector:</strong> Points to the HTML element you want to style
-        (e.g., <code>h1</code>, <code>.class</code>).
-      </li>
-      <li>
-        <strong>Property:</strong> The style attribute you want to change (e.g.,
-        <code>color</code>, <code>font-size</code>).
-      </li>
-      <li>
-        <strong>Value:</strong> The setting for the property (e.g.,
-        <code>blue</code>, <code>16px</code>).
-      </li>
-    </ul>
+          <h2 class="section-title">1. The CSS Syntax</h2>
+          <p>
+            A CSS rule consists of a <strong>Selector</strong> and a
+            <strong>Declaration Block</strong>.
+          </p>
+          <ul>
+            <li>
+              <strong>Selector:</strong> Points to the HTML element you want to
+              style (e.g., <code>h1</code>, <code>.class</code>).
+            </li>
+            <li>
+              <strong>Property:</strong> The style attribute you want to change
+              (e.g., <code>color</code>, <code>font-size</code>).
+            </li>
+            <li>
+              <strong>Value:</strong> The setting for the property (e.g.,
+              <code>blue</code>, <code>16px</code>).
+            </li>
+          </ul>
 
-    <div class="code-block">
-      <span class="selector">selector</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">property</span>:
-      <span class="value">value</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">another-property</span>:
-      <span class="value">value</span>;<br />
-      }
-    </div>
+          <div class="code-block">
+            <span class="selector">selector</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">property</span>:
+            <span class="value">value</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >another-property</span
+            >: <span class="value">value</span>;<br />
+            }
+          </div>
 
-    <!-- 
+          <!-- 
       SECTION 2: BASIC EXAMPLE
       A simple example showing how a class selector styles a paragraph.
       The class .styled-text is defined in CSS and applied in HTML with class="styled-text".
     -->
-    <h2 class="section-title">2. Basic Example</h2>
-    <p>
-      Let's style a paragraph clearly using a class selector
-      <code>.styled-text</code>.
-    </p>
+          <h2 class="section-title">2. Basic Example</h2>
+          <p>
+            Let's style a paragraph clearly using a class selector
+            <code>.styled-text</code>.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.styled-text</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">blue</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-      <span class="value">20px</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-weight</span>:
-      <span class="value">bold</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;p class="styled-text"&gt;This text is styled with CSS!&lt;/p&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.styled-text</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">blue</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
+            <span class="value">20px</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-weight</span>:
+            <span class="value">bold</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;p class="styled-text"&gt;This text is styled with CSS!&lt;/p&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <p class="styled-text">This text is styled with CSS!</p>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <p class="styled-text">This text is styled with CSS!</p>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 3: MULTIPLE PROPERTIES
       You can add as many property: value pairs as you want inside one rule.
       Each property controls a different aspect of the element's appearance.
     -->
-    <h2 class="section-title">3. Multiple Properties</h2>
-    <p>You can apply as many properties as you need to a single element.</p>
+          <h2 class="section-title">3. Multiple Properties</h2>
+          <p>
+            You can apply as many properties as you need to a single element.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      /* CSS */<br />
-      <span class="selector">.multi-property-box</span> {<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-      <span class="value">200px</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">height</span>:
-      <span class="value">100px</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-color</span>:
-      <span class="value">purple</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-      <span class="value">white</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-align</span>:
-      <span class="value">center</span>;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-radius</span>:
-      <span class="value">10px</span>;<br />
-      }<br /><br />
-      /* HTML */<br />
-      &lt;div class="multi-property-box"&gt;I am a Box!&lt;/div&gt;
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            /* CSS */<br />
+            <span class="selector">.multi-property-box</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
+            <span class="value">200px</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">height</span>:
+            <span class="value">100px</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
+              >background-color</span
+            >: <span class="value">purple</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
+            <span class="value">white</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-align</span>:
+            <span class="value">center</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-radius</span>:
+            <span class="value">10px</span>;<br />
+            }<br /><br />
+            /* HTML */<br />
+            &lt;div class="multi-property-box"&gt;I am a Box!&lt;/div&gt;
+          </div>
 
-    <h3>Output:</h3>
-    <div class="example-output">
-      <div class="multi-property-box">I am a Box!</div>
-    </div>
+          <h3>Output:</h3>
+          <div class="example-output">
+            <div class="multi-property-box">I am a Box!</div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <!-- 
+          <!-- 
       SECTION 4: CSS COMMENTS
       Comments are notes in your code that the browser ignores.
       Use /* ... */ to write comments. They help explain your code
       to others (or your future self!).
     -->
-    <h2 class="section-title">4. CSS Comments</h2>
-    <p>
-      Comments are used to explain the code, and may help when you edit the
-      source code at a later date. Comments are ignored by browsers.
-    </p>
+          <h2 class="section-title">4. CSS Comments</h2>
+          <p>
+            Comments are used to explain the code, and may help when you edit
+            the source code at a later date. Comments are ignored by browsers.
+          </p>
 
-    <h3>Code:</h3>
-    <div class="code-block">
-      <span class="comment">/* This is a single-line comment */</span><br />
-      <span class="selector">p</span> { <span class="property">color</span>:
-      <span class="value">red</span>; }<br /><br />
-      <span class="comment">/* This is a multi-line comment */</span>
-    </div>
+          <h3>Code:</h3>
+          <div class="code-block">
+            <span class="comment">/* This is a single-line comment */</span
+            ><br />
+            <span class="selector">p</span> {
+            <span class="property">color</span>: <span class="value">red</span>;
+            }<br /><br />
+            <span class="comment">/* This is a multi-line comment */</span>
+          </div>
 
-    <!-- Navigation Section -->
-    <div class="nav-links">
+          <!-- Navigation Section -->
+          <div class="nav-links">
             <a href="./index.html">&lt; Back to Day 2 Index</a> |
-            <a href="./02_types_of_css_styling.html">Next: Types of CSS Styling &gt;</a>
+            <a href="./02_types_of_css_styling.html"
+              >Next: Types of CSS Styling &gt;</a
+            >
           </div>
         </div>
       </div>

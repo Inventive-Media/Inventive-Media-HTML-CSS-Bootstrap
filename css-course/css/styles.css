@@ -764,7 +764,7 @@ h1.main-title {
 }
 
 /* ========================================
-   9. LESSON 02: CSS SELECTORS
+   9. LESSON 04: CSS SELECTORS
    ======================================== */
 
 /* Element Selector Demo */
@@ -810,12 +810,12 @@ p.element-selector-demo {
 }
 
 /* Attribute Selector Demo */
-.lesson-02 input[type="text"] {
+.lesson-04 input[type="text"] {
   border: 2px solid red;
   padding: 5px;
 }
 
-.lesson-02 input[type="email"] {
+.lesson-04 input[type="email"] {
   border: 2px solid green;
   padding: 5px;
 }
@@ -853,10 +853,10 @@ p.element-selector-demo {
 }
 
 /* ========================================
-   10. LESSON 03: BOX MODEL
+   10. LESSON 05: BOX MODEL
    ======================================== */
 
-.lesson-03 .box {
+.lesson-05 .box {
   background-color: #e0e0e0;
   border: 1px solid #999;
   display: inline-block;
@@ -1476,11 +1476,11 @@ p.demo {
 }
 
 /* ========================================
-   16. LESSON 09: ANIMATIONS
+   16. LESSON 10: ANIMATIONS
    ======================================== */
 
 /* Override example-output for animation demos */
-.lesson-09 .example-output {
+.lesson-10 .example-output {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1490,7 +1490,7 @@ p.demo {
 }
 
 /* Animation demo box */
-.lesson-09 .box {
+.lesson-10 .box {
   width: 100px;
   height: 100px;
   background-color: #f093fb;
@@ -1635,11 +1635,11 @@ p.demo {
 }
 
 /* ========================================
-   17. LESSON 10: POSITIONING
+   17. LESSON 11: POSITIONING
    ======================================== */
 
 /* Positioning demo box */
-.lesson-10 .box {
+.lesson-11 .box {
   width: 100px;
   height: 100px;
   display: inline-flex;
@@ -1655,13 +1655,13 @@ p.demo {
 }
 
 /* Override example-output for positioning context */
-.lesson-10 .example-output {
+.lesson-11 .example-output {
   position: relative;
   min-height: 200px;
 }
 
 /* Extra bottom padding for scrolling demos */
-.lesson-10 {
+.lesson-11 {
   padding-bottom: 200px;
 }
 
@@ -1792,12 +1792,12 @@ p.demo {
 }
 
 /* ========================================
-   18. LESSON 11: FLEXBOX
+   18. LESSON 12: FLEXBOX
    ======================================== */
 
 /* Scoped h3 styling for flexbox and grid lessons */
-.lesson-11 h3,
-.lesson-12 h3 {
+.lesson-12 h3,
+.lesson-13 h3 {
   margin-top: 20px;
   margin-bottom: 5px;
   color: #555;
@@ -1959,7 +1959,7 @@ p.demo {
 }
 
 /* ========================================
-   19. LESSON 12: CSS GRID
+   19. LESSON 13: CSS GRID
    ======================================== */
 
 /* Grid Container */
@@ -2197,43 +2197,43 @@ p.demo {
 
 /* --- 04: Text Overflow --- */
 .demo.ov-clip {
-max-width: 300px;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: clip;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .demo.ov-ellipsis {
-max-width: 300px;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .demo.clamp-2 {
-max-width: 350px;
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 2;
-overflow: hidden;
+  max-width: 350px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .demo.clamp-4 {
-max-width: 350px;
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 4;
-overflow: hidden;
+  max-width: 350px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 .demo.wrap-normal {
-max-width: 250px;
-border: 1px solid #ccc;
-overflow-wrap: normal;
+  max-width: 250px;
+  border: 1px solid #ccc;
+  overflow-wrap: normal;
 }
 
 .demo.wrap-anywhere {
-max-width: 250px;
-border: 1px solid #ccc;
-overflow-wrap: anywhere;
+  max-width: 250px;
+  border: 1px solid #ccc;
+  overflow-wrap: anywhere;
 }
