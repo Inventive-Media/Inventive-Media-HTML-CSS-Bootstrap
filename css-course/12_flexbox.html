@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Flexbox</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -69,27 +70,18 @@
           <p>Controls the direction in which items are laid out.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="comment"
-              >/* Default: Lays out items in a row (Left to Right) */</span
-            ><br />
-            <span class="selector">.row</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-            <span class="value">flex</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-direction</span
-            >: <span class="value">row</span>;<br />
-            }<br /><br />
-            <span class="comment"
-              >/* Lays out items in a column (Top to Bottom) */</span
-            ><br />
-            <span class="selector">.column</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-            <span class="value">flex</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-direction</span
-            >: <span class="value">column</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+/* Default: Lays out items in a row (Left to Right) */
+.row {
+    display:  flex;
+    flex-direction: row;
+}
+
+/* Lays out items in a column (Top to Bottom) */
+.column {
+    display:  flex;
+    flex-direction: column;
+}</code></pre>
 
           <h3>Output (Row):</h3>
           <div class="example-output">
@@ -124,30 +116,23 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.j-start</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
-            >: <span class="value">flex-start</span>;<br />
-            }<br />
-            <span class="comment">/* Default */</span><br />
-            <span class="selector">.j-center</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
-            >: <span class="value">center</span>;<br />
-            }<br />
-            <span class="selector">.j-end</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
-            >: <span class="value">flex-end</span>;<br />
-            }<br />
-            <span class="selector">.j-between</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
-            >: <span class="value">space-between</span>;<br />
-            }<br />
-            <span class="selector">.j-around</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
-            >: <span class="value">space-around</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.j-start {
+    justify-content: flex-start;
+}
+/* Default */
+.j-center {
+    justify-content: center;
+}
+.j-end {
+    justify-content: flex-end;
+}
+.j-between {
+    justify-content: space-between;
+}
+.j-around {
+    justify-content: space-around;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -178,18 +163,13 @@
           <p>Aligns items vertically (if direction is row).</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.a-center</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
-            <span class="value">center</span>;<br />
-            }<br />
-            <span class="selector">.a-stretch</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
-            <span class="value">stretch</span>;<br />
-            }<br />
-            <span class="comment">/* Default: Stretch to fill height */</span>
-          </div>
+          <pre><code class="language-css">/* CSS */
+.a-center {
+    align-items:  center;
+}
+.a-stretch {
+    align-items:  stretch;
+} /* Default: Stretch to fill height */</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -223,17 +203,12 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.wrap-container</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-            <span class="value">flex</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">flex-wrap</span>:
-            <span class="value">wrap</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="value">300px</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.wrap-container {
+    display:  flex;
+    flex-wrap:  wrap;
+    width:  300px;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -258,19 +233,12 @@
           <p>Common pattern: Logo on the left, Links on the right.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.navbar</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-            <span class="value">flex</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span
-            >: <span class="value">space-between</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Push apart */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>:
-            <span class="value">center</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.navbar {
+    display:  flex;
+    justify-content: space-between; /* Push apart */
+    align-items:  center;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -292,5 +260,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

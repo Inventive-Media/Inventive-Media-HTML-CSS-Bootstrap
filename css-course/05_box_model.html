@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Box Model</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -72,22 +73,16 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.pad-none</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">padding</span>:
-            <span class="value">0</span>;<br />
-            }<br />
-            <span class="selector">.pad-20</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">padding</span>:
-            <span class="value">20px</span>;<br />
-            }<br />
-            <span class="selector">.pad-mixed</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">padding</span>:
-            <span class="value">10px 40px</span>;<br />
-            }<br />
-            <span class="comment">/* 10px top/bottom, 40px left/right */</span>
-          </div>
+          <pre><code class="language-css">/* CSS */
+.pad-none {
+    padding:  0;
+}
+.pad-20 {
+    padding:  20px;
+}
+.pad-mixed {
+    padding:  10px 40px;
+} /* 10px top/bottom, 40px left/right */</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -110,22 +105,15 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.marg-20</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">margin</span>:
-            <span class="value">20px</span>;<br />
-            }<br /><br />
-            <span class="selector">.marg-auto</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">margin</span>:
-            <span class="value">0 auto</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* Centers block elements horizontally */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="value">50%</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.marg-20 {
+    margin:  20px;
+}
+
+.marg-auto {
+    margin:  0 auto; /* Centers block elements horizontally */
+    width:  50%;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -147,23 +135,18 @@
           <p>A border goes around the padding and content.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.bord-solid</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-            <span class="value">5px solid red</span>;<br />
-            }<br />
-            <span class="selector">.bord-dotted</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-            <span class="value">5px dotted blue</span>;<br />
-            }<br /><br />
-            <span class="selector">.bord-mixed</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-top</span>:
-            <span class="value">5px solid red</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-bottom</span>:
-            <span class="value">5px dashed green</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.bord-solid {
+    border:  5px solid red;
+}
+.bord-dotted {
+    border:  5px dotted blue;
+}
+
+.bord-mixed {
+    border-top:  5px solid red;
+    border-bottom:  5px dashed green;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -183,22 +166,16 @@
           <p>Used to round the corners of an element.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.rad-small</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-radius</span>:
-            <span class="value">5px</span>;<br />
-            }<br />
-            <span class="selector">.rad-large</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-radius</span>:
-            <span class="value">20px</span>;<br />
-            }<br />
-            <span class="selector">.rad-circle</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-radius</span>:
-            <span class="value">50%</span>;<br />
-            }<br />
-            <span class="comment">/* Makes a square a circle */</span>
-          </div>
+          <pre><code class="language-css">/* CSS */
+.rad-small {
+    border-radius:  5px;
+}
+.rad-large {
+    border-radius:  20px;
+}
+.rad-circle {
+    border-radius:  50%;
+} /* Makes a square a circle */</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -223,41 +200,21 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.content-box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">box-sizing</span>:
-            <span class="value">content-box</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Default */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="value">200px</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">padding</span>:
-            <span class="value">20px</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-            <span class="value">10px solid blue</span>;<br />
-            }<br />
-            <span class="comment"
-              >/* Total Width = 200 + 40 (padding) + 20 (border) = 260px
-              */</span
-            ><br /><br />
-            <span class="selector">.border-box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">box-sizing</span>:
-            <span class="value">border-box</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* Recommended */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="value">200px</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">padding</span>:
-            <span class="value">20px</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-            <span class="value">10px solid blue</span>;<br />
-            }<br />
-            <span class="comment"
-              >/* Total Width = 200px (Content shrinks to fit) */</span
-            >
-          </div>
+          <pre><code class="language-css">/* CSS */
+.content-box {
+    box-sizing:  content-box;
+    /* Default */
+    width:  200px;
+    padding:  20px;
+    border:  10px solid blue;
+} /* Total Width = 200 + 40 (padding) + 20 (border) = 260px  */
+
+.border-box {
+    box-sizing:  border-box; /* Recommended */
+    width:  200px;
+    padding:  20px;
+    border:  10px solid blue;
+} /* Total Width = 200px (Content shrinks to fit) */</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -280,5 +237,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

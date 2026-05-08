@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Backgrounds</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
 
   <body>
@@ -67,15 +68,14 @@
           <p>Sets the background color of an element.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */
-            <span class="selector">.bg-red</span> {
-            <span class="property">background-color</span>:
-            <span class="value">red</span>; }
-            <span class="selector">.bg-blue</span> {
-            <span class="property">background-color</span>:
-            <span class="value">blue</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.bg-red {
+    background-color: red;
+}
+
+.bg-blue {
+    background-color: blue;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -95,18 +95,16 @@
           <p>Gradients allow smooth transitions between two or more colors.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ /* Linear Gradient: Goes in a straight line */
-            <span class="selector">.grad-linear</span> {
-            <span class="property">background-image</span>:
-            <span class="value">linear-gradient(to right, red, yellow)</span>; }
-            /* Radial Gradient: Starts from center circles out */
-            <span class="selector">.grad-radial</span> {
-            <span class="property">background-image</span>:
-            <span class="value"
-              >radial-gradient(circle, red, yellow, green)</span
-            >; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+/* Linear Gradient: Goes in a straight line */
+.grad-linear {
+    background-image: linear-gradient(to right, red, yellow);
+}
+
+/* Radial Gradient: Starts from center circles out */
+.grad-radial {
+    background-image: radial-gradient(circle, red, yellow, green);
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -130,23 +128,20 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ /* cover: Crop image to fill the entire box */
-            <span class="selector">.bg-img-cover</span> {
-            <span class="property">background-image</span>:
-            <span class="value">url('./img/bg-beach.jpg')</span>;
-            <span class="property">background-size</span>:
-            <span class="value">cover</span>;
-            <span class="property">background-position</span>:
-            <span class="value">center</span>; } /* contain: Scale image to be
-            fully visible */ <span class="selector">.bg-img-contain</span> {
-            <span class="property">background-image</span>:
-            <span class="value">url('./img/bg-beach.jpg')</span>;
-            <span class="property">background-size</span>:
-            <span class="value">contain</span>;
-            <span class="property">background-repeat</span>:
-            <span class="value">no-repeat</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+/* cover: Crop image to fill the entire box */
+.bg-img-cover {
+    background-image:  url('./img/bg-beach.jpg');
+    background-size:  cover;
+    background-position:  center;
+}
+
+/* contain: Scale image to be  fully visible */
+.bg-img-contain {
+    background-image:  url('./img/bg-beach.jpg');
+    background-size:  contain;
+    background-repeat:  no-repeat;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -174,31 +169,24 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */
-            <span class="selector">.img-container</span> {
-            <span class="property">position</span>:
-            <span class="value">relative</span>; }
-            <span class="selector">.obj-fit-cover</span> {
-            <span class="property">width</span>:
-            <span class="value">100%</span>;
-            <span class="property">height</span>:
-            <span class="value">100%</span>;
-            <span class="property">object-fit</span>:
-            <span class="value">cover</span>;
-            <span class="property">position</span>:
-            <span class="value">absolute</span>; }
+          <pre><code class="language-css">/* CSS */
+.img-container {
+    position:  relative;
+}
 
-            <span class="selector">.obj-fit-contain</span> {
-            <span class="property">width</span>:
-            <span class="value">100%</span>;
-            <span class="property">height</span>:
-            <span class="value">100%</span>;
-            <span class="property">object-fit</span>:
-            <span class="value">contain</span>;
-            <span class="property">position</span>:
-            <span class="value">absolute</span>; }
-          </div>
+.obj-fit-cover {
+    width:  100%;
+    height:  100%;
+    object-fit:  cover;
+    position:  absolute;
+}
+            
+.obj-fit-contain {
+    width:  100%;
+    height:  100%;
+    object-fit:  contain;
+    position:  absolute;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -233,14 +221,14 @@
           <p>Specifies the starting position of a background image.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.bg-pos-center</span> {
-            <span class="property">background-position</span>:
-            <span class="value">center</span>; }
-            <span class="selector">.bg-pos-br</span> {
-            <span class="property">background-position</span>:
-            <span class="value">bottom right</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.bg-pos-center {
+    background-position:  center;
+}
+            
+.bg-pos-br {
+    background-position:  bottom right;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -263,15 +251,14 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.bg-repeat</span> {
-            <span class="property">background-repeat</span>:
-            <span class="value">repeat</span>; }
-            <span class="comment">/* Default */</span>
-            <span class="selector">.bg-norepeat</span> {
-            <span class="property">background-repeat</span>:
-            <span class="value">no-repeat</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.bg-repeat {
+    background-repeat: repeat;
+}  /* Default */
+
+.bg-norepeat {
+    background-repeat: no-repeat;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -287,5 +274,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

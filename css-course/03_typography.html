@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Typography</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -83,17 +84,18 @@
           </ul>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.font-serif</span> {
-            <span class="property">font-family</span>:
-            <span class="value">Georgia, serif</span>; }
-            <span class="selector">.font-sans</span> {
-            <span class="property">font-family</span>:
-            <span class="value">Arial, sans-serif</span>; }
-            <span class="selector">.font-mono</span> {
-            <span class="property">font-family</span>:
-            <span class="value">"Courier New", monospace</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.font-serif {
+    font-family: Georgia, serif;
+}
+
+.font-sans {
+    font-family: Arial, sans-serif;
+}
+
+.font-mono {
+    font-family: "Courier New", monospace;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -117,18 +119,19 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.size-small</span> {
-            <span class="property">font-size</span>:
-            <span class="value">12px</span>; }
-            <span class="selector">.size-medium</span> {
-            <span class="property">font-size</span>:
-            <span class="value">16px</span>; }
-            <span class="comment">/* Default browser size */</span>
-            <span class="selector">.size-xlarge</span> {
-            <span class="property">font-size</span>:
-            <span class="value">32px</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.size-small {
+    font-size: 12px;
+}
+
+/* Default browser size */
+.size-medium {
+    font-size: 16px;
+}
+
+.size-xlarge {
+    font-size: 32px;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -149,22 +152,24 @@
           <p>Controls the boldness of the text.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.weight-light</span> {
-            <span class="property">font-weight</span>:
-            <span class="value">300</span>; }
-            <span class="selector">.weight-normal</span> {
-            <span class="property">font-weight</span>:
-            <span class="value">400</span>; }
-            <span class="comment">/* Standard */</span>
-            <span class="selector">.weight-bold</span> {
-            <span class="property">font-weight</span>:
-            <span class="value">700</span>; }
-            <span class="comment">/* Bold */</span>
-            <span class="selector">.weight-bolder</span> {
-            <span class="property">font-weight</span>:
-            <span class="value">900</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.weight-light {
+    font-weight: 300;
+}
+
+/* Standard */
+.weight-normal {
+    font-weight: 400;
+}
+
+/* Bold */
+.weight-bold {
+    font-weight: 700;
+}
+
+.weight-bolder {
+    font-weight: 900;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -188,17 +193,18 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.dec-underline</span> {
-            <span class="property">text-decoration</span>:
-            <span class="value">underline</span>; }
-            <span class="selector">.dec-line-through</span> {
-            <span class="property">text-decoration</span>:
-            <span class="value">line-through</span>; }
-            <span class="selector">a.dec-none</span> {
-            <span class="property">text-decoration</span>:
-            <span class="value">none</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.dec-underline {
+    text-decoration: underline;
+}
+
+.dec-line-through {
+    text-decoration: line-through;
+}
+
+a.dec-none {
+    text-decoration: none;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -220,17 +226,18 @@
           <p>Controls capitalization.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.trans-upper</span> {
-            <span class="property">text-transform</span>:
-            <span class="value">uppercase</span>; }
-            <span class="selector">.trans-lower</span> {
-            <span class="property">text-transform</span>:
-            <span class="value">lowercase</span>; }
-            <span class="selector">.trans-cap</span> {
-            <span class="property">text-transform</span>:
-            <span class="value">capitalize</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.trans-upper {
+    text-transform: uppercase;
+}
+
+.trans-lower {
+    text-transform: lowercase;
+}
+
+.trans-cap {
+    text-transform: capitalize;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -250,14 +257,14 @@
           <p>Controls the horizontal alignment of text.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.align-center</span> {
-            <span class="property">text-align</span>:
-            <span class="value">center</span>; }
-            <span class="selector">.align-right</span> {
-            <span class="property">text-align</span>:
-            <span class="value">right</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -277,14 +284,14 @@
           <p>Controls the space between lines of text.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.lh-small</span> {
-            <span class="property">line-height</span>:
-            <span class="value">1.0</span>; }
-            <span class="selector">.lh-large</span> {
-            <span class="property">line-height</span>:
-            <span class="value">2.0</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.lh-small {
+    line-height: 1.0;
+}
+
+.lh-large {
+    line-height: 2.0;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -312,24 +319,18 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <br />
-            <span class="selector">.ov-clip</span> {<br />
-            &nbsp;&nbsp;<span class="property">white-space</span>:
-            <span class="value">nowrap</span>;<br />
-            &nbsp;&nbsp;<span class="property">overflow</span>:
-            <span class="value">hidden</span>;<br />
-            &nbsp;&nbsp;<span class="property">text-overflow</span>:
-            <span class="value">clip</span>; <br />} <br />
-            <br />
-            <span class="selector">.ov-ellipsis</span> {<br />
-            &nbsp;&nbsp;<span class="property">white-space</span>:
-            <span class="value">nowrap</span>;<br />
-            &nbsp;&nbsp;<span class="property">overflow</span>:
-            <span class="value">hidden</span>;<br />
-            &nbsp;&nbsp;<span class="property">text-overflow</span>:
-            <span class="value">ellipsis</span>; <br />}
-          </div>
+          <pre><code class="language-css">/* CSS */
+.ov-clip {
+  white-space:  nowrap;
+  overflow:  hidden;
+  text-overflow:  clip;
+}
+
+.ov-ellipsis {
+  white-space:  nowrap;
+  overflow:  hidden;
+  text-overflow:  ellipsis;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -356,18 +357,13 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <br />
-            <span class="selector">.clamp-2</span> {<br />
-            &nbsp;&nbsp;<span class="property">display</span>:
-            <span class="value">-webkit-box</span>;<br />
-            &nbsp;&nbsp;<span class="property">-webkit-box-orient</span>:
-            <span class="value">vertical</span>;<br />
-            &nbsp;&nbsp;<span class="property">-webkit-line-clamp</span>:
-            <span class="value">2</span>;<br />
-            &nbsp;&nbsp;<span class="property">overflow</span>:
-            <span class="value">hidden</span>; <br />}
-          </div>
+          <pre><code class="language-css">/* CSS */
+.clamp-2 {
+  display:  -webkit-box;
+  -webkit-box-orient:  vertical;
+  -webkit-line-clamp:  2;
+  overflow:  hidden;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -409,26 +405,19 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.named-red</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">red</span>;<br />
-            }<br />
-            <span class="selector">.named-blue</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">blue</span>;<br />
-            }<br />
-            <span class="selector">.named-green</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">green</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;div class="named-red"&gt;Red&lt;/div&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+.named-red {
+    background-color: red;
+}
+.named-blue {
+    background-color: blue;
+}
+.named-green {
+    background-color: green;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;div class="named-red"&gt;Red&lt;/div&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -456,24 +445,16 @@
           </ul>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.hex-tomato</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">#ff5733</span>;<br />
-            }<br />
-            <span class="selector">.hex-green</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">#33ff57</span>;<br />
-            }<br />
-            <span class="selector">.hex-blue</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">#3357ff</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.hex-tomato {
+    background-color: #ff5733;
+}
+.hex-green {
+    background-color: #33ff57;
+}
+.hex-blue {
+    background-color: #3357ff;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -497,19 +478,13 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.rgb-coral</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">rgb(255, 99, 71)</span>;<br />
-            }<br />
-            <span class="selector">.rgb-sea</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">rgb(60, 179, 113)</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.rgb-coral {
+    background-color: rgb(255, 99, 71);
+}
+.rgb-sea {
+    background-color: rgb(60, 179, 113);
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -537,27 +512,21 @@
           </ul>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="comment">/* Solid */</span><br />
-            <span class="selector">.rgba-100</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">rgba(255, 0, 0, 1.0)</span>;<br />
-            }<br /><br />
-            <span class="comment">/* Semi-transparent */</span><br />
-            <span class="selector">.rgba-60</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">rgba(255, 0, 0, 0.6)</span>;<br />
-            }<br /><br />
-            <span class="comment">/* Very transparent */</span><br />
-            <span class="selector">.rgba-30</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">rgba(255, 0, 0, 0.3)</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+/* Solid */
+.rgba-100 {
+    background-color: rgba(255, 0, 0, 1.0);
+}
+
+/* Semi-transparent */
+.rgba-60 {
+    background-color: rgba(255, 0, 0, 0.6);
+}
+
+/* Very transparent */
+.rgba-30 {
+    background-color: rgba(255, 0, 0, 0.3);
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -593,24 +562,16 @@
           </ul>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.hsl-red</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">hsl(0, 100%, 50%)</span>;<br />
-            }<br />
-            <span class="selector">.hsl-green</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">hsl(120, 100%, 50%)</span>;<br />
-            }<br />
-            <span class="selector">.hsl-blue</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">hsl(240, 100%, 50%)</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.hsl-red {
+    background-color: hsl(0, 100%, 50%);
+}
+.hsl-green {
+    background-color: hsl(120, 100%, 50%);
+}
+.hsl-blue {
+    background-color: hsl(240, 100%, 50%);
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -630,5 +591,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

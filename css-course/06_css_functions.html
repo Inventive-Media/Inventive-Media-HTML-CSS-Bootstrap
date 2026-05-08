@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Functions</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -72,26 +73,16 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">:root</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">--primary-color</span
-            >: <span class="value">#e91e63</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">--box-padding</span>:
-            <span class="value">20px</span>;<br />
-            }<br /><br />
-            <span class="selector">.box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="function">var</span>(<span class="variable"
-              >--primary-color</span
-            >);<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">padding</span>:
-            <span class="function">var</span>(<span class="variable"
-              >--box-padding</span
-            >);<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+:root {
+    --primary-color: #e91e63;
+    --box-padding:  20px;
+}
+
+.box {
+    background-color: var(--primary-color);
+    padding:  var(--box-padding);
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -120,27 +111,16 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.calc-box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* 100% width minus 40px constant space */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="function">calc</span>(<span class="value"
-              >100% - 40px</span
-            >);<br />
-            }<br /><br />
-            <span class="selector">.calc-fluid</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="function">calc</span>(<span class="value"
-              >100% / 3</span
-            >);<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* One third width */</span
-            ><br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.calc-box {
+    /* 100% width minus 40px constant space */
+    width:  calc(100% - 40px);
+}
+
+.calc-fluid {
+    width:  calc(100% / 3);
+    /* One third width */
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -158,5 +138,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

@@ -159,6 +159,7 @@
         border-top: 1px solid #ccc;
       }
     </style>
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -218,20 +219,17 @@
         NOTE: We use HTML entities &lt; and &gt; here to display the tags as text.
         If we used real < and > signs, the browser would try to render them as elements!
       -->
-          <div class="code-block">
-            &lt;label for="fname"&gt;First name:&lt;/label&gt;<br />
-            &lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;<br />
-            <br />
-            &lt;label for="lname"&gt;Last name:&lt;/label&gt;<br />
-            &lt;input type="text" id="lname" name="lname"&gt;&lt;br&gt;<br />
-            <br />
-            &lt;label for="email"&gt;Email:&lt;/label&gt;<br />
-            &lt;input type="email"
-            placeholder="juandelacruz@gmail.com"&gt;&lt;br&gt;<br />
-            <br />
-            &lt;label for="password"&gt;Password:&lt;/label&gt;<br />
-            &lt;input type="password" placeholder="password"&gt;
-          </div>
+          <pre><code class="language-html">&lt;label for="fname"&gt;First name:&lt;/label&gt;
+&lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;
+
+&lt;label for="lname"&gt;Last name:&lt;/label&gt;
+&lt;input type="text" id="lname" name="lname"&gt;&lt;br&gt;
+
+&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email"  placeholder="juandelacruz@gmail.com"&gt;&lt;br&gt;
+
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" placeholder="password"&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -257,19 +255,13 @@
           <p>Allows users to select one option from a list.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            &lt;label for="careers"&gt;Where did you find us:&lt;/label&gt;<br />
-            &lt;select name="careers" id="careers"&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
-            value="indeed"&gt;Indeed&lt;/option&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
-            value="jobstreet"&gt;Jobstreet&lt;/option&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
-            value="facebook"&gt;Facebook&lt;/option&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option
-            value="youtube"&gt;Youtube&lt;/option&gt;<br />
-            &lt;/select&gt;
-          </div>
+          <pre><code class="language-html">&lt;label for="careers"&gt;Where did you find us:&lt;/label&gt;
+&lt;select name="careers" id="careers"&gt;
+    &lt;option  value="indeed"&gt;Indeed&lt;/option&gt;
+    &lt;option  value="jobstreet"&gt;Jobstreet&lt;/option&gt;
+    &lt;option  value="facebook"&gt;Facebook&lt;/option&gt;
+    &lt;option  value="youtube"&gt;Youtube&lt;/option&gt;
+&lt;/select&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -298,20 +290,15 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            &lt;p&gt;Select your skills&lt;/p&gt;<br />
-            &lt;input type="radio" id="html" name="fav_language"
-            value="HTML"&gt;<br />
-            &lt;label for="html"&gt;HTML&lt;/label&gt;&lt;br&gt;<br />
-            <br />
-            &lt;input type="radio" id="css" name="fav_language"
-            value="CSS"&gt;<br />
-            &lt;label for="css"&gt;CSS&lt;/label&gt;&lt;br&gt;<br />
-            <br />
-            &lt;input type="radio" id="javascript" name="fav_language"
-            value="JavaScript"&gt;<br />
-            &lt;label for="javascript"&gt;JavaScript&lt;/label&gt;
-          </div>
+          <pre><code class="language-html">&lt;p&gt;Select your skills&lt;/p&gt;
+&lt;input type="radio" id="html" name="fav_language"  value="HTML"&gt;
+&lt;label for="html"&gt;HTML&lt;/label&gt;&lt;br&gt;
+
+&lt;input type="radio" id="css" name="fav_language"  value="CSS"&gt;
+&lt;label for="css"&gt;CSS&lt;/label&gt;&lt;br&gt;
+
+&lt;input type="radio" id="javascript" name="fav_language"  value="JavaScript"&gt;
+&lt;label for="javascript"&gt;JavaScript&lt;/label&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -341,12 +328,8 @@
           <p>For multi-line text input, like reviews or comments.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            &lt;label for="review"&gt;Please write your review
-            here:&lt;/label&gt;&lt;br&gt;<br />
-            &lt;textarea name="review" id="review" rows="5"
-            cols="50"&gt;&lt;/textarea&gt;
-          </div>
+          <pre><code class="language-html">&lt;label for="review"&gt;Please write your review  here:&lt;/label&gt;&lt;br&gt;
+&lt;textarea name="review" id="review" rows="5"  cols="50"&gt;&lt;/textarea&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -369,19 +352,14 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            &lt;p&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-            adipisicing elit.&lt;br&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;Ullam, nesciunt.<br />
-            &lt;/p&gt;<br />
-            &lt;input type="checkbox" id="agree" name="permission"
-            value="agree"&gt;<br />
-            &lt;label for="agree"&gt;I agree&lt;/label&gt;<br />
-            &lt;input type="checkbox" id="disagree" name="permission"
-            value="disagree"&gt;<br />
-            &lt;label for="disagree"&gt;I disagree&lt;/label&gt;
-          </div>
+          <pre><code class="language-html">&lt;p&gt;
+    Lorem ipsum dolor sit amet consectetur  adipisicing elit.&lt;br&gt;
+    Ullam, nesciunt.
+&lt;/p&gt;
+&lt;input type="checkbox" id="agree" name="permission"  value="agree"&gt;
+&lt;label for="agree"&gt;I agree&lt;/label&gt;
+&lt;input type="checkbox" id="disagree" name="permission"  value="disagree"&gt;
+&lt;label for="disagree"&gt;I disagree&lt;/label&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -414,21 +392,17 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            &lt;!-- Autofocus focuses the input on page load --&gt;<br />
-            &lt;label for="promo"&gt;Promo Code:&lt;/label&gt;<br />
-            &lt;input type="text" id="promo" name="promo"
-            autofocus&gt;&lt;br&gt;&lt;br&gt;<br />
-            <br />
-            &lt;!-- Disabled makes the input uneditable --&gt;<br />
-            &lt;label for="username"&gt;Username (Disabled):&lt;/label&gt;<br />
-            &lt;input type="text" id="username" name="username" value="admin"
-            disabled&gt;&lt;br&gt;&lt;br&gt;<br />
-            <br />
-            &lt;!-- Submit and Reset Buttons --&gt;<br />
-            &lt;button type="submit"&gt;Submit&lt;/button&gt;<br />
-            &lt;button type="reset"&gt;Clear&lt;/button&gt;
-          </div>
+          <pre><code class="language-html">&lt;!-- Autofocus focuses the input on page load --&gt;
+&lt;label for="promo"&gt;Promo Code:&lt;/label&gt;
+&lt;input type="text" id="promo" name="promo"  autofocus&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;!-- Disabled makes the input uneditable --&gt;
+&lt;label for="username"&gt;Username (Disabled):&lt;/label&gt;
+&lt;input type="text" id="username" name="username" value="admin"  disabled&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;!-- Submit and Reset Buttons --&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;button type="reset"&gt;Clear&lt;/button&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -456,5 +430,6 @@
         </div>
       </div>
     </div>
+    <script src="../prism.js"></script>
   </body>
 </html>

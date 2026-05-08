@@ -98,6 +98,7 @@
         display: block;
       }
     </style>
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Sticky Header -->
@@ -169,7 +170,7 @@
       <p class="mb-4">Instead of writing CSS like this:</p>
       <pre
         class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm overflow-x-auto mb-4 font-mono"
-      ><code>/* Your CSS file */
+      ><code class="language-css">/* CSS */
 .my-button {
   background-color: #3b82f6;
   color: white;
@@ -181,7 +182,7 @@
       <p class="mb-4">You write Tailwind like this:</p>
       <pre
         class="bg-gray-800 text-gray-100 rounded-lg p-4 text-sm overflow-x-auto mb-4 font-mono"
-      ><code>&lt;button class="bg-blue-500 text-white py-2 px-4 rounded-lg font-bold"&gt;
+      ><code class="language-html">&lt;button class="bg-blue-500 text-white py-2 px-4 rounded-lg font-bold"&gt;
   Click Me
 &lt;/button&gt;</code></pre>
 
@@ -325,9 +326,7 @@
       </p>
 
       <div class="bg-gray-100 rounded-lg p-4 mb-4">
-        <p class="text-sm text-gray-500 mb-2 font-mono">
-          class="bg-white rounded-xl shadow-lg p-6 max-w-sm"
-        </p>
+        <pre><code class="language-html">&lt;div class="bg-white rounded-xl shadow-lg p-6 max-w-sm"&gt;</code></pre>
         <div class="bg-white rounded-xl shadow-lg p-6 max-w-sm">
           <h3 class="text-lg font-bold text-gray-900 mb-1">Example Card</h3>
           <p class="text-gray-600 text-sm">
@@ -352,5 +351,6 @@
         >
       </div>
     </div>
+    <script src="../prism.js"></script>
   </body>
 </html>

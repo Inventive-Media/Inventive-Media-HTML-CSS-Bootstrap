@@ -209,6 +209,7 @@
         margin-bottom: 15px;
       }
     </style>
+    <link rel="stylesheet" href="../prism.css" />
   </head>
 
   <body>
@@ -293,14 +294,12 @@
       NOTE: We use HTML entities &lt; and &gt; here to display the tags as text.
       If we used real < and > signs, the browser would try to render them as elements!
     -->
-        <div class="code-block">
-          &lt;h1&gt;This is heading 1&lt;/h1&gt; <br />
-          &lt;h2&gt;This is heading 2&lt;/h2&gt; <br />
-          &lt;h3&gt;This is heading 3&lt;/h3&gt; <br />
-          &lt;h4&gt;This is heading 4&lt;/h4&gt; <br />
-          &lt;h5&gt;This is heading 5&lt;/h5&gt; <br />
-          &lt;h6&gt;This is heading 6&lt;/h6&gt;
-        </div>
+        <pre><code class="language-html">&lt;h1&gt;This is heading 1&lt;/h1&gt;
+&lt;h2&gt;This is heading 2&lt;/h2&gt;
+&lt;h3&gt;This is heading 3&lt;/h3&gt;
+&lt;h4&gt;This is heading 4&lt;/h4&gt;
+&lt;h5&gt;This is heading 5&lt;/h5&gt;
+&lt;h6&gt;This is heading 6&lt;/h6&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -351,12 +350,9 @@
         </ul>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;p&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Distinctio, ratione.<br />
-          &lt;/p&gt;
-        </div>
+        <pre><code class="language-html">&lt;p&gt;
+    Lorem ipsum dolor sit amet consectetur  adipisicing elit. Distinctio, ratione.
+&lt;/p&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -405,12 +401,10 @@
         </ul>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;pre&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Dolore, itaque!<br />
-          &lt;/pre&gt;
-        </div>
+        <pre><code class="language-html">&lt;pre&gt;
+Lorem            ipsum dolor sit amet consectetur, 
+adipisicing elit. Dolore, itaque!
+&lt;/pre&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -467,14 +461,12 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 0: Disc (browser default) -->
           <div class="example-item">
             <h3>0. Disc (Browser Default)</h3>
-            <div class="code-block">
-              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-              &lt;ul type="disc"&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </div>
+            <pre><code class="language-html">&lt;h3&gt;Soft Drinks&lt;/h3&gt;
+&lt;ul type="disc"&gt;
+  &lt;li&gt;Coke&lt;/li&gt;
+  &lt;li&gt;Pepsi&lt;/li&gt;
+  &lt;li&gt;Sarsi&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             <div class="example-output">
               <h3>Soft Drinks</h3>
               <ul type="disc">
@@ -487,14 +479,12 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 1 -->
           <div class="example-item">
             <h3>1. Circle</h3>
-            <div class="code-block">
-              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-              &lt;ul type="circle"&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </div>
+            <pre><code class="language-html">&lt;h3&gt;Soft Drinks&lt;/h3&gt;
+&lt;ul type="circle"&gt;
+  &lt;li&gt;Coke&lt;/li&gt;
+  &lt;li&gt;Pepsi&lt;/li&gt;
+  &lt;li&gt;Sarsi&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             <div class="example-output">
               <h3>Soft Drinks</h3>
               <ul type="circle">
@@ -508,14 +498,12 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 2 -->
           <div class="example-item">
             <h3>2. Square</h3>
-            <div class="code-block">
-              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-              &lt;ul type="square"&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </div>
+            <pre><code class="language-html">&lt;h3&gt;Soft Drinks&lt;/h3&gt;
+&lt;ul type="square"&gt;
+  &lt;li&gt;Coke&lt;/li&gt;
+  &lt;li&gt;Pepsi&lt;/li&gt;
+  &lt;li&gt;Sarsi&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             <div class="example-output">
               <h3>Soft Drinks</h3>
               <ul type="square">
@@ -529,14 +517,12 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 3 -->
           <div class="example-item">
             <h3>3. None</h3>
-            <div class="code-block">
-              &lt;h3&gt;Soft Drinks&lt;/h3&gt; <br />
-              &lt;ul type="none"&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </div>
+            <pre><code class="language-html">&lt;h3&gt;Soft Drinks&lt;/h3&gt;
+&lt;ul type="none"&gt;
+  &lt;li&gt;Coke&lt;/li&gt;
+  &lt;li&gt;Pepsi&lt;/li&gt;
+  &lt;li&gt;Sarsi&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             <div class="example-output">
               <h3>Soft Drinks</h3>
               <ul type="none">
@@ -558,13 +544,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 1: Disc -->
           <div class="example-item">
             <h3>1. Disc</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: disc;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
+            <pre><code class="language-html">&lt;ul style="list-style-type: disc;"&gt;
+  &lt;li&gt;Coke&lt;/li&gt;
+  &lt;li&gt;Pepsi&lt;/li&gt;
+  &lt;li&gt;Sarsi&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             <div class="example-output">
               <ul style="list-style-type: disc">
                 <li>Coke</li>
@@ -577,13 +561,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 2: Circle -->
           <div class="example-item">
             <h3>2. Circle</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: circle;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
+            <pre><code class="language-html">&lt;ul style="list-style-type: circle;"&gt;
+  &lt;li&gt;Coke&lt;/li&gt;
+  &lt;li&gt;Pepsi&lt;/li&gt;
+  &lt;li&gt;Sarsi&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             <div class="example-output">
               <ul style="list-style-type: circle">
                 <li>Coke</li>
@@ -596,13 +578,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 3: Square -->
           <div class="example-item">
             <h3>3. Square</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: square;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
+            <pre><code class="language-html">&lt;ul style="list-style-type: square;"&gt;
+  &lt;li&gt;Coke&lt;/li&gt;
+  &lt;li&gt;Pepsi&lt;/li&gt;
+  &lt;li&gt;Sarsi&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             <div class="example-output">
               <ul style="list-style-type: square">
                 <li>Coke</li>
@@ -615,13 +595,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 4: None -->
           <div class="example-item">
             <h3>4. None</h3>
-            <div class="code-block">
-              &lt;ul style="list-style-type: none;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Coke&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Pepsi&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Sarsi&lt;/li&gt;<br />
-              &lt;/ul&gt;
-            </div>
+            <pre><code class="language-html">&lt;ul style="list-style-type: none;"&gt;
+  &lt;li&gt;Coke&lt;/li&gt;
+  &lt;li&gt;Pepsi&lt;/li&gt;
+  &lt;li&gt;Sarsi&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             <div class="example-output">
               <ul style="list-style-type: none">
                 <li>Coke</li>
@@ -678,13 +656,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 1 -->
           <div class="example-item">
             <h3>1. Default (Numbers)</h3>
-            <div class="code-block">
-              &lt;ol type="1"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol type="1"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol type="1">
                 <li>Macha</li>
@@ -697,13 +673,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 2 -->
           <div class="example-item">
             <h3>2. Uppercase Letters</h3>
-            <div class="code-block">
-              &lt;ol type="A"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol type="A"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol type="A">
                 <li>Macha</li>
@@ -716,13 +690,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 3 -->
           <div class="example-item">
             <h3>3. Lowercase Roman</h3>
-            <div class="code-block">
-              &lt;ol type="i"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol type="i"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol type="i">
                 <li>Macha</li>
@@ -735,13 +707,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 4 -->
           <div class="example-item">
             <h3>4. Uppercase Roman</h3>
-            <div class="code-block">
-              &lt;ol type="I"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol type="I"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol type="I">
                 <li>Macha</li>
@@ -762,13 +732,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 1: Decimal -->
           <div class="example-item">
             <h3>1. Decimal (1, 2, 3)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: decimal;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol style="list-style-type: decimal;"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol style="list-style-type: decimal">
                 <li>Macha</li>
@@ -781,13 +749,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 2: Lower Alpha -->
           <div class="example-item">
             <h3>2. Lower Alpha (a, b, c)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: lower-alpha;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol style="list-style-type: lower-alpha;"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol style="list-style-type: lower-alpha">
                 <li>Macha</li>
@@ -800,13 +766,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 3: Upper Alpha -->
           <div class="example-item">
             <h3>3. Upper Alpha (A, B, C)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: upper-alpha;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol style="list-style-type: upper-alpha;"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol style="list-style-type: upper-alpha">
                 <li>Macha</li>
@@ -819,13 +783,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 4: Lower Roman -->
           <div class="example-item">
             <h3>4. Lower Roman (i, ii, iii)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: lower-roman;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol style="list-style-type: lower-roman;"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol style="list-style-type: lower-roman">
                 <li>Macha</li>
@@ -838,13 +800,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 5: Upper Roman -->
           <div class="example-item">
             <h3>5. Upper Roman (I, II, III)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: upper-roman;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol style="list-style-type: upper-roman;"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol style="list-style-type: upper-roman">
                 <li>Macha</li>
@@ -857,13 +817,11 @@ adipisicing elit. Dolore, itaque!
           <!-- Item 6: None -->
           <div class="example-item">
             <h3>6. None (no display)</h3>
-            <div class="code-block">
-              &lt;ol style="list-style-type: none;"&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Macha&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Taro&lt;/li&gt;<br />
-              &nbsp;&nbsp;&lt;li&gt;Chocolate&lt;/li&gt;<br />
-              &lt;/ol&gt;
-            </div>
+            <pre><code class="language-html">&lt;ol style="list-style-type: none;"&gt;
+  &lt;li&gt;Macha&lt;/li&gt;
+  &lt;li&gt;Taro&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
             <div class="example-output">
               <ol style="list-style-type: none">
                 <li>Macha</li>
@@ -911,19 +869,14 @@ adipisicing elit. Dolore, itaque!
         </ul>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;dl&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the backbone of the
-          website&lt;/dd&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;CSS&lt;/dt&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the appearance of the
-          website&lt;/dd&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;Javascript&lt;/dt&gt; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;This is the behavior of the
-          website&lt;/dd&gt; <br />
-          &lt;/dl&gt;
-        </div>
+        <pre><code class="language-html">&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;This is the backbone of the  website&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;This is the appearance of the  website&lt;/dd&gt;
+    &lt;dt&gt;Javascript&lt;/dt&gt;
+    &lt;dd&gt;This is the behavior of the  website&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -968,67 +921,43 @@ adipisicing elit. Dolore, itaque!
         </ul>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;table border="1" style="width: 100%; border-collapse:
-          collapse;"&gt;<br />
-          &nbsp;&nbsp;&lt;thead&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr style="background-color: #e67e22;
-          color: white;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan="3"&gt;Meralco Bill
-          Breakdown (Pass-Through Charges)&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr style="background-color: #ecf0f1;
-          text-align: left;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th style="padding:
-          8px;"&gt;Charge Category&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th style="padding:
-          8px;"&gt;Specific Charge&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th style="padding:
-          8px;"&gt;Amount (PhP)&lt;/th&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&lt;/thead&gt;<br />
-          &nbsp;&nbsp;&lt;tbody&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;Generation&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;Generation Charge&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;730.60&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td rowspan="3"
-          style="vertical-align: middle; padding: 8px;"&gt;Subsidies &amp;
-          Allowances&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;Lifeline Rate Subsidy&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;7.34&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;Senior Citizen Subsidy&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;0.01&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;FIT-All (Renewable)&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="padding:
-          8px;"&gt;8.36&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&lt;/tbody&gt;<br />
-          &nbsp;&nbsp;&lt;tfoot&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr style="background-color: #f9f9f9;
-          font-style: italic;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td colspan="3" style="padding:
-          8px;"&gt;* Computations based on an assumed 100 kWh monthly
-          consumption. These are mandated pass-through charges remitted to other
-          entities.&lt;/td&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-          &nbsp;&nbsp;&lt;/tfoot&gt;<br />
-          &lt;/table&gt;
-        </div>
+        <pre><code class="language-html">&lt;table border="1" style="width: 100%; border-collapse:  collapse;"&gt;
+  &lt;thead&gt;
+    &lt;tr style="background-color: #e67e22;  color: white;"&gt;
+      &lt;th colspan="3"&gt;Meralco Bill  Breakdown (Pass-Through Charges)&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr style="background-color: #ecf0f1;  text-align: left;"&gt;
+      &lt;th style="padding:  8px;"&gt;Charge Category&lt;/th&gt;
+      &lt;th style="padding:  8px;"&gt;Specific Charge&lt;/th&gt;
+      &lt;th style="padding:  8px;"&gt;Amount (PhP)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="padding:  8px;"&gt;Generation&lt;/td&gt;
+      &lt;td style="padding:  8px;"&gt;Generation Charge&lt;/td&gt;
+      &lt;td style="padding:  8px;"&gt;730.60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="3"  style="vertical-align: middle; padding: 8px;"&gt;Subsidies &amp;  Allowances&lt;/td&gt;
+      &lt;td style="padding:  8px;"&gt;Lifeline Rate Subsidy&lt;/td&gt;
+      &lt;td style="padding:  8px;"&gt;7.34&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="padding:  8px;"&gt;Senior Citizen Subsidy&lt;/td&gt;
+      &lt;td style="padding:  8px;"&gt;0.01&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="padding:  8px;"&gt;FIT-All (Renewable)&lt;/td&gt;
+      &lt;td style="padding:  8px;"&gt;8.36&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr style="background-color: #f9f9f9;  font-style: italic;"&gt;
+      &lt;td colspan="3" style="padding:  8px;"&gt;* Computations based on an assumed 100 kWh monthly  consumption. These are mandated pass-through charges remitted to other  entities.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -1119,54 +1048,34 @@ adipisicing elit. Dolore, itaque!
         </ul>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;div style="display: flex; gap: 20px; flex-wrap: wrap;"&gt;<br />
-          &nbsp;&nbsp;&lt;!-- Example 1: Using Picsum --&gt;<br />
-          &nbsp;&nbsp;&lt;div style=" border: 1px solid #ddd; border-radius:
-          8px; overflow: hidden;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;img
-          src="https://picsum.photos/300/160?random=1" alt="Picsum example"
-          style="width: 100%; height: auto; display: block;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="padding: 16px;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 style="margin: 0 0 8px 0;
-          color: #333;"&gt;Picsum Photo&lt;/h3&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style="margin: 0; color:
-          #666; font-size: 14px; line-height: 1.5;"&gt;Random images from Lorem
-          Picsum service.&lt;/p&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-          &nbsp;&nbsp;&lt;/div&gt;<br />
-          <br />
-          &nbsp;&nbsp;&lt;!-- Example 2: Using Pravatar --&gt;<br />
-          &nbsp;&nbsp;&lt;div style=" border: 1px solid #ddd; border-radius:
-          8px; overflow: hidden;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="https://i.pravatar.cc/300"
-          alt="Pravatar example" style="width: 100%; height: auto; display:
-          block;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="padding: 16px;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 style="margin: 0 0 8px 0;
-          color: #333;"&gt;Pravatar Avatar&lt;/h3&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style="margin: 0; color:
-          #666; font-size: 14px; line-height: 1.5;"&gt;Placeholder avatars from
-          Pravatar service.&lt;/p&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-          &nbsp;&nbsp;&lt;/div&gt;<br />
-          <br />
-          &nbsp;&nbsp;&lt;!-- Example 3: Using LoremFlickr --&gt;<br />
-          &nbsp;&nbsp;&lt;div style=" border: 1px solid #ddd; border-radius:
-          8px; overflow: hidden;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;img
-          src="https://loremflickr.com/300/160/people" alt="LoremFlickr example"
-          style="width: 100%; height: auto; display: block;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="padding: 16px;"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 style="margin: 0 0 8px 0;
-          color: #333;"&gt;LoremFlickr People&lt;/h3&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style="margin: 0; color:
-          #666; font-size: 14px; line-height: 1.5;"&gt;Random people images from
-          LoremFlickr service.&lt;/p&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-          &nbsp;&nbsp;&lt;/div&gt;<br />
-          &lt;/div&gt;
-        </div>
+        <pre><code class="language-html">&lt;div style="display: flex; gap: 20px; flex-wrap: wrap;"&gt;
+  &lt;!-- Example 1: Using Picsum --&gt;
+  &lt;div style=" border: 1px solid #ddd; border-radius:  8px; overflow: hidden;"&gt;
+    &lt;img  src="https://picsum.photos/300/160?random=1" alt="Picsum example"  style="width: 100%; height: auto; display: block;"&gt;
+    &lt;div style="padding: 16px;"&gt;
+      &lt;h3 style="margin: 0 0 8px 0;  color: #333;"&gt;Picsum Photo&lt;/h3&gt;
+      &lt;p style="margin: 0; color:  #666; font-size: 14px; line-height: 1.5;"&gt;Random images from Lorem  Picsum service.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Example 2: Using Pravatar --&gt;
+  &lt;div style=" border: 1px solid #ddd; border-radius:  8px; overflow: hidden;"&gt;
+    &lt;img src="https://i.pravatar.cc/300"  alt="Pravatar example" style="width: 100%; height: auto; display:  block;"&gt;
+    &lt;div style="padding: 16px;"&gt;
+      &lt;h3 style="margin: 0 0 8px 0;  color: #333;"&gt;Pravatar Avatar&lt;/h3&gt;
+      &lt;p style="margin: 0; color:  #666; font-size: 14px; line-height: 1.5;"&gt;Placeholder avatars from  Pravatar service.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Example 3: Using LoremFlickr --&gt;
+  &lt;div style=" border: 1px solid #ddd; border-radius:  8px; overflow: hidden;"&gt;
+    &lt;img  src="https://loremflickr.com/300/160/people" alt="LoremFlickr example"  style="width: 100%; height: auto; display: block;"&gt;
+    &lt;div style="padding: 16px;"&gt;
+      &lt;h3 style="margin: 0 0 8px 0;  color: #333;"&gt;LoremFlickr People&lt;/h3&gt;
+      &lt;p style="margin: 0; color:  #666; font-size: 14px; line-height: 1.5;"&gt;Random people images from  LoremFlickr service.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -1265,5 +1174,6 @@ adipisicing elit. Dolore, itaque!
         </div>
       </div>
     </div>
+    <script src="../prism.js"></script>
   </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Positioning</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -72,11 +73,10 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.static-box</span> {
-            <span class="property">position</span>:
-            <span class="value">static</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.static-box {
+    position: static;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -100,15 +100,12 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.relative-box</span> {
-            <span class="property">position</span>:
-            <span class="value">relative</span>;
-            <span class="property">top</span>: <span class="value">20px</span>;
-            <span class="comment">/* Move down 20px */</span>
-            <span class="property">left</span>: <span class="value">20px</span>;
-            <span class="comment">/* Move right 20px */</span> }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.relative-box {
+    position:  relative;
+    top: 20px;  /* Move down 20px */
+    left: 20px;  /* Move right 20px */
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -135,29 +132,24 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.relative-container</span> {
-            <span class="property">position</span>:
-            <span class="value">relative</span>;
-            <span class="comment">/* The Anchor */</span>
-            <span class="property">height</span>:
-            <span class="value">250px</span>; }
-
-            <span class="selector">.absolute-tl</span> {
-            <span class="property">position</span>:
-            <span class="value">absolute</span>;
-            <span class="property">top</span>: <span class="value">0</span>;
-            <span class="property">left</span>: <span class="value">0</span>; }
-
-            <span class="selector">.absolute-center</span> {
-            <span class="property">position</span>:
-            <span class="value">absolute</span>;
-            <span class="property">top</span>: <span class="value">50%</span>;
-            <span class="property">left</span>: <span class="value">50%</span>;
-            <span class="property">transform</span>:
-            <span class="value">translate(-50%, -50%)</span>;
-            <span class="comment">/* Centers it */</span> }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.relative-container {
+    position:  relative;  /* The Anchor */
+    height:  250px;
+}
+            
+.absolute-tl {
+    position:  absolute;
+    top: 0;
+    left: 0;
+}
+            
+.absolute-center {
+    position:  absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%, -50%); /* Centers it */
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output relative-container">
@@ -183,15 +175,12 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.fixed-box</span> {
-            <span class="property">position</span>:
-            <span class="value">fixed</span>;
-            <span class="property">bottom</span>:
-            <span class="value">20px</span>;
-            <span class="property">right</span>:
-            <span class="value">20px</span>; }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}</code></pre>
 
           <hr />
 
@@ -208,13 +197,11 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.sticky-element</span> {
-            <span class="property">position</span>:
-            <span class="value">sticky</span>;
-            <span class="property">top</span>: <span class="value">0</span>;
-            <span class="comment">/* Sticks to top */</span> }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.sticky-element {
+    position: sticky;
+    top: 0;  /* Sticks to top */
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output sticky-container">
@@ -241,18 +228,18 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */ <span class="selector">.z-1</span> {
-            <span class="property">z-index</span>: <span class="value">1</span>;
-            }
-            <span class="comment">/* Bottom */</span>
-            <span class="selector">.z-2</span> {
-            <span class="property">z-index</span>: <span class="value">2</span>;
-            } <span class="selector">.z-3</span> {
-            <span class="property">z-index</span>: <span class="value">3</span>;
-            }
-            <span class="comment">/* Top */</span>
-          </div>
+          <pre><code class="language-css">/* CSS */
+.z-1 {
+    z-index: 1;
+}  /* Bottom */
+            
+.z-2 {
+    z-index: 2;
+}
+            
+.z-3 {
+    z-index: 3;
+}  /* Top */</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output z-container">
@@ -269,5 +256,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>
