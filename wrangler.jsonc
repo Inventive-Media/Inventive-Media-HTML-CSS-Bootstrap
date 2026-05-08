@@ -3,12 +3,10 @@
   "name": "html-css-bootstrap",
   "compatibility_date": "2026-04-23",
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
   },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+  "compatibility_flags": ["nodejs_compat"],
 }
