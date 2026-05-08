@@ -194,6 +194,7 @@
         padding: 5px;
       }
     </style>
+    <link rel="stylesheet" href="../prism.css" />
   </head>
 
   <body>
@@ -254,12 +255,9 @@
       NOTE: We use HTML entities &lt; and &gt; here to display the tags as text.
       If we used real < and > signs, the browser would try to render them as elements!
     -->
-        <div class="code-block">
-          &lt;a href="/"&gt;Block elements page&lt;/a&gt; |<br />
-          &lt;a href="./inline_elements.html"&gt;Inline elements page&lt;/a&gt;
-          |<br />
-          &lt;a href="./form_elements.html"&gt;Form elements page&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;a href="/"&gt;Block elements page&lt;/a&gt; |
+&lt;a href="./inline_elements.html"&gt;Inline elements page&lt;/a&gt;  |
+&lt;a href="./form_elements.html"&gt;Form elements page&lt;/a&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -279,10 +277,8 @@
         <p>Using <code>&lt;button&gt;</code> tags for user interaction.</p>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;button type="button"&gt;Click Me!&lt;/button&gt;<br />
-          &lt;button type="submit"&gt;Submit&lt;/button&gt;
-        </div>
+        <pre><code class="language-html">&lt;button type="button"&gt;Click Me!&lt;/button&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -307,18 +303,14 @@
         <p>Various tags for formatting text within a paragraph.</p>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;p&gt;Hello I am &lt;b&gt;superman!&lt;/b&gt;&lt;/p&gt;<br />
-          &lt;p&gt;I am very &lt;strong&gt;strong&lt;/strong&gt;&lt;/p&gt;<br />
-          &lt;p&gt;I have &lt;i&gt;lasser eyes&lt;/i&gt;&lt;/p&gt;<br />
-          &lt;p&gt;I can &lt;em&gt;fly&lt;/em&gt; in the sky&lt;/p&gt;<br />
-          &lt;p&gt;I have a dog named
-          &lt;mark&gt;Krypto&lt;/mark&gt;&lt;/p&gt;<br />
-          &lt;p&gt;He's a &lt;small&gt;strong&lt;/small&gt; dog too&lt;/p&gt;<br />
-          &lt;p&gt;Lorem ipsum dolor &lt;del&gt;sit&lt;/del&gt;
-          amet.&lt;/p&gt;<br />
-          &lt;p&gt;&lt;ins&gt;Lorem&lt;/ins&gt; ipsum dolor sit amet.&lt;/p&gt;
-        </div>
+        <pre><code class="language-html">&lt;p&gt;Hello I am &lt;b&gt;superman!&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;I am very &lt;strong&gt;strong&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I have &lt;i&gt;lasser eyes&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;I can &lt;em&gt;fly&lt;/em&gt; in the sky&lt;/p&gt;
+&lt;p&gt;I have a dog named  &lt;mark&gt;Krypto&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;He's a &lt;small&gt;strong&lt;/small&gt; dog too&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor &lt;del&gt;sit&lt;/del&gt;  amet.&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;Lorem&lt;/ins&gt; ipsum dolor sit amet.&lt;/p&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -344,10 +336,8 @@
         <p>Useful for chemical formulas or ordinal numbers.</p>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;h3&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/h3&gt;<br />
-          &lt;h3&gt;13&lt;sup&gt;th&lt;/sup&gt; floor&lt;/h3&gt;
-        </div>
+        <pre><code class="language-html">&lt;h3&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/h3&gt;
+&lt;h3&gt;13&lt;sup&gt;th&lt;/sup&gt; floor&lt;/h3&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -396,9 +386,7 @@
         </ul>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;h2&gt;Is 71 &amp;gt; 13 &amp;amp; 22 &amp;lt; 5?&lt;/h2&gt;
-        </div>
+        <pre><code class="language-html">&lt;h2&gt;Is 71 &amp;gt; 13 &amp;amp; 22 &amp;lt; 5?&lt;/h2&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -443,15 +431,14 @@
         </ul>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;p&gt;Warning: Server is down 🚨&lt;/p&gt;<br />
-          &lt;button&gt;Add to Cart 🛒&lt;/button&gt;<br /><br />
-          &lt;!-- Emoji List Marker --&gt;<br />
-          &lt;ul style="list-style-type: '🚀 ';"&gt;<br />
-          &nbsp;&nbsp;&lt;li&gt;Fast Delivery&lt;/li&gt;<br />
-          &nbsp;&nbsp;&lt;li&gt;Global Support&lt;/li&gt;<br />
-          &lt;/ul&gt;
-        </div>
+        <pre><code class="language-html">&lt;p&gt;Warning: Server is down 🚨&lt;/p&gt;
+&lt;button&gt;Add to Cart 🛒&lt;/button&gt;
+
+&lt;!-- Emoji List Marker --&gt;
+&lt;ul style="list-style-type: '🚀 ';"&gt;
+  &lt;li&gt;Fast Delivery&lt;/li&gt;
+  &lt;li&gt;Global Support&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -476,9 +463,7 @@
         <p>Hover over the text to see the full meaning.</p>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;abbr title="Inventive Media"&gt;IM&lt;/abbr&gt;
-        </div>
+        <pre><code class="language-html">&lt;abbr title="Inventive Media"&gt;IM&lt;/abbr&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -496,20 +481,16 @@
         <p>Using &lt;br&gt; to force a new line.</p>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;p&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Lorem, ipsum dolor sit amet... &lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Possimus cupiditate...<br />
-          &lt;/p&gt;
-        </div>
+        <pre><code class="language-html">&lt;p&gt;
+    Lorem, ipsum dolor sit amet... &lt;br&gt;
+    Possimus cupiditate...
+&lt;/p&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            <br />Possimus cupiditate eligendi totam expedita, nam hic earum eos
-            officia ipsam quos sunt error, temporibus cum ipsa consequatur
-            laudantium laboriosam enim ullam.
+            Lorem, ipsum dolor sit amet... <br />
+            Possimus cupiditate...
           </p>
         </div>
 
@@ -525,18 +506,14 @@
         <p>Defining contact information.</p>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;address&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Inventive Media Philippines&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Karmela Building 2590&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Makati City, Metro Manila&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Philippines&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;a
-          href="mailto:inventivemedia.ph@gmail.com"&gt;inventivemedia.ph@gmail.com&lt;/a&gt;&lt;br&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="tel:+63288242145"&gt;+63 2
-          88242145&lt;/a&gt;<br />
-          &lt;/address&gt;
-        </div>
+        <pre><code class="language-html">&lt;address&gt;
+    Inventive Media Philippines&lt;br&gt;
+    Karmela Building 2590&lt;br&gt;
+    Makati City, Metro Manila&lt;br&gt;
+    Philippines&lt;br&gt;
+    &lt;a  href="mailto:inventivemedia.ph@gmail.com"&gt;inventivemedia.ph@gmail.com&lt;/a&gt;&lt;br&gt;
+    &lt;a href="tel:+63288242145"&gt;+63 2  88242145&lt;/a&gt;
+&lt;/address&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -565,21 +542,16 @@
         <p>Blockquotes, citations, and inline quotes.</p>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;h3&gt;Block quote&lt;/h3&gt;<br />
-          &lt;blockquote
-          cite="https://www.inventivemedia.com.ph/faculty/"&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;It is a fact that people...<br />
-          &lt;/blockquote&gt;<br />
-          <br />
-          &lt;h3&gt;Citation&lt;/h3&gt;<br />
-          &lt;p&gt;One of the best novels I've read is &lt;cite&gt;To Kill a
-          Mockingbird&lt;/cite&gt; by Harper Lee.&lt;/p&gt;<br />
-          <br />
-          &lt;h3&gt;Quote&lt;/h3&gt;<br />
-          &lt;p&gt;Steve Jobs once said, &lt;q&gt;Innovation distinguishes
-          between a leader and a follower.&lt;/q&gt;&lt;/p&gt;
-        </div>
+        <pre><code class="language-html">&lt;h3&gt;Block quote&lt;/h3&gt;
+&lt;blockquote  cite="https://www.inventivemedia.com.ph/faculty/"&gt;
+    It is a fact that people...
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Citation&lt;/h3&gt;
+&lt;p&gt;One of the best novels I've read is &lt;cite&gt;To Kill a  Mockingbird&lt;/cite&gt; by Harper Lee.&lt;/p&gt;
+
+&lt;h3&gt;Quote&lt;/h3&gt;
+&lt;p&gt;Steve Jobs once said, &lt;q&gt;Innovation distinguishes  between a leader and a follower.&lt;/q&gt;&lt;/p&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -617,39 +589,31 @@
         <p>Embedding multimedia and external content.</p>
 
         <h3>Code:</h3>
-        <div class="code-block">
-          &lt;!-- 1. Images --&gt;<br />
-          &lt;h4&gt;Picsum Photo&lt;/h4&gt;<br />
-          &lt;img src="https://picsum.photos/300/160?random=1" alt="Picsum
-          example" width="300"&gt;<br /><br />
-          &lt;h4&gt;Pravatar Avatar&lt;/h4&gt;<br />
-          &lt;img src="https://i.pravatar.cc/300" alt="Pravatar example"
-          width="150"&gt;<br /><br />
-          &lt;h4&gt;LoremFlickr People&lt;/h4&gt;<br />
-          &lt;img src="https://loremflickr.com/300/160/people" alt="LoremFlickr
-          example" width="300"&gt;<br /><br />
+        <pre><code class="language-html">&lt;!-- 1. Images --&gt;
+&lt;h4&gt;Picsum Photo&lt;/h4&gt;
+&lt;img src="https://picsum.photos/300/160?random=1" alt="Picsum  example" width="300"&gt;
 
-          &lt;!-- 2. Audio --&gt;<br />
-          &lt;audio controls autoplay muted loop&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./audio/music.mp3"
-          type="audio/mp3"&gt;<br />
-          &lt;/audio&gt;<br /><br />
+&lt;h4&gt;Pravatar Avatar&lt;/h4&gt;
+&lt;img src="https://i.pravatar.cc/300" alt="Pravatar example"  width="150"&gt;
 
-          &lt;!-- 3. Video --&gt;<br />
-          &lt;video height="220" width="340" controls autoplay muted loop&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="./video/videoplayback.mp4"
-          type="video/mp4"&gt;<br />
-          &lt;/video&gt;<br /><br />
+&lt;h4&gt;LoremFlickr People&lt;/h4&gt;
+&lt;img src="https://loremflickr.com/300/160/people" alt="LoremFlickr  example" width="300"&gt;
 
-          &lt;!-- 4. PDF (Embed) --&gt;<br />
-          &lt;embed src="./misc/html-slides.pdf" width="500" height="500"
-          type="application/pdf"&gt;<br /><br />
+&lt;!-- 2. Audio --&gt;
+&lt;audio controls autoplay muted loop&gt;
+    &lt;source src="./audio/music.mp3"  type="audio/mp3"&gt;
+&lt;/audio&gt;
 
-          &lt;!-- 5. IFrame (Google Map) --&gt;<br />
-          &lt;iframe src="https://www.google.com/maps/embed?..." width="250"
-          height="250" style="border:0;" allowfullscreen=""
-          loading="lazy"&gt;&lt;/iframe&gt;
-        </div>
+&lt;!-- 3. Video --&gt;
+&lt;video height="220" width="340" controls autoplay muted loop&gt;
+    &lt;source src="./video/videoplayback.mp4"  type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;!-- 4. PDF (Embed) --&gt;
+&lt;embed src="./misc/html-slides.pdf" width="500" height="500"  type="application/pdf"&gt;
+
+&lt;!-- 5. IFrame (Google Map) --&gt;
+&lt;iframe src="https://www.google.com/maps/embed?..." width="250"  height="250" style="border:0;" allowfullscreen=""  loading="lazy"&gt;&lt;/iframe&gt;</code></pre>
 
         <h3>Output:</h3>
         <div class="example-output">
@@ -732,16 +696,11 @@
         <h3>1. Relative vs Absolute URLs</h3>
         <!-- Relative URLs point to files within the same site; Absolute URLs include the full address (protocol + domain). Use relative for internal links and absolute for external sites. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;!-- Relative URL: path is relative to the current file --&gt;<br />
-          &lt;a href="block_elements.html"&gt;Go to Block Elements
-          (Relative)&lt;/a&gt;<br />
-          <br />
-          &lt;!-- Absolute URL: full address including protocol and domain
-          --&gt;<br />
-          &lt;a href="https://www.google.com" target="_blank"&gt;Go to Google
-          (Absolute)&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;!-- Relative URL: path is relative to the current file --&gt;
+&lt;a href="block_elements.html"&gt;Go to Block Elements  (Relative)&lt;/a&gt;
+
+&lt;!-- Absolute URL: full address including protocol and domain  --&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;Go to Google  (Absolute)&lt;/a&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <!-- Relative URL: navigates within the same site without needing the full domain -->
@@ -762,9 +721,7 @@
         <h3>2. Text Hyperlink — Relative</h3>
         <!-- href with a relative path links to another page inside the same project folder. Ideal for internal site navigation. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;a href="block_elements.html"&gt;Block Elements Lesson&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;a href="block_elements.html"&gt;Block Elements Lesson&lt;/a&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <a href="block_elements.html">Block Elements Lesson</a>
@@ -776,10 +733,7 @@
         <h3>3. Text Hyperlink — Absolute</h3>
         <!-- href with a full https:// URL links to any page on the web. Use target="_blank" to open in a new tab so the user doesn't leave your site. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;a href="https://developer.mozilla.org" target="_blank"&gt;MDN Web
-          Docs&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;a href="https://developer.mozilla.org" target="_blank"&gt;MDN Web  Docs&lt;/a&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <a href="https://developer.mozilla.org" target="_blank"
@@ -793,10 +747,7 @@
         <h3>4. Hyperlink — New Tab</h3>
         <!-- Use the target="_blank" attribute to open a link in a new browser tab. This is recommended for external links so users don't leave your website. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;a href="https://www.google.com" target="_blank"&gt;Open Google in
-          New Tab&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;a href="https://www.google.com" target="_blank"&gt;Open Google in  New Tab&lt;/a&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <a href="https://www.google.com" target="_blank"
@@ -810,9 +761,7 @@
         <h3>5. Email Hyperlink</h3>
         <!-- mailto: opens the user's default email client with the To field pre-filled. Commonly used on contact pages. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;a href="mailto:hello@example.com"&gt;Send us an email&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;a href="mailto:hello@example.com"&gt;Send us an email&lt;/a&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <a href="mailto:hello@example.com">Send us an email</a>
@@ -824,9 +773,7 @@
         <h3>6. Telephone Hyperlink</h3>
         <!-- tel: triggers a phone call on mobile devices or prompts a call app on desktop. Used in contact sections and headers for click-to-call functionality. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;a href="tel:+639171234567"&gt;+63 917 123 4567&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;a href="tel:+639171234567"&gt;+63 917 123 4567&lt;/a&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <a href="tel:+639171234567">+63 917 123 4567</a>
@@ -838,10 +785,7 @@
         <h3>7. PDF Hyperlink</h3>
         <!-- Linking to a .pdf file with target="_blank" opens the PDF in a new browser tab instead of navigating away from the current page. Common for downloadable documents, brochures, and reports. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;a href="./misc/html-slides.pdf" target="_blank"&gt;View HTML
-          Slides (PDF)&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;a href="./misc/html-slides.pdf" target="_blank"&gt;View HTML  Slides (PDF)&lt;/a&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <a href="./misc/html-slides.pdf" target="_blank"
@@ -855,11 +799,7 @@
         <h3>8. Download Hyperlink</h3>
         <!-- The 'download' attribute tells the browser to download the file instead of navigating to it. You can optionally give the downloaded file a custom name as the attribute value. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;a href="./misc/Inventive-Media-HTML-CSS-Bootstrap.zip"
-          download="Inventive-Media-HTML-CSS-Bootstrap"&gt;Download Course Files
-          (.zip)&lt;/a&gt;
-        </div>
+        <pre><code class="language-html">&lt;a href="./misc/Inventive-Media-HTML-CSS-Bootstrap.zip"  download="Inventive-Media-HTML-CSS-Bootstrap"&gt;Download Course Files  (.zip)&lt;/a&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <a
@@ -875,14 +815,11 @@
         <h3>9. Named Anchor</h3>
         <!-- A named anchor links to a specific section on the same page. Add id="" to the target element, then use #id as the href value. Used for table of contents, FAQ sections, and long-form pages. -->
         <h4>Code:</h4>
-        <div class="code-block">
-          &lt;!-- The link --&gt;<br />
-          &lt;a href="#anchor-target"&gt;Jump to the target section
-          below&lt;/a&gt;<br />
-          <br />
-          &lt;!-- The target element --&gt;<br />
-          &lt;h4 id="anchor-target"&gt;You landed here!&lt;/h4&gt;
-        </div>
+        <pre><code class="language-html">&lt;!-- The link --&gt;
+&lt;a href="#anchor-target"&gt;Jump to the target section  below&lt;/a&gt;
+
+&lt;!-- The target element --&gt;
+&lt;h4 id="anchor-target"&gt;You landed here!&lt;/h4&gt;</code></pre>
         <h4>Output:</h4>
         <div class="example-output">
           <a href="#anchor-target">Jump to the target section below</a>
@@ -906,5 +843,6 @@
         </div>
       </div>
     </div>
+    <script src="../prism.js"></script>
   </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - CSS Selectors</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -69,14 +70,11 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">p</span> {
-            <span class="property">color</span>:
-            <span class="value">green</span>; }<br /><br />
-            /* HTML */<br />
-            &lt;p&gt;This paragraph is selected by its tag name.&lt;/p&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+p {  color:  green; }
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;p&gt;This paragraph is selected by its tag name.&lt;/p&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -100,19 +98,15 @@
           <p><strong>Tip:</strong> You can reuse classes on many elements.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.highlight</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">yellow</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">red</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;p class="highlight"&gt;This paragraph uses a class.&lt;/p&gt;<br />
-            &lt;span class="highlight"&gt;So does this span!&lt;/span&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+.highlight {
+    background-color: yellow;
+    color:  red;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;p class="highlight"&gt;This paragraph uses a class.&lt;/p&gt;
+&lt;span class="highlight"&gt;So does this span!&lt;/span&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -135,18 +129,14 @@
           <p><strong>Important:</strong> IDs must be unique on a page.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">#unique-element</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-            <span class="value">2px solid orange</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">#fff3e0</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;div id="unique-element"&gt;I am unique!&lt;/div&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+#unique-element {
+    border:  2px solid orange;
+    background-color: #fff3e0;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;div id="unique-element"&gt;I am unique!&lt;/div&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -207,15 +197,13 @@
           </p>
 
           <h4>Code:</h4>
-          <div class="code-block">
-            <span class="selector">p</span> {
-            <span class="property">color</span>:
-            <span class="value">blue</span>;
-            <span class="comment">/* gets overridden */</span> }<br />
-            <span class="selector">p</span> {
-            <span class="property">color</span>: <span class="value">red</span>;
-            <span class="comment">/* this one is applied */</span> }
-          </div>
+          <pre><code class="language-css">p {
+    color:  blue;  /* gets overridden */
+}
+
+p {
+    color: red;  /* this one is applied */
+}</code></pre>
 
           <p>
             <strong>Result:</strong> The text will be
@@ -231,18 +219,12 @@
           </p>
 
           <h4>Code:</h4>
-          <div class="code-block">
-            <span class="selector">p</span> {
-            <span class="property">color</span>: <span class="value">blue</span>
-            <span class="value">!important</span>; }<br /><br />
-            <span class="selector">#special</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">red</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* Will NOT override !important */</span
-            ><br />
-            }
-          </div>
+          <pre><code class="language-css">p {  color: blue  !important; }
+
+#special {
+    color:  red;
+    /* Will NOT override !important */
+}</code></pre>
 
           <div class="warning-box">
             <strong>⚠️ Warning:</strong> Avoid overusing
@@ -265,18 +247,15 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">h3, h4</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">purple</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-decoration</span
-            >: <span class="value">underline</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;h3&gt;Heading 3&lt;/h3&gt;<br />
-            &lt;h4&gt;Heading 4&lt;/h4&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+h3, h4 {
+    color:  purple;
+    text-decoration: underline;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -298,25 +277,20 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            /* Selects all &lt;p&gt; inside .container */<br />
-            <span class="selector">.container p</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">teal</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-style</span>:
-            <span class="value">italic</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;div class="container"&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am inside the
-            container.&lt;/p&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am nested
-            deeper, but still inside, so I get styled!&lt;/p&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-            &lt;/div&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+/* Selects all &lt;p&gt; inside .container */
+.container p {
+    color:  teal;
+    font-style:  italic;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;div class="container"&gt;
+    &lt;p&gt;I am inside the  container.&lt;/p&gt;
+    &lt;div&gt;
+        &lt;p&gt;I am nested  deeper, but still inside, so I get styled!&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -343,23 +317,19 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            /* Selects only direct &lt;p&gt; children of .parent */<br />
-            <span class="selector">.parent > p</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-left</span>:
-            <span class="value">5px solid blue</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;div class="parent"&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a direct child
-            (Styled)&lt;/p&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am a
-            grandchild (Not styled)&lt;/p&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-            &lt;/div&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+/* Selects only direct &lt;p&gt; children of .parent */
+.parent &gt; p {
+    border-left:  5px solid blue;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;div class="parent"&gt;
+    &lt;p&gt;I am a direct child  (Styled)&lt;/p&gt;
+    &lt;div&gt;
+        &lt;p&gt;I am a  grandchild (Not styled)&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -382,20 +352,17 @@
           <p>Selects elements based on an attribute or attribute value.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">input[type="text"]</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-            <span class="value">2px solid red</span>;<br />
-            }<br />
-            <span class="selector">input[type="email"]</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border</span>:
-            <span class="value">2px solid green</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;input type="text" placeholder="Text Input"&gt;<br />
-            &lt;input type="email" placeholder="Email Input"&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+input[type="text"] {
+    border:  2px solid red;
+}
+input[type="email"] {
+    border:  2px solid green;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;input type="text" placeholder="Text Input"&gt;
+&lt;input type="email" placeholder="Email Input"&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -415,31 +382,29 @@
           <p>Used to define a special state of an element.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            /* Changes color when mouse hovers over the link */<br />
-            <span class="selector">a:hover</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">red</span>;<br />
-            }<br /><br />
-            /* Selects the first item in a list */<br />
-            <span class="selector">li:first-child</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">red</span>;<br />
-            }<br /><br />
-            /* Selects the last item in a list */<br />
-            <span class="selector">li:last-child</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">blue</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;a href="#"&gt;Hover me!&lt;/a&gt;<br />
-            &lt;ul&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;First item&lt;/li&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Second item&lt;/li&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Last item&lt;/li&gt;<br />
-            &lt;/ul&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+/* Changes color when mouse hovers over the link */
+a:hover {
+    color:  red;
+}
+
+/* Selects the first item in a list */
+li:first-child {
+    color:  red;
+}
+
+/* Selects the last item in a list */
+li:last-child {
+    color:  blue;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;a href="#"&gt;Hover me!&lt;/a&gt;
+&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Last item&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -466,21 +431,19 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            /* Inserts content before the element */<br />
-            <span class="selector">.pseudo-demo::before</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
-            <span class="value">"👉 "</span>;<br />
-            }<br /><br />
-            /* Inserts content after the element */<br />
-            <span class="selector">.pseudo-demo::after</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>:
-            <span class="value">" 👈"</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;p class="pseudo-demo"&gt;Look at my pointers!&lt;/p&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+/* Inserts content before the element */
+.pseudo-demo::before {
+    content:  "👉 ";
+}
+
+/* Inserts content after the element */
+.pseudo-demo::after {
+    content:  " 👈";
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;p class="pseudo-demo"&gt;Look at my pointers!&lt;/p&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -500,16 +463,14 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">*</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">green</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;p&gt;This paragraph text turns green.&lt;/p&gt;<br />
-            &lt;div&gt;So does this div text.&lt;/div&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+* {
+    color:  green;
+}
+</code>
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;p&gt;This paragraph text turns green.&lt;/p&gt;
+&lt;div&gt;So does this div text.&lt;/div&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -527,5 +488,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

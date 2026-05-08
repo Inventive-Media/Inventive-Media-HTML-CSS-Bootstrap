@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - What is CSS?</title>
+    <link rel="stylesheet" href="../prism.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -134,15 +135,10 @@
             </li>
           </ul>
 
-          <div class="code-block">
-            <span class="selector">selector</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">property</span>:
-            <span class="value">value</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >another-property</span
-            >: <span class="value">value</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">selector {
+  property: value;
+  another-property: value;
+}</code></pre>
 
           <!-- 
       SECTION 2: BASIC EXAMPLE
@@ -156,19 +152,15 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.styled-text</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">blue</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-            <span class="value">20px</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-weight</span>:
-            <span class="value">bold</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;p class="styled-text"&gt;This text is styled with CSS!&lt;/p&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+.styled-text {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}</code>
+
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;p class="styled-text">This text is styled with CSS!&lt;/p&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -188,26 +180,18 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.multi-property-box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="value">200px</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">height</span>:
-            <span class="value">100px</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">purple</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">color</span>:
-            <span class="value">white</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-align</span>:
-            <span class="value">center</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-radius</span>:
-            <span class="value">10px</span>;<br />
-            }<br /><br />
-            /* HTML */<br />
-            &lt;div class="multi-property-box"&gt;I am a Box!&lt;/div&gt;
-          </div>
+          <pre><code class="language-css">/* CSS */
+.multi-property-box {
+    width: 200px;
+    height: 100px;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}</code>
+
+<code class="language-html">&lt;!-- HTML --&gt;
+&lt;div class="multi-property-box"&gt;I am a Box!&lt;/div&gt;</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -229,14 +213,13 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            <span class="comment">/* This is a single-line comment */</span
-            ><br />
-            <span class="selector">p</span> {
-            <span class="property">color</span>: <span class="value">red</span>;
-            }<br /><br />
-            <span class="comment">/* This is a multi-line comment */</span>
-          </div>
+          <pre><code class="language-css">/*
+This is a multi-line comment
+explaining the code below
+*/
+p {
+    color: red;
+} /* This is an inline comment */</code></pre>
 
           <!-- Navigation Section -->
           <div class="nav-links">
@@ -248,5 +231,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

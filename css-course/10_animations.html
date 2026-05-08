@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Animations</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -71,21 +72,15 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.trans-box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">green</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transition</span>:
-            <span class="value">background-color 0.5s ease</span>;<br />
-            }<br /><br />
-            <span class="selector">.trans-box:hover</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">orange</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.trans-box {
+    background-color: green;
+    transition:  background-color 0.5s ease;
+}
+
+.trans-box:hover {
+    background-color: orange;
+}</code></pre>
 
           <h3>Output (Hover over them):</h3>
           <div class="example-output">
@@ -108,18 +103,13 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.rotate-box:hover</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transform</span>:
-            <span class="value">rotate(180deg)</span>;<br />
-            }<br />
-            <span class="selector">.scale-box:hover</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transform</span>:
-            <span class="value">scale(0.5)</span>;<br />
-            }<br />
-            <span class="comment">/* Shrink to 50% */</span>
-          </div>
+          <pre><code class="language-css">/* CSS */
+.rotate-box:hover {
+    transform:  rotate(180deg);
+}
+.scale-box:hover {
+    transform:  scale(0.5);
+} /* Shrink to 50% */</code></pre>
 
           <h3>Output (Hover over them):</h3>
           <div class="example-output">
@@ -142,21 +132,20 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.anim-move</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
-            <span class="value">moveRight 2s infinite alternate</span>;<br />
-            }<br /><br />
-            <span class="keyframes">@keyframes</span> moveRight {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">from</span> {
-            <span class="property">transform</span>:
-            <span class="value">translateX(0)</span>; }<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">to</span> {
-            <span class="property">transform</span>:
-            <span class="value">translateX(200px)</span>; }<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.anim-move {
+    animation:  moveRight 2s infinite alternate;
+}
+
+@keyframes moveRight {
+    from {
+        transform:  translateX(0);
+    }
+
+    to {
+        transform: translateX(200px);
+    }
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -183,43 +172,27 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="keyframes">@keyframes</span> spin {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">0%</span> {
-            <span class="property">transform</span>:
-            <span class="value">rotate(0deg)</span>; }<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">100%</span> {
-            <span class="property">transform</span>:
-            <span class="value">rotate(360deg)</span>; }<br />
-            }<br /><br />
-            <span class="selector">.anim-spin</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* name | duration | timing-function | delay | iteration-count |
-              direction | fill-mode */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
-            <span class="value">spin 2s linear 0s infinite normal none</span
-            >;<br />
-            }<br /><br />
-            <span class="keyframes">@keyframes</span> bounce {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">0%</span>,
-            <span class="value">100%</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="property"
-              >transform</span
-            >: <span class="value">translateY(0)</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">50%</span> {
-            <span class="property">transform</span>:
-            <span class="value">translateY(-30px)</span>; }<br />
-            }<br /><br />
-            <span class="selector">.anim-bounce</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>:
-            <span class="value">bounce 1s ease 0s infinite normal none</span
-            >;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+@keyframes spin {
+    0% {  transform:  rotate(0deg); }
+    100% {  transform:  rotate(360deg); }
+}
+
+.anim-spin {
+    /* name | duration | timing-function | delay | iteration-count |  direction | fill-mode */
+    animation:  spin 2s linear 0s infinite normal none;
+}
+
+@keyframes bounce {
+    0%,  100% {
+        transform: translateY(0);
+    }
+    50% {  transform:  translateY(-30px); }
+}
+
+.anim-bounce {
+    animation:  bounce 1s ease 0s infinite normal none;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -274,5 +247,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

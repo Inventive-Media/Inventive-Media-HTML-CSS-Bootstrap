@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Responsive Design</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -72,23 +73,14 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.vw-box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="value">50vw</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* 50% of screen width */</span
-            ><br />
-            }<br /><br />
-            <span class="selector">.pct-box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>:
-            <span class="value">50%</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* 50% of parent width */</span
-            ><br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.vw-box {
+    width:  50vw; /* 50% of screen width */
+}
+
+.pct-box {
+    width:  50%; /* 50% of parent width */
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -112,47 +104,22 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.responsive-box</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >background-color</span
-            >: <span class="value">#ff5722</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* Red (Mobile) */</span
-            ><br />
-            }<br /><br />
-            <span class="media">@media</span> (min-width: 600px) {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector"
-              >.responsive-box</span
-            >
-            {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="property"
-              >background-color</span
-            >: <span class="value">#2196f3</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="comment"
-              >/* Blue (Tablet) */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-            }<br /><br />
-            <span class="media">@media</span> (min-width: 900px) {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector"
-              >.responsive-box</span
-            >
-            {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="property"
-              >background-color</span
-            >: <span class="value">#4caf50</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="comment"
-              >/* Green (Desktop) */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.responsive-box {
+    background-color: #ff5722; /* Red (Mobile) */
+}
+
+@media (min-width: 600px) {
+    .responsive-box  {
+        background-color: #2196f3; /* Blue (Tablet) */
+    }
+}
+
+@media (min-width: 900px) {
+    .responsive-box  {
+        background-color: #4caf50; /* Green (Desktop) */
+    }
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -174,45 +141,23 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.responsive-grid</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property"
-              >grid-template-columns</span
-            >: <span class="value">1fr</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* 1 Col (Mobile) */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">gap</span>:
-            <span class="value">10px</span>;<br />
-            }<br /><br />
-            <span class="media">@media</span> (min-width: 600px) {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector"
-              >.responsive-grid</span
-            >
-            {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="property"
-              >grid-template-columns</span
-            >: <span class="value">1fr 1fr</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* 2 Cols */</span
-            ><br />
-            }<br /><br />
-            <span class="media">@media</span> (min-width: 900px) {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector"
-              >.responsive-grid</span
-            >
-            {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="property"
-              >grid-template-columns</span
-            >: <span class="value">1fr 1fr 1fr</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* 3 Cols */</span
-            ><br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.responsive-grid {
+    grid-template-columns: 1fr; /* 1 Col (Mobile) */
+    gap:  10px;
+}
+
+@media (min-width: 600px) {
+    .responsive-grid  {
+        grid-template-columns: 1fr 1fr;
+    } /* 2 Cols */
+}
+
+@media (min-width: 900px) {
+    .responsive-grid  {
+        grid-template-columns: 1fr 1fr 1fr;
+    } /* 3 Cols */
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -240,29 +185,19 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.desktop-only</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>:
-            <span class="value">none</span>;<br />
-            }<br /><br />
-            <span class="media">@media</span> (min-width: 768px) {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.mobile-only</span>
-            {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="property"
-              >display</span
-            >: <span class="value">none</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.desktop-only</span>
-            {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="property"
-              >display</span
-            >: <span class="value">block</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.desktop-only {
+    display:  none;
+}
+
+@media (min-width: 768px) {
+    .mobile-only  {
+        display: none;
+    }
+    .desktop-only  {
+        display: block;
+    }
+}</code></pre>
           <h3>Output:</h3>
           <div class="example-output">
             <div class="mobile-only">📱 You are on a smaller screen.</div>
@@ -311,16 +246,10 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.clamp-text</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-            <span class="value">clamp(1rem, 2.5vw, 2rem)</span>;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* Fluid size between 16px and 32px */</span
-            ><br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.clamp-text {
+    font-size:  clamp(1rem, 2.5vw, 2rem); /* Fluid size between 16px and 32px */
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -337,5 +266,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

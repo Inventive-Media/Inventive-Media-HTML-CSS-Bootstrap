@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Shadows</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -68,20 +69,15 @@
           <p>Adding depth with shadows.</p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.simple-shadow</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"
-              >/* x-offset | y-offset | blur-radius | color */</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">box-shadow</span>:
-            <span class="value">5px 5px 10px rgba(0,0,0,0.3)</span>;<br />
-            }<br /><br />
-            <span class="selector">.text-effect</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">text-shadow</span>:
-            <span class="value">2px 2px 4px #000</span>;<br />
-            }
-          </div>
+          <pre><code class="language-css">/* CSS */
+.simple-shadow {
+    /* x-offset | y-offset | blur-radius | color */
+    box-shadow:  5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.text-effect {
+    text-shadow:  2px 2px 4px #000;
+}</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -100,5 +96,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

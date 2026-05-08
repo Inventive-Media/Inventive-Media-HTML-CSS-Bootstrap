@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Types of CSS Styling</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -74,15 +75,8 @@
           </p>
 
           <h4>Code:</h4>
-          <div class="code-block">
-            <span class="comment">&lt;!-- HTML --&gt;</span><br />
-            <span class="tag">&lt;p</span>
-            <span class="attribute">style</span>=<span class="string"
-              >"color: red;"</span
-            ><span class="tag">&gt;</span>Hello<span class="tag"
-              >&lt;/p&gt;</span
-            >
-          </div>
+          <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;p  style="color: red;"&gt;Hello&lt;/p&gt;</code></pre>
 
           <h4>Output:</h4>
           <div class="example-output">
@@ -121,27 +115,15 @@
           </p>
 
           <h4>Code:</h4>
-          <div class="code-block">
-            <span class="tag">&lt;head&gt;</span><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span
-            >Document<span class="tag">&lt;/title&gt;</span><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;style&gt;</span><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="selector"
-              >p</span
-            >
-            { <span class="property">color</span>:
-            <span class="value">red</span>; }<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/style&gt;</span
-            ><br />
-            <span class="tag">&lt;/head&gt;</span><br />
-            <span class="tag">&lt;body&gt;</span><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Hello<span
-              class="tag"
-              >&lt;/p&gt;</span
-            ><br />
-            <span class="tag">&lt;/body&gt;</span>
-          </div>
+          <pre><code class="language-html">&lt;head&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        p  { color:  red; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Hello&lt;/p&gt;
+&lt;/body&gt;</code></pre>
 
           <h4>Characteristics:</h4>
           <table class="comparison-table">
@@ -171,34 +153,17 @@
 
           <h4>Code:</h4>
           <p><strong>HTML File:</strong></p>
-          <div class="code-block">
-            <span class="tag">&lt;head&gt;</span><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span
-            >Document<span class="tag">&lt;/title&gt;</span><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;link</span>
-            <span class="attribute">rel</span>=<span class="string"
-              >"stylesheet"</span
-            ><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-              class="attribute"
-              >href</span
-            >=<span class="string">"./styles.css"</span
-            ><span class="tag">&gt;</span><br />
-            <span class="tag">&lt;/head&gt;</span><br />
-            <span class="tag">&lt;body&gt;</span><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Hello<span
-              class="tag"
-              >&lt;/p&gt;</span
-            ><br />
-            <span class="tag">&lt;/body&gt;</span>
-          </div>
+          <pre><code class="language-html">&lt;head&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link  rel="stylesheet"
+        href="./styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Hello&lt;/p&gt;
+&lt;/body&gt;</code></pre>
 
           <p><strong>CSS File (styles.css):</strong></p>
-          <div class="code-block">
-            <span class="selector">p</span> {
-            <span class="property">color</span>: <span class="value">red</span>;
-            }
-          </div>
+          <pre><code class="language-css">p {  color: red;  }</code></pre>
 
           <h4>Characteristics:</h4>
           <table class="comparison-table">
@@ -266,5 +231,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>

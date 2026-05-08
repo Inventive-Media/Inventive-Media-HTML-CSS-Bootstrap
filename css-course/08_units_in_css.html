@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 2 - Units in CSS</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../prism.css" />
   </head>
   <body>
     <!-- Sticky Header -->
@@ -71,22 +72,18 @@
           </p>
 
           <h3>Code:</h3>
-          <div class="code-block">
-            /* CSS */<br />
-            <span class="selector">.px-text</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-            <span class="value">20px</span>;<br />
-            } <span class="comment">/* Always 20px */</span><br />
-            <span class="selector">.em-text</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-            <span class="value">1.5em</span>;<br />
-            } <span class="comment">/* 1.5 x Parent Size */</span><br />
-            <span class="selector">.rem-text</span> {<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">font-size</span>:
-            <span class="value">1.5rem</span>;<br />
-            }<br />
-            <span class="comment">/* 1.5 x Root Size */</span>
-          </div>
+          <pre><code class="language-css">/* CSS */
+.px-text {
+    font-size:  20px;
+} /* Always 20px */
+
+.em-text {
+    font-size:  1.5em;
+} /* 1.5 x Parent Size */
+
+.rem-text {
+    font-size:  1.5rem;
+} /* 1.5 x Root Size */</code></pre>
 
           <h3>Output:</h3>
           <div class="example-output">
@@ -277,5 +274,6 @@
         </div>
       </div>
     </main>
+    <script src="../prism.js"></script>
   </body>
 </html>
